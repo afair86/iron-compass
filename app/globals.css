@@ -7,8 +7,8 @@
 
 body {
   font-family: var(--font-body), Inter, Arial, sans-serif;
-  color: #F2F4F7;
-  background: #05060A;
+  color: #C7C7C7;
+  background: #0B0D10;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,32 +18,33 @@ body {
 /* Subtle radial glow behind hero area (can be adjusted as needed) */
 .ic-radial-glow {
   position: absolute;
-  top: -200px;
+  top: -220px;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
-  height: 600px;
+  width: 1100px;
+  height: 700px;
   pointer-events: none;
   z-index: 0;
-  background: radial-gradient(ellipse at center, rgba(209,31,60,0.10) 0%, rgba(5,6,10,0.0) 80%);
-  filter: blur(32px);
+  background: radial-gradient(ellipse at center, rgba(198,40,40,0.18) 0%, rgba(11,13,16,0.0) 80%);
+  filter: blur(40px);
 }
 
 /* Heading font utility */
 .heading-font {
   font-family: var(--font-heading), Oswald, Arial, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  color: #F3EBDD;
 }
 
 /* Card style utility */
 .ic-card {
-  border-radius: 1rem;
-  background: rgba(17,24,39,0.90);
-  border: 1.5px solid rgba(148,163,184,0.18);
-  box-shadow: 0 8px 32px 0 rgba(95,11,22,0.18), 0 2px 8px 0 rgba(0,0,0,0.32);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  padding: 2rem;
+  border-radius: 1.25rem;
+  background: #181A1D;
+  border: 1.5px solid #292929;
+  box-shadow: 0 8px 32px 0 rgba(198,40,40,0.10), 0 2px 8px 0 rgba(0,0,0,0.32);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2.25rem;
 }

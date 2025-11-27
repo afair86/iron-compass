@@ -10,19 +10,26 @@ module.exports = {
     extend: {
       colors: {
         ic: {
-          bg: '#05060A',
-          surface: '#0B0F16',
-          card: '#111827',
-          text: '#F2F4F7',
-          muted: '#9CA3AF',
-          red: '#B11226',
-          redHover: '#D21F3C',
-          redDark: '#5F0B16',
+          bg: '#0B0D10', // slightly lighter, deep black
+          surface: '#181A1D',
+          card: '#181A1D', // card matches mockup, less blue
+          text: '#F3EBDD', // cream for headings
+          muted: '#C7C7C7', // lighter muted for body
+          red: '#C62828', // flat, bright red
+          redHover: '#E53935',
+          redDark: '#8B1A1A',
         },
       },
       fontFamily: {
         body: 'var(--font-body)',
         heading: 'var(--font-heading)',
+      },
+      fontWeight: {
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800',
       },
     },
   },
