@@ -8,8 +8,7 @@ export const metadata = {
 import Link from 'next/link';
 import EmailCaptureForm from './components/EmailCaptureForm';
 
-// Domain data for easy mapping
-// Removed the domains array as part of the cleanup.
+
 
 export default function HomePage() {
   return (
@@ -78,7 +77,7 @@ export default function HomePage() {
           </aside>
         </div>
       </section>
-      {/* ...existing code for other sections... */}
+
 
       {/* Philosophy Section (unchanged) */}
       <section className="w-full max-w-3xl py-12 md:py-16">
