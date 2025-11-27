@@ -43,19 +43,19 @@ const domains = [
 export default function DomainsPage() {
   return (
     <main className="max-w-5xl mx-auto py-12 px-4">
-      <h1 className="text-3xl md:text-4xl font-extrabold mb-6 text-center">The Six Domains of Iron Compass</h1>
-      <p className="text-gray-300 mb-10 text-center max-w-2xl mx-auto">
+      <h1 className="heading-font text-3xl md:text-4xl font-bold mb-6 text-center text-ic-text tracking-widest">The Six Domains of Iron Compass</h1>
+      <p className="text-icMuted mb-10 text-center max-w-2xl mx-auto">
         A complete, disciplined life requires mastery across six domains. Iron Compass guides men to develop strength, discipline, purpose, leadership, financial power, and AI mastery—so you can rise beyond limits and lead with purpose and integrity.
       </p>
       <section>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {domains.map((domain) => (
-            <div key={domain.slug} className="bg-gray-900 rounded-xl p-6 border border-gray-800 shadow flex flex-col justify-between">
-              <h2 className="text-xl font-semibold mb-2 text-white">{domain.name}</h2>
-              <p className="text-gray-400 mb-4 leading-relaxed">{domain.desc}</p>
+            <div key={domain.slug} className="ic-card flex flex-col justify-between">
+              <h2 className="heading-font text-lg font-bold mb-2 text-ic-text">{domain.name}</h2>
+              <p className="text-icMuted mb-4 leading-relaxed">{domain.desc}</p>
               <Link
                 href={`/domains/${domain.slug}`}
-                className="mt-auto inline-block text-primary-400 hover:underline font-medium"
+                className="heading-font mt-auto inline-block text-icRed hover:underline underline-offset-4 font-bold"
               >
                 Explore {domain.name}
               </Link>
@@ -63,8 +63,13 @@ export default function DomainsPage() {
           ))}
         </div>
       </section>
-      <div className="text-center mt-12">
-        <Link href="/" className="text-sm text-primary-400 hover:underline">Back to Home</Link>
+      <div className="flex flex-wrap gap-4 justify-center mt-12">
+        <Link href="/" className="heading-font text-sm text-icRed hover:underline underline-offset-4 font-bold">Back to Home</Link>
+        {domains.map((domain) => (
+          <Link key={domain.slug} href={`/domains/${domain.slug}`} className="heading-font text-sm text-icRed hover:underline underline-offset-4 font-bold">
+            {domain.name}
+          </Link>
+        ))}
       </div>
     </main>
   );

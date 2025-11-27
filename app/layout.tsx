@@ -1,7 +1,23 @@
 
+
 import './globals.css';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { Oswald, Inter } from 'next/font/google';
+import Header from './components/Header';
+
+// Font setup
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  variable: '--font-heading',
+  display: 'swap',
+});
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-body',
+  display: 'swap',
+});
 
 // SEO metadata for the site
 export const metadata: Metadata = {
@@ -14,39 +30,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Get the current year for the footer
+
   const currentYear = new Date().getFullYear();
 
   return (
-    <html lang="en" className="h-full">
-      <body className="min-h-screen flex flex-col bg-gray-950 text-gray-100 font-sans">
-        {/* Site Header */}
-        <header className="w-full border-b border-gray-800">
-          <nav className="container mx-auto flex items-center justify-between px-4 py-4">
-            {/* Logo */}
-            <Link href="/" className="text-2xl font-bold tracking-wide">
-              Iron Compass
-            </Link>
-            {/* Navigation Links */}
-            <ul className="flex space-x-4 text-sm font-medium">
-              <li>
-                <Link href="/" className="hover:text-primary-400 transition-colors">Home</Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-primary-400 transition-colors">About</Link>
-              </li>
-              <li>
-                <Link href="/domains" className="hover:text-primary-400 transition-colors">Domains</Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-primary-400 transition-colors">Blog</Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-primary-400 transition-colors">Contact</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+    <html lang="en" className={`h-full ${oswald.variable} ${inter.variable}`}> 
+      <body className="min-h-screen flex flex-col bg-ic-bg text-ic-text antialiased font-body">
+        {/* Global Header */}
+        <Header />
 
         {/* Main Content */}
         <main className="flex-1 container mx-auto px-4 py-8">
