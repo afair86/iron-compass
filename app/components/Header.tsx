@@ -18,30 +18,6 @@ export default function Header() {
         aria-label="Main navigation"
         gap={8}
       >
-        {/* Statement Banner */}
-        <Box
-          w="full"
-          textAlign="center"
-          px={{ base: 2, md: 0 }}
-          py={2}
-          as="h1"
-          fontFamily="var(--font-heading), Oswald, Arial, sans-serif"
-          fontWeight={900}
-          fontSize={{ base: 'md', md: '2xl', lg: '2.2rem' }}
-          letterSpacing="0.13em"
-          textTransform="uppercase"
-          lineHeight={1.1}
-          bgGradient="linear(to-r, ic.blue, ic.teal, ic.purple)"
-          bgClip="text"
-          color="ic.blue"
-          style={{
-            textShadow: '0 4px 24px #2EC4F1cc, 0 2px 0 #000, 0 0 8px #2EC4F199',
-            WebkitTextStroke: '0.8px #232325',
-            fontStretch: 'expanded',
-          }}
-        >
-          A MAN&#39;S LIFE IS FORGED IN DISCIPLINE, TESTED IN ADVERSITY, AND DEFINED BY THE STRENGTH OF HIS PURPOSE.
-        </Box>
         {/* Desktop Nav */}
         <HStack
           as="ul"
