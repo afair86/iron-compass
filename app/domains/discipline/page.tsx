@@ -175,35 +175,35 @@ export default function DisciplinePage() {
           Discipline is the thread that connects and strengthens every other domain in the Iron Compass system:
         </p>
         <div className="space-y-4">
-          <div>
+          <div className="leading-relaxed">
             <Link href="/domains/strength" className="text-ic-red hover:text-ic-redHover font-semibold">
               Strength
             </Link>
-            <span className="text-ic-muted leading-relaxed">: Consistent training and recovery require daily discipline.</span>
+            <span className="text-ic-muted">: Consistent training and recovery require daily discipline.</span>
           </div>
-          <div>
+          <div className="leading-relaxed">
             <Link href="/domains/purpose" className="text-ic-red hover:text-ic-redHover font-semibold">
               Purpose & Direction
             </Link>
-            <span className="text-ic-muted leading-relaxed">: Staying on course with your mission depends on disciplined action.</span>
+            <span className="text-ic-muted">: Staying on course with your mission depends on disciplined action.</span>
           </div>
-          <div>
+          <div className="leading-relaxed">
             <Link href="/domains/leadership" className="text-ic-red hover:text-ic-redHover font-semibold">
               Leadership & Character
             </Link>
-            <span className="text-ic-muted leading-relaxed">: Leading others starts with leading yourself—by example, with discipline.</span>
+            <span className="text-ic-muted">: Leading others starts with leading yourself—by example, with discipline.</span>
           </div>
-          <div>
+          <div className="leading-relaxed">
             <Link href="/domains/finance" className="text-ic-red hover:text-ic-redHover font-semibold">
               Financial Power
             </Link>
-            <span className="text-ic-muted leading-relaxed">: Building wealth and stability is a result of disciplined habits and decisions.</span>
+            <span className="text-ic-muted">: Building wealth and stability is a result of disciplined habits and decisions.</span>
           </div>
-          <div>
+          <div className="leading-relaxed">
             <Link href="/domains/ai" className="text-ic-red hover:text-ic-redHover font-semibold">
               AI Mastery
             </Link>
-            <span className="text-ic-muted leading-relaxed">: Leveraging technology for growth requires the discipline to use it intentionally, not as a distraction.</span>
+            <span className="text-ic-muted">: Leveraging technology for growth requires the discipline to use it intentionally, not as a distraction.</span>
           </div>
         </div>
       </section>
