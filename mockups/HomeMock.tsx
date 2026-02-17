@@ -1,4 +1,5 @@
 // /mockups/HomeMock.tsx
+// TODO: Legacy homepage – candidate for deletion.
 export default function HomeMock() {
   return (
     <section className="bg-icBg min-h-screen flex items-center justify-center">
@@ -11,14 +12,14 @@ export default function HomeMock() {
               RISE BEYOND LIMITS
             </h1>
             <p className="text-base sm:text-lg text-icMuted mb-6">
-              Iron Compass is a complete life system for men—designed to help you master discipline, purpose, strength, leadership, financial power, and AI-driven life optimization. Forge your path, lead with integrity, and rise above the ordinary.
+              Iron Compass is a complete life system for men—designed to help you master strength, discipline, purpose, leadership, financial power, AI mastery, grief & honour, and identity & legacy. Forge your path, lead with integrity, and rise above the ordinary.
             </p>
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <a
                 href="#"
                 className="heading-font inline-flex items-center rounded-full bg-icRed px-6 py-2 text-sm font-semibold text-white shadow-lg shadow-icRedDark/40 hover:bg-icRedHover transition"
               >
-                Explore the Six Domains
+                Explore the Eight Domains
               </a>
               <a
                 href="#"
@@ -28,20 +29,22 @@ export default function HomeMock() {
               </a>
             </div>
           </div>
-          {/* RIGHT: Six Domains Card */}
+          {/* RIGHT: Eight Domains Card */}
           <aside className="ic-card rounded-2xl p-6 sm:p-7 lg:p-8 bg-icCard border border-slate-700/70 shadow-lg">
-            <h2 className="heading-font text-sm text-icRed mb-2">THE SIX DOMAINS</h2>
+            <h2 className="heading-font text-sm text-icRed mb-2">THE EIGHT DOMAINS</h2>
             <p className="text-sm text-icMuted mb-5">
-              A complete, disciplined life requires mastery across six domains. Iron Compass guides men to develop strength, discipline, purpose, leadership, financial power, and AI mastery—so you can rise beyond limits and lead with purpose and integrity.
+              A complete, disciplined life requires mastery across eight domains. Iron Compass guides men to develop strength, discipline, purpose, leadership, financial power, AI mastery, grief & honour, and identity & legacy—so you can rise beyond limits and lead with purpose and integrity.
             </p>
             <div className="space-y-4 text-sm">
               {[
-                { title: 'STRENGTH', desc: 'Build physical and mental resilience to conquer life’s challenges.' },
-                { title: 'DISCIPLINE & MINDSET', desc: 'Forge habits, self-control, and a winning mindset for lasting success.' },
-                { title: 'PURPOSE & DIRECTION', desc: 'Discover your mission and chart a course toward a meaningful life.' },
-                { title: 'LEADERSHIP & CHARACTER', desc: 'Lead with integrity, inspire others, and become a man of value.' },
-                { title: 'FINANCIAL POWER', desc: 'Achieve financial stability and growth through smart decisions.' },
-                { title: 'AI MASTERY & LIFE OPTIMIZATION', desc: 'Leverage AI and systems to optimize every aspect of your life.' },
+                { title: 'STRENGTH', desc: 'Physical & mental resilience.' },
+                { title: 'DISCIPLINE & MINDSET', desc: 'Relentless self-mastery.' },
+                { title: 'PURPOSE & DIRECTION', desc: 'Mission, vision, calling.' },
+                { title: 'LEADERSHIP & CHARACTER', desc: 'Guiding self and others.' },
+                { title: 'FINANCIAL POWER', desc: 'Autonomy & abundance.' },
+                { title: 'AI MASTERY & OPTIMIZATION', desc: 'Technology leverage.' },
+                { title: 'GRIEF & HONOUR', desc: 'Transforming loss into legacy.' },
+                { title: 'IDENTITY & LEGACY', desc: 'Becoming the man you are meant to be.' },
               ].map((d) => (
                 <div
                   key={d.title}

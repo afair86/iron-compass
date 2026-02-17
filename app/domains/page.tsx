@@ -1,76 +1,49 @@
+import Link from "next/link";
+import PageShell from "../components/PageShell";
+import DomainCard from "../components/DomainCard";
+import { domainCards } from "../components/DomainsSection";
+import { HeadingStack, PageContainer, SectionShell } from "../components/LayoutPrimitives";
 
 export const metadata = {
-  title: "The Six Domains of Iron Compass",
+  title: "The Eight Domains of Iron Compass",
   description:
-    "Overview of the six domains required for a complete, disciplined life for men: strength, discipline, purpose, leadership, finance, and AI mastery.",
+    "Overview of the eight domains required for a complete, disciplined life: Strength & Health, Discipline & Mindset, Purpose & Direction, Leadership & Character, Financial Power, AI Mastery & Life Optimization, Grief & Honour, and Identity & Legacy.",
 };
-
-import Link from 'next/link';
-
-const domains = [
-  {
-    name: 'Strength',
-    slug: 'strength',
-    desc: 'Build physical and mental resilience to overcome any challenge. Strength is the foundation for a powerful life.'
-  },
-  {
-    name: 'Discipline & Mindset',
-    slug: 'discipline',
-    desc: 'Forge habits, focus, and self-mastery. Discipline means showing up and doing the work, every day.'
-  },
-  {
-    name: 'Purpose & Direction',
-    slug: 'purpose',
-    desc: 'Live with intention. Define your mission, set your direction, and pursue it relentlessly.'
-  },
-  {
-    name: 'Leadership & Character',
-    slug: 'leadership',
-    desc: 'Lead yourself and others with integrity. Character is built by consistent, principled action.'
-  },
-  {
-    name: 'Financial Power',
-    slug: 'finance',
-    desc: 'Achieve financial stability and growth. Take control of your money to create freedom and opportunity.'
-  },
-  {
-    name: 'AI Mastery & Life Optimization',
-    slug: 'ai',
-    desc: 'Leverage AI and modern systems to optimize your routines, learning, and results in a changing world.'
-  },
-];
 
 export default function DomainsPage() {
   return (
-    <main className="max-w-5xl mx-auto py-12 px-4">
-      <h1 className="heading-font text-3xl md:text-4xl font-bold mb-6 text-center text-ic-text tracking-widest">The Six Domains of Iron Compass</h1>
-      <p className="text-icMuted mb-10 text-center max-w-2xl mx-auto">
-        A complete, disciplined life requires mastery across six domains. Iron Compass guides men to develop strength, discipline, purpose, leadership, financial power, and AI mastery—so you can rise beyond limits and lead with purpose and integrity.
-      </p>
-      <section>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {domains.map((domain) => (
-            <div key={domain.slug} className="ic-card flex flex-col justify-between">
-              <h2 className="heading-font text-lg font-bold mb-2 text-ic-text">{domain.name}</h2>
-              <p className="text-icMuted mb-4 leading-relaxed">{domain.desc}</p>
-              <Link
-                href={`/domains/${domain.slug}`}
-                className="heading-font mt-auto inline-block text-icRed hover:underline underline-offset-4 font-bold"
-              >
-                Explore {domain.name}
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
-      <div className="flex flex-wrap gap-4 justify-center mt-12">
-        <Link href="/" className="heading-font text-sm text-icRed hover:underline underline-offset-4 font-bold">Back to Home</Link>
-        {domains.map((domain) => (
-          <Link key={domain.slug} href={`/domains/${domain.slug}`} className="heading-font text-sm text-icRed hover:underline underline-offset-4 font-bold">
-            {domain.name}
-          </Link>
-        ))}
-      </div>
-    </main>
+    <PageShell>
+      <PageContainer>
+        <SectionShell variant="hero" className="text-center space-y-5">
+          <h1 className="ic-page-title text-center mx-auto">The Eight Domains</h1>
+          <p className="ic-section-subhead text-[var(--ic-text-heading)]">A disciplined map for complete capability.</p>
+          <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
+            Every domain reinforces the others: strength, discipline, purpose, leadership, financial power, AI mastery, grief &amp; honour, and
+            identity &amp; legacy. Enter through one, but keep them linked.
+          </p>
+          <div className="ic-cta-row pt-2">
+            <Link href="/start" className="ic-btn-primary text-[0.62rem]">
+              Start Inside Iron Compass
+            </Link>
+            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
+              Read the Journal
+            </Link>
+          </div>
+        </SectionShell>
+
+        <SectionShell variant="panel" className="space-y-8 text-center">
+          <HeadingStack
+            eyebrow="Choose your entry point"
+            title="Pick a domain and move"
+            description="Each card links to a fully detailed domain playbook."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+            {domainCards.map((domain) => (
+              <DomainCard key={domain.title} {...domain} />
+            ))}
+          </div>
+        </SectionShell>
+      </PageContainer>
+    </PageShell>
   );
 }

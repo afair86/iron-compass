@@ -1,4 +1,7 @@
 // /mockups/DashboardMock.tsx
+// TODO: Legacy homepage – candidate for deletion.
+import React from 'react';
+
 export default function DashboardMock() {
   return (
     <div className="bg-icBg min-h-screen flex flex-col">
@@ -35,14 +38,16 @@ export default function DashboardMock() {
           </ul>
         </section>
         <section className="ic-card rounded-xl p-6 flex flex-col">
-          <h2 className="heading-font text-base text-icRed mb-2">SIX DOMAINS</h2>
+          <h2 className="heading-font text-base text-icRed mb-2">EIGHT DOMAINS</h2>
           <ul className="text-icText text-sm space-y-2">
             <li>Strength</li>
             <li>Discipline & Mindset</li>
             <li>Purpose & Direction</li>
             <li>Leadership & Character</li>
             <li>Financial Power</li>
-            <li>AI Mastery & Life Optimization</li>
+            <li>AI Mastery & Optimization</li>
+            <li>Grief & Honour</li>
+            <li>Identity & Legacy</li>
           </ul>
         </section>
       </main>

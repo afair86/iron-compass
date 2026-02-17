@@ -9,11 +9,15 @@ import matter from 'gray-matter';
 
 // TypeScript type for blog post metadata (frontmatter)
 export type PostMeta = {
-  slug: string;         // URL-friendly identifier for the post
-  title: string;        // Post title
-  date: string;         // Publication date (YYYY-MM-DD)
-  category?: string;    // Optional category/tag
+  slug: string; // URL-friendly identifier for the post
+  title: string; // Post title
+  date: string; // Publication date (YYYY-MM-DD)
+  category?: string; // Optional category/tag
   description?: string; // Optional summary for SEO and previews
+  metaTitle?: string; // Optional SEO title override
+  metaDescription?: string; // Optional SEO description override
+  updated?: string; // Optional last updated date (YYYY-MM-DD)
+  image?: string; // Optional OG/Twitter image URL
 };
 
 // Directory where blog posts are stored
@@ -44,6 +48,10 @@ export function getAllPosts(): PostMeta[] {
       category: data.category,
     };
     if (data.description) meta.description = data.description;
+    if (data.metaTitle) meta.metaTitle = data.metaTitle;
+    if (data.metaDescription) meta.metaDescription = data.metaDescription;
+    if (data.updated) meta.updated = data.updated;
+    if (data.image) meta.image = data.image;
     return meta;
   }).filter(Boolean) as PostMeta[];
 
@@ -74,5 +82,9 @@ export function getPostBySlug(slug: string): { meta: PostMeta; content: string }
     category: data.category,
   };
   if (data.description) meta.description = data.description;
+  if (data.metaTitle) meta.metaTitle = data.metaTitle;
+  if (data.metaDescription) meta.metaDescription = data.metaDescription;
+  if (data.updated) meta.updated = data.updated;
+  if (data.image) meta.image = data.image;
   return { meta, content };
 }

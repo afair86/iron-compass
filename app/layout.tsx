@@ -1,9 +1,10 @@
 
-
-import './globals.css';
-import type { Metadata } from 'next';
-import { Oswald, Inter } from 'next/font/google';
-import Header from './components/Header';
+import "./globals.css";
+import "../styles/iron-compass.css";
+import type { Metadata } from "next";
+import Script from "next/script";
+import { Oswald, Inter } from "next/font/google";
+import Navbar from "./components/Navbar";
 
 // Font setup
 const oswald = Oswald({
@@ -20,9 +21,29 @@ const inter = Inter({
 });
 
 // SEO metadata for the site
+const siteTitle = 'Iron Compass';
+const siteDescription = 'Rise Beyond Limits – Iron Compass: A life system for men.';
+const siteUrl = 'https://ironcompassai.com';
+const defaultOgImage = `${siteUrl}/iron-compass-logo.png`;
+
 export const metadata: Metadata = {
-  title: 'Iron Compass',
-  description: 'Rise Beyond Limits – Iron Compass: A life system for men.',
+  title: siteTitle,
+  description: siteDescription,
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: siteTitle,
+    type: 'website',
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+    images: [defaultOgImage],
+  },
 };
 
 export default function RootLayout({
@@ -30,24 +51,40 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
-  const currentYear = new Date().getFullYear();
-
   return (
-    <html lang="en" className={`h-full ${oswald.variable} ${inter.variable}`}> 
-      <body className="min-h-screen flex flex-col bg-ic-bg text-ic-text antialiased font-body">
-        {/* Global Header */}
-        <Header />
-
-        {/* Main Content */}
-        <main className="flex-1 container mx-auto px-4 py-8">
-          {children}
-        </main>
-
-        {/* Site Footer */}
-        <footer className="w-full border-t border-gray-800 py-4 text-center text-xs text-gray-400">
-          © {currentYear} Iron Compass – Rise Beyond Limits
-        </footer>
+    <html lang="en" className={`h-full ${oswald.variable} ${inter.variable}`}>
+      <body className="antialiased">
+        <Script
+          id="ld-website-org"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  name: siteTitle,
+                  url: siteUrl,
+                  description: siteDescription,
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: `${siteUrl}/blog?q={search_term_string}`,
+                    "query-input": "required name=search_term_string",
+                  },
+                },
+                {
+                  "@type": "Organization",
+                  name: siteTitle,
+                  url: siteUrl,
+                  logo: defaultOgImage,
+                },
+              ],
+            }),
+          }}
+        />
+        <Navbar />
+        {children}
       </body>
     </html>
   );

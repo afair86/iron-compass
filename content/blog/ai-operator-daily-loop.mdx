@@ -1,0 +1,197 @@
+---
+title: "AI Mastery in 30 Minutes a Day: The Operator’s Loop"
+description: "A 6-week protocol to turn AI into a daily leverage loop for planning, writing, research, and decision support—without becoming dependent or sloppy."
+date: "2026-02-01"
+category: "AI Mastery"
+---
+
+## Why Most AI Use Fails
+
+Most AI use collapses because prompts are vague, outputs are unverified, and workflows are random. People rush to “let AI do it” without guardrails, so they ship hallucinations, lose trust, and revert to manual work. The fix is an operator’s loop: a short, repeatable block with prompts, verification, and logs that keep speed and quality together.
+
+## The Operator’s Loop: Overview (6 Weeks)
+
+- **Week 1: Setup & Safety** — Build your source-first prompt skeleton, create a 5-step fact-check script, and set quality bars.
+- **Week 2: Planning** — Use AI to create briefs, outlines, and priority stacks. Convert AI drafts into calendar blocks.
+- **Week 3: Writing** — Draft → refine → tighten using style cards; add compression passes for clarity.
+- **Week 4: Research** — Source-first pulls, contradiction checks, bias notes, and synthesis into usable summaries.
+- **Week 5: Decision Support** — Options → criteria → table → recommendation; translate to plain language.
+- **Week 6: Automation Lite** — Save best prompts as snippets, add checklists, and log wins/errors to refine.
+
+Your daily loop is 30 minutes: 10 minutes to plan with AI, 15 to execute, 5 to verify and log. Guardrails prevent hallucinations: demand sources, tag claims, and always run a fast fact-check before shipping.
+
+## Week 1: Setup & Safety
+
+**Goal:** Install safety defaults so speed never outruns truth.
+
+**Source-first prompt skeleton (save as a snippet):**
+- “List 5 credible sources with links.”
+- “Tag each factual claim with a citation; mark uncertainties.”
+- “Note likely biases or missing perspectives.”
+- “Provide contradictions or counterpoints.”
+
+**Fact-check script (5 steps):**
+1) Extract claims and numbers. 2) Search or retrieve sources. 3) Compare and note gaps. 4) Flag uncertain items. 5) Revise or remove.
+
+**Quality bars:**
+- No citation → do not ship.
+- If a claim lacks at least two independent sources, label it “tentative.”
+- If the model cannot quote the source, do not use the claim.
+
+**Tooling suggestions:**
+- Keep a “claims” scratchpad. Highlight numbers and names. Require URLs.
+- Build a “stop list” of topics you will not let the model answer without human review (legal, medical, financial specifics, names of people).
+
+## Week 2: Planning Prompts
+
+**Daily brief prompt:**
+- “Given goals X, constraints Y, and deadline Z, propose 3 outcomes for today. Provide a 3-bullet plan with estimated minutes.”
+
+**Priority stack prompt:**
+- “Rank tasks by impact/effort. Output a short table with: task, why it matters, time estimate, dependency.”
+
+**Calendar-ready output:**
+- “Convert the plan into calendar blocks with start times and buffer. Keep total under 2 hours. Show a mini agenda.”
+
+**Use cases:**
+- Writing: outline, research plan, and draft milestones.
+- Product/ops: backlog grooming, dependency mapping, quick risk scan.
+- Sales/BD: outreach list with short reasons and order to contact.
+
+**Practice:** Run the planning prompt every morning for 7 days; measure how often you follow the suggested order. Adjust the prompt if estimates are off (ask it to pad times by 20%).
+
+## Week 3: Writing Prompts
+
+**Three-pass writing loop:**
+1) **Draft:** “Write a bullet draft in my voice (see style card). Include citations where possible.”
+2) **Refine:** “Improve clarity and structure; keep voice; preserve citations.”
+3) **Tighten:** “Compress by 20% without losing meaning; remove filler.”
+
+**Style card (keep in your scratchpad):**
+- Voice: concise, direct, no fluff.
+- Tense: present.
+- Jargon: minimal; define terms once.
+- Sentence: 12–18 words on average; prefer active voice.
+
+**Compression prompt:**
+- “Rewrite to be 20% shorter. Remove filler and hedges. Keep all numbers and facts. Preserve bullets.”
+
+**Quality checks:**
+- Compare AI draft to your core message: does it distort? If yes, rewrite that section manually.
+- Keep human final pass for tone, commitments, and any number that matters.
+
+## Week 4: Research Prompts
+
+**Source-first ask:**
+- “Find 5–7 credible sources with links on [topic]. For each, give 1–2 sentence summary and note possible bias.”
+
+**Contradiction ask:**
+- “List the top disagreements or contradictions among these sources. What is contested?”
+
+**Synthesis:**
+- “Summarize in 200 words, then give 5 bullets, then 3 open questions to investigate next.”
+
+**Bias/coverage check:**
+- “What voices or regions are missing? Suggest 2 more sources to balance.”
+
+**Usage:**
+- Always keep links. If a claim lacks a link, treat it as unverified. If a number looks off, run the fact-check script.
+
+## Week 5: Decision Support Prompts
+
+**Frame the decision:**
+- “Objective, options, constraints, and criteria (weight each).”
+
+**Decision table:**
+- “Build a table: option | pros | cons | risks | score (0–10) based on criteria.”
+
+**Plain-language rec:**
+- “Explain recommendation in 150 words, no jargon, include the top 2 risks and mitigations.”
+
+**Devil’s advocate:**
+- “Argue against the recommendation. What would make it fail? How to test quickly?”
+
+**Action plan:**
+- “Give a 5-step plan with owners/time for the chosen option.”
+
+## Week 6: Automation Lite
+
+- Save your best prompts as reusable snippets.
+- Create a checklist: draft → citations present → contradiction check → fact-check script → human tone pass → ship.
+- Keep a win/error log: what saved time, what caused rework. Adjust prompts weekly.
+- If error rate is high, slow down: narrow the task, add sources, and shorten outputs.
+
+## Daily 30-Minute Loop (Operational Cadence)
+
+**0–10 min: Plan** — Run the daily brief and priority stack. Convert to two blocks (output and support).
+
+**10–25 min: Execute** — Draft, research, or decision table. Keep sources attached. Use style card and compression pass if writing.
+
+**25–30 min: Verify & Log** — Run fact-check script on key claims; tag uncertain items; log time saved and any errors.
+
+If a task is larger, chunk it across days but keep the 30-minute loop to maintain momentum and quality.
+
+## Guardrails to Prevent Slop
+
+- **Source-first**: Always ask for sources and contradictions. No source → not shipped.
+- **Claim tagging**: Mark numbers and named entities; verify them.
+- **Human final pass**: Tone, commitments, numbers, and sensitive topics stay human-reviewed.
+- **Stop list**: Legal/medical/financial specifics; personal data; anything requiring licensing or compliance.
+- **Recovery mode**: If outputs feel off, reduce scope, demand quotes, and shorten prompts.
+
+## Metrics That Matter
+
+- Time saved per task (estimate vs. actual).
+- Drafts or decisions shipped per week.
+- Error/rollback rate (how often you rework due to AI mistakes).
+- % outputs with cited sources.
+- Verification time (keep it &lt;5 minutes for routine tasks).
+
+Review metrics weekly. If error rate rises, slow down and tighten prompts. If speed is high and error is low, templatize the flow.
+
+## Sample Prompt Pack (Copy/Paste Ready)
+
+- **Daily brief:** Goals, constraints, deadlines → 3 outcomes + agenda.
+- **Priority stack:** Impact/effort table; time estimates; dependency.
+- **Outline:** “Create a 6-part outline with bullets, include sources.”
+- **Draft:** “Bullet draft in my voice (see style card), cite claims.”
+- **Refine:** “Improve clarity/structure, keep voice, preserve citations.”
+- **Tighten:** “Compress by 20%, remove filler, keep numbers/sources.”
+- **Research:** “7 sources with links, summary, bias notes; contradictions list; 200-word synthesis + 5 bullets + 3 questions.”
+- **Decision:** “Options, criteria, table, recommendation, devil’s advocate, 5-step action plan.”
+
+Store these in your notes app or a snippet tool. Adjust wording to your domain.
+
+## Putting It Into Play (Day 1 Checklist)
+
+1) Save the source-first skeleton and fact-check script.
+2) Create a style card (voice, tone, jargon rules).
+3) Choose one task and run the 30-minute loop.
+4) Log time saved and any errors.
+5) Set a calendar reminder for the loop daily.
+
+## Scaling After 2–3 Weeks
+
+- Build a personal prompt library for your tasks (emails, briefs, reports, outreach).
+- Add a retrieval layer if you have internal docs; keep privacy and compliance in mind.
+- Automate small pieces (templates, snippets), but keep human sign-off on facts and commitments.
+- Pair with a peer: share weekly errors and wins to refine prompts faster.
+
+## Iron Compass Links
+
+- [AI Mastery](/domains/ai-mastery)
+- [Discipline & Mindset](/domains/discipline-mindset)
+- [Purpose](/domains/purpose)
+- [Start](/start)
+
+## FAQ
+
+**How do I reduce hallucinations?** Use source-first prompts, demand contradictions, and run the fact-check script. If a claim lacks links, label it tentative or drop it.
+
+**What if AI writes off-tone?** Keep a style card and run a human tone pass. Ask the model to mimic the style card, then polish yourself.
+
+**Can I automate more?** Yes—template your best prompts and add checklists, but keep human verification on facts, numbers, and commitments.
+
+**Which model should I use?** Pick a strong general model for language; pair with retrieval or search when accuracy matters. If you lack retrieval, rely on explicit sources and manual checks.
+
+**How long should the loop take?** Cap at 30 minutes: 10 to plan, 15 to execute, 5 to verify/log. If tasks are larger, split across days but keep the loop.

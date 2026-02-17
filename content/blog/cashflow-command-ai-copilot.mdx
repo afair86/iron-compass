@@ -1,0 +1,183 @@
+---
+title: "Cashflow Command with an AI Copilot"
+description: "Use AI to monitor, model, and adjust your cashflow weekly so you never fly blind in volatile markets."
+date: "2026-02-09"
+category: "Financial Power"
+slug: "cashflow-command-ai-copilot"
+metaTitle: "Cashflow Command AI Copilot"
+metaDescription: "AI-assisted cashflow monitoring and decision loops for men who want financial control."
+keywords: ["cashflow management", "ai finance assistant", "personal runway", "scenario planning", "expense telemetry"]
+updated: "2026-02-09"
+image: "/iron-compass-logo.png"
+---
+
+# Cashflow Command with an AI Copilot
+
+**Value promise:** A weekly AI-assisted loop that keeps your cashflow visible, your runway safe, and your decisions rapid.
+
+- **Related semantic terms:** runway model, scenario planning, expense telemetry
+
+Cashflow slips when visibility lags reality. Bank balances tell you the past; decisions require forward sight. An AI copilot can ingest transaction feeds, surface anomalies, run scenarios, and propose cuts or plays in minutes. This guide gives you a simple stack, a 30-minute weekly council, playbooks for signals, and guardrails for privacy.
+
+## Quick Start Checklist (Same Day)
+
+- Export last 90 days of transactions.
+- Categorize into essentials/growth/optional/debt/taxes.
+- Build a tab for runway (cash / average monthly burn).
+- Paste data into an LLM with the prompt in the "Sample Prompts" section.
+- Schedule your first Cash Council for this week and invite your partner/cofounder.
+
+## Data Hygiene So the Copilot Stays Smart
+
+- Reconcile weekly: clear uncategorized items; confirm subscription amounts.
+- Standardize vendor names (e.g., "Amazon" vs. "AMZN*") to reduce category drift.
+- Separate business and personal spend to avoid muddy signals.
+- Mark one-time expenses clearly so they do not pollute burn rate.
+
+## Automation Sketch (Google Sheets + Apps Script)
+
+- Script pulls transactions daily from an aggregator into a raw tab.
+- A rules sheet maps vendor keywords to categories.
+- A summary sheet rolls up weekly totals, burn, and runway.
+- Apps Script calls an LLM API with the summary to produce a narrative, stored in a "Weekly Briefs" tab and emailed.
+- Alert script watches thresholds (cash < $X, variance > Y%) and sends you a text.
+
+You can later port this to a small Node or Python service if you prefer code, but stay simple until the workflow proves valuable.
+
+## Sample Weekly Brief (LLM Output Example)
+
+"Cash: $42,500. Runway: 4.2 months at $10,200 burn. Variance: software up 22% due to Figma seat increases; travel up $380 (one-off). Two new recurring vendors detected: 'Zaplink' at $29/mo and 'DataCloud' at $89/mo. If you cut optional spend by 15%, runway extends to 5.0 months. If invoices A ($6k) and B ($4k) slip by 30 days, runway drops to 3.5 months. Recommend: cancel Zaplink, negotiate DataCloud, and accelerate invoice A collection." Print or pin this for the council.
+
+## Partner and Team Alignment
+
+- Share the weekly brief with your partner or cofounder. Rotate who runs the council.
+- Set clear spend thresholds: "Under $200 no approval; $200–$1k requires a Slack note; $1k+ requires council approval."
+- Agree on "no surprise" rules: any new subscription must be declared in the council.
+- If you pay contractors, include them in alerts for scope changes that affect invoices.
+
+## Common Mistakes to Avoid
+
+- Relying on credit card float instead of controlling burn.
+- Forgetting tax set-asides. Automate transfers to a tax sub-account every inflow.
+- Ignoring payment terms: extend payables responsibly, shorten receivables aggressively.
+- Over-automating before the workflow is stable—start manual, then automate.
+- Trusting AI blindly: always cross-check summaries and calculations.
+
+## If Things Go Red
+
+- Move to weekly cash forecasting with a 13-week rolling model.
+- Cut optional spend immediately; pause new tools; freeze hiring.
+- Negotiate payment plans with vendors; request early payment from clients in exchange for small discounts.
+- Add a revenue sprint: outbound calls, promotions, or short projects that pay fast.
+- Extend Recovery Floor (from the discipline system) to keep your decision quality high while you fix cash.
+
+## The Visibility Problem
+
+Most personal or small-business budgets are static spreadsheets updated monthly. Meanwhile, subscriptions creep, cards change, revenue swings, and tax obligations surprise you. The delay between spend and awareness kills runway. AI narrows that gap by ingesting live feeds and summarizing what matters: variance, burn rate, and threats to runway.
+
+## The AI Copilot Stack
+
+- **Data intake:** bank and card feeds via a finance aggregator (Plaid, Teller, or your bank’s API). Export CSV if API access is limited.
+- **Ledger:** simple accounting tool or spreadsheet with categories aligned to your life: essentials, growth, optional, debt, taxes.
+- **LLM summarizer:** connects to the ledger to produce weekly summaries: top variances, recurring charges, vendor creep, category drift.
+- **Scenario planner:** a small model (spreadsheet or code) that projects runway given current burn, expected inflows, and planned changes.
+- **Alerts:** rules-based triggers (e.g., any category +20% week-over-week, any new recurring charge, cash below 3 months runway).
+
+You can start no-code: export CSV, drop into a spreadsheet, and paste summaries into an LLM with a standard prompt. As you mature, script it.
+
+## Weekly Cash Council (30 Minutes)
+
+Run this every week, same day, same time. Treat it like a board meeting for your life.
+
+1) **Status (5 minutes):** Cash on hand, committed outflows, expected inflows next 30/60/90 days.
+2) **Variance review (10 minutes):** Top 5 category moves vs. last week and vs. plan. Any surprise vendors? Any missing expected revenue?
+3) **Runway check (5 minutes):** Months of runway at current burn and at trimmed burn (-10%, -20%).
+4) **Decisions (10 minutes):** Cuts to make, plays to fund, collections to chase, price changes, or scope changes. Assign owners and deadlines—even if the owner is you.
+
+Document decisions and the rationale. Next week, review what was executed.
+
+## Playbook: From Signal to Action
+
+- **Spend spike in a category:** freeze new spend in that category for a week; negotiate with vendors; set a cap.
+- **New recurring charge detected:** decide in the council if it stays; if not, cancel immediately and log.
+- **Revenue shortfall:** trigger a "yellow" state—cut discretionary by 15–25%, accelerate receivables, and review pricing.
+- **Runway under 3 months:** trigger "red"—slash optional spend, pause non-essential projects, prioritize cash collection, consider bridge revenue (short sprints, consulting).
+- **Consistent surplus:** allocate to a policy: 50% to runway, 30% to investment, 20% to skill or tool upgrades.
+
+## Building the Scenario Model
+
+Keep it simple: rows for months, columns for inflows and outflows.
+
+- **Inflows:** salary, retainers, project payments, dividends. Include probability and timing (sure, likely, speculative).
+- **Outflows:** fixed (rent, debt), variable (food, utilities), growth (ads, contractors), taxes (set aside %), buffer.
+- **Assumptions:** growth rates, churn, seasonality. Document them so you can adjust.
+- **Outputs:** runway months, cash balance by month, burn rate, and breakeven.
+
+Feed the model with real data weekly. Ask the AI copilot to produce a short narrative: "At current burn, runway is 4.2 months. If you cut growth by 15%, runway extends to 5.1 months. If expected invoices A and B slip by 30 days, runway drops to 3.3 months." Use that to decide.
+
+## Risk and Safety
+
+AI does not remove your responsibility. Protect your data and sanity.
+
+- **Privacy:** use reputable aggregators; store API keys in a vault; do not paste sensitive info into untrusted models.
+- **Backups:** export monthly to CSV/PDF; keep offline copies.
+- **Human review:** scan summaries for hallucinations; cross-check totals with bank statements.
+- **Permissions:** if you work with a partner, define who can spend what without approval. Write it down.
+
+## Implementation: No-Code to Light-Code
+
+**No-Code Start (same day):**
+- Export last 90 days of transactions from your bank.
+- Paste into a spreadsheet with categories.
+- Ask an LLM: "Summarize this spend by category, highlight new recurring charges, and list the top five variances week over week." Copy the summary into your notes.
+- Build a simple runway tab: starting cash minus monthly burn.
+
+**Light-Code Upgrade (weekend):**
+- Use a finance aggregator to pull transactions daily into a Google Sheet via Apps Script.
+- Script category rules (vendor to category mapping). Flag unknowns.
+- Use an LLM API to auto-generate the weekly summary and email it to you before the Cash Council.
+- Add alerting: if cash < threshold or category variance >20%, send a notification.
+
+Link to hubs: [domains/financial-power](domains/financial-power), [domains/ai-mastery](domains/ai-mastery).
+
+## Sample Prompts for Your AI Copilot
+
+- "Given this ledger, summarize top spending variances vs. last week and last month."
+- "List new vendors in the last 30 days and classify them as recurring or one-time."
+- "Model runway if I reduce discretionary spend by 20% and collect invoice X in 15 days instead of 30."
+- "Find duplicate tools or subscriptions and suggest which to consolidate based on category overlap."
+
+## Metrics That Matter
+
+- **Runway months** at current burn and at -20% burn.
+- **Cash conversion cycle**: days from work delivered to cash collected.
+- **Recurring creep**: number of active subscriptions and their total monthly cost.
+- **Burn variance**: weekly and monthly percent change.
+- **Decision velocity**: time from signal to action logged.
+
+## Frequently Asked Questions (FAQ)
+
+**Q1: Do I need coding to set this up?**
+No. Start with exports and an LLM prompt. Add scripts only when you want speed and automation.
+
+**Q2: How often should I reforecast?**
+Weekly for variance and tactical decisions; monthly for strategy. Reforecast immediately when a big expense or revenue shock hits.
+
+**Q3: What is the minimum data I need?**
+Current balances, 90-day history, fixed costs, expected revenue with dates, and tax set-aside percentage.
+
+**Q4: How do I keep my data safe?**
+Use reputable aggregators, store keys in a vault, avoid sharing raw statements with third parties, and cross-check AI summaries against statements.
+
+**Q5: Can AI handle taxes?**
+Use AI for reminders and categorization but confirm with a CPA. Set aside taxes automatically based on your jurisdiction and income type.
+
+**Q6: How do I use this with a partner or cofounder?**
+Share the weekly summary, agree on thresholds for unilateral spending, and rotate who runs the Cash Council each week.
+
+## Internal Links
+
+- [domains/financial-power](domains/financial-power)
+- [domains/ai-mastery](domains/ai-mastery)
+- [start](start)
+
