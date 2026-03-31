@@ -4,6 +4,12 @@ import DomainsSection from "./components/DomainsSection";
 import Subscribe from "./components/Subscribe";
 import Footer from "./components/Footer";
 
+export const metadata = {
+  title: "Iron Compass AI | Discipline, Strength, Leadership for Men",
+  description:
+    "A complete system for men in the US, Europe, and Australia: discipline, strength & health, purpose, leadership, financial power, AI mastery, grief, and legacy.",
+};
+
 export default function HomePage() {
   return (
     <main className="ic-page-shell text-[var(--ic-text-main)]">

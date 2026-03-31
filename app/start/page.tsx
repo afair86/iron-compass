@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Script from "next/script";
 import PageShell from "../components/PageShell";
 
 export const metadata = {
-  title: "Start Your Compass | Iron Compass",
-  description: "Step into the Iron Compass system with a clear plan: choose your domain, set your direction, and build your daily compass.",
+  title: "Start Iron Compass | Discipline, Strength, Leadership for Men",
+  description:
+    "Begin the Iron Compass system for men 30–45 in the US, Europe, and Australia: choose your domain, set targets, and lock daily standards.",
 };
 
 const domains = [
@@ -39,7 +41,7 @@ export default function StartPage() {
         <section className="ic-panel text-center space-y-6">
           <h1 className="ic-section-title">Start Your Compass</h1>
           <p className="ic-section-copy ic-section-copy--muted text-base">
-            This is the first step. Ground yourself, choose your focus, and move with disciplined intent.
+            This is the first step. Ground yourself, choose your focus, and move with disciplined intent—built for men in the US, Europe, and Australia.
           </p>
           <div className="pt-2">
             <Link href="/download" className="ic-btn-primary text-[0.62rem]">
@@ -99,6 +101,76 @@ export default function StartPage() {
             </Link>
           </div>
         </section>
+
+        <section className="ic-panel-outline space-y-4 text-left">
+          <h2 className="ic-section-heading text-center">FAQ</h2>
+          <div className="space-y-3">
+            <div>
+              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Who is Iron Compass for?</h3>
+              <p className="ic-section-copy ic-section-copy--muted text-sm">
+                Men 30–45 (and driven men 18–65) who want discipline, strength, leadership, and financial power—built for the US, Europe, and Australia.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Do I need the app to start?</h3>
+              <p className="ic-section-copy ic-section-copy--muted text-sm">
+                You can begin with the domain playbooks and daily standards here. The app adds tracking, reviews, and AI prompts when you’re ready.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Which domain should I pick first?</h3>
+              <p className="ic-section-copy ic-section-copy--muted text-sm">
+                Start where the pain is highest: discipline/mindset, strength & health, or financial power. Choose one, build a win, then expand.
+              </p>
+            </div>
+          </div>
+          <div className="ic-cta-row pt-1">
+            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
+              Explore Domains
+            </Link>
+            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
+              Read the Journal
+            </Link>
+          </div>
+        </section>
+
+        <Script
+          id="start-faq-ld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Who is Iron Compass for?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Men 30–45 (and driven men 18–65) who want discipline, strength, leadership, and financial power—built for the US, Europe, and Australia.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Do I need the app to start?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "You can begin with the domain playbooks and daily standards here. The app adds tracking, reviews, and AI prompts when you’re ready.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Which domain should I pick first?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Start where the pain is highest: discipline/mindset, strength & health, or financial power. Choose one, build a win, then expand.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </div>
     </PageShell>
   );

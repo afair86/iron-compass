@@ -320,4 +320,36 @@
     mix-blend-mode: screen;
     pointer-events: none;
   }
+
+  .ic-underline-headings h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.35rem;
+  }
+
+  .ic-underline-headings h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #00c8ff, rgba(0, 200, 255, 0.2));
+    box-shadow: 0 0 18px rgba(0, 200, 255, 0.45);
+  }
+
+  .ic-underline-headings p,
+  .ic-underline-headings li {
+    line-height: 1.7;
+  }
+
+  @media (max-width: 640px) {
+    .ic-underline-headings {
+      gap: 1.5rem;
+    }
+
+    .ic-underline-headings h2 {
+      padding-bottom: 0.28rem;
+    }
+  }
 }

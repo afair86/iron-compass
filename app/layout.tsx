@@ -21,8 +21,8 @@ const inter = Inter({
 });
 
 // SEO metadata for the site
-const siteTitle = 'Iron Compass';
-const siteDescription = 'Rise Beyond Limits – Iron Compass: A life system for men.';
+const siteTitle = 'Iron Compass AI | Discipline, Strength, Leadership for Men';
+const siteDescription = 'A modern life system for men 30-45: discipline, strength & health, leadership, purpose, money, and AI leverage—built for the US, Europe, and Australia.';
 const siteUrl = 'https://ironcompassai.com';
 const defaultOgImage = `${siteUrl}/iron-compass-logo.png`;
 

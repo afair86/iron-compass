@@ -95,8 +95,8 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
     ],
     companionLink: { label: "Discipline & Mindset", href: "/domains/discipline-mindset", description: "Structure for your physical standards." },
     seo: {
-      title: "Strength & Health | Iron Compass AI",
-      description: "Build capacity, energy, and long-term resilience so your body stays reliable under every load.",
+      title: "Strength & Health for Men | Iron Compass AI",
+      description: "For men 30–45 in the US, Europe, Australia, and NZ building capacity, energy, and resilience that stays reliable under load.",
     },
   },
   "discipline-mindset": {
@@ -139,8 +139,8 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
     ],
     companionLink: { label: "Strength & Health", href: "/domains/health", description: "Use discipline to protect the body." },
     seo: {
-      title: "Discipline & Mindset | Iron Compass AI",
-      description: "Master structured habits, narrative control, and relentless follow-through so every other domain stays alive.",
+      title: "Discipline & Mindset for Men | Iron Compass AI",
+      description: "Structured habits and narrative control for men 30–45 in the US, Europe, Australia, and NZ to keep every promise alive.",
     },
   },
   "purpose-direction": {
@@ -183,8 +183,8 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
     ],
     companionLink: { label: "Identity & Legacy", href: "/domains/identity-legacy", description: "Aim from who you are." },
     seo: {
-      title: "Purpose & Direction | Iron Compass AI",
-      description: "Choose a mission worth suffering for and build the reviews, targets, and cadence to keep moving when motivation dies.",
+      title: "Purpose & Direction for Men | Iron Compass AI",
+      description: "For men 30–45 in the US, Europe, Australia, and NZ choosing a mission and the cadence to keep moving when motivation dies.",
     },
   },
   "leadership-character": {
@@ -227,8 +227,8 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
     ],
     companionLink: { label: "Strength & Health", href: "/domains/health", description: "Authority needs capability." },
     seo: {
-      title: "Leadership & Character | Iron Compass AI",
-      description: "Forge calm authority, decisive communication, and the standards that make men trust you when everything tilts.",
+      title: "Leadership & Character for Men | Iron Compass AI",
+      description: "For men 30–45 in the US, Europe, Australia, and NZ forging calm authority, decisive communication, and trusted standards under pressure.",
     },
   },
   "financial-power": {
@@ -271,8 +271,8 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
     ],
     companionLink: { label: "Discipline & Mindset", href: "/domains/discipline-mindset", description: "Behaviour drives wealth." },
     seo: {
-      title: "Financial Power | Iron Compass AI",
-      description: "Replace money stress with structure, skill, and long-term offense so your mission never starves.",
+      title: "Financial Power for Men | Iron Compass AI",
+      description: "For men 30–45 in the US, Europe, Australia, and NZ replacing money stress with structure, skill, and long-term offense.",
     },
   },
   "ai-mastery": {
@@ -315,8 +315,8 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
     ],
     companionLink: { label: "Purpose & Direction", href: "/domains/purpose-direction", description: "Aim your automation." },
     seo: {
-      title: "AI Mastery & Life Optimization | Iron Compass AI",
-      description: "Leverage AI for planning, operations, and creative output without losing the standards that keep you lethal.",
+      title: "AI Mastery & Life Optimization for Men | Iron Compass AI",
+      description: "For men 30–45 in the US, Europe, Australia, and NZ pairing aggression with automation without losing the standards that keep you lethal.",
     },
   },
   "grief-honour": {
@@ -359,8 +359,8 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
     ],
     companionLink: { label: "Discipline & Mindset", href: "/domains/discipline-mindset", description: "Use structure while you heal." },
     seo: {
-      title: "Grief & Honour | Iron Compass AI",
-      description: "Stabilise during loss, honour what mattered, and rebuild direction with structure instead of chaos.",
+      title: "Grief & Honour for Men | Iron Compass AI",
+      description: "For men 30–45 in the US, Europe, Australia, and NZ stabilising during loss, honouring what mattered, and rebuilding direction with structure.",
     },
   },
   "identity-legacy": {
@@ -403,8 +403,8 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
     ],
     companionLink: { label: "Purpose & Direction", href: "/domains/purpose-direction", description: "Identity informs your mission." },
     seo: {
-      title: "Identity & Legacy | Iron Compass AI",
-      description: "Choose principles, roles, and standards that withstand pressure so your name carries weight for decades.",
+      title: "Identity & Legacy for Men | Iron Compass AI",
+      description: "For men 30–45 in the US, Europe, Australia, and NZ choosing principles, roles, and standards that withstand pressure so your name carries weight.",
     },
   },
 };

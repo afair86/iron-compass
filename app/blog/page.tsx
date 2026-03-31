@@ -1,14 +1,32 @@
 import Link from "next/link";
+import Script from "next/script";
 import PageShell from "../components/PageShell";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
 import { getAllPosts, type PostMeta } from "@/lib/blog";
 
+const siteUrl = "https://ironcompassai.com";
+const pageUrl = `${siteUrl}/blog`;
+const pageTitle = "Iron Compass Journal";
+const pageDescription = "SEO-rich guides for disciplined men: structure, purpose, leadership, money, and leverage.";
+const defaultOgImage = `${siteUrl}/iron-compass-logo.png`;
+
 export const metadata = {
-  title: "Iron Compass Journal",
-  description: "SEO-rich guides for disciplined men: structure, purpose, leadership, money, and leverage.",
+  title: pageTitle,
+  description: pageDescription,
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Iron Compass Journal",
+    title: pageTitle,
     description: "Actionable articles on discipline, purpose, strength, money, leadership, and AI leverage.",
+    url: pageUrl,
+    siteName: "Iron Compass AI",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [defaultOgImage],
   },
 };
 
@@ -44,10 +62,27 @@ export default function BlogPage() {
   const [feature, ...rest] = posts;
   const latest = rest.slice(0, 3);
   const archive = rest.slice(3);
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: posts.map((post, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${siteUrl}/blog/${post.slug}`,
+      name: post.title,
+      description: getSummary(post),
+    })),
+  };
 
   return (
     <PageShell>
       <PageContainer>
+        <Script
+          id="ld-blog-itemlist"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        />
         <SectionShell variant="hero" className="space-y-6 text-left">
           <p className="ic-eyebrow">Iron Compass Journal</p>
           <div className="grid gap-6 lg:grid-cols-[1.4fr,1fr] items-start">

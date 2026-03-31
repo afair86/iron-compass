@@ -134,6 +134,8 @@ export default async function BlogPostPage({ params }: Props) {
     dateModified,
     mainEntityOfPage: canonical,
     url: canonical,
+    articleSection: post.meta.category ?? "Dispatch",
+    inLanguage: "en",
     author: {
       "@type": "Organization",
       name: "Iron Compass",
@@ -148,6 +150,16 @@ export default async function BlogPostPage({ params }: Props) {
       },
     },
     image: ogImage,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+      { "@type": "ListItem", position: 3, name: post.meta.title, item: canonical },
+    ],
   };
 
   return (
@@ -176,6 +188,12 @@ export default async function BlogPostPage({ params }: Props) {
             type="application/ld+json"
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+          />
+          <Script
+            id={`breadcrumb-${post.meta.slug ?? slug}`}
+            type="application/ld+json"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
           />
           <article className="prose prose-lg leading-relaxed space-y-6 prose-invert prose-strong:text-white prose-headings:text-white prose-headings:mt-8 prose-headings:mb-3 prose-a:text-white/90 prose-p:mt-0 prose-li:mt-1 max-w-none">
             <MDXRemote
