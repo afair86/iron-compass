@@ -3,32 +3,19 @@ import Script from "next/script";
 import PageShell from "../components/PageShell";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
 import { getAllPosts, type PostMeta } from "@/lib/blog";
+import { absoluteUrl, buildPageMetadata, DEFAULT_OG_IMAGE } from "@/lib/site";
 
-const siteUrl = "https://ironcompassai.com";
-const pageUrl = `${siteUrl}/blog`;
 const pageTitle = "Iron Compass Journal";
 const pageDescription = "SEO-rich guides for disciplined men: structure, purpose, leadership, money, and leverage.";
-const defaultOgImage = `${siteUrl}/iron-compass-logo.png`;
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: pageTitle,
   description: pageDescription,
-  metadataBase: new URL(siteUrl),
-  alternates: { canonical: pageUrl },
+  path: "/blog",
   openGraph: {
-    title: pageTitle,
     description: "Actionable articles on discipline, purpose, strength, money, leadership, and AI leverage.",
-    url: pageUrl,
-    siteName: "Iron Compass AI",
-    images: [defaultOgImage],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [defaultOgImage],
-  },
-};
+});
 
 const summaryFallbacks: Record<string, string> = {
   "why-most-men-fail-at-discipline": "Most men fail because they run on motivation, not structure. Learn the corrective systems.",
@@ -42,10 +29,11 @@ const summaryFallbacks: Record<string, string> = {
   "small-team-leadership-cadence": "Run a 3–12 person team with standards, weekly cadence, and crisp feedback loops.",
   "cash-defense-and-offense": "An eight-week sprint to tighten burn, add revenue, and automate the basics for financial control.",
   "discipline-under-fire-holding-the-line": "Keep your standards alive during chaos with survive/standard/surge days and anchor scripts.",
-  "minimalist-strength-for-busy-operators": "Three sessions, zero fluff, and recovery floors to stay strong when your calendar is packed.",
   "command-calm-after-action-leadership": "A 20-minute after-action ritual that turns mistakes into trust and calm authority.",
-  "cash-buffer-warfare": "Six-week sprint to build a real cash buffer, kill leaks, and calm your money decisions.",
   "operator-ai-copilot-daily-loop": "Map your daily loop, deploy AI on the grunt work, and keep human judgment in command.",
+  "strength-without-extra-time": "Three sessions, zero fluff, and recovery floors to stay strong when your calendar is packed.",
+  "financial-resilience-protocol": "Weekly cash flow clarity, buffer protection, and low-risk money decisions.",
+  "quiet-discipline-protocol-busy-men": "One daily standard, one weekly review — discipline that fits a loaded calendar.",
 };
 
 function formatDate(value: string) {
@@ -68,7 +56,7 @@ export default function BlogPage() {
     itemListElement: posts.map((post, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `${siteUrl}/blog/${post.slug}`,
+      url: absoluteUrl(`/blog/${post.slug}`),
       name: post.title,
       description: getSummary(post),
     })),

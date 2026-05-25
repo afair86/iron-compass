@@ -1,9 +1,11 @@
 import PageShell from "../components/PageShell";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Privacy Policy | Iron Compass",
   description: "Understand how Iron Compass collects, uses, and safeguards your information across the platform.",
-};
+  path: "/privacy",
+});
 
 const highlights = [
   {

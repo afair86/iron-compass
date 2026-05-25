@@ -3,12 +3,14 @@ import PageShell from "../components/PageShell";
 import DomainCard from "../components/DomainCard";
 import { domainCards } from "../components/DomainsSection";
 import { HeadingStack, PageContainer, SectionShell } from "../components/LayoutPrimitives";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "The Eight Domains of Iron Compass",
   description:
     "Overview of the eight domains required for a complete, disciplined life: Strength & Health, Discipline & Mindset, Purpose & Direction, Leadership & Character, Financial Power, AI Mastery & Life Optimization, Grief & Honour, and Identity & Legacy.",
-};
+  path: "/domains",
+});
 
 export default function DomainsPage() {
   return (

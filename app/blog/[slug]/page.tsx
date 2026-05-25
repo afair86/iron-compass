@@ -1,16 +1,14 @@
 
-import { getPostBySlug, getAllPosts } from "@/lib/blog";
+import { getPostBySlug, getAllPosts, extractFaqFromMarkdown } from "@/lib/blog";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import Script from "next/script";
 import PageShell from "@/app/components/PageShell";
 import { PageContainer, SectionShell } from "@/app/components/LayoutPrimitives";
 import type { Metadata } from "next";
+import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_URL } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
-
-const siteUrl = "https://ironcompassai.com";
-const defaultOgImage = `${siteUrl}/iron-compass-logo.png`;
 
 function extractDescription(markdown: string, fallback = "") {
   const paragraphs = markdown
@@ -45,8 +43,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     post.meta.metaDescription || post.meta.description || extractDescription(post.content, post.meta.title);
   const description = baseDescription.length > 155 ? `${baseDescription.slice(0, 152).trim()}...` : baseDescription;
   const title = post.meta.metaTitle || post.meta.title;
-  const ogImage = post.meta.image || defaultOgImage;
-  const canonical = `${siteUrl}/blog/${slug}`;
+  const ogImage = post.meta.image || DEFAULT_OG_IMAGE;
+  const canonical = absoluteUrl(`/blog/${slug}`);
   return {
     title,
     description,
@@ -97,33 +95,27 @@ export default async function BlogPostPage({ params }: Props) {
   const articleDescription = fallbackDescription.length > 155
     ? `${fallbackDescription.slice(0, 152).trim()}...`
     : fallbackDescription;
-  const canonical = `${siteUrl}/blog/${slug}`;
-  const ogImage = post.meta.image || defaultOgImage;
+  const canonical = absoluteUrl(`/blog/${slug}`);
+  const ogImage = post.meta.image || DEFAULT_OG_IMAGE;
   const datePublished = post.meta.date;
   const dateModified = post.meta.updated || post.meta.date;
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: `What is ${post.meta.title} about?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: fallbackDescription,
-        },
-      },
-      {
-        "@type": "Question",
-        name: `How do I apply ${post.meta.title} this week?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Read the post, pick one action, schedule it this week, and tie it to a daily anchor so compliance is binary.",
-        },
-      },
-    ],
-  };
+  const faqEntries = extractFaqFromMarkdown(post.content);
+  const faqSchema =
+    faqEntries.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqEntries.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -139,14 +131,14 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       "@type": "Organization",
       name: "Iron Compass",
-      url: siteUrl,
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
       name: "Iron Compass",
       logo: {
         "@type": "ImageObject",
-        url: defaultOgImage,
+        url: DEFAULT_OG_IMAGE,
       },
     },
     image: ogImage,
@@ -156,8 +148,8 @@ export default async function BlogPostPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl("/blog") },
       { "@type": "ListItem", position: 3, name: post.meta.title, item: canonical },
     ],
   };
@@ -177,12 +169,14 @@ export default async function BlogPostPage({ params }: Props) {
         </SectionShell>
 
         <SectionShell variant="panel" className="space-y-8 text-left">
-          <Script
-            id={`faq-${post.meta.slug ?? slug}`}
-            type="application/ld+json"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-          />
+          {faqSchema ? (
+            <Script
+              id={`faq-${post.meta.slug ?? slug}`}
+              type="application/ld+json"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+          ) : null}
           <Script
             id={`article-${post.meta.slug ?? slug}`}
             type="application/ld+json"

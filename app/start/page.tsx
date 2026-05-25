@@ -1,23 +1,17 @@
 import Link from "next/link";
 import Script from "next/script";
 import PageShell from "../components/PageShell";
+import { buildPageMetadata } from "@/lib/site";
+import { domainNavLinks } from "@/lib/domains";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Start Iron Compass | Discipline, Strength, Leadership for Men",
   description:
     "Begin the Iron Compass system for men 30–45 in the US, Europe, and Australia: choose your domain, set targets, and lock daily standards.",
-};
+  path: "/start",
+});
 
-const domains = [
-  { label: "Strength & Health", href: "/domains/health" },
-  { label: "Discipline & Mindset", href: "/domains/discipline-mindset" },
-  { label: "Purpose & Direction", href: "/domains/purpose-direction" },
-  { label: "Leadership & Character", href: "/domains/leadership-character" },
-  { label: "Financial Power", href: "/domains/financial-power" },
-  { label: "AI Mastery & Life Optimization", href: "/domains/ai-mastery" },
-  { label: "Grief & Honour", href: "/domains/grief-honour" },
-  { label: "Identity & Legacy", href: "/domains/identity-legacy" },
-];
+const domains = domainNavLinks;
 
 export default function StartPage() {
   const steps = [

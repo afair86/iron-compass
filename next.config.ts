@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
+import { BLOG_CANONICAL_REDIRECTS } from "./lib/blog";
+import { DOMAIN_ALIAS_REDIRECTS } from "./lib/site";
+
+const blogRedirects = Object.entries(BLOG_CANONICAL_REDIRECTS).map(([source, destination]) => ({
+  source: `/blog/${source}`,
+  destination: `/blog/${destination}`,
+  permanent: true,
+}));
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  redirects: async () => [...DOMAIN_ALIAS_REDIRECTS, ...blogRedirects],
 };
 
 export default nextConfig;

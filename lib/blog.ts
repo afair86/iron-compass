@@ -23,6 +23,27 @@ export type PostMeta = {
 // Directory where blog posts are stored
 const postsDirectory = path.join(process.cwd(), 'content', 'blog');
 
+/** Slugs excluded from production blog index and static generation */
+const EXCLUDED_SLUGS = new Set(["_template", "sample-post", "hello-world"]);
+
+/**
+ * Near-duplicate posts that 301 to a canonical slug.
+ * Kept out of sitemap, blog index, and static generation.
+ */
+export const BLOG_CANONICAL_REDIRECTS: Record<string, string> = {
+  "cash-buffer-system": "financial-resilience-protocol",
+  "cash-buffer-ladder": "financial-resilience-protocol",
+  "cash-buffer-warfare": "financial-resilience-protocol",
+  "minimalist-strength-protocol": "strength-without-extra-time",
+  "minimalist-strength-stack": "strength-without-extra-time",
+  "minimalist-strength-for-busy-operators": "strength-without-extra-time",
+  "quiet-discipline-reset": "quiet-discipline-protocol-busy-men",
+  "ai-operator-daily-loop": "operator-ai-copilot-daily-loop",
+  "ai-operators-daily-standup": "operator-ai-copilot-daily-loop",
+};
+
+const REDIRECTED_SLUGS = new Set(Object.keys(BLOG_CANONICAL_REDIRECTS));
+
 /**
  * Reads all .mdx files in /content/blog, parses their frontmatter,
  * and returns an array of PostMeta sorted by date (newest first).
@@ -37,6 +58,7 @@ export function getAllPosts(): PostMeta[] {
   // Map each file to its PostMeta, filter out posts with missing title or date
   const posts = mdxFiles.map((fileName) => {
     const slug = fileName.replace(/\.mdx$/, '');
+    if (EXCLUDED_SLUGS.has(slug) || REDIRECTED_SLUGS.has(slug)) return undefined;
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(fileContents);
@@ -87,4 +109,31 @@ export function getPostBySlug(slug: string): { meta: PostMeta; content: string }
   if (data.updated) meta.updated = data.updated;
   if (data.image) meta.image = data.image;
   return { meta, content };
+}
+
+export type FaqEntry = {
+  question: string;
+  answer: string;
+};
+
+/** Extracts real FAQ pairs from a ## FAQ section in MDX content */
+export function extractFaqFromMarkdown(markdown: string): FaqEntry[] {
+  const faqMatch = markdown.match(/^## FAQ\s*\n([\s\S]*?)(?=\n## |\n<script|<script|$)/m);
+  if (!faqMatch) return [];
+
+  const faqSection = faqMatch[1];
+  const blocks = faqSection.split(/\n(?=\*\*)/).filter(Boolean);
+  const faqs: FaqEntry[] = [];
+
+  for (const block of blocks) {
+    const qMatch = block.match(/^\*\*(.+?)\*\*\s*\n([\s\S]+)/);
+    if (qMatch) {
+      const answer = qMatch[2].trim();
+      if (answer) {
+        faqs.push({ question: qMatch[1].trim(), answer });
+      }
+    }
+  }
+
+  return faqs;
 }

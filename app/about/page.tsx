@@ -1,12 +1,14 @@
 import Link from "next/link";
 import PageShell from "../components/PageShell";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "About Iron Compass",
   description:
     "Learn about the Iron Compass philosophy—a complete life system for men built on discipline, purpose, strength, and integrity. Discover who it is for, why it exists, and the core values that set it apart.",
-};
+  path: "/about",
+});
 
 const pillars = [
   "Discipline over motivation—minimums fire daily.",

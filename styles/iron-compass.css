@@ -203,26 +203,6 @@
   text-shadow: 0 0 18px rgba(255, 52, 52, 0.65), 0 0 36px rgba(255, 52, 52, 0.45);
 }
 
-.ic-cta-glow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 3rem;
-  border-radius: 999px;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-weight: 700;
-  border: none;
-  color: #fff;
-  background: linear-gradient(120deg, #ff2a2a, #ff3434 55%, #ff5858 100%);
-  box-shadow: 0 18px 35px rgba(255, 52, 52, 0.5), 0 0 25px rgba(255, 52, 52, 0.45);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-
-.ic-cta-glow:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 24px 45px rgba(255, 52, 52, 0.6), 0 0 32px rgba(255, 52, 52, 0.55);
-}
 
 .ic-pill-link {
   display: inline-flex;

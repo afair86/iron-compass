@@ -1,11 +1,13 @@
 import Link from "next/link";
 import ArticleLayout from "../components/ArticleLayout";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Grief for Men: Holding Pain Without Falling Apart",
   description:
     "A grounded, masculine guide for men facing grief. Learn how to carry pain with strength, clarity, and purpose — without collapsing or suppressing what matters.",
-};
+  path: "/articles/grief-for-men",
+});
 
 const traps = [
   { title: "Isolation", body: "You build walls no one can climb, then forget how to let anyone through." },
@@ -42,6 +44,7 @@ export default function ArticlePage() {
     <ArticleLayout
       title="Grief for Men: Holding Pain Without Falling Apart"
       intro="Most men carry grief in silence. Not because they are cold, but because they feel responsible for family, role, and identity. This guide is for the man trying to stay functional while something inside him is collapsing."
+      path="/articles/grief-for-men"
     >
       <section className="ic-panel-outline space-y-4 text-center">
         <h2 className="ic-section-heading">How Men Experience Grief Differently</h2>

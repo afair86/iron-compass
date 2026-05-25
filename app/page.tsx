@@ -2,13 +2,14 @@ import Link from "next/link";
 import Hero from "./components/Hero";
 import DomainsSection from "./components/DomainsSection";
 import Subscribe from "./components/Subscribe";
-import Footer from "./components/Footer";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Iron Compass AI | Discipline, Strength, Leadership for Men",
   description:
     "A complete system for men in the US, Europe, and Australia: discipline, strength & health, purpose, leadership, financial power, AI mastery, grief, and legacy.",
-};
+  path: "/",
+});
 
 export default function HomePage() {
   return (
@@ -20,14 +21,16 @@ export default function HomePage() {
         <div className="ic-philosophy-card max-w-4xl mx-auto text-center space-y-6">
           <h2 className="ic-home-heading text-[clamp(2rem,4vw,3rem)] tracking-[0.16em]">The Iron Compass Philosophy</h2>
           <p className="ic-section-copy text-center mx-auto">
-            At Iron Compass, we believe every man is called to rise above mediocrity. Our system is built on timeless principles—discipline,
-            strength, purpose, and integrity—combined with modern tools for a rapidly changing world.
+            Iron Compass is a life operating system for men who are done negotiating with their own standards. Discipline, strength,
+            purpose, leadership, money, and leverage — held together by structure you can run on a bad day.
           </p>
           <p className="ic-section-copy text-center mx-auto">
-            We guide you to lead yourself and others, to build unshakeable character, and to achieve financial and personal freedom. With AI
-            mastery and optimization, you&rsquo;ll unlock new levels of performance and fulfillment.
+            The website sets the framework. The app and toolkit handle execution — daily anchors, reviews, and proof that your
+            behaviour matches what you claim to stand for.
           </p>
-          <p className="ic-section-copy text-center mx-auto">This is more than self-improvement. It&rsquo;s a brotherhood, a mission, and a way of life.</p>
+          <p className="ic-section-copy text-center mx-auto">
+            No manifestos. No motivation loops. Just clear domains, practical standards, and the work of becoming reliable.
+          </p>
         </div>
       </section>
 
@@ -47,13 +50,12 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="text-sm text-[var(--ic-text-muted)] tracking-[0.1em]">
-            Trusted by 18,000+ men rebuilding disciplined lives since 2025.
+            Built for men who want structure without noise.
           </p>
         </div>
       </section>
 
       <Subscribe />
-      <Footer />
     </main>
   );
 }

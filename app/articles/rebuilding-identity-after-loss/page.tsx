@@ -1,11 +1,13 @@
 import Link from "next/link";
 import ArticleLayout from "../components/ArticleLayout";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Rebuilding Identity After Loss",
   description:
     "Loss can break a man’s identity. Here’s how to rebuild yourself with discipline, direction, and masculine structure — without losing who you are in the process.",
-};
+  path: "/articles/rebuilding-identity-after-loss",
+});
 
 const breakPoints = [
   {
@@ -51,6 +53,7 @@ export default function ArticlePage() {
     <ArticleLayout
       title="Rebuilding Identity After Loss"
       intro="Loss doesn’t just hurt—it disorients. Men grieve the person and the version of themselves that existed with them. This is the side of grief no one talks about."
+      path="/articles/rebuilding-identity-after-loss"
     >
       <section className="ic-panel-outline space-y-4 text-center">
         <h2 className="ic-section-heading">Why Loss Hits a Man’s Identity Harder</h2>

@@ -1,11 +1,13 @@
 import Link from "next/link";
 import ArticleLayout from "../components/ArticleLayout";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Stoic Grief: Strength Through Loss",
   description:
     "A modern, masculine interpretation of Stoic grief. Learn how to face loss with clarity, discipline, and controlled emotional strength — without collapsing or turning bitter.",
-};
+  path: "/articles/stoic-grief-strength-through-loss",
+});
 
 const tools = [
   {
@@ -35,6 +37,7 @@ export default function ArticlePage() {
     <ArticleLayout
       title="Stoic Grief: Strength Through Loss"
       intro="Grief breaks most men because they were never given a masculine framework for pain. Stoicism offers power without collapse—facing reality directly and choosing a disciplined response."
+      path="/articles/stoic-grief-strength-through-loss"
     >
       <section className="ic-panel-outline space-y-4 text-center">
         <h2 className="ic-section-heading">What Stoicism Actually Says About Grief</h2>

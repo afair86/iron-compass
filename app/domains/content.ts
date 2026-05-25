@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { absoluteUrl, DOMAIN_SOCIAL_IMAGE } from "@/lib/site";
 
 export type DomainSlug =
   | "health"
@@ -41,8 +42,7 @@ export type DomainContent = {
   };
 };
 
-const SOCIAL_IMAGE = "https://ironcompass.ai/social/domain-card.png";
-const HERO_SOCIAL_PROOF = "Trusted by 18,000+ men rebuilding disciplined lives since 2025.";
+const SOCIAL_IMAGE = DOMAIN_SOCIAL_IMAGE;
 
 const socialProof = {
   health: "Built to keep thousands of men capable under pressure.",
@@ -106,7 +106,7 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
     heroTagline: "The operating system that keeps every promise alive.",
     description:
       "Discipline is reliable action on schedule. Mindset is the story that keeps you from drifting when life tilts. Together they are the operating system men use to hold the line no matter how chaotic the week becomes.",
-    socialProof: HERO_SOCIAL_PROOF,
+    socialProof: socialProof.discipline,
     callout: "Structure beats mood every single day.",
     builds: [
       "Daily anchors that fire even when tired",
@@ -326,7 +326,7 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
     heroTagline: "Carry loss with structure, ritual, and forward motion.",
     description:
       "Grief proves something mattered. Honour turns that pain into responsibility instead of destruction. This domain stabilises the body, creates rituals, and restores forward motion so suffering builds legacy instead of collapse.",
-    socialProof: HERO_SOCIAL_PROOF,
+    socialProof: socialProof.grief,
     callout: "Pain will visit. Decide what it builds.",
     builds: [
       "Stability protocols that keep you functional",
@@ -410,13 +410,17 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
 };
 
 export function buildDomainMetadata(content: DomainContent): Metadata {
+  const path = `/domains/${content.slug}`;
+  const canonical = absoluteUrl(path);
+
   return {
     title: content.seo.title,
     description: content.seo.description,
+    alternates: { canonical },
     openGraph: {
       title: content.seo.title,
       description: content.seo.description,
-      url: `https://ironcompass.ai/domains/${content.slug}`,
+      url: canonical,
       siteName: "Iron Compass",
       images: [
         {

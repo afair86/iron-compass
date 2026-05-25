@@ -1,11 +1,13 @@
 import Link from "next/link";
 import ArticleLayout from "../components/ArticleLayout";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Rebuilding After Divorce (For Men)",
   description:
     "A grounded guide for men rebuilding their life after divorce. Regain discipline, identity, confidence, and direction without falling into the traps that break most men.",
-};
+  path: "/articles/rebuilding-after-divorce-for-men",
+});
 
 const phases = [
   {
@@ -67,6 +69,7 @@ export default function ArticlePage() {
     <ArticleLayout
       title="Rebuilding After Divorce (For Men)"
       intro="Divorce wrecks identity, not just routine. You lose structure, confidence, and the version of yourself that existed in that relationship. Now you stand in the wreckage asking, ‘Who am I now?’"
+      path="/articles/rebuilding-after-divorce-for-men"
     >
       <section className="ic-panel-outline space-y-4 text-center">
         <h2 className="ic-section-heading">Why Divorce Hits Men Differently</h2>

@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Oswald, Inter } from "next/font/google";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
 
 // Font setup
 const oswald = Oswald({
@@ -21,28 +23,27 @@ const inter = Inter({
 });
 
 // SEO metadata for the site
-const siteTitle = 'Iron Compass AI | Discipline, Strength, Leadership for Men';
+const siteTitle = `${SITE_NAME} | Discipline, Strength, Leadership for Men`;
 const siteDescription = 'A modern life system for men 30-45: discipline, strength & health, leadership, purpose, money, and AI leverage—built for the US, Europe, and Australia.';
-const siteUrl = 'https://ironcompassai.com';
-const defaultOgImage = `${siteUrl}/iron-compass-logo.png`;
 
 export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: SITE_URL },
   openGraph: {
     title: siteTitle,
     description: siteDescription,
-    url: siteUrl,
+    url: SITE_URL,
     siteName: siteTitle,
     type: 'website',
-    images: [defaultOgImage],
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteTitle,
     description: siteDescription,
-    images: [defaultOgImage],
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 
@@ -65,19 +66,14 @@ export default function RootLayout({
                 {
                   "@type": "WebSite",
                   name: siteTitle,
-                  url: siteUrl,
+                  url: SITE_URL,
                   description: siteDescription,
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target: `${siteUrl}/blog?q={search_term_string}`,
-                    "query-input": "required name=search_term_string",
-                  },
                 },
                 {
                   "@type": "Organization",
                   name: siteTitle,
-                  url: siteUrl,
-                  logo: defaultOgImage,
+                  url: SITE_URL,
+                  logo: DEFAULT_OG_IMAGE,
                 },
               ],
             }),
@@ -85,6 +81,7 @@ export default function RootLayout({
         />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,11 +1,15 @@
 // LEGACY PLACEHOLDER: this route has been neutralised and will be rebuilt using the new Iron Compass Tailwind design system.
-export const metadata = {
+import Link from "next/link";
+import PageShell from "../components/PageShell";
+import { buildPageMetadata } from "@/lib/site";
+
+export const metadata = buildPageMetadata({
   title: "Iron Compass Toolkits",
   description:
     "Digital toolkits and systems to help men build discipline, strength, purpose, and leadership. Calm, trustworthy, and built for long-term growth.",
-};
-import Link from "next/link";
-import PageShell from "../components/PageShell";
+  path: "/products",
+  robots: { index: false, follow: true },
+});
 
 export default function ProductsPage() {
   return (

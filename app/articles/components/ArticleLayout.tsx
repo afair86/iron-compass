@@ -1,15 +1,18 @@
 import type { PropsWithChildren } from "react";
 import PageShell from "@/app/components/PageShell";
+import ArticleSchema from "./ArticleSchema";
 
 interface ArticleLayoutProps extends PropsWithChildren {
   eyebrow?: string;
   title: string;
   intro: string;
+  path: string;
 }
 
-export default function ArticleLayout({ eyebrow = "Iron Compass Articles", title, intro, children }: ArticleLayoutProps) {
+export default function ArticleLayout({ eyebrow = "Iron Compass Articles", title, intro, path, children }: ArticleLayoutProps) {
   return (
     <PageShell className="bg-[var(--ic-page-bg-alt)]">
+      <ArticleSchema title={title} description={intro} path={path} />
       <article className="ic-content-stack ic-content-wide px-4 py-16 space-y-10 text-[var(--ic-text-main)]">
         <header className="ic-panel ic-panel--hero ic-panel--glow text-center space-y-4">
           {eyebrow ? <p className="ic-eyebrow">{eyebrow}</p> : null}

@@ -1,11 +1,14 @@
 // LEGACY PLACEHOLDER: this route has been neutralised and will be rebuilt using the new Iron Compass Tailwind design system.
 import Link from "next/link";
 import PageShell from "../components/PageShell";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Iron Compass Daily (Legacy)",
   description: "A focused daily compass that keeps your actions aligned with the man you are becoming. Simple structure, zero fluff.",
-};
+  path: "/daily",
+  robots: { index: false, follow: true },
+});
 
 export default function Page() {
   return (

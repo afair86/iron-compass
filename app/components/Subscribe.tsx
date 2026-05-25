@@ -8,7 +8,7 @@ export default function Subscribe() {
         <p className="text-lg max-w-2xl mx-auto">Weekly signal. Tactical training. Ironclad accountability.</p>
         <div className="ic-neon-divider" />
         <div className="w-full max-w-2xl mx-auto">
-          <EmailCaptureForm />
+          <EmailCaptureForm source="homepage-challenge" buttonLabel="Join the List" />
         </div>
         <p className="text-sm text-[var(--ic-text-muted)]">Zero fluff. All force.</p>
       </div>

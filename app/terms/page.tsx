@@ -1,9 +1,11 @@
 import PageShell from "../components/PageShell";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Terms of Use | Iron Compass",
   description: "Review the rules that govern your access to the Iron Compass platform, content, and services.",
-};
+  path: "/terms",
+});
 
 const sections = [
   {

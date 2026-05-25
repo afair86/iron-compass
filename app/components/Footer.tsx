@@ -1,15 +1,5 @@
 import Link from "next/link";
-
-const domainLinks = [
-  { href: "/domains/health", label: "Strength & Health" },
-  { href: "/domains/discipline-mindset", label: "Discipline & Mindset" },
-  { href: "/domains/purpose-direction", label: "Purpose & Direction" },
-  { href: "/domains/leadership-character", label: "Leadership & Character" },
-  { href: "/domains/financial-power", label: "Financial Power" },
-  { href: "/domains/ai-mastery", label: "AI Mastery & Life Optimization" },
-  { href: "/domains/grief-honour", label: "Grief & Honour" },
-  { href: "/domains/identity-legacy", label: "Identity & Legacy" },
-];
+import { domainNavLinks } from "@/lib/domains";
 
 const navSections = [
   {
@@ -38,7 +28,7 @@ export default function Footer() {
           <div className="space-y-3">
             <p className="ic-footer-title">Discipline. Direction. Brotherhood.</p>
             <p className="ic-footer-tagline">
-              Trusted by 18,000+ men rebuilding disciplined lives with modern structure and masculine accountability.
+              A disciplined life system for men who prefer proof over promises.
             </p>
           </div>
           <div className="ic-footer-note">
@@ -50,7 +40,7 @@ export default function Footer() {
 
         <div className="ic-footer-grid md:grid-cols-[2fr,1fr]">
           <div className="grid gap-4 sm:grid-cols-2">
-            {domainLinks.map((link) => (
+            {domainNavLinks.map((link) => (
               <Link key={link.href} href={link.href} className="ic-footer-pill">
                 {link.label}
               </Link>

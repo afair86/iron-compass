@@ -1,11 +1,13 @@
 import Link from "next/link";
 import PageShell from "../components/PageShell";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Contact Iron Compass",
   description: "Operations, support, and partnership channels for Iron Compass. Reach the team directly and expect a disciplined response.",
-};
+  path: "/contact",
+});
 
 const channels = [
   {

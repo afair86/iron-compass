@@ -15,7 +15,38 @@
    - Build Command: `npm run build` (default)
    - Output Directory: `.next` (default)
    - Install Command: `npm install` (default)
-   - Environment Variables: (add if needed)
+   - Environment Variables: see [Email capture](#email-capture-production) below
+
+### Email capture (production)
+
+Homepage and `/download` forms POST to `/api/subscribe`. Without at least one provider configured, submissions return **503**.
+
+**Recommended: Resend audience** (built-in, no middleware)
+
+1. Sign in at [resend.com](https://resend.com) and create an **Audience** (e.g. "Iron Compass Waitlist").
+2. Copy the audience ID from the audience URL or settings.
+3. Create an API key with **Audiences → Full access** (or full account key for simplicity).
+4. In Vercel → Project → **Settings → Environment Variables**, add for **Production** (and Preview if you test there):
+
+   | Name | Value |
+   |------|--------|
+   | `RESEND_API_KEY` | `re_...` |
+   | `RESEND_AUDIENCE_ID` | audience UUID |
+
+5. Redeploy. Test from `/download` — you should see a success message and the contact in Resend.
+
+**Alternative: webhook** (ConvertKit, Beehiiv, Zapier, Make, etc.)
+
+1. Create a webhook that accepts JSON POST with `{ email, source, subscribedAt }`.
+2. Set only `SUBSCRIBE_WEBHOOK_URL` in Vercel (leave Resend vars empty).
+3. Webhook takes priority if both are set.
+
+**Local dev:** copy `.env.example` to `.env.local` and fill one provider. Restart `npm run dev` after changes.
+
+**Optional app store links** (shown on `/download` when set):
+
+- `NEXT_PUBLIC_IOS_APP_URL`
+- `NEXT_PUBLIC_ANDROID_APP_URL`
 
 4. **Click "Deploy".**
    - Vercel will build and deploy your site.

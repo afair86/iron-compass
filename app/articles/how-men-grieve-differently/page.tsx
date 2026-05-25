@@ -1,11 +1,13 @@
 import Link from "next/link";
 import ArticleLayout from "../components/ArticleLayout";
+import { buildPageMetadata } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "How Men Grieve Differently (And Why No One Talks About It)",
   description:
     "Men carry grief differently. Learn why men go silent, why they break privately, and how to handle loss with strength, clarity, and masculine structure.",
-};
+  path: "/articles/how-men-grieve-differently",
+});
 
 const patterns = [
   {
@@ -54,6 +56,7 @@ export default function ArticlePage() {
     <ArticleLayout
       title="How Men Grieve Differently"
       intro="Most grief conversations were not written for men. You hold the line even when the ground is shifting, and that difference matters. This article explains why men go silent, why they break in private, and how to carry loss with structure."
+      path="/articles/how-men-grieve-differently"
     >
       <section className="ic-panel-outline space-y-4 text-center">
         <h2 className="ic-section-heading">Why Men Go Silent During Grief</h2>
