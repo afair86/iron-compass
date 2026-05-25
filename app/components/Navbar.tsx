@@ -23,19 +23,14 @@ export default function Navbar() {
       <div className="ic-container ic-nav-inner" data-testid="navbar">
         <Link href="/" className="flex-1 min-w-0" aria-label="Iron Compass AI">
           <span className="ic-logo-lockup">
-            <span className="ic-logo-badge" aria-hidden>
-              <Image
-                src="/iron-compass-logo.png"
-                alt="Iron Compass Crest"
-                width={54}
-                height={54}
-                priority
-                className="ic-logo-img"
-              />
-            </span>
-            <span className="ic-logo-wordmark">
-              IRON COMPASS <span>AI</span>
-            </span>
+            <Image
+              src="/iron-compass-logo.png"
+              alt="Iron Compass AI"
+              width={320}
+              height={120}
+              priority
+              className="ic-logo-img"
+            />
           </span>
         </Link>
 
