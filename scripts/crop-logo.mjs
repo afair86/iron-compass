@@ -15,16 +15,81 @@ const src = path.join(
   "c__Users_adamf_AppData_Roaming_Cursor_User_workspaceStorage_739230e61b276e89ad4cb9e7971dba55_images_ChatGPT_Image_May_26__2026__07_06_00_AM-b02be1fc-f955-438e-a87d-0225374e1e7d.png",
 );
 
-const outLockup = path.join(root, "public", "iron-compass-logo.png");
 const outIcon = path.join(root, "public", "iron-compass-logo-icon.png");
+const outLockup = path.join(root, "public", "iron-compass-logo.png");
 const outOg = path.join(root, "public", "iron-compass-logo-og.png");
 
-const base = sharp(src);
-const { width = 1024, height = 1024 } = await base.metadata();
+const { width = 1024, height = 1024 } = await sharp(src).metadata();
 console.log("source", width, height);
 
-const lockupHeight = Math.round(height * 0.665);
+/** Compass mark only — stops before the IRONCOMPASS AI wordmark */
+const iconHeight = Math.round(height * 0.48);
+const iconSize = Math.round(width * 0.72);
+const iconLeft = Math.round((width - iconSize) / 2);
+const iconTop = Math.round(height * 0.03);
 
+const iconBuffer = await sharp(src)
+  .extract({
+    left: iconLeft,
+    top: iconTop,
+    width: iconSize,
+    height: Math.min(iconHeight, height - iconTop),
+  })
+  .png()
+  .toBuffer();
+
+/** Turn dark navy/charcoal background pixels transparent */
+async function removeDarkBackground(input) {
+  const { data, info } = await sharp(input).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  const { width: w, height: h, channels } = info;
+
+  const sample = (x, y) => {
+    const i = (y * w + x) * channels;
+    return [data[i], data[i + 1], data[i + 2]];
+  };
+
+  const corners = [sample(0, 0), sample(w - 1, 0), sample(0, h - 1), sample(w - 1, h - 1)];
+  const bg = corners.reduce((acc, c) => [acc[0] + c[0], acc[1] + c[1], acc[2] + c[2]], [0, 0, 0]).map((v) => v / 4);
+
+  const dist = (r, g, b) => {
+    const dr = r - bg[0];
+    const dg = g - bg[1];
+    const db = b - bg[2];
+    return Math.sqrt(dr * dr + dg * dg + db * db);
+  };
+
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const i = (y * w + x) * channels;
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const d = dist(r, g, b);
+      const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      const max = Math.max(r, g, b);
+      const min = Math.min(r, g, b);
+      const sat = max === 0 ? 0 : (max - min) / max;
+
+      if (d < 38 || (lum < 88 && sat < 0.2)) {
+        data[i + 3] = 0;
+      } else if (d < 62 || lum < 105) {
+        const fade = Math.min(1, Math.max(0, (d - 38) / 24));
+        data[i + 3] = Math.round(fade * 255);
+      }
+    }
+  }
+
+  return sharp(data, { raw: { width: w, height: h, channels } })
+    .modulate({ brightness: 1.08, saturation: 1.05 })
+    .png({ compressionLevel: 9 })
+    .toBuffer();
+}
+
+const transparentIcon = await removeDarkBackground(iconBuffer);
+await sharp(transparentIcon).toFile(outIcon);
+
+// Full lockup (icon + wordmark) for OG / blog defaults
+const lockupHeight = Math.round(height * 0.665);
 const lockupBuffer = await sharp(src)
   .extract({ left: 0, top: 0, width, height: lockupHeight })
   .png({ compressionLevel: 9 })
@@ -32,19 +97,6 @@ const lockupBuffer = await sharp(src)
 
 await sharp(lockupBuffer).toFile(outLockup);
 
-// Icon-only: top portion of lockup (compass mark without wordmark).
-const lockupMeta = await sharp(lockupBuffer).metadata();
-const lockupW = lockupMeta.width ?? width;
-const lockupH = lockupMeta.height ?? lockupHeight;
-const iconHeight = Math.min(Math.round(lockupH * 0.62), lockupH);
-console.log("lockup", lockupW, lockupH, "iconHeight", iconHeight);
-
-await sharp(lockupBuffer)
-  .extract({ left: 0, top: 0, width: lockupW, height: iconHeight })
-  .png({ compressionLevel: 9 })
-  .toFile(outIcon);
-
-// OG/social: lockup on 1200x630 canvas.
 await sharp({
   create: {
     width: 1200,
@@ -62,4 +114,4 @@ await sharp({
   .png({ compressionLevel: 9 })
   .toFile(outOg);
 
-console.log("Wrote", outLockup, outIcon, outOg);
+console.log("Wrote", outIcon, outLockup, outOg);

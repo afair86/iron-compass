@@ -132,16 +132,73 @@
 }
 
 .ic-logo-lockup {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 0.15rem 0;
+  gap: 0;
+  padding: 0.45rem 1rem 0.45rem 0.35rem;
+  border-radius: 999px;
+  background: rgba(4, 12, 25, 0.65);
+  border: 1px solid rgba(0, 160, 255, 0.25);
+  box-shadow: 0 0 25px rgba(0, 160, 255, 0.15);
+}
+
+.ic-logo-mark {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-right: -1.15rem;
+}
+
+.ic-logo-mark::before {
+  content: "";
+  position: absolute;
+  inset: -10px -6px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 45% 40%,
+    rgba(140, 200, 255, 0.45) 0%,
+    rgba(0, 160, 255, 0.2) 38%,
+    transparent 72%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
 .ic-logo-img {
   display: block;
-  width: clamp(160px, 22vw, 240px);
+  width: clamp(56px, 7.2vw, 82px);
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(120, 195, 255, 0.75)) drop-shadow(0 0 28px rgba(0, 160, 255, 0.35))
+    drop-shadow(0 5px 14px rgba(0, 0, 0, 0.9)) brightness(1.22) contrast(1.18) saturate(1.08);
+}
+
+.ic-logo-wordmark {
+  position: relative;
+  z-index: 1;
+  padding-left: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3.2vw, 2.1rem);
+  letter-spacing: clamp(0.32em, 0.48em, 0.58em);
+  text-transform: uppercase;
+  background: var(--ic-heading-metal-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: 0 0 25px rgba(0, 160, 255, 0.45);
+}
+
+.ic-logo-wordmark span {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: var(--ic-cta-red);
+  color: var(--ic-cta-red);
+  text-shadow: 0 0 18px rgba(255, 52, 52, 0.65), 0 0 36px rgba(255, 52, 52, 0.45);
 }
 
 
@@ -637,11 +694,21 @@
   }
 
   .ic-logo-lockup {
-    padding: 0.1rem 0;
+    padding: 0.25rem 0.65rem 0.25rem 0.2rem;
+  }
+
+  .ic-logo-mark {
+    margin-right: -0.75rem;
   }
 
   .ic-logo-img {
-    width: clamp(130px, 38vw, 170px);
+    width: clamp(46px, 12vw, 58px);
+  }
+
+  .ic-logo-wordmark {
+    font-size: 1.05rem;
+    letter-spacing: 0.28em;
+    padding-left: 0.35rem;
   }
 
   .ic-mobile-nav-card {
