@@ -71,13 +71,14 @@ export const domainCards: Domain[] = domainCardData.map((card) => ({
   title: card.title,
   desc: card.desc,
   href: card.href,
+  slug: card.slug,
   icon: domainIcons[card.slug],
 }));
 
 export default function DomainsSection() {
   return (
     <section className="px-4 pt-6 pb-10" id="domains">
-      <div className="max-w-5xl mx-auto text-center space-y-4">
+      <div className="max-w-5xl mx-auto ic-align-center space-y-4">
         <h2 className="ic-home-heading text-[clamp(1.8rem,3.6vw,3rem)]">The Eight Domains</h2>
         <div className="ic-neon-divider" />
         <p className="font-heading text-[0.72rem] md:text-xs uppercase tracking-[0.45em] text-[var(--ic-text-heading)]/75">

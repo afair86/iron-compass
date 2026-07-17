@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PageShell from "../components/PageShell";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
-import { buildPageMetadata } from "@/lib/site";
+import { buildPageMetadata, productAppHref } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
   title: "Contact Iron Compass",
@@ -32,14 +32,14 @@ export default function ContactPage() {
   return (
     <PageShell>
       <PageContainer>
-        <SectionShell variant="hero" className="space-y-6 text-center">
-          <h1 className="ic-page-title text-center mx-auto">Contact &amp; Signal Channels</h1>
+        <SectionShell variant="hero" className="space-y-6">
+          <h1 className="ic-page-title">Contact &amp; Signal Channels</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Iron Compass responds with the same discipline we demand from members. Pick the channel that matches your mission, send a precise brief,
             and expect a direct answer within two business days.
           </p>
           <div className="ic-cta-row pt-2">
-            <Link href="/start" className="ic-btn-primary text-[0.62rem]">
+            <Link href={productAppHref()} className="ic-btn-primary text-[0.62rem]">
               Become a Member
             </Link>
             <Link href="/domains" className="ic-btn-ghost text-[0.6rem]">
@@ -48,17 +48,17 @@ export default function ContactPage() {
           </div>
         </SectionShell>
 
-        <SectionShell variant="panel" className="space-y-6 text-center">
+        <SectionShell variant="panel" className="space-y-6">
           <HeadingStack eyebrow="Pick the right lane" title="Routes to reach us" />
           <div className="grid gap-6 md:grid-cols-2 items-stretch justify-items-center max-w-4xl mx-auto">
             {channels.map((channel) => (
-              <article key={channel.label} className="ic-panel-muted flex flex-col gap-3 text-center h-full w-full min-w-0 md:max-w-md">
+              <article key={channel.label} className="ic-panel-muted flex flex-col gap-3 ic-align-center h-full w-full min-w-0 md:max-w-md">
                 <h3 className="text-xs md:text-sm font-heading tracking-[0.18em] uppercase text-[var(--ic-text-heading)] mx-auto leading-tight">
                   {channel.label}
                 </h3>
                 <a
                   href={`mailto:${channel.address}`}
-                  className="text-base md:text-lg font-heading tracking-[0.12em] uppercase text-white leading-6 text-center break-words mx-auto"
+                  className="text-base md:text-lg font-heading tracking-[0.12em] uppercase text-white leading-6 ic-align-center break-words mx-auto"
                 >
                   {channel.address}
                 </a>
@@ -68,9 +68,9 @@ export default function ContactPage() {
           </div>
         </SectionShell>
 
-        <SectionShell variant="outline" className="space-y-6 text-center">
+        <SectionShell variant="outline" className="space-y-6">
           <HeadingStack eyebrow="Response standards" title="How we handle your message" />
-          <ul className="space-y-3 text-sm text-left mx-auto max-w-3xl">
+          <ul className="space-y-3 text-sm mx-auto max-w-3xl">
             {responseStandards.map((line) => (
               <li key={line} className="ic-dot-list">
                 <span>{line}</span>
@@ -79,14 +79,14 @@ export default function ContactPage() {
           </ul>
         </SectionShell>
 
-        <SectionShell variant="panel" className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-center">
+        <SectionShell variant="panel" className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 ic-align-center">
           <div className="space-y-2">
             <h2 className="ic-heading-2">Message us inside the Iron Compass app.</h2>
             <p className="ic-section-copy ic-section-copy--muted text-sm">
               Live chat is staffed during Australian business hours with weekend monitoring for mission-critical issues.
             </p>
           </div>
-          <Link href="/start" className="ic-btn-primary text-[0.62rem] self-center">
+          <Link href={productAppHref()} className="ic-btn-primary text-[0.62rem] self-center">
             Open the App
           </Link>
         </SectionShell>

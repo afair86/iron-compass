@@ -3,9 +3,9 @@ import ArticleLayout from "../components/ArticleLayout";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Rebuilding After Divorce (For Men)",
+  title: "Rebuilding After Divorce: A Man's Guide to Starting Over",
   description:
-    "A grounded guide for men rebuilding their life after divorce. Regain discipline, identity, confidence, and direction without falling into the traps that break most men.",
+    "Divorce strips role, routine, and identity. Regain discipline, confidence, and direction — without the traps that break most men after separation.",
   path: "/articles/rebuilding-after-divorce-for-men",
 });
 
@@ -71,7 +71,7 @@ export default function ArticlePage() {
       intro="Divorce wrecks identity, not just routine. You lose structure, confidence, and the version of yourself that existed in that relationship. Now you stand in the wreckage asking, ‘Who am I now?’"
       path="/articles/rebuilding-after-divorce-for-men"
     >
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Why Divorce Hits Men Differently</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Men do not move on faster—they simply hide the damage. Divorce punches holes in role, leadership, routines, future plans, connection to kids, and emotional stability. The collapse is quiet, but the identity hit is loud.
@@ -87,27 +87,27 @@ export default function ArticlePage() {
         </p>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">The Silent Fallout</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Divorce pulls men into shame, anger, guilt, numbness, revenge mindsets, loneliness, self-doubt, and “I failed” narratives. Without structure, that becomes drinking, porn, hookups, isolation, overwork, aggression, and avoidance. You are not weak—you are unstructured.
         </p>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Divorce Is Rebuilding Season</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Divorce strips you down and gives you an uncomfortable chance to rebuild deliberately—not as a husband, but as a man. This is where Iron Compass begins.
         </p>
       </section>
 
-      <section className="ic-panel space-y-6 text-center">
-        <div className="space-y-2 text-center">
+      <section className="ic-panel space-y-6 ic-align-center">
+        <div className="space-y-2 ic-align-center">
           <h2 className="ic-section-heading">Four Phases of Reconstruction</h2>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 text-center">
+        <div className="grid gap-4 md:grid-cols-2 ic-align-center">
           {phases.map((phase) => (
-            <article key={phase.title} className="ic-panel-muted space-y-2 text-center">
+            <article key={phase.title} className="ic-panel-muted space-y-2 ic-align-center">
               <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">{phase.title}</h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">{phase.copy}</p>
               {phase.link && (
@@ -120,17 +120,17 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Fatherhood After Divorce</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           If you have kids, your job doubles. They need stability, measured honesty, presence, structure, and a father who refuses to quit. You don’t need to be perfect—just reliable.
         </p>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">What Not To Do</h2>
         <p className="ic-section-copy ic-section-copy--muted">Avoid these traps that destroy identity:</p>
-        <ul className="space-y-2 text-left mx-auto max-w-3xl">
+        <ul className="space-y-2 mx-auto max-w-3xl">
           {donts.map((item) => (
             <li key={item} className="ic-dot-list">
               <span>{item}</span>
@@ -139,14 +139,14 @@ export default function ArticlePage() {
         </ul>
       </section>
 
-      <section className="ic-panel space-y-6 text-center">
+      <section className="ic-panel space-y-6 ic-align-center">
         <div className="space-y-2">
           <h2 className="ic-section-heading">How to Rebuild Without Losing Yourself</h2>
           <p className="ic-section-copy ic-section-copy--muted">Execute these five moves:</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 text-center">
+        <div className="grid gap-4 md:grid-cols-2 ic-align-center">
           {rebuildSteps.map((step) => (
-            <article key={step.title} className="ic-panel-muted space-y-2 text-center">
+            <article key={step.title} className="ic-panel-muted space-y-2 ic-align-center">
               <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">{step.title}</h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">{step.copy}</p>
             </article>
@@ -154,7 +154,7 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <section className="ic-panel text-center space-y-4">
+      <section className="ic-panel ic-align-center space-y-4">
         <h2 className="ic-section-heading">How Iron Compass Helps</h2>
         <p className="ic-section-copy ic-section-copy--muted">
           Iron Compass equips men with stabilisation routines, discipline anchors, identity reconstruction tools, purpose frameworks, fatherhood support, habit tracking, emotional grounding, and daily structure. Dive into the

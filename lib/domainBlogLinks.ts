@@ -78,6 +78,11 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
   ],
   "financial-power": [
     {
+      title: "Financial Power Hub",
+      href: "/articles/financial-power",
+      description: "Curated cashflow, buffer, and money discipline guides.",
+    },
+    {
       title: "Financial Resilience Protocol",
       href: "/blog/financial-resilience-protocol",
       description: "Weekly cash flow clarity, buffer protection, and low-risk decisions.",
@@ -95,6 +100,11 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
   ],
   "ai-mastery": [
     {
+      title: "AI Mastery Hub",
+      href: "/articles/ai-mastery",
+      description: "Daily loops, automations, and discipline support with AI in command.",
+    },
+    {
       title: "AI Mastery Routine for Busy Men",
       href: "/blog/ai-mastery-routine-busy-men",
       description: "Intent, prompt, review — a human-first routine that actually sticks.",
@@ -111,6 +121,11 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
     },
   ],
   "grief-honour": [
+    {
+      title: "Grief Guides Hub",
+      href: "/articles",
+      description: "Five long-form guides on grief, loss, identity, and rebuilding for men.",
+    },
     {
       title: "Grief to Honour Rebuild",
       href: "/blog/grief-to-honour-rebuild",

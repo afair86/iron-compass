@@ -78,7 +78,7 @@ export default function TermsPage() {
   return (
     <PageShell>
       <div className="ic-content-stack max-w-5xl">
-        <section className="ic-panel text-center space-y-6">
+        <section className="ic-panel ic-align-center space-y-6">
           <h1 className="ic-section-title">Terms of Use</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Using Iron Compass means you accept these terms. They exist to keep the mission clean, guard the community, and set expectations between
@@ -86,10 +86,10 @@ export default function TermsPage() {
           </p>
         </section>
 
-        <section className="grid gap-6 md:grid-cols-2 text-center">
-          <article className="ic-panel-muted space-y-3 text-center">
+        <section className="grid gap-6 md:grid-cols-2 ic-align-center">
+          <article className="ic-panel-muted space-y-3 ic-align-center">
             <h2 className="ic-section-heading">Member Commitments</h2>
-            <ul className="space-y-3 text-sm text-left mx-auto max-w-3xl">
+            <ul className="space-y-3 text-sm mx-auto max-w-3xl">
               {commitments.map((item) => (
                 <li key={item} className="ic-dot-list">
                   <span>{item}</span>
@@ -97,9 +97,9 @@ export default function TermsPage() {
               ))}
             </ul>
           </article>
-          <article className="ic-panel-muted space-y-3 text-center">
+          <article className="ic-panel-muted space-y-3 ic-align-center">
             <h2 className="ic-section-heading">What We Promise</h2>
-            <ul className="space-y-3 text-sm text-left mx-auto max-w-3xl">
+            <ul className="space-y-3 text-sm mx-auto max-w-3xl">
               {companyPromises.map((item) => (
                 <li key={item} className="ic-dot-list">
                   <span>{item}</span>
@@ -109,16 +109,16 @@ export default function TermsPage() {
           </article>
         </section>
 
-        <section className="space-y-6 text-center">
+        <section className="space-y-6 ic-align-center">
           {sections.map((section, index) => (
-            <article key={section.title} className="ic-panel-outline space-y-3 text-center">
+            <article key={section.title} className="ic-panel-outline space-y-3 ic-align-center">
               <h2 className="ic-section-heading">Clause {String(index + 1).padStart(2, "0")}: {section.title}</h2>
-              <p className="ic-section-copy ic-section-copy--muted text-sm leading-relaxed text-left mx-auto">{section.body}</p>
+              <p className="ic-section-copy ic-section-copy--muted text-sm leading-relaxed mx-auto">{section.body}</p>
             </article>
           ))}
         </section>
 
-        <section className="ic-panel space-y-4 text-center">
+        <section className="ic-panel space-y-4 ic-align-center">
           <div className="space-y-2">
             <h2 className="ic-section-heading">Reach the Legal Team</h2>
           </div>

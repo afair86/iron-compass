@@ -3,7 +3,7 @@ import PageShell from "../components/PageShell";
 import DomainCard from "../components/DomainCard";
 import { domainCards } from "../components/DomainsSection";
 import { HeadingStack, PageContainer, SectionShell } from "../components/LayoutPrimitives";
-import { buildPageMetadata } from "@/lib/site";
+import { buildPageMetadata, productAppHref } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
   title: "The Eight Domains of Iron Compass",
@@ -16,15 +16,15 @@ export default function DomainsPage() {
   return (
     <PageShell>
       <PageContainer>
-        <SectionShell variant="hero" className="text-center space-y-5">
-          <h1 className="ic-page-title text-center mx-auto">The Eight Domains</h1>
+        <SectionShell variant="hero" className="space-y-5">
+          <h1 className="ic-page-title">The Eight Domains</h1>
           <p className="ic-section-subhead text-[var(--ic-text-heading)]">A disciplined map for complete capability.</p>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Every domain reinforces the others: strength, discipline, purpose, leadership, financial power, AI mastery, grief &amp; honour, and
             identity &amp; legacy. Enter through one, but keep them linked.
           </p>
           <div className="ic-cta-row pt-2">
-            <Link href="/start" className="ic-btn-primary text-[0.62rem]">
+            <Link href={productAppHref()} className="ic-btn-primary text-[0.62rem]">
               Start Inside Iron Compass
             </Link>
             <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
@@ -33,7 +33,7 @@ export default function DomainsPage() {
           </div>
         </SectionShell>
 
-        <SectionShell variant="panel" className="space-y-8 text-center">
+        <SectionShell variant="panel" className="space-y-8">
           <HeadingStack
             eyebrow="Choose your entry point"
             title="Pick a domain and move"

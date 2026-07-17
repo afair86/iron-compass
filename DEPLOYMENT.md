@@ -1,5 +1,53 @@
 # Iron Compass Deployment Instructions
 
+## Product web app (`/app`)
+
+The marketing site can serve the product PWA at **`/app`** by proxying to the APP frontend deployment.
+
+1. Deploy APP `frontend/` per `C:\Users\adamf\APP\frontend\DEPLOY_WEB_APP.md`.
+2. In **this** Vercel project → Environment Variables → Production:
+   - `PRODUCT_APP_UPSTREAM_URL` = your APP Vercel URL (no trailing slash)
+3. Redeploy marketing (`npm run deploy`).
+
+Until step 2–3 are done, **Open App** links hit a 404. Optional: set `NEXT_PUBLIC_PRODUCT_APP_URL` to a live subdomain instead.
+
+---
+
+## Deploy from Cursor (agent) — one-time setup
+
+So the AI can run **`npm run deploy`** from this repo without the Vercel dashboard:
+
+1. **Create a Vercel token**  
+   [vercel.com/account/tokens](https://vercel.com/account/tokens) → **Create** → name e.g. `Cursor iron-compass` → copy the token (shown once).
+
+2. **Add it to `.env.local`** (gitignored — never commit):
+   ```
+   VERCEL_TOKEN=paste_your_token_here
+   ```
+   If `.env.local` does not exist, copy `.env.example` to `.env.local` first.
+
+3. **Verify** (you or the agent):
+   ```bash
+   npm run deploy:check
+   ```
+   Should print `Deploy setup OK` and `Vercel project link: yes`.
+
+4. **Deploy anytime**:
+   ```bash
+   npm run deploy
+   ```
+   This runs `npm run build`, then deploys to **production** on Vercel.
+
+**Notes**
+
+- The saved CLI login expired; `VERCEL_TOKEN` replaces `vercel login` for automation.
+- **Paste the token only in `.env.local`** — not in Cursor chat (Vercel may revoke exposed tokens).
+- Remove any old `VERCEL_OIDC_TOKEN` line from `.env.local`; it can block deploys.
+- `npm run deploy` ships your **local files** (including uncommitted changes). To update GitHub too, commit and push separately.
+- If deploy says the token is invalid, create a new token and update `.env.local`.
+
+---
+
 ## Deploying to Vercel (Recommended)
 
 1. **Push your code to GitHub, GitLab, or Bitbucket.**

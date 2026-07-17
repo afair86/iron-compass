@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 
 export const SITE_URL = "https://ironcompassai.com";
 export const SITE_NAME = "Iron Compass AI";
+
+/** Product web app entry — not the marketing /start funnel. Override via env if app is on a subdomain. */
+export const PRODUCT_APP_PATH = "/app";
+
+export function productAppHref(): string {
+  const override = process.env.NEXT_PUBLIC_PRODUCT_APP_URL?.trim();
+  return override || PRODUCT_APP_PATH;
+}
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/iron-compass-logo-og.png`;
 export const DOMAIN_SOCIAL_IMAGE = `${SITE_URL}/iron-compass-logo-og.png`;
 

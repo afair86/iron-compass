@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Script from "next/script";
 import PageShell from "../components/PageShell";
-import { buildPageMetadata } from "@/lib/site";
+import { buildPageMetadata, productAppHref } from "@/lib/site";
 import { domainNavLinks } from "@/lib/domains";
 
 export const metadata = buildPageMetadata({
@@ -32,7 +32,7 @@ export default function StartPage() {
   return (
     <PageShell>
       <div className="ic-content-stack max-w-3xl">
-        <section className="ic-panel text-center space-y-6">
+        <section className="ic-panel ic-align-center space-y-6">
           <h1 className="ic-section-title">Start Your Compass</h1>
           <p className="ic-section-copy ic-section-copy--muted text-base">
             This is the first step. Ground yourself, choose your focus, and move with disciplined intent—built for men in the US, Europe, and Australia.
@@ -45,7 +45,7 @@ export default function StartPage() {
         </section>
 
         <section className="ic-panel-outline space-y-4">
-          <header className="space-y-2 text-center">
+          <header className="space-y-2 ic-align-center">
             <h2 className="ic-section-heading">Identity → Discipline → Purpose</h2>
           </header>
           <p className="ic-section-copy ic-section-copy--muted">
@@ -54,8 +54,8 @@ export default function StartPage() {
           </p>
         </section>
 
-        <section className="space-y-6 text-center">
-          <header className="space-y-2 text-center">
+        <section className="space-y-6 ic-align-center">
+          <header className="space-y-2 ic-align-center">
             <h2 className="ic-section-heading">Build Momentum Fast</h2>
           </header>
           <ol className="space-y-6">
@@ -71,9 +71,9 @@ export default function StartPage() {
           </ol>
         </section>
 
-        <section className="ic-panel space-y-6 text-center">
-          <header className="space-y-2 text-center">
-            <h2 className="ic-section-heading text-center">Command Every Pillar</h2>
+        <section className="ic-panel space-y-6 ic-align-center">
+          <header className="space-y-2 ic-align-center">
+            <h2 className="ic-section-heading ic-align-center">Command Every Pillar</h2>
           </header>
           <div className="grid gap-4">
             {domains.map((domain) => (
@@ -84,21 +84,21 @@ export default function StartPage() {
           </div>
         </section>
 
-        <section className="ic-panel text-center space-y-4">
-          <h2 className="ic-section-heading text-center">Take Control Now</h2>
+        <section className="ic-panel ic-align-center space-y-4">
+          <h2 className="ic-section-heading ic-align-center">Take Control Now</h2>
           <p className="ic-section-copy ic-section-copy--muted">
             No more drifting. Commit to the process, execute daily, and let the data prove your climb. Your compass is forged in action.
           </p>
           <div className="pt-2">
-            <Link href="/download" className="ic-btn-primary text-[0.62rem]">
+            <Link href={productAppHref()} className="ic-btn-primary text-[0.62rem]">
               Start in the App
             </Link>
           </div>
         </section>
 
-        <section className="ic-panel-outline space-y-4 text-left">
-          <h2 className="ic-section-heading text-center">FAQ</h2>
-          <div className="space-y-3">
+        <section className="ic-panel-outline ic-align-center space-y-4">
+          <h2 className="ic-section-heading">FAQ</h2>
+          <div className="space-y-3 max-w-3xl mx-auto text-left">
             <div>
               <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Who is Iron Compass for?</h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">

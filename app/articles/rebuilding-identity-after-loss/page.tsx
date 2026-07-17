@@ -3,9 +3,9 @@ import ArticleLayout from "../components/ArticleLayout";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Rebuilding Identity After Loss",
+  title: "Who Am I After Loss? Rebuilding Identity as a Man",
   description:
-    "Loss can break a man’s identity. Here’s how to rebuild yourself with discipline, direction, and masculine structure — without losing who you are in the process.",
+    "Loss shatters who you thought you were. A disciplined path to rebuild identity, direction, and standards — without pretending the pain didn't happen.",
   path: "/articles/rebuilding-identity-after-loss",
 });
 
@@ -55,7 +55,7 @@ export default function ArticlePage() {
       intro="Loss doesn’t just hurt—it disorients. Men grieve the person and the version of themselves that existed with them. This is the side of grief no one talks about."
       path="/articles/rebuilding-identity-after-loss"
     >
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Why Loss Hits a Man’s Identity Harder</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Men build identity on responsibility, purpose, leadership, being needed, being stable, and being dependable. When loss hits, it rattles the core of what makes a man feel worthy. You don’t just lose the person—you lose who you were with them.
@@ -71,20 +71,20 @@ export default function ArticlePage() {
         </p>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">When You Feel Like a Stranger to Yourself</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           There’s a quiet moment when a man realises, “I don’t know who I am anymore.” It shows up when you wake up empty, operate on autopilot, feel disconnected from your kids, or cannot access old strength. This is a temporary identity collapse—and it is solvable.
         </p>
       </section>
 
-      <section className="ic-panel space-y-6 text-center">
-        <div className="space-y-2 text-center">
+      <section className="ic-panel space-y-6 ic-align-center">
+        <div className="space-y-2 ic-align-center">
           <h2 className="ic-section-heading">The Three Identity Break Points</h2>
         </div>
-        <div className="grid gap-4 md:grid-cols-3 text-center">
+        <div className="grid gap-4 md:grid-cols-3 ic-align-center">
           {breakPoints.map((point) => (
-            <article key={point.title} className="ic-panel-muted space-y-2 text-center">
+            <article key={point.title} className="ic-panel-muted space-y-2 ic-align-center">
               <h3 className="text-sm font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">{point.title}</h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">{point.copy}</p>
             </article>
@@ -92,21 +92,21 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">What Men Get Wrong About Finding Themselves</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Men think identity returns by taking time off, waiting to feel better, numbing pain, or hoping clarity arrives. It doesn’t. Identity is rebuilt through action—daily, disciplined action.
         </p>
       </section>
 
-      <section className="ic-panel space-y-6 text-center">
+      <section className="ic-panel space-y-6 ic-align-center">
         <div className="space-y-2">
           <h2 className="ic-section-heading">The Iron Compass Framework</h2>
           <p className="ic-section-copy ic-section-copy--muted">Rebuild yourself with masculine structure:</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 text-center">
+        <div className="grid gap-4 md:grid-cols-2 ic-align-center">
           {framework.map((step) => (
-            <article key={step.title} className="ic-panel-muted space-y-2 text-center">
+            <article key={step.title} className="ic-panel-muted space-y-2 ic-align-center">
               <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">{step.title}</h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">{step.copy}</p>
               {step.link && (
@@ -119,14 +119,14 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">The Fatherhood Layer</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           If you’re a dad, identity loss hits different because your children still rely on you. You don’t need to be invincible—just honest and disciplined. They will copy how you rebuild, stay responsible, carry pain, and move forward under weight.
         </p>
       </section>
 
-      <section className="ic-panel text-center space-y-4">
+      <section className="ic-panel ic-align-center space-y-4">
         <h2 className="ic-section-heading">How Iron Compass Helps</h2>
         <p className="ic-section-copy ic-section-copy--muted">
           Inside Iron Compass, identity rebuilding becomes a structured path: daily discipline anchors, grief stabilisation rituals, masculine reflection prompts, purpose frameworks, fatherhood support, habit systems, and identity milestones. Rebuild by design, not accident, and reconnect with the

@@ -1,12 +1,15 @@
+import "@/styles/stoic-dispatch.css";
 import Link from "next/link";
 import Script from "next/script";
 import PageShell from "../components/PageShell";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
 import { getAllPosts, type PostMeta } from "@/lib/blog";
 import { absoluteUrl, buildPageMetadata, DEFAULT_OG_IMAGE } from "@/lib/site";
+import CategoryBadge from "../components/CategoryBadge";
 
-const pageTitle = "Iron Compass Journal";
-const pageDescription = "SEO-rich guides for disciplined men: structure, purpose, leadership, money, and leverage.";
+const pageTitle = "Iron Compass Journal — Discipline, Leadership & Purpose for Men";
+const pageDescription =
+  "Practical guides on discipline, grief, strength, money, leadership, and AI — written for men who want systems that work on a bad day, not motivation loops.";
 
 export const metadata = buildPageMetadata({
   title: pageTitle,
@@ -71,50 +74,45 @@ export default function BlogPage() {
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
         />
-        <SectionShell variant="hero" className="space-y-6 text-left">
-          <p className="ic-eyebrow">Iron Compass Journal</p>
-          <div className="grid gap-6 lg:grid-cols-[1.4fr,1fr] items-start">
-            <div className="space-y-4">
-              <h1 className="ic-page-title text-left">Dispatches for Disciplined Men</h1>
-              <p className="ic-section-copy ic-section-copy--muted max-w-3xl">
-                Actionable plays for strength &amp; health, discipline, purpose, leadership, financial power, AI leverage, grief, and legacy. Every post ends with moves you can run this week.
-              </p>
-              <div className="ic-cta-row">
-                <Link href="/start" className="ic-btn-primary text-xs sm:text-[0.72rem]">
-                  Start the Program
-                </Link>
-                <Link href="/domains" className="ic-btn-ghost text-xs sm:text-[0.7rem]">
-                  View All Domains
-                </Link>
-              </div>
-            </div>
-            <div className="ic-panel-muted p-5 rounded-2xl space-y-3">
-              <p className="ic-section-copy text-[0.9rem]">Topics we cover weekly</p>
-              <div className="flex flex-wrap gap-2 text-[0.65rem] uppercase tracking-[0.28em] text-[var(--ic-text-muted)]">
-                <span className="ic-chip">Discipline</span>
-                <span className="ic-chip">Strength &amp; Health</span>
-                <span className="ic-chip">Purpose</span>
-                <span className="ic-chip">Leadership</span>
-                <span className="ic-chip">Financial Power</span>
-                <span className="ic-chip">AI Mastery</span>
-                <span className="ic-chip">Grief &amp; Honour</span>
-                <span className="ic-chip">Identity &amp; Legacy</span>
-              </div>
+        <SectionShell variant="hero" className="space-y-6">
+          <p className="ic-eyebrow ic-eyebrow--stoic">Iron Compass Journal</p>
+          <h1 className="ic-page-title">Dispatches for Disciplined Men</h1>
+          <p className="ic-section-copy ic-section-copy--muted max-w-3xl">
+            Actionable plays for strength &amp; health, discipline, purpose, leadership, financial power, AI leverage, grief, and legacy. Every post ends with moves you can run this week.
+          </p>
+          <div className="ic-cta-row">
+            <Link href="/start" className="ic-btn-primary text-xs sm:text-[0.72rem]">
+              Start the Program
+            </Link>
+            <Link href="/domains" className="ic-btn-ghost text-xs sm:text-[0.7rem]">
+              View All Domains
+            </Link>
+          </div>
+          <div className="ic-panel-stoic p-5 space-y-3 max-w-2xl mx-auto">
+            <p className="ic-section-copy text-[0.9rem]">Topics we cover weekly</p>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {["Discipline", "Strength & Health", "Purpose", "Leadership", "Financial Power", "AI Mastery", "Grief & Honour", "Identity & Legacy"].map(
+                (topic) => (
+                  <span key={topic} className="ic-dispatch-chip">
+                    {topic}
+                  </span>
+                )
+              )}
             </div>
           </div>
         </SectionShell>
 
         {feature && (
-          <SectionShell variant="panel" className="space-y-5 md:space-y-6">
-            <HeadingStack eyebrow="Featured Play" title="Read This First" center={false} className="space-y-2" />
-            <article className="grid gap-6 lg:grid-cols-[1.6fr,1fr] items-start">
+          <SectionShell variant="contrast" className="space-y-5 md:space-y-6">
+            <HeadingStack eyebrow="Featured Play" title="Read This First" accent="gold" className="space-y-2" />
+            <article className="grid gap-6 lg:grid-cols-[1.6fr,1fr] items-start max-w-5xl mx-auto">
               <div className="space-y-4">
-                <div className="flex items-center gap-3 text-[0.68rem] uppercase tracking-[0.28em] text-[var(--ic-text-muted)]">
-                  <span>{feature.category ?? "Dispatch"}</span>
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-[0.68rem] uppercase tracking-[0.28em]">
+                  <CategoryBadge category={feature.category} />
                   <span className="h-px w-6 bg-white/10" aria-hidden="true" />
-                  <time dateTime={feature.date}>{formatDate(feature.date)}</time>
+                  <time dateTime={feature.date} className="text-[var(--ic-text-muted)]">{formatDate(feature.date)}</time>
                 </div>
-                <h2 className="ic-heading-2 text-left">{feature.title}</h2>
+                <h2 className="ic-heading-2">{feature.title}</h2>
                 <p className="ic-section-copy ic-section-copy--muted">{getSummary(feature)}</p>
                 <div className="ic-cta-row">
                   <Link href={`/blog/${feature.slug}`} className="ic-btn-primary text-[0.62rem]">
@@ -125,7 +123,7 @@ export default function BlogPage() {
                   </Link>
                 </div>
               </div>
-              <div className="ic-panel-muted p-5 rounded-2xl space-y-4">
+              <div className="ic-panel-stoic p-5 space-y-4">
                 <p className="ic-section-copy text-[0.9rem]">What you get</p>
                 <ul className="list-disc list-inside ic-section-copy ic-section-copy--muted space-y-1">
                   <li>Why this matters now</li>
@@ -141,15 +139,15 @@ export default function BlogPage() {
         )}
 
         {latest.length > 0 && (
-          <SectionShell variant="panel" className="space-y-6">
-            <HeadingStack eyebrow="Latest Dispatches" title="Fresh Intelligence" center={false} />
+          <SectionShell variant="warm" className="space-y-6">
+            <HeadingStack eyebrow="Latest Dispatches" title="Fresh Intelligence" accent="teal" />
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {latest.map((post) => (
-                <article key={post.slug} className="ic-panel-muted space-y-4 flex flex-col h-full p-5">
-                  <div className="flex items-center gap-3 text-[0.68rem] uppercase tracking-[0.28em] text-[var(--ic-text-muted)]">
-                    <span>{post.category ?? "Dispatch"}</span>
+                <article key={post.slug} className="ic-stoic-card space-y-4 flex flex-col h-full">
+                  <div className="flex items-center gap-3 text-[0.68rem] uppercase tracking-[0.28em]">
+                    <CategoryBadge category={post.category} />
                     <span className="h-px w-6 bg-white/10" aria-hidden="true" />
-                    <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    <time dateTime={post.date} className="text-[var(--ic-text-muted)]">{formatDate(post.date)}</time>
                   </div>
                   <h3 className="text-base font-heading tracking-[0.22em] uppercase text-[var(--ic-text-heading)]">{post.title}</h3>
                   <p className="ic-section-copy ic-section-copy--muted flex-1">{getSummary(post)}</p>
@@ -164,12 +162,12 @@ export default function BlogPage() {
 
         {archive.length > 0 && (
           <SectionShell variant="panel" className="space-y-6">
-            <HeadingStack eyebrow="Archive" title="Every Dispatch" center={false} />
+            <HeadingStack eyebrow="Archive" title="Every Dispatch" />
             <div className="space-y-4">
               {archive.map((post) => (
                 <article
                   key={post.slug}
-                  className="ic-panel-outline p-4 rounded-xl flex flex-col gap-2 md:flex-row md:items-center md:justify-between"
+                  className="ic-stoic-card p-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between"
                 >
                   <div className="space-y-2">
                     <div className="flex items-center gap-3 text-[0.68rem] uppercase tracking-[0.28em] text-[var(--ic-text-muted)]">

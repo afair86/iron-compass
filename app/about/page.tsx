@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PageShell from "../components/PageShell";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
-import { buildPageMetadata } from "@/lib/site";
+import { buildPageMetadata, productAppHref } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
   title: "About Iron Compass",
@@ -27,8 +27,8 @@ export default function AboutPage() {
   return (
     <PageShell>
       <PageContainer>
-        <SectionShell variant="hero" className="text-center space-y-5">
-          <h1 className="ic-page-title text-center mx-auto">About the System</h1>
+        <SectionShell variant="hero" className="space-y-5">
+          <h1 className="ic-page-title">About the System</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Iron Compass is a life system for men who want discipline, purpose, strength, and integrity without noise. One map, eight domains, and the
             same standards we run inside the app.
@@ -37,15 +37,15 @@ export default function AboutPage() {
             <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
               Explore the Domains
             </Link>
-            <Link href="/start" className="ic-btn-ghost text-[0.6rem]">
+            <Link href={productAppHref()} className="ic-btn-ghost text-[0.6rem]">
               Start Inside the App
             </Link>
           </div>
         </SectionShell>
 
-        <SectionShell variant="panel" className="space-y-6 text-center">
+        <SectionShell variant="panel" className="space-y-6">
           <HeadingStack eyebrow="Operating Principles" title="What makes Iron Compass different" />
-          <ul className="space-y-3 text-sm text-left mx-auto max-w-3xl">
+          <ul className="space-y-3 text-sm mx-auto max-w-3xl">
             {pillars.map((item) => (
               <li key={item} className="ic-dot-list">
                 <span>{item}</span>
@@ -54,9 +54,9 @@ export default function AboutPage() {
           </ul>
         </SectionShell>
 
-        <SectionShell variant="panel" className="space-y-6 text-center">
+        <SectionShell variant="panel" className="space-y-6">
           <HeadingStack eyebrow="Who it's for" title="Men who refuse drift" />
-          <ul className="space-y-3 text-sm text-left mx-auto max-w-3xl">
+          <ul className="space-y-3 text-sm mx-auto max-w-3xl">
             {builtFor.map((item) => (
               <li key={item} className="ic-dot-list">
                 <span>{item}</span>
@@ -65,8 +65,8 @@ export default function AboutPage() {
           </ul>
         </SectionShell>
 
-        <SectionShell variant="outline" className="space-y-4 text-center">
-          <h2 className="ic-heading-2 text-center mx-auto">Ready to see it in motion?</h2>
+        <SectionShell variant="outline" className="space-y-4">
+          <h2 className="ic-heading-2">Ready to see it in motion?</h2>
           <p className="ic-section-copy ic-section-copy--muted max-w-2xl mx-auto">
             Browse the eight domains or head straight to the app. The standards are the same across every route.
           </p>

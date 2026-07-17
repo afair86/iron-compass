@@ -87,6 +87,17 @@ export function getAllPosts(): PostMeta[] {
  * - meta: PostMeta (frontmatter)
  * - content: string (MDX content without frontmatter)
  */
+export function tryGetPostBySlug(slug: string): { meta: PostMeta; content: string } | null {
+  if (EXCLUDED_SLUGS.has(slug) || REDIRECTED_SLUGS.has(slug)) return null;
+  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
+  if (!fs.existsSync(fullPath)) return null;
+  try {
+    return getPostBySlug(slug);
+  } catch {
+    return null;
+  }
+}
+
 export function getPostBySlug(slug: string): { meta: PostMeta; content: string } {
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
   if (!fs.existsSync(fullPath)) {
@@ -116,23 +127,39 @@ export type FaqEntry = {
   answer: string;
 };
 
-/** Extracts real FAQ pairs from a ## FAQ section in MDX content */
+/** Extracts FAQ pairs from ## FAQ, ## FAQs, or ## Frequently Asked Questions sections */
 export function extractFaqFromMarkdown(markdown: string): FaqEntry[] {
-  const faqMatch = markdown.match(/^## FAQ\s*\n([\s\S]*?)(?=\n## |\n<script|<script|$)/m);
+  const faqMatch = markdown.match(
+    /^## (?:FAQ(?:s)?|Frequently Asked Questions)\s*\n([\s\S]*?)(?=\n## |\n<script|<script|$)/im
+  );
   if (!faqMatch) return [];
 
   const faqSection = faqMatch[1];
-  const blocks = faqSection.split(/\n(?=\*\*)/).filter(Boolean);
   const faqs: FaqEntry[] = [];
 
+  const qFormatMatches = faqSection.matchAll(
+    /\*\*Q:\s*(.+?)\*\*\s*\nA:\s*([\s\S]*?)(?=\n\*\*Q:|\n###|\n---|\n## |$)/g
+  );
+  for (const match of qFormatMatches) {
+    const answer = match[2].trim();
+    if (answer) faqs.push({ question: match[1].trim(), answer });
+  }
+  if (faqs.length > 0) return faqs;
+
+  const blocks = faqSection.split(/\n(?=\*\*)/).filter(Boolean);
   for (const block of blocks) {
     const qMatch = block.match(/^\*\*(.+?)\*\*\s*\n([\s\S]+)/);
     if (qMatch) {
       const answer = qMatch[2].trim();
-      if (answer) {
-        faqs.push({ question: qMatch[1].trim(), answer });
-      }
+      if (answer) faqs.push({ question: qMatch[1].trim(), answer });
     }
+  }
+  if (faqs.length > 0) return faqs;
+
+  const h3Matches = faqSection.matchAll(/^###\s+(.+?\?)\s*\n\n([\s\S]*?)(?=\n###|\n---|\n## |$)/gm);
+  for (const match of h3Matches) {
+    const answer = match[2].trim();
+    if (answer) faqs.push({ question: match[1].trim(), answer });
   }
 
   return faqs;

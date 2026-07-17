@@ -1,5 +1,6 @@
 "use client";
 
+import ProductAppLink from "./ProductAppLink";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -39,12 +40,13 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <nav className="ic-nav-links hidden md:flex" aria-label="Primary navigation">
+        <nav className="ic-nav-links hidden md:flex items-center gap-4" aria-label="Primary navigation">
           {links.map((link) => (
             <Link key={link.href} href={link.href} className="ic-navlink" data-active={isActive(link.href)}>
               {link.label}
             </Link>
           ))}
+          <ProductAppLink className="ic-btn-primary text-[0.62rem]">Open the App</ProductAppLink>
         </nav>
 
         <button
@@ -75,7 +77,8 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="ic-mobile-nav-cta">
-            <Link href="/start" className="ic-btn-primary text-xs w-full text-center">
+            <ProductAppLink className="ic-btn-primary text-xs w-full text-center">Open the App</ProductAppLink>
+            <Link href="/start" className="ic-btn-ghost text-xs w-full text-center">
               Start Program
             </Link>
             <Link href="/domains" className="ic-btn-ghost text-xs w-full text-center">

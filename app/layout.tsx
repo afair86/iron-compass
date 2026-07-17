@@ -23,8 +23,9 @@ const inter = Inter({
 });
 
 // SEO metadata for the site
-const siteTitle = `${SITE_NAME} | Discipline, Strength, Leadership for Men`;
-const siteDescription = 'A modern life system for men 30-45: discipline, strength & health, leadership, purpose, money, and AI leverage—built for the US, Europe, and Australia.';
+const siteTitle = `${SITE_NAME} — Life System for Disciplined Men`;
+const siteDescription =
+  "Discipline, strength, purpose, money, and AI leverage — a structured operating system for men 30–45. Built for the US, Europe, and Australia.";
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     url: SITE_URL,
-    siteName: siteTitle,
+    siteName: SITE_NAME,
     type: 'website',
     images: [DEFAULT_OG_IMAGE],
   },

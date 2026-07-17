@@ -1,0 +1,455 @@
+/* Stoic Dispatch — field-manual design language for Iron Compass */
+
+:root {
+  --ic-brass: #c4a574;
+  --ic-brass-muted: rgba(196, 165, 116, 0.45);
+  --ic-stone: #9ca3af;
+  --ic-bone: #f1f1f1;
+  --ic-iron: #111113;
+  --ic-steel: #1b1f24;
+  --ic-ember: #b01015;
+  --ic-ember-soft: rgba(176, 16, 21, 0.35);
+}
+
+/* Page shell + neon theme: iron-compass.css (global).
+   Stoic overrides below apply only inside .ic-dispatch / .ic-panel-stoic. */
+
+/* --- Dispatch layout --- */
+
+.ic-dispatch {
+  width: min(720px, 100%);
+  margin: 0 auto;
+}
+
+.ic-dispatch-hero {
+  text-align: center;
+  padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.ic-dispatch-lede {
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  line-height: 1.75;
+  color: var(--ic-stone);
+  max-width: 58ch;
+  margin: 0 auto;
+}
+
+.ic-dispatch-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ic-text-muted);
+}
+
+.ic-dispatch-meta span[aria-hidden="true"] {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.ic-stoic-rule {
+  width: min(120px, 40%);
+  height: 1px;
+  margin: 1.75rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--ic-brass-muted), transparent);
+}
+
+.ic-stoic-rule--inline {
+  margin: 0.5rem 0 0;
+  width: 64px;
+}
+
+.ic-dispatch-body .ic-panel-outline,
+.ic-dispatch-body .ic-panel,
+.ic-dispatch-body .ic-panel-muted {
+  border-radius: 4px;
+  border-color: rgba(255, 255, 255, 0.07);
+  background: rgba(17, 17, 19, 0.55);
+  box-shadow: none;
+}
+
+.ic-dispatch-body .ic-section-heading {
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  letter-spacing: 0.2em;
+  color: var(--ic-bone);
+  -webkit-text-fill-color: var(--ic-bone);
+  background: none;
+  -webkit-text-stroke: 0;
+}
+
+.ic-stoic-rule--wide {
+  width: min(200px, 60%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ic-dispatch-body {
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.ic-dispatch-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* --- Labels & badges (understated) --- */
+
+.ic-dispatch-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2px;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--ic-brass);
+  border: 1px solid var(--ic-brass-muted);
+  background: rgba(17, 17, 19, 0.75);
+}
+
+.ic-dispatch-chip {
+  display: inline-flex;
+  padding: 0.4rem 0.75rem;
+  border-radius: 2px;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ic-stone);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(17, 17, 19, 0.5);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ic-dispatch-chip:hover {
+  color: var(--ic-bone);
+  border-color: var(--ic-brass-muted);
+}
+
+/* --- Stoic cards (single accent, no rainbow) --- */
+
+.ic-stoic-card {
+  position: relative;
+  text-align: left;
+  border-radius: 4px;
+  padding: 1.25rem 1.35rem 1.25rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(165deg, rgba(17, 17, 19, 0.92), rgba(10, 10, 11, 0.88));
+  transition: border-color 0.22s ease, transform 0.22s ease;
+}
+
+.ic-stoic-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--ic-ember), var(--ic-brass));
+  opacity: 0.7;
+}
+
+.ic-stoic-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(196, 165, 116, 0.25);
+}
+
+.ic-stoic-card__title {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ic-bone);
+  transition: color 0.2s ease;
+}
+
+.ic-stoic-card:hover .ic-stoic-card__title {
+  color: var(--ic-brass);
+}
+
+.ic-stoic-card--featured {
+  border-color: rgba(176, 16, 21, 0.22);
+  background:
+    linear-gradient(165deg, rgba(20, 12, 14, 0.95), rgba(10, 10, 11, 0.9));
+}
+
+.ic-stoic-card--featured::before {
+  opacity: 1;
+  width: 3px;
+}
+
+/* --- Dispatch prose (MDX body — the blog post feel) --- */
+
+.ic-dispatch-prose {
+  color: var(--ic-text-main);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+.ic-dispatch-prose > * + * {
+  margin-top: 1.25rem;
+}
+
+.ic-dispatch-prose h2,
+.ic-dispatch-prose h3,
+.ic-dispatch-prose h4 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ic-bone);
+  -webkit-text-fill-color: var(--ic-bone);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+.ic-dispatch-prose h2 {
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  letter-spacing: 0.22em;
+  padding-bottom: 0.65rem;
+  margin-top: 2.75rem;
+  border-bottom: 1px solid var(--ic-ember-soft);
+}
+
+.ic-dispatch-prose h3 {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  letter-spacing: 0.2em;
+  margin-top: 2rem;
+  color: var(--ic-stone);
+  -webkit-text-fill-color: var(--ic-stone);
+}
+
+.ic-dispatch-prose h4 {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  color: var(--ic-brass);
+  -webkit-text-fill-color: var(--ic-brass);
+}
+
+.ic-dispatch-prose p {
+  max-width: 68ch;
+  color: #b8bcc4;
+}
+
+.ic-dispatch-prose strong {
+  color: var(--ic-bone);
+  font-weight: 600;
+}
+
+.ic-dispatch-prose a {
+  color: var(--ic-bone);
+  text-decoration: underline;
+  text-decoration-color: var(--ic-brass-muted);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.ic-dispatch-prose a:hover {
+  text-decoration-color: var(--ic-brass);
+}
+
+.ic-dispatch-prose ul,
+.ic-dispatch-prose ol {
+  padding-left: 1.25rem;
+  max-width: 68ch;
+}
+
+.ic-dispatch-prose li {
+  margin-top: 0.4rem;
+  color: #b8bcc4;
+}
+
+.ic-dispatch-prose li::marker {
+  color: var(--ic-brass-muted);
+}
+
+.ic-dispatch-prose blockquote {
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 2px solid var(--ic-brass-muted);
+  background: rgba(17, 17, 19, 0.6);
+  font-style: normal;
+  color: var(--ic-stone);
+}
+
+.ic-dispatch-prose blockquote p {
+  margin: 0;
+}
+
+.ic-dispatch-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+}
+
+.ic-dispatch-prose thead {
+  border-bottom: 1px solid var(--ic-ember-soft);
+}
+
+.ic-dispatch-prose th {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ic-brass);
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  font-weight: 600;
+  -webkit-text-fill-color: var(--ic-brass);
+  background: none;
+}
+
+.ic-dispatch-prose td {
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #b8bcc4;
+  vertical-align: top;
+}
+
+.ic-dispatch-prose tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.ic-dispatch-prose hr {
+  border: none;
+  height: 1px;
+  margin: 2.5rem 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
+.ic-dispatch-prose code {
+  font-size: 0.88em;
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  background: rgba(17, 17, 19, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--ic-bone);
+}
+
+/* --- Section panels (stoic, not glowing) --- */
+
+.ic-panel-stoic {
+  border-radius: 4px;
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(165deg, rgba(17, 17, 19, 0.88), rgba(10, 10, 11, 0.92));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.ic-panel-stoic--hero {
+  border-color: rgba(196, 165, 116, 0.15);
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(176, 16, 21, 0.06), transparent 60%),
+    linear-gradient(165deg, rgba(17, 17, 19, 0.95), rgba(10, 10, 11, 0.92));
+}
+
+.ic-panel-stoic--warm {
+  border-color: rgba(176, 16, 21, 0.12);
+}
+
+/* --- Section alignment (headers, copy, CTAs stay in sync) --- */
+
+.ic-align-center .ic-section-heading {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ic-align-start .ic-section-heading {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ic-panel.ic-align-center,
+.ic-panel-outline.ic-align-center,
+.ic-panel-muted.ic-align-center {
+  text-align: center;
+}
+
+.ic-align-center .ic-page-title,
+.ic-align-center .ic-heading-2,
+.ic-align-center .ic-heading-3,
+.ic-align-center .ic-section-heading,
+.ic-align-center .ic-section-title,
+.ic-align-center .ic-section-copy,
+.ic-align-center .ic-dispatch-lede,
+.ic-align-center .ic-section-subhead {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ic-align-center .ic-cta-row {
+  justify-content: center;
+  align-items: center;
+}
+
+.ic-align-center .ic-stoic-rule--inline {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ic-align-center ul:not(.ic-dispatch-prose ul),
+.ic-align-center ol:not(.ic-dispatch-prose ol) {
+  text-align: left;
+  width: fit-content;
+  max-width: var(--ic-measure);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ic-align-start {
+  text-align: left;
+}
+
+.ic-align-start .ic-page-title,
+.ic-align-start .ic-heading-2,
+.ic-align-start .ic-heading-3,
+.ic-align-start .ic-section-heading,
+.ic-align-start .ic-section-title,
+.ic-align-start .ic-section-copy,
+.ic-align-start .ic-dispatch-lede {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ic-align-start .ic-cta-row {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* --- Eyebrows (stone & brass only) --- */
+
+.ic-eyebrow--stoic {
+  color: var(--ic-brass);
+  letter-spacing: 0.4em;
+}
+
+.ic-eyebrow--field {
+  color: var(--ic-stone);
+}
+
+/* --- Override neon dividers inside dispatch / stoic panels only --- */
+
+.ic-dispatch .ic-neon-divider,
+.ic-dispatch .ic-divider,
+.ic-panel-stoic .ic-neon-divider {
+  width: min(120px, 40%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ic-brass-muted), transparent);
+  box-shadow: none;
+}

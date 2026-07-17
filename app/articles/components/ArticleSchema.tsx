@@ -5,9 +5,17 @@ type ArticleSchemaProps = {
   title: string;
   description: string;
   path: string;
+  datePublished?: string;
+  dateModified?: string;
 };
 
-export default function ArticleSchema({ title, description, path }: ArticleSchemaProps) {
+export default function ArticleSchema({
+  title,
+  description,
+  path,
+  datePublished,
+  dateModified,
+}: ArticleSchemaProps) {
   const url = absoluteUrl(path);
 
   const schema = {
@@ -18,6 +26,8 @@ export default function ArticleSchema({ title, description, path }: ArticleSchem
     url,
     mainEntityOfPage: url,
     inLanguage: "en",
+    ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified: dateModified ?? datePublished } : {}),
     author: {
       "@type": "Organization",
       name: SITE_NAME,

@@ -49,7 +49,7 @@ export default function EmailCaptureForm({
 
   if (submitted) {
     return (
-      <div className="py-4 text-center">
+      <div className="py-4 ic-align-center">
         <p className="text-green-400 font-semibold tracking-[0.2em] uppercase">{successMessage}</p>
       </div>
     );
@@ -80,7 +80,7 @@ export default function EmailCaptureForm({
           {loading ? "Submitting…" : buttonLabel}
         </button>
       </div>
-      {error ? <p className="text-sm text-red-400 text-center">{error}</p> : null}
+      {error ? <p className="text-sm text-red-400 ic-align-center">{error}</p> : null}
     </form>
   );
 }

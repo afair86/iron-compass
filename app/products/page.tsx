@@ -14,8 +14,8 @@ export const metadata = buildPageMetadata({
 export default function ProductsPage() {
   return (
     <PageShell>
-      <div className="ic-content-stack ic-content-narrow text-center">
-        <section className="ic-panel space-y-5 text-center">
+      <div className="ic-content-stack ic-content-narrow ic-align-center">
+        <section className="ic-panel space-y-5 ic-align-center">
           <h1 className="ic-section-title">Products page queued for rebuild</h1>
           <p className="ic-section-copy ic-section-copy--muted">
             This page is part of the legacy interface and is being upgraded to the new Iron Compass design. Use the links below to continue.

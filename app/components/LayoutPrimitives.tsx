@@ -9,7 +9,8 @@ type PageContainerProps = PropsWithChildren<{
 }>;
 
 type SectionShellProps = PropsWithChildren<{
-  variant?: "panel" | "muted" | "outline" | "hero";
+  variant?: "panel" | "muted" | "outline" | "hero" | "contrast" | "warm";
+  align?: "center" | "start";
   className?: string;
   as?: keyof JSX.IntrinsicElements;
 }>;
@@ -23,6 +24,7 @@ type HeadingStackProps = PropsWithChildren<{
   eyebrowClassName?: string;
   titleClassName?: string;
   description?: string;
+  accent?: "blue" | "red" | "gold" | "violet" | "teal" | "cyan";
 }>;
 
 const widthMap: Record<Width, string> = {
@@ -32,23 +34,40 @@ const widthMap: Record<Width, string> = {
 };
 
 const variantMap: Record<NonNullable<SectionShellProps["variant"]>, string> = {
-  hero: "ic-panel ic-panel--hero ic-panel--glow",
-  panel: "ic-panel",
-  muted: "ic-panel-muted",
-  outline: "ic-panel-outline",
+  hero: "ic-panel-stoic ic-panel-stoic--hero",
+  panel: "ic-panel-stoic",
+  muted: "ic-panel-stoic ic-panel-stoic--warm",
+  outline: "ic-panel-stoic",
+  contrast: "ic-panel-stoic ic-panel-stoic--hero",
+  warm: "ic-panel-stoic ic-panel-stoic--warm",
 };
+
+const eyebrowAccentMap = {
+  blue: "ic-eyebrow--field",
+  red: "ic-eyebrow--stoic",
+  gold: "ic-eyebrow--stoic",
+  violet: "ic-eyebrow--field",
+  teal: "ic-eyebrow--field",
+  cyan: "ic-eyebrow--field",
+} as const;
 
 export function PageContainer({ width = "wide", className = "", children }: PageContainerProps) {
   return <div className={`${widthMap[width]} px-4 md:px-6 ${className}`.trim()}>{children}</div>;
 }
 
+const alignMap = {
+  center: "ic-align-center",
+  start: "ic-align-start",
+} as const;
+
 export function SectionShell({
   variant = "panel",
+  align = "center",
   className = "",
   as: Tag = "section",
   children,
 }: SectionShellProps) {
-  return <Tag className={`${variantMap[variant]} ${className}`.trim()}>{children}</Tag>;
+  return <Tag className={`${variantMap[variant]} ${alignMap[align]} ${className}`.trim()}>{children}</Tag>;
 }
 
 export function HeadingStack({
@@ -60,18 +79,21 @@ export function HeadingStack({
   eyebrowClassName = "",
   titleClassName = "",
   description,
+  accent,
   children,
 }: HeadingStackProps) {
+  const eyebrowAccent = accent ? eyebrowAccentMap[accent] : "";
   return (
-    <Tag className={`ic-stack-sm ${center ? "text-center" : ""} ${className}`.trim()}>
+    <Tag className={`ic-stack-sm ${center ? "ic-align-center" : "ic-align-start"} ${className}`.trim()}>
       {eyebrow ? (
         <p
-          className={`ic-eyebrow ${center ? "mx-auto" : ""} ${eyebrowClassName}`.trim()}
+          className={`ic-eyebrow ${eyebrowAccent} ${center ? "mx-auto" : ""} ${eyebrowClassName}`.trim()}
         >
           {eyebrow}
         </p>
       ) : null}
       <h2 className={`ic-heading-2 ${center ? "mx-auto" : ""} ${titleClassName}`.trim()}>{title}</h2>
+      {center ? <div className="ic-stoic-rule mx-auto" aria-hidden="true" /> : <div className="ic-stoic-rule ic-stoic-rule--inline" aria-hidden="true" />}
       {description ? (
         <p className={`ic-section-copy ic-section-copy--muted ${center ? "mx-auto" : ""}`.trim()}>{description}</p>
       ) : null}

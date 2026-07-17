@@ -76,7 +76,7 @@ export default function PrivacyPage() {
   return (
     <PageShell>
       <div className="ic-content-stack max-w-5xl">
-        <section className="ic-panel text-center space-y-6">
+        <section className="ic-panel ic-align-center space-y-6">
           <h1 className="ic-section-title">Privacy Policy</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             We treat your data with the same seriousness we require inside the Iron Compass brotherhood. Minimal collection, transparent use, disciplined
@@ -84,29 +84,29 @@ export default function PrivacyPage() {
           </p>
         </section>
 
-        <section className="grid gap-6 md:grid-cols-3 text-center">
+        <section className="grid gap-6 md:grid-cols-3 ic-align-center">
           {highlights.map((item) => (
-            <article key={item.title} className="ic-panel-muted space-y-3 text-center">
+            <article key={item.title} className="ic-panel-muted space-y-3 ic-align-center">
               <h3 className="ic-section-heading">{item.title}</h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">{item.body}</p>
             </article>
           ))}
         </section>
 
-        <section className="space-y-6 text-center">
+        <section className="space-y-6 ic-align-center">
           {sections.map((section, index) => (
-            <article key={section.title} className="ic-panel-outline space-y-3 text-center">
+            <article key={section.title} className="ic-panel-outline space-y-3 ic-align-center">
               <h2 className="ic-section-heading">Section {String(index + 1).padStart(2, "0")}: {section.title}</h2>
-              <p className="ic-section-copy ic-section-copy--muted text-sm leading-relaxed text-left mx-auto">{section.body}</p>
+              <p className="ic-section-copy ic-section-copy--muted text-sm leading-relaxed mx-auto">{section.body}</p>
             </article>
           ))}
         </section>
 
-        <section className="ic-panel space-y-4 text-center">
+        <section className="ic-panel space-y-4 ic-align-center">
           <div className="space-y-2">
             <h2 className="ic-section-heading">Exercise Your Data Rights</h2>
           </div>
-          <ul className="space-y-3 text-sm text-left mx-auto max-w-3xl">
+          <ul className="space-y-3 text-sm mx-auto max-w-3xl">
             {rights.map((item) => (
               <li key={item} className="ic-dot-list">
                 <span>{item}</span>

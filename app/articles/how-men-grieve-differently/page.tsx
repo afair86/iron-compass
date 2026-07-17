@@ -3,9 +3,9 @@ import ArticleLayout from "../components/ArticleLayout";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "How Men Grieve Differently (And Why No One Talks About It)",
+  title: "How Men Grieve Differently — And Why Silence Isn't Strength",
   description:
-    "Men carry grief differently. Learn why men go silent, why they break privately, and how to handle loss with strength, clarity, and masculine structure.",
+    "Men don't grieve like the textbooks say. Why isolation, rage, and numbness show up — and what structure actually helps you process loss without falling apart.",
   path: "/articles/how-men-grieve-differently",
 });
 
@@ -58,14 +58,14 @@ export default function ArticlePage() {
       intro="Most grief conversations were not written for men. You hold the line even when the ground is shifting, and that difference matters. This article explains why men go silent, why they break in private, and how to carry loss with structure."
       path="/articles/how-men-grieve-differently"
     >
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Why Men Go Silent During Grief</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Men go quiet because they feel responsible. Even while grieving, you are protecting, providing, leading, solving, and keeping the world stable. Silence becomes a survival mechanism, not apathy.
         </p>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Men Feel Grief in Their Identity</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Women often talk feelings through. Men internalise grief as identity shock, responsibility pressure, loss of direction, and fear of letting people down. Grief and identity are inseparable; revisit the
@@ -78,27 +78,27 @@ export default function ArticlePage() {
         </p>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Why Men Break in Private</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Men hide their breaking point because they do not want to be a burden, fear being unreliable, and lack a masculine framework for expressing grief. Breaking in private is not weakness—it is isolation without structure.
         </p>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">How Society Fails Men in Grief</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Grief advice is soft and emotional. Men need clarity, responsibility, direction, discipline, honour, and principles. Not platitudes. Men do not need to be babied—they need a framework.
         </p>
       </section>
 
-      <section className="ic-panel space-y-6 text-center">
-        <div className="space-y-2 text-center">
+      <section className="ic-panel space-y-6 ic-align-center">
+        <div className="space-y-2 ic-align-center">
           <h2 className="ic-section-heading">The Four Masculine Patterns of Grief</h2>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 text-center">
+        <div className="grid gap-4 md:grid-cols-2 ic-align-center">
           {patterns.map((pattern) => (
-            <article key={pattern.title} className="ic-panel-muted space-y-2 text-center">
+            <article key={pattern.title} className="ic-panel-muted space-y-2 ic-align-center">
               <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">{pattern.title}</h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">{pattern.copy}</p>
             </article>
@@ -106,7 +106,7 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <section className="ic-panel-outline space-y-4 text-center">
+      <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">The Strength Men Need While Grieving</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Men do not need permission to fall apart; they need a system that keeps them steady. Masculine strength looks like facing reality, staying grounded, holding structure, protecting what matters, and choosing purpose when emotions are chaotic. Build this foundation in the
@@ -125,14 +125,14 @@ export default function ArticlePage() {
         </p>
       </section>
 
-      <section className="ic-panel space-y-6 text-center">
+      <section className="ic-panel space-y-6 ic-align-center">
         <div className="space-y-2">
           <h2 className="ic-section-heading">How to Grieve Without Destroying Yourself</h2>
           <p className="ic-section-copy ic-section-copy--muted">Execute these steps:</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 text-center">
+        <div className="grid gap-4 md:grid-cols-2 ic-align-center">
           {steps.map((step) => (
-            <article key={step.title} className="ic-panel-muted space-y-2 text-center">
+            <article key={step.title} className="ic-panel-muted space-y-2 ic-align-center">
               <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">{step.title}</h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">{step.copy}</p>
             </article>
@@ -140,7 +140,7 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <section className="ic-panel text-center space-y-4">
+      <section className="ic-panel ic-align-center space-y-4">
         <h2 className="ic-section-heading">How Iron Compass Helps</h2>
         <p className="ic-section-copy ic-section-copy--muted">
           Iron Compass gives you discipline, identity, structure, and purpose to lead yourself through loss. Inside the app you will find grief grounding rituals, structured reflections, identity rebuilding, discipline anchors, fatherhood support, purpose tools, and habit systems.

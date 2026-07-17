@@ -2,7 +2,7 @@ import Link from "next/link";
 import PageShell from "@/app/components/PageShell";
 import { HeadingStack, PageContainer, SectionShell } from "@/app/components/LayoutPrimitives";
 import type { DomainNarrative } from "../narratives/types";
-import type { DomainSlug } from "../content";
+import { domainContentMap, type DomainSlug } from "../content";
 import DomainCta from "./DomainCta";
 import { domainBlogLinks } from "@/lib/domainBlogLinks";
 
@@ -13,26 +13,24 @@ type DomainPageViewProps = {
 
 export default function DomainPageView({ narrative, slug }: DomainPageViewProps) {
   const journalLinks = domainBlogLinks[slug];
+  const domain = domainContentMap[slug];
 
   return (
     <PageShell>
       <PageContainer>
-        <SectionShell variant="hero" className="space-y-6 text-left">
-          <p className="ic-eyebrow">Iron Compass Domain</p>
-          <h1 className="ic-page-title text-left">{narrative.h1Title}</h1>
+        <SectionShell variant="hero" className="space-y-6">
+          <h1 className="ic-page-title">{narrative.h1Title}</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl">{narrative.heroDescription}</p>
-          <DomainCta />
+          <DomainCta centered />
           <p className="ic-section-copy ic-section-copy--muted text-sm">{narrative.socialProof}</p>
         </SectionShell>
 
         {narrative.sections.map((section) => {
           if (section.key === "closingCta") {
             return (
-              <SectionShell key={section.key} variant="panel" className="space-y-4 md:space-y-5 text-center">
-                <h2 className="ic-heading-2 mx-auto text-center">{section.heading}</h2>
-                <p className="ic-section-copy ic-section-copy--muted text-center max-w-2xl mx-auto">
-                  {section.paragraphs?.[0]}
-                </p>
+              <SectionShell key={section.key} variant="panel" className="space-y-4 md:space-y-5">
+                <h2 className="ic-heading-2">{section.heading}</h2>
+                <p className="ic-section-copy ic-section-copy--muted max-w-2xl">{section.paragraphs?.[0]}</p>
                 <DomainCta centered />
               </SectionShell>
             );
@@ -40,12 +38,12 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
 
           if (section.key === "fourPillars") {
             return (
-              <SectionShell key={section.key} variant="panel" className="space-y-5 md:space-y-6 text-left">
-                <HeadingStack title={section.heading} center={false} className="space-y-2" />
-                <div className="space-y-6 md:space-y-7">
+              <SectionShell key={section.key} variant="panel" className="space-y-5 md:space-y-6">
+                <HeadingStack title={section.heading} className="space-y-2" />
+                <div className="space-y-6 md:space-y-7 max-w-3xl mx-auto text-left">
                   {section.pillars?.map((pillar) => (
                     <div key={pillar.title} className="space-y-3">
-                      <h3 className="ic-heading-3 text-left">{pillar.title}</h3>
+                      <h3 className="ic-heading-3">{pillar.title}</h3>
                       <p className="ic-section-copy">{pillar.body}</p>
                       {pillar.bullets ? (
                         <ul className="list-disc list-inside space-y-1 ic-section-copy">
@@ -64,13 +62,11 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
 
           if (section.key === "systemConnections" || section.key === "aiExtension") {
             return (
-              <SectionShell key={section.key} variant="panel" className="space-y-4 md:space-y-5 text-left">
-                <h2 className="ic-heading-2 text-left">{section.heading}</h2>
-                <div className="space-y-3">
+              <SectionShell key={section.key} variant="panel" className="space-y-4 md:space-y-5">
+                <h2 className="ic-heading-2">{section.heading}</h2>
+                <div className="space-y-3 max-w-3xl mx-auto text-left">
                   {section.intro ? <p className="ic-section-copy">{section.intro}</p> : null}
-                  {section.key === "aiExtension" ? (
-                    <p className="ic-section-copy">They provide:</p>
-                  ) : null}
+                  {section.key === "aiExtension" ? <p className="ic-section-copy">They provide:</p> : null}
                   {section.bullets ? (
                     <ul className="list-disc list-inside space-y-1 ic-section-copy">
                       {section.bullets.map((item) => (
@@ -85,8 +81,8 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
           }
 
           return (
-            <SectionShell key={section.key} variant="panel" className="space-y-4 md:space-y-5 text-left">
-              <h2 className="ic-heading-2 text-left">{section.heading}</h2>
+            <SectionShell key={section.key} variant="panel" className="space-y-4 md:space-y-5">
+              <h2 className="ic-heading-2">{section.heading}</h2>
               {section.paragraphs?.map((paragraph) => (
                 <p key={paragraph.slice(0, 48)} className="ic-section-copy">
                   {paragraph}
@@ -96,17 +92,42 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
           );
         })}
 
-        <SectionShell variant="panel" className="space-y-5 md:space-y-6 text-left">
+        <SectionShell variant="contrast" className="space-y-5 md:space-y-6">
+          <HeadingStack
+            title="Explore the Compass"
+            description="This domain connects to the rest of the system."
+            accent="gold"
+            className="space-y-2"
+          />
+          <article className="ic-stoic-card ic-stoic-card--featured space-y-2">
+            <Link href={domain.companionLink.href} className="ic-stoic-card__title">
+              {domain.companionLink.label}
+            </Link>
+            <p className="ic-section-copy ic-section-copy--muted text-sm">{domain.companionLink.description}</p>
+          </article>
+          <div className="grid gap-4 md:grid-cols-2">
+            {domain.internalLinks.map((link) => (
+              <article key={link.href} className="ic-stoic-card space-y-2">
+                <Link href={link.href} className="ic-stoic-card__title">
+                  {link.label}
+                </Link>
+                <p className="ic-section-copy ic-section-copy--muted text-sm">{link.description}</p>
+              </article>
+            ))}
+          </div>
+        </SectionShell>
+
+        <SectionShell variant="warm" className="space-y-5 md:space-y-6">
           <HeadingStack
             title="From the Journal"
             description="Practical dispatches that support this domain."
-            center={false}
+            accent="teal"
             className="space-y-2"
           />
           <div className="grid gap-4 md:grid-cols-1">
             {journalLinks.map((link) => (
-              <article key={link.href} className="rounded-3xl border border-white/10 bg-[var(--ic-card-bg)]/80 px-5 py-5 space-y-2">
-                <Link href={link.href} className="font-heading text-sm uppercase tracking-[0.28em] text-ic-red hover:text-ic-red/80">
+              <article key={link.href} className="ic-stoic-card space-y-2">
+                <Link href={link.href} className="ic-stoic-card__title">
                   {link.title}
                 </Link>
                 <p className="ic-section-copy ic-section-copy--muted text-sm">{link.description}</p>

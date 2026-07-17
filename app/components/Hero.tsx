@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { productAppHref } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -19,7 +20,7 @@ export default function Hero() {
         <div className="ic-divider" />
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-          <Link href="/start" className="ic-btn-primary text-xs sm:text-[0.72rem]">
+          <Link href={productAppHref()} className="ic-btn-primary text-xs sm:text-[0.72rem]">
             Start Your Rise
           </Link>
           <Link href="/blog" className="ic-btn-ghost text-xs sm:text-[0.7rem]">
