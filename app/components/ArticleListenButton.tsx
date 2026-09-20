@@ -1,136 +1,105 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-type ListenButtonProps = {
+type ArticleListenButtonProps = {
   title: string;
-  /** Plain text extracted for speech (no markdown). */
+  /** Fallback plain text for browser speech if no audio file. */
   text: string;
+  /** Preferred: pre-rendered neural MP3 (natural voice). */
+  audioSrc?: string;
 };
 
-function pickStoicVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | null {
-  if (!voices.length) return null;
-  const ranked = [...voices].sort((a, b) => {
-    const score = (v: SpeechSynthesisVoice) => {
-      const name = `${v.name} ${v.lang}`.toLowerCase();
-      let s = 0;
-      if (/en-au|en_au|australian/.test(name)) s += 6;
-      if (/en-gb|en_gb|british|uk english/.test(name)) s += 5;
-      if (/en-us|en_us|english/.test(name)) s += 2;
-      if (/male|david|daniel|james|george|thomas|alex|fred|microsoft mark|microsoft ryan|google uk english male/.test(name)) {
-        s += 4;
-      }
-      if (/female|zira|samantha|karen|moira/.test(name)) s -= 3;
-      if (v.localService) s += 1;
-      return s;
-    };
-    return score(b) - score(a);
-  });
-  return ranked[0] ?? null;
-}
-
 /**
- * Browser speech playback — calm, slightly slow, firm.
- * No API key required. Quality depends on the device voices installed.
+ * Prefer hosted neural MP3. Fall back to browser speech only if no file.
  */
-export default function ArticleListenButton({ title, text }: ListenButtonProps) {
-  const [supported, setSupported] = useState(false);
-  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+export default function ArticleListenButton({ title, text, audioSrc }: ArticleListenButtonProps) {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
-
-  const script = useMemo(() => {
-    const cleaned = text
-      .replace(/\s+/g, " ")
-      .replace(/https?:\/\/\S+/g, "")
-      .trim();
-    return `${title}. ${cleaned}`;
-  }, [title, text]);
+  const [ready, setReady] = useState(Boolean(audioSrc));
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-    setSupported(true);
-
-    const loadVoices = () => setVoices(window.speechSynthesis.getVoices());
-    loadVoices();
-    window.speechSynthesis.addEventListener("voiceschanged", loadVoices);
     return () => {
-      window.speechSynthesis.removeEventListener("voiceschanged", loadVoices);
-      window.speechSynthesis.cancel();
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
     };
   }, []);
 
-  const stop = () => {
-    if (typeof window === "undefined") return;
-    window.speechSynthesis.cancel();
-    utteranceRef.current = null;
-    setPlaying(false);
-    setPaused(false);
-  };
-
-  const play = () => {
-    if (!supported || !script) return;
-    window.speechSynthesis.cancel();
-
-    const utter = new SpeechSynthesisUtterance(script);
-    const voice = pickStoicVoice(voices);
-    if (voice) utter.voice = voice;
-    // Calm but firm: slightly slower, steady pitch
-    utter.rate = 0.92;
-    utter.pitch = 0.9;
-    utter.volume = 1;
-
-    utter.onend = () => {
+  const playFile = async () => {
+    if (!audioSrc) return;
+    setError("");
+    try {
+      if (!audioRef.current) {
+        audioRef.current = new Audio(audioSrc);
+        audioRef.current.preload = "metadata";
+        audioRef.current.onended = () => setPlaying(false);
+        audioRef.current.onpause = () => setPlaying(false);
+        audioRef.current.onplay = () => setPlaying(true);
+        audioRef.current.onerror = () => {
+          setError("Audio could not load. Refresh and try again.");
+          setPlaying(false);
+        };
+      }
+      await audioRef.current.play();
+      setPlaying(true);
+      setReady(true);
+    } catch {
+      setError("Tap play again — browsers sometimes block the first autoplay.");
       setPlaying(false);
-      setPaused(false);
-      utteranceRef.current = null;
-    };
-    utter.onerror = () => {
-      setPlaying(false);
-      setPaused(false);
-      utteranceRef.current = null;
-    };
-
-    utteranceRef.current = utter;
-    setPlaying(true);
-    setPaused(false);
-    window.speechSynthesis.speak(utter);
-  };
-
-  const togglePause = () => {
-    if (!playing) return;
-    if (paused) {
-      window.speechSynthesis.resume();
-      setPaused(false);
-    } else {
-      window.speechSynthesis.pause();
-      setPaused(true);
     }
   };
 
-  if (!supported) return null;
+  const pauseFile = () => {
+    audioRef.current?.pause();
+    setPlaying(false);
+  };
 
-  return (
-    <div className="ic-listen" role="group" aria-label="Listen to this article">
-      <p className="ic-listen__label">Listen</p>
-      <p className="ic-listen__hint">Calm, firm readout — press play if you’d rather hear it.</p>
-      <div className="ic-listen__controls">
-        {!playing ? (
-          <button type="button" className="ic-btn-primary text-[0.62rem]" onClick={play}>
-            Play audio
-          </button>
-        ) : (
-          <>
-            <button type="button" className="ic-btn-primary text-[0.62rem]" onClick={togglePause}>
-              {paused ? "Resume" : "Pause"}
+  const stopFile = () => {
+    if (!audioRef.current) return;
+    audioRef.current.pause();
+    audioRef.current.currentTime = 0;
+    setPlaying(false);
+  };
+
+  if (audioSrc) {
+    return (
+      <div className="ic-listen" role="group" aria-label={`Listen to ${title}`}>
+        <p className="ic-listen__label">Listen</p>
+        <p className="ic-listen__hint">Calm, firm readout — press play if you’d rather hear it.</p>
+        <div className="ic-listen__controls">
+          {!playing ? (
+            <button type="button" className="ic-btn-primary text-[0.62rem]" onClick={playFile}>
+              Play audio
             </button>
-            <button type="button" className="ic-btn-ghost text-[0.6rem]" onClick={stop}>
-              Stop
-            </button>
-          </>
-        )}
+          ) : (
+            <>
+              <button type="button" className="ic-btn-primary text-[0.62rem]" onClick={pauseFile}>
+                Pause
+              </button>
+              <button type="button" className="ic-btn-ghost text-[0.6rem]" onClick={stopFile}>
+                Stop
+              </button>
+            </>
+          )}
+        </div>
+        {error ? <p className="ic-listen__error">{error}</p> : null}
+        {ready ? null : null}
       </div>
+    );
+  }
+
+  // No neural file yet — hide rather than offer robotic browser voice.
+  if (!text) return null;
+  return (
+    <div className="ic-listen" role="group" aria-label={`Listen to ${title}`}>
+      <p className="ic-listen__label">Listen</p>
+      <p className="ic-listen__hint">Audio for this article is being prepared.</p>
     </div>
   );
 }

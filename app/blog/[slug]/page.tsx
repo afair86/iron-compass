@@ -11,6 +11,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
 import { markdownToSpeechText } from "@/lib/speechText";
+import fs from "fs";
+import path from "path";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -111,6 +113,9 @@ export default async function BlogPostPage({ params }: Props) {
 
   const faqEntries = extractFaqFromMarkdown(post.content);
   const speechText = markdownToSpeechText(post.content);
+  const audioRel = `/audio/blog/${slug}.mp3`;
+  const audioAbs = path.join(process.cwd(), "public", "audio", "blog", `${slug}.mp3`);
+  const audioSrc = fs.existsSync(audioAbs) ? audioRel : undefined;
   const faqSchema =
     faqEntries.length > 0
       ? {
@@ -198,7 +203,7 @@ export default async function BlogPostPage({ params }: Props) {
               <span aria-hidden="true">·</span>
               <span>Field Dispatch</span>
             </div>
-            <ArticleListenButton title={articleTitle} text={speechText} />
+            <ArticleListenButton title={articleTitle} text={speechText} audioSrc={audioSrc} />
             <div className="ic-stoic-rule ic-stoic-rule--wide" aria-hidden="true" />
           </header>
 

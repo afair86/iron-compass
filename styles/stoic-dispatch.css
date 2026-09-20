@@ -127,6 +127,12 @@
   align-items: center;
 }
 
+.ic-listen__error {
+  margin: 0.55rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ic-ember);
+}
+
 /* --- Labels & badges (understated) --- */
 
 .ic-dispatch-label {
