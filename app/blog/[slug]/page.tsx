@@ -6,9 +6,11 @@ import Script from "next/script";
 import PageShell from "@/app/components/PageShell";
 import { PageContainer } from "@/app/components/LayoutPrimitives";
 import CategoryBadge from "@/app/components/CategoryBadge";
+import ArticleListenButton from "@/app/components/ArticleListenButton";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
+import { markdownToSpeechText } from "@/lib/speechText";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -108,6 +110,7 @@ export default async function BlogPostPage({ params }: Props) {
   const dateModified = post.meta.updated || post.meta.date;
 
   const faqEntries = extractFaqFromMarkdown(post.content);
+  const speechText = markdownToSpeechText(post.content);
   const faqSchema =
     faqEntries.length > 0
       ? {
@@ -195,6 +198,7 @@ export default async function BlogPostPage({ params }: Props) {
               <span aria-hidden="true">·</span>
               <span>Field Dispatch</span>
             </div>
+            <ArticleListenButton title={articleTitle} text={speechText} />
             <div className="ic-stoic-rule ic-stoic-rule--wide" aria-hidden="true" />
           </header>
 

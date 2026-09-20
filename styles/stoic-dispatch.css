@@ -96,6 +96,37 @@
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.ic-listen {
+  margin: 1.25rem auto 0;
+  max-width: 28rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(196, 165, 116, 0.28);
+  background: rgba(255, 255, 255, 0.02);
+  text-align: left;
+}
+
+.ic-listen__label {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ic-brass);
+}
+
+.ic-listen__hint {
+  margin: 0.35rem 0 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--ic-stone);
+}
+
+.ic-listen__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+
 /* --- Labels & badges (understated) --- */
 
 .ic-dispatch-label {
