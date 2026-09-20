@@ -1,6 +1,6 @@
 # Iron Compass — marketing site ↔ product app
 
-**Last updated:** 2026-07-12  
+**Last updated:** 2026-08-14  
 **Purpose:** Single handoff doc so Cursor (and humans) in either repo know what the other owns.
 
 ---
@@ -9,17 +9,21 @@
 
 | Role | Local path |
 |------|------------|
-| **Product app** | `C:\Users\adamf\APP` |
-| **Marketing website** (this repo) | `C:\Users\adamf\iron-compass` |
+| **Product app** | `C:\Users\adamf\Projects\iron-compass-ai` |
+| **Marketing website** (this repo) | `C:\Users\adamf\Projects\iron-compass` |
+
+Old path `C:\Users\adamf\APP` is gone after the PC swap. Same product repo, new folder name.
 
 ---
 
 ## Production URLs
 
+**Canonical host:** bare `https://ironcompassai.com` (`SITE_URL` in `lib/site.ts`). `www.ironcompassai.com` **308-redirects** to bare (`vercel.json`).
+
 | Surface | URL | Built in |
 |---------|-----|----------|
-| Marketing / SEO site | `https://www.ironcompassai.com` | **This repo** |
-| Web app (mobile shell, tabs) | `https://www.ironcompassai.com/app` or `https://app.ironcompass.app` | **APP repo** |
+| Marketing / SEO site | `https://ironcompassai.com` | **This repo** |
+| Web app (mobile shell, tabs) | `https://ironcompassai.com/app` or `https://app.ironcompass.app` | **APP repo** |
 | API | `https://api.ironcompassai.com` | **APP repo** |
 
 ---
@@ -49,7 +53,7 @@ Do not link production users to `?native=1` (dev only).
 
 ### `/app` on the marketing domain
 
-Set **`PRODUCT_APP_UPSTREAM_URL`** in Vercel to the APP frontend deployment (see `next.config.ts` rewrites). Without it, `/app` on `www.ironcompassai.com` does not proxy to the product and will appear blank or 404.
+Set **`PRODUCT_APP_UPSTREAM_URL`** in Vercel to the APP frontend deployment (see `next.config.ts` rewrites). Without it, `/app` on `ironcompassai.com` does not proxy to the product and will appear blank or 404.
 
 ---
 
@@ -57,7 +61,7 @@ Set **`PRODUCT_APP_UPSTREAM_URL`** in Vercel to the APP frontend deployment (see
 
 **Status (verified 2026-07-12):** `https://ironcompassai.com/app` returns **200** and serves the product app shell (`#root`, title “Iron Compass AI”). `/app/dashboard` also returns 200. Upstream frontend deployment is reachable.
 
-**Note:** `www.ironcompassai.com/app` currently **308-redirects** to bare `ironcompassai.com/app`. Canonical host choice is a follow-up (roadmap **S1**).
+**Canonical host (S1, 2026-08-03):** Prefer bare `ironcompassai.com`. `www` → bare is permanent (308).
 
 ### Marketing site (this repo)
 
@@ -80,7 +84,7 @@ Set **`PRODUCT_APP_UPSTREAM_URL`** in Vercel to the APP frontend deployment (see
 
 ## Founder Dashboard (internal BI)
 
-Lives in the **APP repo** only. See `C:\Users\adamf\APP\FOUNDER_DASHBOARD_ROADMAP.md`.
+Lives in the **APP repo** only. See `C:\Users\adamf\Projects\iron-compass-ai\FOUNDER_DASHBOARD_ROADMAP.md` (`founder-dashboard/` + `apps/api/src/founder/`).
 
 - Target: `https://founder.ironcompassai.com`
 - Do **not** build it in this marketing repo

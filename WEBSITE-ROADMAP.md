@@ -1,6 +1,6 @@
 # Iron Compass AI — Website Roadmap
 
-**Last updated:** 2026-07-12  
+**Last updated:** 2026-08-03  
 **Workflow:** Audit → Plan → Wait → Execute **one** task → Verify → Complete → Update this file → Wait
 
 ---
@@ -11,8 +11,8 @@
 |----|------|--------|
 | **K1** | Confirm production `/app` proxy healthy | **DONE** (2026-07-12) |
 | **C1** | CTA taxonomy fix (`/app` vs `/start` vs `/download`) | **DONE** (2026-07-12) |
-| S1 | Canonical host (`www` vs bare) + align `SITE_URL` | Next (pending approval) |
-| H3 | Official support email set | Pending |
+| **S1** | Canonical host (`www` vs bare) + align `SITE_URL` | **DONE** (2026-08-03) |
+| H3 | Official support email set | Next (pending approval) |
 | C3 | Public Pricing page (Free / Core / Pro) | Pending |
 | N1 | Analytics | Pending |
 | C2 | Email capture wired | Pending |
@@ -54,3 +54,23 @@ Full category backlog lives in the approved audit plan (chat). Only **one** ID e
 **Left intentional:** blog/articles “Start the Program” / “Start Your Compass” → `/start`; article “Download the App” → `/download`; nav/footer ProductAppLink already correct.
 
 Deployed to production with this change.
+
+---
+
+## S1 — Verification log
+
+**Decision:** Canonical host = bare `https://ironcompassai.com` (not `www`).
+
+**Already live (confirmed 2026-08-03):**
+- `SITE_URL` in `lib/site.ts` = `https://ironcompassai.com`
+- Homepage canonical + `og:url` = bare
+- `vercel.json` 308: `www.ironcompassai.com/*` → `https://ironcompassai.com/$1`
+- `https://www.ironcompassai.com/` → **308** → `https://ironcompassai.com/`
+- `https://www.ironcompassai.com/app` → **308** → `https://ironcompassai.com/app`
+- Bare home + `/app` → **200**
+
+**Aligned docs/scripts (this pass):**
+- `INTEGRATION.md` — production URLs + `/app` notes use bare; S1 note closed
+- `scripts/deploy.mjs` — success URL prints bare host
+
+**Pass criteria met.** One official address; `www` permanently redirects.

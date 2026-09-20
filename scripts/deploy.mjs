@@ -88,4 +88,4 @@ process.env.VERCEL_TOKEN = token;
 
 run("npm", ["run", "build"], "build");
 run("npx", ["vercel", "--prod", "--yes", "--token", token], "deploy");
-console.log("\nDeploy complete. Production: https://www.ironcompassai.com\n");
+console.log("\nDeploy complete. Production: https://ironcompassai.com\n");
