@@ -57,7 +57,7 @@ NON-NEGOTIABLES (SEE FULL GUIDE)
 ==================================================
 
 - Calm, firm, practical voice; natural narration flow
-- Human feel: sounds like a calm person talking, not a template (no stacked buzzwords, no “in today’s fast-paced world”, no “it’s important to note”, no perfectly even paragraph rhythm, no fake customers, no brochure close). Photos look like a real place and a real person; compass mark subtle only (desk object, pin, or plaque). No AI caption, giant watermark, plastic skin, extra fingers, sci-fi glow, or stock power-pose. Do not tell the reader it was AI-made.
+- Human feel: sounds like a calm person talking, not a template (no stacked buzzwords, no “in today’s fast-paced world”, no “it’s important to note”, no perfectly even paragraph rhythm, no fake customers, no brochure close). Photos look like a real place and a real person; compass mark subtle only (desk object, pin, or plaque). No AI caption, giant watermark, plastic skin, extra fingers, sci-fi glow, or stock power-pose. Do not tell the reader it was AI-made. Change the men from photo to photo: ages 30 to 60 to fit the page; mix sporty, business, casual, family, and partnerships; they look like they are enjoying getting better; vary clothes, rooms, and light so colours are not all the same.
 - Realistic advice (work, recovery, family, change)
 - Concrete examples with checked maths and explicit assumptions
 - Clear split: evidence vs general guidance vs illustration; authoritative links for health claims

@@ -37,4 +37,13 @@ Prefer one of:
 
 Avoid: huge glowing holograms, readable fake UI, covering faces, or stock “logo stamp” overlays.
 
-See `content/blog/_standards/IRON-COMPASS-BLOG-EDITORIAL-AND-IMPLEMENTATION-GUIDE.md` (Imagery).
+## People in photographs
+
+Across the site, change the men from photo to photo:
+
+- Ages 30 to 60, chosen to fit the page.
+- Mix looks and situations: sporty, business, casual, family, and partnerships. Match the style to the content.
+- They should look like they are enjoying the work of getting better — present, pleased, and in the middle of something useful.
+- Do not repeat the same colours. Vary clothes, rooms, and light.
+
+See `content/blog/_standards/IRON-COMPASS-BLOG-EDITORIAL-AND-IMPLEMENTATION-GUIDE.md` (Pictures).

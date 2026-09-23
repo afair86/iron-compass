@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
+import "@/styles/stoic-dispatch.css";
 import PageShell from "@/app/components/PageShell";
 import ArticleListenButton from "@/app/components/ArticleListenButton";
 import { HeadingStack, PageContainer, SectionShell } from "@/app/components/LayoutPrimitives";

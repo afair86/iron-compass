@@ -23,5 +23,6 @@ When the task involves blog articles, narration/audio, Field Dispatch styling, `
 - Time inputs: rapid entry, deliberate clear (including both optional ends), incomplete kept editable, submit without blur, edit→regenerate — see guide §8
 - Brand compass mark: header/app logos from `brand/iron-compass-mark-source.png` via `scripts/apply-brand-mark.mjs`. AI photos include the mark **subtly** (object/plaque), never as a giant watermark
 - Human feel: writing sounds like a calm person (no buzzword stacks, “in today’s fast-paced world”, “it’s important to note”, even paragraph rhythm, fake customers, or a brochure close). Photos look like a real place and person; compass mark subtle only; no AI caption, giant watermark, plastic skin, extra fingers, sci-fi glow, or stock power-pose. Do not tell the reader the piece was AI-made.
+- Picture variety: change the men from photo to photo — ages 30 to 60 to fit the page; mix sporty, business, casual, family, and partnerships; they look like they are enjoying getting better; do not repeat the same colours (clothes, rooms, and light). See the guide’s Pictures section.
 
 If the task is unrelated to blogs, ignore this rule’s workflow details.

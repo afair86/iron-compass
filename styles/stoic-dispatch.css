@@ -135,12 +135,15 @@
 .ic-listen__subtle-row {
   display: inline-flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
-  gap: 0.45rem 0.65rem;
+  gap: 0.45rem 0.7rem;
 }
 
 .ic-listen__subtle-prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   margin: 0;
   padding: 0;
   border: none;
@@ -152,11 +155,19 @@
   cursor: pointer;
 }
 
+.ic-listen__speaker {
+  width: 0.95em;
+  height: 0.95em;
+  flex: 0 0 auto;
+  display: block;
+}
+
 .ic-listen__subtle-prompt:hover {
   color: var(--ic-paper, #f3efe6);
 }
 
 .ic-listen__subtle-hint {
+  margin-left: 0.35rem;
   font-size: 0.8rem;
   color: var(--ic-stone);
   opacity: 0.85;

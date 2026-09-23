@@ -36,6 +36,17 @@ function storageKey(src: string, version?: string) {
   return `ic-listen:${version || "v1"}:${src}`;
 }
 
+function SpeakerIcon() {
+  return (
+    <svg className="ic-listen__speaker" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.2-3.9v7.8A4.5 4.5 0 0 0 16.5 12zM14.3 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"
+      />
+    </svg>
+  );
+}
+
 /**
  * Pre-generated neural MP3 player.
  * No browser speechSynthesis primary path — robotic fallback stays hidden.
@@ -244,7 +255,8 @@ export default function ArticleListenButton({
               }}
               aria-label={playing ? `Pause ${title}` : `Listen to ${title}`}
             >
-              {loading ? "Loading…" : playing ? "Pause" : current > 0 ? "Resume listening" : "Listen"}
+              <SpeakerIcon />
+              <span>{loading ? "Loading…" : playing ? "Pause" : current > 0 ? "Resume listening" : "Listen"}</span>
             </button>
             {!playing && current === 0 ? <span className="ic-listen__subtle-hint">{hint}</span> : null}
             {playing || current > 0 ? (

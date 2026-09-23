@@ -62,6 +62,9 @@ The piece should sound and look like a calm person made it. Do not tell the read
 - No plastic skin, no extra fingers, no sci-fi glow, no stock power-pose.
 - Compass mark stays subtle (a desk object, pin, or plaque). No giant watermark.
 - No “AI-generated illustration” line under the photo.
+- Change the men from photo to photo. Ages 30 to 60, chosen to fit the page. Mix looks and situations: sporty, business, casual, family, and partnerships. Match the style to the content.
+- They should look like they are enjoying the work of getting better — present, pleased, and in the middle of something useful. Not grim, and not posing for a poster.
+- Do not repeat the same colours. Vary clothes, rooms, and light so a row of photos does not look like one shoot.
 
 ---
 
@@ -238,7 +241,7 @@ Until approval: keep Listen hidden if audio is stale; keep review markers off th
 
 ### Imagery
 - Store prompts + asset mapping under `content/blog/_standards/` (see `IMAGE-PROMPTS-*.md`).
-- Frontmatter: `image`, `imageAlt`. Do not print an “AI-generated illustration” credit under photos. Human feel for pictures: see §2 — a real place and a real person; no plastic skin, extra fingers, sci-fi glow, or stock power-pose.
+- Frontmatter: `image`, `imageAlt`. Do not print an “AI-generated illustration” credit under photos. Human feel for pictures: see §2 — a real place and a real person; no plastic skin, extra fingers, sci-fi glow, or stock power-pose. Also vary age (30–60), style (sporty, business, casual, family, partnerships), enjoyment, and colour so photos do not all look alike.
 - Optimise to WebP with `sharp`; unique heroes — never reuse across posts.
 - **Brand compass (from now on):** incorporate the approved Iron Compass mark **subtly** in AI-generated scenes (desk object, pin, faint plaque, soft background detail). Do not stamp a giant watermark, hologram, or readable fake UI. Canonical source: `brand/iron-compass-mark-source.png`. Header/app logos are updated via `node scripts/apply-brand-mark.mjs`.
 
