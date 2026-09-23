@@ -20,7 +20,6 @@ type ArticleListenButtonProps = {
   subtle?: boolean;
 };
 
-const SPEEDS = [0.75, 1, 1.25, 1.5, 2] as const;
 const SKIP_SECONDS = 15;
 const PLAY_EVENT = "ic-listen-play";
 
@@ -71,7 +70,6 @@ export default function ArticleListenButton({
   const [error, setError] = useState("");
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [speed, setSpeed] = useState<number>(1);
   const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
@@ -112,7 +110,6 @@ export default function ArticleListenButton({
 
     const audio = new Audio(audioSrc);
     audio.preload = "metadata";
-    audio.playbackRate = speed;
 
     audio.onloadedmetadata = () => {
       setDuration(audio.duration || 0);
@@ -184,14 +181,6 @@ export default function ArticleListenButton({
     setPlaying(false);
   };
 
-  const restart = () => {
-    const audio = ensureAudio();
-    if (!audio) return;
-    audio.currentTime = 0;
-    setCurrent(0);
-    void playFile();
-  };
-
   const skip = (delta: number) => {
     const audio = ensureAudio();
     if (!audio) return;
@@ -205,11 +194,6 @@ export default function ArticleListenButton({
     if (!audio) return;
     audio.currentTime = value;
     setCurrent(value);
-  };
-
-  const onSpeed = (value: number) => {
-    setSpeed(value);
-    if (audioRef.current) audioRef.current.playbackRate = value;
   };
 
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -269,17 +253,6 @@ export default function ArticleListenButton({
 
           {showPanel ? (
             <div className="ic-listen__subtle-panel">
-              <div className="ic-listen__controls">
-                <button type="button" className="ic-btn-ghost text-[0.6rem]" onClick={() => skip(-SKIP_SECONDS)} aria-label={`Skip back ${SKIP_SECONDS} seconds`}>
-                  −{SKIP_SECONDS}s
-                </button>
-                <button type="button" className="ic-btn-ghost text-[0.6rem]" onClick={() => skip(SKIP_SECONDS)} aria-label={`Skip forward ${SKIP_SECONDS} seconds`}>
-                  +{SKIP_SECONDS}s
-                </button>
-                <button type="button" className="ic-btn-ghost text-[0.6rem]" onClick={restart} aria-label="Restart audio">
-                  Restart
-                </button>
-              </div>
               <div className="ic-listen__progress">
                 <label className="sr-only" htmlFor={progressId}>
                   Playback position
@@ -294,24 +267,6 @@ export default function ArticleListenButton({
                   value={Math.min(current, duration || 0)}
                   onChange={(e) => onSeek(Number(e.target.value))}
                 />
-              </div>
-              <div className="ic-listen__speed">
-                <span className="ic-listen__speed-label" id={`${progressId}-speed`}>
-                  Speed
-                </span>
-                <div className="ic-listen__speed-options" role="group" aria-labelledby={`${progressId}-speed`}>
-                  {SPEEDS.map((s) => (
-                    <button
-                      key={s}
-                      type="button"
-                      className={s === speed ? "ic-listen__speed-btn is-active" : "ic-listen__speed-btn"}
-                      onClick={() => onSpeed(s)}
-                      aria-pressed={s === speed}
-                    >
-                      {s}x
-                    </button>
-                  ))}
-                </div>
               </div>
               {error ? <p className="ic-listen__error">{error}</p> : null}
             </div>
@@ -354,15 +309,6 @@ export default function ArticleListenButton({
             Pause
           </button>
         )}
-        <button type="button" className="ic-btn-ghost text-[0.6rem]" onClick={() => skip(-SKIP_SECONDS)} aria-label={`Skip back ${SKIP_SECONDS} seconds`}>
-          −{SKIP_SECONDS}s
-        </button>
-        <button type="button" className="ic-btn-ghost text-[0.6rem]" onClick={() => skip(SKIP_SECONDS)} aria-label={`Skip forward ${SKIP_SECONDS} seconds`}>
-          +{SKIP_SECONDS}s
-        </button>
-        <button type="button" className="ic-btn-ghost text-[0.6rem]" onClick={restart} aria-label="Restart audio">
-          Restart
-        </button>
       </div>
 
       <div className="ic-listen__progress">
@@ -386,25 +332,6 @@ export default function ArticleListenButton({
         <div className="ic-listen__time" aria-live="off">
           <span>{formatTime(current)}</span>
           <span>{formatTime(duration)}</span>
-        </div>
-      </div>
-
-      <div className="ic-listen__speed">
-        <span className="ic-listen__speed-label" id={`${progressId}-speed`}>
-          Speed
-        </span>
-        <div className="ic-listen__speed-options" role="group" aria-labelledby={`${progressId}-speed`}>
-          {SPEEDS.map((s) => (
-            <button
-              key={s}
-              type="button"
-              className={s === speed ? "ic-listen__speed-btn is-active" : "ic-listen__speed-btn"}
-              onClick={() => onSpeed(s)}
-              aria-pressed={s === speed}
-            >
-              {s}x
-            </button>
-          ))}
         </div>
       </div>
 
@@ -438,12 +365,6 @@ export default function ArticleListenButton({
                   Pause
                 </button>
               )}
-              <button type="button" className="ic-btn-ghost text-[0.6rem]" onClick={() => skip(-SKIP_SECONDS)}>
-                −{SKIP_SECONDS}s
-              </button>
-              <button type="button" className="ic-btn-ghost text-[0.6rem]" onClick={() => skip(SKIP_SECONDS)}>
-                +{SKIP_SECONDS}s
-              </button>
             </div>
           </div>
           <input

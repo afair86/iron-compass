@@ -478,8 +478,16 @@
   width: 100%;
   max-width: 38rem;
   height: auto;
-  margin: 1.75rem 0;
+  margin: 1.75rem auto;
   border-radius: 2px;
+}
+
+.ic-dispatch-prose figure {
+  display: block;
+  width: 100%;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ic-dispatch-prose strong {
