@@ -180,7 +180,7 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  margin-right: -1.15rem;
+  margin-right: 0.65rem;
 }
 
 .ic-logo-mark::before {
@@ -343,7 +343,6 @@
 }
 
 .ic-nav-links {
-  display: flex;
   align-items: center;
   gap: 1.5rem;
 }
@@ -767,6 +766,14 @@
   text-shadow: 0 16px 42px rgba(0, 0, 0, 0.5), 0 0 22px rgba(255, 255, 255, 0.28);
 }
 
+@media (min-width: 641px) and (max-width: 1000px) {
+  .ic-logo-wordmark {
+    font-size: 1.02rem;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 640px) {
   .ic-nav-shell {
     padding: 0.9rem 0;
@@ -782,7 +789,7 @@
   }
 
   .ic-logo-mark {
-    margin-right: -0.75rem;
+    margin-right: 0.45rem;
   }
 
   .ic-logo-img {
@@ -792,6 +799,7 @@
   .ic-logo-wordmark {
     font-size: clamp(0.82rem, 4vw, 1.05rem);
     letter-spacing: 0.2em;
+    white-space: nowrap;
     padding-left: 0.35rem;
     background: none;
     color: #f5f7fb;
