@@ -56,33 +56,32 @@
   h2,
   h3 {
     font-family: var(--font-heading), "Oswald", sans-serif;
-    text-transform: uppercase;
-    color: transparent;
-    background: var(--ic-heading-metal-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 1px var(--ic-heading-stroke);
+    font-weight: 700;
+    text-transform: none;
+    color: #f7f4ef;
+    background: none;
+    -webkit-text-fill-color: #f7f4ef;
+    -webkit-text-stroke: 0;
     text-shadow: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    letter-spacing: clamp(0.06em, 0.1em, 0.14em);
+    letter-spacing: 0;
     text-wrap: balance;
-    text-align: inherit;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
     max-width: var(--ic-measure-tight);
   }
 
   h1 {
-    font-size: clamp(2.1rem, 4.6vw, 3.6rem);
-    letter-spacing: clamp(0.08em, 0.12em, 0.16em);
-    line-height: 1.05;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    letter-spacing: 0;
+    line-height: 1.15;
   }
 
   h2 {
-    font-size: clamp(1.5rem, 3.4vw, 2.4rem);
-    letter-spacing: clamp(0.06em, 0.1em, 0.12em);
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    letter-spacing: 0;
     line-height: 1.15;
-    max-width: calc(var(--ic-measure) - 8ch);
+    max-width: 36rem;
   }
 
   h3 {
@@ -113,23 +112,35 @@
   }
 
   .ic-page-title {
-    font-family: var(--font-heading);
-    font-size: clamp(2.3rem, 4.8vw, 3.8rem);
-    letter-spacing: clamp(0.08em, 0.12em, 0.16em);
-    text-transform: uppercase;
-    line-height: 1.05;
-    margin: 0;
-    max-width: var(--ic-measure-tight);
+    font-family: var(--font-heading), Oswald, sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    text-align: center;
+    color: #f7f4ef;
+    -webkit-text-fill-color: #f7f4ef;
+    background: none;
+    -webkit-text-stroke: 0;
+    line-height: 1.15;
+    margin: 0 auto;
+    max-width: 36rem;
   }
 
   .ic-heading-2 {
-    font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-    letter-spacing: clamp(0.06em, 0.1em, 0.12em);
-    text-transform: uppercase;
-    line-height: 1.14;
-    margin: 0;
-    max-width: calc(var(--ic-measure) - 6ch);
+    font-family: var(--font-heading), Oswald, sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    text-align: center;
+    color: #f7f4ef;
+    -webkit-text-fill-color: #f7f4ef;
+    background: none;
+    -webkit-text-stroke: 0;
+    line-height: 1.15;
+    margin: 0 auto;
+    max-width: 36rem;
   }
 
   .ic-heading-3 {
