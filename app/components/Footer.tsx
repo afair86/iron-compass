@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ProductAppLink from "./ProductAppLink";
 import { domainNavLinks } from "@/lib/domains";
 
 const navSections = [
@@ -58,9 +57,6 @@ export default function Footer() {
                       {link.label}
                     </Link>
                   ))}
-                  {section.title === "Platform" ? (
-                    <ProductAppLink className="ic-footer-navlink">Open the App</ProductAppLink>
-                  ) : null}
                 </div>
               </div>
             ))}

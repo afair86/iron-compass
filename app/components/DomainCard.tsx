@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import PhotoFrame from "./brand/PhotoFrame";
+import frameStyles from "./brand/photo-frame.module.css";
 
 export type Domain = {
   title: string;
@@ -7,14 +9,19 @@ export type Domain = {
   icon: ReactNode;
   href?: string;
   slug?: string;
+  image?: string;
 };
 
-export default function DomainCard({ title, desc, icon, href, slug }: Domain) {
+export default function DomainCard({ title, desc, icon, href, slug, image }: Domain) {
   const baseClasses = "ic-domain-card flex flex-col items-center ic-align-center gap-4";
 
   const content = (
     <>
-      <div aria-hidden className="ic-domain-icon">{icon}</div>
+      {image ? (
+        <PhotoFrame className={frameStyles.card} src={image} alt="" />
+      ) : (
+        <div aria-hidden className="ic-domain-icon">{icon}</div>
+      )}
       <h3 className="font-heading uppercase tracking-[0.32em] text-[var(--ic-text-heading)]">{title}</h3>
       <div className="ic-domain-accent-line" aria-hidden="true" />
       <p className="text-sm leading-relaxed max-w-sm">{desc}</p>

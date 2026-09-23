@@ -1,7 +1,9 @@
 import Link from "next/link";
 import PageShell from "../components/PageShell";
+import PhotoFrame from "../components/brand/PhotoFrame";
+import { pagePhotos } from "@/lib/sitePhotos";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
-import { buildPageMetadata, productAppHref } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
   title: "About Iron Compass",
@@ -28,17 +30,18 @@ export default function AboutPage() {
     <PageShell>
       <PageContainer>
         <SectionShell variant="hero" className="space-y-5">
+          <PhotoFrame src={pagePhotos.about} alt="A man on a mountain trail at dawn" />
           <h1 className="ic-page-title">About the System</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
-            Iron Compass is a life system for men who want discipline, purpose, strength, and integrity without noise. One map, eight domains, and the
-            same standards we run inside the app.
+            Iron Compass is a life system for men who want discipline, purpose, strength, and integrity without noise. One map, eight domains, and
+            standards you can use this week.
           </p>
           <div className="ic-cta-row pt-2">
             <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
               Explore the Domains
             </Link>
-            <Link href={productAppHref()} className="ic-btn-ghost text-[0.6rem]">
-              Start Inside the App
+            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
+              Read the journal
             </Link>
           </div>
         </SectionShell>

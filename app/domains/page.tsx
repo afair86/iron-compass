@@ -1,9 +1,11 @@
 import Link from "next/link";
 import PageShell from "../components/PageShell";
+import PhotoFrame from "../components/brand/PhotoFrame";
 import DomainCard from "../components/DomainCard";
 import { domainCards } from "../components/DomainsSection";
 import { HeadingStack, PageContainer, SectionShell } from "../components/LayoutPrimitives";
-import { buildPageMetadata, productAppHref } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/site";
+import { domainPhotos, pagePhotos } from "@/lib/sitePhotos";
 
 export const metadata = buildPageMetadata({
   title: "The Eight Domains of Iron Compass",
@@ -17,6 +19,7 @@ export default function DomainsPage() {
     <PageShell>
       <PageContainer>
         <SectionShell variant="hero" className="space-y-5">
+          <PhotoFrame src={pagePhotos.domains} alt="A man walking a ridgeline at first light" />
           <h1 className="ic-page-title">The Eight Domains</h1>
           <p className="ic-section-subhead text-[var(--ic-text-heading)]">A disciplined map for complete capability.</p>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
@@ -24,8 +27,8 @@ export default function DomainsPage() {
             identity &amp; legacy. Enter through one, but keep them linked.
           </p>
           <div className="ic-cta-row pt-2">
-            <Link href={productAppHref()} className="ic-btn-primary text-[0.62rem]">
-              Start Inside Iron Compass
+            <Link href="/domains/health" className="ic-btn-primary text-[0.62rem]">
+              Begin with Strength
             </Link>
             <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
               Read the Journal
@@ -41,7 +44,11 @@ export default function DomainsPage() {
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
             {domainCards.map((domain) => (
-              <DomainCard key={domain.title} {...domain} />
+              <DomainCard
+                key={domain.title}
+                {...domain}
+                image={domain.slug ? domainPhotos[domain.slug as keyof typeof domainPhotos] : undefined}
+              />
             ))}
           </div>
         </SectionShell>

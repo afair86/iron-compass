@@ -7,7 +7,8 @@ import PageShell from "@/app/components/PageShell";
 import { PageContainer } from "@/app/components/LayoutPrimitives";
 import ArticleListenButton from "@/app/components/ArticleListenButton";
 import BlogPracticalTool from "@/app/components/blog-tools/BlogPracticalTool";
-import Image from "next/image";
+import PhotoFrame from "@/app/components/brand/PhotoFrame";
+import { articlePhoto } from "@/lib/sitePhotos";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
@@ -206,21 +207,11 @@ export default async function BlogPostPage({ params }: Props) {
 
           <header className="ic-dispatch-hero space-y-5">
             <h1 className="ic-page-title mx-auto">{post.meta.title}</h1>
-            {post.meta.image ? (
-              <figure className="ic-dispatch-hero-media">
-                <Image
-                  src={post.meta.image}
-                  alt={heroAlt}
-                  width={1600}
-                  height={900}
-                  priority
-                  className="ic-dispatch-hero-media__img"
-                  sizes="(max-width: 768px) 100vw, 720px"
-                />
-                {post.meta.imageCredit ? (
-                  <figcaption className="ic-ai-credit">{post.meta.imageCredit}</figcaption>
-                ) : null}
-              </figure>
+            {articlePhoto(post.meta.image) ? (
+              <PhotoFrame src={articlePhoto(post.meta.image)!} alt={heroAlt} />
+            ) : null}
+            {post.meta.imageCredit && articlePhoto(post.meta.image) ? (
+              <p className="ic-ai-credit">{post.meta.imageCredit}</p>
             ) : null}
             <p className="ic-dispatch-lede">{fallbackDescription}</p>
             <div className="ic-dispatch-meta">
@@ -246,6 +237,7 @@ export default async function BlogPostPage({ params }: Props) {
                 components={{
                   Link,
                   h1: (props) => <h2 {...props} />,
+                  img: ({ src, alt }) => (src ? <PhotoFrame src={src} alt={alt || ""} /> : null),
                 }}
               />
             </article>
@@ -263,6 +255,7 @@ export default async function BlogPostPage({ params }: Props) {
                   components={{
                     Link,
                     h1: (props) => <h2 {...props} />,
+                    img: ({ src, alt }) => (src ? <PhotoFrame src={src} alt={alt || ""} /> : null),
                   }}
                 />
               </article>

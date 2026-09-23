@@ -1,29 +1,29 @@
 import type { DomainSlug } from "../content";
 
-export type DomainPillar = {
-  title: string;
-  body: string;
-  bullets?: string[];
-  outro?: string;
+export type DomainImage = {
+  src: string;
+  alt: string;
 };
 
 export type DomainNarrativeSection = {
   key: string;
   heading: string;
-  paragraphs?: string[];
-  pillars?: DomainPillar[];
-  intro?: string;
-  bullets?: string[];
-  outro?: string;
+  paragraphs: string[];
+  image?: DomainImage;
+};
+
+export type DomainPractice = {
+  heading: string;
+  lead: string;
+  steps: string[];
 };
 
 export type DomainNarrative = {
   slug: DomainSlug;
   h1Title: string;
   heroDescription: string;
-  socialProof: string;
+  opening: string[];
   sections: DomainNarrativeSection[];
+  practice: DomainPractice;
+  further: string[];
 };
-
-export const CLOSING_CTA_COPY =
-  "Start the program or download the app. Pick one entry point and commit this week.";

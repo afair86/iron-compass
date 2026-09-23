@@ -634,6 +634,10 @@
 }
 
 @media (min-width: 768px) {
+  .ic-nav-toggle {
+    display: none;
+  }
+
   .ic-footer-lede {
     flex-direction: row;
     justify-content: space-between;
@@ -715,6 +719,26 @@
 
 .ic-footer-navlink:hover {
   color: #fff;
+}
+
+.ic-domain-inline-photo {
+  margin: 0.35rem auto 0;
+  max-width: 42rem;
+  border-radius: 16px;
+}
+
+.ic-domain-practice {
+  border: 1px solid rgba(176, 16, 21, 0.45);
+  border-radius: 18px;
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  background: rgba(176, 16, 21, 0.08);
+}
+
+.ic-domain-further {
+  border: 1px solid rgba(243, 238, 230, 0.16);
+  border-radius: 18px;
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  background: #142232;
 }
 
 .ic-footer-legal {

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import PageShell from "../components/PageShell";
+import PhotoFrame from "../components/brand/PhotoFrame";
+import { pagePhotos } from "@/lib/sitePhotos";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
-import { buildPageMetadata, productAppHref } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
   title: "Contact Iron Compass",
@@ -13,7 +15,7 @@ const channels = [
   {
     label: "Member Support",
     address: "support@ironcompass.ai",
-    body: "Account help, billing clarity, or app issues. Monitored daily with priority to active members.",
+    body: "Questions about the site, the journal, or the domains. We read these daily.",
   },
   {
     label: "Security & Legal",
@@ -23,7 +25,7 @@ const channels = [
 ];
 
 const responseStandards = [
-  "Support tickets inside the app get priority over email threads.",
+  "Email is the way to reach us. Expect a reply within two business days.",
   "Operational updates and investor communication route through weekly briefings.",
   "We do not outsource member data or sell contact information—ever.",
 ];
@@ -33,14 +35,15 @@ export default function ContactPage() {
     <PageShell>
       <PageContainer>
         <SectionShell variant="hero" className="space-y-6">
+          <PhotoFrame src={pagePhotos.contact} alt="Mountain ridgeline in warm evening light" />
           <h1 className="ic-page-title">Contact &amp; Signal Channels</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Iron Compass responds with the same discipline we demand from members. Pick the channel that matches your mission, send a precise brief,
             and expect a direct answer within two business days.
           </p>
           <div className="ic-cta-row pt-2">
-            <Link href={productAppHref()} className="ic-btn-primary text-[0.62rem]">
-              Become a Member
+            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
+              Read the domains
             </Link>
             <Link href="/domains" className="ic-btn-ghost text-[0.6rem]">
               Review Domains
@@ -81,14 +84,14 @@ export default function ContactPage() {
 
         <SectionShell variant="panel" className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 ic-align-center">
           <div className="space-y-2">
-            <h2 className="ic-heading-2">Message us inside the Iron Compass app.</h2>
+            <h2 className="ic-heading-2">Write to us.</h2>
             <p className="ic-section-copy ic-section-copy--muted text-sm">
-              Live chat is staffed during Australian business hours with weekend monitoring for mission-critical issues.
+              Send a short note to support and we will answer by email.
             </p>
           </div>
-          <Link href={productAppHref()} className="ic-btn-primary text-[0.62rem] self-center">
-            Open the App
-          </Link>
+          <a href="mailto:support@ironcompass.ai" className="ic-btn-primary text-[0.62rem] self-center">
+            Email support
+          </a>
         </SectionShell>
       </PageContainer>
     </PageShell>

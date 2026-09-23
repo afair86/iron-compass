@@ -1,10 +1,9 @@
 "use client";
 
-import ProductAppLink from "./ProductAppLink";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const links = [
   { href: "/about", label: "ABOUT" },
@@ -16,6 +15,10 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const isActive = (href: string) => (pathname ? pathname.startsWith(href) : false);
 
@@ -46,7 +49,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <ProductAppLink className="ic-btn-primary text-[0.62rem]">Open the App</ProductAppLink>
         </nav>
 
         <button
@@ -77,7 +79,6 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="ic-mobile-nav-cta">
-            <ProductAppLink className="ic-btn-primary text-xs w-full text-center">Open the App</ProductAppLink>
             <Link href="/start" className="ic-btn-ghost text-xs w-full text-center">
               Start Program
             </Link>

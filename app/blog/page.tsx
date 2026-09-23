@@ -2,6 +2,8 @@ import "@/styles/stoic-dispatch.css";
 import Link from "next/link";
 import Script from "next/script";
 import PageShell from "../components/PageShell";
+import PhotoFrame from "../components/brand/PhotoFrame";
+import { pagePhotos } from "@/lib/sitePhotos";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
 import { getAllPosts, type PostMeta } from "@/lib/blog";
 import { absoluteUrl, buildPageMetadata, DEFAULT_OG_IMAGE } from "@/lib/site";
@@ -75,14 +77,15 @@ export default function BlogPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
         />
         <SectionShell variant="hero" className="space-y-6">
+          <PhotoFrame src={pagePhotos.blog} alt="A man standing at the coast as the sun sets" />
           <p className="ic-eyebrow ic-eyebrow--stoic">Iron Compass Journal</p>
           <h1 className="ic-page-title">Dispatches for Disciplined Men</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl">
             Actionable plays for strength &amp; health, discipline, purpose, leadership, financial power, AI leverage, grief, and legacy. Every post ends with moves you can run this week.
           </p>
           <div className="ic-cta-row">
-            <Link href="/start" className="ic-btn-primary text-xs sm:text-[0.72rem]">
-              Start the Program
+            <Link href="/domains" className="ic-btn-primary text-xs sm:text-[0.72rem]">
+              Explore the domains
             </Link>
             <Link href="/domains" className="ic-btn-ghost text-xs sm:text-[0.7rem]">
               View All Domains

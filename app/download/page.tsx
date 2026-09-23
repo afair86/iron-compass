@@ -1,14 +1,13 @@
-import ProductAppLink from "../components/ProductAppLink";
 import Link from "next/link";
 import PageShell from "../components/PageShell";
 import EmailCaptureForm from "../components/EmailCaptureForm";
-import { buildPageMetadata, productAppHref } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/site";
 import { getAppStoreUrls, isSubscribeConfigured } from "@/lib/subscribe";
 
 export const metadata = buildPageMetadata({
   title: "Download Iron Compass AI",
   description:
-    "Get the Iron Compass app for disciplined execution, habit tracking, and daily standards. Join the waitlist or start the web program now.",
+    "The Iron Compass app is not available to download yet. Read the domains and the journal while you wait.",
   path: "/download",
 });
 
@@ -24,8 +23,8 @@ export default function DownloadPage() {
           <p className="ic-eyebrow">Iron Compass App</p>
           <h1 className="ic-section-title">Download Iron Compass AI</h1>
           <p className="ic-section-copy ic-section-copy--muted text-base max-w-2xl mx-auto">
-            The native app is built for daily execution — anchors, reviews, domain tracking, and proof you can
-            trust. Start the web program now while the app rolls out to your platform.
+            The app is not ready to download yet. The domains and the journal are here now, and you can use them
+            without an account.
           </p>
         </section>
 
@@ -51,7 +50,7 @@ export default function DownloadPage() {
             <p className="ic-section-copy ic-section-copy--muted max-w-xl mx-auto">
               {subscribeReady
                 ? "Leave your email. We will notify you when Iron Compass AI is ready for your device."
-                : "App store links are coming soon. Use the web program below to start building standards now."}
+                : "Store links are not available yet. The reading on this site is ready whenever you are."}
             </p>
             {subscribeReady ? (
               <div className="max-w-xl mx-auto">
@@ -62,16 +61,16 @@ export default function DownloadPage() {
         )}
 
         <section className="ic-panel ic-align-center space-y-5">
-          <h2 className="ic-section-heading">Use the web app now</h2>
+          <h2 className="ic-section-heading">Read while you wait</h2>
           <p className="ic-section-copy ic-section-copy--muted max-w-xl mx-auto">
-            Command deck, habits, journal, and weekly tools — installable from your browser. No app store required.
+            Eight domains, practical exercises, and the journal. Nothing to install.
           </p>
           <div className="ic-cta-row justify-center pt-1">
-            <ProductAppLink className="ic-btn-primary text-[0.62rem]">
-              Open the App
-            </ProductAppLink>
-            <Link href={productAppHref()} className="ic-btn-ghost text-[0.6rem]">
-              Start Your Rise
+            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
+              Explore the domains
+            </Link>
+            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
+              Read the journal
             </Link>
           </div>
         </section>

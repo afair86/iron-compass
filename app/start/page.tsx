@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Script from "next/script";
 import PageShell from "../components/PageShell";
-import { buildPageMetadata, productAppHref } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/site";
 import { domainNavLinks } from "@/lib/domains";
 
 export const metadata = buildPageMetadata({
@@ -38,8 +38,8 @@ export default function StartPage() {
             This is the first step. Ground yourself, choose your focus, and move with disciplined intent—built for men in the US, Europe, and Australia.
           </p>
           <div className="pt-2">
-            <Link href="/download" className="ic-btn-primary text-[0.62rem]">
-              Download the App
+            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
+              Explore the domains
             </Link>
           </div>
         </section>
@@ -90,8 +90,8 @@ export default function StartPage() {
             No more drifting. Commit to the process, execute daily, and let the data prove your climb. Your compass is forged in action.
           </p>
           <div className="pt-2">
-            <Link href={productAppHref()} className="ic-btn-primary text-[0.62rem]">
-              Start in the App
+            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
+              Explore the domains
             </Link>
           </div>
         </section>
@@ -108,7 +108,7 @@ export default function StartPage() {
             <div>
               <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Do I need the app to start?</h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">
-                You can begin with the domain playbooks and daily standards here. The app adds tracking, reviews, and AI prompts when you’re ready.
+                No. Begin with the domain pages and the journal. You do not need an account.
               </p>
             </div>
             <div>
@@ -150,7 +150,7 @@ export default function StartPage() {
                   name: "Do I need the app to start?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "You can begin with the domain playbooks and daily standards here. The app adds tracking, reviews, and AI prompts when you’re ready.",
+                    text: "No. Begin with the domain pages and the journal. You do not need an account.",
                   },
                 },
                 {
