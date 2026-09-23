@@ -18,6 +18,14 @@ export type PostMeta = {
   metaDescription?: string; // Optional SEO description override
   updated?: string; // Optional last updated date (YYYY-MM-DD)
   image?: string; // Optional OG/Twitter image URL
+  /** When false, hide the Listen control (e.g. narration/audio awaiting regen). */
+  listenAudio?: boolean;
+  /** Optional hero alt text for accessibility. */
+  imageAlt?: string;
+  /** Optional credit line under hero (e.g. AI-generated illustration). */
+  imageCredit?: string;
+  /** Optional in-article practical tool id (see BlogPracticalTool). */
+  practicalTool?: string;
 };
 
 // Directory where blog posts are stored
@@ -74,6 +82,10 @@ export function getAllPosts(): PostMeta[] {
     if (data.metaDescription) meta.metaDescription = data.metaDescription;
     if (data.updated) meta.updated = data.updated;
     if (data.image) meta.image = data.image;
+    if (typeof data.listenAudio === "boolean") meta.listenAudio = data.listenAudio;
+    if (typeof data.imageAlt === "string") meta.imageAlt = data.imageAlt;
+    if (typeof data.imageCredit === "string") meta.imageCredit = data.imageCredit;
+    if (typeof data.practicalTool === "string") meta.practicalTool = data.practicalTool;
     return meta;
   }).filter(Boolean) as PostMeta[];
 
@@ -119,6 +131,10 @@ export function getPostBySlug(slug: string): { meta: PostMeta; content: string }
   if (data.metaDescription) meta.metaDescription = data.metaDescription;
   if (data.updated) meta.updated = data.updated;
   if (data.image) meta.image = data.image;
+  if (typeof data.listenAudio === "boolean") meta.listenAudio = data.listenAudio;
+  if (typeof data.imageAlt === "string") meta.imageAlt = data.imageAlt;
+  if (typeof data.imageCredit === "string") meta.imageCredit = data.imageCredit;
+  if (typeof data.practicalTool === "string") meta.practicalTool = data.practicalTool;
   return { meta, content };
 }
 

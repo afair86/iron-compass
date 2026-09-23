@@ -22,3 +22,10 @@ Visit [http://localhost:3000](http://localhost:3000) and edit any route inside `
 
 ## Deployment
 Deploy with Vercel (`npm run deploy`) or any platform that supports a standard Next.js build. Use `npm run build` locally to verify production output before shipping.
+
+## Blog standard
+Future blog articles follow the approved editorial and implementation guide (5 A.M. Standard + Shift Worker Routine as quality benchmark):
+
+- Guide: `content/blog/_standards/IRON-COMPASS-BLOG-EDITORIAL-AND-IMPLEMENTATION-GUIDE.md`
+- Checklist: `content/blog/_standards/COMPLETION-CHECKLIST.md`
+- Agent rule: `.cursor/rules/iron-compass-blog-standard.mdc`

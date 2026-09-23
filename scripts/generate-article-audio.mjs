@@ -50,11 +50,11 @@ const full = `${data.title || ""}. ${markdownToSpeechText(content)}`.trim();
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 
 const tts = new EdgeTTS({
-  voice: "en-AU-WilliamNeural",
-  lang: "en-AU",
+  voice: "en-US-ChristopherNeural",
+  lang: "en-US",
   outputFormat: "audio-24khz-96kbitrate-mono-mp3",
-  rate: "-8%",
-  pitch: "-3Hz",
+  rate: "+0%",
+  pitch: "+0Hz",
   timeout: 90000,
 });
 

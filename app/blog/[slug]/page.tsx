@@ -5,14 +5,18 @@ import Link from "next/link";
 import Script from "next/script";
 import PageShell from "@/app/components/PageShell";
 import { PageContainer } from "@/app/components/LayoutPrimitives";
-import CategoryBadge from "@/app/components/CategoryBadge";
 import ArticleListenButton from "@/app/components/ArticleListenButton";
+import BlogPracticalTool from "@/app/components/blog-tools/BlogPracticalTool";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
 import { markdownToSpeechText } from "@/lib/speechText";
+import { isPracticalToolId } from "@/lib/practicalToolIds";
 import fs from "fs";
 import path from "path";
+
+const PRACTICAL_TOOL_MARKER = "<!-- PRACTICAL_TOOL -->";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -112,10 +116,16 @@ export default async function BlogPostPage({ params }: Props) {
   const dateModified = post.meta.updated || post.meta.date;
 
   const faqEntries = extractFaqFromMarkdown(post.content);
-  const speechText = markdownToSpeechText(post.content);
+  const contentForSpeech = post.content.replace(PRACTICAL_TOOL_MARKER, " ");
+  const speechText = markdownToSpeechText(contentForSpeech);
   const audioRel = `/audio/blog/${slug}.mp3`;
   const audioAbs = path.join(process.cwd(), "public", "audio", "blog", `${slug}.mp3`);
-  const audioSrc = fs.existsSync(audioAbs) ? audioRel : undefined;
+  // Hide Listen when frontmatter sets listenAudio: false (stale narration awaiting regen).
+  const audioSrc =
+    post.meta.listenAudio === false ? undefined : fs.existsSync(audioAbs) ? audioRel : undefined;
+  const [beforeTool, afterTool = ""] = post.content.split(PRACTICAL_TOOL_MARKER);
+  const practicalToolId = isPracticalToolId(post.meta.practicalTool) ? post.meta.practicalTool : null;
+  const heroAlt = post.meta.imageAlt || `${post.meta.title} — illustrative scene`;
   const faqSchema =
     faqEntries.length > 0
       ? {
@@ -195,22 +205,44 @@ export default async function BlogPostPage({ params }: Props) {
           />
 
           <header className="ic-dispatch-hero space-y-5">
-            <CategoryBadge category={post.meta.category} />
             <h1 className="ic-page-title mx-auto">{post.meta.title}</h1>
+            {post.meta.image ? (
+              <figure className="ic-dispatch-hero-media">
+                <Image
+                  src={post.meta.image}
+                  alt={heroAlt}
+                  width={1600}
+                  height={900}
+                  priority
+                  className="ic-dispatch-hero-media__img"
+                  sizes="(max-width: 768px) 100vw, 720px"
+                />
+                {post.meta.imageCredit ? (
+                  <figcaption className="ic-ai-credit">{post.meta.imageCredit}</figcaption>
+                ) : null}
+              </figure>
+            ) : null}
             <p className="ic-dispatch-lede">{fallbackDescription}</p>
             <div className="ic-dispatch-meta">
               <time dateTime={post.meta.date}>{formatDate(post.meta.date)}</time>
               <span aria-hidden="true">·</span>
               <span>Field Dispatch</span>
             </div>
-            <ArticleListenButton title={articleTitle} text={speechText} audioSrc={audioSrc} />
+            <ArticleListenButton
+              title={articleTitle}
+              text={speechText}
+              audioSrc={audioSrc}
+              audioVersion="christopher-v1"
+              subtle
+              hint="Prefer to hear it?"
+            />
             <div className="ic-stoic-rule ic-stoic-rule--wide" aria-hidden="true" />
           </header>
 
           <div className="ic-dispatch-body">
             <article className="ic-dispatch-prose">
               <MDXRemote
-                source={post.content}
+                source={beforeTool}
                 components={{
                   Link,
                   h1: (props) => <h2 {...props} />,
@@ -218,9 +250,26 @@ export default async function BlogPostPage({ params }: Props) {
               />
             </article>
 
+            {practicalToolId ? (
+              <div className="my-8">
+                <BlogPracticalTool id={practicalToolId} />
+              </div>
+            ) : null}
+
+            {afterTool.trim() ? (
+              <article className="ic-dispatch-prose">
+                <MDXRemote
+                  source={afterTool}
+                  components={{
+                    Link,
+                    h1: (props) => <h2 {...props} />,
+                  }}
+                />
+              </article>
+            ) : null}
+
             <footer className="ic-dispatch-footer flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div className="space-y-1 text-left">
-                <p className="ic-dispatch-label inline-flex">{post.meta.category ?? "Dispatch"}</p>
                 <p className="ic-section-copy ic-section-copy--muted text-sm max-w-md">{fallbackDescription}</p>
               </div>
               <div className="ic-cta-row justify-start md:justify-end">

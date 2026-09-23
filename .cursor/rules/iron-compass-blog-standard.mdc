@@ -1,0 +1,27 @@
+---
+description: Iron Compass blog standard — follow the editorial & implementation guide for all blog work.
+globs: content/blog/**/*,app/blog/**/*,app/review/**/*,app/components/ArticleListenButton.tsx,app/components/ShiftWorkerRoutineBuilder.tsx,lib/blog.ts,lib/shiftWorkerRoutine.ts,styles/stoic-dispatch.css,scripts/**/*blog*,scripts/**/*shift*,scripts/**/*voice*,scripts/**/*audio*,scripts/**/*routine*
+alwaysApply: true
+---
+
+# Iron Compass blog standard
+
+When the task involves blog articles, narration/audio, Field Dispatch styling, `/blog` or `/review` routes, or article tools/downloads:
+
+1. **Follow** `content/blog/_standards/IRON-COMPASS-BLOG-EDITORIAL-AND-IMPLEMENTATION-GUIDE.md` (authoritative).
+2. Use `content/blog/_standards/COMPLETION-CHECKLIST.md` before handoff; distinguish **performed** checks from **unverified**.
+3. Optional pasteable brief: `content/blog/_standards/IRON-COMPASS-BLOG-MASTER-PROMPT.md`.
+
+## Hard rules (do not skip)
+
+- Quality benchmark: 5 A.M. Standard + Shift Worker Routine — **adapt** per topic; do **not** force shift-work advice or calculators into unrelated posts
+- Explicit user approval before publish, deploy, or regenerating approved audio
+- Never serve stale Listen audio; use `listenAudio: false` until regen is approved
+- Core takeaways work without email/account; subscription optional after the result
+- Review banners / build markers only on review routes — never on published `/blog/…`
+- Browser-verify real interactions for tools; separate automated checks from browser checks
+- Time inputs: rapid entry, deliberate clear (including both optional ends), incomplete kept editable, submit without blur, edit→regenerate — see guide §8
+- Brand compass mark: header/app logos from `brand/iron-compass-mark-source.png` via `scripts/apply-brand-mark.mjs`. AI photos include the mark **subtly** (object/plaque), never as a giant watermark
+- Human feel: writing sounds like a calm person (no buzzword stacks, “in today’s fast-paced world”, “it’s important to note”, even paragraph rhythm, fake customers, or a brochure close). Photos look like a real place and person; compass mark subtle only; no AI caption, giant watermark, plastic skin, extra fingers, sci-fi glow, or stock power-pose. Do not tell the reader the piece was AI-made.
+
+If the task is unrelated to blogs, ignore this rule’s workflow details.

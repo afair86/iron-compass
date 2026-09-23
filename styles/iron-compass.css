@@ -203,8 +203,8 @@
   width: clamp(56px, 7.2vw, 82px);
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 16px rgba(120, 195, 255, 0.75)) drop-shadow(0 0 28px rgba(0, 160, 255, 0.35))
-    drop-shadow(0 5px 14px rgba(0, 0, 0, 0.9)) brightness(1.22) contrast(1.18) saturate(1.08);
+  filter: drop-shadow(0 0 14px rgba(120, 195, 255, 0.55)) drop-shadow(0 0 24px rgba(0, 160, 255, 0.28))
+    drop-shadow(0 4px 12px rgba(0, 0, 0, 0.85));
 }
 
 .ic-logo-wordmark {

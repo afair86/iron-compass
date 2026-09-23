@@ -41,5 +41,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local TTS tooling / large free models (not for deploy)
+/tools/piper/
+/public/audio/blog/_samples/_passage-tmp.txt
+/public/audio/blog/_samples/_smoke-*.mp3
+
 .vercel
 .env*.local
