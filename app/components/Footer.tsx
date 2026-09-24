@@ -47,19 +47,14 @@ export default function Footer() {
             ))}
           </div>
 
-          <div className="space-y-6">
-            {navSections.map((section) => (
-              <div key={section.title} className="space-y-3">
-                <p className="ic-footer-heading">{section.title}</p>
-                <div className="flex flex-col gap-2">
-                  {section.links.map((link) => (
-                    <Link key={link.href} href={link.href} className="ic-footer-navlink">
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
+          <div className="flex flex-col gap-2">
+            {navSections.flatMap((section) =>
+              section.links.map((link) => (
+                <Link key={link.href} href={link.href} className="ic-footer-navlink">
+                  {link.label}
+                </Link>
+              )),
+            )}
           </div>
         </div>
 

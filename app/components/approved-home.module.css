@@ -75,26 +75,29 @@
 }
 
 .bannerScript {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  margin: 1rem 0 0;
+  top: clamp(0.85rem, 3vh, 2.25rem);
+  right: clamp(0.85rem, 2.5vw, 2.25rem);
+  margin: 0;
+  width: max-content;
+  max-width: min(11.5rem, 46vw);
+  text-align: right;
   font-family: Georgia, "Palatino Linotype", serif;
   font-style: italic;
   font-weight: 600;
-  font-size: clamp(2.15rem, 4vw, 3rem);
+  font-size: clamp(1.65rem, 3.2vw, 2.7rem);
   line-height: 1.05;
   color: #1a120c;
-  text-shadow:
-    0 0 2px rgba(255, 248, 240, 0.95),
-    0 1px 0 rgba(255, 248, 240, 0.9);
+  text-shadow: none;
 }
 
 .bannerScript::after {
   content: "";
   display: block;
-  width: 8rem;
+  width: 100%;
   height: 2px;
-  margin: 0.4rem auto 0;
+  margin: 0.4rem 0 0 auto;
   background: #e10600;
 }
 
@@ -289,18 +292,10 @@
   }
 
   .bannerScript {
-    position: absolute;
-    right: 6vw;
-    top: 42%;
-    margin: 0;
-    max-width: 12rem;
-    text-align: right;
-    text-shadow: none;
-  }
-
-  .bannerScript::after {
-    margin-left: auto;
-    margin-right: 0;
+    top: clamp(1.25rem, 6vh, 3.5rem);
+    right: clamp(1.25rem, 3vw, 2.75rem);
+    max-width: min(13rem, 28vw);
+    font-size: clamp(1.85rem, 2.4vw, 2.35rem);
   }
 
   .heroCopy {
