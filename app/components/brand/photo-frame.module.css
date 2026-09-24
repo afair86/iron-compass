@@ -15,7 +15,7 @@
   object-position: center;
 }
 
-.mark {
+.frame .mark {
   position: absolute;
   left: 12px;
   bottom: 12px;

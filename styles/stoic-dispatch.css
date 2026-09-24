@@ -482,6 +482,14 @@
   border-radius: 2px;
 }
 
+.ic-dispatch-prose figure img[src*="compass-mark"] {
+  width: clamp(28px, 9%, 56px);
+  max-width: 56px;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+}
+
 .ic-dispatch-prose figure {
   display: block;
   width: 100%;
