@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ContactForm from "../components/ContactForm";
 import PageShell from "../components/PageShell";
 import PhotoFrame from "../components/brand/PhotoFrame";
 import { pagePhotos } from "@/lib/sitePhotos";
@@ -14,13 +15,11 @@ export const metadata = buildPageMetadata({
 const channels = [
   {
     label: "Member Support",
-    address: "support@ironcompass.ai",
     body: "Questions about the site, the journal, or the domains. We read these daily.",
   },
   {
     label: "Security & Legal",
-    address: "legal@ironcompass.ai",
-    body: "Report security concerns, request data exports, or send formal notices. Encryption preferred.",
+    body: "Report security concerns, request data exports, or send formal notices.",
   },
 ];
 
@@ -59,12 +58,6 @@ export default function ContactPage() {
                 <h3 className="text-xs md:text-sm font-heading tracking-[0.18em] uppercase text-[var(--ic-text-heading)] mx-auto leading-tight">
                   {channel.label}
                 </h3>
-                <a
-                  href={`mailto:${channel.address}`}
-                  className="text-base md:text-lg font-heading tracking-[0.12em] uppercase text-white leading-6 ic-align-center break-words mx-auto"
-                >
-                  {channel.address}
-                </a>
                 <p className="ic-section-copy ic-section-copy--muted text-sm leading-relaxed mx-auto max-w-xs">{channel.body}</p>
               </article>
             ))}
@@ -82,16 +75,14 @@ export default function ContactPage() {
           </ul>
         </SectionShell>
 
-        <SectionShell variant="panel" className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 ic-align-center">
+        <SectionShell variant="panel" className="flex flex-col gap-6 ic-align-center">
           <div className="space-y-2">
             <h2 className="ic-heading-2">Write to us.</h2>
             <p className="ic-section-copy ic-section-copy--muted text-sm">
-              Send a short note to support and we will answer by email.
+              Send a short note and we will answer by email.
             </p>
           </div>
-          <a href="mailto:support@ironcompass.ai" className="ic-btn-primary text-[0.62rem] self-center">
-            Email support
-          </a>
+          <ContactForm />
         </SectionShell>
       </PageContainer>
     </PageShell>

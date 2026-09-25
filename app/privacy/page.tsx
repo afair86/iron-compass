@@ -61,7 +61,7 @@ const sections = [
   {
     title: "Contact",
     body:
-      "Questions or privacy concerns can be directed to privacy@ironcompass.ai. We will review every request and respond with clarity about the steps we take to protect your information.",
+      "Questions or privacy concerns can be sent through the contact page. We will review every request and respond with clarity about the steps we take to protect your information.",
   },
 ];
 
@@ -79,8 +79,8 @@ export default function PrivacyPage() {
         <section className="ic-panel ic-align-center space-y-6">
           <h1 className="ic-section-title">Privacy Policy</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
-            We treat your data with the same seriousness we require inside the Iron Compass brotherhood. Minimal collection, transparent use, disciplined
-            safeguards.
+            Iron Compass AI is operated by HumanFirst Technologies, an Australian sole-trader business, ABN 96 226 474 355. We treat your data with the
+            same seriousness we require inside the Iron Compass brotherhood. Minimal collection, transparent use, disciplined safeguards.
           </p>
         </section>
 
@@ -114,8 +114,8 @@ export default function PrivacyPage() {
             ))}
           </ul>
           <p className="ic-section-copy ic-section-copy--muted text-sm">
-            Email privacy requests to <a className="underline" href="mailto:privacy@ironcompass.ai">privacy@ironcompass.ai</a>. We respond within 30 days,
-            subject to verification requirements and applicable law.
+            Send privacy requests through the <a className="underline" href="/contact">contact page</a>. We respond within 30 days, subject to
+            verification requirements and applicable law.
           </p>
         </section>
       </div>

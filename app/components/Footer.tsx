@@ -20,7 +20,6 @@ const navSections = [
 ];
 
 export default function Footer() {
-  const year = new Date().getFullYear();
   return (
     <footer className="ic-footer-shell text-sm">
       <div className="max-w-6xl mx-auto space-y-12">
@@ -59,8 +58,8 @@ export default function Footer() {
         </div>
 
         <div className="ic-footer-legal">
-          <p>© {year} Iron Compass Holdings</p>
-          <p>Built in Australia. Operates worldwide.</p>
+          <p>© 2026 Iron Compass AI</p>
+          <p>HumanFirst Technologies | ABN 96 226 474 355</p>
         </div>
       </div>
     </footer>
