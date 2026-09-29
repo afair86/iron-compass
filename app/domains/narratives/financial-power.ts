@@ -32,7 +32,7 @@ export const financialPowerNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/financial-morning.webp",
-        alt: "A man at a kitchen table in the morning with coffee, a notebook, and a stack of bills",
+        alt: "Financial strength and money habits for men",
       },
     },
     {
@@ -56,7 +56,7 @@ export const financialPowerNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/financial-mailbox.webp",
-        alt: "A man on a shaded street reading an envelope beside a wall of mailboxes",
+        alt: "A simple weekly money check for men",
       },
     },
     {

@@ -32,7 +32,7 @@ export const leadershipCharacterNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/leadership-workshop.webp",
-        alt: "Two men at a workshop bench, one explaining a piece of timber while the other listens",
+        alt: "Leadership and character for men",
       },
     },
     {
@@ -56,7 +56,7 @@ export const leadershipCharacterNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/leadership-step.webp",
-        alt: "A man and a woman talking on a back step in the late afternoon",
+        alt: "Character, fatherhood, and honest conversations",
       },
     },
     {

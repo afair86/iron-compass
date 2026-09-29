@@ -32,7 +32,7 @@ export const aiMasteryNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/ai-window-desk.webp",
-        alt: "A man at a desk by a window, pausing with one hand on a laptop",
+        alt: "AI mastery and life optimization for men",
       },
     },
     {
@@ -56,7 +56,7 @@ export const aiMasteryNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/ai-hallway.webp",
-        alt: "A man in a hallway checking a short list on his phone, coat and bag on the hooks behind him",
+        alt: "Using AI without handing over your judgment",
       },
     },
     {

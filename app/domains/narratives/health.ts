@@ -33,7 +33,7 @@ export const healthNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/strength-stairs.webp",
-        alt: "A man walking up an office stairwell at lunch with a gym bag",
+        alt: "Strength and health for men",
       },
     },
     {
@@ -47,7 +47,7 @@ export const healthNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/strength-evening-stretch.webp",
-        alt: "A man stretching on the living room floor in the evening",
+        alt: "Strength and recovery for men",
       },
     },
     {

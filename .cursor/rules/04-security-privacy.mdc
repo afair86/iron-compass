@@ -1,0 +1,16 @@
+---
+description: Privacy, secrets, and legal pages on the public website
+alwaysApply: true
+---
+
+# Security and privacy
+
+Do not commit `.env` files, tokens, or API keys. `.env.example` may stay.
+
+Do not add a form or script that collects more personal data than the privacy page describes. Do not sell or imply the sale of member data.
+
+Legal pages (privacy, terms, and related policies) are production content. Do not rewrite the operator, the contact address, or the ABN unless that exact change is the task.
+
+The public site must not embed another person's private journal, habits, or account data.
+
+App login and billing stay in the app. This site links to `/app`. It does not reimplement accounts.

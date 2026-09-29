@@ -1,0 +1,22 @@
+---
+description: Shared Iron Compass philosophy for the public website
+alwaysApply: true
+---
+
+# Iron Compass product
+
+This is the public website. The app is a separate repository. Use one philosophy, not a marketing version of it.
+
+Iron Compass is for responsibility, reliability, behaviour, useful action, practical Stoicism, and progressive responsibility.
+
+Reliability muscles: Calm Under Pressure, Decision Ownership, Follow-Through, Boundary Holding, Future Orientation.
+
+The voice is calm, firm, adult, restrained, specific, and observant. It is not therapy, red-pill ideology, motivational entertainment, shame, aggression, pickup, or relationship mediation.
+
+Favour responsibility over emotion, discipline over impulse, clarity over chaos, behaviour over talk, and presence over performance. Do not paste these lines into headlines.
+
+A good page can be read in seconds, then the person leaves and acts. Do not write to keep them on the site.
+
+The app's `docs/PRODUCT_STATE.md` is the authority for what the product can do. This site must not invent a second product.
+
+The existing blog rule still governs articles, audio, and blog tools. Do not override it.

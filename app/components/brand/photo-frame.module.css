@@ -45,6 +45,20 @@
   width: 16px;
 }
 
+.listThumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.listThumb .photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .card {
   width: 100%;
   border-radius: 12px;

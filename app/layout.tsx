@@ -6,7 +6,7 @@ import Script from "next/script";
 import { Oswald, Inter } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
+import { DEFAULT_OG_IMAGE, ORGANIZATION_LOGO, SITE_NAME, SITE_URL } from "@/lib/site";
 
 // Font setup
 const oswald = Oswald({
@@ -72,9 +72,10 @@ export default function RootLayout({
                 },
                 {
                   "@type": "Organization",
-                  name: siteTitle,
+                  name: SITE_NAME,
                   url: SITE_URL,
-                  logo: DEFAULT_OG_IMAGE,
+                  logo: ORGANIZATION_LOGO,
+                  image: DEFAULT_OG_IMAGE,
                 },
               ],
             }),

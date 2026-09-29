@@ -32,7 +32,7 @@ export const identityLegacyNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/identity-pegs.webp",
-        alt: "A man in a garage looking at an old jacket and boots on pegs",
+        alt: "Identity and legacy for men",
       },
     },
     {
@@ -56,7 +56,7 @@ export const identityLegacyNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/identity-box.webp",
-        alt: "A man in a workshop with his hands on a finished wooden box",
+        alt: "The man you are becoming, and what you leave behind",
       },
     },
     {

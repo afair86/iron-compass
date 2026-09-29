@@ -2,7 +2,7 @@ import Link from "next/link";
 import ContactForm from "../components/ContactForm";
 import PageShell from "../components/PageShell";
 import PhotoFrame from "../components/brand/PhotoFrame";
-import { pagePhotos } from "@/lib/sitePhotos";
+import { pagePhotoAlts, pagePhotos } from "@/lib/sitePhotos";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
 import { buildPageMetadata } from "@/lib/site";
 
@@ -34,7 +34,7 @@ export default function ContactPage() {
     <PageShell>
       <PageContainer>
         <SectionShell variant="hero" className="space-y-6">
-          <PhotoFrame src={pagePhotos.contact} alt="Mountain ridgeline in warm evening light" />
+          <PhotoFrame src={pagePhotos.contact} alt={pagePhotoAlts.contact} />
           <h1 className="ic-page-title">Contact &amp; Signal Channels</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Iron Compass responds with the same discipline we demand from members. Pick the channel that matches your mission, send a precise brief,

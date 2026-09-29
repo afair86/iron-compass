@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { domainCards } from "@/lib/domains";
-import { domainPhotos, philosophyPhoto } from "@/lib/sitePhotos";
+import { domainPhotoAlts, domainPhotos, pagePhotoAlts, philosophyPhoto } from "@/lib/sitePhotos";
 import PhotoFrame from "./brand/PhotoFrame";
 import frameStyles from "./brand/photo-frame.module.css";
 import styles from "./approved-home.module.css";
@@ -21,7 +21,7 @@ export default function ApprovedHome() {
     <div className={styles.home}>
       <section className={styles.hero} id="home">
         <div className={styles.banner}>
-          <img className={styles.heroPhoto} src="/images/home/horizon-man.png" alt="" />
+          <img className={styles.heroPhoto} src="/images/home/horizon-man.png" alt={pagePhotoAlts.homeHero} />
           <img className={styles.bannerMark} src="/images/brand/compass-mark.png" alt="Iron Compass" />
           <p className={styles.bannerWord}>
             Iron Compass <span>AI</span>
@@ -55,7 +55,7 @@ export default function ApprovedHome() {
         <div className={styles.domainGrid}>
           {domainCards.map((domain) => (
             <article key={domain.slug} className={styles.domain}>
-              <PhotoFrame className={frameStyles.thumb} src={domainPhotos[domain.slug]} alt="" />
+              <PhotoFrame className={frameStyles.thumb} src={domainPhotos[domain.slug]} alt={domainPhotoAlts[domain.slug]} />
               <div>
                 <h3>
                   <Link href={domain.href}>{domainTitles[domain.slug]}</Link>
@@ -71,7 +71,7 @@ export default function ApprovedHome() {
         <PhotoFrame
           className={styles.philosophyPhoto}
           src={philosophyPhoto}
-          alt="A man resting on his back step at dusk, content after the day"
+          alt={pagePhotoAlts.philosophy}
         />
         <h2>The Iron Compass philosophy</h2>
         <p className={styles.lead}>

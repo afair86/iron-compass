@@ -32,7 +32,7 @@ export const griefHonourNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/grief-bench.webp",
-        alt: "A man sitting on a park bench in soft light with a small bunch of flowers beside him",
+        alt: "Grief and honour for men",
       },
     },
     {
@@ -56,7 +56,7 @@ export const griefHonourNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/grief-shelf.webp",
-        alt: "A man placing a framed photograph on a wooden shelf in the afternoon",
+        alt: "How men carry grief and keep their honour",
       },
     },
     {

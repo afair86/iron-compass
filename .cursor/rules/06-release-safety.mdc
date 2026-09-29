@@ -1,0 +1,14 @@
+---
+description: Website releases stay separate from app database releases
+alwaysApply: true
+---
+
+# Release safety
+
+This repository publishes the marketing site only. Pushing it does not update the app API or the app database.
+
+Do not start an app phase from a website task. Do not change app prices, credits, or schema from here.
+
+Deploy only when the founder asks. After a website publish, open the live URL that changed, including a phone-width check.
+
+If copy depends on an app feature, confirm that feature is live before the page ships. A website release must not announce something the app URL does not do yet.

@@ -22,7 +22,7 @@ const PRACTICAL_TOOL_MARKER = "<!-- PRACTICAL_TOOL -->";
 type Props = { params: Promise<{ slug: string }> };
 
 function resolveOgImage(image?: string) {
-  if (!image) return DEFAULT_OG_IMAGE;
+  if (!image || image.includes("iron-compass-logo")) return DEFAULT_OG_IMAGE;
   return image.startsWith("http") ? image : absoluteUrl(image);
 }
 

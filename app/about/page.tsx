@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PageShell from "../components/PageShell";
 import PhotoFrame from "../components/brand/PhotoFrame";
-import { pagePhotos } from "@/lib/sitePhotos";
+import { pagePhotoAlts, pagePhotos } from "@/lib/sitePhotos";
 import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
 import { buildPageMetadata } from "@/lib/site";
 
@@ -30,7 +30,7 @@ export default function AboutPage() {
     <PageShell>
       <PageContainer>
         <SectionShell variant="hero" className="space-y-5">
-          <PhotoFrame src={pagePhotos.about} alt="A man on a mountain trail at dawn" />
+          <PhotoFrame src={pagePhotos.about} alt={pagePhotoAlts.about} />
           <h1 className="ic-page-title">About the System</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Iron Compass is a life system for men who want discipline, purpose, strength, and integrity without noise. One map, eight domains, and

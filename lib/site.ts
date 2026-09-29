@@ -10,8 +10,11 @@ export function productAppHref(): string {
   const override = process.env.NEXT_PUBLIC_PRODUCT_APP_URL?.trim();
   return override || PRODUCT_APP_PATH;
 }
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/iron-compass-logo-og.png`;
-export const DOMAIN_SOCIAL_IMAGE = `${SITE_URL}/iron-compass-logo-og.png`;
+/** The homepage sunset. Used when Iron Compass AI is shared or shown in search. */
+export const HOME_SHARE_IMAGE = `${SITE_URL}/images/home/horizon-man.png`;
+export const DEFAULT_OG_IMAGE = HOME_SHARE_IMAGE;
+export const ORGANIZATION_LOGO = `${SITE_URL}/iron-compass-logo-og.png`;
+export const DOMAIN_SOCIAL_IMAGE = HOME_SHARE_IMAGE;
 
 /** Canonical domain pillar slugs — single source of truth for sitemap and redirects */
 export const CANONICAL_DOMAIN_SLUGS = [

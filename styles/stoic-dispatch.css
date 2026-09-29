@@ -359,6 +359,15 @@
 
 /* --- Stoic cards (single accent, no rainbow) --- */
 
+.ic-blog-index .ic-stoic-card,
+.ic-blog-index .ic-panel-stoic {
+  text-align: center;
+}
+
+.ic-blog-index .ic-stoic-card {
+  align-items: center;
+}
+
 .ic-stoic-card {
   position: relative;
   text-align: left;
@@ -672,6 +681,12 @@
   max-width: var(--ic-measure);
   margin-left: auto;
   margin-right: auto;
+}
+
+.ic-blog-index .ic-align-center ul.ic-section-copy,
+.ic-blog-index .ic-align-center ol.ic-section-copy {
+  text-align: center;
+  list-style-position: inside;
 }
 
 .ic-align-start {

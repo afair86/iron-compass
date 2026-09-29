@@ -5,7 +5,7 @@ import DomainCard from "../components/DomainCard";
 import { domainCards } from "../components/DomainsSection";
 import { HeadingStack, PageContainer, SectionShell } from "../components/LayoutPrimitives";
 import { buildPageMetadata } from "@/lib/site";
-import { domainPhotos, pagePhotos } from "@/lib/sitePhotos";
+import { domainPhotoAlts, domainPhotos, pagePhotoAlts, pagePhotos } from "@/lib/sitePhotos";
 
 export const metadata = buildPageMetadata({
   title: "The Eight Domains of Iron Compass",
@@ -19,7 +19,7 @@ export default function DomainsPage() {
     <PageShell>
       <PageContainer>
         <SectionShell variant="hero" className="space-y-5">
-          <PhotoFrame src={pagePhotos.domains} alt="A man walking a ridgeline at first light" />
+          <PhotoFrame src={pagePhotos.domains} alt={pagePhotoAlts.domains} />
           <h1 className="ic-page-title">The Eight Domains</h1>
           <p className="ic-section-subhead text-[var(--ic-text-heading)]">A disciplined map for complete capability.</p>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
@@ -48,6 +48,7 @@ export default function DomainsPage() {
                 key={domain.title}
                 {...domain}
                 image={domain.slug ? domainPhotos[domain.slug as keyof typeof domainPhotos] : undefined}
+                imageAlt={domain.slug ? domainPhotoAlts[domain.slug as keyof typeof domainPhotoAlts] : ""}
               />
             ))}
           </div>

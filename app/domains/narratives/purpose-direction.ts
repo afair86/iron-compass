@@ -32,7 +32,7 @@ export const purposeDirectionNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/purpose-calendar.webp",
-        alt: "A man at a kitchen table in the evening with a calendar and a notebook",
+        alt: "Purpose and direction for men",
       },
     },
     {
@@ -56,7 +56,7 @@ export const purposeDirectionNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/purpose-morning-path.webp",
-        alt: "A man on a suburban footpath in the early morning with a bag at his feet",
+        alt: "Finding direction when life is busy",
       },
     },
     {

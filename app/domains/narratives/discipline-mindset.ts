@@ -32,7 +32,7 @@ export const disciplineMindsetNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/discipline-laptop-close.webp",
-        alt: "A man closing his laptop at the kitchen table and setting his phone face down",
+        alt: "Discipline and mindset for men",
       },
     },
     {
@@ -56,7 +56,7 @@ export const disciplineMindsetNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/discipline-cafe-notes.webp",
-        alt: "A man writing in a notebook by a cafe window on an overcast day",
+        alt: "A daily discipline practice for men",
       },
     },
     {

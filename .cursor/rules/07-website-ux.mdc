@@ -1,0 +1,16 @@
+---
+description: Keep the approved Iron Compass website look
+alwaysApply: true
+---
+
+# Website UX
+
+Do not redesign the site as part of another task.
+
+Keep the current look: dark surfaces, metallic headings, electric blue accents (`neonBlue`), restrained iron red (`accent`), original compass marks, strong uppercase headings, and a clear stack on a phone.
+
+Photos should look like a real place and a real person. The blog picture rules still apply to articles. One main picture, not a photo on every card.
+
+The phone is the main screen. The next step must be visible without hunting.
+
+Send people toward the real app at `/app` or toward a real article. Do not build a second app on the marketing site.
