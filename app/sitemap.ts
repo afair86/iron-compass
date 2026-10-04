@@ -21,6 +21,7 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   "/": "2026-02-01",
   "/start": "2026-01-15",
   "/download": "2026-01-15",
+  "/pricing": "2026-10-04",
   "/about": "2025-12-01",
   "/blog": "2026-02-09",
   "/contact": "2025-12-01",
@@ -48,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     { url: absoluteUrl("/start"), lastModified: lastModifiedForPath("/start"), changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl("/download"), lastModified: lastModifiedForPath("/download"), changeFrequency: "weekly", priority: 0.85 },
+    { url: absoluteUrl("/pricing"), lastModified: lastModifiedForPath("/pricing"), changeFrequency: "weekly", priority: 0.9 },
     {
       url: absoluteUrl("/about"),
       lastModified: lastModifiedForPath("/about"),
