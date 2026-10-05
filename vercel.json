@@ -1,13 +1,25 @@
 {
-  "version": 2,
-
-  "routes": [
+  "redirects": [
     {
-      "src": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "www.ironcompassai.com" }],
-      "status": 308,
-      "dest": "https://ironcompassai.com/$1"
+      "destination": "https://ironcompassai.com/:path*",
+      "permanent": true
     },
-    { "src": "/(.*)", "dest": "/$1" }
+    { "source": "/domains/health", "destination": "/domains/health-strength", "permanent": true },
+    { "source": "/domains/strength-health", "destination": "/domains/health-strength", "permanent": true },
+    { "source": "/domains/strength", "destination": "/domains/health-strength", "permanent": true },
+    { "source": "/domains/discipline-mindset", "destination": "/domains/discipline", "permanent": true },
+    { "source": "/domains/leadership-character", "destination": "/domains/bonds-connections", "permanent": true },
+    { "source": "/domains/leadership", "destination": "/domains/bonds-connections", "permanent": true },
+    { "source": "/domains/bonds", "destination": "/domains/bonds-connections", "permanent": true },
+    { "source": "/domains/financial-power", "destination": "/domains/finance-provision", "permanent": true },
+    { "source": "/domains/finance", "destination": "/domains/finance-provision", "permanent": true },
+    { "source": "/domains/wealth", "destination": "/domains/finance-provision", "permanent": true },
+    { "source": "/domains/identity-legacy", "destination": "/domains/identity", "permanent": true },
+    { "source": "/domains/purpose", "destination": "/domains/purpose-direction", "permanent": true },
+    { "source": "/domains/ai", "destination": "/domains/ai-mastery", "permanent": true },
+    { "source": "/domains/ai-mastery-life-optimization", "destination": "/domains/ai-mastery", "permanent": true },
+    { "source": "/domains/awareness-adaptability", "destination": "/domains", "permanent": true }
   ]
 }
