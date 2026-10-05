@@ -85,6 +85,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/articles/ai-mastery"), lastModified: lastModifiedForPath("/articles/ai-mastery"), changeFrequency: "weekly", priority: 0.85 },
   ];
 
+  const aiResourceEntry: MetadataRoute.Sitemap = [
+    {
+      url: absoluteUrl("/domains/ai-mastery"),
+      lastModified: lastModifiedForPath("/domains"),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      images: absoluteImages(["/images/home/scenes/home-ai.webp"]),
+    },
+  ];
+
   const domainEntries: MetadataRoute.Sitemap = CANONICAL_DOMAIN_SLUGS.map((slug) => ({
     url: absoluteUrl(`/domains/${slug}`),
     lastModified: lastModifiedForPath("/domains"),
@@ -117,5 +127,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticPages, ...domainEntries, ...articles, ...blogPosts];
+  return [...staticPages, ...domainEntries, ...aiResourceEntry, ...articles, ...blogPosts];
 }

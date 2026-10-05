@@ -17,12 +17,12 @@ const phases = [
   {
     title: "Identity Rebuild",
     copy: "Define the standards and virtues you want to embody now. Identity returns through consistent action.",
-    link: "/domains/identity-legacy",
+    link: "/domains/identity",
   },
   {
     title: "Discipline Reboot",
     copy: "Reinstall structure: training, morning routines, cold exposure, reduced dopamine traps, controlled breathing, evening reflection.",
-    link: "/domains/discipline-mindset",
+    link: "/domains/discipline",
   },
   {
     title: "Purpose Reconstruction",
@@ -79,7 +79,7 @@ export default function ArticlePage() {
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Rebuild the core with the
           {" "}
-          <Link href="/domains/identity-legacy" className="underline">
+          <Link href="/domains/identity" className="underline">
             Identity &amp; Legacy
           </Link>
           {" "}

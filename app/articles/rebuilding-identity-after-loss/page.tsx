@@ -28,7 +28,7 @@ const framework = [
   {
     title: "Rebuild One Standard",
     copy: "Choose one habit that represents the man you want to become—training, sleep, fatherhood, presence, or truth—and hold it with discipline.",
-    link: "/domains/discipline-mindset",
+    link: "/domains/discipline",
   },
   {
     title: "Ask Who You Must Become",
@@ -63,7 +63,7 @@ export default function ArticlePage() {
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           That’s why men feel directionless, ashamed, weak, guilty for not coping better, or convinced they failed. Identity pain cuts deeper than simple emotion. Rebuild your core in the
           {" "}
-          <Link href="/domains/identity-legacy" className="underline">
+          <Link href="/domains/identity" className="underline">
             Identity &amp; Legacy
           </Link>
           {" "}

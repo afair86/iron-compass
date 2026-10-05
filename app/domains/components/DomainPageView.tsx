@@ -9,7 +9,7 @@ import type { DomainNarrative } from "../narratives/types";
 import { domainContentMap, type DomainSlug } from "../content";
 import PhotoFrame from "@/app/components/brand/PhotoFrame";
 import { domainBlogLinks } from "@/lib/domainBlogLinks";
-import { domainPhotoAlts, domainPhotos } from "@/lib/sitePhotos";
+import { aiResourcePhoto, domainPhotoAlts, domainPhotos } from "@/lib/sitePhotos";
 
 type DomainPageViewProps = {
   narrative: DomainNarrative;
@@ -33,6 +33,10 @@ function speechText(narrative: DomainNarrative) {
 export default function DomainPageView({ narrative, slug }: DomainPageViewProps) {
   const journalLinks = domainBlogLinks[slug];
   const domain = domainContentMap[slug];
+  const photo =
+    slug === "ai-mastery"
+      ? { src: aiResourcePhoto, alt: "A real desk where a man uses a tool and keeps the decision" }
+      : { src: domainPhotos[slug], alt: domainPhotoAlts[slug] };
   const audioAbs = path.join(process.cwd(), "public", "audio", "domains", `${slug}.mp3`);
   const audioSrc = fs.existsSync(audioAbs) ? `/audio/domains/${slug}.mp3` : undefined;
 
@@ -40,7 +44,7 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
     <PageShell>
       <PageContainer>
         <SectionShell variant="hero" className="space-y-6">
-          <PhotoFrame src={domainPhotos[slug]} alt={domainPhotoAlts[slug]} />
+          <PhotoFrame src={photo.src} alt={photo.alt} />
           <h1 className="ic-page-title">{narrative.h1Title}</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl">{narrative.heroDescription}</p>
           {audioSrc ? (

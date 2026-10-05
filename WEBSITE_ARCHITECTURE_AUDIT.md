@@ -11,7 +11,7 @@ Facts below come from files in this repository and the installed `node_modules` 
 
 ## 1. Executive summary
 
-This repository is a **Next.js 16 App Router marketing site**. It serves a homepage, eight domain pages, a journal (`/blog`), a few topic article hubs, legal pages, and static tools embedded inside some journal articles.
+This repository is a **Next.js 16 App Router marketing site**. It serves a homepage, ten life-domain pages, a journal (`/blog`), a few topic article hubs, legal pages, and static tools embedded inside some journal articles. AI notes stay at `/domains/ai-mastery` and are not a life domain.
 
 It does **not** contain user accounts, a database, Stripe, checkout, webhooks, or paid-file delivery.
 
@@ -334,7 +334,7 @@ Vercel’s own platform logs may still exist in the dashboard. That is outside t
 |---|---|
 | Default metadata | `app/layout.tsx` (`metadataBase` = `https://ironcompassai.com`) |
 | Per-page helper | `buildPageMetadata()` in `lib/site.ts` — title, description, canonical, Open Graph, Twitter `summary_large_image` |
-| Sitemap | `app/sitemap.ts` → `/sitemap.xml`. Static pages, eight domains, article hubs, public blog posts. Omits `/products`, `/daily`, `/review/*`. |
+| Sitemap | `app/sitemap.ts` → `/sitemap.xml`. Static pages, the ten life domains, the AI resource page, article hubs, public blog posts. Omits `/products`, `/daily`, `/review/*`. |
 | Robots | `app/robots.ts`. Allow `/`. Sitemap URL included. Does not disallow `/review` or `/products` at robots level; those pages set `noindex` themselves. |
 | JSON-LD | Site-wide WebSite + Organization in `app/layout.tsx`. Article/FAQ/breadcrumb scripts on blog posts (`app/blog/[slug]/page.tsx`). ItemList on the blog index. |
 | Blog SEO | Frontmatter `metaTitle` / `metaDescription`, canonical `/blog/{slug}`, OG image from the post or the default logo. |

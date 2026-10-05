@@ -2,7 +2,7 @@ import type { DomainNarrative } from "./types";
 
 export const aiMasteryNarrative: DomainNarrative = {
   slug: "ai-mastery",
-  h1Title: "AI Mastery & Life Optimisation",
+  h1Title: "AI as a tool",
   heroDescription:
     "A tool is useful when it gives you back an hour you can spend on a person, a walk, or a piece of work that needed your judgement.",
   opening: [
@@ -18,7 +18,7 @@ export const aiMasteryNarrative: DomainNarrative = {
         "Your judgement is the part that cannot be handed over. What you owe people. Whether a sentence is true. Whether a spend is wise. Whether you should send the message. A model can prepare the ground. It should not be the man who signs.",
         "Used well, this saves the hours that usually vanish into sorting, rewriting, and starting from a blank page. Those hours are often the ones you meant to give to training, to a child, to a partner, or to sleep. Getting them back is the point. Filling them with more screen is a miss.",
         "Stoic practice applies cleanly. You do not control what the tool produces. You control the question you ask, the facts you check, and the decision you keep. Temperance is closing it. Wisdom is not asking it to be your conscience.",
-        "You can ignore AI entirely and still live well. This domain is for men who already bump into these tools at work or on their phone and want them to serve the household rather than colonise the evening.",
+        "You can ignore AI entirely and still live well. This page is for men who already bump into these tools at work or on their phone and want them to serve the household rather than colonise the evening. It is not a life domain. The ten domains are where responsibility lives. AI is a tool you can use inside them.",
       ],
     },
     {
@@ -84,7 +84,7 @@ export const aiMasteryNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "Structured help that turns a messy task into the next few steps, without taking the decision away from you, is part of what Iron Compass is being built to offer. Those tools are not live on this website. There is no checkout here and no account required.",
+    "Ask Iron Compass can turn a messy task into the next few steps without taking the decision away from you. The app is at ironcompassai.com/app. You still sign the decision.",
     "The journal already has a plain starting point: how to get a first useful assistant habit without handing over your judgement. Read it after you have named the one dull task. The task is the test. If the tool does not make that task shorter, close it.",
   ],
 };

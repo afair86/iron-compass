@@ -88,7 +88,7 @@ export default function BlogPage() {
           <p className="ic-eyebrow ic-eyebrow--stoic">Iron Compass Journal</p>
           <h1 className="ic-page-title">Dispatches for Disciplined Men</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl">
-            Actionable plays for strength &amp; health, discipline, purpose, leadership, financial power, AI leverage, grief, and legacy. Every post ends with moves you can run this week.
+            Practical pieces across the ten life domains, plus notes on using AI as a tool. Every post ends with something you can do this week.
           </p>
           <div className="ic-cta-row">
             <Link href="/domains" className="ic-btn-primary text-xs sm:text-[0.72rem]">
@@ -101,7 +101,7 @@ export default function BlogPage() {
           <div className="ic-panel-stoic p-5 space-y-3 max-w-2xl mx-auto">
             <p className="ic-section-copy text-[0.9rem]">Topics we cover weekly</p>
             <div className="flex flex-wrap gap-2 justify-center">
-              {["Discipline", "Strength & Health", "Purpose", "Leadership", "Financial Power", "AI Mastery", "Grief & Honour", "Identity & Legacy"].map(
+              {["Discipline", "Identity", "Health & Strength", "Bonds & Connections", "Purpose & Direction", "Finance & Provision", "Resilience", "Fall & Rise", "Grief & Honour", "Legacy"].map(
                 (topic) => (
                   <span key={topic} className="ic-dispatch-chip">
                     {topic}
@@ -139,7 +139,7 @@ export default function BlogPage() {
                 <ul className="list-disc list-inside ic-section-copy ic-section-copy--muted space-y-1">
                   <li>Why this matters now</li>
                   <li>Moves to run this week</li>
-                  <li>Where it fits in the eight domains</li>
+                  <li>Where it fits in the ten life domains</li>
                 </ul>
                 <Link href={`/blog/${feature.slug}`} className="ic-btn-ghost text-[0.6rem]">
                   Jump to the play

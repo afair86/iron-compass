@@ -3,20 +3,20 @@ import { aiMasteryHubLinks } from "@/lib/articleHubs";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "AI Mastery Guides for Men | Iron Compass AI",
+  title: "Using AI as a Tool | Iron Compass AI",
   description:
-    "Practical AI workflows for busy men: daily loops, discipline support, and automations that keep you in command — not dependent on the tool.",
+    "Practical notes on using AI for planning and preparation. AI is a tool. It is not one of the ten life domains.",
   path: "/articles/ai-mastery",
 });
 
 export default function AiMasteryHubPage() {
   return (
     <TopicHubView
-      eyebrow="AI Mastery Hub"
-      title="AI Leverage Without Losing Your Edge"
-      description="AI should reduce friction, not replace judgment. These guides show how to build daily loops, automations, and learning systems that compound — while keeping standards human-controlled."
+      eyebrow="A tool, not a domain"
+      title="Use the tool. Keep the decision."
+      description="These notes show how to use AI for drafting, sorting, and preparation. They are not a life domain. Responsibility still sits in the ten domains."
       domainHref="/domains/ai-mastery"
-      domainLabel="AI Mastery Domain"
+      domainLabel="AI as a tool"
       links={aiMasteryHubLinks}
       journalLabel="Browse all AI journal posts"
     />

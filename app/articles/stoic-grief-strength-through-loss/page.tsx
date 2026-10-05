@@ -58,7 +58,7 @@ export default function ArticlePage() {
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Stoics reduce grief to three truths: something meaningful was lost, the loss is outside your control, and your response determines who you become next. You cannot change the event, but you can shape the man who walks out of it—start with the
           {" "}
-          <Link href="/domains/identity-legacy" className="underline">
+          <Link href="/domains/identity" className="underline">
             Identity &amp; Legacy
           </Link>
           {" "}
@@ -106,7 +106,7 @@ export default function ArticlePage() {
         <p className="ic-section-copy ic-section-copy--muted">
           Iron Compass turns Stoic principles into daily systems: grounding rituals, identity frameworks, masculine reflection prompts, habit anchors, grief stabilisation tools, fatherhood strength protocols, and purpose rebuild structures. Reinforce the work inside the
           {" "}
-          <Link href="/domains/discipline-mindset" className="underline">
+          <Link href="/domains/discipline" className="underline">
             Discipline &amp; Mindset
           </Link>
           {" "}

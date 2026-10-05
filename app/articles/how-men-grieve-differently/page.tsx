@@ -70,7 +70,7 @@ export default function ArticlePage() {
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Women often talk feelings through. Men internalise grief as identity shock, responsibility pressure, loss of direction, and fear of letting people down. Grief and identity are inseparable; revisit the
           {" "}
-          <Link href="/domains/identity-legacy" className="underline">
+          <Link href="/domains/identity" className="underline">
             Identity &amp; Legacy
           </Link>
           {" "}
@@ -111,7 +111,7 @@ export default function ArticlePage() {
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Men do not need permission to fall apart; they need a system that keeps them steady. Masculine strength looks like facing reality, staying grounded, holding structure, protecting what matters, and choosing purpose when emotions are chaotic. Build this foundation in the
           {" "}
-          <Link href="/domains/discipline-mindset" className="underline">
+          <Link href="/domains/discipline" className="underline">
             Discipline &amp; Mindset
           </Link>
           {" "}

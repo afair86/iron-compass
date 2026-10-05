@@ -5,17 +5,6 @@ import PhotoFrame from "./brand/PhotoFrame";
 import frameStyles from "./brand/photo-frame.module.css";
 import styles from "./approved-home.module.css";
 
-const domainTitles: Record<(typeof domainCards)[number]["slug"], string> = {
-  health: "Strength & Health",
-  "discipline-mindset": "Discipline & Mindset",
-  "purpose-direction": "Purpose & Direction",
-  "leadership-character": "Leadership & Character",
-  "financial-power": "Financial Power",
-  "ai-mastery": "AI Mastery & Life Optimization",
-  "grief-honour": "Grief & Honour",
-  "identity-legacy": "Identity & Legacy",
-};
-
 export default function ApprovedHome() {
   return (
     <div className={styles.home}>
@@ -34,7 +23,7 @@ export default function ApprovedHome() {
             Iron Compass AI helps men build strength, discipline and character—in the ordinary moments that
             shape their lives.
           </p>
-          <p>Explore the eight domains and our journal for practical ideas you can put to work in your own life.</p>
+          <p>The ten domains are where responsibility lives. The journal shows how that looks in a real week.</p>
           <Link className={styles.journey} href="/domains">
             Explore the domains <span aria-hidden="true">→</span>
           </Link>
@@ -45,12 +34,12 @@ export default function ApprovedHome() {
       </section>
 
       <section className={styles.block} id="domains">
-        <p className={styles.kicker}>The eight domains</p>
-        <h2>Forge every dimension</h2>
+        <p className={styles.kicker}>Ten life domains</p>
+        <h2>Where responsibility lives</h2>
         <p className={styles.lead}>
-          A complete, disciplined life requires mastery across Strength, Discipline and Mindset, Purpose and
-          Direction, Leadership and Character, Financial Power, AI Mastery and Life Optimization, Grief and
-          Honour, and Identity and Legacy.
+          Discipline, identity, health, the people who depend on you, the work, the money, the load, the return
+          after a miss, grief, and what remains. Awareness, pressure, and strategy are how the system helps. They
+          are not extra domains.
         </p>
         <div className={styles.domainGrid}>
           {domainCards.map((domain) => (
@@ -58,7 +47,7 @@ export default function ApprovedHome() {
               <PhotoFrame className={frameStyles.thumb} src={domainPhotos[domain.slug]} alt={domainPhotoAlts[domain.slug]} />
               <div>
                 <h3>
-                  <Link href={domain.href}>{domainTitles[domain.slug]}</Link>
+                  <Link href={domain.href}>{domain.title}</Link>
                 </h3>
                 <p>{domain.desc}</p>
               </div>
@@ -75,9 +64,9 @@ export default function ApprovedHome() {
         />
         <h2>The Iron Compass philosophy</h2>
         <p className={styles.lead}>
-          Iron Compass brings practical Stoic principles and modern tools together to help men live with
-          purpose, take responsibility and become people others can rely on. Discipline, strength, purpose,
-          leadership, money, and leverage, held together by structure you can run on a bad day.
+          Iron Compass brings practical Stoic principles and modern tools together so you can live with
+          purpose, take responsibility, and be someone others can rely on. The domains hold the responsibilities.
+          The system shows what needs attention.
         </p>
         <p className={styles.lead}>
           The website sets the framework. The app and toolkit handle execution: daily anchors, reviews, and

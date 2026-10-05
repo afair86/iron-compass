@@ -1,13 +1,13 @@
 import type { DomainNarrative } from "./types";
 
 export const financialPowerNarrative: DomainNarrative = {
-  slug: "financial-power",
-  h1Title: "Financial Power",
+  slug: "finance-provision",
+  h1Title: "Finance & Provision",
   heroDescription:
     "Money is calm when you know what is coming in, what must go out, and what you will not pretend you can afford.",
   opening: [
     "The envelope sits on the bench for three days. You know roughly what it is. You also know that opening it will force a decision, so you work around it. That is not a character flaw unique to you. It is what men do when money has become a mood instead of a list.",
-    "Financial power, as this site uses the phrase, is not a luxury watch or a loud opinion about markets. It is the ability to meet your obligations without panic, and to make the next money decision with the numbers in front of you. A man who can do that is easier to live with. He does not have to hide the account.",
+    "Finance and provision are not a luxury watch or a loud opinion about markets. They are the ability to meet your obligations without panic, and to make the next money decision with the numbers in front of you. A man who can do that is easier to live with. He does not have to hide the account.",
     "Nothing on this page is personal financial advice. Your tax, your debts, and your household are yours. What follows is a way to look at them without theatre.",
   ],
   sections: [
@@ -83,7 +83,7 @@ export const financialPowerNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "A weekly money check you can repeat, with the same categories and a note about what surprised you, is the kind of habit the Iron Compass app is being built to support. The app is not open. This page does not sell a product and does not start a payment.",
+    "A weekly money check you can repeat, with the same categories and a note about what surprised you, is a habit you can keep in the Iron Compass app. Open it at ironcompassai.com/app. This page is not financial advice.",
     "The journal has a twenty-minute weekly money check you can use as soon as you finish the list above, along with pieces on cash buffers and a plain resilience routine. Do the five minutes first so the article has something to attach to. None of it replaces advice from someone qualified about your own situation.",
   ],
 };

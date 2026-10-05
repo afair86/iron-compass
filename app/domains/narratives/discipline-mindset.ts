@@ -1,13 +1,13 @@
 import type { DomainNarrative } from "./types";
 
 export const disciplineMindsetNarrative: DomainNarrative = {
-  slug: "discipline-mindset",
-  h1Title: "Discipline & Mindset",
+  slug: "discipline",
+  h1Title: "Discipline",
   heroDescription:
     "Discipline is doing the thing you said you would do, on a day when you do not feel like it.",
   opening: [
     "The promise was small. You would reply to that message before lunch. You would train. You would be off the phone by ten. By evening the promise is still sitting there, and you have a story about why today was the exception. The story is usually true. The week is also full of exceptions, and the people around you are starting to plan as if your word is a maybe.",
-    "Motivation is a poor employee. It shows up for the interesting job and calls in sick for the ordinary one. Mindset, in the useful sense, is not a speech you give yourself. It is the way you talk about a missed day so that tomorrow is still available. All-or-nothing thinking feels strict. It is usually how men quit.",
+    "Motivation is a poor employee. It shows up for the interesting job and calls in sick for the ordinary one. Discipline is not a speech you give yourself. It is the way you treat a missed day so that tomorrow is still available. All-or-nothing thinking feels strict. It is usually how men quit.",
     "Iron Compass treats discipline as reliability. You keep a few standards that still fire when the day is loud. You tell the truth about what you dropped. You do not need to feel proud to begin. You need a minimum that does not depend on a good mood.",
   ],
   sections: [
@@ -82,7 +82,7 @@ export const disciplineMindsetNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "A daily anchor and a weekly review are the sort of record the Iron Compass app is being built to keep, so a standard does not live only in your head. The app is not open. Nothing on this page asks you to pay or to sign up.",
+    "A daily anchor and a weekly review are the record the Iron Compass app keeps, so a standard does not live only in your head. Open it at ironcompassai.com/app. The five minutes above still work with a pen.",
     "The journal already has the next reading if you want it: a quiet discipline protocol for a full calendar, how to hold the line when the week turns, and what to do when things finally start going well and you are tempted to drift. Use the five minutes first.",
   ],
 };

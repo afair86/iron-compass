@@ -82,7 +82,7 @@ export const griefHonourNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "A quiet place to reflect, and a simple exercise you can return to on a hard date, is part of what Iron Compass intends to offer. That part of the app is not available. This page does not ask you to pay, register, or share what you wrote.",
+    "A quiet place to mark a hard date, and a simple record you can return to, lives in the Iron Compass app. Open it at ironcompassai.com/app. This page does not ask you to share what you wrote.",
     "The journal has longer pieces on how men often carry grief, and on rebuilding after a loss, if you want them later. They are reading, not treatment. If you are in danger of harming yourself, contact local emergency help or a crisis line now, and tell one person who can sit with you.",
   ],
 };
