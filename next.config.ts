@@ -9,6 +9,9 @@ const blogRedirects = Object.entries(BLOG_CANONICAL_REDIRECTS).map(([source, des
 }));
 
 const nextConfig: NextConfig = {
+  outputFileTracingExcludes: {
+    "*": ["./public/audio/**/*"],
+  },
   redirects: async () => [...DOMAIN_ALIAS_REDIRECTS, ...blogRedirects],
   rewrites: async () => {
     const upstream = process.env.PRODUCT_APP_UPSTREAM_URL?.trim().replace(/\/$/, "");
