@@ -34,12 +34,12 @@ const widthMap: Record<Width, string> = {
 };
 
 const variantMap: Record<NonNullable<SectionShellProps["variant"]>, string> = {
-  hero: "ic-panel-stoic ic-panel-stoic--hero",
-  panel: "ic-panel-stoic",
-  muted: "ic-panel-stoic ic-panel-stoic--warm",
-  outline: "ic-panel-stoic",
-  contrast: "ic-panel-stoic ic-panel-stoic--hero",
-  warm: "ic-panel-stoic ic-panel-stoic--warm",
+  hero: "ic-board-panel ic-board-panel--hero",
+  panel: "ic-board-panel",
+  muted: "ic-board-panel",
+  outline: "ic-board-panel",
+  contrast: "ic-board-panel",
+  warm: "ic-board-panel",
 };
 
 const eyebrowAccentMap = {
@@ -92,7 +92,7 @@ export function HeadingStack({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className={`ic-heading-2 ${center ? "mx-auto" : ""} ${titleClassName}`.trim()}>{title}</h2>
+      <h2 className={`ic-heading-2 ic-board-heading ${center ? "mx-auto" : ""} ${titleClassName}`.trim()}>{title}</h2>
       {center ? <div className="ic-stoic-rule mx-auto" aria-hidden="true" /> : <div className="ic-stoic-rule ic-stoic-rule--inline" aria-hidden="true" />}
       {description ? (
         <p className={`ic-section-copy ic-section-copy--muted ${center ? "mx-auto" : ""}`.trim()}>{description}</p>

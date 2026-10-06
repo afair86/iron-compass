@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { domainNavLinks } from "@/lib/domains";
 
@@ -25,6 +26,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="ic-footer-lede">
           <div className="space-y-3">
+            <Link href="/" className="ic-logo-lockup" aria-label="Iron Compass AI">
+              <Image src="/iron-compass-logo-icon.png" alt="" width={56} height={56} className="ic-logo-img" />
+              <span className="ic-logo-wordmark">
+                IRON COMPASS <span>AI</span>
+              </span>
+            </Link>
             <p className="ic-footer-title">Discipline. Direction. Brotherhood.</p>
             <p className="ic-footer-tagline">
               A disciplined life system for men who prefer proof over promises.

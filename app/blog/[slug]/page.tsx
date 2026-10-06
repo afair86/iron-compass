@@ -205,11 +205,15 @@ export default async function BlogPostPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
           />
 
-          <header className="ic-dispatch-hero space-y-5">
-            <h1 className="ic-page-title mx-auto">{post.meta.title}</h1>
+          <header className="ic-board-hero">
             {articlePhoto(post.meta.image) ? (
-              <PhotoFrame src={articlePhoto(post.meta.image)!} alt={heroAlt} />
+              <div className="ic-board-hero__media">
+                <PhotoFrame src={articlePhoto(post.meta.image)!} alt={heroAlt} />
+              </div>
             ) : null}
+            <div className="ic-board-hero__copy">
+            <p className="ic-board-kicker">Journal</p>
+            <h1 className="ic-page-title">{post.meta.title}</h1>
             {post.meta.imageCredit && articlePhoto(post.meta.image) ? (
               <p className="ic-ai-credit">{post.meta.imageCredit}</p>
             ) : null}
@@ -228,6 +232,7 @@ export default async function BlogPostPage({ params }: Props) {
               hint="Prefer to hear it?"
             />
             <div className="ic-stoic-rule ic-stoic-rule--wide" aria-hidden="true" />
+            </div>
           </header>
 
           <div className="ic-dispatch-body">

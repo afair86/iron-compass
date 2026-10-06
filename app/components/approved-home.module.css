@@ -1,12 +1,12 @@
 .home {
-  background: #101a28;
+  background: #02060d;
   color: #f7f4ef;
 }
 
 .hero {
   position: relative;
   overflow: hidden;
-  background: #101a28;
+  background: #02060d;
 }
 
 .banner {
@@ -135,7 +135,7 @@
   width: min(100%, 760px);
   margin: 0 auto;
   padding: 1.6rem 1.25rem 2.2rem;
-  background: #101a28;
+  background: #02060d;
   text-align: center;
 }
 
@@ -164,7 +164,10 @@
   min-height: 52px;
   padding: 0 1.35rem;
   border-radius: 999px;
-  background: #b01015;
+  background: #ff3434;
+  border-radius: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -238,12 +241,13 @@
 
 .domain {
   display: flex;
-  gap: 0.85rem;
-  align-items: center;
-  padding: 0.7rem;
-  border-radius: 16px;
-  background: #1a2838;
-  border: 1px solid rgba(243, 238, 230, 0.1);
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: stretch;
+  padding: 0.75rem;
+  border-radius: 14px;
+  background: #080f18;
+  border: 1px solid rgba(0, 168, 255, 0.28);
   text-align: left;
 }
 
@@ -277,6 +281,12 @@
 @media (min-width: 700px) {
   .domainGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .domainGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

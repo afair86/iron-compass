@@ -41,14 +41,16 @@ export default function PricingPage() {
             Core is the complete product. Elite adds depth. Cancel any time. Your history stays if you move down.
           </p>
         </section>
+        <div className="ic-board-plans">
         {PLANS.map((plan) => (
-          <section key={plan.name} className="ic-panel-outline space-y-3">
+          <section key={plan.name} className={`ic-board-plan${plan.highlight ? " ic-board-plan--core" : ""} space-y-3`}>
             {plan.highlight ? <p className="ic-eyebrow">{plan.highlight}</p> : null}
             <h2 className="ic-section-heading">{plan.name}</h2>
             <p className="ic-section-title">{plan.price}</p>
             <p className="ic-section-copy">{plan.detail}</p>
           </section>
         ))}
+        </div>
         <Link href={`${app}/auth`} className="ic-btn-primary">
           Start
         </Link>

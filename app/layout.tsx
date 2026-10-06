@@ -2,6 +2,7 @@
 import "./globals.css";
 import "../styles/iron-compass.css";
 import "../styles/ic-system.css";
+import "../styles/board.css";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Oswald, Inter } from "next/font/google";

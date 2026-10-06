@@ -11,7 +11,7 @@ export default function ApprovedHome() {
       <section className={styles.hero} id="home">
         <div className={styles.banner}>
           <img className={styles.heroPhoto} src="/images/home/horizon-man.png" alt={pagePhotoAlts.homeHero} />
-          <img className={styles.bannerMark} src="/images/brand/compass-mark.png" alt="Iron Compass" />
+          <img className={styles.bannerMark} src="/iron-compass-logo-icon.png" alt="Iron Compass" />
           <p className={styles.bannerWord}>
             Iron Compass <span>AI</span>
           </p>

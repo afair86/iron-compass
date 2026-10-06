@@ -43,8 +43,12 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
   return (
     <PageShell>
       <PageContainer>
-        <SectionShell variant="hero" className="space-y-6">
-          <PhotoFrame src={photo.src} alt={photo.alt} />
+        <header className="ic-board-hero">
+          <div className="ic-board-hero__media">
+            <PhotoFrame src={photo.src} alt={photo.alt} />
+          </div>
+          <div className="ic-board-hero__copy">
+          <p className="ic-board-kicker">Life domain</p>
           <h1 className="ic-page-title">{narrative.h1Title}</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl">{narrative.heroDescription}</p>
           {audioSrc ? (
@@ -64,7 +68,8 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
               </p>
             ))}
           </div>
-        </SectionShell>
+          </div>
+        </header>
 
         {narrative.sections.map((section) => (
           <SectionShell key={section.key} variant="panel" className="space-y-4 md:space-y-5">
