@@ -45,7 +45,7 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
       <PageContainer>
         <header className="ic-board-hero">
           <div className="ic-board-hero__media">
-            <PhotoFrame src={photo.src} alt={photo.alt} />
+            <PhotoFrame src={photo.src} alt={photo.alt} fit="cover" position="center 28%" />
           </div>
           <div className="ic-board-hero__copy">
           <p className="ic-board-kicker">Life domain</p>

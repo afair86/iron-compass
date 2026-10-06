@@ -1,0 +1,72 @@
+.page {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+
+.intro {
+  max-width: 38rem;
+  margin: 0 0 1.35rem;
+  text-align: left;
+}
+
+.kicker {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-heading), Oswald, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8491a3;
+}
+
+.intro h1 {
+  margin: 0;
+  font-family: var(--font-heading), Oswald, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: #f5f7fb;
+  background: none;
+  -webkit-text-fill-color: #f5f7fb;
+}
+
+.intro h1::after {
+  content: "";
+  display: block;
+  width: 3.25rem;
+  height: 3px;
+  margin-top: 0.7rem;
+  background: #ff3434;
+}
+
+.sub {
+  margin: 0.85rem 0 0;
+  color: #f5f7fb;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.lede {
+  margin: 0.55rem 0 0;
+  max-width: 36rem;
+  color: #c7cfdd;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 412px) {
+  .page {
+    width: min(100% - 1.25rem, 1120px);
+    padding-top: 1.1rem;
+  }
+}

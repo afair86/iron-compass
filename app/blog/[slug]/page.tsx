@@ -208,7 +208,7 @@ export default async function BlogPostPage({ params }: Props) {
           <header className="ic-board-hero">
             {articlePhoto(post.meta.image) ? (
               <div className="ic-board-hero__media">
-                <PhotoFrame src={articlePhoto(post.meta.image)!} alt={heroAlt} />
+                <PhotoFrame src={articlePhoto(post.meta.image)!} alt={heroAlt} fit="cover" position="center 30%" />
               </div>
             ) : null}
             <div className="ic-board-hero__copy">
