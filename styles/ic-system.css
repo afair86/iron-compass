@@ -1,0 +1,51 @@
+/* Shared public-site rules. Content stays. Fake board statistics stay out. */
+
+body {
+  overflow-x: hidden;
+  background: #02060d;
+  color: #f5f7fb;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #00a8ff;
+  outline-offset: 3px;
+}
+
+input,
+textarea,
+select {
+  min-height: 2.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 168, 255, 0.35);
+  background: #080f18;
+  color: #f5f7fb;
+}
+
+button,
+.ic-neon-cta,
+a.ic-neon-cta {
+  min-height: 2.75rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ic-logo-img {
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
