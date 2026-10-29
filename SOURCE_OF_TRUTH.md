@@ -47,5 +47,5 @@ Future website builds run `prebuild` to create `/source-version.json`. App build
 
 - The recovered website is pushed and is the live site. GitHub `main` has not been moved to that commit.
 - Both Vercel projects are connected to their repositories. The web app uses the repository root.
-- A non-production app preview of this tracking branch still has to be checked after the push. Its deployment id is unknown in this commit.
+- A non-production app preview, `dpl_7HYvA3X5vQoMCoDHm7YrgCzKqoqa`, was checked for commit `589fd46516b195d6290cd4fa89f0a47a7ad6464d`. Its version file says the build tree was dirty, so it is not marked an exact clean build. Production approval is still open.
 - API and installed-app versions remain unknown.
