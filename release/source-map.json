@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-29",
+  "timezone": "Australia/Brisbane",
+  "note": "This is a dated verified baseline, not a claim that all components are live or synchronized. Source continuity workflow records new commit/deployment evidence.",
+  "website": {
+    "repository": "afair86/iron-compass",
+    "workingBranch": "recovery/current-live-website",
+    "recoveredCommit": "afa2c955b3085319c5d53611567a1dca18f598f2",
+    "productionBranch": "main",
+    "productionBranchBaseline": "590808f",
+    "productionDeployment": "dpl_kDxbSAWPyjDFQrbbwL9JnBfGCwDW",
+    "productionReportedCommit": "5d51214c5cc4d18108b77a7a9900fc75e70fd9cd",
+    "productionSourceKind": "cli",
+    "productionUrl": "https://ironcompassai.com",
+    "vercelProjectId": "prj_fOowaY2ZkZPR56F2Pr3ZArjLBnYM",
+    "gitConnected": true,
+    "releaseStatus": "recovered working branch is ahead of production; not promoted"
+  },
+  "webApp": {
+    "repository": "afair86/iron-compass-ai",
+    "rootDirectory": ".",
+    "frontendDirectory": "frontend",
+    "sourceBranch": "main",
+    "draftHabitFixBranch": "fix/light-full-onboarding-review",
+    "vercelProjectId": "prj_kru7tmL5GZJTdtCuOUpO6IpyjtAc",
+    "productionDeployment": "dpl_29TjfqsRDUtBBKmGDKSmN2j3wegY",
+    "productionReportedCommit": null,
+    "productionSourceKind": "cli",
+    "productionUrl": "https://ironcompassai.com/app",
+    "gitConnected": false,
+    "releaseStatus": "existing Vercel project is not yet Git-connected; production commit is unknown"
+  },
+  "api": {
+    "repository": "afair86/iron-compass-ai",
+    "directory": "apps/api",
+    "url": "https://api.ironcompassai.com",
+    "productionReportedCommit": null,
+    "releaseStatus": "API hosting connection and production commit not verified in this setup"
+  },
+  "nativeApps": {
+    "repository": "afair86/iron-compass-ai",
+    "directory": "frontend",
+    "installedBuild": null,
+    "installedCommit": null,
+    "releaseStatus": "installed build and commit not verified; a web deployment does not update an installed app"
+  }
+}
