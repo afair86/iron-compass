@@ -1,8 +1,8 @@
 import type { DomainNarrative } from "./types";
 
 export const healthNarrative: DomainNarrative = {
-  slug: "health",
-  h1Title: "Strength & Health",
+  slug: "health-strength",
+  h1Title: "Health & Strength",
   heroDescription:
     "Your body is not a project you finish. It is the thing that has to carry work, people, and ordinary weeks.",
   opening: [
@@ -33,7 +33,7 @@ export const healthNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/strength-stairs.webp",
-        alt: "A man walking up an office stairwell at lunch with a gym bag",
+        alt: "Strength and health for men",
       },
     },
     {
@@ -47,7 +47,7 @@ export const healthNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/strength-evening-stretch.webp",
-        alt: "A man stretching on the living room floor in the evening",
+        alt: "Strength and recovery for men",
       },
     },
     {
@@ -83,7 +83,7 @@ export const healthNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "The pages here give you the standard. A training record, a simple week review, and a place to see whether the floor held are what the Iron Compass app is being built to hold. That app is not open yet. There is no payment on this page, and you do not need an account to use the five minutes above.",
+    "The pages here give you the standard. The Iron Compass app is where you keep a training record and see whether the floor held. Open it at ironcompassai.com/app. The five minutes above still work with a pen.",
     "Until that record exists, the journal already has pieces you can use this week: strength when time is short, training without depending on a gym, and keeping energy steady when sleep is thin. Read one. Then do the week you just wrote down.",
   ],
 };

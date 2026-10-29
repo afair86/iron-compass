@@ -65,13 +65,13 @@ export default function ArticlePage() {
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
           Loss forces identity questions: Who am I without them? How do I lead when I feel broken? What does this pain mean for the man I am becoming? This is why grief demands discipline, not denial. Revisit the standards inside the
           {" "}
-          <Link href="/domains/identity-legacy" className="underline">
+          <Link href="/domains/identity" className="underline">
             Identity &amp; Legacy
           </Link>
           {" "}
           and
           {" "}
-          <Link href="/domains/discipline-mindset" className="underline">
+          <Link href="/domains/discipline" className="underline">
             Discipline &amp; Mindset
           </Link>
           {" "}

@@ -2,17 +2,45 @@ import type { CanonicalDomainSlug } from "@/lib/site";
 
 /** Scene photographs with no compass in the picture. PhotoFrame adds it at the bottom left. */
 export const domainPhotos: Record<CanonicalDomainSlug, string> = {
-  health: "/images/home/scenes/home-strength.webp",
-  "discipline-mindset": "/images/home/scenes/home-discipline.webp",
+  discipline: "/images/home/scenes/home-discipline.webp",
+  identity: "/images/domains/identity-pegs.webp",
+  "health-strength": "/images/home/scenes/home-strength.webp",
+  "bonds-connections": "/images/home/scenes/home-leadership.webp",
   "purpose-direction": "/images/home/scenes/home-purpose.webp",
-  "leadership-character": "/images/home/scenes/home-leadership.webp",
-  "financial-power": "/images/home/scenes/home-financial.webp",
-  "ai-mastery": "/images/home/scenes/home-ai.webp",
+  "finance-provision": "/images/home/scenes/home-financial.webp",
+  resilience: "/images/domains/strength-stairs.webp",
+  "fall-rise": "/images/domains/purpose-morning-path.webp",
   "grief-honour": "/images/home/scenes/home-grief.webp",
-  "identity-legacy": "/images/home/scenes/home-legacy.webp",
+  legacy: "/images/home/scenes/home-legacy.webp",
 };
 
+/** Not a life domain. Kept so the AI resource page still has its photograph. */
+export const aiResourcePhoto = "/images/home/scenes/home-ai.webp";
+
 export const philosophyPhoto = "/images/home/scenes/home-philosophy.webp";
+
+/** Hidden descriptions for search. They name what Iron Compass is for, not the scenery. */
+export const domainPhotoAlts: Record<CanonicalDomainSlug, string> = {
+  discipline: "Discipline for men",
+  identity: "Identity for men",
+  "health-strength": "Health and strength for men",
+  "bonds-connections": "Bonds and connections for men",
+  "purpose-direction": "Purpose and direction for men",
+  "finance-provision": "Finance and provision for men",
+  resilience: "Resilience under load for men",
+  "fall-rise": "Returning after a miss",
+  "grief-honour": "Grief and honour for men",
+  legacy: "Legacy for men",
+};
+
+export const pagePhotoAlts = {
+  about: "About Iron Compass AI, a life system for men built on discipline, purpose, strength, and integrity",
+  blog: "Iron Compass journal: practical guides for men on discipline, strength, leadership, money, grief, and purpose",
+  contact: "Contact Iron Compass AI",
+  domains: "The ten Iron Compass life domains: discipline, identity, health, bonds, purpose, finance, resilience, fall and rise, grief, and legacy",
+  homeHero: "Iron Compass AI helps men build strength, discipline and character",
+  philosophy: "Iron Compass philosophy: practical discipline, purpose, and character for men",
+} as const;
 
 /** Scenic pages with no compass in the picture. PhotoFrame adds the mark. */
 export const pagePhotos = {
@@ -26,5 +54,13 @@ export const pagePhotos = {
 export function articlePhoto(image?: string) {
   if (!image) return undefined;
   if (image.includes("iron-compass-logo")) return undefined;
-  return image;
+  // Existing alternatives preserve complete heads where the old source itself clipped them.
+  const completeSubjects: Record<string, string> = {
+    "/images/blog/cashflow-command-ai-copilot-hero.png": "/images/blog/freelancer-cashflow-war-room-hero.png",
+    "/images/blog/leadership-decision-log-for-trust-and-speed-hero.png": "/images/blog/integrity-audit-leadership-hero.png",
+    "/images/blog/tendon-armor-protocol-hero.png": "/images/blog/iron-protocol-strength-transition-hero.png",
+    "/images/blog/strength-without-extra-time-hero.png": "/images/blog/iron-protocol-strength-transition-hero.png",
+    "/images/blog/when-things-start-falling-into-place-hero.png": "/images/blog/midlife-mission-rewrite-playbook-hero.png",
+  };
+  return completeSubjects[image] ?? image;
 }

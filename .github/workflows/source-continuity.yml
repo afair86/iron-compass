@@ -1,0 +1,26 @@
+name: Source continuity
+on:
+  push:
+  pull_request:
+  deployment_status:
+  workflow_dispatch:
+permissions:
+  contents: read
+  deployments: read
+  statuses: read
+jobs:
+  source-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the event commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.deployment.sha || github.sha }}
+      - name: Test source identity reporting
+        run: node --test scripts/source-status.test.mjs
+      - name: Record source and GitHub deployment evidence
+        run: node scripts/source-status.mjs --check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SOURCE_STATUS_COMMIT: ${{ github.event.deployment.sha || github.sha }}

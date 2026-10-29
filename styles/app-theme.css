@@ -1,0 +1,241 @@
+/* App-aligned semantic colours. Latest owner direction: quiet surfaces, no neon.
+   Steel guides; amber marks a next step; red requests action; green means earned
+   progress. The website must not invent progress or imply a conversion promise. */
+html:root {
+  color-scheme: dark;
+  --ic-bg: #02060d;
+  --ic-bg-alt: #02060d;
+  --ic-page-bg-alt: #02060d;
+  --ic-bg-radial-a: transparent;
+  --ic-bg-radial-b: transparent;
+  --ic-surface: #080f18;
+  --ic-surface-mid: #080f18;
+  --ic-surface-card: #080f18;
+  --ic-card-bg: #080f18;
+  --ic-surface-alt: #101923;
+  --ic-text-heading: #f5f7fb;
+  --ic-text-main: #c7cfdd;
+  --ic-text-muted: #8491a3;
+  --ic-steel: #9eb4c8;
+  --ic-accent-blue: var(--ic-steel);
+  --ic-amber: #ffb020;
+  --ic-progress: #28d17c;
+  --ic-cta-red: #ff3434;
+  --ic-danger: #c51f2a;
+  --ic-on-action: #02060d;
+  --ic-border: rgba(199, 207, 221, 0.16);
+  --ic-border-strong: #607286;
+  --ic-card-border: var(--ic-border);
+  --ic-chip-border: var(--ic-border);
+  --ic-ghost-border: var(--ic-border-strong);
+  --ic-brass: var(--ic-amber);
+  --ic-brass-muted: var(--ic-border);
+  --ic-stone: var(--ic-text-muted);
+  --ic-bone: var(--ic-text-heading);
+  --ic-iron: var(--ic-surface);
+  --ic-ring-glow: none;
+  --ic-shadow-blue: none;
+  --ic-shadow-red: none;
+  --ic-heading-metal-gradient: none;
+  --ic-heading-stroke: transparent;
+  --ic-radius-card: 14px;
+  --ic-radius-xl: 16px;
+}
+
+@media screen {
+  html body .ic-dispatch-prose pre {
+    max-width: 100%;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  html body .ic-dispatch-prose code {
+    overflow-wrap: anywhere;
+    white-space: inherit;
+  }
+
+  html body {
+    background: var(--ic-bg);
+    color: var(--ic-text-main);
+  }
+
+  html body :is(.ic-page-shell, .ic-board-page, .ic-nav-shell, .ic-footer-shell) {
+    background: var(--ic-bg);
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  html body .ic-page-shell::before,
+  html body .ic-page-shell::after,
+  html body .ic-logo-mark::before {
+    display: none;
+  }
+
+  html body :is(.ic-board-panel, .ic-panel, .ic-panel-outline, .ic-panel-muted,
+    .ic-panel-stoic, .ic-stoic-card, .ic-board-plan, .ic-board-hero) {
+    background: var(--ic-surface);
+    border-color: var(--ic-border);
+    border-radius: 14px;
+    box-shadow: none;
+  }
+
+  html body :is(h1, h2, h3, .ic-metallic-h1, .ic-metallic-h2) {
+    overflow-wrap: anywhere;
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+  }
+
+  html body :is(.ic-page-title, .ic-section-title) {
+    color: var(--ic-text-heading);
+  }
+
+  html body :is(.ic-heading-2, .ic-heading-3, .ic-section-heading, .ic-board-heading) {
+    color: var(--ic-steel);
+  }
+
+  html body :is(.ic-section-copy, .ic-dispatch-prose p, .ic-dispatch-lede) {
+    color: var(--ic-text-main);
+  }
+
+  html body :is(.ic-section-copy--muted, .ic-eyebrow, .ic-board-kicker) {
+    color: var(--ic-text-muted);
+  }
+
+  html body :is(.ic-nav-shell, .ic-footer-shell) {
+    border-color: var(--ic-border);
+  }
+
+  html body .ic-nav-inner {
+    gap: 1.25rem;
+    min-height: 3rem;
+  }
+
+  html body .ic-logo-lockup {
+    gap: 0.6rem;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  html body .ic-logo-mark {
+    margin: 0;
+  }
+
+  html body .ic-logo-img {
+    width: 48px;
+    filter: none;
+  }
+
+  html body .ic-logo-wordmark {
+    padding: 0;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+    color: var(--ic-text-heading);
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    text-shadow: none;
+  }
+
+  html body .ic-logo-wordmark span {
+    color: var(--ic-cta-red);
+    -webkit-text-fill-color: currentColor;
+    text-shadow: none;
+  }
+
+  html body :is(.ic-navlink, .ic-nav-link, .ic-mobile-navlink) {
+    color: var(--ic-text-main);
+    text-shadow: none;
+    letter-spacing: 0.08em;
+  }
+
+  html body :is(.ic-navlink, .ic-nav-link, .ic-mobile-navlink):is(:hover, [data-active="true"]) {
+    color: var(--ic-steel);
+    background: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 0.4em;
+  }
+
+  html body :is(.ic-navlink, .ic-nav-link)::after {
+    display: none;
+  }
+
+  html body :is(.ic-nav-toggle, .ic-mobile-nav-card) {
+    background: var(--ic-surface);
+    border: 1px solid var(--ic-border);
+    box-shadow: none;
+  }
+
+  html body :is(.ic-btn-primary, .ic-neon-cta, button[type="submit"]) {
+    background: var(--ic-cta-red);
+    color: var(--ic-on-action);
+    -webkit-text-fill-color: currentColor;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    box-shadow: none;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    min-height: 44px;
+  }
+
+  html body :is(.ic-btn-primary, .ic-neon-cta, button[type="submit"]):hover {
+    background: #ff6262;
+    box-shadow: none;
+    transform: none;
+  }
+
+  html body :is(.ic-btn-ghost, .ic-pill-link) {
+    background: transparent;
+    color: var(--ic-steel);
+    border-color: var(--ic-border-strong);
+    box-shadow: none;
+    min-height: 44px;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  html body a:is(.ic-btn-primary, .ic-neon-cta)[href^="/domains"],
+  html body a:is(.ic-btn-primary, .ic-neon-cta)[href^="/blog"] {
+    background: transparent;
+    color: var(--ic-amber);
+    border-color: var(--ic-amber);
+  }
+
+  html body :is(.ic-dispatch-prose a, .ic-section-copy a) {
+    color: var(--ic-steel);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  html body :is(input, textarea, select) {
+    background-color: var(--ic-surface);
+    color: var(--ic-text-heading);
+    border-color: var(--ic-border-strong);
+    box-shadow: none;
+  }
+
+  html body :is(a, button, input, textarea, select):focus-visible {
+    outline: 2px solid var(--ic-steel);
+    outline-offset: 4px;
+    box-shadow: none;
+  }
+
+  html body .ic-stoic-rule {
+    background: var(--ic-border);
+  }
+
+  html body .ic-board-plan--core {
+    border-color: var(--ic-amber);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html body .ic-logo-img { width: 36px; }
+  html body .ic-logo-wordmark { font-size: 0.8rem; letter-spacing: 0.08em; }
+  html body .ic-nav-shell { padding-block: 0.75rem; }
+}

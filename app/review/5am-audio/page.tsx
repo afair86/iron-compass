@@ -13,8 +13,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export const dynamic = "force-dynamic";
-
 function readText(rel: string) {
   return fs.readFileSync(path.join(process.cwd(), rel), "utf8");
 }

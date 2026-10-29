@@ -56,7 +56,7 @@ const sections = [
   {
     title: "Governing Law & Contact",
     body:
-      "These Terms are governed by applicable Australian law, along with any mandatory local protections that apply to you. Questions can be sent to legal@ironcompass.ai, and we will respond with clear direction.",
+      "These Terms are governed by the laws of Queensland, Australia, subject to any rights or protections that cannot lawfully be excluded under applicable consumer law. Questions can be sent through the contact page.",
   },
 ];
 
@@ -81,8 +81,8 @@ export default function TermsPage() {
         <section className="ic-panel ic-align-center space-y-6">
           <h1 className="ic-section-title">Terms of Use</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
-            Using Iron Compass means you accept these terms. They exist to keep the mission clean, guard the community, and set expectations between
-            members and the company.
+            Iron Compass AI is operated by HumanFirst Technologies, an Australian sole-trader business, ABN 96 226 474 355. Using the site means you
+            accept these terms.
           </p>
         </section>
 
@@ -123,8 +123,8 @@ export default function TermsPage() {
             <h2 className="ic-section-heading">Reach the Legal Team</h2>
           </div>
           <p className="ic-section-copy ic-section-copy--muted text-sm">
-            Email <a href="mailto:legal@ironcompass.ai" className="underline">legal@ironcompass.ai</a> for compliance questions, dispute notices, or
-            clarifications. Include your account email, a summary of your concern, and supporting documentation so we can respond quickly.
+            Use the <a href="/contact" className="underline">contact page</a> for compliance questions, dispute notices, or clarifications. Include a
+            summary of your concern and any supporting detail so we can respond.
           </p>
         </section>
       </div>

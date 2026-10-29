@@ -1,0 +1,16 @@
+---
+description: How to check a website change before calling it done
+alwaysApply: true
+---
+
+# Testing
+
+A successful build is not enough for a page change. Open the page, use the link or control, and check the phone width.
+
+Look for a broken app link, a dead route, a console error, and a layout that hides the heading or the next step.
+
+Say what you actually opened. Do not mark a browser check as done if you only read the file.
+
+The blog checklist still applies to articles. Separate checks you performed from checks you did not.
+
+Do not publish, deploy, or regenerate approved audio unless the founder asked.

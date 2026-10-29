@@ -1,0 +1,37 @@
+---
+description: Keep Iron Compass launch progress shared between Cursor and Codex
+alwaysApply: true
+---
+
+# Shared launch handover
+
+For Iron Compass launch and app/website integration work, automatically read
+`SOURCE_OF_TRUTH.md` and `docs/CURRENT_HANDOVER.md` at the start of a task and
+after switching branches/checkouts. These tracked files are the shared checkpoint
+for Cursor, ChatGPT/Codex and other tools. Preserve any newer local checkpoint;
+bring relevant facts into the repository without copying private data. Follow
+linked integration checks. Repository facts and newer human instructions take
+precedence over stale checkpoint claims.
+
+Before editing a repository, inspect HEAD and dirty state and read applicable
+instructions. Preserve unrelated changes. If another agent is editing the same
+checkout/files, do independent read-only work until ownership is resolved.
+
+At a meaningful milestone and before your final reply, reread the shared handover
+and update only CURRENT HANDOVER with: Brisbane timestamp, assistant, checkout,
+branch/full SHA, local versus pushed/deployed state, exact changed files, relevant
+checks and results, blocker/approval status, and one next action. Read-only work
+also deserves a checkpoint when it establishes a new material fact. Do not claim
+pass from old evidence or overwrite another assistant's newer work. If the file
+is unavailable, report that fact; do not claim progress was synchronized.
+
+Keep credentials, tokens, private member content and tax/bank data out of handovers.
+No production writes, commits, deployment-triggering pushes, releases, purchases,
+paid services, metered/saved QA reviews, account changes, or irreversible actions
+without the owner's applicable approval. Normal local inspection and focused
+preparation may continue; no new features, large audits or automated paid Cursor
+execution. Do not reset quotas or edit original member records as tests.
+
+This rule maintains file-based continuity during agent turns. It is not a
+background service, live chat bridge or guarantee of execution after a crash,
+quota exhaustion, closed editor or interruption before checkpointing.

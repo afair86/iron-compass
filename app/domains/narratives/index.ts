@@ -6,16 +6,22 @@ import { leadershipCharacterNarrative } from "./leadership-character";
 import { financialPowerNarrative } from "./financial-power";
 import { aiMasteryNarrative } from "./ai-mastery";
 import { griefHonourNarrative } from "./grief-honour";
-import { identityLegacyNarrative } from "./identity-legacy";
+import { identityNarrative } from "./identity-legacy";
+import { resilienceNarrative } from "./resilience";
+import { fallRiseNarrative } from "./fall-rise";
+import { legacyNarrative } from "./legacy";
 import type { DomainNarrative } from "./types";
 
 export const domainNarratives: Record<DomainSlug, DomainNarrative> = {
-  health: healthNarrative,
-  "discipline-mindset": disciplineMindsetNarrative,
+  discipline: disciplineMindsetNarrative,
+  identity: identityNarrative,
+  "health-strength": healthNarrative,
+  "bonds-connections": leadershipCharacterNarrative,
   "purpose-direction": purposeDirectionNarrative,
-  "leadership-character": leadershipCharacterNarrative,
-  "financial-power": financialPowerNarrative,
-  "ai-mastery": aiMasteryNarrative,
+  "finance-provision": financialPowerNarrative,
+  resilience: resilienceNarrative,
+  "fall-rise": fallRiseNarrative,
   "grief-honour": griefHonourNarrative,
-  "identity-legacy": identityLegacyNarrative,
+  legacy: legacyNarrative,
+  "ai-mastery": aiMasteryNarrative,
 };

@@ -1,26 +1,11 @@
 import type { Metadata } from "next";
-import { absoluteUrl, DOMAIN_SOCIAL_IMAGE } from "@/lib/site";
+import { absoluteUrl, DOMAIN_SOCIAL_IMAGE, type CanonicalDomainSlug } from "@/lib/site";
 
-export type DomainSlug =
-  | "health"
-  | "discipline-mindset"
-  | "purpose-direction"
-  | "leadership-character"
-  | "financial-power"
-  | "ai-mastery"
-  | "grief-honour"
-  | "identity-legacy";
+/** Life domains, plus the retired AI resource page. */
+export type DomainSlug = CanonicalDomainSlug | "ai-mastery";
 
-export type DomainPrinciple = {
-  title: string;
-  description: string;
-};
-
-export type DomainLink = {
-  label: string;
-  href: string;
-  description: string;
-};
+export type DomainPrinciple = { title: string; description: string };
+export type DomainLink = { label: string; href: string; description: string };
 
 export type DomainContent = {
   slug: DomainSlug;
@@ -36,375 +21,309 @@ export type DomainContent = {
   actions: string[];
   internalLinks: DomainLink[];
   companionLink: DomainLink;
-  seo: {
-    title: string;
-    description: string;
-  };
+  seo: { title: string; description: string };
 };
 
-const SOCIAL_IMAGE = DOMAIN_SOCIAL_IMAGE;
-
-const socialProof = {
-  health: "Built to keep thousands of men capable under pressure.",
-  discipline: "Used by men who refuse to stay stuck.",
-  purpose: "Trusted by operators aligning every hour with mission.",
-  leadership: "Proven inside families, platoons, and fast-moving teams.",
-  finance: "Men worldwide use this domain to remove financial chaos.",
-  ai: "Applied by builders pairing aggression with automation.",
-  grief: "Trusted by men carrying heavy seasons without collapsing.",
-  identity: "Used by men writing legacies their sons can repeat.",
-};
+function links(items: DomainLink[], companion: DomainLink): Pick<DomainContent, "internalLinks" | "companionLink"> {
+  return { internalLinks: items, companionLink: companion };
+}
 
 export const domainContentMap: Record<DomainSlug, DomainContent> = {
-  health: {
-    slug: "health",
-    title: "STRENGTH & HEALTH",
+  discipline: {
+    slug: "discipline",
+    title: "Discipline",
     heroEyebrow: "",
-    heroTagline: "Build capacity, energy, and long-term resilience",
-    description: "Strength and health are not aesthetic goals. They are functional requirements.",
-    socialProof: socialProof.health,
-    callout: "Strength and health are not aesthetic goals. They are functional requirements.",
-    builds: [
-      "Physical capacity that stays reliable under load",
-      "Energy and recovery that prevent brittle strength",
-      "Fuel that supports recovery without obsession",
-      "Longevity and injury management that keep you capable",
-    ],
-    failurePatterns: [
-      "Bursts of intense training followed by injury",
-      "Inconsistent routines built on mood, not structure",
-      "Neglect of sleep and recovery",
-      "Reactive eating under stress",
-    ],
+    heroTagline: "The standard you keep when nobody is scoring you.",
+    description: "Discipline is doing the thing you already decided, on the day you said you would.",
+    socialProof: "",
+    callout: "A routine is useful when it still works on a bad day.",
+    builds: ["A morning and a shutdown you can repeat", "Follow-through on small promises", "Less bargaining with the phone"],
+    failurePatterns: ["Waiting to feel ready", "A perfect plan that dies on Tuesday", "Treating a miss as a cancelled week"],
     principles: [
-      { title: "Capacity Under Load", description: "Train to remain reliable when life demands more." },
-      { title: "Recovery Is Part of Training", description: "Sleep and stress regulation keep strength useful." },
-      { title: "Fuel for Function", description: "Food is fuel and information, not morality." },
-      { title: "Longevity First", description: "Protect joints, connective tissue, and progression so strength lasts." },
+      { title: "Follow-Through", description: "The promise is small enough to keep." },
+      { title: "Decision Ownership", description: "You chose the standard. You do not renegotiate it every morning." },
     ],
-    actions: [
-      "Maintain consistent weekly training and daily movement.",
-      "Guard sleep and recovery as non-negotiable standards.",
-      "Feed recovery and respond early to pain or injury.",
-      "Adjust training through life phases without dropping standards.",
-    ],
-    internalLinks: [
-      { label: "Return to All Domains", href: "/domains", description: "Keep the rest of the compass visible." },
-      { label: "Reinforce Discipline & Mindset", href: "/domains/discipline-mindset", description: "Structure protects your physical standards." },
-      { label: "Aim Effort With Purpose & Direction", href: "/domains/purpose-direction", description: "Capability needs a target." },
-    ],
-    companionLink: { label: "Discipline & Mindset", href: "/domains/discipline-mindset", description: "Structure for your physical standards." },
+    actions: ["Name the floor for a bad day.", "Put the first action before the inbox.", "Record a miss and do the next rep."],
+    ...links(
+      [
+        { label: "All domains", href: "/domains", description: "The rest of the map." },
+        { label: "Health & Strength", href: "/domains/health-strength", description: "The body has to be able to keep the standard." },
+      ],
+      { label: "Health & Strength", href: "/domains/health-strength", description: "Capacity for the standard you set." },
+    ),
     seo: {
-      title: "Strength & Health for Men | Iron Compass AI",
-      description: "For men 30–45 in the US, Europe, Australia, and NZ building capacity, energy, and resilience that stays reliable under load.",
+      title: "Discipline for Men | Iron Compass AI",
+      description: "Routines, follow-through, and standards you can keep on an ordinary week. Not a mood and not a speech.",
     },
   },
-  "discipline-mindset": {
-    slug: "discipline-mindset",
-    title: "DISCIPLINE & MINDSET",
+  identity: {
+    slug: "identity",
+    title: "Identity",
     heroEyebrow: "",
-    heroTagline: "The operating system that keeps every promise alive.",
-    description:
-      "Discipline is reliable action on schedule. Mindset is the story that keeps you from drifting when life tilts. Together they are the operating system men use to hold the line no matter how chaotic the week becomes.",
-    socialProof: socialProof.discipline,
-    callout: "Structure beats mood every single day.",
-    builds: [
-      "Daily anchors that fire even when tired",
-      "Narrative control under stress and temptation",
-      "Reliable execution for work, training, and family",
-      "Self-respect built on proof instead of hype",
-    ],
-    failurePatterns: [
-      "Waiting for motivation instead of building minimums",
-      "Living in all-or-nothing challenges",
-      "Letting cheap dopamine drain focus",
-      "Drifting because no one tracks the standard",
-    ],
+    heroTagline: "What you stand for, checked against this week.",
+    description: "Identity is the man your behaviour describes, not the one in the story.",
+    socialProof: "",
+    callout: "Two standards you can see are worth more than five words on a wall.",
+    builds: ["A short list of standards", "Roles you actually carry", "Private behaviour that matches the public one"],
+    failurePatterns: ["A creed you do not practice", "Performing a version of yourself for an audience", "Changing the story after every miss"],
     principles: [
-      { title: "Anchor Stack", description: "Hydrate, move, plan, and review—whether or not you feel like it." },
-      { title: "Three-Level Day", description: "Survive, standard, or surge—never skip the minimum." },
-      { title: "Narrative Control", description: "Replace panic stories with mission language." },
-      { title: "Proof Over Promises", description: "Measure what you do, not what you intend." },
+      { title: "Decision Ownership", description: "You choose what you stand for. Then you look at the week." },
+      { title: "Follow-Through", description: "A standard that never shows up in the calendar is a slogan." },
     ],
-    actions: [
-      "Script morning and evening check-ins inside Iron Compass.",
-      "Audit dopamine loops weekly and delete what dulls you.",
-      "Set one non-negotiable brave action every day.",
-      "Run a Sunday review of wins, misses, and resets.",
-    ],
-    internalLinks: [
-      { label: "Return to All Domains", href: "/domains", description: "See how discipline fuels the system." },
-      { label: "Aim With Purpose & Direction", href: "/domains/purpose-direction", description: "Discipline needs a mission." },
-      { label: "Protect Identity & Legacy", href: "/domains/identity-legacy", description: "Your name depends on your follow-through." },
-    ],
-    companionLink: { label: "Strength & Health", href: "/domains/health", description: "Use discipline to protect the body." },
+    actions: ["Write two standards someone could witness.", "Check last week against them.", "Keep the next chance, not the speech."],
+    ...links(
+      [
+        { label: "All domains", href: "/domains", description: "Identity shows up in every other domain." },
+        { label: "Legacy", href: "/domains/legacy", description: "What remains is a different question from who you are today." },
+      ],
+      { label: "Legacy", href: "/domains/legacy", description: "What you leave, once the standards are real." },
+    ),
     seo: {
-      title: "Discipline & Mindset for Men | Iron Compass AI",
-      description: "Structured habits and narrative control for men 30–45 in the US, Europe, Australia, and NZ to keep every promise alive.",
+      title: "Identity for Men | Iron Compass AI",
+      description: "Standards, roles, and integrity checked against behaviour. Who you are now, not a brand.",
+    },
+  },
+  "health-strength": {
+    slug: "health-strength",
+    title: "Health & Strength",
+    heroEyebrow: "",
+    heroTagline: "The body that has to carry the day.",
+    description: "Health and strength are capacity. Sleep, food, movement, and the ability to show up again tomorrow.",
+    socialProof: "",
+    callout: "A body you can count on is part of being someone others can count on.",
+    builds: ["Sleep treated as part of the job", "Strength you can repeat", "Movement on weeks that are not calm"],
+    failurePatterns: ["A burst of training and then nothing", "Sleep left until everything else is done", "Ignoring a pain until it decides the month"],
+    principles: [
+      { title: "Future Orientation", description: "Train for the year, not for a photo." },
+      { title: "Follow-Through", description: "The short session you keep beats the plan you abandon." },
+    ],
+    actions: ["Set a sleep window.", "Keep a short strength floor.", "Walk when the session dies."],
+    ...links(
+      [
+        { label: "All domains", href: "/domains", description: "Capacity sits under the rest." },
+        { label: "Discipline", href: "/domains/discipline", description: "The week only happens if the standard is small enough." },
+      ],
+      { label: "Discipline", href: "/domains/discipline", description: "The routine that protects the body." },
+    ),
+    seo: {
+      title: "Health & Strength for Men | Iron Compass AI",
+      description: "Sleep, training, food, and recovery so you can carry work and people. Not a body project.",
+    },
+  },
+  "bonds-connections": {
+    slug: "bonds-connections",
+    title: "Bonds & Connections",
+    heroEyebrow: "",
+    heroTagline: "The people who have to be able to count on you.",
+    description: "Father, partner, family, friend, mentor, leader. The domain is reliability to people, not a performance of authority.",
+    socialProof: "",
+    callout: "Leadership is one role here. The work is presence and a kept promise.",
+    builds: ["Time you actually give", "A hard conversation that stays decent", "A boundary you can explain"],
+    failurePatterns: ["Being impressive and absent", "A promise that slips because the week got loud", "Managing people instead of showing up"],
+    principles: [
+      { title: "Boundary Holding", description: "Say what you will and will not do, then keep it." },
+      { title: "Follow-Through", description: "The people close to you live with the pattern, not the intention." },
+    ],
+    actions: ["Name one person and one block of time.", "Keep the small promise.", "Have the conversation you have been postponing."],
+    ...links(
+      [
+        { label: "All domains", href: "/domains", description: "People feel every other domain." },
+        { label: "Identity", href: "/domains/identity", description: "The standard has to show up at home." },
+      ],
+      { label: "Identity", href: "/domains/identity", description: "Who you are is tested with people." },
+    ),
+    seo: {
+      title: "Bonds & Connections for Men | Iron Compass AI",
+      description: "Presence, promises, and steadiness for the people who depend on you. Leadership is a role, not the whole domain.",
     },
   },
   "purpose-direction": {
     slug: "purpose-direction",
-    title: "PURPOSE & DIRECTION",
+    title: "Purpose & Direction",
     heroEyebrow: "",
-    heroTagline: "Aim every hour at a chosen mission.",
-    description:
-      "Purpose is selected, not discovered. Direction is how you translate that choice into quarterly targets, decisive calendars, and non-negotiable reviews so drift dies and progress compounds.",
-    socialProof: socialProof.purpose,
-    callout: "Direction turns options into decisions and noise into distance.",
-    builds: [
-      "North Star statements that still matter in five years",
-      "Quarterly operating pictures with measurable proof",
-      "Weekly reviews that expose drift fast",
-      "Calm refusal of invitations off-mission",
-    ],
-    failurePatterns: [
-      "Collecting ideas instead of picking a path",
-      "Letting other people’s urgency hijack the day",
-      "Chasing feelings over standards",
-      "Confusing busyness with progress",
-    ],
+    heroTagline: "Work with a direction you can keep.",
+    description: "Purpose is the work, the skill, and the contribution you are actually moving. Not a mood and not a brand.",
+    socialProof: "",
+    callout: "A direction is useful when this month's work can be named.",
+    builds: ["A target for the next season", "Skills you are actually practicing", "A week that matches the claim"],
+    failurePatterns: ["Busy with no direction", "A mission statement and an unchanged calendar", "Chasing the next start"],
     principles: [
-      { title: "North Star", description: "One sentence that still matters after hardship." },
-      { title: "Pillar Selection", description: "Focus on the 3–4 arenas that move everything else." },
-      { title: "Target Translation", description: "Attach metrics, dates, and proof of work to every objective." },
-      { title: "Cadence Reviews", description: "Weekly and quarterly resets keep drift impossible." },
+      { title: "Future Orientation", description: "Choose what this season is for." },
+      { title: "Decision Ownership", description: "You pick the work. Then you stop pretending every option is still open." },
     ],
-    actions: [
-      "Write or refine your North Star statement today.",
-      "Map quarterly targets inside Iron Compass and tag the domain.",
-      "Audit commitments with the question: does this move the mission?",
-      "Schedule a quarterly review with someone who will tell you the truth.",
-    ],
-    internalLinks: [
-      { label: "Return to All Domains", href: "/domains", description: "Direction must connect to the rest of the map." },
-      { label: "Anchor Discipline & Mindset", href: "/domains/discipline-mindset", description: "Purpose without discipline stays fantasy." },
-      { label: "Confirm Identity & Legacy", href: "/domains/identity-legacy", description: "Mission flows from who you are becoming." },
-    ],
-    companionLink: { label: "Identity & Legacy", href: "/domains/identity-legacy", description: "Aim from who you are." },
+    actions: ["Name the work that matters this month.", "Cut one distraction that pretends to be progress.", "Review the direction once a week."],
+    ...links(
+      [
+        { label: "All domains", href: "/domains", description: "Direction needs a body and a household that can carry it." },
+        { label: "Finance & Provision", href: "/domains/finance-provision", description: "The work has to pay for the life." },
+      ],
+      { label: "Finance & Provision", href: "/domains/finance-provision", description: "Direction includes what the money is for." },
+    ),
     seo: {
       title: "Purpose & Direction for Men | Iron Compass AI",
-      description: "For men 30–45 in the US, Europe, Australia, and NZ choosing a mission and the cadence to keep moving when motivation dies.",
+      description: "Work, skill, and contribution with a direction you can keep. Not a passion speech.",
     },
   },
-  "leadership-character": {
-    slug: "leadership-character",
-    title: "LEADERSHIP & CHARACTER",
+  "finance-provision": {
+    slug: "finance-provision",
+    title: "Finance & Provision",
     heroEyebrow: "",
-    heroTagline: "Lead yourself first so others can trust you under pressure.",
-    description:
-      "Leadership is the daily proof that your standards hold when people are watching. Character is the sum of those decisions. This domain forges calm authority, decisive communication, and steadiness that teams, families, and brothers rally around.",
-    socialProof: socialProof.leadership,
-    callout: "Rank is given. Leadership is proved.",
-    builds: [
-      "Presence under stress and uncertainty",
-      "Clear communication that moves others to act",
-      "Decision frameworks rooted in principles",
-      "Reputation for finishing hard things",
-    ],
-    failurePatterns: [
-      "Talking like a leader but folding when pressure hits",
-      "Delegating standards instead of modelling them",
-      "Leading through mood swings and sarcasm",
-      "Avoiding hard conversations until trust erodes",
-    ],
+    heroTagline: "Money as a responsibility, not a costume.",
+    description: "Bills, cash flow, debt, a buffer, and the plan that keeps a household from being run on surprise.",
+    socialProof: "",
+    callout: "Provision is looking at the numbers and then doing the next plain thing.",
+    builds: ["A weekly look at the money", "Bills that are not a surprise", "A buffer that is boring on purpose"],
+    failurePatterns: ["Avoiding the balance", "Spending to feel like the week worked", "A plan that assumes a fantasy income"],
     principles: [
-      { title: "Example First", description: "People copy what you do, not what you post." },
-      { title: "Command Calm", description: "Regulate yourself so others can borrow your steadiness." },
-      { title: "Decide Fast, Adjust Faster", description: "Make the best call available, then refine with data." },
-      { title: "Protect the Standard", description: "Reward behaviour that matches the creed and confront what doesn’t." },
+      { title: "Future Orientation", description: "The buffer is for the month you do not want." },
+      { title: "Decision Ownership", description: "You decide what the money is for before the mood does." },
     ],
-    actions: [
-      "Write the leadership standard you expect from yourself and share it.",
-      "Schedule one hard conversation you’ve been avoiding.",
-      "Audit your team or family cadence—does it reflect your values?",
-      "Log the reps when you showed calm aggression today.",
-    ],
-    internalLinks: [
-      { label: "Return to All Domains", href: "/domains", description: "Leadership is how the whole compass shows up." },
-      { label: "Link With Strength & Health", href: "/domains/health", description: "Physical presence reinforces authority." },
-      { label: "Lean on Discipline & Mindset", href: "/domains/discipline-mindset", description: "Leaders keep structure when others melt." },
-    ],
-    companionLink: { label: "Strength & Health", href: "/domains/health", description: "Authority needs capability." },
+    actions: ["Open the numbers once this week.", "Name the next bill.", "Move one amount toward the buffer."],
+    ...links(
+      [
+        { label: "All domains", href: "/domains", description: "Money stress leaks into everything else." },
+        { label: "Purpose & Direction", href: "/domains/purpose-direction", description: "The work has to match the life you are paying for." },
+      ],
+      { label: "Purpose & Direction", href: "/domains/purpose-direction", description: "What the provision is in service of." },
+    ),
     seo: {
-      title: "Leadership & Character for Men | Iron Compass AI",
-      description: "For men 30–45 in the US, Europe, Australia, and NZ forging calm authority, decisive communication, and trusted standards under pressure.",
+      title: "Finance & Provision for Men | Iron Compass AI",
+      description: "Cash flow, debt, buffers, and the plain work of providing. Not a wealth fantasy.",
     },
   },
-  "financial-power": {
-    slug: "financial-power",
-    title: "FINANCIAL POWER",
+  resilience: {
+    slug: "resilience",
+    title: "Resilience",
     heroEyebrow: "",
-    heroTagline: "Money is behaviour. Build stability, skill, and long-term offense.",
-    description:
-      "Financial Power removes chaos from money so you can lead family, work, and mission without panic. It is built through standards, skill, and deliberate planning—not hype or shortcuts.",
-    socialProof: socialProof.finance,
-    callout: "Financial calm comes from structure, not luck.",
-    builds: [
-      "Cash-flow clarity and buffers",
-      "Income tied to skill and standards",
-      "Long-term plans for assets and defense",
-      "Calm decision-making during downturns",
-    ],
-    failurePatterns: [
-      "Avoiding numbers until crisis hits",
-      "Emotional spending and coping purchases",
-      "Jumping jobs or businesses without a plan",
-      "Zero buffers so every setback becomes panic",
-    ],
+    heroTagline: "Stay functional when the load is real.",
+    description: "Resilience is keeping the floor when the week is heavy. It is not grinding until you break.",
+    socialProof: "",
+    callout: "Name the load. Keep sleep, food, and the promise that still has to be done.",
+    builds: ["A clear view of what is heavy", "A floor you can still keep", "An earlier start on a known pressure"],
+    failurePatterns: ["Pretending the load is nothing", "Dropping every standard because one day was hard", "Calling exhaustion discipline"],
     principles: [
-      { title: "Reality First", description: "Know your numbers weekly—income, expenses, debt, buffers." },
-      { title: "Earn the Raise", description: "Increase value through skill, reliability, and leadership." },
-      { title: "Protect the Buffer", description: "Cash cushions buy calm and strategic aggression." },
-      { title: "Play Long Games", description: "Invest in assets, skills, and relationships that compound." },
+      { title: "Calm Under Pressure", description: "You can be loaded and still be decent." },
+      { title: "Future Orientation", description: "Prepare for the week you can already see." },
     ],
-    actions: [
-      "Run a full financial inventory this week.",
-      "Choose one income-focused skill to improve over the next 90 days.",
-      "Automate transfers to a buffer account every payday.",
-      "Review spending triggers and replace them with standards.",
-    ],
-    internalLinks: [
-      { label: "Return to All Domains", href: "/domains", description: "Money decisions affect the whole compass." },
-      { label: "Reinforce Discipline & Mindset", href: "/domains/discipline-mindset", description: "Financial order needs behavioural order." },
-      { label: "Protect Identity & Legacy", href: "/domains/identity-legacy", description: "Money amplifies the man you are becoming." },
-    ],
-    companionLink: { label: "Discipline & Mindset", href: "/domains/discipline-mindset", description: "Behaviour drives wealth." },
+    actions: ["Write the load in one line.", "Protect sleep.", "Do the one promise that cannot slip."],
+    ...links(
+      [
+        { label: "All domains", href: "/domains", description: "Load shows up in the body, the money, and the people." },
+        { label: "Fall & Rise", href: "/domains/fall-rise", description: "When the floor was missed, the return is the next domain." },
+      ],
+      { label: "Fall & Rise", href: "/domains/fall-rise", description: "What you do after the miss." },
+    ),
     seo: {
-      title: "Financial Power for Men | Iron Compass AI",
-      description: "For men 30–45 in the US, Europe, Australia, and NZ replacing money stress with structure, skill, and long-term offense.",
+      title: "Resilience for Men | Iron Compass AI",
+      description: "Stay functional under strain without glorifying burnout. A floor, a clear load, and the next promise.",
     },
   },
-  "ai-mastery": {
-    slug: "ai-mastery",
-    title: "AI MASTERY & LIFE OPTIMIZATION",
+  "fall-rise": {
+    slug: "fall-rise",
+    title: "Fall & Rise",
     heroEyebrow: "",
-    heroTagline: "Pair aggression with automation and precision leverage.",
-    description:
-      "AI Mastery is disciplined leverage. You design decision support, automation, and creative speed so your standards execute faster without losing integrity.",
-    socialProof: socialProof.ai,
-    callout: "Augmented men outpace talented men who refuse new tools.",
-    builds: [
-      "Personal command centers for planning and review",
-      "Automation that creates time for deep work",
-      "Insight loops that surface blind spots",
-      "Creative velocity without burnout",
-    ],
-    failurePatterns: [
-      "Collecting tools without building workflows",
-      "Letting AI think for you instead of assist you",
-      "Security blindness with sensitive data",
-      "Fear of experimentation so you fall behind",
-    ],
+    heroTagline: "A miss, a cause, and the return.",
+    description: "Fall and rise is what you do after you drop a standard. You look at the cause. You correct it. You carry it again.",
+    socialProof: "",
+    callout: "A restart speech is not a return.",
+    builds: ["An honest note of what happened", "One correction", "The small version of the standard, done"],
+    failurePatterns: ["Hiding the miss", "A new personality every Monday", "Shame that keeps you out of the work"],
     principles: [
-      { title: "Human First", description: "You make the call—AI accelerates the path." },
-      { title: "Small Stack", description: "Master a few tools and integrate them deeply." },
-      { title: "Document the Wins", description: "Store prompts, results, and lessons to compound." },
-      { title: "Ethical Guardrails", description: "Protect privacy, honour NDAs, and keep trust." },
+      { title: "Decision Ownership", description: "You name what you did, not a story about the week." },
+      { title: "Follow-Through", description: "The rise is the next rep, smaller if it has to be." },
     ],
-    actions: [
-      "Design a daily AI briefing for planning and review.",
-      "Automate one repetitive workflow each week.",
-      "Teach your team or family the stack so leverage multiplies.",
-      "Log every prompt, result, and refinement.",
-    ],
-    internalLinks: [
-      { label: "Return to All Domains", href: "/domains", description: "AI should support every domain, not replace them." },
-      { label: "Feed Purpose & Direction", href: "/domains/purpose-direction", description: "Leverage needs a mission." },
-      { label: "Guard Identity & Legacy", href: "/domains/identity-legacy", description: "Innovation must match your name." },
-    ],
-    companionLink: { label: "Purpose & Direction", href: "/domains/purpose-direction", description: "Aim your automation." },
+    actions: ["Write what was missed.", "Name the cause you can change.", "Do the small version today."],
+    ...links(
+      [
+        { label: "All domains", href: "/domains", description: "A miss in one domain does not erase the others." },
+        { label: "Discipline", href: "/domains/discipline", description: "The standard you are returning to." },
+      ],
+      { label: "Discipline", href: "/domains/discipline", description: "The line you carry again." },
+    ),
     seo: {
-      title: "AI Mastery & Life Optimization for Men | Iron Compass AI",
-      description: "For men 30–45 in the US, Europe, Australia, and NZ pairing aggression with automation without losing the standards that keep you lethal.",
+      title: "Fall & Rise for Men | Iron Compass AI",
+      description: "Failure, correction, and the return to a standard. No shame speech and no clean-slate fantasy.",
     },
   },
   "grief-honour": {
     slug: "grief-honour",
-    title: "GRIEF & HONOUR",
+    title: "Grief & Honour",
     heroEyebrow: "",
-    heroTagline: "Carry loss with structure, ritual, and forward motion.",
-    description:
-      "Grief proves something mattered. Honour turns that pain into responsibility instead of destruction. This domain stabilises the body, creates rituals, and restores forward motion so suffering builds legacy instead of collapse.",
-    socialProof: socialProof.grief,
-    callout: "Pain will visit. Decide what it builds.",
-    builds: [
-      "Stability protocols that keep you functional",
-      "Honour rituals to carry meaning forward",
-      "Direction resets that prevent permanent drift",
-      "Capacity to lead others through loss",
-    ],
-    failurePatterns: [
-      "Pretending nothing hurts and imploding later",
-      "Burning everything down with impulsive decisions",
-      "Numbing with substances or endless distraction",
-      "Isolating instead of letting trusted men help",
-    ],
+    heroTagline: "Stabilise. Honour the loss. Keep a purpose.",
+    description: "Carry the loss with a ritual and with the basics still done. Do not turn it into a performance of feeling.",
+    socialProof: "",
+    callout: "The first job is to stay functional. Honour comes with that, not instead of it.",
+    builds: ["Sleep, food, and one person who knows", "A small ritual you can repeat", "A role you still carry"],
+    failurePatterns: ["Collapsing every standard", "Going numb and calling it strength", "Making a large decision while you are flooded"],
     principles: [
-      { title: "Stabilise", description: "Sleep, water, movement, and guardrails first." },
-      { title: "Honour", description: "Letters, rituals, and action that reflect what was lost." },
-      { title: "Walk Forward", description: "Small, deliberate steps toward a reshaped future." },
-      { title: "Brotherhood", description: "Let loyal men carry weight with you." },
+      { title: "Calm Under Pressure", description: "Grief is a load. The floor still matters." },
+      { title: "Future Orientation", description: "Honour includes what you will still do for the living." },
     ],
-    actions: [
-      "Name three stabilisers (sleep, walk, meal) and guard them.",
-      "Create a weekly honour ritual and protect it.",
-      "Delay major life decisions for 90 days.",
-      "Share the load with one trusted brother or counsellor.",
-    ],
-    internalLinks: [
-      { label: "Return to All Domains", href: "/domains", description: "Loss touches every arena—view the full map." },
-      { label: "Lean on Discipline & Mindset", href: "/domains/discipline-mindset", description: "Structure stops grief from owning you." },
-      { label: "Reconnect Identity & Legacy", href: "/domains/identity-legacy", description: "Loss reshapes who you are becoming." },
-    ],
-    companionLink: { label: "Discipline & Mindset", href: "/domains/discipline-mindset", description: "Use structure while you heal." },
+    actions: ["Keep three basics.", "Mark the loss in a way you can repeat.", "Delay the big decision."],
+    ...links(
+      [
+        { label: "All domains", href: "/domains", description: "Loss touches the whole map." },
+        { label: "Bonds & Connections", href: "/domains/bonds-connections", description: "Someone still needs you steady." },
+      ],
+      { label: "Bonds & Connections", href: "/domains/bonds-connections", description: "The people still in the room." },
+    ),
     seo: {
       title: "Grief & Honour for Men | Iron Compass AI",
-      description: "For men 30–45 in the US, Europe, Australia, and NZ stabilising during loss, honouring what mattered, and rebuilding direction with structure.",
+      description: "Stabilise, honour the loss, and keep a purpose. Remembrance and duty, without therapy language.",
     },
   },
-  "identity-legacy": {
-    slug: "identity-legacy",
-    title: "IDENTITY & LEGACY",
+  legacy: {
+    slug: "legacy",
+    title: "Legacy",
     heroEyebrow: "",
-    heroTagline: "Decide who you are, prove it daily, and leave evidence behind.",
-    description:
-      "Identity is the standard you live out, not the stories you post. Legacy is that identity multiplied across decades and people. This domain makes sure your name and your behaviour match.",
-    socialProof: socialProof.identity,
-    callout: "Write the story with behaviour, not captions.",
-    builds: [
-      "Principles and roles that anchor your life",
-      "Behavioural standards before emotion",
-      "Legacy sentences your people can repeat",
-      "Audit rhythm that keeps drift exposed",
-    ],
-    failurePatterns: [
-      "Letting work, income, or relationships define you",
-      "Dragging shame and regret as identity",
-      "Copying other men’s standards",
-      "Talking legacy while hiding from accountability",
-    ],
+    heroTagline: "What remains if you are not in the room.",
+    description: "Legacy is the example, the provision, and the work someone else can still use. It is not a speech about the man you hope to be.",
+    socialProof: "",
+    callout: "Put one thing where it can be found.",
+    builds: ["A sentence or a file someone could use", "Provision that is not a secret", "An example that matches the standard"],
+    failurePatterns: ["A legacy that lives only in your head", "Providing nothing because the present week is loud", "Mentoring as a performance"],
     principles: [
-      { title: "Principles", description: "Pick 3–5 non-negotiables and read them daily." },
-      { title: "Roles", description: "Name the people and arenas you are responsible to." },
-      { title: "Standards", description: "Define acceptable behaviour before emotions vote." },
-      { title: "Story", description: "Tell the truth about who you were, are, and will be." },
+      { title: "Future Orientation", description: "Think about the people who are not in today's meeting." },
+      { title: "Follow-Through", description: "What remains is what you actually put in place." },
     ],
-    actions: [
-      "Write a future-self letter every quarter.",
-      "Run nightly audits: where did I act like the man I claim to be?",
-      "Schedule role reviews (father, partner, operator, brother).",
-      "Craft a legacy sentence your family can repeat.",
-    ],
-    internalLinks: [
-      { label: "Return to All Domains", href: "/domains", description: "Identity touches every other arena." },
-      { label: "Lock in Discipline & Mindset", href: "/domains/discipline-mindset", description: "Identity is proved through disciplined action." },
-      { label: "Aim With Purpose & Direction", href: "/domains/purpose-direction", description: "Legacy needs a mission." },
-    ],
-    companionLink: { label: "Purpose & Direction", href: "/domains/purpose-direction", description: "Identity informs your mission." },
+    actions: ["Write where the important papers live.", "Name who is covered.", "Teach one thing you know, plainly."],
+    ...links(
+      [
+        { label: "All domains", href: "/domains", description: "Legacy is built from the other nine." },
+        { label: "Identity", href: "/domains/identity", description: "Who you are now is not the same question as what you leave." },
+      ],
+      { label: "Identity", href: "/domains/identity", description: "The standards, before the inheritance." },
+    ),
     seo: {
-      title: "Identity & Legacy for Men | Iron Compass AI",
-      description: "For men 30–45 in the US, Europe, Australia, and NZ choosing principles, roles, and standards that withstand pressure so your name carries weight.",
+      title: "Legacy for Men | Iron Compass AI",
+      description: "Example, stewardship, and what remains for the people after you. Not a combined identity slogan.",
+    },
+  },
+  "ai-mastery": {
+    slug: "ai-mastery",
+    title: "AI as a tool",
+    heroEyebrow: "Resource",
+    heroTagline: "A tool for drafting, sorting, and preparing. Not a life domain.",
+    description: "Use AI for the dull work. Keep the decision. This is not one of the ten domains.",
+    socialProof: "",
+    callout: "The tool does not carry your name. You do.",
+    builds: ["Faster drafts you still rewrite", "A clearer list", "Time given back to a person or a task"],
+    failurePatterns: ["Handing over a decision", "A new tool instead of a kept standard", "Trusting a confident wrong answer"],
+    principles: [
+      { title: "Decision Ownership", description: "You sign. The tool prepares." },
+      { title: "Follow-Through", description: "A plan the tool wrote still has to be done by you." },
+    ],
+    actions: ["Give it one dull job.", "Check the facts.", "Close it and do the thing."],
+    ...links(
+      [
+        { label: "The ten domains", href: "/domains", description: "Where responsibility actually lives." },
+        { label: "Discipline", href: "/domains/discipline", description: "The standard the tool cannot keep for you." },
+      ],
+      { label: "Discipline", href: "/domains/discipline", description: "The life domain this tool can support." },
+    ),
+    seo: {
+      title: "AI as a Tool, Not a Domain | Iron Compass AI",
+      description: "How to use AI for planning and preparation without handing over judgement. Not a life domain.",
     },
   },
 };
@@ -412,7 +331,6 @@ export const domainContentMap: Record<DomainSlug, DomainContent> = {
 export function buildDomainMetadata(content: DomainContent): Metadata {
   const path = `/domains/${content.slug}`;
   const canonical = absoluteUrl(path);
-
   return {
     title: content.seo.title,
     description: content.seo.description,
@@ -422,20 +340,13 @@ export function buildDomainMetadata(content: DomainContent): Metadata {
       description: content.seo.description,
       url: canonical,
       siteName: "Iron Compass",
-      images: [
-        {
-          url: SOCIAL_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: `${content.title} – Iron Compass`,
-        },
-      ],
+      images: [{ url: DOMAIN_SOCIAL_IMAGE, width: 1200, height: 630, alt: `${content.title} – Iron Compass` }],
     },
     twitter: {
       card: "summary_large_image",
       title: content.seo.title,
       description: content.seo.description,
-      images: [SOCIAL_IMAGE],
+      images: [DOMAIN_SOCIAL_IMAGE],
     },
   };
 }

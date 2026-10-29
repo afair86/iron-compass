@@ -1,0 +1,79 @@
+/* Apply after the current site's app-theme/editorial styles. No new glow or palette. */
+html body main :is(a.ic-btn-ghost, a.ic-pill-link),
+html body main a.ic-btn-primary[href^='/domains'],
+html body main a.ic-btn-primary[href^='/blog'],
+html body main a.ic-btn-primary[href^='/about'],
+html body main a.ic-btn-primary[href^='/start'] {
+  color: var(--ic-steel, #9ac7ed);
+  -webkit-text-fill-color: currentColor;
+  background: transparent;
+  border: 1px solid var(--ic-border-strong, #53677c);
+  box-shadow: none;
+}
+html body main :is(a.ic-btn-ghost, a.ic-pill-link):hover,
+html body main a.ic-btn-primary:is([href^='/domains'], [href^='/blog'], [href^='/about'], [href^='/start']):hover {
+  color: var(--ic-text-heading, #f5f7fb);
+  background: var(--ic-border, rgba(199, 207, 221, 0.12));
+  border-color: var(--ic-steel, #9ac7ed);
+  box-shadow: none;
+}
+html body .ic-open-app {
+  min-height: 44px;
+  box-shadow: none;
+}
+html body :is(.ic-open-app, .ic-btn-primary, .ic-btn-ghost):focus-visible {
+  outline: 2px solid var(--ic-steel, #9ac7ed);
+  outline-offset: 3px;
+}
+/* Keep the footer destination; remove only the nearby copies of the header app link. */
+@media (max-width: 1100px) {
+  html body .ic-nav-shell {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  html body .ic-nav-shell .ic-nav-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+  }
+  html body .ic-nav-shell .ic-nav-inner > a:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  html body .ic-nav-shell .ic-nav-links { display: none; }
+  html body .ic-nav-shell .ic-open-app {
+    flex: 0 0 auto;
+    grid-area: auto;
+    width: auto;
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+  html body .ic-nav-shell .ic-nav-toggle {
+    display: inline-flex;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+  }
+  html body .ic-nav-shell .ic-mobile-nav { display: block; }
+  html body .ic-nav-shell .ic-mobile-nav:not([data-open='true']) { visibility: hidden; }
+  html body .ic-nav-shell .ic-mobile-nav[data-open='true'] { visibility: visible; }
+  html body .ic-nav-shell .ic-mobile-nav-cta a[href='/app'],
+  html body .ic-nav-shell .ic-mobile-nav-cta a[href='/domains'],
+  html body main #home a[href='/app'] {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  html body .ic-nav-shell .ic-logo-mark { width: 32px; height: 32px; }
+  html body .ic-nav-shell .ic-logo-img { width: 32px; height: 32px; }
+  html body .ic-nav-shell .ic-logo-lockup { gap: 6px; }
+  html body .ic-nav-shell .ic-logo-wordmark {
+    font-size: clamp(0.625rem, 2.7vw, 0.8125rem);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+}

@@ -28,9 +28,10 @@ export default function ArticleLayout({ eyebrow = "Iron Compass Field Guide", ti
       />
       <PageContainer width="narrow">
         <div className="ic-dispatch">
-          <header className="ic-dispatch-hero space-y-5">
-            <p className="ic-dispatch-label">{eyebrow}</p>
-            <h1 className="ic-page-title mx-auto">{title}</h1>
+          <header className="ic-board-hero">
+            <div className="ic-board-hero__copy">
+            <p className="ic-board-kicker">{eyebrow}</p>
+            <h1 className="ic-page-title">{title}</h1>
             <p className="ic-dispatch-lede">{intro}</p>
             <div className="ic-dispatch-meta">
               <span>Field Guide</span>
@@ -38,6 +39,7 @@ export default function ArticleLayout({ eyebrow = "Iron Compass Field Guide", ti
               <span>Grief &amp; Honour</span>
             </div>
             <div className="ic-stoic-rule ic-stoic-rule--wide" aria-hidden="true" />
+            </div>
           </header>
           <div className="ic-dispatch-body space-y-8">
             <div className="ic-dispatch-prose space-y-8">{children}</div>

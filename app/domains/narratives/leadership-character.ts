@@ -1,10 +1,10 @@
 import type { DomainNarrative } from "./types";
 
 export const leadershipCharacterNarrative: DomainNarrative = {
-  slug: "leadership-character",
-  h1Title: "Leadership & Character",
+  slug: "bonds-connections",
+  h1Title: "Bonds & Connections",
   heroDescription:
-    "Leadership is how you behave when someone else's day is affected by your word, your temper, or your absence.",
+    "Father, partner, family, friend, mentor, or leader. This is how you behave when someone else's day depends on your word, your temper, or your absence.",
   opening: [
     "You do not need a title for this to apply. You lead when a child watches how you speak to their mother. You lead when a new bloke at work is waiting to see if you do what you said in the meeting. You lead when a friend tells you something hard and you either stay in the conversation or you joke your way out of it.",
     "Character is not a mood you perform when you feel strong. It is the pattern people can predict. Do you tell the truth when it costs you? Do you repair it when you were sharp? Do you keep the small promise, the pickup, the call-back, the standard you announced? Reliability is the form leadership takes in an ordinary house.",
@@ -32,7 +32,7 @@ export const leadershipCharacterNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/leadership-workshop.webp",
-        alt: "Two men at a workshop bench, one explaining a piece of timber while the other listens",
+        alt: "Leadership and character for men",
       },
     },
     {
@@ -56,7 +56,7 @@ export const leadershipCharacterNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/leadership-step.webp",
-        alt: "A man and a woman talking on a back step in the late afternoon",
+        alt: "Character, fatherhood, and honest conversations",
       },
     },
     {
@@ -83,7 +83,7 @@ export const leadershipCharacterNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "Seeing your own pattern, and reviewing a hard conversation after you have cooled off, is the sort of practice the Iron Compass app is intended to support. It is not open. You are not being asked to buy anything or to create an account.",
+    "Seeing your own pattern, and reviewing a hard conversation after you have cooled off, is the practice the Iron Compass app supports. Open it at ironcompassai.com/app. Leadership is one role inside this domain, not the whole of it.",
     "The journal has three pieces that sit next to this page: a short after-action ritual, deciding under pressure, and hard conversations with people you care about. Read one after you have written the specific. The specific is the work.",
   ],
 };

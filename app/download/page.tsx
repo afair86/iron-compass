@@ -7,7 +7,7 @@ import { getAppStoreUrls, isSubscribeConfigured } from "@/lib/subscribe";
 export const metadata = buildPageMetadata({
   title: "Download Iron Compass AI",
   description:
-    "The Iron Compass app is not available to download yet. Read the domains and the journal while you wait.",
+    "Open Iron Compass AI in the browser. Store apps follow once the stores approve them.",
   path: "/download",
 });
 
@@ -23,8 +23,8 @@ export default function DownloadPage() {
           <p className="ic-eyebrow">Iron Compass App</p>
           <h1 className="ic-section-title">Download Iron Compass AI</h1>
           <p className="ic-section-copy ic-section-copy--muted text-base max-w-2xl mx-auto">
-            The app is not ready to download yet. The domains and the journal are here now, and you can use them
-            without an account.
+            Open the app in the browser now. The iOS and Android store apps are the same product once the stores
+            approve them.
           </p>
         </section>
 

@@ -12,13 +12,13 @@ export type Domain = {
   image?: string;
 };
 
-export default function DomainCard({ title, desc, icon, href, slug, image }: Domain) {
+export default function DomainCard({ title, desc, icon, href, slug, image, imageAlt = "" }: Domain & { imageAlt?: string }) {
   const baseClasses = "ic-domain-card flex flex-col items-center ic-align-center gap-4";
 
   const content = (
     <>
       {image ? (
-        <PhotoFrame className={frameStyles.card} src={image} alt="" />
+        <PhotoFrame className={frameStyles.card} src={image} alt={imageAlt} />
       ) : (
         <div aria-hidden className="ic-domain-icon">{icon}</div>
       )}

@@ -1,15 +1,21 @@
 
 import "./globals.css";
 import "../styles/iron-compass.css";
+import "../styles/ic-system.css";
+import "../styles/board.css";
+import "../styles/app-theme.css";
+import "../styles/site-layout.css";
+import "../styles/editorial.css";
+import "../styles/navigation-actions.css";
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Oswald, Inter } from "next/font/google";
+import { Montserrat, Inter } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
+import { DEFAULT_OG_IMAGE, ORGANIZATION_LOGO, SITE_NAME, SITE_URL } from "@/lib/site";
 
 // Font setup
-const oswald = Oswald({
+const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['500', '600', '700'],
   variable: '--font-heading',
@@ -54,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`h-full ${oswald.variable} ${inter.variable}`}>
+    <html lang="en" className={`h-full ${montserrat.variable} ${inter.variable}`}>
       <body className="antialiased">
         <Script
           id="ld-website-org"
@@ -72,9 +78,10 @@ export default function RootLayout({
                 },
                 {
                   "@type": "Organization",
-                  name: siteTitle,
+                  name: SITE_NAME,
                   url: SITE_URL,
-                  logo: DEFAULT_OG_IMAGE,
+                  logo: ORGANIZATION_LOGO,
+                  image: DEFAULT_OG_IMAGE,
                 },
               ],
             }),

@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 const links = [
   { href: "/about", label: "ABOUT" },
   { href: "/domains", label: "DOMAINS" },
+  { href: "/pricing", label: "PRICING" },
   { href: "/blog", label: "BLOG" },
   { href: "/contact", label: "CONTACT" },
 ];
@@ -51,6 +52,10 @@ export default function Navbar() {
           ))}
         </nav>
 
+        <a href="/app" className="ic-open-app">
+          Open app
+        </a>
+
         <button
           type="button"
           className="ic-nav-toggle md:hidden"
@@ -79,9 +84,9 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="ic-mobile-nav-cta">
-            <Link href="/start" className="ic-btn-ghost text-xs w-full text-center">
-              Start Program
-            </Link>
+            <a href="/app" className="ic-btn-ghost text-xs w-full text-center">
+              Open web app
+            </a>
             <Link href="/domains" className="ic-btn-ghost text-xs w-full text-center">
               Explore Domains
             </Link>

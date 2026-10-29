@@ -8,7 +8,7 @@ export type DomainBlogLink = {
 
 /** Topical journal links for each domain pillar — 2–3 per domain */
 export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
-  health: [
+  "health-strength": [
     {
       title: "Strength Without Extra Time",
       href: "/blog/strength-without-extra-time",
@@ -25,7 +25,7 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
       description: "Keep energy stable when sleep is thin and the schedule owns your day.",
     },
   ],
-  "discipline-mindset": [
+  discipline: [
     {
       title: "Quiet Discipline Protocol for Busy Men",
       href: "/blog/quiet-discipline-protocol-busy-men",
@@ -59,7 +59,7 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
       description: "Compress drift into a focused quarter with proof at the end.",
     },
   ],
-  "leadership-character": [
+  "bonds-connections": [
     {
       title: "Command Calm After Action",
       href: "/blog/command-calm-after-action-leadership",
@@ -76,9 +76,9 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
       description: "Say what needs saying without burning the relationship.",
     },
   ],
-  "financial-power": [
+  "finance-provision": [
     {
-      title: "Financial Power Hub",
+      title: "Finance guides",
       href: "/articles/financial-power",
       description: "Curated cashflow, buffer, and money discipline guides.",
     },
@@ -142,7 +142,7 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
       description: "How to carry pain with strength and clarity — without collapsing or going numb.",
     },
   ],
-  "identity-legacy": [
+  identity: [
     {
       title: "Doctrine of Self: Personal Creed",
       href: "/blog/doctrine-self-personal-creed",
@@ -157,6 +157,42 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
       title: "Stoic Masculine Partner Guide",
       href: "/blog/stoic-masculine-partner-guide",
       description: "Show up steady in the relationship without performing strength.",
+    },
+  ],
+  resilience: [
+    {
+      title: "Comeback after injury",
+      href: "/blog/comeback-resilience-injury-recovery",
+      description: "Stay functional while capacity comes back. The floor still counts.",
+    },
+    {
+      title: "Strength under stress",
+      href: "/blog/strength-under-stress-plan",
+      description: "A plan for weeks that are already heavy.",
+    },
+  ],
+  "fall-rise": [
+    {
+      title: "Discipline collapse protocol",
+      href: "/blog/discipline-collapse-protocol",
+      description: "What to do after the standard drops, without a restart speech.",
+    },
+    {
+      title: "When the line was missed",
+      href: "/blog/discipline-drift-recovery-12-week-reboot",
+      description: "A return that is smaller than the speech and still real.",
+    },
+  ],
+  legacy: [
+    {
+      title: "Legacy in motion",
+      href: "/blog/legacy-in-motion-identity-design",
+      description: "What you put in place, not the story you hope is left behind.",
+    },
+    {
+      title: "Doctrine of self",
+      href: "/blog/doctrine-self-personal-creed",
+      description: "Standards worth keeping long enough that someone else can recognise them.",
     },
   ],
 };

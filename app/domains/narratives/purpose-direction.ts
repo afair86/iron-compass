@@ -32,7 +32,7 @@ export const purposeDirectionNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/purpose-calendar.webp",
-        alt: "A man at a kitchen table in the evening with a calendar and a notebook",
+        alt: "Purpose and direction for men",
       },
     },
     {
@@ -56,7 +56,7 @@ export const purposeDirectionNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/purpose-morning-path.webp",
-        alt: "A man on a suburban footpath in the early morning with a bag at his feet",
+        alt: "Finding direction when life is busy",
       },
     },
     {
@@ -83,7 +83,7 @@ export const purposeDirectionNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "Turning a priority into a dated action, and looking back once a week to see if you did it, is the kind of structure the Iron Compass app is meant to hold. That app is not available. This page does not take payment and does not ask you to register.",
+    "Turning a priority into a dated action, and looking back once a week to see if you did it, is the structure the Iron Compass app holds. Open it at ironcompassai.com/app. The three lines above still work with a pen.",
     "If you want a longer piece after the five minutes, the journal has a direction reset, a way to design a quarter, and a ninety-day sprint that stays concrete. Read one after you have written the three lines. The lines matter more than the article.",
   ],
 };

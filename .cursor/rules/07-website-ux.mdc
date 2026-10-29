@@ -1,0 +1,42 @@
+---
+description: Keep the approved Iron Compass website look
+alwaysApply: true
+---
+
+# Website UX
+
+Latest owner direction uses styles/editorial.css over the shared site-layout.css:
+centre short introductions, home lead/Ten life domains/philosophy, journal hero,
+Topics/Read This First and section labels. Centre footer logo and Discipline.
+Direction. Brotherhood. Keep articles, card descriptions and forms left aligned.
+Use ic-editorial-center explicitly; no blanket all-left or all-centred treatment.
+Steel-blue #9ac7ed titles, amber #e7ba72 subtitles, silver #c7cfdd reading copy;
+Iron Red primary actions, restrained blue guidance, amber attention, green earned
+completion, and neutral navigation. Secondary controls must not inherit red. No neon/glow.
+Colours communicate hierarchy and brand associations, not guaranteed emotions
+or sales. Keep1120px grid/24px gutters (20px phone),14px cards/8px controls.
+Journal H1 is Iron Compass Journal; Dispatches for disciplined men is its subtitle.
+Photos: top focal point for people; scenic horizons retain their own focal point.
+PhotoFrame applies positions to compact and cover modes. Do not reintroduce
+centre crops that clip heads. Existing full-head alternatives live in sitePhotos.
+
+Do not redesign the site as part of another task.
+
+Follow the latest owner-approved app-aligned theme in styles/app-theme.css:
+charcoal surfaces, neutral borders, silver text and muted steel navigation.
+Amber identifies a next useful step, red a real action, green only earned progress.
+Do not restore neon blue outlines, coloured glows, text shadows or decorative
+status colours. Match the app's colour roles; colours do not guarantee emotion,
+trust or sales. Keep the original compass mark small and unglowing.
+Domain cards must have equal row heights, aligned photos/titles/descriptions and
+a balanced grid: one column on phone, two on larger screens. The whole card links.
+
+One heading only. Do not put a second heading above it. A sentence under the title is fine. "Life domains" over "Ten life domains" is two headers. Keep one.
+
+A visitor must not see how the site or the app is built. Do not show file names, settings, databases, server commands, model names, or internal notes. If something is not ready, say so in plain language.
+
+Photos should look like a real place and a real person. The blog picture rules still apply to articles. One main picture, not a photo on every card.
+
+The phone is the main screen. The next step must be visible without hunting.
+
+Send people toward the real app at `/app` or toward a real article. Do not build a second app on the marketing site.

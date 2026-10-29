@@ -1,13 +1,13 @@
 import type { DomainNarrative } from "./types";
 
-export const identityLegacyNarrative: DomainNarrative = {
-  slug: "identity-legacy",
-  h1Title: "Identity & Legacy",
+export const identityNarrative: DomainNarrative = {
+  slug: "identity",
+  h1Title: "Identity",
   heroDescription:
-    "You are not the story you tell at your best. You are the pattern of what you do on ordinary days, and that pattern is what people inherit.",
+    "You are not the story you tell at your best. You are the pattern of what you do on ordinary days.",
   opening: [
     "There is a jacket on a peg you have not worn in years, and a story about the man you were when you bought it. There is also the man who came home tonight. Those two are not always on speaking terms. Identity gets confusing when the story is braver than the week.",
-    "Legacy sounds like a will, a business, or a speech at a funeral. Most of it is smaller and closer. It is whether the people who know you would recognise your stated values if they only watched your calendar. It is the example you set, including for children if you have them, and for friends and younger men if you do not.",
+    "This page is about who you are now. Standards, the roles you actually carry, and whether last week matches the story. What remains for children, and what you leave when you are not in the room, is Legacy. Do not collapse those into one slogan.",
     "You do not need a grand name. You need a few standards you will still accept as yours when nobody is scoring you. Reliability is the centre of that. A man others can count on, who looks after himself enough to stay in the room, who keeps his word and repairs it when he does not.",
   ],
   sections: [
@@ -32,7 +32,7 @@ export const identityLegacyNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/identity-pegs.webp",
-        alt: "A man in a garage looking at an old jacket and boots on pegs",
+        alt: "Identity and legacy for men",
       },
     },
     {
@@ -56,7 +56,7 @@ export const identityLegacyNarrative: DomainNarrative = {
       ],
       image: {
         src: "/images/domains/identity-box.webp",
-        alt: "A man in a workshop with his hands on a finished wooden box",
+        alt: "The man you are becoming, and what you leave behind",
       },
     },
     {
@@ -83,7 +83,7 @@ export const identityLegacyNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "Connecting a value to a habit you can review, rather than to a mood, is what the Iron Compass app is intended to make easier. The app is not open. You can do the five minutes with a pen. There is no payment and no registration on this page.",
-    "When you want to go further in public reading, use the journal and the other domains. Discipline will show you how to keep the behaviour. Leadership will show you how it lands on other people. Purpose will show you which hours it deserves. The public name of this page remains Identity & Legacy. A separate Relationships page is not part of the site yet. The work of being reliable for people already lives here.",
+    "Connecting a standard to a habit you can review is what the Iron Compass app is for. Open it at ironcompassai.com/app. The five minutes above still work with a pen.",
+    "Discipline is how you keep the behaviour. Bonds and Connections is how it lands on other people. Purpose is which hours it deserves. Legacy is a different question: what remains when you are not in the room. Do not treat those as the same page.",
   ],
 };

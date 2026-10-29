@@ -1,0 +1,15 @@
+---
+description: Keep search structure accurate and consistent with the live product
+globs: app/**/*.{tsx,ts},content/**/*.{md,mdx},lib/site.ts,app/sitemap.ts
+alwaysApply: false
+---
+
+# SEO and content
+
+Keep the current search setup. Do not remove canonical URLs, the sitemap, or robots rules as a side effect.
+
+Each page has one clear H1, then H2 and H3 in order. Metadata title and description must match the page and must not claim a feature that is not live.
+
+Use `buildPageMetadata` in `lib/site.ts` so the canonical URL stays on https://ironcompassai.com. Link related pages. Do not copy the same article twice. Do not stuff keywords.
+
+Blog posts still follow `.cursor/rules/iron-compass-blog-standard.mdc` and the editorial guide. An article may teach a behaviour. It must not pretend the app already contains a tool the article only describes.

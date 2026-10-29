@@ -48,3 +48,6 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# Generated immutable build identity
+/public/source-version.json

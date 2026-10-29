@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { domainNavLinks } from "@/lib/domains";
 
@@ -5,6 +6,7 @@ const navSections = [
   {
     title: "Platform",
     links: [
+      { href: "/app", label: "Open web app" },
       { href: "/start", label: "Start" },
       { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact" },
@@ -20,12 +22,17 @@ const navSections = [
 ];
 
 export default function Footer() {
-  const year = new Date().getFullYear();
   return (
     <footer className="ic-footer-shell text-sm">
-      <div className="max-w-6xl mx-auto space-y-12">
+      <div className="ic-footer-inner space-y-12">
         <div className="ic-footer-lede">
           <div className="space-y-3">
+            <Link href="/" className="ic-logo-lockup" aria-label="Iron Compass AI">
+              <Image src="/iron-compass-logo-icon.png" alt="" width={56} height={56} className="ic-logo-img" />
+              <span className="ic-logo-wordmark">
+                IRON COMPASS <span>AI</span>
+              </span>
+            </Link>
             <p className="ic-footer-title">Discipline. Direction. Brotherhood.</p>
             <p className="ic-footer-tagline">
               A disciplined life system for men who prefer proof over promises.
@@ -50,17 +57,17 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             {navSections.flatMap((section) =>
               section.links.map((link) => (
-                <Link key={link.href} href={link.href} className="ic-footer-navlink">
+                <a key={link.href} href={link.href} className="ic-footer-navlink">
                   {link.label}
-                </Link>
+                </a>
               )),
             )}
           </div>
         </div>
 
         <div className="ic-footer-legal">
-          <p>© {year} Iron Compass Holdings</p>
-          <p>Built in Australia. Operates worldwide.</p>
+          <p>© 2026 Iron Compass AI</p>
+          <p>HumanFirst Technologies | ABN 96 226 474 355</p>
         </div>
       </div>
     </footer>

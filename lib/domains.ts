@@ -7,65 +7,18 @@ export type DomainCard = {
   slug: CanonicalDomainSlug;
 };
 
-/** Single source of truth for domain navigation cards */
+/** Current life domains only. AI Mastery is a resource, not a card. */
 export const domainCards: DomainCard[] = [
-  {
-    slug: "health",
-    title: "STRENGTH & HEALTH",
-    desc: "Build capacity, energy, and long-term resilience.",
-    href: "/domains/health",
-  },
-  {
-    slug: "discipline-mindset",
-    title: "DISCIPLINE & MINDSET",
-    desc: "The operating system that keeps promises alive.",
-    href: "/domains/discipline-mindset",
-  },
-  {
-    slug: "purpose-direction",
-    title: "PURPOSE & DIRECTION",
-    desc: "Chosen mission, decisive targets, relentless cadence.",
-    href: "/domains/purpose-direction",
-  },
-  {
-    slug: "leadership-character",
-    title: "LEADERSHIP & CHARACTER",
-    desc: "Calm authority and standards people can trust.",
-    href: "/domains/leadership-character",
-  },
-  {
-    slug: "financial-power",
-    title: "FINANCIAL POWER",
-    desc: "Structure, skill, and buffers that remove money chaos.",
-    href: "/domains/financial-power",
-  },
-  {
-    slug: "ai-mastery",
-    title: "AI MASTERY & LIFE OPTIMIZATION",
-    desc: "Leverage automation without losing your edge.",
-    href: "/domains/ai-mastery",
-  },
-  {
-    slug: "grief-honour",
-    title: "GRIEF & HONOUR",
-    desc: "Carry loss with ritual, responsibility, and forward motion.",
-    href: "/domains/grief-honour",
-  },
-  {
-    slug: "identity-legacy",
-    title: "IDENTITY & LEGACY",
-    desc: "Decide who you are and leave proof behind.",
-    href: "/domains/identity-legacy",
-  },
+  { slug: "discipline", title: "Discipline", desc: "The standard you keep when the week gets loud.", href: "/domains/discipline" },
+  { slug: "identity", title: "Identity", desc: "What you stand for, checked against what you do.", href: "/domains/identity" },
+  { slug: "health-strength", title: "Health & Strength", desc: "Sleep, food, and training that keep you able to carry the day.", href: "/domains/health-strength" },
+  { slug: "bonds-connections", title: "Bonds & Connections", desc: "Presence and follow-through for the people who depend on you.", href: "/domains/bonds-connections" },
+  { slug: "purpose-direction", title: "Purpose & Direction", desc: "Work and contribution with a direction you can actually keep.", href: "/domains/purpose-direction" },
+  { slug: "finance-provision", title: "Finance & Provision", desc: "Money handled so the household is not run on surprise.", href: "/domains/finance-provision" },
+  { slug: "resilience", title: "Resilience", desc: "Stay functional when the load rises.", href: "/domains/resilience" },
+  { slug: "fall-rise", title: "Fall & Rise", desc: "A miss, a cause, and the return.", href: "/domains/fall-rise" },
+  { slug: "grief-honour", title: "Grief & Honour", desc: "Stabilise, honour the loss, and keep the role.", href: "/domains/grief-honour" },
+  { slug: "legacy", title: "Legacy", desc: "What remains for the people after you.", href: "/domains/legacy" },
 ];
 
-export const domainNavLinks = [
-  { href: "/domains/health", label: "Strength & Health" },
-  { href: "/domains/discipline-mindset", label: "Discipline & Mindset" },
-  { href: "/domains/purpose-direction", label: "Purpose & Direction" },
-  { href: "/domains/leadership-character", label: "Leadership & Character" },
-  { href: "/domains/financial-power", label: "Financial Power" },
-  { href: "/domains/ai-mastery", label: "AI Mastery & Life Optimization" },
-  { href: "/domains/grief-honour", label: "Grief & Honour" },
-  { href: "/domains/identity-legacy", label: "Identity & Legacy" },
-] as const;
+export const domainNavLinks = domainCards.map((card) => ({ href: card.href, label: card.title }));

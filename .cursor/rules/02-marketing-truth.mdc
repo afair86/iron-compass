@@ -1,0 +1,23 @@
+---
+description: Never describe a planned app feature as if customers can use it
+alwaysApply: true
+---
+
+# Marketing truth
+
+Before a capability claim, check the app product state. Use only three labels:
+
+- Live — on https://ironcompassai.com/app now
+- Built but not deployed — in the app repo, not on that URL
+- Planned — not built
+
+```text
+BAD: "Pressure Radar shows what is coming."
+GOOD: Do not mention Pressure Radar. It is planned, not live.
+```
+
+Do not claim the product remembers long-term promises, runs a challenge, or reads a private journal unless that is live. As of 27 September 2026 the live app has the journal, the ledger, and ten curated challenges. It does not have One Move, Trajectory, Pressure Radar, or Ask My Life.
+
+"Read the journal" on this site means the public articles at `/blog`, not the private app journal. Do not blur those.
+
+Do not describe a planned architecture as something a customer can do today.
