@@ -85,8 +85,8 @@ export default function BlogPage() {
         />
         <SectionShell variant="hero" className="space-y-6">
           <PhotoFrame src={pagePhotos.blog} alt={pagePhotoAlts.blog} />
-          <p className="ic-eyebrow ic-eyebrow--stoic">Iron Compass Journal</p>
-          <h1 className="ic-page-title">Dispatches for Disciplined Men</h1>
+          <h1 className="ic-page-title">Iron Compass Journal</h1>
+          <p className="ic-display-subtitle">Dispatches for disciplined men</p>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl">
             Practical pieces across the ten life domains, plus notes on using AI as a tool. Every post ends with something you can do this week.
           </p>
@@ -94,12 +94,9 @@ export default function BlogPage() {
             <Link href="/domains" className="ic-btn-primary text-xs sm:text-[0.72rem]">
               Explore the domains
             </Link>
-            <Link href="/domains" className="ic-btn-ghost text-xs sm:text-[0.7rem]">
-              View All Domains
-            </Link>
           </div>
-          <div className="ic-panel-stoic p-5 space-y-3 max-w-2xl mx-auto">
-            <p className="ic-section-copy text-[0.9rem]">Topics we cover weekly</p>
+          <div className="ic-panel-stoic ic-topics-panel p-5 space-y-3 max-w-2xl mx-auto">
+            <h2 className="ic-topics-heading">Topics we cover weekly</h2>
             <div className="flex flex-wrap gap-2 justify-center">
               {["Discipline", "Identity", "Health & Strength", "Bonds & Connections", "Purpose & Direction", "Finance & Provision", "Resilience", "Fall & Rise", "Grief & Honour", "Legacy"].map(
                 (topic) => (

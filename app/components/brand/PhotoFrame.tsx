@@ -6,7 +6,7 @@ type PhotoFrameProps = {
   /** Turn off when the photograph already contains the compass. */
   showMark?: boolean;
   className?: string;
-  /** Cover fills the frame. Contain keeps the whole picture, used by small thumbs. */
+  /** Defaults to a compact editorial crop. Explicit cover fills its parent; contain keeps the whole picture. */
   fit?: "contain" | "cover";
   /** Where the subject sits when the picture is cropped. */
   position?: string;
@@ -17,17 +17,20 @@ export default function PhotoFrame({
   alt,
   showMark = true,
   className,
-  fit = "contain",
-  position = "center 30%",
+  fit,
+  position,
 }: PhotoFrameProps) {
   const cover = fit === "cover";
+  const compact = fit === undefined;
+  const scenic = src.startsWith("/images/pages/");
+  const resolvedPosition = position ?? (scenic ? "center 65%" : "center top");
   return (
-    <figure className={[styles.frame, cover ? styles.frameCover : "", className].filter(Boolean).join(" ")}>
+    <figure className={[styles.frame, compact ? styles.compact : "", cover ? styles.frameCover : "", className].filter(Boolean).join(" ")}>
       <img
         src={src}
         alt={alt}
         className={cover ? styles.photoCover : styles.photo}
-        style={cover ? { objectPosition: position } : undefined}
+        style={cover || compact ? { objectPosition: resolvedPosition } : undefined}
       />
       {showMark ? (
         <img src="/images/brand/compass-mark.png" alt="" className={styles.mark} />

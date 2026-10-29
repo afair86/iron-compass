@@ -1,0 +1,87 @@
+/* Intentional editorial hierarchy: centred introductions, readable left-aligned detail. */
+html:root {
+  --ic-title: #9ac7ed;
+  --ic-subtitle: #e7ba72;
+}
+@media screen {
+  html body main #home .ic-cta-row { justify-content: center; }
+  html body main :is(#domains,#philosophy) > :is(h2,p) {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  html body main #domains > p:first-of-type { color: var(--ic-subtitle); }
+  html body main #home > div > p { text-align: center; }
+  html body main.ic-page-shell :is(h1.ic-page-title, h1.ic-section-title, .ic-heading-2,
+    .ic-section-heading, .ic-board-heading),
+  html body main #domains > h2,
+  html body main #philosophy > h2 { color: var(--ic-title); }
+  html body main.ic-page-shell :is(h3, .ic-eyebrow, .ic-board-kicker, .ic-display-subtitle,
+    .ic-topics-heading) { color: var(--ic-subtitle); }
+  html body main .ic-display-subtitle {
+    font-family: var(--font-heading), sans-serif;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  html body main.ic-page-shell .ic-editorial-center > :is(h1,h2,h3,p),
+  html body main.ic-page-shell .ic-editorial-center > .ic-stack-sm > :is(h1,h2,h3,p) {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  html body main.ic-page-shell .ic-editorial-center > .ic-cta-row {
+    justify-content: center;
+  }
+  html body main.ic-page-shell .ic-editorial-center .ic-stoic-rule { margin-inline: auto; }
+  html body main.ic-page-shell .ic-editorial-center > h1::after { margin-inline: auto; }
+  html body main.ic-page-shell .ic-topics-panel { margin-inline: auto; }
+  html body main.ic-page-shell .ic-topics-panel .ic-topics-heading {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+  html body main :is(a.ic-btn-primary, a.ic-neon-cta) {
+    background: var(--ic-cta-red);
+    border-color: var(--ic-cta-red);
+    color: var(--ic-on-action);
+  }
+  html body main a.ic-btn-primary[href], html body main a.ic-neon-cta[href] {
+    background: var(--ic-cta-red);
+    border-color: var(--ic-cta-red);
+    color: var(--ic-on-action);
+  }
+  html body main.ic-page-shell .ic-editorial-center > h1 { color: var(--ic-title); }
+  html body main #domains a h3 { color: var(--ic-subtitle); }
+  html body main :is(a.ic-btn-primary, a.ic-neon-cta):hover { background: #ff6262; }
+  html body main :is(a.ic-btn-ghost, a.ic-pill-link) {
+    color: #ff7777;
+    border-color: #ba4b50;
+    background: transparent;
+  }
+  html body main :is(a.ic-btn-ghost, a.ic-pill-link):hover {
+    background: rgba(255,52,52,.08);
+    border-color: #ff7777;
+  }
+  html body main.ic-page-shell .ic-board-plan { border-top: 3px solid var(--ic-title); }
+  html body main.ic-page-shell .ic-board-plan--core {
+    border-top-color: var(--ic-subtitle);
+    background: linear-gradient(155deg, rgba(231,186,114,.07), transparent 65%), var(--ic-surface);
+  }
+  html body main.ic-page-shell .ic-board-plan .ic-section-title {
+    color: var(--ic-subtitle);
+    -webkit-text-fill-color: currentColor;
+    font-size: 2rem;
+  }
+  html body main.ic-page-shell .ic-board-plan h2 { color: var(--ic-title); }
+  html body .ic-footer-lede, html body .ic-footer-legal { align-items: center; }
+  html body :is(.ic-footer-lede, .ic-footer-lede > div, .ic-footer-title,
+    .ic-footer-tagline, .ic-footer-note, .ic-footer-note p, .ic-footer-legal, .ic-footer-legal p) {
+    text-align: center;
+  }
+  html body .ic-footer-lede .ic-logo-lockup { justify-content: center; }
+  html body .ic-footer-title { color: var(--ic-title); }
+  html body :is(.ic-footer-tagline,.ic-footer-note) { margin-inline: auto; }
+  html body main .ic-dispatch-prose :is(h2,h3) { color: var(--ic-subtitle); }
+}

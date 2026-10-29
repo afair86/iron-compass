@@ -42,15 +42,6 @@ const variantMap: Record<NonNullable<SectionShellProps["variant"]>, string> = {
   warm: "ic-board-panel",
 };
 
-const eyebrowAccentMap = {
-  blue: "ic-eyebrow--field",
-  red: "ic-eyebrow--stoic",
-  gold: "ic-eyebrow--stoic",
-  violet: "ic-eyebrow--field",
-  teal: "ic-eyebrow--field",
-  cyan: "ic-eyebrow--field",
-} as const;
-
 export function PageContainer({ width = "wide", className = "", children }: PageContainerProps) {
   return <div className={`${widthMap[width]} px-4 md:px-6 ${className}`.trim()}>{children}</div>;
 }
@@ -62,36 +53,25 @@ const alignMap = {
 
 export function SectionShell({
   variant = "panel",
-  align = "center",
+  align = "start",
   className = "",
   as: Tag = "section",
   children,
 }: SectionShellProps) {
-  return <Tag className={`${variantMap[variant]} ${alignMap[align]} ${className}`.trim()}>{children}</Tag>;
+  return <Tag className={`${variantMap[variant]} ${variant === "hero" ? "ic-editorial-center" : ""} ${alignMap[align]} ${className}`.trim()}>{children}</Tag>;
 }
 
 export function HeadingStack({
-  eyebrow,
   title,
   center = true,
   as: Tag = "div",
   className = "",
-  eyebrowClassName = "",
   titleClassName = "",
   description,
-  accent,
   children,
 }: HeadingStackProps) {
-  const eyebrowAccent = accent ? eyebrowAccentMap[accent] : "";
   return (
-    <Tag className={`ic-stack-sm ${center ? "ic-align-center" : "ic-align-start"} ${className}`.trim()}>
-      {eyebrow ? (
-        <p
-          className={`ic-eyebrow ${eyebrowAccent} ${center ? "mx-auto" : ""} ${eyebrowClassName}`.trim()}
-        >
-          {eyebrow}
-        </p>
-      ) : null}
+    <Tag className={`ic-stack-sm ${center ? "ic-editorial-center ic-align-center" : "ic-align-start"} ${className}`.trim()}>
       <h2 className={`ic-heading-2 ic-board-heading ${center ? "mx-auto" : ""} ${titleClassName}`.trim()}>{title}</h2>
       {center ? <div className="ic-stoic-rule mx-auto" aria-hidden="true" /> : <div className="ic-stoic-rule ic-stoic-rule--inline" aria-hidden="true" />}
       {description ? (

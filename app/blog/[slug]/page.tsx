@@ -22,8 +22,9 @@ const PRACTICAL_TOOL_MARKER = "<!-- PRACTICAL_TOOL -->";
 type Props = { params: Promise<{ slug: string }> };
 
 function resolveOgImage(image?: string) {
-  if (!image || image.includes("iron-compass-logo")) return DEFAULT_OG_IMAGE;
-  return image.startsWith("http") ? image : absoluteUrl(image);
+  const resolved = articlePhoto(image);
+  if (!resolved) return DEFAULT_OG_IMAGE;
+  return resolved.startsWith("http") ? resolved : absoluteUrl(resolved);
 }
 
 function extractDescription(markdown: string, fallback = "") {
@@ -124,7 +125,11 @@ export default async function BlogPostPage({ params }: Props) {
   // Hide Listen when frontmatter sets listenAudio: false (stale narration awaiting regen).
   const audioSrc =
     post.meta.listenAudio === false ? undefined : fs.existsSync(audioAbs) ? audioRel : undefined;
-  const [beforeTool, afterTool = ""] = post.content.split(PRACTICAL_TOOL_MARKER);
+  const displayContent = post.content.replace(
+    /^[ \t]*(?:-[ \t]*)?(?:\*\*)?(?:Target keywords?(?:\(s\))?|(?:Related[ \t]+)?Semantic terms|Primary intent|Target reader|Value promise):[^\n]*(?:\n|$)/gim,
+    "\n",
+  );
+  const [beforeTool, afterTool = ""] = displayContent.split(PRACTICAL_TOOL_MARKER);
   const practicalToolId = isPracticalToolId(post.meta.practicalTool) ? post.meta.practicalTool : null;
   const heroAlt = post.meta.imageAlt || `${post.meta.title} — illustrative scene`;
   const faqSchema =
@@ -208,7 +213,7 @@ export default async function BlogPostPage({ params }: Props) {
           <header className="ic-board-hero">
             {articlePhoto(post.meta.image) ? (
               <div className="ic-board-hero__media">
-                <PhotoFrame src={articlePhoto(post.meta.image)!} alt={heroAlt} fit="cover" position="center 30%" />
+                <PhotoFrame src={articlePhoto(post.meta.image)!} alt={heroAlt} fit="cover" position="center top" />
               </div>
             ) : null}
             <div className="ic-board-hero__copy">
@@ -220,8 +225,6 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="ic-dispatch-lede">{fallbackDescription}</p>
             <div className="ic-dispatch-meta">
               <time dateTime={post.meta.date}>{formatDate(post.meta.date)}</time>
-              <span aria-hidden="true">·</span>
-              <span>Field Dispatch</span>
             </div>
             <ArticleListenButton
               title={articleTitle}

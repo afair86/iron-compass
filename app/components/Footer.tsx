@@ -6,6 +6,7 @@ const navSections = [
   {
     title: "Platform",
     links: [
+      { href: "/app", label: "Open web app" },
       { href: "/start", label: "Start" },
       { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact" },
@@ -23,7 +24,7 @@ const navSections = [
 export default function Footer() {
   return (
     <footer className="ic-footer-shell text-sm">
-      <div className="max-w-6xl mx-auto space-y-12">
+      <div className="ic-footer-inner space-y-12">
         <div className="ic-footer-lede">
           <div className="space-y-3">
             <Link href="/" className="ic-logo-lockup" aria-label="Iron Compass AI">
@@ -56,9 +57,9 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             {navSections.flatMap((section) =>
               section.links.map((link) => (
-                <Link key={link.href} href={link.href} className="ic-footer-navlink">
+                <a key={link.href} href={link.href} className="ic-footer-navlink">
                   {link.label}
-                </Link>
+                </a>
               )),
             )}
           </div>

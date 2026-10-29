@@ -54,5 +54,13 @@ export const pagePhotos = {
 export function articlePhoto(image?: string) {
   if (!image) return undefined;
   if (image.includes("iron-compass-logo")) return undefined;
-  return image;
+  // Existing alternatives preserve complete heads where the old source itself clipped them.
+  const completeSubjects: Record<string, string> = {
+    "/images/blog/cashflow-command-ai-copilot-hero.png": "/images/blog/freelancer-cashflow-war-room-hero.png",
+    "/images/blog/leadership-decision-log-for-trust-and-speed-hero.png": "/images/blog/integrity-audit-leadership-hero.png",
+    "/images/blog/tendon-armor-protocol-hero.png": "/images/blog/iron-protocol-strength-transition-hero.png",
+    "/images/blog/strength-without-extra-time-hero.png": "/images/blog/iron-protocol-strength-transition-hero.png",
+    "/images/blog/when-things-start-falling-into-place-hero.png": "/images/blog/midlife-mission-rewrite-playbook-hero.png",
+  };
+  return completeSubjects[image] ?? image;
 }

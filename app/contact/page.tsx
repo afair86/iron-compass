@@ -44,8 +44,8 @@ export default function ContactPage() {
             <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
               Read the domains
             </Link>
-            <Link href="/domains" className="ic-btn-ghost text-[0.6rem]">
-              Review Domains
+            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
+              Read the journal
             </Link>
           </div>
         </SectionShell>

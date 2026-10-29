@@ -24,18 +24,23 @@ export default function ApprovedHome() {
             shape their lives.
           </p>
           <p>The ten domains are where responsibility lives. The journal shows how that looks in a real week.</p>
-          <Link className={styles.journey} href="/domains">
-            Explore the domains <span aria-hidden="true">→</span>
-          </Link>
-          <Link className={styles.textLink} href="/blog">
-            Read the journal
-          </Link>
+          <div className="ic-cta-row">
+            <a className="ic-btn-primary" href="/app">
+              Open web app
+            </a>
+            <Link className="ic-btn-ghost" href="/domains">
+              Explore the domains <span aria-hidden="true">→</span>
+            </Link>
+            <Link className="ic-btn-ghost" href="/blog">
+              Read the journal
+            </Link>
+          </div>
         </div>
       </section>
 
       <section className={styles.block} id="domains">
-        <p className={styles.kicker}>Ten life domains</p>
-        <h2>Where responsibility lives</h2>
+        <h2>Ten life domains</h2>
+        <p className={styles.sectionNote}>Where responsibility lives.</p>
         <p className={styles.lead}>
           Discipline, identity, health, the people who depend on you, the work, the money, the load, the return
           after a miss, grief, and what remains. Awareness, pressure, and strategy are how the system helps. They
@@ -43,15 +48,18 @@ export default function ApprovedHome() {
         </p>
         <div className={styles.domainGrid}>
           {domainCards.map((domain) => (
-            <article key={domain.slug} className={styles.domain}>
+            <Link
+              key={domain.slug}
+              href={domain.href}
+              className={styles.domain}
+              aria-labelledby={`home-domain-${domain.slug}`}
+            >
               <PhotoFrame className={frameStyles.thumb} src={domainPhotos[domain.slug]} alt={domainPhotoAlts[domain.slug]} />
               <div>
-                <h3>
-                  <Link href={domain.href}>{domain.title}</Link>
-                </h3>
+                <h3 id={`home-domain-${domain.slug}`}>{domain.title}</h3>
                 <p>{domain.desc}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
@@ -76,7 +84,7 @@ export default function ApprovedHome() {
           No manifestos. No motivation loops. Just clear domains, practical standards, and the work of
           becoming reliable.
         </p>
-        <Link className={styles.journey} href="/about">
+        <Link className="ic-btn-ghost" href="/about">
           About the system <span aria-hidden="true">→</span>
         </Link>
       </section>

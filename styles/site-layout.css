@@ -1,0 +1,188 @@
+/* One public-site composition system. App routes remain a separate upstream. */
+html:root {
+  --ic-site-width: 1120px;
+  --ic-site-gutter: 24px;
+  --ic-section-gap: 48px;
+  --ic-card-padding: 24px;
+}
+
+@media screen {
+  html body .ic-open-app {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: var(--ic-cta-red);
+    color: var(--ic-on-action);
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  html body .ic-open-app:hover { background: #ff6262; }
+  html body main { text-align: left; }
+  html body main :is(h1, h2, h3, h4, p, ul, ol) { text-align: left; }
+  html body main.ic-page-shell :is(.ic-page-title, .ic-section-title, .ic-heading-2,
+    .ic-heading-3, .ic-section-heading, .ic-board-heading, .ic-section-copy),
+  html body main.ic-page-shell .ic-board-plan :is(h2,p) {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  html body main.ic-page-shell :is(.ic-heading-2, .ic-section-heading, .ic-board-heading) {
+    max-width: none;
+    width: auto;
+  }
+  html body main :is(h1, h2, h3, h4, p, ul, ol).mx-auto,
+  html body main :is(.ic-section-copy, .ic-dispatch-lede, .ic-stoic-rule) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  html body main.ic-page-shell {
+    padding: 48px 0 72px;
+    min-height: 60vh;
+  }
+  html body main > :is(.ic-content-stack, .ic-content-wide, .ic-content-narrow) {
+    width: calc(100% - var(--ic-site-gutter) * 2);
+    max-width: var(--ic-site-width);
+    padding: 0;
+    margin-inline: auto;
+    gap: var(--ic-section-gap);
+  }
+  html body main :is(.ic-align-center, .ic-align-start) { text-align: left; }
+  html body main :is(.ic-align-center, .ic-align-start) > :is(h1,h2,h3,p,ul,ol) {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+  /* Sections establish rhythm. Containers are reserved for cards and tools. */
+  html body main .ic-content-stack > :is(section.ic-board-panel, section.ic-panel,
+    section.ic-panel-outline, section.ic-panel-muted) {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+  }
+  html body main :is(.ic-page-title, h1.ic-section-title) {
+    max-width: 26ch;
+    font-size: clamp(1.9rem, 3.4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-top: 0;
+  }
+  html body main :is(.ic-heading-2, .ic-section-heading, .ic-board-heading) {
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    line-height: 1.25;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  html body main :is(.ic-section-copy, .ic-dispatch-lede) {
+    max-width: 72ch;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  html body main .ic-cta-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 12px;
+  }
+  html body main :is(.ic-btn-primary, .ic-btn-ghost, .ic-neon-cta, .ic-pill-link) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    gap: 8px;
+    min-height: 48px;
+    max-width: 100%;
+    margin: 0;
+    padding: 12px 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    text-decoration: none;
+    text-align: center;
+    white-space: normal;
+  }
+  html body main :is(button:not(.ic-listen__speaker), input[type="submit"]) {
+    min-height: 44px;
+    border-radius: 8px;
+  }
+  html body main button[type="button"] {
+    padding: 10px 16px;
+    border: 1px solid var(--ic-border-strong);
+    background: var(--ic-surface);
+    color: var(--ic-steel);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  html body main :is(.ic-board-plan, article.ic-panel-muted, li.ic-panel-muted) {
+    padding: var(--ic-card-padding);
+    border: 1px solid var(--ic-border);
+    border-radius: 14px;
+    background: var(--ic-surface);
+    text-align: left;
+  }
+  html body main .ic-board-plan--core { border-color: var(--ic-amber); }
+  html body main :is(.ic-listen, .ic-listen--subtle) {
+    margin-left: 0;
+    text-align: left;
+  }
+  html body main :is(.ic-listen__subtle-row, .ic-dispatch-meta) {
+    justify-content: flex-start;
+  }
+  html body main .ic-dispatch { width: 100%; margin: 0; }
+  html body main .ic-board-hero {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    margin: 0 0 var(--ic-section-gap);
+  }
+  html body main .ic-board-hero__media { border-radius: 14px; }
+  html body main .ic-board-hero__copy { padding: 24px 0 0; }
+  html body main .ic-dispatch-body { max-width: 76ch; }
+  html body main .ic-dispatch-prose { font-size: 1rem; line-height: 1.7; }
+  html body main .ic-dispatch-prose :is(h2,h3) { letter-spacing: 0; text-transform: none; }
+  html body main .ic-dispatch-meta { letter-spacing: 0.08em; font-size: 0.75rem; }
+  html body :is(.ic-nav-inner, .ic-footer-inner) {
+    width: calc(100% - var(--ic-site-gutter) * 2);
+    max-width: var(--ic-site-width);
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+  html body :is(.ic-footer-lede, .ic-footer-legal) { align-items: flex-start; }
+  html body :is(.ic-footer-lede, .ic-footer-lede > div, .ic-footer-title,
+    .ic-footer-tagline, .ic-footer-note, .ic-footer-legal, .ic-footer-legal p) { text-align: left; }
+  html body :is(.ic-footer-tagline, .ic-footer-note) { margin-inline: 0; }
+}
+
+@media screen and (max-width: 767px) {
+  html body .ic-nav-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+  html body .ic-nav-toggle { grid-column: 2; grid-row: 1; }
+  html body .ic-open-app { grid-column: 1 / -1; grid-row: 2; }
+}
+
+@media screen and (max-width: 639px) {
+  html:root { --ic-site-gutter: 20px; --ic-section-gap: 36px; --ic-card-padding: 20px; }
+  html body main.ic-page-shell { padding-top: 28px; padding-bottom: 48px; }
+  html body main .ic-cta-row > a { flex: 1 1 auto; }
+}

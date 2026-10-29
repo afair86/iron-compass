@@ -8,7 +8,7 @@ const ironPalette = {
   card: "#111111",
   accent: "#B01015",
   accentBright: "#D14232",
-  neonBlue: "#2EC4F1",
+  neonBlue: "var(--ic-steel)",
   neonRed: "#FF2E45",
   bone: "#F1F1F1",
   mist: "#C8C8C8",
@@ -34,13 +34,12 @@ module.exports = {
       },
       boxShadow: {
         "panel-soft": "0 25px 80px rgba(0, 0, 0, 0.55)",
-        "neon-blue": "0 0 12px rgba(46,196,241,0.65), 0 0 30px rgba(46,196,241,0.45)",
-        "neon-red": "0 0 12px rgba(176,16,21,0.7), 0 0 30px rgba(176,16,21,0.5)",
+        "neon-blue": "none",
+        "neon-red": "none",
       },
       backgroundImage: {
-        "steel-brushed":
-          "linear-gradient(120deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 35%), radial-gradient(circle at 20% 20%, rgba(46,196,241,0.08), transparent 55%)",
-        "ember-radial": "radial-gradient(circle at 50% 0%, rgba(176,16,21,0.25), transparent 70%)",
+        "steel-brushed": "none",
+        "ember-radial": "none",
       },
       borderRadius: {
         xl: "1.25rem",

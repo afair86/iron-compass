@@ -16,16 +16,16 @@ export const metadata = buildPageMetadata({
 });
 
 const focus: Record<CanonicalDomainSlug, string> = {
-  discipline: "center 22%",
-  identity: "center 40%",
-  "health-strength": "center 24%",
-  "bonds-connections": "center 28%",
-  "purpose-direction": "center 32%",
-  "finance-provision": "center 30%",
-  resilience: "center 42%",
-  "fall-rise": "center 45%",
-  "grief-honour": "center 30%",
-  legacy: "center 26%",
+  discipline: "center top",
+  identity: "center top",
+  "health-strength": "center top",
+  "bonds-connections": "center top",
+  "purpose-direction": "center top",
+  "finance-provision": "center top",
+  resilience: "center top",
+  "fall-rise": "center top",
+  "grief-honour": "center top",
+  legacy: "center top",
 };
 
 const domainList = {
@@ -45,8 +45,7 @@ export default function DomainsPage() {
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(domainList) }} />
       <div className={styles.page}>
-        <header className={styles.intro}>
-          <p className={styles.kicker}>Life domains</p>
+        <header className={`${styles.intro} ic-editorial-center`}>
           <h1>Ten life domains</h1>
           <p className={styles.sub}>Where responsibility lives.</p>
           <p className={styles.lede}>

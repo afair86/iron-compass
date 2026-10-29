@@ -12,15 +12,14 @@ type Props = {
 };
 
 export default function DomainCardDirectory({ href, title, description, image, imageAlt, focus }: Props) {
+  const titleId = `directory-${href.split("/").pop()}`;
   return (
-    <Link href={href} className={styles.card}>
+    <Link href={href} className={styles.card} aria-labelledby={titleId}>
       <span className={styles.media}>
         <PhotoFrame src={image} alt={imageAlt} fit="cover" position={focus ?? "center 28%"} className={styles.frame} />
+        <h2 className={styles.title} id={titleId}>{title}</h2>
       </span>
-      <span className={styles.copy}>
-        <h2 className={styles.title}>{title}</h2>
-        <span className={styles.promise}>{description}</span>
-      </span>
+      <span className={styles.promise}>{description}</span>
     </Link>
   );
 }

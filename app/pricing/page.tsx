@@ -44,7 +44,7 @@ export default function PricingPage() {
         <div className="ic-board-plans">
         {PLANS.map((plan) => (
           <section key={plan.name} className={`ic-board-plan${plan.highlight ? " ic-board-plan--core" : ""} space-y-3`}>
-            {plan.highlight ? <p className="ic-eyebrow">{plan.highlight}</p> : null}
+            <p className="ic-eyebrow" aria-hidden={!plan.highlight || undefined}>{plan.highlight || "\u00a0"}</p>
             <h2 className="ic-section-heading">{plan.name}</h2>
             <p className="ic-section-title">{plan.price}</p>
             <p className="ic-section-copy">{plan.detail}</p>

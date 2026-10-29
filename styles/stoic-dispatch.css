@@ -6,7 +6,7 @@
   --ic-stone: #9ca3af;
   --ic-bone: #f1f1f1;
   --ic-iron: #111113;
-  --ic-steel: #1b1f24;
+  --ic-dispatch-steel: #1b1f24;
   --ic-ember: #b01015;
   --ic-ember-soft: rgba(176, 16, 21, 0.35);
 }
@@ -278,7 +278,7 @@
   z-index: 40;
   max-width: 28rem;
   margin: 0 auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
   background: rgba(17, 17, 19, 0.94);
 }
 
@@ -617,14 +617,13 @@
   padding: clamp(1.75rem, 3.5vw, 2.75rem);
   border: 1px solid rgba(255, 255, 255, 0.07);
   background: linear-gradient(165deg, rgba(17, 17, 19, 0.88), rgba(10, 10, 11, 0.92));
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  box-shadow: none;
 }
 
 .ic-panel-stoic--hero {
   border-color: rgba(196, 165, 116, 0.15);
   background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(176, 16, 21, 0.06), transparent 60%),
-    linear-gradient(165deg, rgba(17, 17, 19, 0.95), rgba(10, 10, 11, 0.92));
+    transparent;
 }
 
 .ic-panel-stoic--warm {
