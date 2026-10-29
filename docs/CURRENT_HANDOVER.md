@@ -1,5 +1,23 @@
 # CURRENT HANDOVER
 
+Brisbane date: 29 October 2026. Assistant: ChatGPT/Codex.
+
+## Authorized combined release — in progress
+
+The owner explicitly requested: "ok lets align all of these, test and deploy". This authorizes this release; the earlier hold below is superseded for the tested changes in this release.
+
+- Website base: tracking branch at aae3fc3f48bc0225456c88780477df026b0f21df, including recovered source afa2c955. Website main remains the older baseline until this release is merged.
+- Product changes: app/layout.tsx imports styles/navigation-actions.css last; styles/editorial.css no longer forces secondary links red; styles/navigation-actions.css keeps mobile/tablet app access beside the logo, removes adjacent duplicates and styles guidance links; .cursor/rules/07-website-ux.mdc reflects the owner's latest semantic colour roles.
+- Tests: production Next build and TypeScript passed; six domain architecture tests and three source-identity tests passed. Built-page Chromium checks passed at 360, 390, 768, 820, 1024 and 1366px: menu interaction, top app access, sticky phone/tablet access, duplicate removal, secondary colours and no horizontal overflow. No stylesheet was injected into these checks.
+- Source: this combined release will include the shared source tracking from PR #2. Its branch/commit and workflow identify the pushed source. Production is not claimed until host and served version are checked.
+- App: combines PR #3 habit/onboarding work, PR #4 tracking, and the previously uncommitted QA/navigation package. Google button relay and expired-session loading have additional fixes. App tests/build and deployment are being checked independently.
+- Important boundary: Cursor recorded uncommitted work on another computer in collab/codex-cursor-launch-audit. That work is unavailable here and is not claimed uploaded. API production and installed native versions remain unverified; web deployment does not update store binaries.
+
+Next action: push the tested combined website branch, align main to it through the reviewed release, and verify the production source version. Continue the app release separately.
+
+## Earlier Cursor checkpoint (preserved for history)
+
+
 Brisbane time: 29 October 2026, afternoon. Assistant: Cursor. Read this file on GitHub. It replaces the morning checkpoint below for current facts. Unsaved computer edits are not included.
 
 ## States

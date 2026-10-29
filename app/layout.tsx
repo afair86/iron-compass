@@ -6,6 +6,7 @@ import "../styles/board.css";
 import "../styles/app-theme.css";
 import "../styles/site-layout.css";
 import "../styles/editorial.css";
+import "../styles/navigation-actions.css";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Montserrat, Inter } from "next/font/google";

@@ -56,13 +56,13 @@ html:root {
   html body main #domains a h3 { color: var(--ic-subtitle); }
   html body main :is(a.ic-btn-primary, a.ic-neon-cta):hover { background: #ff6262; }
   html body main :is(a.ic-btn-ghost, a.ic-pill-link) {
-    color: #ff7777;
-    border-color: #ba4b50;
+    color: var(--ic-steel);
+    border-color: var(--ic-border-strong);
     background: transparent;
   }
   html body main :is(a.ic-btn-ghost, a.ic-pill-link):hover {
-    background: rgba(255,52,52,.08);
-    border-color: #ff7777;
+    background: var(--ic-border);
+    border-color: var(--ic-steel);
   }
   html body main.ic-page-shell .ic-board-plan { border-top: 3px solid var(--ic-title); }
   html body main.ic-page-shell .ic-board-plan--core {

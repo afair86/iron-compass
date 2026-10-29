@@ -11,7 +11,8 @@ Topics/Read This First and section labels. Centre footer logo and Discipline.
 Direction. Brotherhood. Keep articles, card descriptions and forms left aligned.
 Use ic-editorial-center explicitly; no blanket all-left or all-centred treatment.
 Steel-blue #9ac7ed titles, amber #e7ba72 subtitles, silver #c7cfdd reading copy;
-Iron Red primary actions and red-family secondary outlines. No neon/glow.
+Iron Red primary actions, restrained blue guidance, amber attention, green earned
+completion, and neutral navigation. Secondary controls must not inherit red. No neon/glow.
 Colours communicate hierarchy and brand associations, not guaranteed emotions
 or sales. Keep1120px grid/24px gutters (20px phone),14px cards/8px controls.
 Journal H1 is Iron Compass Journal; Dispatches for disciplined men is its subtitle.
