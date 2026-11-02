@@ -4,15 +4,15 @@ Start here before changing or reporting on Iron Compass. GitHub holds pushed sou
 
 ## Current source map
 
-Verified on 29 October 2026, Australia/Brisbane. Read [release/source-map.json](release/source-map.json) for the machine-readable states. Current work and checks: [docs/CURRENT_HANDOVER.md](docs/CURRENT_HANDOVER.md).
+App, API and iPhone rows verified on 2 November 2026; website rows last verified on 29 October 2026, Australia/Brisbane. Read [release/source-map.json](release/source-map.json) for the machine-readable states. Current work and checks: [docs/CURRENT_HANDOVER.md](docs/CURRENT_HANDOVER.md).
 
 | Component | Pushed source | What is actually deployed |
 | --- | --- | --- |
 | Website | [Recovered ten-domain source](https://github.com/afair86/iron-compass/tree/recovery/current-live-website) `afa2c955b3085319c5d53611567a1dca18f598f2` | Production deployment `dpl_EvccSYnx7gLGVJBDERd5wa4rC8Cu` at https://ironcompassai.com reports that same commit. |
 | Website `main` | `590808fe09c2fa03c29d26b07f5342d824943424` | This is the GitHub production-branch baseline. It is older than the live site. Do not deploy it over https://ironcompassai.com. |
-| Web app | [App repository](https://github.com/afair86/iron-compass-ai) root, with `frontend/` and `shared/`. Pushed `main` is `445389d2e232c1b02c6deb1f8cf83101431dcdbe`. | The existing Vercel project `frontend` is now connected to this repository. Live production is still command-line deployment `dpl_A8yf4ZxVJeGM1gMC5vUwM7MPM6gr`, and its commit is unknown. |
-| API | Same app repository, `apps/api/` | https://api.ironcompassai.com/health returned HTTP 200. The deployed commit is unknown. |
-| Installed iOS/Android app | Same app repository, `frontend/` native builds | Installed build and commit are unknown. A web deployment does not replace an installed app. |
+| Web app | The toolkit release is app commit `683ed3923a2bbf2c9de34cdf3de69861705f1c9e`, ported into the local web snapshot `webapp-account-recovery-20261030`. | Command-line deployment `dpl_CGUvEustNjeMANYm7iA1Gc1PDHch` at https://ironcompassai.com/app since 2 November 2026. It has no Git commit. Rollback target: `frontend-efcikfa5z`. |
+| API | App repository `main` `1cadad9e7be912b705159ec2955cb819ca8d0fa7`, `apps/api/` | Railway reported success for `1cadad9e` on 2 November 2026; https://api.ironcompassai.com/health returned HTTP 200. No migration. |
+| iPhone app | `codex/release-privacy-native-20261030` `683ed3923a2bbf2c9de34cdf3de69861705f1c9e` | TestFlight build 51 uploaded on 2 November 2026. Apple processing and phone checks are not verified. Not submitted to the App Store. Installed build is unknown. |
 
 ## How to read a checkpoint
 
@@ -48,4 +48,5 @@ Future website builds run `prebuild` to create `/source-version.json`. App build
 - The recovered website is pushed and is the live site. GitHub `main` has not been moved to that commit.
 - Both Vercel projects are connected to their repositories. The web app uses the repository root.
 - A non-production app preview, `dpl_7HYvA3X5vQoMCoDHm7YrgCzKqoqa`, was checked for commit `589fd46516b195d6290cd4fa89f0a47a7ad6464d`. Its version file says the build tree was dirty, so it is not marked an exact clean build. Production approval is still open.
-- API and installed-app versions remain unknown.
+- The installed phone version remains unknown. TestFlight build 51 still needs Apple processing, phone checks and owner approval before any App Store submission.
+- The live web app is still a command-line deployment from a local snapshot, not from a pushed commit.

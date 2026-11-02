@@ -1,33 +1,28 @@
 # CURRENT HANDOVER
 
-Brisbane time: 29 October 2026, afternoon. Assistant: Cursor. Read this file on GitHub. It replaces the morning checkpoint below for current facts. Unsaved computer edits are not included.
+Brisbane time: 2 November 2026, 5:15 pm. Assistant: Cursor. Read this file on GitHub. It replaces the 29 October checkpoint below for app, API and iPhone facts. Unsaved computer edits are not included.
 
 ## States
 
-- Local/unpushed: the website recovery checkout was clean and matched the pushed recovery commit. A separate app checkout remains on `collab/codex-cursor-launch-audit` with uncommitted edits. Those edits were not added to this branch.
-- Pushed: website recovery `afa2c955b3085319c5d53611567a1dca18f598f2`. Website `main` `590808fe09c2fa03c29d26b07f5342d824943424`. App `main` `445389d2e232c1b02c6deb1f8cf83101431dcdbe`. Habit and onboarding draft `fix/light-full-onboarding-review` `49491a071c5a6a7406255cf0601766c24ec36e1b`, still a separate pull request. This file is on `sync/shared-source-of-truth` in both repositories.
-- Tests passed: `node --test scripts/source-status.test.mjs` passed 3 of 3 in both tracking checkouts. After the first push, Source continuity succeeded in both repositories. The app CI workflow also succeeded on `589fd46516b195d6290cd4fa89f0a47a7ad6464d`: the api job built and ran its test command, and the frontend job ran `npm ci`, built, and ran its test command. That is not full app QA.
-- Preview deployed: app preview `dpl_7HYvA3X5vQoMCoDHm7YrgCzKqoqa` is ready for `589fd46516b195d6290cd4fa89f0a47a7ad6464d`, repository `afair86/iron-compass-ai`, branch `sync/shared-source-of-truth`. Checked URL: https://frontend-git-sync-shared-source-a745c1-adams-projects-26d15070.vercel.app/auth. The sign-in page loaded on a phone-width view, the stylesheet and script returned HTTP 200, and the script's API host is https://api.ironcompassai.com. No sign-in was submitted. `/app/source-version.json` reports that commit, with `worktreeDirty: true` and `exactCommitBuild: false`, so the build machine was not a clean tree. Website previews remain non-production. This evidence commit is newer than the checked app preview.
-- Production deployed: website `dpl_EvccSYnx7gLGVJBDERd5wa4rC8Cu` reports `afa2c955b3085319c5d53611567a1dca18f598f2` at https://ironcompassai.com. Web app `dpl_A8yf4ZxVJeGM1gMC5vUwM7MPM6gr` is still the live command-line deployment and has no Git commit. Public sign-in https://ironcompassai.com/app/auth returned HTTP 200. API health returned HTTP 200. API commit, and the installed phone build, remain unknown.
+- Local/unpushed: the live web app was deployed from the local snapshot `webapp-account-recovery-20261030` (no Git commit). Its pre-release source is backed up in the shared ChatGPT project under `checkpoints/2026-11-02-toolkits/web-snapshot-backup`.
+- Pushed: app `main` `1cadad9e7be912b705159ec2955cb819ca8d0fa7` (fast-forward from `c683da34`). iPhone release branch `codex/release-privacy-native-20261030` `683ed3923a2bbf2c9de34cdf3de69861705f1c9e` (fast-forward from `1f0d4651`). API branch `cursor/toolkit-knowledge-api` at the same API commit.
+- Tests passed: app client 125 of 125 suites, 1208 of 1208 tests, and the /app build. API 63 of 63 suites, 510 of 510 tests, and the production typecheck. Web snapshot 77 of 77 suites, 924 of 924 tests, and its build. GitHub CI on `1cadad9e` succeeded.
+- Preview deployed: none.
+- Production deployed: API on Railway, `1cadad9e`, reported successful; https://api.ironcompassai.com/health returned HTTP 200. Web app `dpl_CGUvEustNjeMANYm7iA1Gc1PDHch` serves https://ironcompassai.com/app with `assets/index-4fb4fe9f.js`. iPhone TestFlight build 51 uploaded from `683ed392` (run https://github.com/afair86/iron-compass-ai/actions/runs/41403983888). Apple processing and phone checks are not verified. No App Store submission.
 
 ## What changed
 
-- Connected the existing Vercel project `frontend` (`prj_kru7tmL5GZJTdtCuOUpO6IpyjtAc`) to `afair86/iron-compass-ai`. No second project was created.
-- Root directory stays the repository root. Install, build, and output match the root `vercel.json`: install in `frontend`, build with `VITE_WEB_APP_BASE=/app/`, output `frontend/dist`.
-- Existing environment names, the website `/app` proxy, and the live web-app deployment were left in place. Production Git builds for the app project are ignored until the owner approves a production deployment.
-- Updated this handover and the source map so GitHub shows the live website commit and the still-unknown app production commit.
-
-## Checks
-
-- Vercel reports website project `iron-compass` linked to `afair86/iron-compass`, production branch `main`.
-- Vercel reports app project `frontend` linked to `afair86/iron-compass-ai`, production branch `main`, root directory unset (repository root).
-- No new app production deployment appeared after the connection. The current production deployment is still `dpl_A8yf4ZxVJeGM1gMC5vUwM7MPM6gr`.
-- Source-identity tests passed 3 of 3 in both repositories. No customer record was changed. No migration, native release, or production promotion was run.
+- All eight tools rebuilt as interactive tools under their existing names, with charts that fit every width and checks that keep tests, patterns and plans followable.
+- Plans: Free has no tools and no AI. Core has five tools (Today's preparation, Weekly awareness, Weekly review, Identity snapshot, Forecast). Elite has all eight (adds 90-day strategy, Comeback protocol, 90-day review). Enforced in the app and the API.
+- Pricing page rewritten to sell Core and Elite with prices unchanged, and small dismissible upsells in Today, Habits, Journal, Tools and Account.
+- Red actions now #e02e2e with white text (4.57:1), one amber #e7ba72, no neon blue.
+- Web sign-in shows Google's own button instead of clicking a hidden one.
+- Elite coaching model routing is built but switched off: `IC_COACHING_MODEL_ELITE` is not set.
 
 ## Next action
 
-Leave the live web app and the live website as they are. Production Git builds for the app project stay ignored. The owner can approve a production deployment only after reviewing the checked preview above. Do not deploy website `main`.
+Owner or ChatGPT: install TestFlight build 51 on a phone, complete one real Google sign-in on https://ironcompassai.com/app/auth, and confirm the Railway `GOOGLE_CLIENT_ID` includes the web client ending `6u4n8cgrhtce`. Submit to the App Store only with the owner's approval.
 
-## Superseded morning checkpoint
+## Superseded 29 October checkpoint
 
-The earlier note said the live website was still command-line deployment `dpl_kDxbSAWPyjDFQrbbwL9JnBfGCwDW` reporting `5d51214c5cc4d18108b77a7a9900fc75e70fd9cd`, and that the app project was not Git-connected. Both statements are out of date. The recovered website commit is now the production deployment named above. The app project is connected, and its production commit is still unknown.
+The web app was command-line deployment `dpl_A8yf4ZxVJeGM1gMC5vUwM7MPM6gr` and the API commit was unknown. Both statements are out of date.

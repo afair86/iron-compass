@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "verifiedOn": "2026-10-29",
+  "verifiedOn": "2026-11-02",
   "timezone": "Australia/Brisbane",
   "note": "Dated verified baseline. Uncommitted edits are not in GitHub. A preview is not production. Unknown commits stay null. This file does not prove product QA.",
   "website": {
@@ -25,7 +25,7 @@
       "previewDeployed": "dpl_7BqNVVMUAgSKkEWmNJWHTrUMBEGd is a ready preview of the recovered commit. dpl_2JGD7jNxbs5fZJ3qZS9JQq4Ah2x4 is a ready preview of tracking commit 4c5f30fd3bbee13942fe11add084e768c256ebe1. A newer tracking preview was queued for d9344b8699e50fcf91a3910f1446a6f2eaab15e7 and is not production.",
       "productionDeployed": "dpl_EvccSYnx7gLGVJBDERd5wa4rC8Cu is the current production deployment and reports afa2c955b3085319c5d53611567a1dca18f598f2. GitHub main is still the older baseline and must not be deployed over it."
     },
-    "releaseStatus": "Live site serves the recovered commit. GitHub main remains the older baseline and is not the live source."
+    "releaseStatus": "Live site serves the recovered commit. GitHub main remains the older baseline and is not the live source. Not re-verified on 2 November 2026 by the toolkit release; see docs/CURRENT_HANDOVER.md."
   },
   "webApp": {
     "repository": "afair86/iron-compass-ai",
@@ -40,7 +40,7 @@
     "vercelProject": "frontend",
     "vercelProjectId": "prj_kru7tmL5GZJTdtCuOUpO6IpyjtAc",
     "productionBranch": "main",
-    "productionDeployment": "dpl_A8yf4ZxVJeGM1gMC5vUwM7MPM6gr",
+    "productionDeployment": "dpl_CGUvEustNjeMANYm7iA1Gc1PDHch",
     "productionReportedCommit": null,
     "productionSourceKind": "cli",
     "productionUrl": "https://ironcompassai.com/app",
@@ -48,27 +48,33 @@
     "gitRepository": "afair86/iron-compass-ai",
     "productionGitBuilds": "ignored until the owner approves a production deployment",
     "states": {
-      "localUnpushed": "A separate local checkout is on collab/codex-cursor-launch-audit with uncommitted edits. Those edits are not in this branch and were not pushed.",
+      "localUnpushed": "The live web app is built from a local snapshot folder, not a pushed commit. Its pre-release source is backed up in the shared ChatGPT project checkpoints/2026-11-02-toolkits/web-snapshot-backup.",
       "pushed": "origin/main is 445389d2e232c1b02c6deb1f8cf83101431dcdbe. The habit and onboarding draft remains a separate pull request. This tracking branch is not merged.",
-      "testsPassed": "Source-identity tests passed locally, 3 of 3. On 589fd46516b195d6290cd4fa89f0a47a7ad6464d, Source continuity succeeded and the existing CI workflow succeeded for its api and frontend jobs. The frontend job built the app. This is not full app QA.",
+      "testsPassed": "On 2 November 2026 the web snapshot passed 77 of 77 test suites and 924 of 924 tests, and its /app build passed.",
       "previewDeployed": "Ready preview dpl_7HYvA3X5vQoMCoDHm7YrgCzKqoqa of 589fd46516b195d6290cd4fa89f0a47a7ad6464d. Sign-in at https://frontend-git-sync-shared-source-a745c1-adams-projects-26d15070.vercel.app/auth loaded, with CSS and JavaScript returning HTTP 200. The script calls https://api.ironcompassai.com. /app/source-version.json reports that commit, sourceKind vercel-git-metadata, worktreeDirty true, and exactCommitBuild false. No sign-in was submitted.",
-      "productionDeployed": "dpl_A8yf4ZxVJeGM1gMC5vUwM7MPM6gr is the current production deployment. It has no Git commit. An older production deployment, dpl_29TjfqsRDUtBBKmGDKSmN2j3wegY, is not the current one."
+      "productionDeployed": "dpl_CGUvEustNjeMANYm7iA1Gc1PDHch is production since 2 November 2026. https://ironcompassai.com/app/auth and /app/tools serve assets/index-4fb4fe9f.js, which calls https://api.ironcompassai.com."
     },
-    "releaseStatus": "The existing frontend project is connected to the app repository at the repository root. Production is still the earlier command-line deployment, and its commit is unknown. Production Git builds are ignored so this connection does not replace the live web app."
+    "releaseStatus": "Production is a command-line deployment of the toolkit release from the local web snapshot. Its commit is not reported. Production Git builds remain ignored.",
+    "productionSource": "Local web snapshot webapp-account-recovery-20261030 with the toolkit release ported in (no Git commit). Ported from app commit 683ed3923a2bbf2c9de34cdf3de69861705f1c9e.",
+    "previousProductionDeployment": "frontend-efcikfa5z-adams-projects-26d15070.vercel.app (rollback target)"
   },
   "api": {
     "repository": "afair86/iron-compass-ai",
     "directory": "apps/api",
     "url": "https://api.ironcompassai.com",
-    "productionReportedCommit": null,
-    "healthCheck": "https://api.ironcompassai.com/health returned HTTP 200 on 29 October 2026. That does not identify the deployed commit.",
-    "releaseStatus": "API production commit remains unknown."
+    "productionReportedCommit": "1cadad9e7be912b705159ec2955cb819ca8d0fa7",
+    "healthCheck": "https://api.ironcompassai.com/health returned HTTP 200 on 2 November 2026 after the Railway deployment of 1cadad9e. Health does not report the commit; Railway reported success for that exact commit through GitHub deployment 7485904037.",
+    "releaseStatus": "main fast-forwarded from c683da34 to 1cadad9e on 2 November 2026. No migration. IC_COACHING_MODEL_ELITE is not set, so Elite uses the same coaching model as Core."
   },
   "nativeApps": {
     "repository": "afair86/iron-compass-ai",
     "directory": "frontend",
     "installedBuild": null,
     "installedCommit": null,
-    "releaseStatus": "Installed build and commit are unknown. A website or web-app deployment does not update an installed phone app."
+    "releaseStatus": "Build 51 uploaded to TestFlight on 2 November 2026. Apple processing, installation and phone checks are not verified. App Store submission has not been made. Installed build and commit remain unknown.",
+    "latestTestflightBuild": 51,
+    "latestTestflightCommit": "683ed3923a2bbf2c9de34cdf3de69861705f1c9e",
+    "latestTestflightBranch": "codex/release-privacy-native-20261030",
+    "latestTestflightRun": "https://github.com/afair86/iron-compass-ai/actions/runs/41403983888"
   }
 }
