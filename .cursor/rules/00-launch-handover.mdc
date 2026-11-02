@@ -6,10 +6,11 @@ alwaysApply: true
 # Shared launch handover
 
 For Iron Compass launch and app/website integration work, automatically read
-`C:/Users/adamf/.codex/.chatgpt-projects/g-p-6ac72dbaf0ac81918f6d28d7785c40c3/LAUNCH-HANDOFF.txt`
-at the start of a task and after switching branches/checkouts. Follow its linked
-current integration checklist and verified status when relevant. Do not repeat
-full historical audits. Repository facts and newer human instructions take
+`SOURCE_OF_TRUTH.md` and `docs/CURRENT_HANDOVER.md` at the start of a task and
+after switching branches/checkouts. These tracked files are the shared checkpoint
+for Cursor, ChatGPT/Codex and other tools. Preserve any newer local checkpoint;
+bring relevant facts into the repository without copying private data. Follow
+linked integration checks. Repository facts and newer human instructions take
 precedence over stale checkpoint claims.
 
 Before editing a repository, inspect HEAD and dirty state and read applicable
