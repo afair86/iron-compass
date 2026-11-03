@@ -86,10 +86,10 @@ export default function ContactPage() {
           {formDeliveryAvailable ? <ContactForm /> : (
             <div className="space-y-3">
               <a className="ic-btn-primary" href="mailto:adam.fairclough86@gmail.com">
-                Email support
+                Email us
               </a>
               <p className="ic-section-copy ic-section-copy--muted text-sm">
-                Include the email used for your Iron Compass account. Do not send passwords or payment-card details.
+                adam.fairclough86@gmail.com. Include the email used for your Iron Compass account. Do not send passwords or payment-card details.
               </p>
             </div>
           )}
