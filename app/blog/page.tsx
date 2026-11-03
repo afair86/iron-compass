@@ -126,9 +126,7 @@ export default function BlogPage() {
                   <Link href={`/blog/${feature.slug}`} className="ic-btn-primary text-[0.62rem]">
                     Read Article
                   </Link>
-                  <Link href="/domains" className="ic-btn-ghost text-[0.6rem]">
-                    See the Domains
-                  </Link>
+  
                 </div>
               </div>
               <div className="ic-panel-stoic p-5 space-y-4">

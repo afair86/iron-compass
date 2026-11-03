@@ -89,11 +89,7 @@ export default function StartPage() {
           <p className="ic-section-copy ic-section-copy--muted">
             No more drifting. Commit to the process, execute daily, and let the data prove your climb. Your compass is forged in action.
           </p>
-          <div className="pt-2">
-            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
-              Explore the domains
-            </Link>
-          </div>
+
         </section>
 
         <section className="ic-panel-outline ic-align-center space-y-4">

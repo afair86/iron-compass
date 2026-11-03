@@ -30,6 +30,7 @@ const responseStandards = [
 ];
 
 export default function ContactPage() {
+  const formDeliveryAvailable = Boolean(process.env.CONTACT_WEBHOOK_URL?.trim());
   return (
     <PageShell>
       <PageContainer>
@@ -82,7 +83,16 @@ export default function ContactPage() {
               Send a short note and we will answer by email.
             </p>
           </div>
-          <ContactForm />
+          {formDeliveryAvailable ? <ContactForm /> : (
+            <div className="space-y-3">
+              <a className="ic-btn-primary" href="mailto:adam.fairclough86@gmail.com">
+                Email support
+              </a>
+              <p className="ic-section-copy ic-section-copy--muted text-sm">
+                Include the email used for your Iron Compass account. Do not send passwords or payment-card details.
+              </p>
+            </div>
+          )}
         </SectionShell>
       </PageContainer>
     </PageShell>

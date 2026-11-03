@@ -68,20 +68,7 @@ export default function AboutPage() {
           </ul>
         </SectionShell>
 
-        <SectionShell variant="outline" className="space-y-4">
-          <h2 className="ic-heading-2">Ready to see it in motion?</h2>
-          <p className="ic-section-copy ic-section-copy--muted max-w-2xl mx-auto">
-            Browse the ten life domains or head straight to the app. The standards are the same across every route.
-          </p>
-          <div className="ic-cta-row justify-center">
-            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
-              View Domains
-            </Link>
-            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
-              Read the Journal
-            </Link>
-          </div>
-        </SectionShell>
+
       </PageContainer>
     </PageShell>
   );

@@ -16,6 +16,7 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const isHomepage = pathname === "/";
 
   useEffect(() => {
     setOpen(false);
@@ -52,9 +53,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a href="/app" className="ic-open-app">
+        {!isHomepage && <a href="/app" className="ic-open-app">
           Open app
-        </a>
+        </a>}
 
         <button
           type="button"
@@ -83,14 +84,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <div className="ic-mobile-nav-cta">
-            <a href="/app" className="ic-btn-ghost text-xs w-full text-center">
-              Open web app
-            </a>
-            <Link href="/domains" className="ic-btn-ghost text-xs w-full text-center">
-              Explore Domains
-            </Link>
-          </div>
+
         </div>
       </div>
     </header>

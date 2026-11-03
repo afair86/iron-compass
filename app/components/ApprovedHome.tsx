@@ -25,13 +25,13 @@ export default function ApprovedHome() {
           </p>
           <p>The ten domains are where responsibility lives. The journal shows how that looks in a real week.</p>
           <div className="ic-cta-row">
-            <a className="ic-btn-primary" href="/app">
+            <a className={[styles.action, styles.actionPrimary].join(" ")} href="/app">
               Open web app
             </a>
-            <Link className="ic-btn-ghost" href="/domains">
+            <Link className={[styles.action, styles.actionExplore].join(" ")} href="/domains">
               Explore the domains <span aria-hidden="true">→</span>
             </Link>
-            <Link className="ic-btn-ghost" href="/blog">
+            <Link className={[styles.action, styles.actionRead].join(" ")} href="/blog">
               Read the journal
             </Link>
           </div>
@@ -84,7 +84,7 @@ export default function ApprovedHome() {
           No manifestos. No motivation loops. Just clear domains, practical standards, and the work of
           becoming reliable.
         </p>
-        <Link className="ic-btn-ghost" href="/about">
+        <Link className={styles.aboutLink} href="/about">
           About the system <span aria-hidden="true">→</span>
         </Link>
       </section>

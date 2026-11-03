@@ -1,0 +1,11 @@
+/* Preview-aligned website colour roles. */
+@media screen {
+html body main :is(a.ic-btn-ghost,a.ic-pill-link) { color:var(--ic-steel);border-color:var(--ic-steel);background:transparent; }
+html body main :is(a.ic-btn-ghost,a.ic-pill-link):hover { color:var(--ic-steel);border-color:var(--ic-steel);background:rgba(158,180,200,.12); }
+html body main :is(a.ic-btn-primary,a.ic-neon-cta)[href^="/domains"],html body main :is(a.ic-btn-primary,a.ic-neon-cta)[href^="/about"] { color:var(--ic-steel);border-color:var(--ic-steel);background:transparent; }
+html body main :is(a.ic-btn-primary,a.ic-btn-ghost,a.ic-pill-link,a.ic-neon-cta)[href^="/blog"],html body main :is(a.ic-btn-primary,a.ic-btn-ghost,a.ic-pill-link)[href^="/start"],html body main :is(a.ic-btn-primary,a.ic-btn-ghost,a.ic-pill-link)[href^="/pricing"] { color:var(--ic-amber);border-color:var(--ic-amber);background:transparent; }
+html body main :is(a.ic-btn-primary,a.ic-btn-ghost,a.ic-pill-link,a.ic-neon-cta)[href^="/blog"]:hover,html body main :is(a.ic-btn-primary,a.ic-btn-ghost,a.ic-pill-link)[href^="/start"]:hover,html body main :is(a.ic-btn-primary,a.ic-btn-ghost,a.ic-pill-link)[href^="/pricing"]:hover { color:var(--ic-amber);background:rgba(255,176,32,.10); }
+html body main :is(.ic-btn-primary,.ic-neon-cta)[href^="/app"],html body .ic-open-app { color:var(--ic-on-action);background:var(--ic-cta-red);border-color:var(--ic-cta-red); }
+html body main :is(.ic-btn-primary,.ic-btn-ghost,.ic-pill-link,.ic-neon-cta,.ic-open-app) { min-height:44px; }
+html body main :is(.ic-btn-primary,.ic-btn-ghost,.ic-pill-link,.ic-neon-cta,.ic-open-app):focus-visible { outline:2px solid var(--ic-text-heading);outline-offset:4px; }
+}
