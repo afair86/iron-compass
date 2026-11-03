@@ -13,18 +13,18 @@ const PLANS = [
   {
     name: "Free",
     price: "A$0",
-    detail: "Habits, One Move, a basic Journal, and one Challenge. No intelligence layer.",
+    detail: "Habits, next action, a journal, your Standard and the toolkit guides. No interactive tools and no AI.",
   },
   {
     name: "Core",
     price: "A$19.99",
-    detail: "A$199 a year. 7-day trial, card required. The full operating system: standards, habits, Journal, Ledger, reviews, and Ask.",
+    detail: "A$199 a year. 7-day trial on the website, card required. AI coaching, AI journal reviews and five tools: Today’s preparation, Weekly awareness, Weekly review, Identity snapshot and Forecast.",
     highlight: "Most Popular",
   },
   {
     name: "Elite",
     price: "A$34.99",
-    detail: "A$349 a year. Everything in Core, plus Strategy, Prediction, and the Annual Review.",
+    detail: "A$349 a year. Everything in Core, plus all eight tools, adding 90-day strategy, Comeback protocol and 90-day review. Our most advanced AI coaching.",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function PricingPage() {
           <p className="ic-eyebrow">Plans</p>
           <h1 className="ic-section-title">Free, Core, and Elite</h1>
           <p className="ic-section-copy">
-            Core is the complete product. Elite adds depth. Cancel any time. Your history stays if you move down.
+            Core adds AI coaching and five tools. Elite adds all eight tools. Cancel any time. Your history stays if you move down. On iPhone, Apple shows the App Store price.
           </p>
         </section>
         <div className="ic-board-plans">
