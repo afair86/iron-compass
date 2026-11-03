@@ -67,7 +67,7 @@
 }
 
 .phone {
-  align-self: end;
+  align-self: start;
   scroll-snap-align: start;
 }
 
