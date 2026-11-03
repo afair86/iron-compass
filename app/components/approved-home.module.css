@@ -444,3 +444,5 @@
     padding: 1rem;
   }
 }
+
+.heroCopy > p.appLine { max-width: none; color: var(--ic-subtitle, #e7ba72); font-size: 1rem; }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { domainCards } from "@/lib/domains";
 import { domainPhotoAlts, domainPhotos, pagePhotoAlts, philosophyPhoto } from "@/lib/sitePhotos";
+import HomeAppSection from "./HomeAppSection";
 import PhotoFrame from "./brand/PhotoFrame";
 import frameStyles from "./brand/photo-frame.module.css";
 import styles from "./approved-home.module.css";
@@ -24,6 +25,9 @@ export default function ApprovedHome() {
             shape their lives.
           </p>
           <p>The ten domains are where responsibility lives. The journal shows how that looks in a real week.</p>
+          <p className={styles.appLine}>
+            The Iron Compass app turns it into a daily practice: a few habits, a journal and one next action.
+          </p>
           <div className="ic-cta-pair">
             <a className="ic-btn-primary" href="/app/auth">
               Start free
@@ -35,6 +39,8 @@ export default function ApprovedHome() {
         </div>
       </section>
 
+      <HomeAppSection links={{ today: "/app", habits: "/domains", journal: "/pricing", strategy: "/pricing" }} />
+
       <section className={`${styles.block} ic-band`} id="domains">
         <h2>Ten life domains</h2>
         <p className={styles.sectionNote}>Where responsibility lives.</p>
@@ -43,6 +49,7 @@ export default function ApprovedHome() {
           after a miss, grief, and what remains. Awareness, pressure, and strategy are how the system helps. They
           are not extra domains.
         </p>
+        <p className={styles.lead}>Each domain has its own habits and a step-by-step guide in the app.</p>
         <div className={styles.domainGrid}>
           {domainCards.map((domain) => (
             <Link
