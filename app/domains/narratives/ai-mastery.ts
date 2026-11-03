@@ -2,6 +2,7 @@ import type { DomainNarrative } from "./types";
 
 export const aiMasteryNarrative: DomainNarrative = {
   slug: "ai-mastery",
+  listenAudio: false,
   h1Title: "AI as a tool",
   heroDescription:
     "A tool is useful when it gives you back an hour you can spend on a person, a walk, or a piece of work that needed your judgement.",

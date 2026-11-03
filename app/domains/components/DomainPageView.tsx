@@ -38,7 +38,7 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
       ? { src: aiResourcePhoto, alt: "A real desk where a man uses a tool and keeps the decision" }
       : { src: domainPhotos[slug], alt: domainPhotoAlts[slug] };
   const audioAbs = path.join(process.cwd(), "public", "audio", "domains", `${slug}.mp3`);
-  const audioSrc = fs.existsSync(audioAbs) ? `/audio/domains/${slug}.mp3` : undefined;
+  const audioSrc = narrative.listenAudio !== false && fs.existsSync(audioAbs) ? `/audio/domains/${slug}.mp3` : undefined;
   const lead = narrative.sections[0];
   const rest = narrative.sections.slice(1);
   const sidePhoto = lead?.image ?? photo;

@@ -26,4 +26,6 @@ export type DomainNarrative = {
   sections: DomainNarrativeSection[];
   practice: DomainPractice;
   further: string[];
+  /** Hides Listen while the recorded narration no longer matches the page text. */
+  listenAudio?: false;
 };
