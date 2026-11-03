@@ -90,9 +90,9 @@ export const aiMasteryHubLinks: TopicHubLink[] = [
     description: "Intent, prompt, review — a human-first routine that sticks.",
   },
   {
-    title: "How AI Helps Men Stay Disciplined",
-    href: "/blog/how-ai-can-help-men-become-more-disciplined",
-    description: "AI as planner and accountability — not a replacement for standards.",
+    title: "Your First Useful AI Assistant",
+    href: "/blog/first-useful-ai-assistant",
+    description: "Turn a messy task into a clear plan, then check the work yourself.",
   },
   {
     title: "Learning Loop for AI Personal Development",

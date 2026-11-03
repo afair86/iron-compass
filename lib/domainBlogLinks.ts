@@ -115,9 +115,9 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
       description: "Map your day, automate the grunt work, keep judgment in command.",
     },
     {
-      title: "How AI Helps Men Stay Disciplined",
-      href: "/blog/how-ai-can-help-men-become-more-disciplined",
-      description: "AI as planner and accountability — not a replacement for standards.",
+      title: "Your First Useful AI Assistant",
+      href: "/blog/first-useful-ai-assistant",
+      description: "Turn a messy task into a clear plan, then check the work yourself.",
     },
   ],
   "grief-honour": [

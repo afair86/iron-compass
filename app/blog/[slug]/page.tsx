@@ -16,8 +16,16 @@ import { markdownToSpeechText } from "@/lib/speechText";
 import { isPracticalToolId } from "@/lib/practicalToolIds";
 import fs from "fs";
 import path from "path";
+import { Children, isValidElement, type ComponentProps } from "react";
 
 const PRACTICAL_TOOL_MARKER = "<!-- PRACTICAL_TOOL -->";
+
+/** A markdown image on its own line arrives wrapped in <p>, and its <figure> cannot sit inside <p>. */
+function MdxParagraph({ children, ...props }: ComponentProps<"p">) {
+  const items = Children.toArray(children);
+  const imageOnly = items.length === 1 && isValidElement<{ src?: unknown }>(items[0]) && Boolean(items[0].props.src);
+  return imageOnly ? <>{children}</> : <p {...props}>{children}</p>;
+}
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -245,6 +253,7 @@ export default async function BlogPostPage({ params }: Props) {
                 components={{
                   Link,
                   h1: (props) => <h2 {...props} />,
+                  p: MdxParagraph,
                   img: ({ src, alt }) => (src ? <PhotoFrame src={src} alt={alt || ""} /> : null),
                 }}
               />
@@ -263,6 +272,7 @@ export default async function BlogPostPage({ params }: Props) {
                   components={{
                     Link,
                     h1: (props) => <h2 {...props} />,
+                    p: MdxParagraph,
                     img: ({ src, alt }) => (src ? <PhotoFrame src={src} alt={alt || ""} /> : null),
                   }}
                 />
