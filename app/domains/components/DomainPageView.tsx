@@ -10,6 +10,7 @@ import PhotoFrame from "@/app/components/brand/PhotoFrame";
 import { domainBlogLinks } from "@/lib/domainBlogLinks";
 import { aiResourcePhoto, domainPhotoAlts, domainPhotos } from "@/lib/sitePhotos";
 import styles from "./domain-story.module.css";
+import DomainAppSection from "./DomainAppSection";
 
 type DomainPageViewProps = {
   narrative: DomainNarrative;
@@ -126,6 +127,8 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
             <p key={paragraph.slice(0, 48)}>{paragraph}</p>
           ))}
         </section>
+
+        <DomainAppSection slug={slug} title={narrative.h1Title} />
 
         <section className={styles.block}>
           <h2>Keep going</h2>
