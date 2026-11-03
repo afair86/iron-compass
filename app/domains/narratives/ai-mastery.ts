@@ -84,7 +84,7 @@ export const aiMasteryNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "Ask Iron Compass can turn a messy task into the next few steps without taking the decision away from you. The app is at ironcompassai.com/app. You still sign the decision.",
+    "Today’s preparation in the app can turn a messy day into one result and a first move, and the AI coach on Core and Elite gives you options without taking the decision away from you. The app is at ironcompassai.com/app. You still sign the decision.",
     "The journal already has a plain starting point: how to get a first useful assistant habit without handing over your judgement. Read it after you have named the one dull task. The task is the test. If the tool does not make that task shorter, close it.",
   ],
 };
