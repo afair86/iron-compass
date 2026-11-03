@@ -112,10 +112,10 @@ export default function BlogPage() {
         {feature && (
           <SectionShell variant="contrast" className="space-y-5 md:space-y-6">
             <HeadingStack eyebrow="Featured Play" title="Read This First" accent="gold" className="space-y-2" />
-            <article className="grid gap-6 max-w-3xl mx-auto">
+            <article className="grid gap-8 md:grid-cols-2 md:items-center">
+              <PostThumb post={feature} />
               <div className="space-y-4">
-                <PostThumb post={feature} />
-                <div className="flex flex-wrap items-center justify-center gap-3 text-[0.68rem] uppercase tracking-[0.28em]">
+                <div className="flex flex-wrap items-center gap-3 text-[0.68rem] uppercase tracking-[0.28em]">
                   <CategoryBadge category={feature.category} />
                   <span className="h-px w-6 bg-white/10" aria-hidden="true" />
                   <time dateTime={feature.date} className="text-[var(--ic-text-muted)]">{formatDate(feature.date)}</time>
@@ -123,31 +123,19 @@ export default function BlogPage() {
                 <h2 className="ic-heading-2">{feature.title}</h2>
                 <p className="ic-section-copy ic-section-copy--muted">{getSummary(feature)}</p>
                 <div className="ic-cta-row">
-                  <Link href={`/blog/${feature.slug}`} className="ic-btn-primary text-[0.62rem]">
-                    Read Article
+                  <Link href={`/blog/${feature.slug}`} className="ic-btn-primary">
+                    Read the article
                   </Link>
-  
                 </div>
-              </div>
-              <div className="ic-panel-stoic p-5 space-y-4">
-                <p className="ic-section-copy text-[0.9rem]">What you get</p>
-                <ul className="list-disc list-inside ic-section-copy ic-section-copy--muted space-y-1">
-                  <li>Why this matters now</li>
-                  <li>Moves to run this week</li>
-                  <li>Where it fits in the ten life domains</li>
-                </ul>
-                <Link href={`/blog/${feature.slug}`} className="ic-btn-ghost text-[0.6rem]">
-                  Jump to the play
-                </Link>
               </div>
             </article>
           </SectionShell>
         )}
 
         {latest.length > 0 && (
-          <SectionShell variant="warm" className="space-y-6">
-            <HeadingStack eyebrow="Latest Dispatches" title="Fresh Intelligence" accent="teal" />
-            <div className="grid gap-6 md:grid-cols-2">
+          <SectionShell variant="warm" className="space-y-6 ic-band">
+            <HeadingStack eyebrow="Latest Dispatches" title="Latest articles" accent="teal" />
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {latest.map((post) => (
                 <article key={post.slug} className="ic-stoic-card space-y-4 flex flex-col h-full">
                   <PostThumb post={post} />
@@ -169,7 +157,7 @@ export default function BlogPage() {
 
         {archive.length > 0 && (
           <SectionShell variant="panel" className="space-y-6">
-            <HeadingStack eyebrow="Archive" title="Every Dispatch" />
+            <HeadingStack eyebrow="Archive" title="All articles" />
             <div className="grid gap-4 md:grid-cols-2">
               {archive.map((post) => (
                 <article

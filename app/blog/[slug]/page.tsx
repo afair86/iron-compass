@@ -11,7 +11,7 @@ import PhotoFrame from "@/app/components/brand/PhotoFrame";
 import { articlePhoto } from "@/lib/sitePhotos";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
+import { absoluteUrl, DEFAULT_OG_IMAGE, productAppHref, SITE_NAME, SITE_URL } from "@/lib/site";
 import { markdownToSpeechText } from "@/lib/speechText";
 import { isPracticalToolId } from "@/lib/practicalToolIds";
 import fs from "fs";
@@ -287,9 +287,9 @@ export default async function BlogPostPage({ params }: Props) {
                 <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
                   Back to Journal
                 </Link>
-                <Link href="/start" className="ic-btn-primary text-[0.62rem]">
-                  Start the Program
-                </Link>
+                <a href={`${productAppHref()}/auth`} className="ic-btn-primary text-[0.62rem]">
+                  Start free
+                </a>
               </div>
             </footer>
           </div>

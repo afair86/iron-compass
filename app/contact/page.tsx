@@ -41,17 +41,17 @@ export default function ContactPage() {
             Iron Compass responds with the same discipline we demand from members. Pick the channel that matches your mission, send a precise brief,
             and expect a direct answer within two business days.
           </p>
-          <div className="ic-cta-row pt-2">
-            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
+          <div className="ic-cta-pair">
+            <Link href="/domains" className="ic-btn-primary">
               Read the domains
             </Link>
-            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
+            <Link href="/blog" className="ic-btn-ghost">
               Read the journal
             </Link>
           </div>
         </SectionShell>
 
-        <SectionShell variant="panel" className="space-y-6">
+        <SectionShell variant="panel" className="space-y-6 ic-band">
           <HeadingStack eyebrow="Pick the right lane" title="Routes to reach us" />
           <div className="grid gap-6 md:grid-cols-2 items-stretch justify-items-center max-w-4xl mx-auto">
             {channels.map((channel) => (

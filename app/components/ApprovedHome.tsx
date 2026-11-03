@@ -24,21 +24,18 @@ export default function ApprovedHome() {
             shape their lives.
           </p>
           <p>The ten domains are where responsibility lives. The journal shows how that looks in a real week.</p>
-          <div className="ic-cta-row">
-            <a className={[styles.action, styles.actionPrimary].join(" ")} href="/app">
-              Open web app
+          <div className="ic-cta-pair">
+            <a className="ic-btn-primary" href="/app/auth">
+              Start free
             </a>
-            <Link className={[styles.action, styles.actionExplore].join(" ")} href="/domains">
-              Explore the domains <span aria-hidden="true">→</span>
-            </Link>
-            <Link className={[styles.action, styles.actionRead].join(" ")} href="/blog">
-              Read the journal
+            <Link className="ic-btn-ghost" href="/pricing">
+              See plans
             </Link>
           </div>
         </div>
       </section>
 
-      <section className={styles.block} id="domains">
+      <section className={`${styles.block} ic-band`} id="domains">
         <h2>Ten life domains</h2>
         <p className={styles.sectionNote}>Where responsibility lives.</p>
         <p className={styles.lead}>

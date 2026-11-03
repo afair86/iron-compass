@@ -1,5 +1,7 @@
 import Link from "next/link";
 import PageShell from "../components/PageShell";
+import PhotoFrame from "../components/brand/PhotoFrame";
+import { pagePeoplePhotoAlts, pagePeoplePhotos } from "@/lib/sitePhotos";
 import { buildPageMetadata, productAppHref } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
@@ -35,12 +37,14 @@ export default function PricingPage() {
     <PageShell>
       <div className="ic-content-stack max-w-3xl">
         <section className="ic-panel ic-editorial-center space-y-4">
-          <p className="ic-eyebrow">Plans</p>
+          <PhotoFrame src={pagePeoplePhotos.pricing} alt={pagePeoplePhotoAlts.pricing} showMark={false} />
           <h1 className="ic-section-title">Free, Core, and Elite</h1>
+          <p className="ic-display-subtitle">Start free. Add the tools when your week needs them.</p>
           <p className="ic-section-copy">
             Core adds AI coaching and five tools. Elite adds all eight tools. Cancel any time. Your history stays if you move down. On iPhone, Apple shows the App Store price.
           </p>
         </section>
+        <section className="ic-band ic-editorial-center">
         <div className="ic-board-plans">
         {PLANS.map((plan) => (
           <section key={plan.name} className={`ic-board-plan${plan.highlight ? " ic-board-plan--core" : ""} space-y-3`}>
@@ -51,9 +55,15 @@ export default function PricingPage() {
           </section>
         ))}
         </div>
-        <Link href={`${app}/auth`} className="ic-btn-primary">
-          Start
-        </Link>
+        <div className="ic-cta-pair">
+          <a href={`${app}/auth`} className="ic-btn-primary">
+            Start free
+          </a>
+          <Link href="/domains" className="ic-btn-ghost">
+            Explore the domains
+          </Link>
+        </div>
+        </section>
       </div>
     </PageShell>
   );

@@ -87,7 +87,7 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
           </div>
         </section>
 
-        <section className={styles.practice}>
+        <section className={`${styles.practice} ic-band`}>
           <div>
             <h2>{narrative.practice.heading}</h2>
             <p className={styles.copy}>{narrative.practice.lead}</p>

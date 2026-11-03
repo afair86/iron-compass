@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { domainNavLinks } from "@/lib/domains";
+import { productAppHref } from "@/lib/site";
 
 const navSections = [
   {
@@ -25,6 +26,20 @@ export default function Footer() {
   return (
     <footer className="ic-footer-shell text-sm">
       <div className="ic-footer-inner space-y-12">
+        <div className="ic-footer-cta">
+          <p className="ic-footer-cta__title">Plan the day. Keep your word. See the record.</p>
+          <p className="ic-footer-cta__line">
+            Start free with habits, a journal and your Standard. Add the planning tools and the AI coach when you want them.
+          </p>
+          <div className="ic-cta-pair">
+            <a href={`${productAppHref()}/auth`} className="ic-btn-primary">
+              Start free
+            </a>
+            <Link href="/pricing" className="ic-btn-ghost">
+              See plans
+            </Link>
+          </div>
+        </div>
         <div className="ic-footer-lede">
           <div className="space-y-3">
             <Link href="/" className="ic-logo-lockup" aria-label="Iron Compass AI">

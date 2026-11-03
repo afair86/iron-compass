@@ -36,17 +36,17 @@ export default function AboutPage() {
             Iron Compass is a life system for men who want discipline, purpose, strength, and integrity without noise. One map, ten life domains, and
             standards you can use this week.
           </p>
-          <div className="ic-cta-row pt-2">
-            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
-              Explore the Domains
+          <div className="ic-cta-pair">
+            <Link href="/domains" className="ic-btn-primary">
+              Explore the domains
             </Link>
-            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
+            <Link href="/blog" className="ic-btn-ghost">
               Read the journal
             </Link>
           </div>
         </SectionShell>
 
-        <SectionShell variant="panel" className="space-y-6">
+        <SectionShell variant="panel" className="space-y-6 ic-band">
           <HeadingStack eyebrow="Operating Principles" title="What makes Iron Compass different" />
           <ul className="space-y-3 text-sm mx-auto max-w-3xl">
             {pillars.map((item) => (
