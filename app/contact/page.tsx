@@ -77,7 +77,7 @@ export default function ContactPage() {
         </SectionShell>
 
         <SectionShell variant="panel" className="flex flex-col gap-6 ic-align-center">
-          <div className="space-y-2">
+          <div className="space-y-2 ic-editorial-center">
             <h2 className="ic-heading-2">Write to us.</h2>
             <p className="ic-section-copy ic-section-copy--muted text-sm">
               Send a short note and we will answer by email.

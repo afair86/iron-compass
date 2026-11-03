@@ -53,9 +53,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {!isHomepage && <a href="/app" className="ic-open-app">
+        <a href="/app" className={`ic-open-app${isHomepage ? " ic-open-app--home" : ""}`}>
           Open app
-        </a>}
+        </a>
 
         <button
           type="button"

@@ -5,11 +5,22 @@ html:root {
 }
 @media screen {
   html body main #home .ic-cta-row { justify-content: center; }
-  html body main :is(#domains,#philosophy) > :is(h2,p) {
+  html body main #domains > :is(h2,p),
+  html body main #philosophy > h2 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
   }
+  html body main #philosophy > p { text-align: left; }
+  /* Shared page header on domain pages and articles: centred like every other page header. */
+  html body main.ic-page-shell .ic-board-hero__copy > :is(h1,p) {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  html body main.ic-page-shell .ic-board-hero__copy > .ic-dispatch-meta { justify-content: center; }
+  html body main.ic-page-shell .ic-board-hero__copy > h1::after,
+  html body main.ic-page-shell .ic-board-hero__copy .ic-stoic-rule { margin-inline: auto; }
   html body main #domains > p:first-of-type { color: var(--ic-subtitle); }
   html body main #home > div > p { text-align: center; }
   html body main.ic-page-shell :is(h1.ic-page-title, h1.ic-section-title, .ic-heading-2,
@@ -54,6 +65,7 @@ html:root {
   }
   html body main.ic-page-shell .ic-editorial-center > h1 { color: var(--ic-title); }
   html body main #domains a h3 { color: var(--ic-subtitle); }
+  @media (min-width: 900px) { html body main #domains a h3 { color: var(--ic-text-heading); } }
   html body main :is(a.ic-btn-primary, a.ic-neon-cta):hover { background: #ff6262; }
   html body main :is(a.ic-btn-ghost, a.ic-pill-link) {
     color: #ff7777;

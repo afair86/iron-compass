@@ -8,7 +8,7 @@
   min-height: 300px;
   border-radius: 18px;
   overflow: hidden;
-  background: #02060d;
+  background: #0b0f14;
 }
 
 .hero > figure {
@@ -28,7 +28,7 @@
   min-height: 300px;
   max-width: 34rem;
   padding: 1.5rem;
-  background: linear-gradient(90deg, rgba(2, 6, 13, 0.88) 0%, rgba(2, 6, 13, 0.55) 62%, rgba(2, 6, 13, 0.05) 100%);
+  background: linear-gradient(90deg, rgba(11, 15, 20, 0.88) 0%, rgba(11, 15, 20, 0.55) 62%, rgba(11, 15, 20, 0.05) 100%);
   text-align: left;
 }
 
@@ -193,7 +193,7 @@
   }
 
   .heroCopy {
-    background: linear-gradient(180deg, rgba(2, 6, 13, 0.15), rgba(2, 6, 13, 0.88));
+    background: linear-gradient(180deg, rgba(11, 15, 20, 0.15), rgba(11, 15, 20, 0.88));
     justify-content: flex-end;
   }
 }

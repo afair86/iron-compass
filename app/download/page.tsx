@@ -19,7 +19,7 @@ export default function DownloadPage() {
   return (
     <PageShell>
       <div className="ic-content-stack max-w-3xl">
-        <section className="ic-panel ic-align-center space-y-6">
+        <section className="ic-panel ic-align-center ic-editorial-center space-y-6">
           <p className="ic-eyebrow">Iron Compass App</p>
           <h1 className="ic-section-title">Download Iron Compass AI</h1>
           <p className="ic-section-copy ic-section-copy--muted text-base max-w-2xl mx-auto">
@@ -29,7 +29,7 @@ export default function DownloadPage() {
         </section>
 
         {hasStoreLinks ? (
-          <section className="ic-panel-outline space-y-4 ic-align-center">
+          <section className="ic-panel-outline space-y-4 ic-align-center ic-editorial-center">
             <h2 className="ic-section-heading">Get the app</h2>
             <div className="ic-cta-row justify-center pt-2">
               {ios ? (
@@ -45,7 +45,7 @@ export default function DownloadPage() {
             </div>
           </section>
         ) : (
-          <section className="ic-panel-outline space-y-5 ic-align-center">
+          <section className="ic-panel-outline space-y-5 ic-align-center ic-editorial-center">
             <h2 className="ic-section-heading">Join the app waitlist</h2>
             <p className="ic-section-copy ic-section-copy--muted max-w-xl mx-auto">
               {subscribeReady
@@ -60,7 +60,7 @@ export default function DownloadPage() {
           </section>
         )}
 
-        <section className="ic-panel ic-align-center space-y-5">
+        <section className="ic-panel ic-align-center ic-editorial-center space-y-5">
           <h2 className="ic-section-heading">Read while you wait</h2>
           <p className="ic-section-copy ic-section-copy--muted max-w-xl mx-auto">
             Eight domains, practical exercises, and the journal. Nothing to install.

@@ -34,7 +34,7 @@ export default function PricingPage() {
   return (
     <PageShell>
       <div className="ic-content-stack max-w-3xl">
-        <section className="ic-panel space-y-4">
+        <section className="ic-panel ic-editorial-center space-y-4">
           <p className="ic-eyebrow">Plans</p>
           <h1 className="ic-section-title">Free, Core, and Elite</h1>
           <p className="ic-section-copy">

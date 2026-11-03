@@ -41,7 +41,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 45%, rgba(2, 6, 13, 0.88));
+  background: linear-gradient(180deg, transparent 45%, rgba(11, 15, 20, 0.88));
   pointer-events: none;
 }
 
@@ -63,7 +63,7 @@
   flex-direction: column;
   gap: 0.15rem;
   padding: 1.4rem 0.55rem 0.45rem;
-  background: linear-gradient(180deg, rgba(2, 6, 13, 0) 0%, rgba(2, 6, 13, 0.82) 62%);
+  background: linear-gradient(180deg, rgba(11, 15, 20, 0) 0%, rgba(11, 15, 20, 0.82) 62%);
   text-align: left;
 }
 

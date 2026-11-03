@@ -3,16 +3,16 @@
    progress. The website must not invent progress or imply a conversion promise. */
 html:root {
   color-scheme: dark;
-  --ic-bg: #02060d;
-  --ic-bg-alt: #02060d;
-  --ic-page-bg-alt: #02060d;
+  --ic-bg: #0b0f14;
+  --ic-bg-alt: #0b0f14;
+  --ic-page-bg-alt: #0b0f14;
   --ic-bg-radial-a: transparent;
   --ic-bg-radial-b: transparent;
-  --ic-surface: #080f18;
-  --ic-surface-mid: #080f18;
-  --ic-surface-card: #080f18;
-  --ic-card-bg: #080f18;
-  --ic-surface-alt: #101923;
+  --ic-surface: #131820;
+  --ic-surface-mid: #131820;
+  --ic-surface-card: #131820;
+  --ic-card-bg: #131820;
+  --ic-surface-alt: #1b212a;
   --ic-text-heading: #f5f7fb;
   --ic-text-main: #c7cfdd;
   --ic-text-muted: #8491a3;
@@ -23,7 +23,7 @@ html:root {
   --ic-cta-red: #ff3434;
   --ic-danger: #c51f2a;
   --ic-on-action: #02060d;
-  --ic-border: rgba(199, 207, 221, 0.16);
+  --ic-border: #262c35;
   --ic-border-strong: #607286;
   --ic-card-border: var(--ic-border);
   --ic-chip-border: var(--ic-border);

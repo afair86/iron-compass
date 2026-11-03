@@ -1,12 +1,12 @@
 /* Iron Compass board language. Shared by every public page. */
 
 .ic-board-page {
-  background: #02060d;
+  background: #0b0f14;
   color: #f5f7fb;
 }
 
 .ic-page-shell {
-  background: #02060d;
+  background: #0b0f14;
   overflow: visible;
 }
 
@@ -18,7 +18,7 @@
 .ic-panel-stoic,
 .ic-panel,
 .ic-panel-outline {
-  background: #080f18;
+  background: #131820;
   border: 1px solid var(--ic-border);
   border-radius: 14px;
   box-shadow: none;
@@ -29,8 +29,8 @@
 .ic-board-panel--hero,
 .ic-panel-stoic--hero {
   background:
-    linear-gradient(180deg, rgba(8, 15, 24, 0.2), #080f18 42%),
-    #080f18;
+    linear-gradient(180deg, rgba(19, 24, 32, 0.2), #131820 42%),
+    #131820;
   padding-top: 0;
   overflow: hidden;
 }
@@ -84,7 +84,7 @@ a.ic-btn-primary {
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--ic-border);
-  background: #080f18;
+  background: #131820;
 }
 
 .ic-board-hero__media {
@@ -92,7 +92,7 @@ a.ic-btn-primary {
   height: clamp(180px, 22vw, 280px);
   min-height: 0;
   overflow: hidden;
-  background: #02060d;
+  background: #0b0f14;
 }
 
 .ic-board-hero__media > * {
@@ -118,12 +118,12 @@ a.ic-btn-primary {
 }
 
 .ic-nav-shell {
-  background: rgba(2, 6, 13, 0.94);
+  background: rgba(11, 15, 20, 0.94);
   border-bottom: 1px solid var(--ic-border);
 }
 
 .ic-footer-shell {
-  background: #02060d;
+  background: #0b0f14;
   border-top: 1px solid var(--ic-border);
   color: #c7cfdd;
 }
@@ -134,7 +134,7 @@ a.ic-btn-primary {
 }
 
 .ic-board-plan {
-  background: #080f18;
+  background: #131820;
   border: 1px solid var(--ic-border);
   border-radius: 14px;
   padding: 1.2rem;

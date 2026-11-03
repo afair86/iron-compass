@@ -32,7 +32,7 @@ export default function StartPage() {
   return (
     <PageShell>
       <div className="ic-content-stack max-w-3xl">
-        <section className="ic-panel ic-align-center space-y-6">
+        <section className="ic-panel ic-align-center ic-editorial-center space-y-6">
           <h1 className="ic-section-title">Start Your Compass</h1>
           <p className="ic-section-copy ic-section-copy--muted text-base">
             This is the first step. Ground yourself, choose your focus, and move with disciplined intent—built for men in the US, Europe, and Australia.
@@ -45,7 +45,7 @@ export default function StartPage() {
         </section>
 
         <section className="ic-panel-outline space-y-4">
-          <header className="space-y-2 ic-align-center">
+          <header className="space-y-2 ic-align-center ic-editorial-center">
             <h2 className="ic-section-heading">Identity → Discipline → Purpose</h2>
           </header>
           <p className="ic-section-copy ic-section-copy--muted">
@@ -55,7 +55,7 @@ export default function StartPage() {
         </section>
 
         <section className="space-y-6 ic-align-center">
-          <header className="space-y-2 ic-align-center">
+          <header className="space-y-2 ic-align-center ic-editorial-center">
             <h2 className="ic-section-heading">Build Momentum Fast</h2>
           </header>
           <ol className="space-y-6">
@@ -72,7 +72,7 @@ export default function StartPage() {
         </section>
 
         <section className="ic-panel space-y-6 ic-align-center">
-          <header className="space-y-2 ic-align-center">
+          <header className="space-y-2 ic-align-center ic-editorial-center">
             <h2 className="ic-section-heading ic-align-center">Command Every Pillar</h2>
           </header>
           <div className="grid gap-4">
@@ -84,7 +84,7 @@ export default function StartPage() {
           </div>
         </section>
 
-        <section className="ic-panel ic-align-center space-y-4">
+        <section className="ic-panel ic-align-center ic-editorial-center space-y-4">
           <h2 className="ic-section-heading ic-align-center">Take Control Now</h2>
           <p className="ic-section-copy ic-section-copy--muted">
             No more drifting. Commit to the process, execute daily, and let the data prove your climb. Your compass is forged in action.

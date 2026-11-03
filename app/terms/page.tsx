@@ -78,7 +78,7 @@ export default function TermsPage() {
   return (
     <PageShell>
       <div className="ic-content-stack max-w-5xl">
-        <section className="ic-panel ic-align-center space-y-6">
+        <section className="ic-panel ic-align-center ic-editorial-center space-y-6">
           <h1 className="ic-section-title">Terms of Use</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Iron Compass AI is operated by HumanFirst Technologies, an Australian sole-trader business, ABN 96 226 474 355. Using the site means you
