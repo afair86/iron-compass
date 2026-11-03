@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FounderNote from "../components/FounderNote";
 import PageShell from "../components/PageShell";
 import PhotoFrame from "../components/brand/PhotoFrame";
 import { pagePhotoAlts, pagePhotos } from "@/lib/sitePhotos";
@@ -45,6 +46,8 @@ export default function AboutPage() {
             </Link>
           </div>
         </SectionShell>
+
+        <FounderNote variant="full" />
 
         <SectionShell variant="panel" className="space-y-6 ic-band">
           <HeadingStack eyebrow="Operating Principles" title="What makes Iron Compass different" />

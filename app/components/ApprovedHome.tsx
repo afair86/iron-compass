@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { domainCards } from "@/lib/domains";
 import { domainPhotoAlts, domainPhotos, pagePhotoAlts, philosophyPhoto } from "@/lib/sitePhotos";
+import FounderNote from "./FounderNote";
 import HomeAppSection from "./HomeAppSection";
 import PhotoFrame from "./brand/PhotoFrame";
 import frameStyles from "./brand/photo-frame.module.css";
@@ -92,6 +93,8 @@ export default function ApprovedHome() {
           About the system <span aria-hidden="true">→</span>
         </Link>
       </section>
+
+      <FounderNote variant="short" />
     </div>
   );
 }

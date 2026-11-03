@@ -82,6 +82,7 @@ export default function RootLayout({
                   url: SITE_URL,
                   logo: ORGANIZATION_LOGO,
                   image: DEFAULT_OG_IMAGE,
+                  founder: { "@type": "Person", name: "Adam", jobTitle: "Founder" },
                 },
               ],
             }),
