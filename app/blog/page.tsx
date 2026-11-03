@@ -9,6 +9,7 @@ import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutP
 import { getAllPosts, type PostMeta } from "@/lib/blog";
 import { absoluteUrl, buildPageMetadata, DEFAULT_OG_IMAGE } from "@/lib/site";
 import CategoryBadge from "../components/CategoryBadge";
+import { blogCardLines } from "@/lib/blogCardLines";
 
 const pageTitle = "Iron Compass Journal — Discipline, Leadership & Purpose for Men";
 const pageDescription =
@@ -45,6 +46,10 @@ const summaryFallbacks: Record<string, string> = {
 function formatDate(value: string) {
   const parsed = new Date(value);
   return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(parsed);
+}
+
+function getCardLine(post: PostMeta) {
+  return blogCardLines[post.slug] ?? getSummary(post);
 }
 
 function getSummary(post: PostMeta) {
@@ -121,7 +126,7 @@ export default function BlogPage() {
                   <time dateTime={feature.date} className="text-[var(--ic-text-muted)]">{formatDate(feature.date)}</time>
                 </div>
                 <h2 className="ic-heading-2">{feature.title}</h2>
-                <p className="ic-section-copy ic-section-copy--muted">{getSummary(feature)}</p>
+                <p className="ic-section-copy ic-section-copy--muted">{getCardLine(feature)}</p>
                 <div className="ic-cta-row">
                   <Link href={`/blog/${feature.slug}`} className="ic-btn-primary">
                     Read the article
@@ -145,7 +150,7 @@ export default function BlogPage() {
                     <time dateTime={post.date} className="text-[var(--ic-text-muted)]">{formatDate(post.date)}</time>
                   </div>
                   <h3 className="text-base font-heading tracking-[0.22em] uppercase text-[var(--ic-text-heading)]">{post.title}</h3>
-                  <p className="ic-section-copy ic-section-copy--muted flex-1">{getSummary(post)}</p>
+                  <p className="ic-section-copy ic-section-copy--muted flex-1">{getCardLine(post)}</p>
                   <Link href={`/blog/${post.slug}`} className="ic-btn-primary text-[0.58rem] justify-center self-center">
                     Read Article
                   </Link>
@@ -177,7 +182,7 @@ export default function BlogPage() {
                     >
                       {post.title}
                     </Link>
-                    <p className="ic-section-copy ic-section-copy--muted text-sm">{getSummary(post)}</p>
+                    <p className="ic-section-copy ic-section-copy--muted text-sm">{getCardLine(post)}</p>
                   </div>
                   <Link href={`/blog/${post.slug}`} className="ic-btn-ghost text-[0.55rem] self-center">
                     Read
