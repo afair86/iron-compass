@@ -1,7 +1,7 @@
 /* Intentional editorial hierarchy: centred introductions, readable left-aligned detail. */
 html:root {
   --ic-title: var(--ic-text-heading);
-  --ic-subtitle: #b5bfcc;
+  --ic-subtitle: #a6c9e5;
 }
 @media screen {
   html body main #home .ic-cta-row { justify-content: center; }
@@ -27,7 +27,7 @@ html:root {
     .ic-section-heading, .ic-board-heading),
   html body main #domains > h2,
   html body main #philosophy > h2 { color: var(--ic-title); }
-  html body main.ic-page-shell h3 { color: var(--ic-title); }
+  html body main.ic-page-shell h3 { color: var(--ic-steel); }
   html body main.ic-page-shell :is(.ic-eyebrow, .ic-board-kicker, .ic-display-subtitle,
     .ic-topics-heading) { color: var(--ic-subtitle); }
   html body main.ic-page-shell h2.ic-topics-heading { color: var(--ic-title); }
@@ -97,10 +97,14 @@ html:root {
   html body .ic-footer-lede .ic-logo-lockup { justify-content: center; }
   html body .ic-footer-title { color: var(--ic-title); }
   html body :is(.ic-footer-tagline,.ic-footer-note) { margin-inline: auto; }
-  html body main .ic-dispatch-prose :is(h2,h3) { color: var(--ic-title); }
+  html body main .ic-dispatch-prose h2 { color: var(--ic-title); }
+  html body main .ic-dispatch-prose h3 { color: var(--ic-steel); }
 }
 
 /* Design pass: equal action pairs, the closing band and full-width section bands. */
+@media screen {
+  html body main.ic-page-shell :is(.ic-page-title, .ic-heading-2, .ic-section-heading, .ic-board-heading) { margin-bottom: 24px; }
+}
 html:root { --ic-band: #20252c; }
 @media screen {
   html body :is(main, footer) .ic-cta-pair {

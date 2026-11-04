@@ -13,10 +13,10 @@ html:root {
   --ic-surface-card: #242a32;
   --ic-card-bg: #242a32;
   --ic-surface-alt: #2d3540;
-  --ic-text-heading: #e2e6ec;
+  --ic-text-heading: #f0f2f5;
   --ic-text-main: #c7cfdd;
   --ic-text-muted: #9aa5b4;
-  --ic-steel: #9eb4c8;
+  --ic-steel: #a6c9e5;
   --ic-accent-blue: var(--ic-steel);
   --ic-amber: #ffb020;
   --ic-progress: #28d17c;

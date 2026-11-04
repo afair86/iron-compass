@@ -22,13 +22,18 @@ centre short introductions, home lead/Ten life domains/philosophy, journal hero,
 Topics/Read This First and section labels. Centre footer logo and Discipline.
 Direction. Brotherhood. Keep articles, card descriptions and forms left aligned.
 Use ic-editorial-center explicitly; no blanket all-left or all-centred treatment.
-Owner approved 4 November 2026: silver #e2e6ec headings, muted silver #b5bfcc
-subtitles, silver #c7cfdd reading copy. Charcoal stays unchanged. Use selective
-steel-blue #9eb4c8 accents for links, secondary controls and the featured plan;
+Owner refined 4 November 2026: brighter silver #f0f2f5 main headings, clearer blue
+#a6c9e5 subtitles, section labels and secondary guidance; soft silver #c7cfdd reading
+copy. Leave at least 24px between major headings and body text. Charcoal stays unchanged.
+Use selective blue accents for links, secondary controls and the featured plan;
 Iron Red primary actions, amber only for real attention, green earned
 completion, and neutral navigation. Secondary controls must not inherit red. No neon/glow.
 Colours communicate hierarchy and brand associations, not guaranteed emotions
 or sales. Keep1120px grid/24px gutters (20px phone),14px cards/8px controls.
+Domain guides use a photo-led split introduction, visible linked contents, a
+comfortable reading column and a distinct amber-marked practice section. Preserve
+all educational copy, internal links and app feature/plan details. No collapsed
+article content. The app follows the guide as the next practical step.
 Journal H1 is Iron Compass AI Journal; Dispatches for disciplined men is its subtitle.
 Photos: top focal point for people; scenic horizons retain their own focal point.
 PhotoFrame applies positions to compact and cover modes. Do not reintroduce

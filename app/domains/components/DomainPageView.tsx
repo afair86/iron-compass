@@ -43,28 +43,52 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
   const lead = narrative.sections[0];
   const rest = narrative.sections.slice(1);
   const sidePhoto = lead?.image ?? photo;
+  const guideWords = speechText(narrative).split(/\s+/).length;
+  const readMinutes = Math.max(1, Math.ceil(guideWords / 220));
+  const contents = [
+    ...(lead ? [{ id: lead.key, label: lead.heading }] : []),
+    { id: "practice", label: narrative.practice.heading },
+    ...rest.map((section) => ({ id: section.key, label: section.heading })),
+    { id: "in-the-app", label: "Use it in the app" },
+  ];
 
   return (
     <PageShell>
       <div className={styles.page}>
-        <header className="ic-board-hero">
-          <div className="ic-board-hero__media">
-            <PhotoFrame src={photo.src} alt={photo.alt} fit="cover" position="center top" />
+        <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+          <Link href="/">Home</Link><span aria-hidden="true">/</span>
+          <Link href="/domains">Life domains</Link><span aria-hidden="true">/</span>
+          <span aria-current="page">{narrative.h1Title}</span>
+        </nav>
+        <header className={styles.hero}>
+          <div className={styles.heroCopy}>
+            <span className={styles.kicker}>A practical guide · {readMinutes} min read</span>
+            <h1>{narrative.h1Title}</h1>
+            <p>{narrative.heroDescription}</p>
+            <div className={styles.heroLinks}>
+              <a href="#practice">Start with one action <span aria-hidden="true">↓</span></a>
+              <a href="#in-the-app">See how the app supports it <span aria-hidden="true">→</span></a>
+            </div>
           </div>
-          <div className="ic-board-hero__copy space-y-4">
-            <h1 className="ic-page-title">{narrative.h1Title}</h1>
-            <p className="ic-section-copy">{narrative.heroDescription}</p>
+          <div className={styles.heroMedia}>
+            <PhotoFrame src={photo.src} alt={photo.alt} fit="cover" position="center top" showMark={false} />
           </div>
         </header>
 
-        <section className={styles.split}>
+        <div className={styles.readingGrid}>
+          <nav className={styles.contents} aria-label="In this guide">
+            <span className={styles.contentsLabel}>In this guide</span>
+            <ol>{contents.map((item) => <li key={item.id}><a href={`#${item.id}`}>{item.label}</a></li>)}</ol>
+          </nav>
+          <article className={styles.article} aria-label={`${narrative.h1Title} guide`}>
+        <section className={styles.intro}>
           <div className={styles.copy}>
             {narrative.opening.map((paragraph) => (
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
             {lead ? (
               <>
-                <h2>{lead.heading}</h2>
+                <h2 id={lead.key}>{lead.heading}</h2>
                 {lead.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 48)}>{paragraph}</p>
                 ))}
@@ -83,14 +107,15 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
               </div>
             ) : null}
           </div>
-          <div className={styles.photo}>
+          {lead?.image ? <div className={styles.photo}>
             <PhotoFrame src={sidePhoto.src} alt={sidePhoto.alt} fit="cover" position="center top" />
-          </div>
+          </div> : null}
         </section>
 
-        <section className={`${styles.practice} ic-band`}>
+        <section className={styles.practice} aria-labelledby="practice">
           <div>
-            <h2>{narrative.practice.heading}</h2>
+            <span className={styles.kicker}>From reading to action</span>
+            <h2 id="practice">{narrative.practice.heading}</h2>
             <p className={styles.copy}>{narrative.practice.lead}</p>
             <ol className={styles.steps}>
               {narrative.practice.steps.map((step, index) => (
@@ -102,14 +127,13 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
             </ol>
           </div>
           <div className={styles.quote}>
-            <PhotoFrame src={photo.src} alt="" fit="cover" position="center top" showMark={false} />
             <p>{narrative.heroDescription}</p>
           </div>
         </section>
 
         {rest.map((section) => (
           <section key={section.key} className={styles.block}>
-            <h2>{section.heading}</h2>
+            <h2 id={section.key}>{section.heading}</h2>
             {section.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 48)}>{paragraph}</p>
             ))}
@@ -127,8 +151,12 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
             <p key={paragraph.slice(0, 48)}>{paragraph}</p>
           ))}
         </section>
+          </article>
+        </div>
 
+        <div id="in-the-app" className={styles.appSection}>
         <DomainAppSection slug={slug} title={narrative.h1Title} />
+        </div>
 
         <section className={styles.block}>
           <h2>Keep going</h2>
