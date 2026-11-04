@@ -13,7 +13,7 @@
   overflow: hidden;
   border-radius: 14px;
   text-decoration: none;
-  color: #f5f7fb;
+  color: var(--ic-text-heading);
   background: var(--ic-surface);
   box-shadow: none;
   border: 1px solid var(--ic-border);
@@ -80,7 +80,7 @@
   line-height: 1.3;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #f5f7fb;
+  color: var(--ic-text-heading);
   text-align: left;
 }
 

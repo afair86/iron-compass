@@ -30,6 +30,7 @@ html:root {
   html body main.ic-page-shell h3 { color: var(--ic-title); }
   html body main.ic-page-shell :is(.ic-eyebrow, .ic-board-kicker, .ic-display-subtitle,
     .ic-topics-heading) { color: var(--ic-subtitle); }
+  html body main.ic-page-shell h2.ic-topics-heading { color: var(--ic-title); }
   html body main .ic-display-subtitle {
     font-family: var(--font-heading), sans-serif;
     font-size: clamp(1.1rem, 2vw, 1.4rem);
