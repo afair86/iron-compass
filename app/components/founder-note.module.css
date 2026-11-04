@@ -8,7 +8,7 @@
   font-family: var(--font-heading), Oswald, sans-serif;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   line-height: 1.2;
-  color: var(--ic-title, #9ac7ed);
+  color: var(--ic-title, #e2e6ec);
   text-align: center;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .body .signOff {
-  color: var(--ic-subtitle, #e7ba72);
+  color: var(--ic-subtitle, #b5bfcc);
   font-weight: 600;
 }
 

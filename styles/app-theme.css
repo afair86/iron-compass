@@ -1,5 +1,5 @@
-/* Website charcoal surfaces with shared app brand colour roles, no neon.
-   Steel guides; amber marks a next step; red requests action; green means earned
+/* Website charcoal surfaces with silver headings and restrained blue guidance.
+   Red requests action; amber marks attention; green means earned
    progress. The website must not invent progress or imply a conversion promise. */
 html:root {
   color-scheme: dark;
@@ -13,7 +13,7 @@ html:root {
   --ic-surface-card: #242a32;
   --ic-card-bg: #242a32;
   --ic-surface-alt: #2d3540;
-  --ic-text-heading: #f5f7fb;
+  --ic-text-heading: #e2e6ec;
   --ic-text-main: #c7cfdd;
   --ic-text-muted: #9aa5b4;
   --ic-steel: #9eb4c8;
@@ -92,7 +92,7 @@ html:root {
   }
 
   html body :is(.ic-heading-2, .ic-heading-3, .ic-section-heading, .ic-board-heading) {
-    color: var(--ic-steel);
+    color: var(--ic-text-heading);
   }
 
   html body :is(.ic-section-copy, .ic-dispatch-prose p, .ic-dispatch-lede) {
