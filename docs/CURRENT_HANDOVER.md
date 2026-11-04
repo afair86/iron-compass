@@ -1,5 +1,16 @@
 # CURRENT HANDOVER
 
+## Plain headings and links — LIVE, 4 November 2026, Codex (Brisbane)
+
+Owner requested removal of decorative 01/02/05 section labels and little arrows next to links, applying to all public pages. Removed the two section-number rendering paths and their decorative rules from DomainPageView/domain-story CSS, plus arrows in domain hero and homepage links. Retained clear blue headings, reading breaks and spacing (44px before the first guide heading), meaningful ordered practical steps, legal numbering and time/measurement formatting. All educational copy, photos, colours, metadata, app links, pricing and app/native settings unchanged. Rule 07 records the permanent public-site preference.
+
+Production https://ironcompassai.com: dpl_5fHPEQUdt3sevyPhQxsARUSSpytA, reported source 850be92aae3117bc474df60ba5524104e220b3ba, branch codex/website-relaunch-20261104, checkout website-relaunch-20261104. Marketing Vercel project prj_fOowaY2ZkZPR56F2Pr3ZArjLBnYM / iron-compass, team team_6NQL6p1c5YCkRtcP1T3dERxN. Exact staged production checked and promoted without rebuild. Rollback dpl_7qJp22jBhiQmrj2vatYnCqnjCSb4. Main remains older; PR #4 preserves the source.
+
+Validation: build/TypeScript, changed-component ESLint and diff checks pass. All 119 generated public pages scanned: no decorative section-number classes and no arrow glyphs in link labels. SEO: 117 indexable pages and matching sitemap URLs, zero audit issues. Local production-build browser checks on Home/Identity/Finance at actual 390/1440 CSS pixels: six cases, one H1, no markers, arrowed links or overflow, correct heading spacing. Authenticated staged HTTP verifies source commit, three pages and served stylesheets. Live Identity and Home verified after promotion; section targets and link behaviour preserved. CLI source stamp identifies the commit but clean-tree status is unknown and exactCommitBuild false. No indexing or conversion uplift claimed.
+
+Next: owner review of plain Identity headings; keep numbered instructions only where they serve a practical purpose.
+
+
 ## Homepage and domain editorial release — LIVE, 4 November 2026, 11:47 AM Brisbane, Codex
 
 Owner approved the full-width home photograph behind the headline, domains before the app walkthrough, richer domain layouts, shorter visual passages without losing content, more purposeful colour and brighter presentation throughout. Photos must look natural, relevant, varied in men/clothes/rooms/light, with believable enjoyment or satisfaction; grief stays quietly warm.
