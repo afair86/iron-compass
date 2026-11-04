@@ -269,7 +269,7 @@
 
 .domain {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-columns: 140px minmax(0, 1fr);
   gap: 0.75rem;
   align-items: start;
   padding: 20px;
@@ -432,57 +432,17 @@
 @media (max-width: 560px) { .action { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .action { transition: none; } }
 
-/* Desktop domain cards match the /domains directory cards: photo on top, title on the photo. */
-@media (min-width: 900px) {
-  .domain {
-    position: relative;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: 160px auto;
-    gap: 0;
-    padding: 0;
-    overflow: hidden;
-    min-height: 0;
-  }
-
-  .domain:hover {
-    background: var(--ic-surface);
-    outline: 2px solid var(--ic-steel);
-    outline-offset: 2px;
-  }
-
-  .domain figure {
-    width: 100%;
-    height: 160px;
-    border-radius: 0;
-  }
-
-  .domain figure::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 45%, rgba(11, 15, 20, 0.88));
-    pointer-events: none;
-  }
-
-  .domain img {
-    border-radius: 0;
-  }
-
-  .domain h3 {
-    position: absolute;
-    z-index: 2;
-    top: calc(160px - 2.2rem);
-    left: 1rem;
-    right: 4.75rem;
-    min-height: 0;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ic-text-heading);
-  }
-
-  .domain p {
-    padding: 1rem;
-  }
+/* Keep the action visible; titles sit below the scene on desktop. */
+.domainPhoto { background:transparent; }
+.domain figure { position:relative; width:140px; height:auto; aspect-ratio:3/2; border-radius:8px; background:transparent; }
+.domain figure > img:first-child { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center; }
+@media (min-width:900px) {
+  .domain { grid-template-columns:minmax(0,1fr); grid-template-rows:auto 1fr; gap:0; padding:0; overflow:hidden; }
+  .domain figure { width:100%; height:auto; aspect-ratio:3/2; border-radius:0; }
+  .domain > div { padding:24px; }
+  .domain h3 { position:static; margin:0 0 16px; min-height:0; color:var(--ic-text-heading); font-size:1.3rem; letter-spacing:0; text-transform:none; }
+  .domain p { padding:0; }
 }
+@media(max-width:380px) { .domain {grid-template-columns:112px minmax(0,1fr);padding:16px;} .domain figure {width:112px;} }
 
 .heroCopy > p.appLine { max-width: none; color: var(--ic-subtitle, #e7ba72); font-size: 1rem; }

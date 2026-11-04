@@ -7,7 +7,6 @@ import FounderNote from "./FounderNote";
 import AppLaunchStatus from "./AppLaunchStatus";
 import HomeAppSection from "./HomeAppSection";
 import PhotoFrame from "./brand/PhotoFrame";
-import frameStyles from "./brand/photo-frame.module.css";
 import styles from "./approved-home.module.css";
 
 export default function ApprovedHome() {
@@ -58,7 +57,7 @@ export default function ApprovedHome() {
               className={styles.domain}
               aria-labelledby={`home-domain-${domain.slug}`}
             >
-              <PhotoFrame className={frameStyles.thumb} src={domainPhotos[domain.slug]} alt={domainPhotoAlts[domain.slug]} />
+              <PhotoFrame position="center" className={styles.domainPhoto} src={domainPhotos[domain.slug]} alt={domainPhotoAlts[domain.slug]} showMark={false} />
               <div>
                 <h3 id={`home-domain-${domain.slug}`}>{domain.title}</h3>
                 <p>{domain.desc}</p>

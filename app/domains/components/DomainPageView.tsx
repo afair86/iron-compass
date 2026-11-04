@@ -97,7 +97,7 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
             </div>
           </div>
           <div className={styles.heroMedia}>
-            <PhotoFrame src={photo.src} alt={photo.alt} fit="cover" position="center top" showMark={false} />
+            <PhotoFrame src={photo.src} alt={photo.alt} fit="cover" position="center" showMark={false} />
           </div>
         </header>
 
@@ -130,7 +130,7 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
             ) : null}
           </div>
           {lead?.image ? <div className={styles.photo}>
-            <PhotoFrame src={sidePhoto.src} alt={sidePhoto.alt} fit="cover" position="center top" />
+            <PhotoFrame src={sidePhoto.src} alt={sidePhoto.alt} fit="cover" position="center" />
           </div> : null}
         </section>
 
@@ -161,7 +161,7 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
             <ReadingParagraphs paragraphs={section.paragraphs} highlight />
             {image ? (
               <div className={styles.photo}>
-                <PhotoFrame src={image.src} alt={image.alt} fit="cover" position="center top" />
+                <PhotoFrame src={image.src} alt={image.alt} fit="cover" position="center" />
               </div>
             ) : null}
           </section>

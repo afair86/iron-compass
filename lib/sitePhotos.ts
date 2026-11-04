@@ -2,14 +2,14 @@ import type { CanonicalDomainSlug } from "@/lib/site";
 
 /** Scene photographs with no compass in the picture. PhotoFrame adds it at the bottom left. */
 export const domainPhotos: Record<CanonicalDomainSlug, string> = {
-  discipline: "/images/home/scenes/home-discipline.webp",
+  discipline: "/images/domains/editorial/four-block-compliance-system-hero.webp",
   identity: "/images/domains/editorial/personal-doctrine-in-7-days-hero.webp",
   "health-strength": "/images/home/scenes/home-strength.webp",
   "bonds-connections": "/images/home/scenes/home-leadership.webp",
-  "purpose-direction": "/images/home/scenes/home-purpose.webp",
-  "finance-provision": "/images/home/scenes/home-financial.webp",
-  resilience: "/images/domains/editorial/rebuild-strength-after-injury-hero.webp",
-  "fall-rise": "/images/domains/editorial/iron-protocol-strength-transition-hero.webp",
+  "purpose-direction": "/images/domains/editorial/quarterly-mission-design-hero.webp",
+  "finance-provision": "/images/domains/actions/finance.webp",
+  resilience: "/images/domains/actions/resilience.webp",
+  "fall-rise": "/images/domains/actions/fallrise.webp",
   "grief-honour": "/images/domains/grief-bench.webp",
   legacy: "/images/home/scenes/home-legacy.webp",
 };
@@ -21,16 +21,16 @@ export const philosophyPhoto = "/images/home/scenes/home-philosophy.webp";
 
 /** Describe the visible scene for people who cannot see the photograph. */
 export const domainPhotoAlts: Record<CanonicalDomainSlug, string> = {
-  discipline: "A man taking a quiet morning moment with a mug in his kitchen",
-  identity: "A man writing his personal standards in a sunlit room",
-  "health-strength": "A man smiling during a kettlebell session",
-  "bonds-connections": "A father and son enjoying breakfast together",
-  "purpose-direction": "A man looking ahead on a coastal path at sunrise",
-  "finance-provision": "A man smiling as he reviews his household paperwork",
-  resilience: "A man smiling while taking the stairs at a manageable pace",
-  "fall-rise": "A man enjoying a manageable strength session in his garden",
-  "grief-honour": "A man quietly reflecting beside flowers on a park bench",
-  legacy: "A man enjoying careful work on a wooden keepsake box",
+  discipline: "A man putting his shoes and everyday essentials in order before the next day",
+  identity: "A man writing in a notebook at a wooden table in a sunlit room",
+  "health-strength": "A man training with a kettlebell, with the exercise and equipment in view",
+  "bonds-connections": "A father and son enjoying breakfast together at their kitchen table",
+  "purpose-direction": "A man organising priorities on a board in his home office",
+  "finance-provision": "A couple reviewing household bills together with a calculator, receipts and ledger",
+  resilience: "A father calmly preparing lunch while his son packs a school bag on a rainy morning",
+  "fall-rise": "Two men fitting a shelf above a workbench as they put a workshop in order",
+  "grief-honour": "A man sitting quietly beside flowers on a park bench, with the remembrance flowers and setting in view",
+  legacy: "A man carefully working on a wooden keepsake box in his workshop",
 };
 
 export const pagePhotoAlts = {
