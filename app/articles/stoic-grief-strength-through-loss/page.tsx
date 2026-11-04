@@ -1,26 +1,35 @@
+import { practicalGuides } from "@/lib/practicalGuides";
 import Link from "next/link";
 import ArticleLayout from "../components/ArticleLayout";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "How Stoic Philosophy Helps Men Process Grief",
+  title: "Stoic Grief: Principles for Carrying Loss",
   description:
-    "Loss doesn't have to break you. A stoic framework for men to face grief with clarity, discipline, and strength — without going numb, bitter, or collapsing.",
+    "Use Stoic principles to guide your conduct through loss. Practical reflection, remembrance and daily responsibilities without demanding emotional numbness.",
   path: "/articles/stoic-grief-strength-through-loss",
+  openGraph: {
+    type: "article",
+    publishedTime: "2025-11-15",
+    modifiedTime: "2026-11-04",
+  },
+  images: [
+    practicalGuides["/articles/stoic-grief-strength-through-loss"].image,
+  ],
 });
 
 const tools = [
   {
     title: "Stillness Before Reaction",
-    copy: "Take one breath before speaking, deciding, or lashing out. You stop the emotional avalanche before it starts.",
+    copy: "Pause before a consequential reply or decision. Give yourself time to choose how you want to act.",
   },
   {
-    title: "Voluntary Discomfort",
-    copy: "Cold exposure, training, and disciplined hardship remind you that suffering is survivable.",
+    title: "A manageable daily anchor",
+    copy: "Choose an ordinary action you can repeat, such as a short walk or preparing a meal. Hardship is not a requirement for honouring a loss.",
   },
   {
-    title: "Negative Visualization",
-    copy: "Not morbid—grounding. Accept the reality of loss instead of fighting it with rage.",
+    title: "Recognise the facts",
+    copy: "Write what has happened and what needs attention now. Do not force yourself to rehearse further losses.",
   },
   {
     title: "Daily Reflection",
@@ -36,32 +45,42 @@ export default function ArticlePage() {
   return (
     <ArticleLayout
       title="Stoic Grief: Strength Through Loss"
-      intro="Grief breaks most men because they were never given a masculine framework for pain. Stoicism offers power without collapse—facing reality directly and choosing a disciplined response."
+      intro="Stoic principles can guide your conduct while you carry loss. Face the facts, make room for remembrance and choose a fair, useful action without demanding that you stop feeling grief."
       path="/articles/stoic-grief-strength-through-loss"
     >
       <section className="ic-panel-outline space-y-4 ic-align-center">
-        <h2 className="ic-section-heading">What Stoicism Actually Says About Grief</h2>
+        <h2 className="ic-section-heading">
+          What Stoicism Actually Says About Grief
+        </h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Stoicism is not emotional numbness. It is control. Marcus Aurelius lost children, mentors, and friends, yet wrote about endurance and responsibility, not denial. Stoic grief is about honouring duty even when wounded.
+          Stoic practice asks you to examine your judgements and choose your
+          conduct with care. Applied to grief, that means attending to what you
+          can do while making room for loss, remembrance and help. It does not
+          require emotional numbness.
         </p>
       </section>
 
       <section className="ic-panel-outline space-y-4 ic-align-center">
-        <h2 className="ic-section-heading">Why Stoic Grief Works for Men</h2>
+        <h2 className="ic-section-heading">
+          Using Stoic principles in the day
+        </h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Men need structure. When life feels chaotic, structure becomes sanity. Stoicism delivers clarity, identity, discipline, responsibility, and grounded action—not soft language or healing clichés.
+          A small structure can give practical decisions a place when life is
+          uncertain. Use wisdom, courage, justice and temperance as questions
+          about your next action. Avoid turning discipline into a demand to hide
+          what you are carrying.
         </p>
       </section>
 
       <section className="ic-panel-outline space-y-4 ic-align-center">
-        <h2 className="ic-section-heading">The Stoic Equation of Grief</h2>
+        <h2 className="ic-section-heading">A Stoic starting point</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Stoics reduce grief to three truths: something meaningful was lost, the loss is outside your control, and your response determines who you become next. You cannot change the event, but you can shape the man who walks out of it—start with the
-          {" "}
+          A practical Stoic starting point is to recognise the loss, distinguish
+          what you can change and consider your next response. This is a
+          framework for conduct, not a formula that resolves grief. Revisit the{" "}
           <Link href="/domains/identity" className="underline">
-            Identity &amp; Legacy
-          </Link>
-          {" "}
+            Identity
+          </Link>{" "}
           domain.
         </p>
       </section>
@@ -69,7 +88,9 @@ export default function ArticlePage() {
       <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Pain Remains, You Fortify</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Stoicism does not erase pain. It sharpens you so it cannot break you. Stay steady, calm, responsible, honourable, and in motion—even when grief feels unbearable.
+          Stoic practice does not erase loss or make anyone invulnerable. Use it
+          to keep your conduct aligned with your principles, while allowing
+          time, remembrance and support to have their place.
         </p>
       </section>
 
@@ -79,53 +100,40 @@ export default function ArticlePage() {
         </div>
         <div className="grid gap-4 md:grid-cols-2 ic-align-center">
           {tools.map((tool) => (
-            <article key={tool.title} className="ic-panel-muted space-y-2 ic-align-center">
-              <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">{tool.title}</h3>
-              <p className="ic-section-copy ic-section-copy--muted text-sm">{tool.copy}</p>
+            <article
+              key={tool.title}
+              className="ic-panel-muted space-y-2 ic-align-center"
+            >
+              <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">
+                {tool.title}
+              </h3>
+              <p className="ic-section-copy ic-section-copy--muted text-sm">
+                {tool.copy}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
       <section className="ic-panel-outline space-y-4 ic-align-center">
-        <h2 className="ic-section-heading">Why Stoic Grief Is Not Suppression</h2>
+        <h2 className="ic-section-heading">
+          Why Stoic Grief Is Not Suppression
+        </h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Stoicism says: honour what was lost, stay responsible for what remains, allow pain without bowing to it, and keep walking. That is controlled strength, not emotional avoidance.
+          An application of Stoic principles is to honour what mattered and meet
+          the responsibilities you can still carry. Use reflection to choose
+          your actions, without making the absence of feeling a test of
+          strength.
         </p>
       </section>
 
       <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Stoicism &amp; Fatherhood</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          If you are grieving while raising kids, Stoicism becomes a leadership tool. They learn how you carry pain, stay honest, and protect them while hurting.
+          If you are grieving while raising kids, Stoicism becomes a leadership
+          tool. They learn how you carry pain, stay honest, and protect them
+          while hurting.
         </p>
-      </section>
-
-      <section className="ic-panel ic-align-center space-y-4">
-        <h2 className="ic-section-heading">How Iron Compass AI Helps</h2>
-        <p className="ic-section-copy ic-section-copy--muted">
-          Iron Compass AI turns Stoic principles into daily systems: grounding rituals, identity frameworks, masculine reflection prompts, habit anchors, grief stabilisation tools, fatherhood strength protocols, and purpose rebuild structures. Reinforce the work inside the
-          {" "}
-          <Link href="/domains/discipline" className="underline">
-            Discipline &amp; Mindset
-          </Link>
-          {" "}
-          and
-          {" "}
-          <Link href="/domains/grief-honour" className="underline">
-            Grief &amp; Honour
-          </Link>
-          {" "}
-          domains.
-        </p>
-        <div className="ic-cta-row justify-center pt-2">
-          <Link href="/start" className="ic-btn-primary text-[0.62rem]">
-            Start Your Compass
-          </Link>
-          <Link href="/download" className="ic-btn-ghost text-[0.6rem]">
-            Download the App
-          </Link>
-        </div>
       </section>
     </ArticleLayout>
   );

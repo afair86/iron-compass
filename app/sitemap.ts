@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
 import { getAllPosts } from "@/lib/blog";
+import { practicalGuides } from "@/lib/practicalGuides";
 import { griefArticles } from "@/lib/articleHubs";
 import { domainNarratives } from "@/app/domains/narratives";
 import { CANONICAL_DOMAIN_SLUGS, absoluteUrl } from "@/lib/site";
@@ -28,9 +29,9 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   "/privacy": "2025-11-01",
   "/terms": "2025-11-01",
   "/domains": "2026-11-04",
-  "/articles": "2025-11-29",
-  "/articles/financial-power": "2026-02-09",
-  "/articles/ai-mastery": "2026-02-09",
+  "/articles": "2026-11-04",
+  "/articles/financial-power": "2026-11-04",
+  "/articles/ai-mastery": "2026-11-04",
 };
 
 function lastModifiedForPath(pagePath: string): Date {
@@ -108,7 +109,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const articles: MetadataRoute.Sitemap = griefArticles.map((article) => ({
     url: absoluteUrl(article.path),
-    lastModified: new Date(article.datePublished),
+    lastModified: new Date(article.dateModified ?? article.datePublished),
+    images: absoluteImages([practicalGuides[article.path]?.image]),
     changeFrequency: "weekly" as const,
     priority: 0.85,
   }));

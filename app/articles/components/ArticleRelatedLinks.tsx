@@ -1,49 +1,35 @@
-import "@/styles/stoic-dispatch.css";
 import Link from "next/link";
 import type { HubArticle } from "@/lib/articleHubs";
-
-type ArticleRelatedLinksProps = {
-  articles: HubArticle[];
-  hubHref?: string;
-  hubLabel?: string;
-};
-
+import styles from "./practical-guides.module.css";
 export default function ArticleRelatedLinks({
   articles,
   hubHref = "/articles",
-  hubLabel = "All grief guides",
-}: ArticleRelatedLinksProps) {
-  if (articles.length === 0) return null;
-
+  hubLabel = "All grief and rebuilding guides",
+}: {
+  articles: HubArticle[];
+  hubHref?: string;
+  hubLabel?: string;
+}) {
+  if (!articles.length) return null;
   return (
-    <section className="ic-panel-stoic ic-align-center space-y-5">
-      <div className="space-y-2">
-        <p className="ic-eyebrow ic-eyebrow--stoic">Continue Reading</p>
-        <h2 className="ic-section-heading">Related Guides</h2>
-        <div className="ic-stoic-rule ic-stoic-rule--inline" aria-hidden="true" />
-        <p className="ic-section-copy ic-section-copy--muted text-sm">
-          Each guide stands alone but connects to the rest of the series.
-        </p>
-      </div>
-      <div className="grid gap-4 md:grid-cols-2">
+    <section className={styles.related}>
+      <h2>Keep reading</h2>
+      <p>Choose the guide that fits the responsibility in front of you.</p>
+      <div className={styles.entries}>
         {articles.map((article) => (
-          <article key={article.path} className="ic-stoic-card space-y-2">
-            <Link href={article.path} className="ic-stoic-card__title">
-              {article.title}
-            </Link>
-            <p className="ic-section-copy ic-section-copy--muted text-sm">{article.description}</p>
+          <article className={styles.entry} key={article.path}>
+            <h3>
+              <Link href={article.path}>{article.title}</Link>
+            </h3>
+            <p>{article.description}</p>
           </article>
         ))}
       </div>
-      <p className="ic-section-copy text-sm">
-        <Link href={hubHref} className="underline underline-offset-4 hover:text-[var(--ic-text-heading)]">
-          {hubLabel}
-        </Link>
-        {" · "}
-        <Link href="/domains/grief-honour" className="underline underline-offset-4 hover:text-[var(--ic-text-heading)]">
-          Grief &amp; Honour domain
-        </Link>
-      </p>
+      <div className={styles.hubLinks}>
+        <Link href={hubHref}>{hubLabel}</Link>
+        <Link href="/domains/fall-rise">Rebuilding after major setbacks</Link>
+        <Link href="/domains/grief-honour">Grief & Honour</Link>
+      </div>
     </section>
   );
 }

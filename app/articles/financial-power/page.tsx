@@ -13,7 +13,7 @@ export default function FinancialPowerHubPage() {
   return (
     <TopicHubView
       eyebrow="Finance & Provision"
-      title="Money you can look at"
+      title="Finance & Provision guides"
       description="These journal guides cover cash flow, buffers, and decisions you can make with the numbers in front of you. The life domain is Finance and Provision."
       domainHref="/domains/finance-provision"
       domainLabel="Finance & Provision"

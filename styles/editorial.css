@@ -203,3 +203,10 @@ html body .ic-mobile-nav:not([data-open="true"]) { visibility: hidden; }
   html { scroll-behavior: auto; }
   html body .ic-mobile-nav { transition: none; }
 }
+
+/* Keep the complete wordmark clear of the desktop links on tablets. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  html body .ic-nav-links { display: none; }
+  html body .ic-nav-toggle { display: inline-flex; }
+  html body .ic-mobile-nav { display: block; }
+}

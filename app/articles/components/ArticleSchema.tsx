@@ -1,4 +1,11 @@
-import { absoluteUrl, DEFAULT_OG_IMAGE, ORGANIZATION_LOGO, SITE_NAME, SITE_URL, serializeJsonLd } from "@/lib/site";
+import {
+  absoluteUrl,
+  DEFAULT_OG_IMAGE,
+  ORGANIZATION_LOGO,
+  SITE_NAME,
+  SITE_URL,
+  serializeJsonLd,
+} from "@/lib/site";
 
 type ArticleSchemaProps = {
   title: string;
@@ -6,6 +13,7 @@ type ArticleSchemaProps = {
   path: string;
   datePublished?: string;
   dateModified?: string;
+  image?: string;
 };
 
 export default function ArticleSchema({
@@ -14,6 +22,7 @@ export default function ArticleSchema({
   path,
   datePublished,
   dateModified,
+  image,
 }: ArticleSchemaProps) {
   const url = absoluteUrl(path);
 
@@ -41,7 +50,7 @@ export default function ArticleSchema({
         url: ORGANIZATION_LOGO,
       },
     },
-    image: DEFAULT_OG_IMAGE,
+    image: image ? absoluteUrl(image) : DEFAULT_OG_IMAGE,
   };
 
   return (

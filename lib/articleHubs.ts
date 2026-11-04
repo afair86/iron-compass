@@ -4,6 +4,7 @@ export type HubArticle = {
   title: string;
   description: string;
   datePublished: string;
+  dateModified?: string;
 };
 
 export type TopicHubLink = {
@@ -16,37 +17,47 @@ export const griefArticles: HubArticle[] = [
   {
     slug: "grief-for-men",
     path: "/articles/grief-for-men",
-    title: "Grief for Men: How to Carry Pain Without Breaking",
-    description: "Most men grieve in silence. Practical steps to hold pain with structure — without collapsing or going numb.",
+    title: "Grief for Men: Practical Ways to Carry Loss",
+    description:
+      "A practical guide for men carrying grief: daily structure, remembrance, honest support and responsibilities you can still carry.",
     datePublished: "2025-11-01",
+    dateModified: "2026-11-04",
   },
   {
     slug: "how-men-grieve-differently",
     path: "/articles/how-men-grieve-differently",
-    title: "How Men Grieve Differently — And Why Silence Isn't Strength",
-    description: "Why isolation, rage, and numbness show up — and what structure actually helps you process loss.",
+    title: "How Men Experience Grief: Patterns and Practical Support",
+    description:
+      "Men experience grief in different ways. Explore silence, responsibility and connection, with practical daily and weekly actions.",
     datePublished: "2025-11-08",
+    dateModified: "2026-11-04",
   },
   {
     slug: "stoic-grief-strength-through-loss",
     path: "/articles/stoic-grief-strength-through-loss",
-    title: "How Stoic Philosophy Helps Men Process Grief",
-    description: "Face loss with clarity, discipline, and strength — without going numb, bitter, or collapsing.",
+    title: "Stoic Grief: Principles for Carrying Loss",
+    description:
+      "Use Stoic principles to guide your conduct through loss. Practical reflection, remembrance and daily responsibilities without demanding emotional numbness.",
     datePublished: "2025-11-15",
+    dateModified: "2026-11-04",
   },
   {
     slug: "rebuilding-identity-after-loss",
     path: "/articles/rebuilding-identity-after-loss",
-    title: "Who Am I After Loss? Rebuilding Identity as a Man",
-    description: "A disciplined path to rebuild identity and direction — without pretending the pain didn't happen.",
+    title: "Rebuilding Identity After Loss: Roles, Standards and Direction",
+    description:
+      "Rebuild direction after loss through the roles, principles and practical commitments you can still carry. A guide for men starting a changed chapter.",
     datePublished: "2025-11-22",
+    dateModified: "2026-11-04",
   },
   {
     slug: "rebuilding-after-divorce-for-men",
     path: "/articles/rebuilding-after-divorce-for-men",
     title: "Rebuilding After Divorce: A Man's Guide to Starting Over",
-    description: "Regain discipline, confidence, and direction after separation — without the traps that break most men.",
+    description:
+      "Rebuild after divorce with practical stability, clear standards and integrity. Daily actions, a weekly review and a longer-term direction.",
     datePublished: "2025-11-29",
+    dateModified: "2026-11-04",
   },
 ];
 
@@ -59,17 +70,20 @@ export const financialHubLinks: TopicHubLink[] = [
   {
     title: "Financial Resilience Protocol",
     href: "/blog/financial-resilience-protocol",
-    description: "Weekly cash flow clarity, buffer protection, and low-risk decisions.",
+    description:
+      "Weekly cash flow clarity, buffer protection, and low-risk decisions.",
   },
   {
     title: "Fortress Method Financial Confidence",
     href: "/blog/fortress-method-financial-confidence",
-    description: "Survival, stability, and surplus buckets for long-term control.",
+    description:
+      "Survival, stability, and surplus buckets for long-term control.",
   },
   {
     title: "Cash Defense and Offense",
     href: "/blog/cash-defense-and-offense",
-    description: "Eight-week sprint to tighten burn, add revenue, and automate basics.",
+    description:
+      "Eight-week sprint to tighten burn, add revenue, and automate basics.",
   },
   {
     title: "Liquidity Rails: Automate Bills & Buffers",
@@ -92,7 +106,8 @@ export const aiMasteryHubLinks: TopicHubLink[] = [
   {
     title: "Your First Useful AI Assistant",
     href: "/blog/first-useful-ai-assistant",
-    description: "Turn a messy task into a clear plan, then check the work yourself.",
+    description:
+      "Turn a messy task into a clear plan, then check the work yourself.",
   },
   {
     title: "Learning Loop for AI Personal Development",
