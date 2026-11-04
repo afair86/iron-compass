@@ -21,7 +21,7 @@ html:root {
   html body main.ic-page-shell .ic-board-hero__copy > .ic-dispatch-meta { justify-content: center; }
   html body main.ic-page-shell .ic-board-hero__copy > h1::after,
   html body main.ic-page-shell .ic-board-hero__copy .ic-stoic-rule { margin-inline: auto; }
-  html body main #domains > p:first-of-type { color: var(--ic-subtitle); }
+  html body main #domains > p:first-of-type { color: var(--ic-amber); }
   html body main #home > div > p { text-align: center; }
   html body main.ic-page-shell :is(h1.ic-page-title, h1.ic-section-title, .ic-heading-2,
     .ic-section-heading, .ic-board-heading),
@@ -192,7 +192,7 @@ html body main .ic-launch-faq > h2 { text-align: center; }
 .ic-launch-faq__answers > div { padding-top: 20px; border-top: 1px solid var(--ic-border); }
 .ic-launch-faq__answers h3 { margin: 0 0 12px; color: var(--ic-text-heading); font-family: var(--font-heading), sans-serif; font-size: 1.1rem; line-height: 1.4; }
 .ic-launch-faq__answers p { margin: 0; color: var(--ic-text-main); line-height: 1.7; }
-html body main #home .ic-launch-status { color: var(--ic-text-muted); font-size: 0.875rem; }
+html body main #home .ic-launch-status { color: #bcc7d5; font-size: 0.875rem; }
 html body .ic-mobile-nav:not([data-open="true"]) { visibility: hidden; }
 @media (min-width: 900px) {
   .ic-launch-faq__answers { grid-template-columns: repeat(2, minmax(0, 1fr)); }

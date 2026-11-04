@@ -1,4 +1,6 @@
 .home {
+  --ic-band: #27313b;
+  --ic-surface: #2b343e;
   background: var(--ic-bg);
   color: var(--ic-text-heading);
 }
@@ -26,7 +28,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(27, 31, 37, .56), rgba(27, 31, 37, .88) 48%, #1b1f25 100%);
+  background: linear-gradient(180deg, rgba(27, 31, 37, .48), rgba(27, 31, 37, .84) 48%, #1b1f25 100%);
   pointer-events: none;
 }
 
@@ -132,7 +134,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 30% center;
-  filter: saturate(.65);
+  filter: saturate(.85);
 }
 
 .heroCopy {
@@ -388,7 +390,7 @@
   }
 
   .hero::after {
-    background: linear-gradient(90deg, rgba(27, 31, 37, .50) 0%, rgba(27, 31, 37, .65) 38%, rgba(27, 31, 37, .92) 50%, rgba(27, 31, 37, .94) 100%);
+    background: linear-gradient(90deg, rgba(27, 31, 37, .45) 0%, rgba(27, 31, 37, .60) 38%, rgba(27, 31, 37, .86) 50%, rgba(27, 31, 37, .90) 100%);
   }
 
   .banner {
