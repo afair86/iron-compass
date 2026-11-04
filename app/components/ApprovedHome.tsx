@@ -91,7 +91,7 @@ export default function ApprovedHome() {
           becoming reliable.
         </p>
         <Link className={styles.aboutLink} href="/about">
-          About the system <span aria-hidden="true">→</span>
+          About the system
         </Link>
       </section>
 
@@ -105,7 +105,7 @@ export default function ApprovedHome() {
             </div>
           ))}
         </div>
-        <Link href="/pricing" className={styles.aboutLink}>Compare Free, Core and Elite <span aria-hidden="true">→</span></Link>
+        <Link href="/pricing" className={styles.aboutLink}>Compare Free, Core and Elite</Link>
       </section>
 
       <FounderNote variant="short" />

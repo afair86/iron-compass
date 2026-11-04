@@ -58,10 +58,8 @@
 
 /* Long guides alternate plain reading with a clearly signposted key passage. */
 .article { max-width:66ch; }
-.article .sectionTitle { color:var(--ic-steel); margin-top:16px; padding-top:0; border:0; }
-.sectionNumber { display:inline-flex; align-items:center; gap:12px; margin-bottom:0; color:var(--ic-steel); font-size:.8rem; font-weight:700; letter-spacing:.12em; }
-.sectionNumber::after { content:""; width:40px; height:2px; background:var(--ic-steel); }
-.copy > .sectionNumber { margin-top:28px; }
+.article .sectionTitle { color:var(--ic-steel); margin-top:0; padding-top:0; border:0; }
+.copy > .sectionTitle { margin-top:44px; }
 .passage { margin-bottom:26px; }
 .passage p { margin-bottom:16px; }
 .insight { margin:0 0 30px; padding:24px; border-left:3px solid var(--ic-steel); background:#293642; border-radius:0 12px 12px 0; }

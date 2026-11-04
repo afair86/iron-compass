@@ -92,8 +92,8 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
             <h1>{narrative.h1Title}</h1>
             <p>{narrative.heroDescription}</p>
             <div className={styles.heroLinks}>
-              <a href="#practice">Start with one action <span aria-hidden="true">↓</span></a>
-              <a href="#in-the-app">See how the app supports it <span aria-hidden="true">→</span></a>
+              <a href="#practice">Start with one action</a>
+              <a href="#in-the-app">See how the app supports it</a>
             </div>
           </div>
           <div className={styles.heroMedia}>
@@ -112,7 +112,6 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
             <ReadingParagraphs paragraphs={narrative.opening} />
             {lead ? (
               <>
-                <span className={styles.sectionNumber}>01</span>
                 <h2 id={lead.key} className={styles.sectionTitle}>{lead.heading}</h2>
                 <ReadingParagraphs paragraphs={lead.paragraphs} highlight />
               </>
@@ -154,11 +153,10 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
           </div>
         </section>
 
-        {rest.map((section, index) => {
+        {rest.map((section) => {
           const image = sectionPhotos[section.key] ?? section.image;
           return (
           <section key={section.key} className={styles.block}>
-            <span className={styles.sectionNumber}>{String(index + 2).padStart(2, "0")}</span>
             <h2 id={section.key} className={styles.sectionTitle}>{section.heading}</h2>
             <ReadingParagraphs paragraphs={section.paragraphs} highlight />
             {image ? (
