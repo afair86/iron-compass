@@ -97,7 +97,7 @@ export default function ArticlePage() {
       <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Divorce Is Rebuilding Season</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Divorce strips you down and gives you an uncomfortable chance to rebuild deliberately—not as a husband, but as a man. This is where Iron Compass begins.
+          Divorce strips you down and gives you an uncomfortable chance to rebuild deliberately—not as a husband, but as a man. This is where Iron Compass AI begins.
         </p>
       </section>
 
@@ -155,9 +155,9 @@ export default function ArticlePage() {
       </section>
 
       <section className="ic-panel ic-align-center space-y-4">
-        <h2 className="ic-section-heading">How Iron Compass Helps</h2>
+        <h2 className="ic-section-heading">How Iron Compass AI Helps</h2>
         <p className="ic-section-copy ic-section-copy--muted">
-          Iron Compass equips men with stabilisation routines, discipline anchors, identity reconstruction tools, purpose frameworks, fatherhood support, habit tracking, emotional grounding, and daily structure. Dive into the
+          Iron Compass AI equips men with stabilisation routines, discipline anchors, identity reconstruction tools, purpose frameworks, fatherhood support, habit tracking, emotional grounding, and daily structure. Dive into the
           {" "}
           <Link href="/domains/grief-honour" className="underline">
             Grief &amp; Honour

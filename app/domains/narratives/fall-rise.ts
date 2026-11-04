@@ -51,7 +51,7 @@ export const fallRiseNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "The Iron Compass app keeps the miss as evidence and the challenge as still open. Open it at ironcompassai.com/app.",
+    "The Iron Compass AI app keeps the miss as evidence and the challenge as still open. Open it at ironcompassai.com/app.",
     "Resilience is how you stay functional under a load. This page is what you do after you have already dropped the standard.",
   ],
 };

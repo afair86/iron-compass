@@ -168,12 +168,12 @@ export default async function BlogPostPage({ params }: Props) {
     inLanguage: "en",
     author: {
       "@type": "Organization",
-      name: "Iron Compass",
+      name: "Iron Compass AI",
       url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
-      name: "Iron Compass",
+      name: "Iron Compass AI",
       logo: {
         "@type": "ImageObject",
         url: ORGANIZATION_LOGO,

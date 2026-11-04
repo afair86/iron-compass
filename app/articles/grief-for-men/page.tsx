@@ -49,7 +49,7 @@ export default function ArticlePage() {
       <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">How Men Experience Grief Differently</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Men grieve through action. You keep moving, keep showing up, keep the world running—yet numbness, disconnection, and isolation creep in. The world gives soft language. Iron Compass gives men the vocabulary to describe what is real.
+          Men grieve through action. You keep moving, keep showing up, keep the world running—yet numbness, disconnection, and isolation creep in. The world gives soft language. Iron Compass AI gives men the vocabulary to describe what is real.
         </p>
       </section>
 
@@ -123,7 +123,7 @@ export default function ArticlePage() {
       </section>
 
       <section className="ic-panel ic-align-center space-y-4">
-        <h2 className="ic-section-heading">How Iron Compass Helps</h2>
+        <h2 className="ic-section-heading">How Iron Compass AI Helps</h2>
         <ul className="space-y-2 ic-section-copy ic-section-copy--muted text-sm">
           <li>Discipline, identity, and purpose frameworks that rebuild direction.</li>
           <li>Grief grounding rituals and stoic reflection reps.</li>

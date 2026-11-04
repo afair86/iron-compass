@@ -141,9 +141,9 @@ export default function ArticlePage() {
       </section>
 
       <section className="ic-panel ic-align-center space-y-4">
-        <h2 className="ic-section-heading">How Iron Compass Helps</h2>
+        <h2 className="ic-section-heading">How Iron Compass AI Helps</h2>
         <p className="ic-section-copy ic-section-copy--muted">
-          Iron Compass gives you discipline, identity, structure, and purpose to lead yourself through loss. Inside the app you will find grief grounding rituals, structured reflections, identity rebuilding, discipline anchors, fatherhood support, purpose tools, and habit systems.
+          Iron Compass AI gives you discipline, identity, structure, and purpose to lead yourself through loss. Inside the app you will find grief grounding rituals, structured reflections, identity rebuilding, discipline anchors, fatherhood support, purpose tools, and habit systems.
         </p>
         <div className="ic-cta-row justify-center pt-2">
           <Link href="/start" className="ic-btn-primary text-[0.62rem]">

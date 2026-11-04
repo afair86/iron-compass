@@ -562,7 +562,7 @@ export default function ShiftWorkerRoutineBuilder({
             tabIndex={-1}
             aria-label="Your generated routine"
           >
-            <p className="ic-print-checklist-label">Iron Compass · Shift worker routine checklist</p>
+            <p className="ic-print-checklist-label">Iron Compass AI · Shift worker routine checklist</p>
             <h3 className="ic-routine__subheading">Your routine</h3>
             <p>{plan.explanation}</p>
             <p>

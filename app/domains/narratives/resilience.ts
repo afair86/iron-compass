@@ -51,7 +51,7 @@ export const resilienceNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "The Iron Compass app is where pressure and the next action stay visible. Open it at ironcompassai.com/app.",
+    "The Iron Compass AI app is where pressure and the next action stay visible. Open it at ironcompassai.com/app.",
     "If the floor was already missed, that is Fall and Rise. This page is how you stay functional before the miss, and how you keep a standard while the load is still on you.",
   ],
 };

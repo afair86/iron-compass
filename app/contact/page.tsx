@@ -7,8 +7,8 @@ import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutP
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Contact Iron Compass",
-  description: "Contact Iron Compass for account support, product questions, privacy requests or partnerships. Email the team and expect a reply within two business days.",
+  title: "Contact Iron Compass AI",
+  description: "Contact Iron Compass AI for account support, product questions, privacy requests or partnerships. Email the team and expect a reply within two business days.",
   path: "/contact",
 });
 
@@ -36,7 +36,7 @@ export default function ContactPage() {
       <PageContainer>
         <SectionShell variant="hero" className="space-y-6">
           <PhotoFrame src={pagePhotos.contact} alt={pagePhotoAlts.contact} />
-          <h1 className="ic-page-title">Contact Iron Compass</h1>
+          <h1 className="ic-page-title">Contact Iron Compass AI</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             For account support, product questions or privacy requests, send a short note.
             Expect a reply within two business days.
@@ -89,7 +89,7 @@ export default function ContactPage() {
                 Email us
               </a>
               <p className="ic-section-copy ic-section-copy--muted text-sm">
-                adam.fairclough86@gmail.com. Include the email used for your Iron Compass account. Do not send passwords or payment-card details.
+                adam.fairclough86@gmail.com. Include the email used for your Iron Compass AI account. Do not send passwords or payment-card details.
               </p>
             </div>
           )}

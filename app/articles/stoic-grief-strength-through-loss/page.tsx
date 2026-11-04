@@ -102,9 +102,9 @@ export default function ArticlePage() {
       </section>
 
       <section className="ic-panel ic-align-center space-y-4">
-        <h2 className="ic-section-heading">How Iron Compass Helps</h2>
+        <h2 className="ic-section-heading">How Iron Compass AI Helps</h2>
         <p className="ic-section-copy ic-section-copy--muted">
-          Iron Compass turns Stoic principles into daily systems: grounding rituals, identity frameworks, masculine reflection prompts, habit anchors, grief stabilisation tools, fatherhood strength protocols, and purpose rebuild structures. Reinforce the work inside the
+          Iron Compass AI turns Stoic principles into daily systems: grounding rituals, identity frameworks, masculine reflection prompts, habit anchors, grief stabilisation tools, fatherhood strength protocols, and purpose rebuild structures. Reinforce the work inside the
           {" "}
           <Link href="/domains/discipline" className="underline">
             Discipline &amp; Mindset

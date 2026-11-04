@@ -8,7 +8,7 @@ export const healthNarrative: DomainNarrative = {
   opening: [
     "You notice it getting out of the car. The back is tight. The stairs at work feel longer than they did a few years ago. Nothing is wrong enough to call a crisis. It is just the quiet result of putting your body last, behind the inbox, the kids' timetable, the bill that needed paying, or the shift that ran long.",
     "A lot of men answer that feeling with a burst. Ten hard days in the gym, a strict food plan, a promise that this time will be different. Then a late week hits, the burst dies, and the body goes back to the end of the list. The problem is rarely a lack of knowledge. Most of us already know that moving and sleeping matter. The problem is a plan that only works when life is calm.",
-    "Strength, in the way Iron Compass uses the word, is not a look and it is not a punishment. It is the capacity to do what the day actually asks. Carry the groceries. Stay patient at 9pm. Get up tomorrow without bargaining with your knees. That kind of strength is built in ordinary weeks, not in a highlight.",
+    "Strength, in the way Iron Compass AI uses the word, is not a look and it is not a punishment. It is the capacity to do what the day actually asks. Carry the groceries. Stay patient at 9pm. Get up tomorrow without bargaining with your knees. That kind of strength is built in ordinary weeks, not in a highlight.",
     "You do not need a perfect history to start. You need a week you can repeat when you are tired, busy, or both.",
   ],
   sections: [
@@ -83,7 +83,7 @@ export const healthNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "The pages here give you the standard. The Iron Compass app is where you keep a training record and see whether the floor held. Open it at ironcompassai.com/app. The five minutes above still work with a pen.",
+    "The pages here give you the standard. The Iron Compass AI app is where you keep a training record and see whether the floor held. Open it at ironcompassai.com/app. The five minutes above still work with a pen.",
     "Until that record exists, the journal already has pieces you can use this week: strength when time is short, training without depending on a gym, and keeping energy steady when sleep is thin. Read one. Then do the week you just wrote down.",
   ],
 };

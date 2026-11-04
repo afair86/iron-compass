@@ -26,7 +26,7 @@ function speechText(narrative: DomainNarrative) {
     narrative.practice.heading,
     narrative.practice.lead,
     ...narrative.practice.steps,
-    "Take it further with Iron Compass",
+    "Take it further with Iron Compass AI",
     ...narrative.further,
   ].join(" ");
 }
@@ -122,7 +122,7 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
         ))}
 
         <section className={styles.block}>
-          <h2>Take it further with Iron Compass</h2>
+          <h2>Take it further with Iron Compass AI</h2>
           {narrative.further.map((paragraph) => (
             <p key={paragraph.slice(0, 48)}>{paragraph}</p>
           ))}

@@ -106,7 +106,7 @@ export default function WeeklyMoneyWorksheet() {
 
   const checklistText = () => {
     const lines = [
-      "Iron Compass — Weekly money check",
+      "Iron Compass AI — Weekly money check",
       "",
       "Conversion used: monthly = weekly × 52 ÷ 12; weekly = monthly × 12 ÷ 52.",
       "Educational worksheet only — not personalised financial advice.",
@@ -266,7 +266,7 @@ export default function WeeklyMoneyWorksheet() {
       {ready ? (
         <div className="space-y-5" style={{ marginTop: "1.25rem" }}>
           <article className="ic-routine__result" aria-label="Money checklist">
-            <p className="ic-print-checklist-label">Iron Compass · Weekly money checklist</p>
+            <p className="ic-print-checklist-label">Iron Compass AI · Weekly money checklist</p>
             <h3 className="ic-routine__subheading">Your weekly check</h3>
             <p>
               <strong>Income</strong> — weekly equivalent {formatMoney(totals.incomeW)}; monthly equivalent{" "}

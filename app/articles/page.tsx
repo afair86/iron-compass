@@ -32,7 +32,7 @@ export default function ArticlesHubPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <TopicHubView
-        eyebrow="Iron Compass Guides"
+        eyebrow="Iron Compass AI Guides"
         title="Grief Guides for Men"
         description="Loss hits men differently — and most advice ignores that. These guides give you structure for carrying pain, rebuilding identity, and moving forward without collapsing or going numb."
         domainHref="/domains/grief-honour"

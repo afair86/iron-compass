@@ -339,8 +339,8 @@ export function buildDomainMetadata(content: DomainContent): Metadata {
       title: content.seo.title,
       description: content.seo.description,
       url: canonical,
-      siteName: "Iron Compass",
-      images: [{ url: DOMAIN_SOCIAL_IMAGE, width: 1200, height: 630, alt: `${content.title} – Iron Compass` }],
+      siteName: "Iron Compass AI",
+      images: [{ url: DOMAIN_SOCIAL_IMAGE, width: 1200, height: 630, alt: `${content.title} – Iron Compass AI` }],
     },
     twitter: {
       card: "summary_large_image",

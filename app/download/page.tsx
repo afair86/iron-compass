@@ -4,8 +4,8 @@ import AppLaunchStatus from "../components/AppLaunchStatus";
 import { buildPageMetadata, productAppHref } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Get the Iron Compass App | Daily Habits and Discipline",
-  description: "Use Iron Compass in your browser today: daily habits, a private journal and practical guides across ten life domains. One account on your phone or computer.",
+  title: "Get the Iron Compass AI App | Daily Habits and Discipline",
+  description: "Use Iron Compass AI in your browser today: daily habits, a private journal and practical guides across ten life domains. One account on your phone or computer.",
   path: "/download",
 });
 
@@ -14,7 +14,7 @@ export default function DownloadPage() {
     <PageShell>
       <div className="ic-content-stack">
         <section className="ic-editorial-center space-y-5">
-          <h1 className="ic-section-title">Get the Iron Compass app</h1>
+          <h1 className="ic-section-title">Get the Iron Compass AI app</h1>
           <p className="ic-section-copy">A few daily habits. A private journal. One next action you can carry out.</p>
           <div className="ic-cta-pair">
             <a className="ic-btn-primary" href={`${productAppHref()}/auth`}>Start free in your browser</a>

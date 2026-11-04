@@ -16,7 +16,7 @@ export default function ApprovedHome() {
       <section className={styles.hero} id="home">
         <div className={styles.banner}>
           <Image className={styles.heroPhoto} src="/images/home/horizon-man.png" alt={pagePhotoAlts.homeHero} fill priority sizes="(min-width: 1168px) 536px, (min-width: 900px) 46vw, 100vw" />
-          <Image className={styles.bannerMark} src="/iron-compass-logo-icon.png" alt="Iron Compass" width={150} height={150} />
+          <Image className={styles.bannerMark} src="/iron-compass-logo-icon.png" alt="Iron Compass AI" width={150} height={150} />
           <p className={styles.bannerWord}>
             Iron Compass <span>AI</span>
           </p>
@@ -25,7 +25,7 @@ export default function ApprovedHome() {
         <div className={styles.heroCopy}>
           <h1>Discipline for the life you’re responsible for.</h1>
           <p>
-            Iron Compass is a habit and discipline app for men. Keep a few daily habits, record the day,
+            Iron Compass AI is a habit and discipline app for men. Keep a few daily habits, record the day,
             and turn your responsibilities into a clear next action.
           </p>
           <div className="ic-cta-pair">
@@ -74,9 +74,9 @@ export default function ApprovedHome() {
           src={philosophyPhoto}
           alt={pagePhotoAlts.philosophy}
         />
-        <h2>The Iron Compass philosophy</h2>
+        <h2>The Iron Compass AI philosophy</h2>
         <p className={styles.lead}>
-          Iron Compass brings practical Stoic principles and modern tools together so you can live with
+          Iron Compass AI brings practical Stoic principles and modern tools together so you can live with
           purpose, take responsibility, and be someone others can rely on. The domains hold the responsibilities.
           The system shows what needs attention.
         </p>

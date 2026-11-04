@@ -5,6 +5,9 @@ alwaysApply: true
 
 # Website UX
 
+Product name: Iron Compass AI. Use the full name in public copy, headings, metadata,
+accessibility labels and publisher data. Keep technical identifiers and URLs unchanged.
+
 Owner clarification, 4 November 2026: the website shares the app's brand but has its own
 public-site composition. Use charcoal #1b1f25 backgrounds, #20252c section bands and
 #242a32 cards. Do not return the website to near-black or hardcode the homepage background.
@@ -19,7 +22,7 @@ Iron Red primary actions, restrained blue guidance, amber attention, green earne
 completion, and neutral navigation. Secondary controls must not inherit red. No neon/glow.
 Colours communicate hierarchy and brand associations, not guaranteed emotions
 or sales. Keep1120px grid/24px gutters (20px phone),14px cards/8px controls.
-Journal H1 is Iron Compass Journal; Dispatches for disciplined men is its subtitle.
+Journal H1 is Iron Compass AI Journal; Dispatches for disciplined men is its subtitle.
 Photos: top focal point for people; scenic horizons retain their own focal point.
 PhotoFrame applies positions to compact and cover modes. Do not reintroduce
 centre crops that clip heads. Existing full-head alternatives live in sitePhotos.

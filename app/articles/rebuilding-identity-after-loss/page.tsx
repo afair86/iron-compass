@@ -101,7 +101,7 @@ export default function ArticlePage() {
 
       <section className="ic-panel space-y-6 ic-align-center">
         <div className="space-y-2">
-          <h2 className="ic-section-heading">The Iron Compass Framework</h2>
+          <h2 className="ic-section-heading">The Iron Compass AI Framework</h2>
           <p className="ic-section-copy ic-section-copy--muted">Rebuild yourself with masculine structure:</p>
         </div>
         <div className="grid gap-4 md:grid-cols-2 ic-align-center">
@@ -127,9 +127,9 @@ export default function ArticlePage() {
       </section>
 
       <section className="ic-panel ic-align-center space-y-4">
-        <h2 className="ic-section-heading">How Iron Compass Helps</h2>
+        <h2 className="ic-section-heading">How Iron Compass AI Helps</h2>
         <p className="ic-section-copy ic-section-copy--muted">
-          Inside Iron Compass, identity rebuilding becomes a structured path: daily discipline anchors, grief stabilisation rituals, masculine reflection prompts, purpose frameworks, fatherhood support, habit systems, and identity milestones. Rebuild by design, not accident, and reconnect with the
+          Inside Iron Compass AI, identity rebuilding becomes a structured path: daily discipline anchors, grief stabilisation rituals, masculine reflection prompts, purpose frameworks, fatherhood support, habit systems, and identity milestones. Rebuild by design, not accident, and reconnect with the
           {" "}
           <Link href="/domains/grief-honour" className="underline">
             Grief &amp; Honour

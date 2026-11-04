@@ -83,7 +83,7 @@ export const identityNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "Connecting a standard to a habit you can review is what the Iron Compass app is for. Open it at ironcompassai.com/app. The five minutes above still work with a pen.",
+    "Connecting a standard to a habit you can review is what the Iron Compass AI app is for. Open it at ironcompassai.com/app. The five minutes above still work with a pen.",
     "Discipline is how you keep the behaviour. Bonds and Connections is how it lands on other people. Purpose is which hours it deserves. Legacy is a different question: what remains when you are not in the room. Do not treat those as the same page.",
   ],
 };

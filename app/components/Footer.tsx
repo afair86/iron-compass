@@ -9,7 +9,7 @@ const navSections = [
     links: [
       { href: "/app", label: "Open web app" },
       { href: "/download", label: "Get the app" },
-      { href: "/about", label: "About Iron Compass" },
+      { href: "/about", label: "About Iron Compass AI" },
       { href: "/pricing", label: "Plans and pricing" },
       { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact" },

@@ -2,8 +2,8 @@ import PageShell from "../components/PageShell";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Privacy Policy | Iron Compass",
-  description: "Understand how Iron Compass collects, uses, and safeguards your information across the platform.",
+  title: "Privacy Policy | Iron Compass AI",
+  description: "Understand how Iron Compass AI collects, uses, and safeguards your information across the platform.",
   path: "/privacy",
 });
 
@@ -41,7 +41,7 @@ const sections = [
   },
   {
     "title": "Optional Voice Entry",
-    "body": "Speak entry starts when you choose it and grant microphone and speech access. iPhone uses Apple speech recognition, preferring on-device processing when available; otherwise Apple may process the audio. The web uses your browser speech service, which may process audio outside your device. Iron Compass does not upload audio to its server or OpenAI or save an audio recording. Recognised words appear in an editable draft. Saving an entry and requesting AI coaching are separate actions. You can type instead or change permissions in device settings."
+    "body": "Speak entry starts when you choose it and grant microphone and speech access. iPhone uses Apple speech recognition, preferring on-device processing when available; otherwise Apple may process the audio. The web uses your browser speech service, which may process audio outside your device. Iron Compass AI does not upload audio to its server or OpenAI or save an audio recording. Recognised words appear in an editable draft. Saving an entry and requesting AI coaching are separate actions. You can type instead or change permissions in device settings."
   },
   {
     "title": "Optional Reminders",
@@ -57,7 +57,7 @@ const sections = [
   },
   {
     "title": "Retention and Deletion",
-    "body": "Your entries and account records remain while your account is active. A successful account deletion removes your account and associated records from the active app database. If deletion fails, the app reports the failure so you can retry or contact us. This does not immediately erase backups, security logs or records held by payment and AI providers, which have separate retention periods; billing records may need to be kept for legal obligations. We do not promise one deletion deadline for every provider and backup. OpenAI requests use store:false to avoid stored completion application history; this does not disable separate provider safety or abuse-monitoring retention or delete results saved in your Iron Compass account."
+    "body": "Your entries and account records remain while your account is active. A successful account deletion removes your account and associated records from the active app database. If deletion fails, the app reports the failure so you can retry or contact us. This does not immediately erase backups, security logs or records held by payment and AI providers, which have separate retention periods; billing records may need to be kept for legal obligations. We do not promise one deletion deadline for every provider and backup. OpenAI requests use store:false to avoid stored completion application history; this does not disable separate provider safety or abuse-monitoring retention or delete results saved in your Iron Compass AI account."
   },
   {
     "title": "Security and Your Choices",
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
           <h1 className="ic-section-title">Privacy Policy</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Iron Compass AI is operated by HumanFirst Technologies, an Australian sole-trader business, ABN 96 226 474 355. We treat your data with the
-            same seriousness we require inside the Iron Compass brotherhood. This policy covers the website, web app and iPhone app. Version 2026-10-30.
+            same seriousness we require inside the Iron Compass AI brotherhood. This policy covers the website, web app and iPhone app. Version 2026-10-30.
           </p>
         </section>
 

@@ -11,7 +11,7 @@ import { absoluteUrl, buildPageMetadata, DEFAULT_OG_IMAGE } from "@/lib/site";
 import CategoryBadge from "../components/CategoryBadge";
 import { blogCardLines } from "@/lib/blogCardLines";
 
-const pageTitle = "Iron Compass Journal — Discipline, Leadership & Purpose for Men";
+const pageTitle = "Iron Compass AI Journal — Discipline, Leadership & Purpose for Men";
 const pageDescription =
   "Practical guides on discipline, grief, strength, money, leadership, and AI — written for men who want systems that work on a bad day, not motivation loops.";
 
@@ -27,9 +27,9 @@ export const metadata = buildPageMetadata({
 const summaryFallbacks: Record<string, string> = {
   "why-most-men-fail-at-discipline": "Most men fail because they run on motivation, not structure. Learn the corrective systems.",
   "how-ai-can-help-men-become-more-disciplined": "Use AI as a relentless planner, coach, and accountability partner without outsourcing your will.",
-  "the-eight-domains-every-man-must-master": "Strength, discipline, purpose, leadership, money, AI leverage, grief, and legacy—the Iron Compass map in long form.",
+  "the-eight-domains-every-man-must-master": "Strength, discipline, purpose, leadership, money, AI leverage, grief, and legacy—the Iron Compass AI map in long form.",
   "sample-post": "Discipline is the backbone of every win. Set non-negotiables and hold the line.",
-  "hello-world": "What to expect from the Iron Compass journal and how to put it to work fast.",
+  "hello-world": "What to expect from the Iron Compass AI journal and how to put it to work fast.",
   "30-day-discipline-relay": "A four-week relay to lock daily standards, remove decision fatigue, and raise compliance.",
   "strong-at-home-protocol": "Build strength and conditioning at home in 12 weeks with minimal gear and smart progressions.",
   "purpose-pipeline": "Turn a one-line mission into weekly blocks and a 12-week proof outcome you can ship.",
@@ -53,7 +53,7 @@ function getCardLine(post: PostMeta) {
 }
 
 function getSummary(post: PostMeta) {
-  return post.description ?? summaryFallbacks[post.slug] ?? "A fresh dispatch from the Iron Compass journal.";
+  return post.description ?? summaryFallbacks[post.slug] ?? "A fresh dispatch from the Iron Compass AI journal.";
 }
 
 function PostThumb({ post }: { post: PostMeta }) {
@@ -90,7 +90,7 @@ export default function BlogPage() {
         />
         <SectionShell variant="hero" className="space-y-6">
           <PhotoFrame src={pagePhotos.blog} alt={pagePhotoAlts.blog} />
-          <h1 className="ic-page-title">Iron Compass Journal</h1>
+          <h1 className="ic-page-title">Iron Compass AI Journal</h1>
           <p className="ic-display-subtitle">Dispatches for disciplined men</p>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl">
             Practical pieces across the ten life domains, plus notes on using AI as a tool. Every post ends with something you can do this week.

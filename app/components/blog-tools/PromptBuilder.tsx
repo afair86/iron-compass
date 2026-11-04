@@ -149,7 +149,7 @@ export default function PromptBuilder() {
       {ready ? (
         <div className="space-y-5" style={{ marginTop: "1.25rem" }}>
           <article className="ic-routine__result" aria-label="Built prompt">
-            <p className="ic-print-checklist-label">Iron Compass · Prompt builder (not AI output)</p>
+            <p className="ic-print-checklist-label">Iron Compass AI · Prompt builder (not AI output)</p>
             <h3 className="ic-routine__subheading">Your prompt</h3>
             <pre
               style={{

@@ -19,7 +19,7 @@ export const aiResourcePhoto = "/images/home/scenes/home-ai.webp";
 
 export const philosophyPhoto = "/images/home/scenes/home-philosophy.webp";
 
-/** Hidden descriptions for search. They name what Iron Compass is for, not the scenery. */
+/** Hidden descriptions for search. They name what Iron Compass AI is for, not the scenery. */
 export const domainPhotoAlts: Record<CanonicalDomainSlug, string> = {
   discipline: "Discipline for men",
   identity: "Identity for men",
@@ -35,11 +35,11 @@ export const domainPhotoAlts: Record<CanonicalDomainSlug, string> = {
 
 export const pagePhotoAlts = {
   about: "About Iron Compass AI, a life system for men built on discipline, purpose, strength, and integrity",
-  blog: "Iron Compass journal: practical guides for men on discipline, strength, leadership, money, grief, and purpose",
+  blog: "Iron Compass AI journal: practical guides for men on discipline, strength, leadership, money, grief, and purpose",
   contact: "Contact Iron Compass AI",
-  domains: "The ten Iron Compass life domains: discipline, identity, health, bonds, purpose, finance, resilience, fall and rise, grief, and legacy",
+  domains: "The ten Iron Compass AI life domains: discipline, identity, health, bonds, purpose, finance, resilience, fall and rise, grief, and legacy",
   homeHero: "Iron Compass AI helps men build strength, discipline and character",
-  philosophy: "Iron Compass philosophy: practical discipline, purpose, and character for men",
+  philosophy: "Iron Compass AI philosophy: practical discipline, purpose, and character for men",
 } as const;
 
 /** Scenic pages with no compass in the picture. PhotoFrame adds the mark. */

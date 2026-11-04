@@ -83,7 +83,7 @@ export const leadershipCharacterNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "Seeing your own pattern, and reviewing a hard conversation after you have cooled off, is the practice the Iron Compass app supports. Open it at ironcompassai.com/app. Leadership is one role inside this domain, not the whole of it.",
+    "Seeing your own pattern, and reviewing a hard conversation after you have cooled off, is the practice the Iron Compass AI app supports. Open it at ironcompassai.com/app. Leadership is one role inside this domain, not the whole of it.",
     "The journal has three pieces that sit next to this page: a short after-action ritual, deciding under pressure, and hard conversations with people you care about. Read one after you have written the specific. The specific is the work.",
   ],
 };

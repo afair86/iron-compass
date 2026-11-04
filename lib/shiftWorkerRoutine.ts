@@ -456,7 +456,7 @@ export function buildRoutinePlan(initial: InitialAnswers, detail: DetailAnswers)
 
 export function planToChecklistText(plan: RoutinePlan, initial: InitialAnswers): string {
   const lines = [
-    "Iron Compass — Shift Worker Routine",
+    "Iron Compass AI — Shift Worker Routine",
     "=================================",
     "",
     plan.explanation,

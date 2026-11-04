@@ -10,7 +10,7 @@ export default function Hero() {
             Rise Beyond Limits
           </h1>
           <p className="text-base md:text-lg text-[var(--ic-text-main)] ic-measure mx-auto leading-relaxed text-center">
-            Unlock disciplined momentum with the same systems we use inside the Iron Compass app—modern AI leverage wrapped around timeless masculine standards for men in the US, Europe, and Australia.
+            Unlock disciplined momentum with the same systems we use inside the Iron Compass AI app—modern AI leverage wrapped around timeless masculine standards for men in the US, Europe, and Australia.
           </p>
           <p className="text-sm text-[var(--ic-text-muted)] ic-measure-tight mx-auto text-center">
             A man&rsquo;s life is forged in discipline, tested in adversity, and defined by the strength of his purpose.

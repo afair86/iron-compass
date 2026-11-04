@@ -5,7 +5,7 @@ import { pagePeoplePhotoAlts, pagePeoplePhotos } from "@/lib/sitePhotos";
 import { buildPageMetadata, productAppHref } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Iron Compass Pricing | Free, Core and Elite Plans",
+  title: "Iron Compass AI Pricing | Free, Core and Elite Plans",
   description:
     "Free, Core, and Elite. Core is A$19.99 a month or A$199 a year, with a 7-day trial. Elite is A$34.99 a month or A$349 a year.",
   path: "/pricing",

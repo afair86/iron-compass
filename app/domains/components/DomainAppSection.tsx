@@ -11,7 +11,7 @@ export default function DomainAppSection({ slug, title }: { slug: string; title:
   return (
     <section className={`${styles.section} ic-band`} aria-labelledby={`in-the-app-${slug}`} data-centre>
       <h2 id={`in-the-app-${slug}`} className={styles.heading}>
-        {title} in the Iron Compass app
+        {title} in the Iron Compass AI app
       </h2>
       <p className={styles.sub}>Habits for this domain, a practical guide and a tool to keep it going.</p>
       <ul className={styles.lines}>
@@ -25,7 +25,7 @@ export default function DomainAppSection({ slug, title }: { slug: string; title:
         ))}
       </ul>
       {features.shots.length > 0 ? (
-      <ul className={styles.gallery} aria-label={`${title} screens in the Iron Compass app`}>
+      <ul className={styles.gallery} aria-label={`${title} screens in the Iron Compass AI app`}>
         {features.shots.map((shot) => (
           <li key={shot.src} className={styles.phone}>
             <Image

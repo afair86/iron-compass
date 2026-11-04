@@ -32,7 +32,7 @@ const focus: Record<CanonicalDomainSlug, string> = {
 const domainList = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Iron Compass life domains",
+  name: "Iron Compass AI life domains",
   itemListElement: domainCards.map((domain, index) => ({
     "@type": "ListItem",
     position: index + 1,

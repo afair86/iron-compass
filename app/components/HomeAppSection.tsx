@@ -25,7 +25,7 @@ export default function HomeAppSection({ links }: { links: HomeAppTileLinks }) {
       title: "Today",
       line: "Your next move for the day, in view.",
       src: `${SCREENS}/today.webp`,
-      alt: "Iron Compass app Today screen showing the day's habits and next move",
+      alt: "Iron Compass AI app Today screen showing the day's habits and next move",
     },
     {
       href: links.habits,
@@ -33,7 +33,7 @@ export default function HomeAppSection({ links }: { links: HomeAppTileLinks }) {
       title: "Habits",
       line: "Light on hard days, full on normal ones.",
       src: `${SCREENS}/habits-light-or-full.webp`,
-      alt: "Iron Compass app habit list with Light and Full check-ins for each habit",
+      alt: "Iron Compass AI app habit list with Light and Full check-ins for each habit",
     },
     {
       href: links.journal,
@@ -49,7 +49,7 @@ export default function HomeAppSection({ links }: { links: HomeAppTileLinks }) {
       title: "90-day plan",
       line: "One measurable aim and a 13-week scoreboard.",
       src: `${SCREENS}/strategy-scoreboard.webp`,
-      alt: "Iron Compass 90-day strategy scoreboard with weekly checkpoints",
+      alt: "Iron Compass AI 90-day strategy scoreboard with weekly checkpoints",
     },
   ];
 
@@ -59,7 +59,7 @@ export default function HomeAppSection({ links }: { links: HomeAppTileLinks }) {
         <div className={styles.phone}>
           <Image
             src={`${SCREENS}/today.webp`}
-            alt="The Today screen in the Iron Compass app on a phone"
+            alt="The Today screen in the Iron Compass AI app on a phone"
             width={585}
             height={1266}
             sizes="(min-width: 900px) 260px, 55vw"
@@ -67,7 +67,7 @@ export default function HomeAppSection({ links }: { links: HomeAppTileLinks }) {
         </div>
         <div className={styles.copy}>
           <h2 id="home-app-heading">A daily practice you can return to</h2>
-          <p className={styles.note}>Iron Compass in any browser, on your phone or your desk.</p>
+          <p className={styles.note}>Iron Compass AI in any browser, on your phone or your desk.</p>
           <p className={styles.lead}>
             Check in on a few habits, write the day down and keep one next action in view. Free to start; the
             planning tools and the AI coach come with Core and Elite.

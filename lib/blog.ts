@@ -1,6 +1,6 @@
 
 // lib/blog.ts
-// Blog helper utilities for Iron Compass
+// Blog helper utilities for Iron Compass AI
 // Reads MDX files from /content/blog and provides functions to get post metadata and content.
 
 import fs from 'fs';

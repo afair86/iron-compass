@@ -5,9 +5,9 @@ import { buildPageMetadata } from "@/lib/site";
 import { domainNavLinks } from "@/lib/domains";
 
 export const metadata = buildPageMetadata({
-  title: "Start Iron Compass | Discipline, Strength, Leadership for Men",
+  title: "Start Iron Compass AI | Discipline, Strength, Leadership for Men",
   description:
-    "Start with one responsibility. Choose a life domain, set a daily habit and review the week with Iron Compass, a discipline app and practical Stoic guides for men.",
+    "Start with one responsibility. Choose a life domain, set a daily habit and review the week with Iron Compass AI, a discipline app and practical Stoic guides for men.",
   path: "/start",
 });
 
@@ -97,7 +97,7 @@ export default function StartPage() {
           <h2 className="ic-section-heading">FAQ</h2>
           <div className="space-y-3 max-w-3xl mx-auto text-left">
             <div>
-              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Who is Iron Compass for?</h3>
+              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Who is Iron Compass AI for?</h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">
                 Men who want to carry their responsibilities with more discipline, steadiness and follow-through.
               </p>
@@ -136,7 +136,7 @@ export default function StartPage() {
               mainEntity: [
                 {
                   "@type": "Question",
-                  name: "Who is Iron Compass for?",
+                  name: "Who is Iron Compass AI for?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Men who want to carry their responsibilities with more discipline, steadiness and follow-through.",

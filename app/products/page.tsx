@@ -1,10 +1,10 @@
-// LEGACY PLACEHOLDER: this route has been neutralised and will be rebuilt using the new Iron Compass Tailwind design system.
+// LEGACY PLACEHOLDER: this route has been neutralised and will be rebuilt using the new Iron Compass AI Tailwind design system.
 import Link from "next/link";
 import PageShell from "../components/PageShell";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Iron Compass Toolkits",
+  title: "Iron Compass AI Toolkits",
   description:
     "Digital toolkits and systems to help men build discipline, strength, purpose, and leadership. Calm, trustworthy, and built for long-term growth.",
   path: "/products",
@@ -18,7 +18,7 @@ export default function ProductsPage() {
         <section className="ic-panel space-y-5 ic-align-center">
           <h1 className="ic-section-title">Products page queued for rebuild</h1>
           <p className="ic-section-copy ic-section-copy--muted">
-            This page is part of the legacy interface and is being upgraded to the new Iron Compass design. Use the links below to continue.
+            This page is part of the legacy interface and is being upgraded to the new Iron Compass AI design. Use the links below to continue.
           </p>
           <div className="ic-cta-row pt-2">
             <Link href="/" className="ic-btn-primary text-[0.62rem]">

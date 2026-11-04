@@ -13,7 +13,7 @@ interface ArticleLayoutProps extends PropsWithChildren {
   path: string;
 }
 
-export default function ArticleLayout({ eyebrow = "Iron Compass Field Guide", title, intro, path, children }: ArticleLayoutProps) {
+export default function ArticleLayout({ eyebrow = "Iron Compass AI Field Guide", title, intro, path, children }: ArticleLayoutProps) {
   const griefArticle = getGriefArticleByPath(path);
   const relatedArticles = getRelatedGriefArticles(path);
 
