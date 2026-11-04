@@ -1,0 +1,239 @@
+.page {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 2.5rem 0 1rem;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 1rem 0 4rem;
+}
+.breadcrumb {
+  color: #a6c9e5;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.35rem, 4.5vw, 3.9rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: #f0f2f5;
+  margin: 0 0 1.75rem;
+}
+.heroCopy p {
+  max-width: 58ch;
+  line-height: 1.75;
+}
+.lead {
+  font-size: 1.14rem;
+  color: #dce3eb;
+  margin-bottom: 1.25rem;
+}
+.heroCopy :global(.ic-cta-pair) {
+  justify-content: flex-start;
+  margin: 2rem 0 1rem;
+}
+.heroCopy :global(.ic-launch-status) {
+  text-align: left;
+  margin-left: 0;
+}
+.freeNote {
+  color: #bbc7d3;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+.heroScreen {
+  max-width: 250px;
+  margin: 0 auto;
+}
+.heroScreen img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #536475;
+  border-radius: 22px;
+}
+.heroScreen figcaption {
+  color: #bbc7d3;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 1rem;
+}
+.page section > h2 {
+  color: #f0f2f5;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.5rem;
+}
+.sectionIntro {
+  max-width: 66ch;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+.practice {
+  background: linear-gradient(115deg, #34495c, #343f4b);
+  border: 1px solid #4b5c6d;
+  border-radius: 18px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  margin: 2rem 0 5rem;
+}
+.practiceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+.practiceGrid h3 {
+  color: #e1bb80;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.practiceGrid p,
+.feature p,
+.planGrid p,
+.account p,
+.faq p {
+  line-height: 1.8;
+}
+.page a:not(:global(.ic-btn-primary)):not(:global(.ic-btn-ghost)) {
+  color: #b9d8ef;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.practiceGrid a {
+  display: inline-block;
+  margin-top: 1rem;
+}
+.features {
+  margin: 0 0 5rem;
+}
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+  background: #333f4b;
+  border: 1px solid #475869;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.featureCopy {
+  padding: 2rem 2rem 1rem;
+}
+.feature h3 {
+  color: #a6c9e5;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+}
+.feature .plan {
+  color: #e1bb80;
+  font-size: 0.8rem;
+  margin: 0 0 1rem;
+}
+.feature figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 0;
+  padding: 1.5rem 2rem 2rem;
+  background: #2e3843;
+}
+.feature img {
+  width: min(100%, 320px);
+  max-height: 370px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.plans {
+  padding: 3rem 0;
+  border-block: 1px solid #485562;
+  margin-bottom: 4rem;
+}
+.planGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.planGrid article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border: 1px solid #485b6e;
+  border-radius: 14px;
+  background: #344554;
+}
+.planGrid h3 {
+  font-size: 1.5rem;
+  color: #f0f2f5;
+}
+.planGrid p {
+  flex: 1;
+}
+.planNote {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  margin-top: 1.5rem;
+}
+.account {
+  padding: 2rem 0 4rem;
+  max-width: 70ch;
+}
+.account p {
+  margin-bottom: 1rem;
+}
+.faq {
+  padding: 2rem 0;
+}
+.faq > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 3rem;
+}
+.faq > div > div {
+  padding-top: 1.5rem;
+  border-top: 1px solid #495866;
+}
+.faq h3 {
+  color: #a6c9e5;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+.close {
+  padding: 3rem 0;
+  margin-top: 2rem;
+}
+.close p {
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+.close :global(.ic-cta-pair) {
+  justify-content: flex-start;
+}
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+  .heroScreen {
+    max-width: 220px;
+  }
+  .practiceGrid,
+  .planGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .featureGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .faq > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

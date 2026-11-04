@@ -2,15 +2,15 @@ import type { CanonicalDomainSlug } from "@/lib/site";
 
 /** Scene photographs with no compass in the picture. PhotoFrame adds it at the bottom left. */
 export const domainPhotos: Record<CanonicalDomainSlug, string> = {
-  discipline: "/images/home/scenes/home-discipline.webp",
-  identity: "/images/domains/identity-pegs.webp",
+  discipline: "/images/domains/editorial/four-block-compliance-system-hero.webp",
+  identity: "/images/domains/editorial/personal-doctrine-in-7-days-hero.webp",
   "health-strength": "/images/home/scenes/home-strength.webp",
   "bonds-connections": "/images/home/scenes/home-leadership.webp",
-  "purpose-direction": "/images/home/scenes/home-purpose.webp",
-  "finance-provision": "/images/home/scenes/home-financial.webp",
-  resilience: "/images/domains/strength-stairs.webp",
-  "fall-rise": "/images/domains/purpose-morning-path.webp",
-  "grief-honour": "/images/home/scenes/home-grief.webp",
+  "purpose-direction": "/images/domains/editorial/quarterly-mission-design-hero.webp",
+  "finance-provision": "/images/domains/actions/finance.webp",
+  resilience: "/images/domains/actions/resilience.webp",
+  "fall-rise": "/images/domains/actions/fallrise.webp",
+  "grief-honour": "/images/domains/grief-bench.webp",
   legacy: "/images/home/scenes/home-legacy.webp",
 };
 
@@ -19,27 +19,27 @@ export const aiResourcePhoto = "/images/home/scenes/home-ai.webp";
 
 export const philosophyPhoto = "/images/home/scenes/home-philosophy.webp";
 
-/** Hidden descriptions for search. They name what Iron Compass is for, not the scenery. */
+/** Describe the visible scene for people who cannot see the photograph. */
 export const domainPhotoAlts: Record<CanonicalDomainSlug, string> = {
-  discipline: "Discipline for men",
-  identity: "Identity for men",
-  "health-strength": "Health and strength for men",
-  "bonds-connections": "Bonds and connections for men",
-  "purpose-direction": "Purpose and direction for men",
-  "finance-provision": "Finance and provision for men",
-  resilience: "Resilience under load for men",
-  "fall-rise": "Returning after a miss",
-  "grief-honour": "Grief and honour for men",
-  legacy: "Legacy for men",
+  discipline: "A man putting his shoes and everyday essentials in order before the next day",
+  identity: "A man writing in a notebook at a wooden table in a sunlit room",
+  "health-strength": "A man training with a kettlebell, with the exercise and equipment in view",
+  "bonds-connections": "A father and son enjoying breakfast together at their kitchen table",
+  "purpose-direction": "A man organising priorities on a board in his home office",
+  "finance-provision": "A couple reviewing household bills together with a calculator, receipts and ledger",
+  resilience: "A father calmly preparing lunch while his son packs a school bag on a rainy morning",
+  "fall-rise": "Two men fitting a shelf above a workbench as they put a workshop in order",
+  "grief-honour": "A man sitting quietly beside flowers on a park bench, with the remembrance flowers and setting in view",
+  legacy: "A man carefully working on a wooden keepsake box in his workshop",
 };
 
 export const pagePhotoAlts = {
   about: "About Iron Compass AI, a life system for men built on discipline, purpose, strength, and integrity",
-  blog: "Iron Compass journal: practical guides for men on discipline, strength, leadership, money, grief, and purpose",
+  blog: "Iron Compass AI journal: practical guides for men on discipline, strength, leadership, money, grief, and purpose",
   contact: "Contact Iron Compass AI",
-  domains: "The ten Iron Compass life domains: discipline, identity, health, bonds, purpose, finance, resilience, fall and rise, grief, and legacy",
+  domains: "The ten Iron Compass AI life domains: discipline, identity, health, bonds, purpose, finance, resilience, fall and rise, grief, and legacy",
   homeHero: "Iron Compass AI helps men build strength, discipline and character",
-  philosophy: "Iron Compass philosophy: practical discipline, purpose, and character for men",
+  philosophy: "Iron Compass AI philosophy: practical discipline, purpose, and character for men",
 } as const;
 
 /** Scenic pages with no compass in the picture. PhotoFrame adds the mark. */
@@ -48,6 +48,17 @@ export const pagePhotos = {
   blog: "/images/pages/horizon-hero.png",
   contact: "/images/pages/horizon-mountains.png",
   domains: "/images/pages/horizon-hero.png",
+} as const;
+
+/** People photographs that already carry the compass mark, so PhotoFrame must not add another. */
+export const pagePeoplePhotos = {
+  domains: "/images/get-the-app/coastal-walk.webp",
+  pricing: "/images/get-the-app/adam-family-plans.webp",
+} as const;
+
+export const pagePeoplePhotoAlts = {
+  domains: "Two men laughing on a coastal walking track at first light",
+  pricing: "Adam, founder of Iron Compass AI, with his two children at sunset",
 } as const;
 
 /** The logo file is not a photograph. Articles still need their own picture. */

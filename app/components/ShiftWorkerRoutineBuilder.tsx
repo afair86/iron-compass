@@ -138,7 +138,7 @@ export default function ShiftWorkerRoutineBuilder({
   const resultRef = useRef<HTMLElement | null>(null);
   // Always read latest detail on submit (avoids stale closure if Generate is pressed mid-update).
   const detailRef = useRef(detail);
-  detailRef.current = detail;
+  useEffect(() => { detailRef.current = detail; }, [detail]);
 
   const printChecklist = () => {
     const root = document.body;
@@ -562,7 +562,7 @@ export default function ShiftWorkerRoutineBuilder({
             tabIndex={-1}
             aria-label="Your generated routine"
           >
-            <p className="ic-print-checklist-label">Iron Compass · Shift worker routine checklist</p>
+            <p className="ic-print-checklist-label">Iron Compass AI · Shift worker routine checklist</p>
             <h3 className="ic-routine__subheading">Your routine</h3>
             <p>{plan.explanation}</p>
             <p>

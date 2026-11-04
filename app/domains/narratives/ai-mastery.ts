@@ -2,6 +2,7 @@ import type { DomainNarrative } from "./types";
 
 export const aiMasteryNarrative: DomainNarrative = {
   slug: "ai-mastery",
+  listenAudio: false,
   h1Title: "AI as a tool",
   heroDescription:
     "A tool is useful when it gives you back an hour you can spend on a person, a walk, or a piece of work that needed your judgement.",
@@ -84,7 +85,7 @@ export const aiMasteryNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "Ask Iron Compass can turn a messy task into the next few steps without taking the decision away from you. The app is at ironcompassai.com/app. You still sign the decision.",
+    "The Iron Compass AI coach works from your own check-ins and journal: plan tomorrow in minutes, see the week clearly, set a 90-day plan with weekly checkpoints, or come back after a setback. It lays out the options. The app is at ironcompassai.com/app. You still sign the decision.",
     "The journal already has a plain starting point: how to get a first useful assistant habit without handing over your judgement. Read it after you have named the one dull task. The task is the test. If the tool does not make that task shorter, close it.",
   ],
 };

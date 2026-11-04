@@ -1,14 +1,35 @@
 .home {
-  background: #02060d;
+  --ic-band: #323e4a;
+  --ic-surface: #384451;
+  background: var(--ic-bg);
   color: var(--ic-text-heading);
 }
 
 .hero {
   position: relative;
   overflow: hidden;
-  background: #02060d;
+  background: var(--ic-bg);
+  width: 100%;
+  margin: 0;
+  isolation: isolate;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
   width: min(var(--ic-site-width), calc(100% - var(--ic-site-gutter) * 2));
-  margin: 48px auto 0;
+  margin: 0 auto;
+  padding: 40px 0 48px;
+}
+
+/* A dark floor keeps text legible even over the brightest part of the photo. */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(38, 44, 52, .48), rgba(38, 44, 52, .84) 48%, #262c34 100%);
+  pointer-events: none;
 }
 
 .banner {
@@ -52,7 +73,7 @@
   color: var(--ic-cta-red);
 }
 
-.banner h1 {
+.bannerMotto {
   position: relative;
   z-index: 2;
   width: auto;
@@ -69,7 +90,7 @@
   line-height: 1.2;
 }
 
-.banner h1::after {
+.bannerMotto::after {
   content: "";
   display: block;
   width: 5.5rem;
@@ -112,33 +133,30 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 62%;
-}
-
-.banner::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 1;
-  height: 6.5rem;
-  background: linear-gradient(180deg, rgba(8, 14, 22, 0.55), transparent);
-  pointer-events: none;
+  object-position: 30% center;
+  filter: saturate(.85);
 }
 
 .heroCopy {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  column-gap: 0.85rem;
+  display: block;
   width: 100%;
   margin: 0;
   padding: 24px 0 0;
-  background: #02060d;
+  background: transparent;
+  text-align: center;
+}
+
+.heroCopy h1 {
+  margin: 0 auto 20px;
+  max-width: 20ch;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  color: var(--ic-text-heading);
   text-align: center;
 }
 
@@ -220,7 +238,7 @@
 .block h2 {
   width: auto;
   max-width: none;
-  margin: 0 0 16px;
+  margin: 0 0 24px;
   font-family: var(--font-heading), Oswald, sans-serif;
   font-size: clamp(1.7rem, 3vw, 2.3rem);
   font-weight: 700;
@@ -251,7 +269,7 @@
 
 .domain {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-columns: 140px minmax(0, 1fr);
   gap: 0.75rem;
   align-items: start;
   padding: 20px;
@@ -336,7 +354,10 @@
 }
 
 @media (max-width: 899px) {
-  .hero { margin-top: 28px; }
+  .heroPhoto { object-position: 10% center; }
+  .banner { height: 200px; padding: 0; }
+  .heroCopy { padding-top: 20px; }
+  .heroCopy h1 { font-size: clamp(1.9rem, 6vw, 2.8rem); }
   .bannerMark {
     width: min(28vw, 150px);
   }
@@ -345,7 +366,7 @@
     font-size: clamp(1rem, 4.4vw, 1.55rem);
   }
 
-  .banner h1 {
+  .bannerMotto {
     font-size: 0.68rem;
     letter-spacing: 0.22em;
   }
@@ -359,10 +380,23 @@
 }
 
 @media (min-width: 900px) {
+  .heroInner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 48px;
+    min-height: 560px;
+    padding-block: 64px;
+  }
+
+  .hero::after {
+    background: linear-gradient(90deg, rgba(38, 44, 52, .45) 0%, rgba(38, 44, 52, .60) 38%, rgba(38, 44, 52, .86) 50%, rgba(38, 44, 52, .90) 100%);
+  }
+
   .banner {
-    height: clamp(280px, 28vw, 360px);
+    height: 420px;
     min-height: 0;
-    max-height: 360px;
+    max-height: none;
     padding: 1.5rem;
   }
 
@@ -374,6 +408,41 @@
   }
 
   .heroCopy {
-    padding: 24px 0 0;
+    padding: 0;
+    text-align: left;
   }
+
+  .heroCopy h1, .heroCopy > p { text-align: left; margin-inline: 0; }
+  .heroCopy > p { font-size: 1.05rem; line-height: 1.65; }
+  .bannerWord { font-size: 1.6rem; }
+  .bannerMark { width: 110px; }
 }
+
+/* Homepage action hierarchy. Other pages keep their existing button styles. */
+.action { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; padding: .85rem 1.25rem; border: 1px solid transparent; border-radius: 8px; font: inherit; font-weight: 700; line-height: 1.4; text-align: center; text-decoration: none; transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
+.actionPrimary { color: var(--ic-on-action, #02060d); background: var(--ic-cta-red); border-color: var(--ic-cta-red); }
+.actionPrimary:hover { color: var(--ic-on-action, #02060d); background: #ff5656; border-color: #ff5656; }
+.actionExplore { color: var(--ic-steel); border-color: var(--ic-steel); background: transparent; }
+.actionExplore:hover { color: var(--ic-steel); background: rgba(158,180,200,.12); }
+.actionRead { color: var(--ic-amber); border-color: var(--ic-amber); background: transparent; }
+.actionRead:hover { color: var(--ic-amber); background: rgba(255,176,32,.10); }
+.action:focus-visible, .aboutLink:focus-visible { outline: 2px solid var(--ic-text-heading); outline-offset: 4px; }
+.aboutLink { display: inline-flex; gap: .4rem; align-items: center; justify-content: center; min-height: 44px; color: var(--ic-steel); text-decoration: underline; text-underline-offset: .25em; }
+.aboutLink:hover { color: var(--ic-text-heading); }
+@media (max-width: 560px) { .action { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .action { transition: none; } }
+
+/* Keep the action visible; titles sit below the scene on desktop. */
+.domainPhoto { background:transparent; }
+.domain figure { position:relative; width:140px; height:auto; aspect-ratio:3/2; border-radius:8px; background:transparent; }
+.domain figure > img:first-child { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center; }
+@media (min-width:900px) {
+  .domain { grid-template-columns:minmax(0,1fr); grid-template-rows:auto 1fr; gap:0; padding:0; overflow:hidden; }
+  .domain figure { width:100%; height:auto; aspect-ratio:3/2; border-radius:0; }
+  .domain > div { padding:24px; }
+  .domain h3 { position:static; margin:0 0 16px; min-height:0; color:var(--ic-text-heading); font-size:1.3rem; letter-spacing:0; text-transform:none; }
+  .domain p { padding:0; }
+}
+@media(max-width:380px) { .domain {grid-template-columns:112px minmax(0,1fr);padding:16px;} .domain figure {width:112px;} }
+
+.heroCopy > p.appLine { max-width: none; color: var(--ic-subtitle, #e7ba72); font-size: 1rem; }

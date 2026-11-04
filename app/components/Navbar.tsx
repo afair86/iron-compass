@@ -3,9 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const links = [
+  { href: "/download", label: "THE APP" },
   { href: "/about", label: "ABOUT" },
   { href: "/domains", label: "DOMAINS" },
   { href: "/pricing", label: "PRICING" },
@@ -15,11 +16,22 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [openPath, setOpenPath] = useState<string | null>(null);
+  const open = openPath !== null && openPath === pathname;
+  const toggle = useRef<HTMLButtonElement>(null);
+  const isHomepage = pathname === "/";
 
   useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenPath(null);
+        toggle.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   const isActive = (href: string) => (pathname ? pathname.startsWith(href) : false);
 
@@ -52,16 +64,18 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a href="/app" className="ic-open-app">
+        <a href="/app" className={`ic-open-app${isHomepage ? " ic-open-app--home" : ""}`}>
           Open app
         </a>
 
         <button
+          ref={toggle}
           type="button"
           className="ic-nav-toggle md:hidden"
           aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpenPath((value) => value === pathname ? null : pathname)}
         >
           <span className="ic-nav-toggle-bar" data-open={open} />
           <span className="ic-nav-toggle-bar" data-open={open} />
@@ -70,7 +84,7 @@ export default function Navbar() {
 
       </div>
 
-      <div className="ic-mobile-nav md:hidden" data-open={open}>
+      <nav id="mobile-navigation" aria-label="Mobile navigation" inert={!open} className="ic-mobile-nav md:hidden" data-open={open}>
         <div className="ic-mobile-nav-card">
           {links.map((link) => (
             <Link
@@ -78,21 +92,14 @@ export default function Navbar() {
               href={link.href}
               className="ic-mobile-navlink"
               data-active={isActive(link.href)}
-              onClick={() => setOpen(false)}
+              onClick={() => setOpenPath(null)}
             >
               {link.label}
             </Link>
           ))}
-          <div className="ic-mobile-nav-cta">
-            <a href="/app" className="ic-btn-ghost text-xs w-full text-center">
-              Open web app
-            </a>
-            <Link href="/domains" className="ic-btn-ghost text-xs w-full text-center">
-              Explore Domains
-            </Link>
-          </div>
+
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

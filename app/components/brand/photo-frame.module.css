@@ -30,7 +30,7 @@
 .frameCover {
   height: 100%;
   min-height: 0;
-  background: #02060d;
+  background: #0b0f14;
 }
 
 .photoCover {
@@ -43,7 +43,7 @@
 
 .frame .mark {
   position: absolute;
-  left: 12px;
+  right: 12px;
   bottom: 12px;
   width: clamp(28px, 9%, 56px);
   height: auto;
@@ -66,7 +66,7 @@
 }
 
 .thumb .mark {
-  left: 4px;
+  right: 4px;
   bottom: 4px;
   width: 16px;
 }

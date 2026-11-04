@@ -56,7 +56,7 @@ export default function QuietCheckIn() {
 
   const summary = () =>
     [
-      "Iron Compass — A Quiet Check-In",
+      "Iron Compass AI — A Quiet Check-In",
       "",
       "This is an action summary, not a moral score, diagnosis, or verdict.",
       "",
@@ -203,7 +203,7 @@ export default function QuietCheckIn() {
       {ready ? (
         <div className="space-y-5" style={{ marginTop: "1.25rem" }}>
           <article className="ic-routine__result" aria-label="Quiet check-in summary">
-            <p className="ic-print-checklist-label">Iron Compass · Quiet check-in (action summary)</p>
+            <p className="ic-print-checklist-label">Iron Compass AI · Quiet check-in (action summary)</p>
             <h3 className="ic-routine__subheading">Your action summary</h3>
             <p>
               <strong>Roles:</strong> {roles.length ? roles.join(", ") : "None selected"}

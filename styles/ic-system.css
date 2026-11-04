@@ -2,7 +2,7 @@
 
 body {
   overflow-x: hidden;
-  background: #02060d;
+  background: #0b0f14;
   color: #f5f7fb;
 }
 
@@ -21,7 +21,7 @@ select {
   min-height: 2.75rem;
   border-radius: 12px;
   border: 1px solid var(--ic-border);
-  background: #080f18;
+  background: #131820;
   color: #f5f7fb;
 }
 

@@ -51,7 +51,7 @@ export const legacyNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "The Iron Compass app can hold the commitment and the review. Open it at ironcompassai.com/app. The page above still works on paper.",
+    "The Iron Compass AI app can hold the commitment and the review. Open it at ironcompassai.com/app. The page above still works on paper.",
     "Identity is the standards you are keeping now. This page is what those standards leave behind. Keep them separate.",
   ],
 };

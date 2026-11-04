@@ -13,7 +13,7 @@ export default function AiMasteryHubPage() {
   return (
     <TopicHubView
       eyebrow="A tool, not a domain"
-      title="Use the tool. Keep the decision."
+      title="Practical guides to using AI well"
       description="These notes show how to use AI for drafting, sorting, and preparation. They are not a life domain. Responsibility still sits in the ten domains."
       domainHref="/domains/ai-mastery"
       domainLabel="AI as a tool"

@@ -6,13 +6,14 @@ import "../styles/board.css";
 import "../styles/app-theme.css";
 import "../styles/site-layout.css";
 import "../styles/editorial.css";
-import "../styles/navigation-actions.css";
+import "../styles/semantic-actions.css";
+import "../styles/public-editorial.css";
 import type { Metadata } from "next";
-import Script from "next/script";
+import { socialLinks } from "@/lib/socialLinks";
 import { Montserrat, Inter } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { DEFAULT_OG_IMAGE, ORGANIZATION_LOGO, SITE_NAME, SITE_URL } from "@/lib/site";
+import { DEFAULT_OG_IMAGE, ORGANIZATION_LOGO, SITE_NAME, SITE_URL, serializeJsonLd } from "@/lib/site";
 
 // Font setup
 const montserrat = Montserrat({
@@ -29,9 +30,9 @@ const inter = Inter({
 });
 
 // SEO metadata for the site
-const siteTitle = `${SITE_NAME} — Life System for Disciplined Men`;
+const siteTitle = `${SITE_NAME} — Habit and Discipline App for Men`;
 const siteDescription =
-  "Discipline, strength, purpose, money, and AI leverage — a structured operating system for men 30–45. Built for the US, Europe, and Australia.";
+  "Build daily discipline around the responsibilities you carry. Habits, a journal, practical Stoic guides and AI coaching across ten life domains.";
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -62,31 +63,35 @@ export default function RootLayout({
   return (
     <html lang="en" className={`h-full ${montserrat.variable} ${inter.variable}`}>
       <body className="antialiased">
-        <Script
+        <script
           id="ld-website-org"
           type="application/ld+json"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: serializeJsonLd({
               "@context": "https://schema.org",
               "@graph": [
                 {
                   "@type": "WebSite",
+                  "@id": `${SITE_URL}/#website`,
                   name: siteTitle,
                   url: SITE_URL,
                   description: siteDescription,
                 },
                 {
                   "@type": "Organization",
+                  "@id": `${SITE_URL}/#organization`,
                   name: SITE_NAME,
+                  sameAs: socialLinks.map((link) => link.href),
                   url: SITE_URL,
                   logo: ORGANIZATION_LOGO,
                   image: DEFAULT_OG_IMAGE,
+                  founder: { "@type": "Person", name: "Adam", jobTitle: "Founder" },
                 },
               ],
             }),
           }}
         />
+        <a className="ic-skip-link" href="#main-content">Skip to content</a>
         <Navbar />
         {children}
         <Footer />

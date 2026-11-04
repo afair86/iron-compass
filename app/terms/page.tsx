@@ -2,8 +2,8 @@ import PageShell from "../components/PageShell";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Terms of Use | Iron Compass",
-  description: "Review the rules that govern your access to the Iron Compass platform, content, and services.",
+  title: "Terms of Use | Iron Compass AI",
+  description: "Review the rules that govern your access to the Iron Compass AI platform, content, and services.",
   path: "/terms",
 });
 
@@ -11,12 +11,12 @@ const sections = [
   {
     title: "Acceptance of Terms",
     body:
-      "By accessing the Iron Compass site, app, or any related services, you acknowledge these Terms of Use. If you disagree with any part of them, do not continue using the platform.",
+      "By accessing the Iron Compass AI site, app, or any related services, you acknowledge these Terms of Use. If you disagree with any part of them, do not continue using the platform.",
   },
   {
     title: "Not Medical, Financial, or Mental Health Advice",
     body:
-      "Iron Compass delivers self-improvement tools, training, and accountability systems. We are not a substitute for professional medical, financial, or mental health services. Always consult qualified professionals before acting on any plan.",
+      "Iron Compass AI delivers self-improvement tools, training, and accountability systems. We are not a substitute for professional medical, financial, or mental health services. Always consult qualified professionals before acting on any plan.",
   },
   {
     title: "Eligibility & Responsible Use",
@@ -36,17 +36,17 @@ const sections = [
   {
     title: "Intellectual Property",
     body:
-      "All Iron Compass content, trademarks, and technology remain our property or that of our licensors. You receive a limited, revocable license to access the platform for personal use and may not reproduce or reverse-engineer it without written permission.",
+      "All Iron Compass AI content, trademarks, and technology remain our property or that of our licensors. You receive a limited, revocable license to access the platform for personal use and may not reproduce or reverse-engineer it without written permission.",
   },
   {
     title: "Prohibited Conduct",
     body:
-      "Do not attempt to exploit the platform, transmit harmful code, scrape our data, harass members, or use Iron Compass for illegal purposes. We reserve the right to investigate and take action when necessary.",
+      "Do not attempt to exploit the platform, transmit harmful code, scrape our data, harass members, or use Iron Compass AI for illegal purposes. We reserve the right to investigate and take action when necessary.",
   },
   {
     title: "Limitation of Liability",
     body:
-      "Iron Compass is provided on an \"as-is\" basis. To the fullest extent allowed by law, we disclaim warranties and are not liable for indirect, incidental, or consequential damages that arise from using the platform.",
+      "Iron Compass AI is provided on an \"as-is\" basis. To the fullest extent allowed by law, we disclaim warranties and are not liable for indirect, incidental, or consequential damages that arise from using the platform.",
   },
   {
     title: "Changes to These Terms",
@@ -62,7 +62,7 @@ const sections = [
 
 const commitments = [
   "Operate with integrity, honesty, and respect for other members.",
-  "Follow lawful conduct inside and outside the product while representing Iron Compass.",
+  "Follow lawful conduct inside and outside the product while representing Iron Compass AI.",
   "Protect access credentials and report suspicious activity immediately.",
   "Use the content for personal development—not to compete or resell.",
 ];
@@ -76,9 +76,9 @@ const companyPromises = [
 
 export default function TermsPage() {
   return (
-    <PageShell>
+    <PageShell className="ic-public-page">
       <div className="ic-content-stack max-w-5xl">
-        <section className="ic-panel ic-align-center space-y-6">
+        <section className="ic-panel ic-align-center ic-editorial-center space-y-6">
           <h1 className="ic-section-title">Terms of Use</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Iron Compass AI is operated by HumanFirst Technologies, an Australian sole-trader business, ABN 96 226 474 355. Using the site means you

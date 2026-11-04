@@ -3,7 +3,8 @@ import PageShell from "../components/PageShell";
 import DomainCardDirectory from "../components/DomainCardDirectory";
 import { domainCards } from "@/lib/domains";
 import { absoluteUrl, buildPageMetadata } from "@/lib/site";
-import { domainPhotoAlts, domainPhotos } from "@/lib/sitePhotos";
+import { domainPhotoAlts, domainPhotos, pagePeoplePhotoAlts, pagePeoplePhotos } from "@/lib/sitePhotos";
+import PhotoFrame from "../components/brand/PhotoFrame";
 import type { CanonicalDomainSlug } from "@/lib/site";
 import gridStyles from "../components/domain-card-directory.module.css";
 import styles from "./domains-page.module.css";
@@ -31,7 +32,7 @@ const focus: Record<CanonicalDomainSlug, string> = {
 const domainList = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Iron Compass life domains",
+  name: "Iron Compass AI life domains",
   itemListElement: domainCards.map((domain, index) => ({
     "@type": "ListItem",
     position: index + 1,
@@ -46,18 +47,19 @@ export default function DomainsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(domainList) }} />
       <div className={styles.page}>
         <header className={`${styles.intro} ic-editorial-center`}>
+          <PhotoFrame src={pagePeoplePhotos.domains} alt={pagePeoplePhotoAlts.domains} showMark={false} />
           <h1>Ten life domains</h1>
           <p className={styles.sub}>Where responsibility lives.</p>
           <p className={styles.lede}>
             Discipline, identity, health, the people who depend on you, the work, the money, the load, the return
             after a miss, grief, and what remains. Start with the one that is slipping.
           </p>
-          <div className={styles.actions}>
+          <div className="ic-cta-pair">
             <Link href="/domains/discipline" className="ic-btn-primary">
               Start with Discipline
             </Link>
             <Link href="/blog" className="ic-btn-ghost">
-              Read the Journal
+              Read the journal
             </Link>
           </div>
         </header>

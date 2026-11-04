@@ -1,8 +1,14 @@
+import AppValuePanel from "@/app/components/AppValuePanel";
+import { articleAppContext } from "@/lib/articleAppContext";
 import "@/styles/stoic-dispatch.css";
-import { tryGetPostBySlug, getAllPosts, extractFaqFromMarkdown } from "@/lib/blog";
+import {
+  tryGetPostBySlug,
+  getAllPosts,
+  extractFaqFromMarkdown,
+} from "@/lib/blog";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import Link from "next/link";
-import Script from "next/script";
 import PageShell from "@/app/components/PageShell";
 import { PageContainer } from "@/app/components/LayoutPrimitives";
 import ArticleListenButton from "@/app/components/ArticleListenButton";
@@ -11,13 +17,44 @@ import PhotoFrame from "@/app/components/brand/PhotoFrame";
 import { articlePhoto } from "@/lib/sitePhotos";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  absoluteUrl,
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  SITE_URL,
+  ORGANIZATION_LOGO,
+  serializeJsonLd,
+} from "@/lib/site";
 import { markdownToSpeechText } from "@/lib/speechText";
 import { isPracticalToolId } from "@/lib/practicalToolIds";
 import fs from "fs";
 import path from "path";
+import { Children, isValidElement, type ComponentProps } from "react";
 
 const PRACTICAL_TOOL_MARKER = "<!-- PRACTICAL_TOOL -->";
+
+/** A markdown image on its own line arrives wrapped in <p>, and its <figure> cannot sit inside <p>. */
+function MdxParagraph({ children, ...props }: ComponentProps<"p">) {
+  const items = Children.toArray(children);
+  const imageOnly =
+    items.length === 1 &&
+    isValidElement<{ src?: unknown }>(items[0]) &&
+    Boolean(items[0].props.src);
+  return imageOnly ? <>{children}</> : <p {...props}>{children}</p>;
+}
+
+function MdxTable(props: ComponentProps<"table">) {
+  return (
+    <div
+      className="ic-article-table"
+      role="region"
+      aria-label="Scrollable article table"
+      tabIndex={0}
+    >
+      <table {...props} />
+    </div>
+  );
+}
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -30,7 +67,12 @@ function resolveOgImage(image?: string) {
 function extractDescription(markdown: string, fallback = "") {
   const paragraphs = markdown
     .split(/\n{2,}/)
-    .map((block) => block.replace(/[#>*`*_\-]/g, "").replace(/\[(.*?)\]\((.*?)\)/g, "$1").trim())
+    .map((block) =>
+      block
+        .replace(/[#>*`*_\-]/g, "")
+        .replace(/\[(.*?)\]\((.*?)\)/g, "$1")
+        .trim(),
+    )
     .filter(Boolean);
   const joined = paragraphs.slice(0, 2).join(" ").trim();
   const base = joined || fallback;
@@ -40,13 +82,20 @@ function extractDescription(markdown: string, fallback = "") {
 
 function formatDate(value: string) {
   const parsed = new Date(value);
-  return new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(parsed);
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(parsed);
 }
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts
-    .filter((post) => post.slug && typeof post.slug === "string" && post.slug.trim() !== "")
+    .filter(
+      (post) =>
+        post.slug && typeof post.slug === "string" && post.slug.trim() !== "",
+    )
     .map((post) => ({ slug: post.slug }));
 }
 
@@ -62,8 +111,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const baseDescription =
-    post.meta.metaDescription || post.meta.description || extractDescription(post.content, post.meta.title);
-  const description = baseDescription.length > 155 ? `${baseDescription.slice(0, 152).trim()}...` : baseDescription;
+    post.meta.metaDescription ||
+    post.meta.description ||
+    extractDescription(post.content, post.meta.title);
+  const description =
+    baseDescription.length > 155
+      ? `${baseDescription.slice(0, 152).trim()}...`
+      : baseDescription;
   const title = post.meta.metaTitle || post.meta.title;
   const ogImage = resolveOgImage(post.meta.image);
   const canonical = absoluteUrl(`/blog/${slug}`);
@@ -107,11 +161,14 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const fallbackDescription =
-    post.meta.metaDescription || post.meta.description || extractDescription(post.content, post.meta.title);
+    post.meta.metaDescription ||
+    post.meta.description ||
+    extractDescription(post.content, post.meta.title);
   const articleTitle = post.meta.metaTitle || post.meta.title;
-  const articleDescription = fallbackDescription.length > 155
-    ? `${fallbackDescription.slice(0, 152).trim()}...`
-    : fallbackDescription;
+  const articleDescription =
+    fallbackDescription.length > 155
+      ? `${fallbackDescription.slice(0, 152).trim()}...`
+      : fallbackDescription;
   const canonical = absoluteUrl(`/blog/${slug}`);
   const ogImage = resolveOgImage(post.meta.image);
   const datePublished = post.meta.date;
@@ -121,17 +178,43 @@ export default async function BlogPostPage({ params }: Props) {
   const contentForSpeech = post.content.replace(PRACTICAL_TOOL_MARKER, " ");
   const speechText = markdownToSpeechText(contentForSpeech);
   const audioRel = `/audio/blog/${slug}.mp3`;
-  const audioAbs = path.join(process.cwd(), "public", "audio", "blog", `${slug}.mp3`);
+  const audioAbs = path.join(
+    process.cwd(),
+    "public",
+    "audio",
+    "blog",
+    `${slug}.mp3`,
+  );
   // Hide Listen when frontmatter sets listenAudio: false (stale narration awaiting regen).
   const audioSrc =
-    post.meta.listenAudio === false ? undefined : fs.existsSync(audioAbs) ? audioRel : undefined;
-  const displayContent = post.content.replace(
-    /^[ \t]*(?:-[ \t]*)?(?:\*\*)?(?:Target keywords?(?:\(s\))?|(?:Related[ \t]+)?Semantic terms|Primary intent|Target reader|Value promise):[^\n]*(?:\n|$)/gim,
-    "\n",
+    post.meta.listenAudio === false
+      ? undefined
+      : fs.existsSync(audioAbs)
+        ? audioRel
+        : undefined;
+  const displayContent = post.content
+    .replace(
+      /<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
+      "",
+    )
+    .replace(
+      /^[ \t]*(?:-[ \t]*)?(?:\*\*)?(?:Target keywords?(?:\(s\))?|(?:Related[ \t]+)?Semantic terms|Primary intent|Target reader|Value promise):[^\n]*(?:\n|$)/gim,
+      "\n",
+    );
+  const [beforeTool, afterTool = ""] = displayContent.split(
+    PRACTICAL_TOOL_MARKER,
   );
-  const [beforeTool, afterTool = ""] = displayContent.split(PRACTICAL_TOOL_MARKER);
-  const practicalToolId = isPracticalToolId(post.meta.practicalTool) ? post.meta.practicalTool : null;
-  const heroAlt = post.meta.imageAlt || `${post.meta.title} — illustrative scene`;
+  const practicalToolId = isPracticalToolId(post.meta.practicalTool)
+    ? post.meta.practicalTool
+    : null;
+  const appContext = articleAppContext(post.meta);
+  const relatedPosts = getAllPosts()
+    .filter(
+      (item) => item.slug !== slug && articleAppContext(item) === appContext,
+    )
+    .slice(0, 3);
+  const heroAlt =
+    post.meta.imageAlt || `${post.meta.title} — illustrative scene`;
   const faqSchema =
     faqEntries.length > 0
       ? {
@@ -161,15 +244,15 @@ export default async function BlogPostPage({ params }: Props) {
     inLanguage: "en",
     author: {
       "@type": "Organization",
-      name: "Iron Compass",
+      name: "Iron Compass AI",
       url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
-      name: "Iron Compass",
+      name: "Iron Compass AI",
       logo: {
         "@type": "ImageObject",
-        url: DEFAULT_OG_IMAGE,
+        url: ORGANIZATION_LOGO,
       },
     },
     image: ogImage,
@@ -180,61 +263,82 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl("/blog") },
-      { "@type": "ListItem", position: 3, name: post.meta.title, item: canonical },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: absoluteUrl("/blog"),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.meta.title,
+        item: canonical,
+      },
     ],
   };
 
   return (
-    <PageShell>
-      <PageContainer width="narrow">
+    <PageShell className="ic-journal-article">
+      <PageContainer>
         <div className="ic-dispatch">
           {faqSchema ? (
-            <Script
+            <script
               id={`faq-${post.meta.slug ?? slug}`}
               type="application/ld+json"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+              dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
             />
           ) : null}
-          <Script
+          <script
             id={`article-${post.meta.slug ?? slug}`}
             type="application/ld+json"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleSchema) }}
           />
-          <Script
+          <script
             id={`breadcrumb-${post.meta.slug ?? slug}`}
             type="application/ld+json"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            dangerouslySetInnerHTML={{
+              __html: serializeJsonLd(breadcrumbSchema),
+            }}
           />
 
           <header className="ic-board-hero">
             {articlePhoto(post.meta.image) ? (
               <div className="ic-board-hero__media">
-                <PhotoFrame src={articlePhoto(post.meta.image)!} alt={heroAlt} fit="cover" position="center top" />
+                <PhotoFrame
+                  src={articlePhoto(post.meta.image)!}
+                  alt={heroAlt}
+                  fit="cover"
+                  position="center top"
+                />
               </div>
             ) : null}
             <div className="ic-board-hero__copy">
-            <p className="ic-board-kicker">Journal</p>
-            <h1 className="ic-page-title">{post.meta.title}</h1>
-            {post.meta.imageCredit && articlePhoto(post.meta.image) ? (
-              <p className="ic-ai-credit">{post.meta.imageCredit}</p>
-            ) : null}
-            <p className="ic-dispatch-lede">{fallbackDescription}</p>
-            <div className="ic-dispatch-meta">
-              <time dateTime={post.meta.date}>{formatDate(post.meta.date)}</time>
-            </div>
-            <ArticleListenButton
-              title={articleTitle}
-              text={speechText}
-              audioSrc={audioSrc}
-              audioVersion="christopher-v1"
-              subtle
-              hint="Prefer to hear it?"
-            />
-            <div className="ic-stoic-rule ic-stoic-rule--wide" aria-hidden="true" />
+              <nav aria-label="Breadcrumb" className="ic-board-kicker">
+                <Link href="/">Home</Link> / <Link href="/blog">Journal</Link>
+              </nav>
+              <h1 className="ic-page-title">{post.meta.title}</h1>
+              {post.meta.imageCredit && articlePhoto(post.meta.image) ? (
+                <p className="ic-ai-credit">{post.meta.imageCredit}</p>
+              ) : null}
+              <p className="ic-dispatch-lede">{fallbackDescription}</p>
+              <div className="ic-dispatch-meta">
+                <time dateTime={post.meta.date}>
+                  {formatDate(post.meta.date)}
+                </time>
+              </div>
+              <ArticleListenButton
+                title={articleTitle}
+                text={speechText}
+                audioSrc={audioSrc}
+                audioVersion="christopher-v1"
+                subtle
+                hint="Prefer to hear it?"
+              />
+              <div
+                className="ic-stoic-rule ic-stoic-rule--wide"
+                aria-hidden="true"
+              />
             </div>
           </header>
 
@@ -242,10 +346,14 @@ export default async function BlogPostPage({ params }: Props) {
             <article className="ic-dispatch-prose">
               <MDXRemote
                 source={beforeTool}
+                options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
                 components={{
                   Link,
                   h1: (props) => <h2 {...props} />,
-                  img: ({ src, alt }) => (src ? <PhotoFrame src={src} alt={alt || ""} /> : null),
+                  p: MdxParagraph,
+                  table: MdxTable,
+                  img: ({ src, alt }) =>
+                    src ? <PhotoFrame src={src} alt={alt || ""} /> : null,
                 }}
               />
             </article>
@@ -260,28 +368,40 @@ export default async function BlogPostPage({ params }: Props) {
               <article className="ic-dispatch-prose">
                 <MDXRemote
                   source={afterTool}
+                  options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
                   components={{
                     Link,
                     h1: (props) => <h2 {...props} />,
-                    img: ({ src, alt }) => (src ? <PhotoFrame src={src} alt={alt || ""} /> : null),
+                    p: MdxParagraph,
+                    table: MdxTable,
+                    img: ({ src, alt }) =>
+                      src ? <PhotoFrame src={src} alt={alt || ""} /> : null,
                   }}
                 />
               </article>
             ) : null}
 
-            <footer className="ic-dispatch-footer flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div className="space-y-1 text-left">
-                <p className="ic-section-copy ic-section-copy--muted text-sm max-w-md">{fallbackDescription}</p>
-              </div>
-              <div className="ic-cta-row justify-start md:justify-end">
-                <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
-                  Back to Journal
-                </Link>
-                <Link href="/start" className="ic-btn-primary text-[0.62rem]">
-                  Start the Program
-                </Link>
-              </div>
-            </footer>
+            <AppValuePanel context={appContext} />
+            {relatedPosts.length > 0 ? (
+              <section
+                className="ic-related-reading"
+                aria-label="Related reading"
+              >
+                <h2>Keep reading</h2>
+                <ul>
+                  {relatedPosts.map((item) => (
+                    <li key={item.slug}>
+                      <Link href={`/blog/${item.slug}`}>{item.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
+            <p>
+              <Link href="/blog" className="ic-app-value__guide">
+                Browse all journal articles
+              </Link>
+            </p>
           </div>
         </div>
       </PageContainer>

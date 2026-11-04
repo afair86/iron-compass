@@ -41,7 +41,7 @@ export default function CommitmentPlanner() {
 
   const summary = () =>
     [
-      "Iron Compass — Commitment planner",
+      "Iron Compass AI — Commitment planner",
       "",
       `Domain: ${domain}`,
       `Promise: ${promise.trim()}`,
@@ -164,7 +164,7 @@ export default function CommitmentPlanner() {
       {ready ? (
         <div className="space-y-5" style={{ marginTop: "1.25rem" }}>
           <article className="ic-routine__result" aria-label="Commitment summary">
-            <p className="ic-print-checklist-label">Iron Compass · Commitment summary</p>
+            <p className="ic-print-checklist-label">Iron Compass AI · Commitment summary</p>
             <h3 className="ic-routine__subheading">Your commitment</h3>
             <p>
               <strong>Domain:</strong> {domain}

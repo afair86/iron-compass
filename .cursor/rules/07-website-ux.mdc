@@ -5,17 +5,47 @@ alwaysApply: true
 
 # Website UX
 
+Homepage: full-width continuous hero photograph behind the brand and headline,
+with a dark contrast overlay and responsive crop. Keep text as HTML. Show Ten life
+domains before A daily practice you can return to; introduce the responsibilities
+before the app walkthrough. Preserve silver headings and red/blue action roles.
+
+Product name: Iron Compass AI. Use the full name in public copy, headings, metadata,
+accessibility labels and publisher data. Keep technical identifiers and URLs unchanged.
+
+Owner clarification, 4 November 2026: the website shares the app's brand but has its own
+public-site composition. Use charcoal #262c34 backgrounds, #2b333c section bands and
+#333c46 cards. Do not return the website to near-black or hardcode the homepage background.
+
 Latest owner direction uses styles/editorial.css over the shared site-layout.css:
 centre short introductions, home lead/Ten life domains/philosophy, journal hero,
 Topics/Read This First and section labels. Centre footer logo and Discipline.
 Direction. Brotherhood. Keep articles, card descriptions and forms left aligned.
 Use ic-editorial-center explicitly; no blanket all-left or all-centred treatment.
-Steel-blue #9ac7ed titles, amber #e7ba72 subtitles, silver #c7cfdd reading copy;
-Iron Red primary actions, restrained blue guidance, amber attention, green earned
+Owner refined 4 November 2026: brighter silver #f0f2f5 main headings, clearer blue
+#a6c9e5 subtitles, section labels and secondary guidance; soft silver #d5dce6 reading
+copy. Leave at least 24px between major headings and body text. Owner outdoor-reading refinement: lighter charcoal surfaces, #b4becb muted copy and clearer neutral borders; preserve silver/blue/amber/red roles and authentic app screenshots.
+Use selective blue accents for links, secondary controls and the featured plan;
+Iron Red primary actions, amber only for real attention, green earned
 completion, and neutral navigation. Secondary controls must not inherit red. No neon/glow.
 Colours communicate hierarchy and brand associations, not guaranteed emotions
 or sales. Keep1120px grid/24px gutters (20px phone),14px cards/8px controls.
-Journal H1 is Iron Compass Journal; Dispatches for disciplined men is its subtitle.
+Domain guides use a photo-led split introduction, visible linked contents, a
+comfortable reading column and a distinct amber-marked practice section. Preserve
+all educational copy, internal links and app feature/plan details. No collapsed
+article content. The app follows the guide as the next practical step.
+Use shorter reading passages at sentence boundaries without removing words;
+blue key-passage panels and natural section headings, amber for practical
+attention, silver primary titles. Preserve the original narration wording.
+No decorative editorial section numbers such as 01/05 with rules or dashes, and
+no decorative arrows next to links/buttons anywhere on the public website.
+Keep useful numbering for practical steps, legal clauses, time and measurements.
+Avoid production labels and boilerplate that make public pages feel machine-written.
+Photographs follow the blog guide Pictures rules: natural-looking people aged
+roughly 30–60, believable enjoyment or satisfaction in a relevant activity, varied
+men/clothing/rooms/light. Keep grief imagery quietly warm rather than performative.
+Avoid repeating a scene within a guide. Inspect actual images, not filenames.
+Journal H1 is Iron Compass AI Journal; Dispatches for disciplined men is its subtitle.
 Photos: top focal point for people; scenic horizons retain their own focal point.
 PhotoFrame applies positions to compact and cover modes. Do not reintroduce
 centre crops that clip heads. Existing full-head alternatives live in sitePhotos.
@@ -24,7 +54,7 @@ Do not redesign the site as part of another task.
 
 Follow the latest owner-approved app-aligned theme in styles/app-theme.css:
 charcoal surfaces, neutral borders, silver text and muted steel navigation.
-Amber identifies a next useful step, red a real action, green only earned progress.
+Blue identifies guidance and secondary steps, red a real action, green only earned progress.
 Do not restore neon blue outlines, coloured glows, text shadows or decorative
 status colours. Match the app's colour roles; colours do not guarantee emotion,
 trust or sales. Keep the original compass mark small and unglowing.
@@ -40,3 +70,15 @@ Photos should look like a real place and a real person. The blog picture rules s
 The phone is the main screen. The next step must be visible without hunting.
 
 Send people toward the real app at `/app` or toward a real article. Do not build a second app on the marketing site.
+
+Apply the public editorial standard to journal articles, hubs and supporting pages: readable silver titles, blue guidance headings, amber practice attention, charcoal panels and red primary actions. Keep educational text, practical tools and narration intact. Show an actual relevant app screenshot after useful content, label its plan, and link to the matching guide, signup and current pricing. Avoid heavy app-selling blocks inside legal pages or support forms. Blog archives use text entries after the featured/latest stories rather than a photo on every card. Preserve accurate metadata and initial-HTML structured data; never claim search or conversion uplift from styling alone.
+
+The dedicated app overview is /download. Keep The app in primary/mobile navigation, Explore the app links from the homepage, and a clear link from Pricing before plan selection. The website homepage remains domain-first; the app overview explains actual features with real screenshots, accurate Free/Core/Elite labels, visible FAQ answers and matching structured data. Owner wants a stronger stoic, masculine message: capability, discipline, responsibility and follow-through, without aggression, brooding or promises of transformation. Photography should show capable men enjoying real responsibilities. Preserve pricing and Apple-review status.
+
+Owner supplied a real photograph of Adam and his two children for About, Plans and a small homepage founder image. Use the original facial detail with restrained display grading/crops; generated retouches that change faces were not selected. Keep all three full heads visible. Current assets are adam-family-about.webp, adam-family-plans.webp and adam-family-home.webp. Do not overwrite the original owner files or substitute a generated family in the founder placements.
+
+Owner domain clarification, 4 November 2026: Fall & Rise concerns major life setbacks (such as divorce, business failure or job loss), Stoic recovery, rebuilding over time and moving forward with integrity. Daily return actions support that recovery; do not reduce this domain to missed habits or a bad week. Distinguish Resilience (function under pressure) and Grief & Honour (carry and honour loss). Keep website descriptions and metadata consistent. Hide recorded narration when revised text no longer matches; do not claim the app itself was updated by website edits.
+
+Practical guides (/articles and its pages) now use practical-guides.module.css and ArticleLayout/TopicHubView: photo-led hero, real relevant varied photography, linked contents for articles, restrained blue summary, open reading sections with selected cards, amber daily/weekly practice, and one accurate topic-specific AppValuePanel. Divorce points to Fall & Rise; identity rebuilding points to Identity; grief pages to Grief & Honour. Preserve educational structure, canonical routes and initial Article/CollectionPage/ItemList/Breadcrumb schema. Do not restore the old narrow empty split hero, centre every paragraph, duplicate marketing blocks or make blanket gender/health claims. Tablet navigation uses the mobile menu through1023px to keep the complete logo clear.
+
+Owner photo correction,4 November2026: domain images must describe the responsibility through visible action and setting, not repeat headshots. Review all ten together for natural colour/settings/wardrobe variety; no uniform warm or blue grading. Shared domainPhotos/domainGuideHeroes selections now apply across homepage/directory/guide heroes. Use scene proportions and contain/centred framing so heads,hands,tools and context remain visible. Desktop card titles sit below photographs, not over the activity; phone thumbnails are landscape. Do not restore160px top-cropped desktop strips or72px portrait slots. New Finance/Resilience/Fall & Rise images are generated illustrations, not customer/founder photographs. Preserve original founder family photographs and actual app screenshot pixels.

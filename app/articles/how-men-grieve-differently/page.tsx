@@ -1,12 +1,19 @@
+import { practicalGuides } from "@/lib/practicalGuides";
 import Link from "next/link";
 import ArticleLayout from "../components/ArticleLayout";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "How Men Grieve Differently — And Why Silence Isn't Strength",
+  title: "How Men Experience Grief: Patterns and Practical Support",
   description:
-    "Men don't grieve like the textbooks say. Why isolation, rage, and numbness show up — and what structure actually helps you process loss without falling apart.",
+    "Men experience grief in different ways. Explore silence, responsibility and connection, with practical daily and weekly actions.",
   path: "/articles/how-men-grieve-differently",
+  openGraph: {
+    type: "article",
+    publishedTime: "2025-11-08",
+    modifiedTime: "2026-11-04",
+  },
+  images: [practicalGuides["/articles/how-men-grieve-differently"].image],
 });
 
 const patterns = [
@@ -23,7 +30,7 @@ const patterns = [
     copy: "Withdraws because he refuses to burden anyone.",
   },
   {
-    title: "The Bomb",
+    title: "Holding pressure in",
     copy: "Bottles everything until it detonates as anger.",
   },
 ];
@@ -39,7 +46,7 @@ const steps = [
   },
   {
     title: "Hold One Discipline",
-    copy: "Training, walking, cold exposure, or sleep—discipline stabilises identity.",
+    copy: "Keep an ordinary anchor such as a manageable walk, a regular meal or a planned time to rest.",
   },
   {
     title: "Set Boundaries with Numbing",
@@ -55,25 +62,27 @@ export default function ArticlePage() {
   return (
     <ArticleLayout
       title="How Men Grieve Differently"
-      intro="Most grief conversations were not written for men. You hold the line even when the ground is shifting, and that difference matters. This article explains why men go silent, why they break in private, and how to carry loss with structure."
+      intro="Men respond to loss in different ways. This guide looks at patterns you might recognise, the limits of going silent and practical ways to stay connected while carrying your responsibilities."
       path="/articles/how-men-grieve-differently"
     >
       <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Why Men Go Silent During Grief</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Men go quiet because they feel responsible. Even while grieving, you are protecting, providing, leading, solving, and keeping the world stable. Silence becomes a survival mechanism, not apathy.
+          You may go quiet because you feel responsible for keeping things
+          moving, or because you do not know what to say. Quiet can have a
+          place, but it should not become the only way you carry what happened.
         </p>
       </section>
 
       <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Men Feel Grief in Their Identity</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Women often talk feelings through. Men internalise grief as identity shock, responsibility pressure, loss of direction, and fear of letting people down. Grief and identity are inseparable; revisit the
-          {" "}
+          Loss can raise questions about identity, responsibility and direction.
+          These experiences are not exclusive to men, and they do not look the
+          same for everyone. If your roles have changed, revisit the{" "}
           <Link href="/domains/identity" className="underline">
-            Identity &amp; Legacy
-          </Link>
-          {" "}
+            Identity
+          </Link>{" "}
           domain to rebuild who you are.
         </p>
       </section>
@@ -81,77 +90,84 @@ export default function ArticlePage() {
       <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Why Men Break in Private</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Men hide their breaking point because they do not want to be a burden, fear being unreliable, and lack a masculine framework for expressing grief. Breaking in private is not weakness—it is isolation without structure.
+          Trying to hide every difficult moment can leave people unaware that
+          you need support. Speak to someone you trust before the practical load
+          becomes more than you can carry alone.
         </p>
       </section>
 
       <section className="ic-panel-outline space-y-4 ic-align-center">
-        <h2 className="ic-section-heading">How Society Fails Men in Grief</h2>
+        <h2 className="ic-section-heading">What useful support looks like</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Grief advice is soft and emotional. Men need clarity, responsibility, direction, discipline, honour, and principles. Not platitudes. Men do not need to be babied—they need a framework.
+          Useful support leaves room for the loss and the life that still needs
+          attention. Ask for clear practical help, time to remember and company
+          you do not have to perform for.
         </p>
       </section>
 
       <section className="ic-panel space-y-6 ic-align-center">
         <div className="space-y-2 ic-align-center">
-          <h2 className="ic-section-heading">The Four Masculine Patterns of Grief</h2>
+          <h2 className="ic-section-heading">Patterns you may recognise</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2 ic-align-center">
           {patterns.map((pattern) => (
-            <article key={pattern.title} className="ic-panel-muted space-y-2 ic-align-center">
-              <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">{pattern.title}</h3>
-              <p className="ic-section-copy ic-section-copy--muted text-sm">{pattern.copy}</p>
+            <article
+              key={pattern.title}
+              className="ic-panel-muted space-y-2 ic-align-center"
+            >
+              <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">
+                {pattern.title}
+              </h3>
+              <p className="ic-section-copy ic-section-copy--muted text-sm">
+                {pattern.copy}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
       <section className="ic-panel-outline space-y-4 ic-align-center">
-        <h2 className="ic-section-heading">The Strength Men Need While Grieving</h2>
+        <h2 className="ic-section-heading">
+          The Strength Men Need While Grieving
+        </h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Men do not need permission to fall apart; they need a system that keeps them steady. Masculine strength looks like facing reality, staying grounded, holding structure, protecting what matters, and choosing purpose when emotions are chaotic. Build this foundation in the
-          {" "}
+          Steadiness includes recognising when you need help. Keep the practical
+          commitments you can manage, adjust unrealistic demands and choose a
+          response that reflects your principles. Explore the{" "}
           <Link href="/domains/discipline" className="underline">
-            Discipline &amp; Mindset
-          </Link>
-          {" "}
-          and
-          {" "}
+            Discipline
+          </Link>{" "}
+          and{" "}
           <Link href="/domains/grief-honour" className="underline">
             Grief &amp; Honour
-          </Link>
-          {" "}
+          </Link>{" "}
           domains.
         </p>
       </section>
 
       <section className="ic-panel space-y-6 ic-align-center">
         <div className="space-y-2">
-          <h2 className="ic-section-heading">How to Grieve Without Destroying Yourself</h2>
-          <p className="ic-section-copy ic-section-copy--muted">Execute these steps:</p>
+          <h2 className="ic-section-heading">
+            How to Grieve Without Destroying Yourself
+          </h2>
+          <p className="ic-section-copy ic-section-copy--muted">
+            Execute these steps:
+          </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2 ic-align-center">
           {steps.map((step) => (
-            <article key={step.title} className="ic-panel-muted space-y-2 ic-align-center">
-              <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">{step.title}</h3>
-              <p className="ic-section-copy ic-section-copy--muted text-sm">{step.copy}</p>
+            <article
+              key={step.title}
+              className="ic-panel-muted space-y-2 ic-align-center"
+            >
+              <h3 className="text-base font-heading tracking-[0.28em] uppercase text-[var(--ic-text-heading)]">
+                {step.title}
+              </h3>
+              <p className="ic-section-copy ic-section-copy--muted text-sm">
+                {step.copy}
+              </p>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="ic-panel ic-align-center space-y-4">
-        <h2 className="ic-section-heading">How Iron Compass Helps</h2>
-        <p className="ic-section-copy ic-section-copy--muted">
-          Iron Compass gives you discipline, identity, structure, and purpose to lead yourself through loss. Inside the app you will find grief grounding rituals, structured reflections, identity rebuilding, discipline anchors, fatherhood support, purpose tools, and habit systems.
-        </p>
-        <div className="ic-cta-row justify-center pt-2">
-          <Link href="/start" className="ic-btn-primary text-[0.62rem]">
-            Start Your Compass
-          </Link>
-          <Link href="/download" className="ic-btn-ghost text-[0.6rem]">
-            Download the App
-          </Link>
         </div>
       </section>
     </ArticleLayout>

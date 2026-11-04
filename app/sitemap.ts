@@ -2,10 +2,11 @@ import type { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
 import { getAllPosts } from "@/lib/blog";
+import { practicalGuides } from "@/lib/practicalGuides";
 import { griefArticles } from "@/lib/articleHubs";
 import { domainNarratives } from "@/app/domains/narratives";
 import { CANONICAL_DOMAIN_SLUGS, absoluteUrl } from "@/lib/site";
-import { articlePhoto, domainPhotos, pagePhotos, philosophyPhoto } from "@/lib/sitePhotos";
+import { articlePhoto, domainPhotos, pagePhotos, philosophyPhoto, pagePeoplePhotos } from "@/lib/sitePhotos";
 
 const HOME_HERO = "/images/home/horizon-man.png";
 
@@ -18,19 +19,19 @@ function imagesInMarkdown(markdown: string): string[] {
 }
 
 const STATIC_PAGE_DATES: Record<string, string> = {
-  "/": "2026-02-01",
-  "/start": "2026-01-15",
-  "/download": "2026-01-15",
-  "/pricing": "2026-10-04",
-  "/about": "2025-12-01",
-  "/blog": "2026-02-09",
-  "/contact": "2025-12-01",
+  "/": "2026-11-04",
+  "/start": "2026-11-04",
+  "/download": "2026-11-04",
+  "/pricing": "2026-11-04",
+  "/about": "2026-11-04",
+  "/blog": "2026-11-04",
+  "/contact": "2026-11-04",
   "/privacy": "2025-11-01",
   "/terms": "2025-11-01",
-  "/domains": "2026-01-20",
-  "/articles": "2025-11-29",
-  "/articles/financial-power": "2026-02-09",
-  "/articles/ai-mastery": "2026-02-09",
+  "/domains": "2026-11-04",
+  "/articles": "2026-11-04",
+  "/articles/financial-power": "2026-11-04",
+  "/articles/ai-mastery": "2026-11-04",
 };
 
 function lastModifiedForPath(pagePath: string): Date {
@@ -48,14 +49,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: absoluteImages([HOME_HERO, ...Object.values(domainPhotos), philosophyPhoto]),
     },
     { url: absoluteUrl("/start"), lastModified: lastModifiedForPath("/start"), changeFrequency: "weekly", priority: 0.9 },
-    { url: absoluteUrl("/download"), lastModified: lastModifiedForPath("/download"), changeFrequency: "weekly", priority: 0.85 },
-    { url: absoluteUrl("/pricing"), lastModified: lastModifiedForPath("/pricing"), changeFrequency: "weekly", priority: 0.9 },
+    { url: absoluteUrl("/download"), lastModified: lastModifiedForPath("/download"), changeFrequency: "weekly", priority: 0.85, images: absoluteImages(["/images/get-the-app/screens/today.webp"]) },
+    { url: absoluteUrl("/pricing"), lastModified: lastModifiedForPath("/pricing"), changeFrequency: "weekly", priority: 0.9, images: absoluteImages([pagePeoplePhotos.pricing]) },
     {
       url: absoluteUrl("/about"),
       lastModified: lastModifiedForPath("/about"),
       changeFrequency: "monthly",
       priority: 0.6,
-      images: absoluteImages([pagePhotos.about]),
+      images: absoluteImages(["/images/get-the-app/adam-family-about.webp"]),
     },
     {
       url: absoluteUrl("/blog"),
@@ -108,7 +109,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const articles: MetadataRoute.Sitemap = griefArticles.map((article) => ({
     url: absoluteUrl(article.path),
-    lastModified: new Date(article.datePublished),
+    lastModified: new Date(article.dateModified ?? article.datePublished),
+    images: absoluteImages([practicalGuides[article.path]?.image]),
     changeFrequency: "weekly" as const,
     priority: 0.85,
   }));

@@ -179,6 +179,7 @@ html:root {
   }
   html body .ic-nav-toggle { grid-column: 2; grid-row: 1; }
   html body .ic-open-app { grid-column: 1 / -1; grid-row: 2; }
+  html body .ic-open-app--home { display: none; }
 }
 
 @media screen and (max-width: 639px) {

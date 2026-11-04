@@ -60,7 +60,7 @@ export default function InfluenceCheck() {
 
   const summary = () =>
     [
-      "Iron Compass — Influence Check",
+      "Iron Compass AI — Influence Check",
       "",
       "This is a thinking aid, not a diagnosis, verdict, or personality label.",
       "",
@@ -200,7 +200,7 @@ export default function InfluenceCheck() {
       {ready ? (
         <div className="space-y-5" style={{ marginTop: "1.25rem" }}>
           <article className="ic-routine__result" aria-label="Influence Check summary">
-            <p className="ic-print-checklist-label">Iron Compass · Influence Check (not a diagnosis)</p>
+            <p className="ic-print-checklist-label">Iron Compass AI · Influence Check (not a diagnosis)</p>
             <h3 className="ic-routine__subheading">Your summary</h3>
             <p>
               <strong>Request:</strong> {request.trim()}

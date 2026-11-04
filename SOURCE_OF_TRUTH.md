@@ -2,7 +2,11 @@
 
 Start here before changing or reporting on Iron Compass. GitHub holds pushed source and handovers. Vercel serves deployed builds. Neither can see unsaved or unpushed edits on a computer.
 
-## Current source map
+## Website update — 4 November 2026
+
+The live website is dpl_Gsrwo9DsF3oaP8j3qF51qyFQ7qy3 at https://ironcompassai.com, reporting runtime commit 6f31847a1d946b85de2dd8d566cb0468bceeeb43. Domain photography now shows complete responsibility/action scenes across Home, directory and all ten guides, with varied natural colour and corrected framing. Three new illustrative images support Finance, Resilience and Fall & Rise; founder photographs and app screenshots are unchanged. All three practical-guide hubs and five standalone guides now use the current editorial standard, with relevant images, linked contents, daily/weekly actions, correct app contexts and updated search structure. Fall & Rise now addresses major life setbacks, Stoic recovery and longer-term rebuilding with integrity, with matching website descriptions, metadata and Comeback screenshots. Old mismatched narration controls are hidden. The owner-requested outdoor readability pass lifts charcoal surfaces and silver reading text while preserving colour roles. The owner's real family photograph appears on About, Plans and the small homepage founder note. A dedicated app overview is live at /download with stronger responsibility-led messaging, real screenshots, plan labels, FAQ/schema and strategic navigation links. Pricing cards and founder wording are unchanged. The earlier premium public editorial/SEO work across all 88 blog articles and domain guides remains intact, with Facebook linked and Instagram deferred. 117 indexable URLs pass search metadata/schema/sitemap checks. The private staged production build was tested and promoted unchanged. Source is pushed on codex/website-relaunch-20261104 in draft PR #4; main remains older 997685885f3005c0261575134c057d2a13ba02ef and must not replace this release. See CURRENT_HANDOVER for exact QA, source-stamp limitations and rollback. Live app changes and ad campaigns await separate owner instructions. The table below is the preserved 29 October historical baseline, not a fresh verification of app/API/native states.
+
+## Historical source map
 
 Verified on 29 October 2026, Australia/Brisbane. Read [release/source-map.json](release/source-map.json) for the machine-readable states. Current work and checks: [docs/CURRENT_HANDOVER.md](docs/CURRENT_HANDOVER.md).
 

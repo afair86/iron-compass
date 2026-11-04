@@ -1,53 +1,62 @@
+import AppValuePanel from "@/app/components/AppValuePanel";
 import Link from "next/link";
+import FounderNote from "../components/FounderNote";
 import PageShell from "../components/PageShell";
-import PhotoFrame from "../components/brand/PhotoFrame";
-import { pagePhotoAlts, pagePhotos } from "@/lib/sitePhotos";
-import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
+import {
+  PageContainer,
+  SectionShell,
+  HeadingStack,
+} from "../components/LayoutPrimitives";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "About Iron Compass",
+  title: "About Iron Compass AI",
   description:
-    "Learn about the Iron Compass philosophy—a complete life system for men built on discipline, purpose, strength, and integrity. Discover who it is for, why it exists, and the core values that set it apart.",
+    "Why Iron Compass AI exists: practical Stoicism, daily discipline and responsibility. Read the founder’s story and explore the ten life domains behind the app.",
   path: "/about",
 });
 
 const pillars = [
-  "Discipline over motivation—minimums fire daily.",
-  "Purpose chosen on paper, translated into cadence.",
-  "Strength, leadership, and financial power built through standards.",
-  "Technology used as leverage, not a crutch.",
+  "Keep a daily standard, including on difficult days.",
+  "Give your responsibilities time in the week.",
+  "Build strength, leadership and financial steadiness through repeated action.",
+  "Use technology to support your judgment and follow-through.",
 ];
 
 const builtFor = [
-  "Men who want a complete system, not scattered hacks.",
-  "Operators balancing family, work, and personal mission.",
-  "Builders who pair aggression with integrity and accountability.",
+  "Men who want a practical structure for their responsibilities.",
+  "Fathers, partners and leaders balancing family, work and health.",
+  "Men prepared to keep a standard and take ownership when they miss it.",
 ];
 
 export default function AboutPage() {
   return (
-    <PageShell>
+    <PageShell className="ic-public-page">
       <PageContainer>
         <SectionShell variant="hero" className="space-y-5">
-          <PhotoFrame src={pagePhotos.about} alt={pagePhotoAlts.about} />
-          <h1 className="ic-page-title">About the System</h1>
+          <h1 className="ic-page-title">About Iron Compass AI</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
-            Iron Compass is a life system for men who want discipline, purpose, strength, and integrity without noise. One map, ten life domains, and
-            standards you can use this week.
+            Iron Compass AI is a life system for men who want discipline,
+            purpose, strength, and integrity without noise. One map, ten life
+            domains, and standards you can use this week.
           </p>
-          <div className="ic-cta-row pt-2">
-            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
-              Explore the Domains
+          <div className="ic-cta-pair">
+            <Link href="/domains" className="ic-btn-primary">
+              Explore the domains
             </Link>
-            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
+            <Link href="/blog" className="ic-btn-ghost">
               Read the journal
             </Link>
           </div>
         </SectionShell>
 
-        <SectionShell variant="panel" className="space-y-6">
-          <HeadingStack eyebrow="Operating Principles" title="What makes Iron Compass different" />
+        <FounderNote variant="full" />
+
+        <SectionShell variant="panel" className="space-y-6 ic-band">
+          <HeadingStack
+            eyebrow="Operating Principles"
+            title="What makes Iron Compass AI different"
+          />
           <ul className="space-y-3 text-sm mx-auto max-w-3xl">
             {pillars.map((item) => (
               <li key={item} className="ic-dot-list">
@@ -68,20 +77,7 @@ export default function AboutPage() {
           </ul>
         </SectionShell>
 
-        <SectionShell variant="outline" className="space-y-4">
-          <h2 className="ic-heading-2">Ready to see it in motion?</h2>
-          <p className="ic-section-copy ic-section-copy--muted max-w-2xl mx-auto">
-            Browse the ten life domains or head straight to the app. The standards are the same across every route.
-          </p>
-          <div className="ic-cta-row justify-center">
-            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
-              View Domains
-            </Link>
-            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
-              Read the Journal
-            </Link>
-          </div>
-        </SectionShell>
+        <AppValuePanel />
       </PageContainer>
     </PageShell>
   );

@@ -83,7 +83,7 @@ export const financialPowerNarrative: DomainNarrative = {
     ],
   },
   further: [
-    "A weekly money check you can repeat, with the same categories and a note about what surprised you, is a habit you can keep in the Iron Compass app. Open it at ironcompassai.com/app. This page is not financial advice.",
+    "A weekly money check you can repeat, with the same categories and a note about what surprised you, is a habit you can keep in the Iron Compass AI app. Open it at ironcompassai.com/app. This page is not financial advice.",
     "The journal has a twenty-minute weekly money check you can use as soon as you finish the list above, along with pieces on cash buffers and a plain resilience routine. Do the five minutes first so the article has something to attach to. None of it replaces advice from someone qualified about your own situation.",
   ],
 };

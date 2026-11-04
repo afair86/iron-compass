@@ -28,9 +28,9 @@
   letter-spacing: 0.03em;
   line-height: 1.15;
   text-transform: none;
-  color: #f5f7fb;
+  color: var(--ic-text-heading);
   background: none;
-  -webkit-text-fill-color: #f5f7fb;
+  -webkit-text-fill-color: var(--ic-text-heading);
 }
 
 .intro h1::after {
@@ -39,12 +39,12 @@
   width: 3.25rem;
   height: 3px;
   margin-top: 0.7rem;
-  background: var(--ic-cta-red);
+  background: var(--ic-steel);
 }
 
 .sub {
   margin: 0.85rem 0 0;
-  color: #f5f7fb;
+  color: var(--ic-text-heading);
   font-size: 1.15rem;
   line-height: 1.35;
 }
@@ -60,6 +60,7 @@
 .actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.6rem;
   margin-top: 1rem;
 }

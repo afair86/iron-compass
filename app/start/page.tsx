@@ -1,3 +1,4 @@
+import AppValuePanel from "@/app/components/AppValuePanel";
 import Link from "next/link";
 import Script from "next/script";
 import PageShell from "../components/PageShell";
@@ -5,9 +6,9 @@ import { buildPageMetadata } from "@/lib/site";
 import { domainNavLinks } from "@/lib/domains";
 
 export const metadata = buildPageMetadata({
-  title: "Start Iron Compass | Discipline, Strength, Leadership for Men",
+  title: "Start Iron Compass AI | Discipline, Strength, Leadership for Men",
   description:
-    "Begin the Iron Compass system for men 30–45 in the US, Europe, and Australia: choose your domain, set targets, and lock daily standards.",
+    "Start with one responsibility. Choose a life domain, set a daily habit and review the week with Iron Compass AI, a discipline app and practical Stoic guides for men.",
   path: "/start",
 });
 
@@ -17,54 +18,70 @@ export default function StartPage() {
   const steps = [
     {
       title: "Choose Your Domain",
-      copy: "Decide where you need the most force: discipline, identity, strength, wealth, or another pillar. Focus beats scattered effort.",
+      copy: "Choose the responsibility that needs attention: your health, your work, your money or the people who depend on you.",
     },
     {
       title: "Set Your Direction",
-      copy: "Define the target, the metric, and the timeline. Men who win are men who measure.",
+      copy: "Name one useful action and when you will do it. Keep it small enough to carry out on a difficult day.",
     },
     {
       title: "Build Your Daily Compass",
-      copy: "Lock in non-negotiables. Track every rep, every rep counts. Your habits become your proof.",
+      copy: "Keep a daily habit, record what happened, and review the week. Adjust the plan without abandoning the responsibility.",
     },
   ];
 
   return (
-    <PageShell>
+    <PageShell className="ic-public-page">
       <div className="ic-content-stack max-w-3xl">
-        <section className="ic-panel ic-align-center space-y-6">
+        <section className="ic-panel ic-align-center ic-editorial-center space-y-6">
           <h1 className="ic-section-title">Start Your Compass</h1>
           <p className="ic-section-copy ic-section-copy--muted text-base">
-            This is the first step. Ground yourself, choose your focus, and move with disciplined intent—built for men in the US, Europe, and Australia.
+            Choose one responsibility. Set a habit you can keep today. Return at
+            the end of the week and review what held.
           </p>
-          <div className="pt-2">
-            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
+          <div className="ic-cta-pair">
+            <a href="/app/auth" className="ic-btn-primary">
+              Start free
+            </a>
+            <Link href="/domains" className="ic-btn-ghost">
               Explore the domains
             </Link>
           </div>
         </section>
 
         <section className="ic-panel-outline space-y-4">
-          <header className="space-y-2 ic-align-center">
-            <h2 className="ic-section-heading">Identity → Discipline → Purpose</h2>
+          <header className="space-y-2 ic-align-center ic-editorial-center">
+            <h2 className="ic-section-heading">
+              Identity → Discipline → Purpose
+            </h2>
           </header>
           <p className="ic-section-copy ic-section-copy--muted">
-            Iron Compass begins by confronting who you are, not who you pretend to be. You lock in your identity, shape it with discipline, then
-            drive it toward purpose. Every action from here forward is deliberate, measurable, and anchored in mission.
+            Decide what you are responsible for, then give it a place in your
+            day. The domains explain the standard; the app helps you keep a
+            record of the habits and decisions behind it.
           </p>
         </section>
 
         <section className="space-y-6 ic-align-center">
-          <header className="space-y-2 ic-align-center">
-            <h2 className="ic-section-heading">Build Momentum Fast</h2>
+          <header className="space-y-2 ic-align-center ic-editorial-center">
+            <h2 className="ic-section-heading">Put it into practice</h2>
           </header>
           <ol className="space-y-6">
             {steps.map((step, index) => (
-              <li key={step.title} className="ic-panel-muted flex gap-4 items-start text-left">
-                <span className="text-white text-xl font-semibold">{index + 1}</span>
+              <li
+                key={step.title}
+                className="ic-panel-muted flex gap-4 items-start text-left"
+              >
+                <span className="text-white text-xl font-semibold">
+                  {index + 1}
+                </span>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-heading tracking-[0.3em] uppercase text-[var(--ic-text-heading)]">{step.title}</h3>
-                  <p className="ic-section-copy ic-section-copy--muted">{step.copy}</p>
+                  <h3 className="text-lg font-heading tracking-[0.3em] uppercase text-[var(--ic-text-heading)]">
+                    {step.title}
+                  </h3>
+                  <p className="ic-section-copy ic-section-copy--muted">
+                    {step.copy}
+                  </p>
                 </div>
               </li>
             ))}
@@ -72,49 +89,63 @@ export default function StartPage() {
         </section>
 
         <section className="ic-panel space-y-6 ic-align-center">
-          <header className="space-y-2 ic-align-center">
-            <h2 className="ic-section-heading ic-align-center">Command Every Pillar</h2>
+          <header className="space-y-2 ic-align-center ic-editorial-center">
+            <h2 className="ic-section-heading ic-align-center">
+              Choose where to begin
+            </h2>
           </header>
           <div className="grid gap-4">
             {domains.map((domain) => (
-              <Link key={domain.href} href={domain.href} className="ic-footer-pill">
+              <Link
+                key={domain.href}
+                href={domain.href}
+                className="ic-footer-pill"
+              >
                 {domain.label}
               </Link>
             ))}
           </div>
         </section>
 
-        <section className="ic-panel ic-align-center space-y-4">
-          <h2 className="ic-section-heading ic-align-center">Take Control Now</h2>
+        <section className="ic-panel ic-align-center ic-editorial-center space-y-4">
+          <h2 className="ic-section-heading ic-align-center">
+            Give it a place in this week
+          </h2>
           <p className="ic-section-copy ic-section-copy--muted">
-            No more drifting. Commit to the process, execute daily, and let the data prove your climb. Your compass is forged in action.
+            Choose one action and a time you can keep. At the end of the week,
+            look at what happened and decide what needs adjusting.
           </p>
-          <div className="pt-2">
-            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
-              Explore the domains
-            </Link>
-          </div>
         </section>
 
-        <section className="ic-panel-outline ic-align-center space-y-4">
+        <section id="common-questions" className="ic-panel-outline ic-align-center space-y-4">
           <h2 className="ic-section-heading">FAQ</h2>
           <div className="space-y-3 max-w-3xl mx-auto text-left">
             <div>
-              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Who is Iron Compass for?</h3>
+              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">
+                Who is Iron Compass AI for?
+              </h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">
-                Men 30–45 (and driven men 18–65) who want discipline, strength, leadership, and financial power—built for the US, Europe, and Australia.
+                Men who want to carry their responsibilities with more
+                discipline, steadiness and follow-through.
               </p>
             </div>
             <div>
-              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Do I need the app to start?</h3>
+              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">
+                Do I need the app to start?
+              </h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">
-                No. Begin with the domain pages and the journal. You do not need an account.
+                No. Begin with the domain pages and the journal. You do not need
+                an account.
               </p>
             </div>
             <div>
-              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Which domain should I pick first?</h3>
+              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">
+                Which domain should I pick first?
+              </h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">
-                Start where the pain is highest: discipline/mindset, strength & health, or financial power. Choose one, build a win, then expand.
+                Start with the responsibility you are most likely to neglect
+                this week. Choose one domain and one action you can carry out
+                today.
               </p>
             </div>
           </div>
@@ -139,10 +170,10 @@ export default function StartPage() {
               mainEntity: [
                 {
                   "@type": "Question",
-                  name: "Who is Iron Compass for?",
+                  name: "Who is Iron Compass AI for?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Men 30–45 (and driven men 18–65) who want discipline, strength, leadership, and financial power—built for the US, Europe, and Australia.",
+                    text: "Men who want to carry their responsibilities with more discipline, steadiness and follow-through.",
                   },
                 },
                 {
@@ -158,13 +189,14 @@ export default function StartPage() {
                   name: "Which domain should I pick first?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Start where the pain is highest: discipline/mindset, strength & health, or financial power. Choose one, build a win, then expand.",
+                    text: "Start with the responsibility you are most likely to neglect this week. Choose one domain and one action you can carry out today.",
                   },
                 },
               ],
             }),
           }}
         />
+        <AppValuePanel />
       </div>
     </PageShell>
   );

@@ -10,6 +10,18 @@ export function productAppHref(): string {
   const override = process.env.NEXT_PUBLIC_PRODUCT_APP_URL?.trim();
   return override || PRODUCT_APP_PATH;
 }
+
+/** Enable the official badge only when the public listing is available. */
+export function appStoreHref(): string | null {
+  const value = process.env.NEXT_PUBLIC_IOS_APP_URL?.trim();
+  if (!value) return null;
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" && url.hostname === "apps.apple.com" ? url.href : null;
+  } catch {
+    return null;
+  }
+}
 /** The homepage sunset. Used when Iron Compass AI is shared or shown in search. */
 export const HOME_SHARE_IMAGE = `${SITE_URL}/images/home/horizon-man.png`;
 export const DEFAULT_OG_IMAGE = HOME_SHARE_IMAGE;
@@ -35,6 +47,11 @@ export type CanonicalDomainSlug = (typeof CANONICAL_DOMAIN_SLUGS)[number];
 export function absoluteUrl(path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${SITE_URL}${normalized}`;
+}
+
+/** Keep JSON-LD in the initial HTML without allowing content to close the script element. */
+export function serializeJsonLd(value: unknown): string {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
 }
 
 type PageMetadataOptions = {

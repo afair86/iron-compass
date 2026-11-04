@@ -10,11 +10,38 @@ import PhotoFrame from "@/app/components/brand/PhotoFrame";
 import { domainBlogLinks } from "@/lib/domainBlogLinks";
 import { aiResourcePhoto, domainPhotoAlts, domainPhotos } from "@/lib/sitePhotos";
 import styles from "./domain-story.module.css";
+import DomainAppSection from "./DomainAppSection";
+import { domainGuideHeroes, domainGuideSectionPhotos } from "@/lib/domainGuidePhotos";
 
 type DomainPageViewProps = {
   narrative: DomainNarrative;
   slug: DomainSlug;
 };
+
+/** Keep every word, adding reading breaks only between complete sentences. */
+function readingChunks(paragraph: string) {
+  const sentences = paragraph.split(/(?<=[.!?])\s+(?=[A-Z“"‘])/);
+  const chunks: string[] = [];
+  let chunk = "";
+  for (const sentence of sentences) {
+    chunk = chunk ? `${chunk} ${sentence}` : sentence;
+    if (chunk.split(/\s+/).length >= 42) {
+      chunks.push(chunk);
+      chunk = "";
+    }
+  }
+  if (chunk) chunks.push(chunk);
+  return chunks;
+}
+
+function ReadingParagraphs({ paragraphs, highlight = false }: { paragraphs: string[]; highlight?: boolean }) {
+  return paragraphs.map((paragraph, index) => {
+    const content = readingChunks(paragraph).map((chunk) => <p key={chunk}>{chunk}</p>);
+    return highlight && index === 0
+      ? <div className={styles.insight} key={paragraph}>{content}</div>
+      : <div className={styles.passage} key={paragraph}>{content}</div>;
+  });
+}
 
 function speechText(narrative: DomainNarrative) {
   return [
@@ -25,7 +52,7 @@ function speechText(narrative: DomainNarrative) {
     narrative.practice.heading,
     narrative.practice.lead,
     ...narrative.practice.steps,
-    "Take it further with Iron Compass",
+    "Take it further with Iron Compass AI",
     ...narrative.further,
   ].join(" ");
 }
@@ -33,40 +60,60 @@ function speechText(narrative: DomainNarrative) {
 export default function DomainPageView({ narrative, slug }: DomainPageViewProps) {
   const journalLinks = domainBlogLinks[slug];
   const domain = domainContentMap[slug];
-  const photo =
-    slug === "ai-mastery"
+  const photo = domainGuideHeroes[slug] ?? (slug === "ai-mastery"
       ? { src: aiResourcePhoto, alt: "A real desk where a man uses a tool and keeps the decision" }
-      : { src: domainPhotos[slug], alt: domainPhotoAlts[slug] };
+      : { src: domainPhotos[slug], alt: domainPhotoAlts[slug] });
+  const sectionPhotos = domainGuideSectionPhotos[slug] ?? {};
   const audioAbs = path.join(process.cwd(), "public", "audio", "domains", `${slug}.mp3`);
-  const audioSrc = fs.existsSync(audioAbs) ? `/audio/domains/${slug}.mp3` : undefined;
+  const audioSrc = narrative.listenAudio !== false && fs.existsSync(audioAbs) ? `/audio/domains/${slug}.mp3` : undefined;
   const lead = narrative.sections[0];
   const rest = narrative.sections.slice(1);
   const sidePhoto = lead?.image ?? photo;
+  const guideWords = speechText(narrative).split(/\s+/).length;
+  const readMinutes = Math.max(1, Math.ceil(guideWords / 220));
+  const contents = [
+    ...(lead ? [{ id: lead.key, label: lead.heading }] : []),
+    { id: "practice", label: narrative.practice.heading },
+    ...rest.map((section) => ({ id: section.key, label: section.heading })),
+    { id: "in-the-app", label: "Use it in the app" },
+  ];
 
   return (
     <PageShell>
       <div className={styles.page}>
-        <header className="ic-board-hero">
-          <div className="ic-board-hero__media">
-            <PhotoFrame src={photo.src} alt={photo.alt} fit="cover" position="center top" />
+        <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+          <Link href="/">Home</Link><span aria-hidden="true">/</span>
+          <Link href="/domains">Life domains</Link><span aria-hidden="true">/</span>
+          <span aria-current="page">{narrative.h1Title}</span>
+        </nav>
+        <header className={styles.hero}>
+          <div className={styles.heroCopy}>
+            <span className={styles.kicker}>A practical guide · {readMinutes} min read</span>
+            <h1>{narrative.h1Title}</h1>
+            <p>{narrative.heroDescription}</p>
+            <div className={styles.heroLinks}>
+              <a href="#practice">Start with one action</a>
+              <a href="#in-the-app">See how the app supports it</a>
+            </div>
           </div>
-          <div className="ic-board-hero__copy space-y-4">
-            <h1 className="ic-page-title">{narrative.h1Title}</h1>
-            <p className="ic-section-copy">{narrative.heroDescription}</p>
+          <div className={styles.heroMedia}>
+            <PhotoFrame src={photo.src} alt={photo.alt} fit="cover" position="center" showMark={false} />
           </div>
         </header>
 
-        <section className={styles.split}>
+        <div className={styles.readingGrid}>
+          <nav className={styles.contents} aria-label="In this guide">
+            <span className={styles.contentsLabel}>In this guide</span>
+            <ol>{contents.map((item) => <li key={item.id}><a href={`#${item.id}`}>{item.label}</a></li>)}</ol>
+          </nav>
+          <article className={styles.article} aria-label={`${narrative.h1Title} guide`}>
+        <section className={styles.intro}>
           <div className={styles.copy}>
-            {narrative.opening.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-            ))}
+            <ReadingParagraphs paragraphs={narrative.opening} />
             {lead ? (
               <>
-                <h2>{lead.heading}</h2>
-                {lead.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-                ))}
+                <h2 id={lead.key} className={styles.sectionTitle}>{lead.heading}</h2>
+                <ReadingParagraphs paragraphs={lead.paragraphs} highlight />
               </>
             ) : null}
             {audioSrc ? (
@@ -82,14 +129,15 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
               </div>
             ) : null}
           </div>
-          <div className={styles.photo}>
-            <PhotoFrame src={sidePhoto.src} alt={sidePhoto.alt} fit="cover" position="center top" />
-          </div>
+          {lead?.image ? <div className={styles.photo}>
+            <PhotoFrame src={sidePhoto.src} alt={sidePhoto.alt} fit="cover" position="center" />
+          </div> : null}
         </section>
 
-        <section className={styles.practice}>
+        <section className={styles.practice} aria-labelledby="practice">
           <div>
-            <h2>{narrative.practice.heading}</h2>
+            <span className={styles.kicker}>From reading to action</span>
+            <h2 id="practice">{narrative.practice.heading}</h2>
             <p className={styles.copy}>{narrative.practice.lead}</p>
             <ol className={styles.steps}>
               {narrative.practice.steps.map((step, index) => (
@@ -101,31 +149,34 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
             </ol>
           </div>
           <div className={styles.quote}>
-            <PhotoFrame src={photo.src} alt="" fit="cover" position="center top" showMark={false} />
             <p>{narrative.heroDescription}</p>
           </div>
         </section>
 
-        {rest.map((section) => (
+        {rest.map((section) => {
+          const image = sectionPhotos[section.key] ?? section.image;
+          return (
           <section key={section.key} className={styles.block}>
-            <h2>{section.heading}</h2>
-            {section.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-            ))}
-            {section.image ? (
+            <h2 id={section.key} className={styles.sectionTitle}>{section.heading}</h2>
+            <ReadingParagraphs paragraphs={section.paragraphs} highlight />
+            {image ? (
               <div className={styles.photo}>
-                <PhotoFrame src={section.image.src} alt={section.image.alt} fit="cover" position="center top" />
+                <PhotoFrame src={image.src} alt={image.alt} fit="cover" position="center" />
               </div>
             ) : null}
           </section>
-        ))}
+        ); })}
 
-        <section className={styles.block}>
-          <h2>Take it further with Iron Compass</h2>
-          {narrative.further.map((paragraph) => (
-            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-          ))}
+        <section className={`${styles.block} ${styles.further}`}>
+          <h2>Take it further with Iron Compass AI</h2>
+          <ReadingParagraphs paragraphs={narrative.further} />
         </section>
+          </article>
+        </div>
+
+        <div id="in-the-app" className={styles.appSection}>
+        <DomainAppSection slug={slug} title={narrative.h1Title} />
+        </div>
 
         <section className={styles.block}>
           <h2>Keep going</h2>

@@ -5,27 +5,29 @@
   "note": "Dated verified baseline. Uncommitted edits are not in GitHub. A preview is not production. Unknown commits stay null. This file does not prove product QA.",
   "website": {
     "repository": "afair86/iron-compass",
-    "workingBranch": "recovery/current-live-website",
+    "workingBranch": "codex/website-relaunch-20261104",
     "recoveredCommit": "afa2c955b3085319c5d53611567a1dca18f598f2",
-    "trackingBranch": "sync/shared-source-of-truth",
+    "trackingBranch": "codex/website-relaunch-20261104",
     "productionBranch": "main",
-    "productionBranchBaseline": "590808fe09c2fa03c29d26b07f5342d824943424",
-    "productionDeployment": "dpl_EvccSYnx7gLGVJBDERd5wa4rC8Cu",
-    "productionReportedCommit": "afa2c955b3085319c5d53611567a1dca18f598f2",
-    "productionSourceKind": "github-promote",
+    "productionBranchBaseline": "997685885f3005c0261575134c057d2a13ba02ef",
+    "productionDeployment": "dpl_5fHPEQUdt3sevyPhQxsARUSSpytA",
+    "productionReportedCommit": "850be92aae3117bc474df60ba5524104e220b3ba",
+    "productionSourceKind": "cli staged production then exact promotion",
     "productionUrl": "https://ironcompassai.com",
     "vercelProject": "iron-compass",
     "vercelProjectId": "prj_fOowaY2ZkZPR56F2Pr3ZArjLBnYM",
     "gitConnected": true,
     "gitRepository": "afair86/iron-compass",
     "states": {
-      "localUnpushed": "The recovery checkout matched the pushed commit when this baseline was written. Later unsaved edits are not included.",
-      "pushed": "recovery/current-live-website is pushed at afa2c955b3085319c5d53611567a1dca18f598f2. This tracking branch is a separate non-production branch.",
-      "testsPassed": "Source-identity tests passed locally, 3 of 3. Source continuity succeeded on the pushed tracking commit d9344b8699e50fcf91a3910f1446a6f2eaab15e7. That is not full website QA.",
-      "previewDeployed": "dpl_7BqNVVMUAgSKkEWmNJWHTrUMBEGd is a ready preview of the recovered commit. dpl_2JGD7jNxbs5fZJ3qZS9JQq4Ah2x4 is a ready preview of tracking commit 4c5f30fd3bbee13942fe11add084e768c256ebe1. A newer tracking preview was queued for d9344b8699e50fcf91a3910f1446a6f2eaab15e7 and is not production.",
-      "productionDeployed": "dpl_EvccSYnx7gLGVJBDERd5wa4rC8Cu is the current production deployment and reports afa2c955b3085319c5d53611567a1dca18f598f2. GitHub main is still the older baseline and must not be deployed over it."
+      "localUnpushed": "Original Cursor working copies and uncommitted sidebar changes were preserved. The handover merge is separate from the live website build.",
+      "pushed": "Plain-heading release 850be92aae3117bc474df60ba5524104e220b3ba pushed on codex/website-relaunch-20261104; PR #4.",
+      "testsPassed": "Build/TypeScript, component ESLint, 119-page marker/link scan and 117-page SEO audit pass; six local phone/desktop cases and authenticated staged checks pass.",
+      "previewDeployed": "dpl_5fHPEQUdt3sevyPhQxsARUSSpytA staged production checked via authenticated HTTP and local browser QA, then promoted unchanged.",
+      "productionDeployed": "dpl_5fHPEQUdt3sevyPhQxsARUSSpytA READY serves 850be92aae3117bc474df60ba5524104e220b3ba; live plain headings and links verified."
     },
-    "releaseStatus": "Live site serves the recovered commit. GitHub main remains the older baseline and is not the live source."
+    "releaseStatus": "Brighter editorial launch website live with decorative section numbers and link arrows removed. PR #4 preserves source; main remains older.",
+    "verifiedOn": "2026-11-04",
+    "rollbackDeployment": "dpl_7qJp22jBhiQmrj2vatYnCqnjCSb4"
   },
   "webApp": {
     "repository": "afair86/iron-compass-ai",

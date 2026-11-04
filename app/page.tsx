@@ -1,16 +1,20 @@
 import ApprovedHome from "./components/ApprovedHome";
+import { appSoftwareSchema } from "@/lib/appSchema";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Iron Compass AI — Life System for Disciplined Men",
+  title: "Iron Compass AI: Habit and Discipline App for Men",
   description:
-    "Iron Compass AI helps men build strength, discipline and character—in the ordinary moments that shape their lives.",
+    "Iron Compass AI is a habit and discipline app for men: a few daily habits, a journal and one next action, across ten life domains. Start free.",
   path: "/",
 });
 
+const appSchema = { "@context": "https://schema.org", ...appSoftwareSchema };
+
 export default function HomePage() {
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
       <ApprovedHome />
     </main>
   );
