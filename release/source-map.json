@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-29",
+  "timezone": "Australia/Brisbane",
+  "note": "Dated verified baseline. Uncommitted edits are not in GitHub. A preview is not production. Unknown commits stay null. This file does not prove product QA.",
+  "website": {
+    "repository": "afair86/iron-compass",
+    "workingBranch": "codex/website-relaunch-20261104",
+    "recoveredCommit": "afa2c955b3085319c5d53611567a1dca18f598f2",
+    "trackingBranch": "codex/website-relaunch-20261104",
+    "productionBranch": "main",
+    "productionBranchBaseline": "997685885f3005c0261575134c057d2a13ba02ef",
+    "productionDeployment": "dpl_BYiYwGsDGWdJzPfrU5998wFZfBMA",
+    "productionReportedCommit": "e133e65849f46a684fbf4fd2e2584b8a9d53b0cc",
+    "productionSourceKind": "cli staged production then exact promotion",
+    "productionUrl": "https://ironcompassai.com",
+    "vercelProject": "iron-compass",
+    "vercelProjectId": "prj_fOowaY2ZkZPR56F2Pr3ZArjLBnYM",
+    "gitConnected": true,
+    "gitRepository": "afair86/iron-compass",
+    "states": {
+      "localUnpushed": "Original Cursor working copies and uncommitted sidebar changes were preserved. The handover merge is separate from the live website build.",
+      "pushed": "Release commit e133e65849f46a684fbf4fd2e2584b8a9d53b0cc pushed on codex/website-relaunch-20261104; draft PR #4.",
+      "testsPassed": "Build/TypeScript; six architecture tests; changed-file ESLint; 117 indexable page SEO audit; 127 live route/link destinations; 44 staged responsive cases and additional local breakpoint checks passed.",
+      "previewDeployed": "Production-target dpl_BYiYwGsDGWdJzPfrU5998wFZfBMA built with --skip-domain, tested, then promoted without a rebuild.",
+      "productionDeployed": "dpl_BYiYwGsDGWdJzPfrU5998wFZfBMA READY serves ironcompassai.com and reports e133e65849f46a684fbf4fd2e2584b8a9d53b0cc."
+    },
+    "releaseStatus": "Website launch repair is live. Main remains an older baseline until PR #4 is reviewed and merged.",
+    "verifiedOn": "2026-11-04",
+    "rollbackDeployment": "dpl_7q4qNooqBExEgkaWBtJW3Jcp7wb2"
+  },
+  "webApp": {
+    "repository": "afair86/iron-compass-ai",
+    "rootDirectory": ".",
+    "frontendDirectory": "frontend",
+    "sharedDirectory": "shared",
+    "sourceBranch": "main",
+    "sourceBranchCommit": "445389d2e232c1b02c6deb1f8cf83101431dcdbe",
+    "trackingBranch": "sync/shared-source-of-truth",
+    "draftHabitFixBranch": "fix/light-full-onboarding-review",
+    "draftHabitFixCommit": "49491a071c5a6a7406255cf0601766c24ec36e1b",
+    "vercelProject": "frontend",
+    "vercelProjectId": "prj_kru7tmL5GZJTdtCuOUpO6IpyjtAc",
+    "productionBranch": "main",
+    "productionDeployment": "dpl_A8yf4ZxVJeGM1gMC5vUwM7MPM6gr",
+    "productionReportedCommit": null,
+    "productionSourceKind": "cli",
+    "productionUrl": "https://ironcompassai.com/app",
+    "gitConnected": true,
+    "gitRepository": "afair86/iron-compass-ai",
+    "productionGitBuilds": "ignored until the owner approves a production deployment",
+    "states": {
+      "localUnpushed": "A separate local checkout is on collab/codex-cursor-launch-audit with uncommitted edits. Those edits are not in this branch and were not pushed.",
+      "pushed": "origin/main is 445389d2e232c1b02c6deb1f8cf83101431dcdbe. The habit and onboarding draft remains a separate pull request. This tracking branch is not merged.",
+      "testsPassed": "Source-identity tests passed locally, 3 of 3. On 589fd46516b195d6290cd4fa89f0a47a7ad6464d, Source continuity succeeded and the existing CI workflow succeeded for its api and frontend jobs. The frontend job built the app. This is not full app QA.",
+      "previewDeployed": "Ready preview dpl_7HYvA3X5vQoMCoDHm7YrgCzKqoqa of 589fd46516b195d6290cd4fa89f0a47a7ad6464d. Sign-in at https://frontend-git-sync-shared-source-a745c1-adams-projects-26d15070.vercel.app/auth loaded, with CSS and JavaScript returning HTTP 200. The script calls https://api.ironcompassai.com. /app/source-version.json reports that commit, sourceKind vercel-git-metadata, worktreeDirty true, and exactCommitBuild false. No sign-in was submitted.",
+      "productionDeployed": "dpl_A8yf4ZxVJeGM1gMC5vUwM7MPM6gr is the current production deployment. It has no Git commit. An older production deployment, dpl_29TjfqsRDUtBBKmGDKSmN2j3wegY, is not the current one."
+    },
+    "releaseStatus": "The existing frontend project is connected to the app repository at the repository root. Production is still the earlier command-line deployment, and its commit is unknown. Production Git builds are ignored so this connection does not replace the live web app."
+  },
+  "api": {
+    "repository": "afair86/iron-compass-ai",
+    "directory": "apps/api",
+    "url": "https://api.ironcompassai.com",
+    "productionReportedCommit": null,
+    "healthCheck": "https://api.ironcompassai.com/health returned HTTP 200 on 29 October 2026. That does not identify the deployed commit.",
+    "releaseStatus": "API production commit remains unknown."
+  },
+  "nativeApps": {
+    "repository": "afair86/iron-compass-ai",
+    "directory": "frontend",
+    "installedBuild": null,
+    "installedCommit": null,
+    "releaseStatus": "Installed build and commit are unknown. A website or web-app deployment does not update an installed phone app."
+  }
+}
