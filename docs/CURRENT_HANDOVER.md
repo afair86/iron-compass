@@ -1,5 +1,9 @@
 # CURRENT HANDOVER
 
+## Charcoal correction — 4 November 2026, live
+
+Owner asked to restore charcoal because near-black felt too stark. Production dpl_6Bkn8Kq6375Mgcbxi7FhPQP3DRm7 is READY at https://ironcompassai.com from a8417aa18eb940f3989d8e570bd0f6252bbd35cf. Exact staged production build checked and promoted without rebuild. Background #1b1f25, section bands #20252c, cards #242a32; muted text #9aa5b4. The homepage now inherits the shared background token. Body text contrast across normal/hover surfaces is at least 7.90:1; muted text at least 4.97:1. Build/TypeScript and nine existing tests pass. Seven representative pages at actual 390/1440 CSS pixels on the staged build: 14 checks, correct charcoal, one H1, no overflow; no browser errors observed. Live homepage/body/band colours and no overflow independently confirmed after promotion. This is a CSS-only presentation change; app, copy, SEO, pricing and Apple settings unchanged. Rule 07 records the website/app design distinction and charcoal palette. Rollback: dpl_BYiYwGsDGWdJzPfrU5998wFZfBMA. Next: use the verified live site; keep this charcoal standard for future website work.
+
 ## Charcoal correction — 4 November 2026, prepared
 
 Owner says the pitch-black background is too much and wants charcoal restored. Changed only shared website surface tokens, the homepage hardcoded backgrounds and section-band token; recorded the website/app design distinction in rule 07. Background #1b1f25, band #20252c, cards #242a32, muted text #9aa5b4. Local browser confirms the homepage/body/band values and visibly softer charcoal. Production remains e133e65 / dpl_BYiYwGsDGWdJzPfrU5998wFZfBMA until this candidate passes staged QA. Next: build, stage without public-domain assignment, check representative phone/desktop pages, promote the tested build.
