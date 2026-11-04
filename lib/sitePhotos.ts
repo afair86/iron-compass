@@ -3,14 +3,14 @@ import type { CanonicalDomainSlug } from "@/lib/site";
 /** Scene photographs with no compass in the picture. PhotoFrame adds it at the bottom left. */
 export const domainPhotos: Record<CanonicalDomainSlug, string> = {
   discipline: "/images/home/scenes/home-discipline.webp",
-  identity: "/images/domains/identity-pegs.webp",
+  identity: "/images/domains/editorial/personal-doctrine-in-7-days-hero.webp",
   "health-strength": "/images/home/scenes/home-strength.webp",
   "bonds-connections": "/images/home/scenes/home-leadership.webp",
   "purpose-direction": "/images/home/scenes/home-purpose.webp",
   "finance-provision": "/images/home/scenes/home-financial.webp",
-  resilience: "/images/domains/strength-stairs.webp",
-  "fall-rise": "/images/domains/purpose-morning-path.webp",
-  "grief-honour": "/images/home/scenes/home-grief.webp",
+  resilience: "/images/domains/editorial/rebuild-strength-after-injury-hero.webp",
+  "fall-rise": "/images/domains/editorial/iron-protocol-strength-transition-hero.webp",
+  "grief-honour": "/images/domains/grief-bench.webp",
   legacy: "/images/home/scenes/home-legacy.webp",
 };
 
@@ -19,18 +19,18 @@ export const aiResourcePhoto = "/images/home/scenes/home-ai.webp";
 
 export const philosophyPhoto = "/images/home/scenes/home-philosophy.webp";
 
-/** Hidden descriptions for search. They name what Iron Compass AI is for, not the scenery. */
+/** Describe the visible scene for people who cannot see the photograph. */
 export const domainPhotoAlts: Record<CanonicalDomainSlug, string> = {
-  discipline: "Discipline for men",
-  identity: "Identity for men",
-  "health-strength": "Health and strength for men",
-  "bonds-connections": "Bonds and connections for men",
-  "purpose-direction": "Purpose and direction for men",
-  "finance-provision": "Finance and provision for men",
-  resilience: "Resilience under load for men",
-  "fall-rise": "Returning after a miss",
-  "grief-honour": "Grief and honour for men",
-  legacy: "Legacy for men",
+  discipline: "A man taking a quiet morning moment with a mug in his kitchen",
+  identity: "A man writing his personal standards in a sunlit room",
+  "health-strength": "A man smiling during a kettlebell session",
+  "bonds-connections": "A father and son enjoying breakfast together",
+  "purpose-direction": "A man looking ahead on a coastal path at sunrise",
+  "finance-provision": "A man smiling as he reviews his household paperwork",
+  resilience: "A man smiling while taking the stairs at a manageable pace",
+  "fall-rise": "A man enjoying a manageable strength session in his garden",
+  "grief-honour": "A man quietly reflecting beside flowers on a park bench",
+  legacy: "A man enjoying careful work on a wooden keepsake box",
 };
 
 export const pagePhotoAlts = {
