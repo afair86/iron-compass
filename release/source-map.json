@@ -10,8 +10,8 @@
     "trackingBranch": "codex/website-relaunch-20261104",
     "productionBranch": "main",
     "productionBranchBaseline": "997685885f3005c0261575134c057d2a13ba02ef",
-    "productionDeployment": "dpl_6Bkn8Kq6375Mgcbxi7FhPQP3DRm7",
-    "productionReportedCommit": "a8417aa18eb940f3989d8e570bd0f6252bbd35cf",
+    "productionDeployment": "dpl_D7F7Ev3uTod7DNPcuPc2duHjKxgZ",
+    "productionReportedCommit": "1f5a2df77b7e96afcc4c3c3bb9b6f787f74b6f27",
     "productionSourceKind": "cli staged production then exact promotion",
     "productionUrl": "https://ironcompassai.com",
     "vercelProject": "iron-compass",
@@ -20,14 +20,14 @@
     "gitRepository": "afair86/iron-compass",
     "states": {
       "localUnpushed": "Original Cursor working copies and uncommitted sidebar changes were preserved. The handover merge is separate from the live website build.",
-      "pushed": "Charcoal release a8417aa18eb940f3989d8e570bd0f6252bbd35cf pushed on codex/website-relaunch-20261104; PR #4.",
-      "testsPassed": "Build/TypeScript; six architecture tests; changed-file ESLint; 117 indexable page SEO audit; 127 live route/link destinations; 44 staged responsive cases and additional local breakpoint checks passed.",
-      "previewDeployed": "dpl_6Bkn8Kq6375Mgcbxi7FhPQP3DRm7 built as staged production, 14 phone/desktop colour and layout checks passed, then promoted unchanged.",
-      "productionDeployed": "dpl_6Bkn8Kq6375Mgcbxi7FhPQP3DRm7 READY serves the charcoal website from a8417aa18eb940f3989d8e570bd0f6252bbd35cf."
+      "pushed": "Founder/name release 1f5a2df77b7e96afcc4c3c3bb9b6f787f74b6f27 pushed on codex/website-relaunch-20261104; PR #4.",
+      "testsPassed": "Build/TypeScript; nine tests; zero ESLint errors (one existing warning); 117-page SEO/brand audit; 34 staged responsive cases pass. Earlier launch QA preserved in handover.",
+      "previewDeployed": "dpl_D7F7Ev3uTod7DNPcuPc2duHjKxgZ staged production checked on 17 pages at 390/1440 CSS pixels, then promoted unchanged.",
+      "productionDeployed": "dpl_D7F7Ev3uTod7DNPcuPc2duHjKxgZ READY serves 1f5a2df77b7e96afcc4c3c3bb9b6f787f74b6f27; live founder/name/charcoal verified."
     },
-    "releaseStatus": "Launch website and charcoal correction live. Draft PR #4 preserves source; main remains an older baseline until review/merge.",
+    "releaseStatus": "Launch repair, charcoal correction, brief founder introduction and full Iron Compass AI name live. Draft PR #4 preserves source; main remains older until review/merge.",
     "verifiedOn": "2026-11-04",
-    "rollbackDeployment": "dpl_BYiYwGsDGWdJzPfrU5998wFZfBMA"
+    "rollbackDeployment": "dpl_6Bkn8Kq6375Mgcbxi7FhPQP3DRm7"
   },
   "webApp": {
     "repository": "afair86/iron-compass-ai",
