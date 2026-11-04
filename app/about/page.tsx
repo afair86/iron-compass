@@ -2,8 +2,6 @@ import AppValuePanel from "@/app/components/AppValuePanel";
 import Link from "next/link";
 import FounderNote from "../components/FounderNote";
 import PageShell from "../components/PageShell";
-import PhotoFrame from "../components/brand/PhotoFrame";
-import { pagePhotoAlts, pagePhotos } from "@/lib/sitePhotos";
 import {
   PageContainer,
   SectionShell,
@@ -36,8 +34,7 @@ export default function AboutPage() {
     <PageShell className="ic-public-page">
       <PageContainer>
         <SectionShell variant="hero" className="space-y-5">
-          <PhotoFrame src={pagePhotos.about} alt={pagePhotoAlts.about} />
-          <h1 className="ic-page-title">About the System</h1>
+          <h1 className="ic-page-title">About Iron Compass AI</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
             Iron Compass AI is a life system for men who want discipline,
             purpose, strength, and integrity without noise. One map, ten life

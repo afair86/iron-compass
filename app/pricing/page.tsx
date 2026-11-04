@@ -64,14 +64,21 @@ export default function PricingPage() {
               </Link>
             </p>
           </div>
-          <PhotoFrame
-            className="ic-pricing-hero__photo"
-            src={pagePeoplePhotos.pricing}
-            alt={pagePeoplePhotoAlts.pricing}
-            showMark={false}
-            fit="cover"
-            position="38% center"
-          />
+          <div className="ic-pricing-hero__portrait">
+            <PhotoFrame
+              className="ic-pricing-hero__photo"
+              src={pagePeoplePhotos.pricing}
+              alt={pagePeoplePhotoAlts.pricing}
+              showMark={false}
+              fit="cover"
+              position="center"
+            />
+            <p className="ic-family-caption">
+              <Link href="/about#founder-full">
+                Adam, founder, with his children.
+              </Link>
+            </p>
+          </div>
         </section>
         <section id="plans" className="ic-band ic-editorial-center">
           <div className="ic-board-plans">

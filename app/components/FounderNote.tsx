@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./founder-note.module.css";
 
 const FULL_FIRST = "Iron Compass AI started in the hardest stretch of my life.";
@@ -11,30 +12,65 @@ const SHORT =
 const SIGN_OFF = "— Adam, founder";
 
 /** The founder's own words, approved verbatim. Do not edit the text without his sign-off. */
-export default function FounderNote({ variant }: { variant: "full" | "short" }) {
+export default function FounderNote({
+  variant,
+}: {
+  variant: "full" | "short";
+}) {
   const full = variant === "full";
   return (
-    <section className={styles.section} aria-labelledby={`founder-${variant}`}>
+    <section
+      className={`${styles.section} ${full ? styles.full : styles.short}`}
+      aria-labelledby={`founder-${variant}`}
+    >
       <h2 id={`founder-${variant}`} className={styles.heading}>
         {full ? "Why I built Iron Compass AI" : "From the founder"}
       </h2>
-      <div className={styles.body}>
-        <p>
+      <div className={styles.layout}>
+        <figure className={styles.photo}>
           {full ? (
-            <>
-              <strong>{FULL_FIRST}</strong>
-              {FULL_REST}
-            </>
+            <Image
+              src="/images/get-the-app/adam-family-about.webp"
+              alt="Adam, founder of Iron Compass AI, with his two children outdoors at sunset"
+              width={1600}
+              height={1200}
+              sizes="(min-width: 900px) 440px, 90vw"
+            />
           ) : (
-            SHORT
+            <Link href="/about#founder-full">
+              <Image
+                src="/images/get-the-app/adam-family-home.webp"
+                alt="Adam with his children — read why he built Iron Compass AI"
+                width={480}
+                height={480}
+                sizes="(min-width: 640px) 160px, 112px"
+              />
+            </Link>
           )}
-        </p>
-        <p className={styles.signOff}>{SIGN_OFF}</p>
-        {full ? null : (
-          <Link href="/about#founder-full" className={styles.more}>
-            Why I built Iron Compass AI
-          </Link>
-        )}
+          {full ? (
+            <figcaption>
+              Adam, founder of Iron Compass AI, with his children.
+            </figcaption>
+          ) : null}
+        </figure>
+        <div className={styles.body}>
+          <p>
+            {full ? (
+              <>
+                <strong>{FULL_FIRST}</strong>
+                {FULL_REST}
+              </>
+            ) : (
+              SHORT
+            )}
+          </p>
+          <p className={styles.signOff}>{SIGN_OFF}</p>
+          {full ? null : (
+            <Link href="/about#founder-full" className={styles.more}>
+              Why I built Iron Compass AI
+            </Link>
+          )}
+        </div>
       </div>
     </section>
   );
