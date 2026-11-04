@@ -14,8 +14,9 @@ export default function ApprovedHome() {
   return (
     <div className={styles.home}>
       <section className={styles.hero} id="home">
+        <Image className={styles.heroPhoto} src="/images/home/horizon-man.png" alt={pagePhotoAlts.homeHero} fill priority sizes="100vw" />
+        <div className={styles.heroInner}>
         <div className={styles.banner}>
-          <Image className={styles.heroPhoto} src="/images/home/horizon-man.png" alt={pagePhotoAlts.homeHero} fill priority sizes="(min-width: 1168px) 536px, (min-width: 900px) 46vw, 100vw" />
           <Image className={styles.bannerMark} src="/iron-compass-logo-icon.png" alt="Iron Compass AI" width={150} height={150} />
           <p className={styles.bannerWord}>
             Iron Compass <span>AI</span>
@@ -38,9 +39,8 @@ export default function ApprovedHome() {
           </div>
           <AppLaunchStatus />
         </div>
+        </div>
       </section>
-
-      <HomeAppSection links={{ today: "/app", habits: "/domains", journal: "/pricing", strategy: "/pricing" }} />
 
       <section className={`${styles.block} ic-band`} id="domains">
         <h2>Ten life domains</h2>
@@ -67,6 +67,8 @@ export default function ApprovedHome() {
           ))}
         </div>
       </section>
+
+      <HomeAppSection links={{ today: "/app", habits: "/domains", journal: "/pricing", strategy: "/pricing" }} />
 
       <section className={styles.block} id="philosophy">
         <PhotoFrame
