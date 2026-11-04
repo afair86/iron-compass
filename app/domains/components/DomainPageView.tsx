@@ -11,6 +11,7 @@ import { domainBlogLinks } from "@/lib/domainBlogLinks";
 import { aiResourcePhoto, domainPhotoAlts, domainPhotos } from "@/lib/sitePhotos";
 import styles from "./domain-story.module.css";
 import DomainAppSection from "./DomainAppSection";
+import { domainGuideHeroes, domainGuideSectionPhotos } from "@/lib/domainGuidePhotos";
 
 type DomainPageViewProps = {
   narrative: DomainNarrative;
@@ -59,11 +60,10 @@ function speechText(narrative: DomainNarrative) {
 export default function DomainPageView({ narrative, slug }: DomainPageViewProps) {
   const journalLinks = domainBlogLinks[slug];
   const domain = domainContentMap[slug];
-  const photo = slug === "discipline"
-    ? { src: "/images/blog/5am-standard-own-your-morning-hero.webp", alt: "A man setting out with his training bag at sunrise" }
-    : slug === "ai-mastery"
+  const photo = domainGuideHeroes[slug] ?? (slug === "ai-mastery"
       ? { src: aiResourcePhoto, alt: "A real desk where a man uses a tool and keeps the decision" }
-      : { src: domainPhotos[slug], alt: domainPhotoAlts[slug] };
+      : { src: domainPhotos[slug], alt: domainPhotoAlts[slug] });
+  const sectionPhotos = domainGuideSectionPhotos[slug] ?? {};
   const audioAbs = path.join(process.cwd(), "public", "audio", "domains", `${slug}.mp3`);
   const audioSrc = narrative.listenAudio !== false && fs.existsSync(audioAbs) ? `/audio/domains/${slug}.mp3` : undefined;
   const lead = narrative.sections[0];
@@ -154,18 +154,20 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
           </div>
         </section>
 
-        {rest.map((section, index) => (
+        {rest.map((section, index) => {
+          const image = sectionPhotos[section.key] ?? section.image;
+          return (
           <section key={section.key} className={styles.block}>
             <span className={styles.sectionNumber}>{String(index + 2).padStart(2, "0")}</span>
             <h2 id={section.key} className={styles.sectionTitle}>{section.heading}</h2>
             <ReadingParagraphs paragraphs={section.paragraphs} highlight />
-            {section.image ? (
+            {image ? (
               <div className={styles.photo}>
-                <PhotoFrame src={section.image.src} alt={section.image.alt} fit="cover" position="center top" />
+                <PhotoFrame src={image.src} alt={image.alt} fit="cover" position="center top" />
               </div>
             ) : null}
           </section>
-        ))}
+        ); })}
 
         <section className={`${styles.block} ${styles.further}`}>
           <h2>Take it further with Iron Compass AI</h2>
