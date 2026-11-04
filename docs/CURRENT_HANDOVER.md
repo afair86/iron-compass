@@ -1,5 +1,16 @@
 # CURRENT HANDOVER
 
+## Lighter charcoal website — LIVE, 04/11/2026, 6:04:23 pm Brisbane, Codex
+
+Production https://ironcompassai.com now serves dpl_DygFeJhLTYTFuYu2AByU2pcT1HC1, runtime commit 8a83402ae82695e8f71e51c63cc0feae768afa61, branch codex/website-relaunch-20261104, checkout website-relaunch-20261104. Marketing project prj_fOowaY2ZkZPR56F2Pr3ZArjLBnYM /iron-compass, team team_6NQL6p1c5YCkRtcP1T3dERxN, production environment verified before promotion. Private staged production URL iron-compass-47ctbz74j-adams-projects-26d15070.vercel.app tested then promoted unchanged. Rollback dpl_7FBenWE5kpdKXwwrYdNSWBmm4AuX /c450e984a0470b98cecc0fa6826e445a82546293. Source pushed in draft PR4; main remains older and must not replace it.
+
+Raised base charcoal #1b1f25 to #262c34, neutral bands/cards and warm/blue editorial panels, body and muted reading text and borders; homepage hero overlay matches. Silver headings and semantic blue/amber/red roles retained. Changed six CSS files (app-theme/editorial/public-editorial, approved-home, domain-story, app-overview) plus rule07 and handover. All content, photographs, actual app screenshot pixels, founder text and pricing retained. Normal/muted/blue text on three neutral surfaces has calculated contrast5.11–10.19:1. Glare/device brightness still matters; no computer setting diagnosed or altered.
+
+QA: build/TypeScript, nine tests and diff checks pass.119 public pages/117 indexable/117 sitemap URLs pass metadata/heading/schema/canonical checks;88 blog texts and three Pricing cards/founder wording unchanged. Twelve responsive cases at1441/391 widths: one H1, no overflow or loaded broken images. Private authenticated stage:19 routes,4 served CSS files including new palette,13 image assets,sitemap117 androbots pass. Live17 critical routes200,source stamp matches,www308 preserves query/path. Live browser Home1440 andFinance390 computed background rgb(38,44,52),nooverflow; desktophero/phoneguide inspected. Proof live-lighter-home.jpg and brightness-responsive-qa.json in project checkpoints. Stamp sourceKind vercel-git-metadata /exactCommitBuild false; no reproducible Git build or outdoor-device guarantee claimed.
+
+Next: await owner instructions. No blocker. Live app/API/native/customer records and campaigns unchanged; Instagram deferred.
+
+
 ## Outdoor readability palette — READY TO STAGE, 04/11/2026, 5:58:45 pm Brisbane, Codex
 
 Owner requested a lighter website when viewing outside. Checkout website-relaunch-20261104, branch codex/website-relaunch-20261104, baseline f74d96c89c9d82840b86f948522c34e37ec6e634. Raised charcoal base to #262c34, bands #2b333c, cards #333c46, body #d5dce6 and muted #b4becb, with clearer borders. Updated app-theme/editorial/public-editorial and Home/domain/app-overview CSS plus rule07; hero overlay follows the brighter charcoal. No image pixels, app screenshots, content, product facts or pricing changed. Body/muted/blue contrast on the three neutral surfaces ranges 5.11–10.19:1. Outdoor glare/device brightness can still affect viewing; device settings were not inspected or altered.
