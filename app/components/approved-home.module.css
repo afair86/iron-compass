@@ -388,7 +388,7 @@
   }
 
   .hero::after {
-    background: linear-gradient(90deg, rgba(27, 31, 37, .50) 0%, rgba(27, 31, 37, .65) 38%, rgba(27, 31, 37, .88) 52%, rgba(27, 31, 37, .94) 100%);
+    background: linear-gradient(90deg, rgba(27, 31, 37, .50) 0%, rgba(27, 31, 37, .65) 38%, rgba(27, 31, 37, .92) 50%, rgba(27, 31, 37, .94) 100%);
   }
 
   .banner {
