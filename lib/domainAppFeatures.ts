@@ -103,7 +103,6 @@ export const domainAppFeatures: Record<string, DomainAppFeatures> = {
       { text: "Comeback protocol: map the impact, set a milestone ladder and choose the next action.", plan: "Elite" },
     ],
     shots: [
-      { src: "/images/app-screens/fall-rise-header.webp", alt: "Iron Compass AI app Fall & Rise page header: a man walking along a quiet street in low sun, \"Miss, return, and carry the standard again.\"", width: 640, height: 511 },
       { src: "/images/app-screens/fall-rise-impact.webp", alt: "Comeback protocol: a setback's impact rated as bars across work, money, health, family and more.", width: 640, height: 798 },
       { src: "/images/app-screens/fall-rise-milestone-ladder.webp", alt: "Comeback protocol milestone ladder: this week's rung and the two-week rung.", width: 640, height: 511 },
     ],
