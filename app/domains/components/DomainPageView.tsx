@@ -17,6 +17,31 @@ type DomainPageViewProps = {
   slug: DomainSlug;
 };
 
+/** Keep every word, adding reading breaks only between complete sentences. */
+function readingChunks(paragraph: string) {
+  const sentences = paragraph.split(/(?<=[.!?])\s+(?=[A-Z“"‘])/);
+  const chunks: string[] = [];
+  let chunk = "";
+  for (const sentence of sentences) {
+    chunk = chunk ? `${chunk} ${sentence}` : sentence;
+    if (chunk.split(/\s+/).length >= 42) {
+      chunks.push(chunk);
+      chunk = "";
+    }
+  }
+  if (chunk) chunks.push(chunk);
+  return chunks;
+}
+
+function ReadingParagraphs({ paragraphs, highlight = false }: { paragraphs: string[]; highlight?: boolean }) {
+  return paragraphs.map((paragraph, index) => {
+    const content = readingChunks(paragraph).map((chunk) => <p key={chunk}>{chunk}</p>);
+    return highlight && index === 0
+      ? <div className={styles.insight} key={paragraph}>{content}</div>
+      : <div className={styles.passage} key={paragraph}>{content}</div>;
+  });
+}
+
 function speechText(narrative: DomainNarrative) {
   return [
     narrative.h1Title,
@@ -83,15 +108,12 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
           <article className={styles.article} aria-label={`${narrative.h1Title} guide`}>
         <section className={styles.intro}>
           <div className={styles.copy}>
-            {narrative.opening.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-            ))}
+            <ReadingParagraphs paragraphs={narrative.opening} />
             {lead ? (
               <>
-                <h2 id={lead.key}>{lead.heading}</h2>
-                {lead.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-                ))}
+                <span className={styles.sectionNumber}>01</span>
+                <h2 id={lead.key} className={styles.sectionTitle}>{lead.heading}</h2>
+                <ReadingParagraphs paragraphs={lead.paragraphs} highlight />
               </>
             ) : null}
             {audioSrc ? (
@@ -131,12 +153,11 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
           </div>
         </section>
 
-        {rest.map((section) => (
+        {rest.map((section, index) => (
           <section key={section.key} className={styles.block}>
-            <h2 id={section.key}>{section.heading}</h2>
-            {section.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-            ))}
+            <span className={styles.sectionNumber}>{String(index + 2).padStart(2, "0")}</span>
+            <h2 id={section.key} className={styles.sectionTitle}>{section.heading}</h2>
+            <ReadingParagraphs paragraphs={section.paragraphs} highlight />
             {section.image ? (
               <div className={styles.photo}>
                 <PhotoFrame src={section.image.src} alt={section.image.alt} fit="cover" position="center top" />
@@ -145,11 +166,9 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
           </section>
         ))}
 
-        <section className={styles.block}>
+        <section className={`${styles.block} ${styles.further}`}>
           <h2>Take it further with Iron Compass AI</h2>
-          {narrative.further.map((paragraph) => (
-            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-          ))}
+          <ReadingParagraphs paragraphs={narrative.further} />
         </section>
           </article>
         </div>
