@@ -1,5 +1,12 @@
 # CURRENT HANDOVER
 
+## Outdoor readability palette — READY TO STAGE, 04/11/2026, 5:58:45 pm Brisbane, Codex
+
+Owner requested a lighter website when viewing outside. Checkout website-relaunch-20261104, branch codex/website-relaunch-20261104, baseline f74d96c89c9d82840b86f948522c34e37ec6e634. Raised charcoal base to #262c34, bands #2b333c, cards #333c46, body #d5dce6 and muted #b4becb, with clearer borders. Updated app-theme/editorial/public-editorial and Home/domain/app-overview CSS plus rule07; hero overlay follows the brighter charcoal. No image pixels, app screenshots, content, product facts or pricing changed. Body/muted/blue contrast on the three neutral surfaces ranges 5.11–10.19:1. Outdoor glare/device brightness can still affect viewing; device settings were not inspected or altered.
+
+Build/TypeScript and nine tests pass; all119 public pages/117 indexable/117 sitemap URLs pass SEO checks. All88 educational article texts, three Pricing cards and founder words retained. Browser twelve Home/Finance/blog/About/Pricing/App cases at actual1441 and391 widths: no overflow, one H1, no loaded broken images; computed background rgb(38,44,52). Desktop hero and phone app page inspected. Current production remains dpl_7FBenWE5kpdKXwwrYdNSWBmm4AuX /c450e984a0470b98cecc0fa6826e445a82546293 until new private production stage is verified and promoted. Next: commit/push, stage same marketing project/team, authenticate checks and promote exact build. App/campaigns remain on hold; website deployment already authorized.
+
+
 ## Real founder-family photos and dedicated app landing — LIVE, 04/11/2026, 5:11:13 pm Brisbane, Codex
 
 Production https://ironcompassai.com serves dpl_7FBenWE5kpdKXwwrYdNSWBmm4AuX, runtime commit c450e984a0470b98cecc0fa6826e445a82546293, branch codex/website-relaunch-20261104, checkout website-relaunch-20261104. Marketing project prj_fOowaY2ZkZPR56F2Pr3ZArjLBnYM / iron-compass, team team_6NQL6p1c5YCkRtcP1T3dERxN. Exact staged production deployment tested and promoted unchanged. Rollback dpl_EnMQd4N3w5DpWREH2ujShyTCoieq / 41ba57a3c7b05cfd7967c1b82877d1bf56fb7cd1. Main remains older 997685885f3005c0261575134c057d2a13ba02ef; do not redeploy it over the launch branch. Source is pushed in draft PR #4; this documentation-only checkpoint follows the runtime commit.

@@ -1,6 +1,6 @@
 .home {
-  --ic-band: #27313b;
-  --ic-surface: #2b343e;
+  --ic-band: #323e4a;
+  --ic-surface: #384451;
   background: var(--ic-bg);
   color: var(--ic-text-heading);
 }
@@ -28,7 +28,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(27, 31, 37, .48), rgba(27, 31, 37, .84) 48%, #1b1f25 100%);
+  background: linear-gradient(180deg, rgba(38, 44, 52, .48), rgba(38, 44, 52, .84) 48%, #262c34 100%);
   pointer-events: none;
 }
 
@@ -390,7 +390,7 @@
   }
 
   .hero::after {
-    background: linear-gradient(90deg, rgba(27, 31, 37, .45) 0%, rgba(27, 31, 37, .60) 38%, rgba(27, 31, 37, .86) 50%, rgba(27, 31, 37, .90) 100%);
+    background: linear-gradient(90deg, rgba(38, 44, 52, .45) 0%, rgba(38, 44, 52, .60) 38%, rgba(38, 44, 52, .86) 50%, rgba(38, 44, 52, .90) 100%);
   }
 
   .banner {

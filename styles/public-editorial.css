@@ -9,7 +9,7 @@
   width: 100%;
   border: 1px solid #4a5c6d;
   border-radius: 18px;
-  background: linear-gradient(120deg, #2b3c4d, #252b32 70%);
+  background: linear-gradient(120deg, #34495c, #343e49 70%);
   text-align: left;
 }
 .ic-app-value__label {
@@ -126,7 +126,7 @@ html body main.ic-journal-article .ic-board-hero__copy .ic-page-title {
   margin: 0 0 1.5rem;
 }
 html body main.ic-journal-article .ic-dispatch-lede {
-  color: #cbd4de;
+  color: #d5dce6;
   margin: 0;
 }
 html body main.ic-journal-article .ic-dispatch-meta {
@@ -141,7 +141,7 @@ html body main.ic-journal-article .ic-listen {
 html body main.ic-journal-article .ic-dispatch-prose {
   max-width: 68ch;
   margin: 0 auto;
-  color: #cbd4de;
+  color: #d5dce6;
   font-size: 1.0625rem;
   line-height: 1.85;
 }
@@ -163,7 +163,7 @@ html body main.ic-journal-article .ic-dispatch-prose h3 {
   font-size: 1.2rem;
 }
 html body main.ic-journal-article .ic-dispatch-prose blockquote {
-  background: #3b332a;
+  background: #493e31;
   border-left: 3px solid #c4a574;
   border-radius: 0 12px 12px 0;
   padding: 1.25rem 1.5rem;
@@ -197,7 +197,7 @@ html body main.ic-journal-article .ic-dispatch-prose figure {
   text-underline-offset: 4px;
 }
 .ic-blog-index .ic-stoic-card {
-  background: #29313a;
+  background: #343f4b;
   border-color: #475565;
   text-align: left;
 }
@@ -215,11 +215,11 @@ html body main.ic-journal-article .ic-dispatch-prose figure {
   align-self: flex-start;
 }
 .ic-blog-index .ic-topics-panel {
-  background: #2a3541;
+  background: #354554;
   border-color: #53677b;
 }
 .ic-public-page :is(.ic-panel, .ic-panel-outline, .ic-panel-stoic) {
-  background-color: #272f38;
+  background-color: #333d48;
   border-color: #465665;
 }
 .ic-public-page :is(.ic-section-heading, .ic-section-title) {
@@ -285,7 +285,7 @@ html body main.ic-journal-article .ic-article-table {
   overflow-x: auto;
   border: 1px solid #526375;
   border-radius: 12px;
-  background: #293541;
+  background: #354554;
 }
 html body main.ic-journal-article .ic-article-table table {
   min-width: 540px;

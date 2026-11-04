@@ -3,19 +3,19 @@
    progress. The website must not invent progress or imply a conversion promise. */
 html:root {
   color-scheme: dark;
-  --ic-bg: #1b1f25;
-  --ic-bg-alt: #1b1f25;
-  --ic-page-bg-alt: #1b1f25;
+  --ic-bg: #262c34;
+  --ic-bg-alt: #262c34;
+  --ic-page-bg-alt: #262c34;
   --ic-bg-radial-a: transparent;
   --ic-bg-radial-b: transparent;
-  --ic-surface: #242a32;
-  --ic-surface-mid: #242a32;
-  --ic-surface-card: #242a32;
-  --ic-card-bg: #242a32;
-  --ic-surface-alt: #2d3540;
+  --ic-surface: #333c46;
+  --ic-surface-mid: #333c46;
+  --ic-surface-card: #333c46;
+  --ic-card-bg: #333c46;
+  --ic-surface-alt: #3b4653;
   --ic-text-heading: #f0f2f5;
-  --ic-text-main: #c7cfdd;
-  --ic-text-muted: #9aa5b4;
+  --ic-text-main: #d5dce6;
+  --ic-text-muted: #b4becb;
   --ic-steel: #a6c9e5;
   --ic-accent-blue: var(--ic-steel);
   --ic-amber: #ffb020;
@@ -23,7 +23,7 @@ html:root {
   --ic-cta-red: #ff3434;
   --ic-danger: #c51f2a;
   --ic-on-action: #02060d;
-  --ic-border: #3b444f;
+  --ic-border: #53606f;
   --ic-border-strong: #607286;
   --ic-card-border: var(--ic-border);
   --ic-chip-border: var(--ic-border);

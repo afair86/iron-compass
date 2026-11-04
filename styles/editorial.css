@@ -105,7 +105,7 @@ html:root {
 @media screen {
   html body main.ic-page-shell :is(.ic-page-title, .ic-heading-2, .ic-section-heading, .ic-board-heading) { margin-bottom: 24px; }
 }
-html:root { --ic-band: #20252c; }
+html:root { --ic-band: #2b333c; }
 @media screen {
   html body :is(main, footer) .ic-cta-pair {
     display: grid;

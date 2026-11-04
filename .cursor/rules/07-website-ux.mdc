@@ -14,8 +14,8 @@ Product name: Iron Compass AI. Use the full name in public copy, headings, metad
 accessibility labels and publisher data. Keep technical identifiers and URLs unchanged.
 
 Owner clarification, 4 November 2026: the website shares the app's brand but has its own
-public-site composition. Use charcoal #1b1f25 backgrounds, #20252c section bands and
-#242a32 cards. Do not return the website to near-black or hardcode the homepage background.
+public-site composition. Use charcoal #262c34 backgrounds, #2b333c section bands and
+#333c46 cards. Do not return the website to near-black or hardcode the homepage background.
 
 Latest owner direction uses styles/editorial.css over the shared site-layout.css:
 centre short introductions, home lead/Ten life domains/philosophy, journal hero,
@@ -23,8 +23,8 @@ Topics/Read This First and section labels. Centre footer logo and Discipline.
 Direction. Brotherhood. Keep articles, card descriptions and forms left aligned.
 Use ic-editorial-center explicitly; no blanket all-left or all-centred treatment.
 Owner refined 4 November 2026: brighter silver #f0f2f5 main headings, clearer blue
-#a6c9e5 subtitles, section labels and secondary guidance; soft silver #c7cfdd reading
-copy. Leave at least 24px between major headings and body text. Charcoal stays unchanged.
+#a6c9e5 subtitles, section labels and secondary guidance; soft silver #d5dce6 reading
+copy. Leave at least 24px between major headings and body text. Owner outdoor-reading refinement: lighter charcoal surfaces, #b4becb muted copy and clearer neutral borders; preserve silver/blue/amber/red roles and authentic app screenshots.
 Use selective blue accents for links, secondary controls and the featured plan;
 Iron Red primary actions, amber only for real attention, green earned
 completion, and neutral navigation. Secondary controls must not inherit red. No neon/glow.

@@ -74,7 +74,7 @@
   margin-bottom: 2rem;
 }
 .practice {
-  background: linear-gradient(115deg, #2b3c4d, #262e37);
+  background: linear-gradient(115deg, #34495c, #343f4b);
   border: 1px solid #4b5c6d;
   border-radius: 18px;
   padding: clamp(1.5rem, 4vw, 3rem);
@@ -117,7 +117,7 @@
 .feature {
   display: flex;
   flex-direction: column;
-  background: #272f38;
+  background: #333f4b;
   border: 1px solid #475869;
   border-radius: 16px;
   overflow: hidden;
@@ -143,7 +143,7 @@
   flex: 1;
   margin: 0;
   padding: 1.5rem 2rem 2rem;
-  background: #232a32;
+  background: #2e3843;
 }
 .feature img {
   width: min(100%, 320px);
@@ -169,7 +169,7 @@
   padding: 1.5rem;
   border: 1px solid #485b6e;
   border-radius: 14px;
-  background: #283541;
+  background: #344554;
 }
 .planGrid h3 {
   font-size: 1.5rem;
