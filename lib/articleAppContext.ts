@@ -4,6 +4,14 @@ import type { PostMeta } from "@/lib/blog";
 export type AppContext = keyof typeof contextCopy;
 
 const contextCopy = {
+  leadership: {
+    title: "Give the commitment a place in tomorrow",
+    description:
+      "Start with your own follow-through: one decision, one promise and the next action. Keep a record you can review before you ask more of the people around you.",
+    label: "Leadership & follow-through",
+    shot: 2,
+    plan: "Core",
+  },
   discipline: {
     title: "Give the standard a place in your day",
     description:
@@ -111,8 +119,8 @@ export function articleAppContext(
   if (/strength|health/.test(category)) return "health-strength";
   if (/identity|legacy/.test(category))
     return /legacy/.test(post.slug) ? "legacy" : "identity";
-  if (/leadership|bonds|relationship/.test(category))
-    return "bonds-connections";
+  if (/leadership/.test(category)) return "leadership";
+  if (/bonds|relationship/.test(category)) return "bonds-connections";
   if (/purpose/.test(category)) return "purpose-direction";
   if (/resilience/.test(category)) return "resilience";
   if (/fall.*rise/.test(category)) return "fall-rise";
@@ -138,15 +146,37 @@ export function appContextDetails(context: AppContext) {
   };
   return {
     ...copy,
-    features: features?.lines ?? [],
+    features:
+      context === "leadership"
+        ? [
+            {
+              text: "Keep your own commitments visible as habits.",
+              plan: "Free",
+            },
+            {
+              text: "Record the decision and what happened in a private journal.",
+              plan: "Free",
+            },
+            {
+              text: "Today's preparation: tomorrow's result and first move, on a timeline.",
+              plan: "Core",
+            },
+          ]
+        : (features?.lines ?? []),
     screenshot:
       features?.shots[copy.shot] ??
-      (context === "daily" ? domainAppFeatures.discipline.shots[1] : generic),
+      (context === "daily"
+        ? domainAppFeatures.discipline.shots[1]
+        : context === "leadership"
+          ? domainAppFeatures.discipline.shots[2]
+          : generic),
     guideHref:
       context === "ai"
         ? "/articles/ai-mastery"
-        : context === "daily"
-          ? "/domains"
-          : `/domains/${context}`,
+        : context === "leadership"
+          ? "/domains/discipline"
+          : context === "daily"
+            ? "/domains"
+            : `/domains/${context}`,
   };
 }

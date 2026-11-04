@@ -9,6 +9,7 @@ import "../styles/editorial.css";
 import "../styles/semantic-actions.css";
 import "../styles/public-editorial.css";
 import type { Metadata } from "next";
+import { socialLinks } from "@/lib/socialLinks";
 import { Montserrat, Inter } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -80,6 +81,7 @@ export default function RootLayout({
                   "@type": "Organization",
                   "@id": `${SITE_URL}/#organization`,
                   name: SITE_NAME,
+                  sameAs: socialLinks.map((link) => link.href),
                   url: SITE_URL,
                   logo: ORGANIZATION_LOGO,
                   image: DEFAULT_OG_IMAGE,

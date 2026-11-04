@@ -117,7 +117,7 @@ export default function StartPage() {
           </p>
         </section>
 
-        <section className="ic-panel-outline ic-align-center space-y-4">
+        <section id="common-questions" className="ic-panel-outline ic-align-center space-y-4">
           <h2 className="ic-section-heading">FAQ</h2>
           <div className="space-y-3 max-w-3xl mx-auto text-left">
             <div>

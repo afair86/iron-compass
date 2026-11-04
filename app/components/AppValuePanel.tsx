@@ -41,11 +41,13 @@ export default function AppValuePanel({
           </Link>
         </div>
         <Link className="ic-app-value__guide" href={details.guideHref}>
-          {context === "ai"
-            ? "Read the AI guides"
-            : details.label === "Daily practice"
-              ? "Read the domain guides"
-              : `Read the ${details.label} guide`}
+          {context === "leadership"
+            ? "Read the Discipline guide"
+            : context === "ai"
+              ? "Read the AI guides"
+              : details.label === "Daily practice"
+                ? "Read the domain guides"
+                : `Read the ${details.label} guide`}
         </Link>
       </div>
       <figure className="ic-app-value__screen">
