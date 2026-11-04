@@ -69,9 +69,9 @@ const contextCopy = {
     plan: "Core",
   },
   "fall-rise": {
-    title: "Make the return smaller than the setback",
+    title: "Give the rebuilding a direction",
     description:
-      "Use the action in this guide first. Keep a rebuilding habit and a review you can return to after a miss.",
+      "Use this guide for the next useful action. Keep the wider recovery in view with a rebuilding habit, regular review and the Elite Comeback protocol milestone ladder.",
     label: "Fall & Rise",
     shot: 2,
     plan: "Elite",

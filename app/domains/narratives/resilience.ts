@@ -2,6 +2,7 @@ import type { DomainNarrative } from "./types";
 
 export const resilienceNarrative: DomainNarrative = {
   slug: "resilience",
+  listenAudio: false,
   h1Title: "Resilience",
   heroDescription: "Stay functional when the load is real. Do not call exhaustion a virtue.",
   opening: [
@@ -52,6 +53,6 @@ export const resilienceNarrative: DomainNarrative = {
   },
   further: [
     "The Iron Compass AI app is where pressure and the next action stay visible. Open it at ironcompassai.com/app.",
-    "If the floor was already missed, that is Fall and Rise. This page is how you stay functional before the miss, and how you keep a standard while the load is still on you.",
+    "When a major setback has changed the shape of your life, Fall & Rise addresses the longer rebuilding. Resilience is how you stay functional under the pressure, including while that recovery is still under way.",
   ],
 };

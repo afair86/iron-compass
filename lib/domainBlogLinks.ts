@@ -173,14 +173,19 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
   ],
   "fall-rise": [
     {
-      title: "Discipline collapse protocol",
-      href: "/blog/discipline-collapse-protocol",
-      description: "What to do after the standard drops, without a restart speech.",
+      title: "Rebuilding after divorce",
+      href: "/articles/rebuilding-after-divorce-for-men",
+      description: "Re-establish structure, standards and direction after separation.",
     },
     {
-      title: "When the line was missed",
+      title: "Rebuilding identity after loss",
+      href: "/articles/rebuilding-identity-after-loss",
+      description: "Consider the roles and principles you will carry forward after life changes.",
+    },
+    {
+      title: "A 12-week discipline rebuild",
       href: "/blog/discipline-drift-recovery-12-week-reboot",
-      description: "A return that is smaller than the speech and still real.",
+      description: "Practical routine work to support the wider recovery.",
     },
   ],
   legacy: [

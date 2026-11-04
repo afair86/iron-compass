@@ -99,8 +99,8 @@ export const domainAppFeatures: Record<string, DomainAppFeatures> = {
   "fall-rise": {
     lines: [
       { text: "A small rebuilding action each day and a weekly setback review.", plan: "Free" },
-      { text: "The return rep: note the miss, then do the smaller version.", plan: "Free" },
-      { text: "Comeback protocol: a milestone ladder and a step for the next 24 hours.", plan: "Elite" },
+      { text: "A short return action for the difficult days within a longer recovery.", plan: "Free" },
+      { text: "Comeback protocol: map the impact, set a milestone ladder and choose the next action.", plan: "Elite" },
     ],
     shots: [
       { src: "/images/app-screens/fall-rise-header.webp", alt: "Iron Compass AI app Fall & Rise page header: a man walking along a quiet street in low sun, \"Miss, return, and carry the standard again.\"", width: 640, height: 511 },

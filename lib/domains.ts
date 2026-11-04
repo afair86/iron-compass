@@ -16,7 +16,7 @@ export const domainCards: DomainCard[] = [
   { slug: "purpose-direction", title: "Purpose & Direction", desc: "Work with a direction you can actually keep.", href: "/domains/purpose-direction" },
   { slug: "finance-provision", title: "Finance & Provision", desc: "Money handled before it becomes a surprise.", href: "/domains/finance-provision" },
   { slug: "resilience", title: "Resilience", desc: "Stay functional when the load rises.", href: "/domains/resilience" },
-  { slug: "fall-rise", title: "Fall & Rise", desc: "A miss, a cause, and the return.", href: "/domains/fall-rise" },
+  { slug: "fall-rise", title: "Fall & Rise", desc: "Recover from major setbacks. Rebuild with integrity.", href: "/domains/fall-rise" },
   { slug: "grief-honour", title: "Grief & Honour", desc: "Stabilise, honour the loss, and keep the role.", href: "/domains/grief-honour" },
   { slug: "legacy", title: "Legacy", desc: "What remains for the people after you.", href: "/domains/legacy" },
 ];

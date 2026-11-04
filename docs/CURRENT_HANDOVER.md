@@ -1,5 +1,14 @@
 # CURRENT HANDOVER
 
+## Fall & Rise major-setback correction — READY TO STAGE, 04/11/2026, 6:23:34 pm Brisbane, Codex
+
+Owner clarified that Fall & Rise means recovering well from major life setbacks, using Stoic systems, getting back up with integrity and moving forward. Replaced the short missed-habit framing with an1817-word rendered guide: divorce/business closure/job loss examples, facts/control/influence, stabilisation, ownership without blanket blame, integrity, longer rebuilding milestones, daily/weekly rituals and a practical recovery plan. Distinguishes Resilience and Grief. Epictetus Enchiridion section1 checked in MIT Internet Classics Archive; paraphrase only, no invented quotation. Existing guide anchors why/cause/again/practice retained. Old recorded narration hidden for Fall & Rise and Resilience (whose final cross-reference changed); no recordings deleted or regenerated.
+
+Updated app/domains/narratives/fall-rise.ts, resilience.ts, domain content/SEO, lib/domains.ts card, articleAppContext, domainAppFeatures benefit descriptions (actual plans/features and screenshot pixels retained), domainBlogLinks and rule07. Canonical route retained. Eight natural sections, amber practical steps and reading rhythm preserved. No app/API/native/pricing/founder/photography/campaign changes. Baseline8c55d321afdda71a584171189a1367f2fe267081, checkout website-relaunch-20261104, branch codex/website-relaunch-20261104. Existing live dpl_DygFeJhLTYTFuYu2AByU2pcT1HC1 /8a83402ae82695e8f71e51c63cc0feae768afa61 until promotion.
+
+Validation: production build/TypeScript, changed-file ESLint, nine tests pass.119 public pages/117indexable/117sitemap URLs pass SEO audit;88 article educational texts retained;three Pricing cards/founder wording retained. Desktopguide1441 andnine guide/index/Resilience cases at320/391/769: no overflow,oneH1,no loaded brokenimages ormissingfragmenttargets; oldaudioabsent. Next:commit/push,privateproductionstage,verifynewcontent/sourceoncorrectmarketingproject/team,promoteexacttestedbuildandlivecheck. Website release authorization continues; no blocker.
+
+
 ## Lighter charcoal website — LIVE, 04/11/2026, 6:04:23 pm Brisbane, Codex
 
 Production https://ironcompassai.com now serves dpl_DygFeJhLTYTFuYu2AByU2pcT1HC1, runtime commit 8a83402ae82695e8f71e51c63cc0feae768afa61, branch codex/website-relaunch-20261104, checkout website-relaunch-20261104. Marketing project prj_fOowaY2ZkZPR56F2Pr3ZArjLBnYM /iron-compass, team team_6NQL6p1c5YCkRtcP1T3dERxN, production environment verified before promotion. Private staged production URL iron-compass-47ctbz74j-adams-projects-26d15070.vercel.app tested then promoted unchanged. Rollback dpl_7FBenWE5kpdKXwwrYdNSWBmm4AuX /c450e984a0470b98cecc0fa6826e445a82546293. Source pushed in draft PR4; main remains older and must not replace it.
