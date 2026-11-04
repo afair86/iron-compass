@@ -10,8 +10,8 @@
     "trackingBranch": "codex/website-relaunch-20261104",
     "productionBranch": "main",
     "productionBranchBaseline": "997685885f3005c0261575134c057d2a13ba02ef",
-    "productionDeployment": "dpl_5Lp2Ep2cE4pT4iWqjRiexbQ1SEKP",
-    "productionReportedCommit": "682fc7d66062d43786e774299bf13404639657a7",
+    "productionDeployment": "dpl_7qJp22jBhiQmrj2vatYnCqnjCSb4",
+    "productionReportedCommit": "719364159bc9402c4b3f6c3d162fe74b1c7b75ce",
     "productionSourceKind": "cli staged production then exact promotion",
     "productionUrl": "https://ironcompassai.com",
     "vercelProject": "iron-compass",
@@ -20,14 +20,14 @@
     "gitRepository": "afair86/iron-compass",
     "states": {
       "localUnpushed": "Original Cursor working copies and uncommitted sidebar changes were preserved. The handover merge is separate from the live website build.",
-      "pushed": "Silver hierarchy 682fc7d66062d43786e774299bf13404639657a7 pushed on codex/website-relaunch-20261104; PR #4.",
-      "testsPassed": "Build/TypeScript; nine tests; 117-page SEO audit; 36 local responsive cases; authenticated staged pages, CSS and commit checks pass.",
-      "previewDeployed": "dpl_5Lp2Ep2cE4pT4iWqjRiexbQ1SEKP staged production checked via authenticated HTTP; local production-build visual QA at 390/1440. No public share link created.",
-      "productionDeployed": "dpl_5Lp2Ep2cE4pT4iWqjRiexbQ1SEKP READY serves 682fc7d66062d43786e774299bf13404639657a7; live palette and responsive behaviour verified."
+      "pushed": "Editorial release 719364159bc9402c4b3f6c3d162fe74b1c7b75ce pushed on codex/website-relaunch-20261104; PR #4.",
+      "testsPassed": "Build/TypeScript; nine tests; changed component ESLint; 117-page SEO audit; full paragraph wording preserved across ten guides; 26 local responsive cases; staged authenticated pages/CSS/three image byte checks pass.",
+      "previewDeployed": "dpl_7qJp22jBhiQmrj2vatYnCqnjCSb4 staged production checked via authenticated HTTP and local production-build browser QA. No public share link created.",
+      "productionDeployed": "dpl_7qJp22jBhiQmrj2vatYnCqnjCSb4 READY serves 719364159bc9402c4b3f6c3d162fe74b1c7b75ce; live homepage/domain layout, photo and anchor checks verified."
     },
-    "releaseStatus": "Approved charcoal/silver/blue/red website hierarchy live. Draft PR #4 preserves source; main remains older until review/merge.",
+    "releaseStatus": "Full-width domain-first homepage and richer, brighter editorial domain guides live. Full content preserved. PR #4 preserves source; main remains older.",
     "verifiedOn": "2026-11-04",
-    "rollbackDeployment": "dpl_D7F7Ev3uTod7DNPcuPc2duHjKxgZ"
+    "rollbackDeployment": "dpl_8z1QpjehYgk83Y3nzWQjCv7UG6AG"
   },
   "webApp": {
     "repository": "afair86/iron-compass-ai",

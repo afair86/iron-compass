@@ -4,7 +4,7 @@ Start here before changing or reporting on Iron Compass. GitHub holds pushed sou
 
 ## Website update — 4 November 2026
 
-The live website is dpl_5Lp2Ep2cE4pT4iWqjRiexbQ1SEKP at https://ironcompassai.com, reporting commit 682fc7d66062d43786e774299bf13404639657a7. The approved silver headings, selective blue accents and red primary actions retain charcoal and full Iron Compass AI naming. Staged production checked and promoted unchanged. Source is pushed on codex/website-relaunch-20261104 and preserved in draft PR #4. Main remains 997685885f3005c0261575134c057d2a13ba02ef until review/merge. Do not redeploy older main over this release. See the current handover for QA and rollback. The component table below is the preserved 29 October historical baseline; its app/API/native states were not reverified by the website task.
+The live website is dpl_7qJp22jBhiQmrj2vatYnCqnjCSb4 at https://ironcompassai.com, reporting commit 719364159bc9402c4b3f6c3d162fe74b1c7b75ce. The full-width, domain-first homepage and richer domain guides retain all educational wording and use the refined brighter charcoal/silver/blue/amber/red hierarchy with curated photographs. Staged production checked and promoted unchanged. Source is pushed on codex/website-relaunch-20261104 and preserved in draft PR #4. Main remains 997685885f3005c0261575134c057d2a13ba02ef until review/merge. Do not redeploy older main over this release. See the current handover for QA and rollback. The component table below is the preserved 29 October historical baseline; its app/API/native states were not reverified by the website task.
 
 ## Historical source map
 
