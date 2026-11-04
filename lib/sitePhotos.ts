@@ -53,12 +53,12 @@ export const pagePhotos = {
 /** People photographs that already carry the compass mark, so PhotoFrame must not add another. */
 export const pagePeoplePhotos = {
   domains: "/images/get-the-app/coastal-walk.webp",
-  pricing: "/images/get-the-app/weekly-review.webp",
+  pricing: "/images/get-the-app/pricing-strength-presence.webp",
 } as const;
 
 export const pagePeoplePhotoAlts = {
   domains: "Two men laughing on a coastal walking track at first light",
-  pricing: "A man writing his plan for the week at a desk in the evening",
+  pricing: "A father smiling as he carries his son on his shoulders during a coastal walk",
 } as const;
 
 /** The logo file is not a photograph. Articles still need their own picture. */

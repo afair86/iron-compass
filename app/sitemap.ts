@@ -5,7 +5,7 @@ import { getAllPosts } from "@/lib/blog";
 import { griefArticles } from "@/lib/articleHubs";
 import { domainNarratives } from "@/app/domains/narratives";
 import { CANONICAL_DOMAIN_SLUGS, absoluteUrl } from "@/lib/site";
-import { articlePhoto, domainPhotos, pagePhotos, philosophyPhoto } from "@/lib/sitePhotos";
+import { articlePhoto, domainPhotos, pagePhotos, philosophyPhoto, pagePeoplePhotos } from "@/lib/sitePhotos";
 
 const HOME_HERO = "/images/home/horizon-man.png";
 
@@ -48,8 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: absoluteImages([HOME_HERO, ...Object.values(domainPhotos), philosophyPhoto]),
     },
     { url: absoluteUrl("/start"), lastModified: lastModifiedForPath("/start"), changeFrequency: "weekly", priority: 0.9 },
-    { url: absoluteUrl("/download"), lastModified: lastModifiedForPath("/download"), changeFrequency: "weekly", priority: 0.85 },
-    { url: absoluteUrl("/pricing"), lastModified: lastModifiedForPath("/pricing"), changeFrequency: "weekly", priority: 0.9 },
+    { url: absoluteUrl("/download"), lastModified: lastModifiedForPath("/download"), changeFrequency: "weekly", priority: 0.85, images: absoluteImages(["/images/get-the-app/screens/today.webp"]) },
+    { url: absoluteUrl("/pricing"), lastModified: lastModifiedForPath("/pricing"), changeFrequency: "weekly", priority: 0.9, images: absoluteImages([pagePeoplePhotos.pricing]) },
     {
       url: absoluteUrl("/about"),
       lastModified: lastModifiedForPath("/about"),

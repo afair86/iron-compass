@@ -104,6 +104,10 @@ export default function HomeAppSection({ links }: { links: HomeAppTileLinks }) {
         Free A$0. Core A$19.99 a month or A$199 a year. Elite A$34.99 a month or A$349 a year. On iPhone, Apple
         shows the App Store price. <Link href="/pricing">See plans</Link>
       </p>
+      <div className="ic-cta-pair">
+        <Link href="/download" className="ic-btn-primary">Explore the app</Link>
+        <Link href="/pricing" className="ic-btn-ghost">Compare plans</Link>
+      </div>
     </section>
   );
 }

@@ -33,8 +33,8 @@ export default function ApprovedHome() {
             <a className="ic-btn-primary" href="/app/auth">
               Start free
             </a>
-            <Link className="ic-btn-ghost" href="/pricing">
-              See plans
+            <Link className="ic-btn-ghost" href="/download">
+              Explore the app
             </Link>
           </div>
           <AppLaunchStatus />
