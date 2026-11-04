@@ -8,7 +8,9 @@ const navSections = [
     title: "Platform",
     links: [
       { href: "/app", label: "Open web app" },
-      { href: "/start", label: "Start" },
+      { href: "/download", label: "Get the app" },
+      { href: "/about", label: "About Iron Compass" },
+      { href: "/pricing", label: "Plans and pricing" },
       { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact" },
     ],
@@ -54,7 +56,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="ic-footer-note">
-            <p>Modern masculine systems. Zero fluff. All accountability.</p>
+            <p>Practical Stoicism. Daily habits. A weekly review.</p>
           </div>
         </div>
 

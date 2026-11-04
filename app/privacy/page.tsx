@@ -95,7 +95,7 @@ export default function PrivacyPage() {
         <section className="grid gap-6 md:grid-cols-3 ic-align-center">
           {highlights.map((item) => (
             <article key={item.title} className="ic-panel-muted space-y-3 ic-align-center">
-              <h3 className="ic-section-heading">{item.title}</h3>
+              <h2 className="ic-section-heading">{item.title}</h2>
               <p className="ic-section-copy ic-section-copy--muted text-sm">{item.body}</p>
             </article>
           ))}

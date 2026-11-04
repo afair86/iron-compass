@@ -8,7 +8,7 @@ import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
   title: "Contact Iron Compass",
-  description: "Operations, support, and partnership channels for Iron Compass. Reach the team directly and expect a disciplined response.",
+  description: "Contact Iron Compass for account support, product questions, privacy requests or partnerships. Email the team and expect a reply within two business days.",
   path: "/contact",
 });
 
@@ -25,7 +25,7 @@ const channels = [
 
 const responseStandards = [
   "Email is the way to reach us. Expect a reply within two business days.",
-  "Operational updates and investor communication route through weekly briefings.",
+  "Include the account email and a brief description of what you need help with.",
   "We do not outsource member data or sell contact information—ever.",
 ];
 
@@ -36,10 +36,10 @@ export default function ContactPage() {
       <PageContainer>
         <SectionShell variant="hero" className="space-y-6">
           <PhotoFrame src={pagePhotos.contact} alt={pagePhotoAlts.contact} />
-          <h1 className="ic-page-title">Contact &amp; Signal Channels</h1>
+          <h1 className="ic-page-title">Contact Iron Compass</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
-            Iron Compass responds with the same discipline we demand from members. Pick the channel that matches your mission, send a precise brief,
-            and expect a direct answer within two business days.
+            For account support, product questions or privacy requests, send a short note.
+            Expect a reply within two business days.
           </p>
           <div className="ic-cta-pair">
             <Link href="/domains" className="ic-btn-primary">

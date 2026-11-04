@@ -9,21 +9,21 @@ import { buildPageMetadata } from "@/lib/site";
 export const metadata = buildPageMetadata({
   title: "About Iron Compass",
   description:
-    "Learn about the Iron Compass philosophy—a complete life system for men built on discipline, purpose, strength, and integrity. Discover who it is for, why it exists, and the core values that set it apart.",
+    "Why Iron Compass exists: practical Stoicism, daily discipline and responsibility. Read the founder’s story and explore the ten life domains behind the app.",
   path: "/about",
 });
 
 const pillars = [
-  "Discipline over motivation—minimums fire daily.",
-  "Purpose chosen on paper, translated into cadence.",
-  "Strength, leadership, and financial power built through standards.",
-  "Technology used as leverage, not a crutch.",
+  "Keep a daily standard, including on difficult days.",
+  "Give your responsibilities time in the week.",
+  "Build strength, leadership and financial steadiness through repeated action.",
+  "Use technology to support your judgment and follow-through.",
 ];
 
 const builtFor = [
-  "Men who want a complete system, not scattered hacks.",
-  "Operators balancing family, work, and personal mission.",
-  "Builders who pair aggression with integrity and accountability.",
+  "Men who want a practical structure for their responsibilities.",
+  "Fathers, partners and leaders balancing family, work and health.",
+  "Men prepared to keep a standard and take ownership when they miss it.",
 ];
 
 export default function AboutPage() {

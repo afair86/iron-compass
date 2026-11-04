@@ -1,77 +1,35 @@
 import Link from "next/link";
 import PageShell from "../components/PageShell";
-import EmailCaptureForm from "../components/EmailCaptureForm";
-import { buildPageMetadata } from "@/lib/site";
-import { getAppStoreUrls, isSubscribeConfigured } from "@/lib/subscribe";
+import AppLaunchStatus from "../components/AppLaunchStatus";
+import { buildPageMetadata, productAppHref } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Download Iron Compass AI",
-  description:
-    "Open Iron Compass AI in the browser. Store apps follow once the stores approve them.",
+  title: "Get the Iron Compass App | Daily Habits and Discipline",
+  description: "Use Iron Compass in your browser today: daily habits, a private journal and practical guides across ten life domains. One account on your phone or computer.",
   path: "/download",
 });
 
 export default function DownloadPage() {
-  const { ios, android } = getAppStoreUrls();
-  const hasStoreLinks = Boolean(ios || android);
-  const subscribeReady = isSubscribeConfigured();
-
   return (
     <PageShell>
-      <div className="ic-content-stack max-w-3xl">
-        <section className="ic-panel ic-align-center ic-editorial-center space-y-6">
-          <p className="ic-eyebrow">Iron Compass App</p>
-          <h1 className="ic-section-title">Download Iron Compass AI</h1>
-          <p className="ic-section-copy ic-section-copy--muted text-base max-w-2xl mx-auto">
-            Open the app in the browser now. The iOS and Android store apps are the same product once the stores
-            approve them.
-          </p>
+      <div className="ic-content-stack">
+        <section className="ic-editorial-center space-y-5">
+          <h1 className="ic-section-title">Get the Iron Compass app</h1>
+          <p className="ic-section-copy">A few daily habits. A private journal. One next action you can carry out.</p>
+          <div className="ic-cta-pair">
+            <a className="ic-btn-primary" href={`${productAppHref()}/auth`}>Start free in your browser</a>
+            <Link className="ic-btn-ghost" href="/pricing">See plans</Link>
+          </div>
+          <AppLaunchStatus />
         </section>
-
-        {hasStoreLinks ? (
-          <section className="ic-panel-outline space-y-4 ic-align-center ic-editorial-center">
-            <h2 className="ic-section-heading">Get the app</h2>
-            <div className="ic-cta-row justify-center pt-2">
-              {ios ? (
-                <a href={ios} className="ic-btn-primary text-[0.62rem]" rel="noopener noreferrer" target="_blank">
-                  Download for iOS
-                </a>
-              ) : null}
-              {android ? (
-                <a href={android} className="ic-btn-ghost text-[0.6rem]" rel="noopener noreferrer" target="_blank">
-                  Download for Android
-                </a>
-              ) : null}
-            </div>
-          </section>
-        ) : (
-          <section className="ic-panel-outline space-y-5 ic-align-center ic-editorial-center">
-            <h2 className="ic-section-heading">Join the app waitlist</h2>
-            <p className="ic-section-copy ic-section-copy--muted max-w-xl mx-auto">
-              {subscribeReady
-                ? "Leave your email. We will notify you when Iron Compass AI is ready for your device."
-                : "Store links are not available yet. The reading on this site is ready whenever you are."}
-            </p>
-            {subscribeReady ? (
-              <div className="max-w-xl mx-auto">
-                <EmailCaptureForm source="download" buttonLabel="Join Waitlist" successMessage="You're on the waitlist." />
-              </div>
-            ) : null}
-          </section>
-        )}
-
-        <section className="ic-panel ic-align-center ic-editorial-center space-y-5">
-          <h2 className="ic-section-heading">Read while you wait</h2>
-          <p className="ic-section-copy ic-section-copy--muted max-w-xl mx-auto">
-            Eight domains, practical exercises, and the journal. Nothing to install.
-          </p>
-          <div className="ic-cta-row justify-center pt-1">
-            <Link href="/domains" className="ic-btn-primary text-[0.62rem]">
-              Explore the domains
-            </Link>
-            <Link href="/blog" className="ic-btn-ghost text-[0.6rem]">
-              Read the journal
-            </Link>
+        <section className="ic-panel-outline space-y-4">
+          <h2 className="ic-section-heading">One account, wherever you work</h2>
+          <p className="ic-section-copy">Use the web app on your phone or computer. When the iPhone app is available, sign in with the same account to keep your habits, journal and subscription together.</p>
+          <h2 className="ic-section-heading">Begin with one responsibility</h2>
+          <p className="ic-section-copy">Explore the ten life domains, choose a standard you can keep today, and review what held at the end of the week. The public guides and journal articles are available without an account.</p>
+          <div className="ic-cta-pair">
+            <Link href="/domains" className="ic-btn-ghost">Explore the domains</Link>
+            <Link href="/blog" className="ic-btn-ghost">Read the journal</Link>
           </div>
         </section>
       </div>

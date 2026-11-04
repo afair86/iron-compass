@@ -1,7 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
+import { launchFaq } from "@/lib/launchFaq";
 import { domainCards } from "@/lib/domains";
 import { domainPhotoAlts, domainPhotos, pagePhotoAlts, philosophyPhoto } from "@/lib/sitePhotos";
 import FounderNote from "./FounderNote";
+import AppLaunchStatus from "./AppLaunchStatus";
 import HomeAppSection from "./HomeAppSection";
 import PhotoFrame from "./brand/PhotoFrame";
 import frameStyles from "./brand/photo-frame.module.css";
@@ -12,22 +15,18 @@ export default function ApprovedHome() {
     <div className={styles.home}>
       <section className={styles.hero} id="home">
         <div className={styles.banner}>
-          <img className={styles.heroPhoto} src="/images/home/horizon-man.png" alt={pagePhotoAlts.homeHero} />
-          <img className={styles.bannerMark} src="/iron-compass-logo-icon.png" alt="Iron Compass" />
+          <Image className={styles.heroPhoto} src="/images/home/horizon-man.png" alt={pagePhotoAlts.homeHero} fill priority sizes="(min-width: 1168px) 536px, (min-width: 900px) 46vw, 100vw" />
+          <Image className={styles.bannerMark} src="/iron-compass-logo-icon.png" alt="Iron Compass" width={150} height={150} />
           <p className={styles.bannerWord}>
             Iron Compass <span>AI</span>
           </p>
-          <h1>Rise Beyond Limits</h1>
-          <p className={styles.bannerScript}>A better tomorrow.</p>
+          <p className={styles.bannerMotto}>Rise Beyond Limits</p>
         </div>
         <div className={styles.heroCopy}>
+          <h1>Discipline for the life you’re responsible for.</h1>
           <p>
-            Iron Compass AI helps men build strength, discipline and character—in the ordinary moments that
-            shape their lives.
-          </p>
-          <p>The ten domains are where responsibility lives. The journal shows how that looks in a real week.</p>
-          <p className={styles.appLine}>
-            The Iron Compass app turns it into a daily practice: a few habits, a journal and one next action.
+            Iron Compass is a habit and discipline app for men. Keep a few daily habits, record the day,
+            and turn your responsibilities into a clear next action.
           </p>
           <div className="ic-cta-pair">
             <a className="ic-btn-primary" href="/app/auth">
@@ -37,6 +36,7 @@ export default function ApprovedHome() {
               See plans
             </Link>
           </div>
+          <AppLaunchStatus />
         </div>
       </section>
 
@@ -46,9 +46,8 @@ export default function ApprovedHome() {
         <h2>Ten life domains</h2>
         <p className={styles.sectionNote}>Where responsibility lives.</p>
         <p className={styles.lead}>
-          Discipline, identity, health, the people who depend on you, the work, the money, the load, the return
-          after a miss, grief, and what remains. Awareness, pressure, and strategy are how the system helps. They
-          are not extra domains.
+          Your health, your work, your money and the people who depend on you. Explore practical standards
+          for each responsibility, with daily actions and a weekly review.
         </p>
         <p className={styles.lead}>Each domain has its own habits and a step-by-step guide in the app.</p>
         <div className={styles.domainGrid}>
@@ -92,6 +91,19 @@ export default function ApprovedHome() {
         <Link className={styles.aboutLink} href="/about">
           About the system <span aria-hidden="true">→</span>
         </Link>
+      </section>
+
+      <section className={`${styles.block} ic-launch-faq`} aria-labelledby="launch-questions">
+        <h2 id="launch-questions">Before you start</h2>
+        <div className="ic-launch-faq__answers">
+          {launchFaq.map((item) => (
+            <div key={item.question}>
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
+            </div>
+          ))}
+        </div>
+        <Link href="/pricing" className={styles.aboutLink}>Compare Free, Core and Elite <span aria-hidden="true">→</span></Link>
       </section>
 
       <FounderNote variant="short" />

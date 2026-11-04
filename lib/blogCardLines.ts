@@ -3,6 +3,8 @@
  * article frontmatter for metadata and search.
  */
 export const blogCardLines: Record<string, string> = {
+  "why-most-men-fail-at-discipline": "Give the day structure before relying on motivation.",
+  "how-ai-can-help-men-become-more-disciplined": "Use AI to plan; keep the decisions yours.",
   "when-the-week-is-already-heavy": "Sleep, one proper meal, and the promise you made.",
   "what-the-next-two-weeks-are-for": "Pick one direction for the next fortnight.",
   "train-when-the-week-is-full": "Two or three short sessions on a full week.",

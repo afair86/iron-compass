@@ -5,7 +5,7 @@ import { pagePeoplePhotoAlts, pagePeoplePhotos } from "@/lib/sitePhotos";
 import { buildPageMetadata, productAppHref } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Pricing",
+  title: "Iron Compass Pricing | Free, Core and Elite Plans",
   description:
     "Free, Core, and Elite. Core is A$19.99 a month or A$199 a year, with a 7-day trial. Elite is A$34.99 a month or A$349 a year.",
   path: "/pricing",
@@ -21,7 +21,7 @@ const PLANS = [
     name: "Core",
     price: "A$19.99",
     detail: "A$199 a year. 7-day trial on the website, card required. AI coaching, AI journal reviews and five tools: Today’s preparation, Weekly awareness, Weekly review, Identity snapshot and Forecast.",
-    highlight: "Most Popular",
+    highlight: "Daily coaching and planning",
   },
   {
     name: "Elite",
@@ -43,15 +43,25 @@ export default function PricingPage() {
           <p className="ic-section-copy">
             Core adds AI coaching and five tools. Elite adds all eight tools. Cancel any time. Your history stays if you move down. On iPhone, Apple shows the App Store price.
           </p>
+          <div className="ic-cta-pair">
+            <a href={`${app}/auth`} className="ic-btn-primary">Start free</a>
+            <a href="#plans" className="ic-btn-ghost">Compare plans</a>
+          </div>
         </section>
-        <section className="ic-band ic-editorial-center">
+        <section id="plans" className="ic-band ic-editorial-center">
         <div className="ic-board-plans">
         {PLANS.map((plan) => (
           <section key={plan.name} className={`ic-board-plan${plan.highlight ? " ic-board-plan--core" : ""} space-y-3`}>
             <p className="ic-eyebrow" aria-hidden={!plan.highlight || undefined}>{plan.highlight || "\u00a0"}</p>
             <h2 className="ic-section-heading">{plan.name}</h2>
             <p className="ic-section-title">{plan.price}</p>
+            <p className="ic-section-copy">{plan.name === "Free" ? "Free account" : "per month · AUD"}</p>
             <p className="ic-section-copy">{plan.detail}</p>
+            <div className="ic-plan-action">
+              <a className={plan.name === "Core" ? "ic-btn-primary" : "ic-btn-ghost"} href={`${app}/${plan.name === "Free" ? "auth" : "pricing"}`}>
+                {plan.name === "Free" ? "Start free" : `View ${plan.name} in the app`}
+              </a>
+            </div>
           </section>
         ))}
         </div>

@@ -13,7 +13,7 @@ const appSchema = { "@context": "https://schema.org", ...appSoftwareSchema };
 
 export default function HomePage() {
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
       <ApprovedHome />
     </main>

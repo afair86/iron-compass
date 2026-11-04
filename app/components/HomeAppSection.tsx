@@ -66,7 +66,7 @@ export default function HomeAppSection({ links }: { links: HomeAppTileLinks }) {
           />
         </div>
         <div className={styles.copy}>
-          <h2 id="home-app-heading">A habit and discipline app for men who carry a lot</h2>
+          <h2 id="home-app-heading">A daily practice you can return to</h2>
           <p className={styles.note}>Iron Compass in any browser, on your phone or your desk.</p>
           <p className={styles.lead}>
             Check in on a few habits, write the day down and keep one next action in view. Free to start; the

@@ -2,7 +2,6 @@ import "@/styles/stoic-dispatch.css";
 import { tryGetPostBySlug, getAllPosts, extractFaqFromMarkdown } from "@/lib/blog";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
-import Script from "next/script";
 import PageShell from "@/app/components/PageShell";
 import { PageContainer } from "@/app/components/LayoutPrimitives";
 import ArticleListenButton from "@/app/components/ArticleListenButton";
@@ -11,7 +10,7 @@ import PhotoFrame from "@/app/components/brand/PhotoFrame";
 import { articlePhoto } from "@/lib/sitePhotos";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { absoluteUrl, DEFAULT_OG_IMAGE, productAppHref, SITE_NAME, SITE_URL } from "@/lib/site";
+import { absoluteUrl, DEFAULT_OG_IMAGE, productAppHref, SITE_NAME, SITE_URL, ORGANIZATION_LOGO, serializeJsonLd } from "@/lib/site";
 import { markdownToSpeechText } from "@/lib/speechText";
 import { isPracticalToolId } from "@/lib/practicalToolIds";
 import fs from "fs";
@@ -133,7 +132,7 @@ export default async function BlogPostPage({ params }: Props) {
   // Hide Listen when frontmatter sets listenAudio: false (stale narration awaiting regen).
   const audioSrc =
     post.meta.listenAudio === false ? undefined : fs.existsSync(audioAbs) ? audioRel : undefined;
-  const displayContent = post.content.replace(
+  const displayContent = post.content.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "").replace(
     /^[ \t]*(?:-[ \t]*)?(?:\*\*)?(?:Target keywords?(?:\(s\))?|(?:Related[ \t]+)?Semantic terms|Primary intent|Target reader|Value promise):[^\n]*(?:\n|$)/gim,
     "\n",
   );
@@ -177,7 +176,7 @@ export default async function BlogPostPage({ params }: Props) {
       name: "Iron Compass",
       logo: {
         "@type": "ImageObject",
-        url: DEFAULT_OG_IMAGE,
+        url: ORGANIZATION_LOGO,
       },
     },
     image: ogImage,
@@ -198,24 +197,21 @@ export default async function BlogPostPage({ params }: Props) {
       <PageContainer width="narrow">
         <div className="ic-dispatch">
           {faqSchema ? (
-            <Script
+            <script
               id={`faq-${post.meta.slug ?? slug}`}
               type="application/ld+json"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+              dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
             />
           ) : null}
-          <Script
+          <script
             id={`article-${post.meta.slug ?? slug}`}
             type="application/ld+json"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleSchema) }}
           />
-          <Script
+          <script
             id={`breadcrumb-${post.meta.slug ?? slug}`}
             type="application/ld+json"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
           />
 
           <header className="ic-board-hero">
