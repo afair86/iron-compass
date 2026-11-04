@@ -1,5 +1,10 @@
 # CURRENT HANDOVER
 
+## Charcoal correction — 4 November 2026, prepared
+
+Owner says the pitch-black background is too much and wants charcoal restored. Changed only shared website surface tokens, the homepage hardcoded backgrounds and section-band token; recorded the website/app design distinction in rule 07. Background #1b1f25, band #20252c, cards #242a32, muted text #9aa5b4. Local browser confirms the homepage/body/band values and visibly softer charcoal. Production remains e133e65 / dpl_BYiYwGsDGWdJzPfrU5998wFZfBMA until this candidate passes staged QA. Next: build, stage without public-domain assignment, check representative phone/desktop pages, promote the tested build.
+
+
 ## Website launch repair — 4 November 2026, 10:28 AM Brisbane
 
 The owner requested audit, repair, staged production QA and promotion of the public website. Production is READY at https://ironcompassai.com from dpl_BYiYwGsDGWdJzPfrU5998wFZfBMA, commit e133e65849f46a684fbf4fd2e2584b8a9d53b0cc. The exact staged production build was tested and promoted without rebuilding. Rollback: dpl_7q4qNooqBExEgkaWBtJW3Jcp7wb2.

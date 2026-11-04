@@ -5,6 +5,10 @@ alwaysApply: true
 
 # Website UX
 
+Owner clarification, 4 November 2026: the website shares the app's brand but has its own
+public-site composition. Use charcoal #1b1f25 backgrounds, #20252c section bands and
+#242a32 cards. Do not return the website to near-black or hardcode the homepage background.
+
 Latest owner direction uses styles/editorial.css over the shared site-layout.css:
 centre short introductions, home lead/Ten life domains/philosophy, journal hero,
 Topics/Read This First and section labels. Centre footer logo and Discipline.

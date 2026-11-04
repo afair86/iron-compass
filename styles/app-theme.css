@@ -1,21 +1,21 @@
-/* App-aligned semantic colours. Latest owner direction: quiet surfaces, no neon.
+/* Website charcoal surfaces with shared app brand colour roles, no neon.
    Steel guides; amber marks a next step; red requests action; green means earned
    progress. The website must not invent progress or imply a conversion promise. */
 html:root {
   color-scheme: dark;
-  --ic-bg: #0b0f14;
-  --ic-bg-alt: #0b0f14;
-  --ic-page-bg-alt: #0b0f14;
+  --ic-bg: #1b1f25;
+  --ic-bg-alt: #1b1f25;
+  --ic-page-bg-alt: #1b1f25;
   --ic-bg-radial-a: transparent;
   --ic-bg-radial-b: transparent;
-  --ic-surface: #131820;
-  --ic-surface-mid: #131820;
-  --ic-surface-card: #131820;
-  --ic-card-bg: #131820;
-  --ic-surface-alt: #1b212a;
+  --ic-surface: #242a32;
+  --ic-surface-mid: #242a32;
+  --ic-surface-card: #242a32;
+  --ic-card-bg: #242a32;
+  --ic-surface-alt: #2d3540;
   --ic-text-heading: #f5f7fb;
   --ic-text-main: #c7cfdd;
-  --ic-text-muted: #8491a3;
+  --ic-text-muted: #9aa5b4;
   --ic-steel: #9eb4c8;
   --ic-accent-blue: var(--ic-steel);
   --ic-amber: #ffb020;
@@ -23,7 +23,7 @@ html:root {
   --ic-cta-red: #ff3434;
   --ic-danger: #c51f2a;
   --ic-on-action: #02060d;
-  --ic-border: #262c35;
+  --ic-border: #3b444f;
   --ic-border-strong: #607286;
   --ic-card-border: var(--ic-border);
   --ic-chip-border: var(--ic-border);

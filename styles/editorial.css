@@ -99,7 +99,7 @@ html:root {
 }
 
 /* Design pass: equal action pairs, the closing band and full-width section bands. */
-html:root { --ic-band: #10151c; }
+html:root { --ic-band: #20252c; }
 @media screen {
   html body :is(main, footer) .ic-cta-pair {
     display: grid;

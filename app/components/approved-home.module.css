@@ -1,12 +1,12 @@
 .home {
-  background: #0b0f14;
+  background: var(--ic-bg);
   color: var(--ic-text-heading);
 }
 
 .hero {
   position: relative;
   overflow: hidden;
-  background: #0b0f14;
+  background: var(--ic-bg);
   width: min(var(--ic-site-width), calc(100% - var(--ic-site-gutter) * 2));
   margin: 48px auto 0;
 }
@@ -134,7 +134,7 @@
   width: 100%;
   margin: 0;
   padding: 24px 0 0;
-  background: #0b0f14;
+  background: var(--ic-bg);
   text-align: center;
 }
 
