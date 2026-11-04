@@ -2,17 +2,18 @@
 .breadcrumb { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 24px; color:var(--ic-text-muted); font-size:.85rem; }
 .breadcrumb a { color:var(--ic-steel); text-decoration:none; }
 .breadcrumb a:hover { text-decoration:underline; }
-.hero { display:grid; grid-template-columns:minmax(0,1fr); overflow:hidden; border:1px solid var(--ic-border); border-radius:18px; background:var(--ic-surface); }
+.hero { display:grid; grid-template-columns:minmax(0,1fr); overflow:hidden; border:1px solid #586c7b; border-radius:18px; background:#2c343e; }
 .heroCopy { padding:32px 24px; }
+.heroCopy .kicker { color:var(--ic-amber); }
 .kicker { display:block; color:var(--ic-steel); font-size:.75rem; font-weight:700; line-height:1.6; letter-spacing:.12em; text-transform:uppercase; }
 .heroCopy h1 { margin:20px 0 24px; max-width:18ch; color:var(--ic-text-heading); font-family:var(--font-heading),sans-serif; font-size:clamp(2rem,4vw,3.6rem); line-height:1.12; letter-spacing:-.025em; text-align:left; }
-.heroCopy p { margin:0; color:var(--ic-text-main); font-size:1.1rem; line-height:1.7; }
+.heroCopy p { margin:0; color:#dce4ec; font-size:1.1rem; line-height:1.7; }
 .heroMedia { min-height:260px; height:clamp(260px,35vw,420px); }
 .heroMedia > figure { height:100%; }
 .heroLinks { display:flex; flex-wrap:wrap; gap:12px 24px; margin-top:28px; }
 .heroLinks a { display:inline-flex; align-items:center; gap:12px; min-height:44px; color:var(--ic-steel); font-weight:600; font-size:.9rem; text-decoration:underline; text-underline-offset:.3em; }
 .readingGrid { display:grid; gap:40px; margin-top:40px; }
-.contents { padding:24px; border:1px solid var(--ic-border); border-radius:14px; background:var(--ic-surface); align-self:start; }
+.contents { padding:24px; border:1px solid #4d6071; border-radius:14px; background:#29333c; align-self:start; }
 .contentsLabel { display:block; margin-bottom:20px; color:var(--ic-steel); font-family:var(--font-heading),sans-serif; font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
 .contents ol { display:grid; gap:4px; list-style:none; padding:0; margin:0; }
 .contents a { display:block; min-height:44px; padding:9px 0; color:var(--ic-text-main); font-size:.9rem; line-height:1.5; text-decoration:none; }
@@ -26,7 +27,7 @@
 .block { max-width:72ch; margin:64px auto 0; padding-top:36px; border-top:1px solid var(--ic-border); text-align:left; }
 .article .block { margin-inline:0; }
 .block a { color:var(--ic-steel); text-decoration:underline; text-underline-offset:.25em; }
-.practice { margin:48px 0 0; padding:28px 24px; border:1px solid var(--ic-border); border-left:3px solid var(--ic-amber); border-radius:0 14px 14px 0; background:var(--ic-surface); }
+.practice { margin:48px 0 0; padding:28px 24px; border:1px solid #716044; border-left:3px solid var(--ic-amber); border-radius:0 14px 14px 0; background:#342f27; }
 .practice .kicker { color:var(--ic-amber); margin-bottom:16px; }
 .steps { display:grid; gap:24px; margin:28px 0 0; padding:0; list-style:none; }
 .steps li { display:grid; grid-template-columns:32px minmax(0,1fr); align-items:start; gap:16px; color:var(--ic-text-main); line-height:1.8; }
@@ -63,11 +64,11 @@
 .copy > .sectionNumber { margin-top:28px; }
 .passage { margin-bottom:26px; }
 .passage p { margin-bottom:16px; }
-.insight { margin:0 0 30px; padding:24px; border-left:3px solid var(--ic-steel); background:var(--ic-surface); border-radius:0 12px 12px 0; }
+.insight { margin:0 0 30px; padding:24px; border-left:3px solid var(--ic-steel); background:#293642; border-radius:0 12px 12px 0; }
 .insight p { margin-bottom:16px; }
 .insight p:first-child { color:var(--ic-text-heading); }
 .insight p:last-child, .passage p:last-child { margin-bottom:0; }
 .practice .num { color:var(--ic-amber); border-color:var(--ic-amber); }
-.article .further { padding:28px 24px; border:1px solid var(--ic-border); border-top:3px solid var(--ic-steel); border-radius:14px; background:var(--ic-surface); }
+.article .further { padding:28px 24px; border:1px solid #4d6071; border-top:3px solid var(--ic-steel); border-radius:14px; background:#293642; }
 .further .passage:last-child { margin-bottom:0; }
 @media(max-width:599px) { .insight { padding:20px; } }

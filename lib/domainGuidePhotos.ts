@@ -8,6 +8,7 @@ import type { DomainImage } from "@/app/domains/narratives/types";
 export const domainGuideHeroes: Partial<Record<DomainSlug, DomainImage>> = {
   discipline: { src: "/images/domains/editorial/30-60-90-discipline-reset-hero.webp", alt: "A man smiling as he writes a simple daily plan at his kitchen table" },
   identity: { src: "/images/domains/editorial/personal-doctrine-in-7-days-hero.webp", alt: "A man in a purple shirt writing his personal standards in a sunlit room" },
+  "finance-provision": { src: "/images/domains/editorial/liquidity-rails-automate-bills-buffers-hero.webp", alt: "A man smiling as he puts his financial paperwork in order in a bright office" },
   resilience: { src: "/images/domains/editorial/rebuild-strength-after-injury-hero.webp", alt: "A man smiling while taking the stairs at a manageable pace" },
   "fall-rise": { src: "/images/domains/editorial/iron-protocol-strength-transition-hero.webp", alt: "A man enjoying a manageable strength session in his garden" },
   "grief-honour": { src: "/images/domains/grief-bench.webp", alt: "A man quietly reflecting beside flowers on a park bench" },
@@ -34,7 +35,7 @@ export const domainGuideSectionPhotos: Partial<Record<DomainSlug, Record<string,
   },
   "finance-provision": {
     flow: { src: "/images/domains/editorial/ai-mastery-weekly-automation-stack-for-busy-men-hero.webp", alt: "A man reviewing paperwork at an orderly desk beside a warm reading lamp" },
-    habit: { src: "/images/domains/editorial/liquidity-rails-automate-bills-buffers-hero.webp", alt: "A man smiling as he puts his financial paperwork in order" },
+    habit: { src: "/images/home/scenes/home-financial.webp", alt: "A man smiling as he completes a short household money review at his table" },
   },
   resilience: {
     load: { src: "/images/domains/editorial/nervous-system-resilience-men-30-hero.webp", alt: "A man taking a calm seated pause in a naturally lit room" },
