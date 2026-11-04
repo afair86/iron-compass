@@ -7,6 +7,7 @@ import "../styles/app-theme.css";
 import "../styles/site-layout.css";
 import "../styles/editorial.css";
 import "../styles/semantic-actions.css";
+import "../styles/public-editorial.css";
 import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import Navbar from "./components/Navbar";

@@ -1,7 +1,13 @@
+import AppValuePanel from "@/app/components/AppValuePanel";
+import type { AppContext } from "@/lib/articleAppContext";
 import "@/styles/stoic-dispatch.css";
 import Link from "next/link";
 import PageShell from "@/app/components/PageShell";
-import { PageContainer, SectionShell, HeadingStack } from "@/app/components/LayoutPrimitives";
+import {
+  PageContainer,
+  SectionShell,
+  HeadingStack,
+} from "@/app/components/LayoutPrimitives";
 import type { HubArticle, TopicHubLink } from "@/lib/articleHubs";
 
 type TopicHubViewProps = {
@@ -28,13 +34,16 @@ export default function TopicHubView({
   const items = articles ?? links ?? [];
 
   return (
-    <PageShell>
+    <PageShell className="ic-public-page">
       <PageContainer>
         <SectionShell variant="hero" className="space-y-6">
           <p className="ic-dispatch-label">{eyebrow}</p>
           <h1 className="ic-page-title">{title}</h1>
           <p className="ic-dispatch-lede">{description}</p>
-          <div className="ic-stoic-rule ic-stoic-rule--inline" aria-hidden="true" />
+          <div
+            className="ic-stoic-rule ic-stoic-rule--inline"
+            aria-hidden="true"
+          />
           <div className="ic-cta-row">
             <Link href={domainHref} className="ic-btn-primary text-[0.62rem]">
               {domainLabel}
@@ -46,7 +55,10 @@ export default function TopicHubView({
         </SectionShell>
 
         <SectionShell variant="contrast" className="space-y-5 md:space-y-6">
-          <HeadingStack title="Start Here" description="Deep guides written for men who need structure, not sympathy." />
+          <HeadingStack
+            title="Start Here"
+            description="Choose the guide that fits the responsibility in front of you. Each gives you a practical place to begin."
+          />
           <div className="grid gap-4 md:grid-cols-2">
             {items.map((item) => {
               const href = "path" in item ? item.path : item.href;
@@ -57,19 +69,33 @@ export default function TopicHubView({
                   <Link href={href} className="ic-stoic-card__title">
                     {itemTitle}
                   </Link>
-                  <p className="ic-section-copy ic-section-copy--muted text-sm">{itemDescription}</p>
+                  <p className="ic-section-copy ic-section-copy--muted text-sm">
+                    {itemDescription}
+                  </p>
                 </article>
               );
             })}
           </div>
           {links ? (
             <p className="ic-section-copy text-sm">
-              <Link href="/blog" className="underline underline-offset-4 hover:text-[var(--ic-text-heading)]">
+              <Link
+                href="/blog"
+                className="underline underline-offset-4 hover:text-[var(--ic-text-heading)]"
+              >
                 {journalLabel}
               </Link>
             </p>
           ) : null}
         </SectionShell>
+        <AppValuePanel
+          context={
+            (domainHref.includes("finance")
+              ? "finance-provision"
+              : domainHref.includes("grief")
+                ? "grief-honour"
+                : "ai") as AppContext
+          }
+        />
       </PageContainer>
     </PageShell>
   );

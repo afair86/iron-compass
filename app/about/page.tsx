@@ -1,9 +1,14 @@
+import AppValuePanel from "@/app/components/AppValuePanel";
 import Link from "next/link";
 import FounderNote from "../components/FounderNote";
 import PageShell from "../components/PageShell";
 import PhotoFrame from "../components/brand/PhotoFrame";
 import { pagePhotoAlts, pagePhotos } from "@/lib/sitePhotos";
-import { PageContainer, SectionShell, HeadingStack } from "../components/LayoutPrimitives";
+import {
+  PageContainer,
+  SectionShell,
+  HeadingStack,
+} from "../components/LayoutPrimitives";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
@@ -28,14 +33,15 @@ const builtFor = [
 
 export default function AboutPage() {
   return (
-    <PageShell>
+    <PageShell className="ic-public-page">
       <PageContainer>
         <SectionShell variant="hero" className="space-y-5">
           <PhotoFrame src={pagePhotos.about} alt={pagePhotoAlts.about} />
           <h1 className="ic-page-title">About the System</h1>
           <p className="ic-section-copy ic-section-copy--muted max-w-3xl mx-auto">
-            Iron Compass AI is a life system for men who want discipline, purpose, strength, and integrity without noise. One map, ten life domains, and
-            standards you can use this week.
+            Iron Compass AI is a life system for men who want discipline,
+            purpose, strength, and integrity without noise. One map, ten life
+            domains, and standards you can use this week.
           </p>
           <div className="ic-cta-pair">
             <Link href="/domains" className="ic-btn-primary">
@@ -50,7 +56,10 @@ export default function AboutPage() {
         <FounderNote variant="full" />
 
         <SectionShell variant="panel" className="space-y-6 ic-band">
-          <HeadingStack eyebrow="Operating Principles" title="What makes Iron Compass AI different" />
+          <HeadingStack
+            eyebrow="Operating Principles"
+            title="What makes Iron Compass AI different"
+          />
           <ul className="space-y-3 text-sm mx-auto max-w-3xl">
             {pillars.map((item) => (
               <li key={item} className="ic-dot-list">
@@ -71,7 +80,7 @@ export default function AboutPage() {
           </ul>
         </SectionShell>
 
-
+        <AppValuePanel />
       </PageContainer>
     </PageShell>
   );

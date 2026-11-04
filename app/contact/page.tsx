@@ -32,7 +32,7 @@ const responseStandards = [
 export default function ContactPage() {
   const formDeliveryAvailable = Boolean(process.env.CONTACT_WEBHOOK_URL?.trim());
   return (
-    <PageShell>
+    <PageShell className="ic-public-page">
       <PageContainer>
         <SectionShell variant="hero" className="space-y-6">
           <PhotoFrame src={pagePhotos.contact} alt={pagePhotoAlts.contact} />

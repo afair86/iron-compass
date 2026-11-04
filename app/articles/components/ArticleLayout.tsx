@@ -1,10 +1,14 @@
+import AppValuePanel from "@/app/components/AppValuePanel";
 import type { PropsWithChildren } from "react";
 import "@/styles/stoic-dispatch.css";
 import PageShell from "@/app/components/PageShell";
 import { PageContainer } from "@/app/components/LayoutPrimitives";
 import ArticleSchema from "./ArticleSchema";
 import ArticleRelatedLinks from "./ArticleRelatedLinks";
-import { getGriefArticleByPath, getRelatedGriefArticles } from "@/lib/articleHubs";
+import {
+  getGriefArticleByPath,
+  getRelatedGriefArticles,
+} from "@/lib/articleHubs";
 
 interface ArticleLayoutProps extends PropsWithChildren {
   eyebrow?: string;
@@ -13,12 +17,18 @@ interface ArticleLayoutProps extends PropsWithChildren {
   path: string;
 }
 
-export default function ArticleLayout({ eyebrow = "Iron Compass AI Field Guide", title, intro, path, children }: ArticleLayoutProps) {
+export default function ArticleLayout({
+  eyebrow = "Iron Compass AI Field Guide",
+  title,
+  intro,
+  path,
+  children,
+}: ArticleLayoutProps) {
   const griefArticle = getGriefArticleByPath(path);
   const relatedArticles = getRelatedGriefArticles(path);
 
   return (
-    <PageShell>
+    <PageShell className="ic-journal-article">
       <ArticleSchema
         title={title}
         description={intro}
@@ -30,20 +40,26 @@ export default function ArticleLayout({ eyebrow = "Iron Compass AI Field Guide",
         <div className="ic-dispatch">
           <header className="ic-board-hero">
             <div className="ic-board-hero__copy">
-            <p className="ic-board-kicker">{eyebrow}</p>
-            <h1 className="ic-page-title">{title}</h1>
-            <p className="ic-dispatch-lede">{intro}</p>
-            <div className="ic-dispatch-meta">
-              <span>Field Guide</span>
-              <span aria-hidden="true">·</span>
-              <span>Grief &amp; Honour</span>
-            </div>
-            <div className="ic-stoic-rule ic-stoic-rule--wide" aria-hidden="true" />
+              <p className="ic-board-kicker">{eyebrow}</p>
+              <h1 className="ic-page-title">{title}</h1>
+              <p className="ic-dispatch-lede">{intro}</p>
+              <div className="ic-dispatch-meta">
+                <span>Field Guide</span>
+                <span aria-hidden="true">·</span>
+                <span>Grief &amp; Honour</span>
+              </div>
+              <div
+                className="ic-stoic-rule ic-stoic-rule--wide"
+                aria-hidden="true"
+              />
             </div>
           </header>
           <div className="ic-dispatch-body space-y-8">
             <div className="ic-dispatch-prose space-y-8">{children}</div>
-            {relatedArticles.length > 0 ? <ArticleRelatedLinks articles={relatedArticles} /> : null}
+            <AppValuePanel context="grief-honour" />
+            {relatedArticles.length > 0 ? (
+              <ArticleRelatedLinks articles={relatedArticles} />
+            ) : null}
           </div>
         </div>
       </PageContainer>

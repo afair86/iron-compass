@@ -1,5 +1,4 @@
-import Script from "next/script";
-import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
+import { absoluteUrl, DEFAULT_OG_IMAGE, ORGANIZATION_LOGO, SITE_NAME, SITE_URL, serializeJsonLd } from "@/lib/site";
 
 type ArticleSchemaProps = {
   title: string;
@@ -39,18 +38,17 @@ export default function ArticleSchema({
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: DEFAULT_OG_IMAGE,
+        url: ORGANIZATION_LOGO,
       },
     },
     image: DEFAULT_OG_IMAGE,
   };
 
   return (
-    <Script
+    <script
       id={`article-schema-${path.replace(/\//g, "-")}`}
       type="application/ld+json"
-      strategy="afterInteractive"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
     />
   );
 }

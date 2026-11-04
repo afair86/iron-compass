@@ -34,7 +34,7 @@ export default function PricingPage() {
   const app = productAppHref();
 
   return (
-    <PageShell>
+    <PageShell className="ic-public-page">
       <div className="ic-content-stack max-w-3xl">
         <section className="ic-panel ic-editorial-center space-y-4">
           <PhotoFrame src={pagePeoplePhotos.pricing} alt={pagePeoplePhotoAlts.pricing} showMark={false} />

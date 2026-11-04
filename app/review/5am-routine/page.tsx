@@ -39,9 +39,9 @@ export default function FiveAmRoutineReviewPage() {
         <div className="ic-dispatch py-8">
           <p className="ic-review-banner">
             Local review only — not indexed, not live. Published article at{" "}
-            <a className="underline" href="/blog/5am-standard-own-your-morning">
+            <Link className="underline" href="/blog/5am-standard-own-your-morning">
               /blog/5am-standard-own-your-morning
-            </a>{" "}
+            </Link>{" "}
             is unchanged until you approve this draft. Listen audio is hidden until narration is regenerated to match
             this draft (needs your approval).
           </p>

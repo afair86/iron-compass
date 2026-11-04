@@ -138,7 +138,7 @@ export default function ShiftWorkerRoutineBuilder({
   const resultRef = useRef<HTMLElement | null>(null);
   // Always read latest detail on submit (avoids stale closure if Generate is pressed mid-update).
   const detailRef = useRef(detail);
-  detailRef.current = detail;
+  useEffect(() => { detailRef.current = detail; }, [detail]);
 
   const printChecklist = () => {
     const root = document.body;

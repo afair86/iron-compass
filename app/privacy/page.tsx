@@ -82,7 +82,7 @@ const rights = [
 
 export default function PrivacyPage() {
   return (
-    <PageShell>
+    <PageShell className="ic-public-page">
       <div className="ic-content-stack max-w-5xl">
         <section className="ic-panel ic-align-center ic-editorial-center space-y-6">
           <h1 className="ic-section-title">Privacy Policy</h1>

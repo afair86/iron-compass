@@ -1,3 +1,4 @@
+import AppValuePanel from "@/app/components/AppValuePanel";
 import Link from "next/link";
 import Script from "next/script";
 import PageShell from "../components/PageShell";
@@ -30,15 +31,18 @@ export default function StartPage() {
   ];
 
   return (
-    <PageShell>
+    <PageShell className="ic-public-page">
       <div className="ic-content-stack max-w-3xl">
         <section className="ic-panel ic-align-center ic-editorial-center space-y-6">
           <h1 className="ic-section-title">Start Your Compass</h1>
           <p className="ic-section-copy ic-section-copy--muted text-base">
-            Choose one responsibility. Set a habit you can keep today. Return at the end of the week and review what held.
+            Choose one responsibility. Set a habit you can keep today. Return at
+            the end of the week and review what held.
           </p>
           <div className="ic-cta-pair">
-            <a href="/app/auth" className="ic-btn-primary">Start free</a>
+            <a href="/app/auth" className="ic-btn-primary">
+              Start free
+            </a>
             <Link href="/domains" className="ic-btn-ghost">
               Explore the domains
             </Link>
@@ -47,11 +51,14 @@ export default function StartPage() {
 
         <section className="ic-panel-outline space-y-4">
           <header className="space-y-2 ic-align-center ic-editorial-center">
-            <h2 className="ic-section-heading">Identity → Discipline → Purpose</h2>
+            <h2 className="ic-section-heading">
+              Identity → Discipline → Purpose
+            </h2>
           </header>
           <p className="ic-section-copy ic-section-copy--muted">
-            Decide what you are responsible for, then give it a place in your day. The domains explain the standard;
-            the app helps you keep a record of the habits and decisions behind it.
+            Decide what you are responsible for, then give it a place in your
+            day. The domains explain the standard; the app helps you keep a
+            record of the habits and decisions behind it.
           </p>
         </section>
 
@@ -61,11 +68,20 @@ export default function StartPage() {
           </header>
           <ol className="space-y-6">
             {steps.map((step, index) => (
-              <li key={step.title} className="ic-panel-muted flex gap-4 items-start text-left">
-                <span className="text-white text-xl font-semibold">{index + 1}</span>
+              <li
+                key={step.title}
+                className="ic-panel-muted flex gap-4 items-start text-left"
+              >
+                <span className="text-white text-xl font-semibold">
+                  {index + 1}
+                </span>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-heading tracking-[0.3em] uppercase text-[var(--ic-text-heading)]">{step.title}</h3>
-                  <p className="ic-section-copy ic-section-copy--muted">{step.copy}</p>
+                  <h3 className="text-lg font-heading tracking-[0.3em] uppercase text-[var(--ic-text-heading)]">
+                    {step.title}
+                  </h3>
+                  <p className="ic-section-copy ic-section-copy--muted">
+                    {step.copy}
+                  </p>
                 </div>
               </li>
             ))}
@@ -74,11 +90,17 @@ export default function StartPage() {
 
         <section className="ic-panel space-y-6 ic-align-center">
           <header className="space-y-2 ic-align-center ic-editorial-center">
-            <h2 className="ic-section-heading ic-align-center">Command Every Pillar</h2>
+            <h2 className="ic-section-heading ic-align-center">
+              Choose where to begin
+            </h2>
           </header>
           <div className="grid gap-4">
             {domains.map((domain) => (
-              <Link key={domain.href} href={domain.href} className="ic-footer-pill">
+              <Link
+                key={domain.href}
+                href={domain.href}
+                className="ic-footer-pill"
+              >
                 {domain.label}
               </Link>
             ))}
@@ -86,32 +108,44 @@ export default function StartPage() {
         </section>
 
         <section className="ic-panel ic-align-center ic-editorial-center space-y-4">
-          <h2 className="ic-section-heading ic-align-center">Take Control Now</h2>
+          <h2 className="ic-section-heading ic-align-center">
+            Give it a place in this week
+          </h2>
           <p className="ic-section-copy ic-section-copy--muted">
-            No more drifting. Commit to the process, execute daily, and let the data prove your climb. Your compass is forged in action.
+            Choose one action and a time you can keep. At the end of the week,
+            look at what happened and decide what needs adjusting.
           </p>
-
         </section>
 
         <section className="ic-panel-outline ic-align-center space-y-4">
           <h2 className="ic-section-heading">FAQ</h2>
           <div className="space-y-3 max-w-3xl mx-auto text-left">
             <div>
-              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Who is Iron Compass AI for?</h3>
+              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">
+                Who is Iron Compass AI for?
+              </h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">
-                Men who want to carry their responsibilities with more discipline, steadiness and follow-through.
+                Men who want to carry their responsibilities with more
+                discipline, steadiness and follow-through.
               </p>
             </div>
             <div>
-              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Do I need the app to start?</h3>
+              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">
+                Do I need the app to start?
+              </h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">
-                No. Begin with the domain pages and the journal. You do not need an account.
+                No. Begin with the domain pages and the journal. You do not need
+                an account.
               </p>
             </div>
             <div>
-              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">Which domain should I pick first?</h3>
+              <h3 className="font-heading tracking-[0.2em] uppercase text-[var(--ic-text-heading)] text-sm">
+                Which domain should I pick first?
+              </h3>
               <p className="ic-section-copy ic-section-copy--muted text-sm">
-                Start with the responsibility you are most likely to neglect this week. Choose one domain and one action you can carry out today.
+                Start with the responsibility you are most likely to neglect
+                this week. Choose one domain and one action you can carry out
+                today.
               </p>
             </div>
           </div>
@@ -162,6 +196,7 @@ export default function StartPage() {
             }),
           }}
         />
+        <AppValuePanel />
       </div>
     </PageShell>
   );
