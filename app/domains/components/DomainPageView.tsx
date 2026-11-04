@@ -59,8 +59,9 @@ function speechText(narrative: DomainNarrative) {
 export default function DomainPageView({ narrative, slug }: DomainPageViewProps) {
   const journalLinks = domainBlogLinks[slug];
   const domain = domainContentMap[slug];
-  const photo =
-    slug === "ai-mastery"
+  const photo = slug === "discipline"
+    ? { src: "/images/blog/5am-standard-own-your-morning-hero.webp", alt: "A man setting out with his training bag at sunrise" }
+    : slug === "ai-mastery"
       ? { src: aiResourcePhoto, alt: "A real desk where a man uses a tool and keeps the decision" }
       : { src: domainPhotos[slug], alt: domainPhotoAlts[slug] };
   const audioAbs = path.join(process.cwd(), "public", "audio", "domains", `${slug}.mp3`);
