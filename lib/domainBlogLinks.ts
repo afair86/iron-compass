@@ -12,7 +12,7 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
     {
       title: "Strength Without Extra Time",
       href: "/blog/strength-without-extra-time",
-      description: "A 30-minute strength habit that fits a full week without becoming another project.",
+      description: "A strength habit that fits a full week without becoming another project.",
     },
     {
       title: "Strength Baseline Over 35",
@@ -63,7 +63,7 @@ export const domainBlogLinks: Record<DomainSlug, DomainBlogLink[]> = {
     {
       title: "Command Calm After Action",
       href: "/blog/command-calm-after-action-leadership",
-      description: "A 20-minute ritual that turns mistakes into trust.",
+      description: "A ritual that turns mistakes into trust.",
     },
     {
       title: "Leadership Under Fire Protocol",

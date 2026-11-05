@@ -53,7 +53,7 @@ export const pagePhotos = {
 /** People photographs that already carry the compass mark, so PhotoFrame must not add another. */
 export const pagePeoplePhotos = {
   domains: "/images/get-the-app/coastal-walk.webp",
-  pricing: "/images/get-the-app/adam-family-plans.webp",
+  pricing: "/images/get-the-app/adam-family-restored.webp",
 } as const;
 
 export const pagePeoplePhotoAlts = {

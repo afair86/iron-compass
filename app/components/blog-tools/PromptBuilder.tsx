@@ -2,7 +2,7 @@
 
 import { useId, useMemo, useState } from "react";
 import EmailCaptureForm from "@/app/components/EmailCaptureForm";
-import { downloadTextFile, printToolResult } from "@/lib/blogPracticalTools";
+import { downloadBrandedChecklist, printToolResult } from "@/lib/blogPracticalTools";
 
 export default function PromptBuilder() {
   const baseId = useId();
@@ -178,9 +178,9 @@ export default function PromptBuilder() {
             <button
               type="button"
               className="ic-btn-primary text-[0.62rem]"
-              onClick={() => downloadTextFile("iron-compass-ai-prompt.txt", prompt)}
+              onClick={() => downloadBrandedChecklist("iron-compass-ai-prompt.html", prompt)}
             >
-              Download prompt
+              Save styled prompt
             </button>
           </div>
           <div className="ic-routine__subscribe">

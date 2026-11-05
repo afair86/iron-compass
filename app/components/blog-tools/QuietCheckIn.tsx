@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 import EmailCaptureForm from "@/app/components/EmailCaptureForm";
-import { downloadTextFile, printToolResult } from "@/lib/blogPracticalTools";
+import { downloadBrandedChecklist, printToolResult } from "@/lib/blogPracticalTools";
 
 const ROLES = [
   { value: "man", label: "Man" },
@@ -241,9 +241,9 @@ export default function QuietCheckIn() {
             <button
               type="button"
               className="ic-btn-primary text-[0.62rem]"
-              onClick={() => downloadTextFile("iron-compass-quiet-check-in.txt", summary())}
+              onClick={() => downloadBrandedChecklist("iron-compass-quiet-check-in.html", summary())}
             >
-              Download summary
+              Save styled summary
             </button>
           </div>
           <div className="ic-routine__subscribe">

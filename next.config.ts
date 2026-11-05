@@ -12,7 +12,11 @@ const nextConfig: NextConfig = {
   outputFileTracingExcludes: {
     "*": ["./public/audio/**/*"],
   },
-  redirects: async () => [...DOMAIN_ALIAS_REDIRECTS, ...blogRedirects],
+  redirects: async () => [
+    { source: "/downloads/daily-discipline-checklist.txt", destination: "/blog/quiet-discipline-protocol-busy-men#daily-discipline-checklist", permanent: true },
+    { source: "/downloads/weekly-review-checklist.txt", destination: "/blog/disciplined-weekly-reset-for-overloaded-men#weekly-review-checklist", permanent: true },
+    ...DOMAIN_ALIAS_REDIRECTS, ...blogRedirects,
+  ],
   rewrites: async () => {
     const upstream = process.env.PRODUCT_APP_UPSTREAM_URL?.trim().replace(/\/$/, "");
     if (!upstream) return [];

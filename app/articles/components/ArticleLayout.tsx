@@ -32,7 +32,6 @@ export default function ArticleLayout({
   const article = getGriefArticleByPath(path);
   const guide = practicalGuides[path];
   const prepared = prepareGuide(children);
-  const minutes = Math.max(1, Math.ceil((prepared.wordCount + 160) / 220));
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -82,7 +81,7 @@ export default function ArticleLayout({
         <header className={styles.hero}>
           <div className={styles.heroCopy}>
             <p className={styles.kicker}>
-              {guide.topic} · {minutes} min read
+              {guide.topic}
             </p>
             <h1>{title}</h1>
             <p className={styles.lead}>{intro}</p>

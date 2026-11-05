@@ -1,6 +1,6 @@
 A weekly review is a short appointment with your responsibilities. Look at what happened, decide what to do with unfinished commitments and make a realistic plan for the next seven days.
 
-Start with twenty minutes if that is available. The suggested sequence gives four minutes to gathering loose ends, four to reviewing evidence, five to choosing priorities, five to making room and two to closing the review. That adds to twenty minutes. The timings are a guide, not another deadline.
+Start by gathering loose ends, reviewing what happened, choosing priorities and making room in the week. Close by deciding the first next action.
 
 Gather tasks, appointments and promises in one place. Check work, household duties and people waiting on you. Resist spending the whole review making the list look organised.
 
@@ -14,9 +14,9 @@ Close by writing the first next action, who needs an update and when you will re
 
 The article has a free text checklist with the same sequence. Save it, print it or copy the prompts into a notebook. There is no email or account requirement.
 
-If you only have five minutes, check what cannot be missed in the next seven days. Choose one essential outcome, contact one person affected by a change and write the next action. You can preserve a useful review without pretending you have time for a long one.
+If the week is unusually heavy, check what cannot be missed in the next seven days. Choose one essential outcome, contact one person affected by a change and write the next action. You can preserve a useful review without pretending you have time for a long one.
 
-There is also an optional ninety-minute reset for a week that needs more organising. Fifteen minutes gathers the loose ends. Another fifteen reviews the evidence. Twenty minutes chooses outcomes. Twenty checks the calendar. The last twenty prepares triggers and fallbacks. Fifteen, fifteen, twenty, twenty and twenty makes ninety.
+There is also an optional deeper reset. Gather the loose ends, examine the evidence, choose outcomes, check the calendar and prepare practical fallbacks. Allow the time the work genuinely needs.
 
 The daily follow-through can be shorter than the weekly review. Know the first action in the morning. At night, note done, partial or missed, write a reason and prepare what comes next. Record the truth rather than protecting a score.
 

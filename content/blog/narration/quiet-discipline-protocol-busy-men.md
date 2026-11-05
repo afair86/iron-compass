@@ -2,7 +2,7 @@ When life is busy, discipline starts with an agreement you can actually keep. Na
 
 This is for the man who has work, family and ordinary pressure to carry. It does not assume a quiet house or a spare hour every morning.
 
-If you need somewhere to begin, spend five minutes preparing one action. Use the first minute to name the responsibility. Use the next two to write a clear finish. Use another minute to choose an opportunity, then the last minute to decide what you will change if that opportunity disappears. Those five minutes prepare the task. They do not make the task itself a five-minute job.
+Begin by naming the responsibility, writing a clear finish, choosing a realistic opportunity and deciding what to change if that opportunity disappears. Preparing the action is separate from completing it.
 
 Perhaps there is a bill you have avoided, a conversation you need to prepare or equipment to set out for tomorrow. Make the action small enough to start without pretending you have already finished the larger responsibility.
 

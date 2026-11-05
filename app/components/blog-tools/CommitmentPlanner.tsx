@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 import EmailCaptureForm from "@/app/components/EmailCaptureForm";
-import { downloadTextFile, printToolResult } from "@/lib/blogPracticalTools";
+import { downloadBrandedChecklist, printToolResult } from "@/lib/blogPracticalTools";
 
 export default function CommitmentPlanner() {
   const baseId = useId();
@@ -195,9 +195,9 @@ export default function CommitmentPlanner() {
             <button
               type="button"
               className="ic-btn-primary text-[0.62rem]"
-              onClick={() => downloadTextFile("iron-compass-commitment-plan.txt", summary())}
+              onClick={() => downloadBrandedChecklist("iron-compass-commitment-plan.html", summary())}
             >
-              Download summary
+              Save styled summary
             </button>
           </div>
           <div className="ic-routine__subscribe">

@@ -56,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastModifiedForPath("/about"),
       changeFrequency: "monthly",
       priority: 0.6,
-      images: absoluteImages(["/images/get-the-app/adam-family-about.webp"]),
+      images: absoluteImages(["/images/get-the-app/adam-family-restored.webp"]),
     },
     {
       url: absoluteUrl("/blog"),

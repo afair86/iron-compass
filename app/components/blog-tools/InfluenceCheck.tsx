@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 import EmailCaptureForm from "@/app/components/EmailCaptureForm";
-import { downloadTextFile, printToolResult } from "@/lib/blogPracticalTools";
+import { downloadBrandedChecklist, printToolResult } from "@/lib/blogPracticalTools";
 
 const YES_NO = [
   { value: "yes", label: "Yes / mostly" },
@@ -236,9 +236,9 @@ export default function InfluenceCheck() {
             <button
               type="button"
               className="ic-btn-primary text-[0.62rem]"
-              onClick={() => downloadTextFile("iron-compass-influence-check.txt", summary())}
+              onClick={() => downloadBrandedChecklist("iron-compass-influence-check.html", summary())}
             >
-              Download summary
+              Save styled summary
             </button>
           </div>
           <div className="ic-routine__subscribe">

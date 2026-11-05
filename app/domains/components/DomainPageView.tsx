@@ -69,8 +69,6 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
   const lead = narrative.sections[0];
   const rest = narrative.sections.slice(1);
   const sidePhoto = lead?.image ?? photo;
-  const guideWords = speechText(narrative).split(/\s+/).length;
-  const readMinutes = Math.max(1, Math.ceil(guideWords / 220));
   const contents = [
     ...(lead ? [{ id: lead.key, label: lead.heading }] : []),
     { id: "practice", label: narrative.practice.heading },
@@ -88,7 +86,7 @@ export default function DomainPageView({ narrative, slug }: DomainPageViewProps)
         </nav>
         <header className={styles.hero}>
           <div className={styles.heroCopy}>
-            <span className={styles.kicker}>A practical guide · {readMinutes} min read</span>
+            <span className={styles.kicker}>A practical guide</span>
             <h1>{narrative.h1Title}</h1>
             <p>{narrative.heroDescription}</p>
             <div className={styles.heroLinks}>

@@ -60,7 +60,7 @@
   width: 100%;
   height: auto;
   border-radius: 14px;
-  filter: contrast(1.045) saturate(0.96);
+  filter: none;
 }
 .photo figcaption {
   color: #aebdcb;

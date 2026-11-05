@@ -51,10 +51,10 @@ const features = [
     title: "Keep the longer aim in view",
     plan: "Elite",
     copy: "Put one measurable aim into a 90-day strategy. Review the pace, the next checkpoint and the record of what you have done.",
-    src: "/images/app-screens/purpose-direction-90-day-plan.webp",
-    alt: "A 90-day strategy with a certificate goal, progress bar and projection line",
-    width: 640,
-    height: 798,
+    src: "/images/get-the-app/screens/strategy-scoreboard.webp",
+    alt: "The 90-day strategy scoreboard showing weekly targets and recorded actions",
+    width: 585,
+    height: 1266,
   },
 ];
 const plans = [

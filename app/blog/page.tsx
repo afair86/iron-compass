@@ -53,7 +53,7 @@ const summaryFallbacks: Record<string, string> = {
   "discipline-under-fire-holding-the-line":
     "Keep your standards alive during chaos with survive/standard/surge days and anchor scripts.",
   "command-calm-after-action-leadership":
-    "A 20-minute after-action ritual that turns mistakes into trust and calm authority.",
+    "A after-action ritual that turns mistakes into trust and calm authority.",
   "operator-ai-copilot-daily-loop":
     "Map your daily loop, deploy AI on the grunt work, and keep human judgment in command.",
   "strength-without-extra-time":

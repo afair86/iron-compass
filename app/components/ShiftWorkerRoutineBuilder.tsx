@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useMemo, useRef, useState, type RefObject } from "react";
 import EmailCaptureForm from "@/app/components/EmailCaptureForm";
+import { downloadBrandedChecklist } from "@/lib/blogPracticalTools";
 import {
   buildRoutinePlan,
   buildStartingRecommendation,
@@ -271,13 +272,7 @@ export default function ShiftWorkerRoutineBuilder({
     const built = buildRoutinePlan(initial, normalized);
     if (!built) return;
     const text = planToChecklistText(built, initial);
-    const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "iron-compass-shift-worker-routine.txt";
-    a.click();
-    URL.revokeObjectURL(url);
+    downloadBrandedChecklist("iron-compass-shift-worker-routine.html", text);
   };
 
   return (
@@ -643,7 +638,7 @@ export default function ShiftWorkerRoutineBuilder({
               Print checklist
             </button>
             <button type="button" className="ic-btn-primary text-[0.62rem]" onClick={downloadChecklist}>
-              Download checklist
+              Save styled checklist
             </button>
           </div>
 

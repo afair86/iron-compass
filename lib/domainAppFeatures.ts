@@ -69,7 +69,7 @@ export const domainAppFeatures: Record<string, DomainAppFeatures> = {
     ],
     shots: [
       { src: "/images/app-screens/purpose-direction-header.webp", alt: "Iron Compass AI app Purpose & Direction page header: a man on a coastal path in low sun, \"A chosen direction and a cadence you can actually keep.\"", width: 640, height: 511 },
-      { src: "/images/app-screens/purpose-direction-90-day-plan.webp", alt: "90-day strategy: a certificate goal, progress bar, pace needed each week and a projection line.", width: 640, height: 798 },
+      { src: "/images/get-the-app/screens/strategy-scoreboard.webp", alt: "The 90-day strategy scoreboard with weekly targets, recorded actions and progress charts.", width: 585, height: 1266 },
       { src: "/images/app-screens/purpose-direction-guide.webp", alt: "The Purpose & Direction guide's crest and title in the app.", width: 640, height: 511 },
     ],
   },

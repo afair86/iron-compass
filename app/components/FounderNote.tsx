@@ -30,7 +30,7 @@ export default function FounderNote({
         <figure className={styles.photo}>
           {full ? (
             <Image
-              src="/images/get-the-app/adam-family-about.webp"
+              src="/images/get-the-app/adam-family-restored.webp"
               alt="Adam, founder of Iron Compass AI, with his two children outdoors at sunset"
               width={1600}
               height={1200}
@@ -39,7 +39,7 @@ export default function FounderNote({
           ) : (
             <Link href="/about#founder-full">
               <Image
-                src="/images/get-the-app/adam-family-home.webp"
+                src="/images/get-the-app/adam-family-restored-home.webp"
                 alt="Adam with his children — read why he built Iron Compass AI"
                 width={480}
                 height={480}

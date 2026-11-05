@@ -994,3 +994,8 @@
   display: none;
 }
 
+.ic-dispatch-prose .ic-inline-checklist { background:#333c46; border:1px solid #647080; border-left:3px solid #a6c9e5; border-radius:14px; padding:clamp(20px,4vw,36px); margin:36px 0; scroll-margin-top:120px; }
+.ic-dispatch-prose .ic-inline-checklist > :first-child { margin-top:0; }
+.ic-dispatch-prose .ic-inline-checklist li { margin-block:14px; }
+.ic-dispatch-prose .ic-inline-checklist h3 { margin-top:28px; }
+

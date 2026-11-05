@@ -3,7 +3,7 @@
 import { useId, useMemo, useState } from "react";
 import EmailCaptureForm from "@/app/components/EmailCaptureForm";
 import {
-  downloadTextFile,
+  downloadBrandedChecklist,
   formatMoney,
   monthlyToWeekly,
   parseMoney,
@@ -308,9 +308,9 @@ export default function WeeklyMoneyWorksheet() {
             <button
               type="button"
               className="ic-btn-primary text-[0.62rem]"
-              onClick={() => downloadTextFile("iron-compass-weekly-money-check.txt", checklistText())}
+              onClick={() => downloadBrandedChecklist("iron-compass-weekly-money-check.html", checklistText())}
             >
-              Download checklist
+              Save styled checklist
             </button>
           </div>
           <div className="ic-routine__subscribe">
