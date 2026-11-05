@@ -19,12 +19,14 @@ interface ArticleLayoutProps extends PropsWithChildren {
   title: string;
   intro: string;
   path: string;
+  dateModified?: string;
 }
 
 export default function ArticleLayout({
   title,
   intro,
   path,
+  dateModified,
   children,
 }: ArticleLayoutProps) {
   const article = getGriefArticleByPath(path);
@@ -62,7 +64,7 @@ export default function ArticleLayout({
         description={intro}
         path={path}
         datePublished={article?.datePublished}
-        dateModified="2026-11-04"
+        dateModified={dateModified ?? article?.dateModified ?? article?.datePublished}
         image={guide.image}
       />
       <script

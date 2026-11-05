@@ -1,0 +1,89 @@
+UNPUBLISHED EDITORIAL DRAFT — NOT A LIVE PRODUCT ANNOUNCEMENT
+Hold: app habit repair is local only; Apple-review hold remains in force.
+Publish only after the repaired weekly calculations and client are released and
+checked. Move into content/blog only as part of that separately approved work.
+
+Proposed title: How to Track Weekly Habits When Your Days Change
+Proposed address: /blog/weekly-habit-tracker
+Primary cluster: weekly habit tracker / flexible habit tracker
+
+A weekly habit target asks how often you will act during the week. If you agree
+to one jiu-jitsu session and Tuesday falls through, completing it on Wednesday
+still fulfils that week's commitment. The planned day helps you make room for
+the action; the weekly target defines completion.
+
+DAILY AND WEEKLY HABITS NEED DIFFERENT RECORDS
+Some actions belong to every day. Others, such as a class, a longer training
+session or a weekly household review, do not. Giving a once-a-week action seven
+daily boxes can make a completed week look like six failures. Write the actual
+frequency beside the habit before choosing days.
+
+CHOOSE THE TARGET, THEN THE OPPORTUNITIES
+Start with the responsibility and a realistic number of days. Name what counts
+as a completed action. Choose likely opportunities and one fallback. Do not
+set the frequency from the week you wish you had; check work, caring duties,
+travel and recovery first.
+
+Illustrative example: three training days within a Monday-to-Sunday week.
+Monday and Friday are completed. Wednesday becomes impossible. Saturday is
+available without cutting necessary rest or shifting an unagreed duty to
+someone else. Completing Saturday makes three. The week passes against the
+agreed target, even though the original day changed.
+
+If Saturday is unavailable too, record two out of three honestly. Decide what
+needs changing next week. Do not mark a session you did not do or relabel an
+unrelated activity to protect the record.
+
+A PAPER CHECKLIST
+Habit:
+What counts as completion:
+Target days this week:
+Likely opportunities:
+Fallback opportunity:
+Actual completion dates:
+What changed:
+Next week's decision:
+
+This works in a notebook without an account. Keep the week's start and end
+consistent. Do not count a Sunday session in both weeks. One completion on a
+calendar day counts once for that habit; multiple-session sports tracking is
+a separate measurement and should not be implied by this daily check-in rule.
+
+WHEN THE TARGET CHANGES
+A three-day commitment may become a two-day commitment because work or caring
+responsibilities changed. Change it deliberately and record when the new
+target applies. Do not silently rewrite completed weeks to make the past look
+better. Unknown old schedules should remain unknown rather than being filled
+in with an invented seven-day expectation.
+
+WHILE THE WEEK IS STILL OPEN
+Two out of three on Thursday is progress, not a failed week. Check whether
+there is a realistic remaining opportunity. At the end of the week, compare
+the actual record with the target. Extra sessions do not pay next week's
+commitment in advance.
+
+USE THE WEEKLY REVIEW
+Review one completed commitment, one unfinished commitment and the reason the
+plan changed. Preserve the distinction between an appointment and proof of
+action: a calendar entry means planned, not completed. A reminder is a prompt,
+not evidence that the session happened.
+
+FAQ
+Does moving a habit to another day count?
+In this weekly method, yes, if the same agreed action is completed within the
+same week. A fixed appointment with another person still needs an agreed
+change; flexibility is not permission to ignore arrangements.
+
+Can a habit be three days a week instead of daily?
+Yes. Define the weekly target and record the actual days. Use a daily rule
+only when the responsibility genuinely calls for daily repetition.
+
+What if I fall short?
+Keep the record accurate. Review whether the commitment was realistic, what
+prevented it and one adjustment. A missed target needs a decision, not a false
+tick or a verdict on your whole character.
+
+Internal links for eventual publication: /domains/discipline;
+/blog/disciplined-weekly-reset-for-overloaded-men; /blog/the-day-after-you-miss.
+Add verified screenshots, exact current app instructions, plan labels and
+matching visible FAQ/schema only after the release gate is satisfied.

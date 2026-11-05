@@ -4,14 +4,14 @@ import ArticleLayout from "../components/ArticleLayout";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Rebuilding After Divorce: A Man's Guide to Starting Over",
+  title: "Rebuilding Life After Divorce for Men | Iron Compass AI",
   description:
     "Rebuild after divorce with practical stability, clear standards and integrity. Daily actions, a weekly review and a longer-term direction.",
   path: "/articles/rebuilding-after-divorce-for-men",
   openGraph: {
     type: "article",
     publishedTime: "2025-11-29",
-    modifiedTime: "2026-11-04",
+    modifiedTime: "2026-11-05",
   },
   images: [practicalGuides["/articles/rebuilding-after-divorce-for-men"].image],
 });
@@ -74,10 +74,62 @@ const rebuildSteps = [
 export default function ArticlePage() {
   return (
     <ArticleLayout
-      title="Rebuilding After Divorce (For Men)"
+      title="How to Rebuild Your Life After Divorce as a Man"
       intro="Divorce can change your home, routines, responsibilities and plans for the future. Rebuilding starts with practical stability, clear standards and a direction you can carry with integrity."
       path="/articles/rebuilding-after-divorce-for-men"
+      dateModified="2026-11-05"
     >
+      <section>
+        <h2>Where to start when everything has changed</h2>
+        <p>
+          Start with a place to live, the commitments that cannot wait and a manageable daily routine.
+          Write down what has changed, what is yours to take care of and where you need qualified help.
+          Then choose one practical action for today. Rebuilding is a longer process than getting through
+          a difficult afternoon; the aim is to become dependable in your changed circumstances.
+        </p>
+        <p>
+          Stoicism gives this work a useful distinction: you cannot decide another person’s choices,
+          but you remain responsible for your conduct. Keep your own messages measured, follow through
+          on arrangements and make decisions you can stand behind later. Taking responsibility does
+          not mean taking the blame for everything that happened.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why this guide exists</h2>
+        <blockquote>
+          <p>
+            “Iron Compass AI started in the hardest stretch of my life. After my divorce, losing my
+            business and losing time with my kids, I used AI to work through it, one question at a time.”
+          </p>
+          <footer>— Adam, founder</footer>
+        </blockquote>
+        <p>
+          That is the experience behind the system, rather than a promise that someone else’s recovery
+          will follow the same path. Read <Link href="/about">why Adam built Iron Compass AI</Link>.
+          This guide offers practical structure; legal, financial and health decisions may need
+          help from appropriately qualified professionals.
+        </p>
+      </section>
+
+      <section>
+        <h2>A practical routine after separation</h2>
+        <p>
+          Begin with the day you actually have. If the children are with you, the routine may revolve
+          around meals, school and being available. If they are elsewhere, keep a few ordinary anchors
+          instead of leaving the whole day unstructured. You do not need identical days to keep a standard.
+        </p>
+        <ul>
+          <li><strong>At the start:</strong> check the arrangements and deadlines you must honour. Choose one practical task with a clear finish.</li>
+          <li><strong>During the day:</strong> complete that task, allow time for ordinary meals and rest, and contact someone dependable rather than disappearing.</li>
+          <li><strong>Before stopping:</strong> record what happened, prepare the next essential item and leave an angry message unsent until you can review it calmly.</li>
+        </ul>
+        <p>
+          Use the <Link href="/blog/quiet-discipline-protocol-busy-men">small daily discipline routine</Link> if you need
+          a starting point. It is a structure to adapt, not another test you have to pass perfectly.
+        </p>
+      </section>
+
       <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">What changes after divorce</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
@@ -108,9 +160,9 @@ export default function ArticlePage() {
       <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Divorce Is Rebuilding Season</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          Divorce strips you down and gives you an uncomfortable chance to
-          rebuild deliberately—not as a husband, but as a man. This is where
-          Iron Compass AI begins.
+          A changed life needs a direction beyond the separation. Rebuilding may include a different
+          home, work pattern or parenting routine. Choose standards that still matter and work towards
+          practical milestones without pretending there is a deadline for having everything settled.
         </p>
       </section>
 
@@ -143,9 +195,50 @@ export default function ArticlePage() {
       <section className="ic-panel-outline space-y-4 ic-align-center">
         <h2 className="ic-section-heading">Fatherhood After Divorce</h2>
         <p className="ic-section-copy ic-section-copy--muted mx-auto">
-          If you have kids, your job doubles. They need stability, measured
+          If you have kids, keep their needs separate from adult conflict. They need stability, measured
           honesty, presence, structure, and a father who refuses to quit. You
           don’t need to be perfect—just reliable.
+        </p>
+      </section>
+
+      <section>
+        <h2>A weekly rebuilding review</h2>
+        <p>
+          Once a week, review the essentials: living arrangements, upcoming commitments, work,
+          household administration and contact with people who support you. Keep account information
+          and legal documents in an appropriate secure place, not in a public worksheet or an AI prompt.
+        </p>
+        <p>
+          Write what is steadier, what still needs outside help and one milestone to work towards next.
+          A milestone might be organising the paperwork for a professional appointment or agreeing
+          practical logistics through the appropriate channel. It need not be a dramatic personal reinvention.
+        </p>
+        <p>
+          Follow the <Link href="/blog/disciplined-weekly-reset-for-overloaded-men">weekly review checklist</Link> for
+          a shorter planning sequence. For the broader framework, read <Link href="/domains/fall-rise">Fall &amp; Rise: rebuilding after major setbacks</Link>.
+          The app can support a record and next actions; it cannot resolve a separation on your behalf.
+        </p>
+      </section>
+
+      <section>
+        <h2>Common questions about rebuilding after divorce</h2>
+        <h3>How long does rebuilding take?</h3>
+        <p>
+          There is no reliable universal timetable. Housing, parenting arrangements, finances and
+          personal circumstances differ. Review concrete changes over time rather than judging your
+          progress against someone else’s story or a fixed recovery deadline.
+        </p>
+        <h3>What should I focus on first?</h3>
+        <p>
+          Start with immediate practical needs and commitments that cannot wait. Choose one manageable
+          action, identify who can help and keep a record of the next step. Where safety or professional
+          decisions are involved, use appropriate qualified support.
+        </p>
+        <h3>Can Stoicism help without ignoring what happened?</h3>
+        <p>
+          Stoic practice can help you examine your judgements and choose your conduct. It does not
+          require denying the loss or treating every consequence as something you can control.
+          Apply the principles through fair decisions, measured communication and promises you can keep.
         </p>
       </section>
 

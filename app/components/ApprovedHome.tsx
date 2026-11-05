@@ -25,8 +25,8 @@ export default function ApprovedHome() {
         <div className={styles.heroCopy}>
           <h1>Discipline for the life you’re responsible for.</h1>
           <p>
-            Iron Compass AI is a habit and discipline app for men. Keep a few daily habits, record the day,
-            and turn your responsibilities into a clear next action.
+            Iron Compass AI is a habit tracker and discipline app for men, grounded in practical Stoicism.
+            Keep a few habits, reflect in your private journal and turn your responsibilities into a clear next action.
           </p>
           <div className="ic-cta-pair">
             <a className="ic-btn-primary" href="/app/auth">
@@ -105,6 +105,19 @@ export default function ApprovedHome() {
           ))}
         </div>
         <Link href="/pricing" className={styles.aboutLink}>Compare Free, Core and Elite</Link>
+      </section>
+
+      <section className={`${styles.block} ic-band`} aria-labelledby="practical-starts">
+        <h2 id="practical-starts">Start with what your life needs</h2>
+        <p className={styles.lead}>
+          Read a guide, try the exercise and decide what to carry into your day.
+          These practical starting points are open to everyone.
+        </p>
+        <ul className={styles.guideLinks}>
+          <li><Link href="/blog/quiet-discipline-protocol-busy-men">Build discipline when life is busy</Link><p>Choose one clear commitment and a realistic way to keep it.</p></li>
+          <li><Link href="/blog/disciplined-weekly-reset-for-overloaded-men">Plan the week with a practical checklist</Link><p>Review what happened, make room for responsibilities and choose what comes next.</p></li>
+          <li><Link href="/articles/rebuilding-after-divorce-for-men">Rebuild after a major setback</Link><p>Start with the essentials after divorce, then rebuild direction with integrity.</p></li>
+        </ul>
       </section>
 
       <FounderNote variant="short" />

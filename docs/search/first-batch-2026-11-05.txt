@@ -1,0 +1,68 @@
+IRON COMPASS AI — SEARCH RESEARCH AND FIRST CONTENT BATCH
+5 November 2026 · English-language research, Australia first
+
+Scope: 120 candidate phrases grouped into 20 clusters, covering the product,
+planning, comparison, daily return, journaling and all ten life domains. This is
+a bounded working set, not an exhaustive list of every possible query.
+
+Verification: 19 documented discovery searches plus earlier focused checks.
+Each cluster has proposed intent, priority and an existing destination or hold.
+Search-result presence is evidence of a topic and competing intent, not monthly
+search volume, keyword difficulty or a prediction of rankings. Priority is an
+editorial judgement based on product fit and existing content.
+
+Ahrefs was installed during the task, but no Ahrefs research tool was exposed
+to this chat. Native browser access timed out. No keyword-volume report was
+retrieved and no paid plan or new service was purchased. All numeric demand,
+difficulty and CPC fields remain null. Soro's four volume claims remain
+unverified. Search Console queries, index coverage and signup conversion have
+not been accessed.
+
+Market findings:
+- App-category results include dedicated men's products and general trackers.
+- Discipline also has dating/punishment intents that do not fit Iron Compass AI.
+- Stoic planner results include paper planners; qualify the app intent clearly.
+- Weekly tracking results address changing schedules and targets per week.
+- Journaling searches reward specific prompts and examples rather than slogans.
+- Weekly review searches expect a usable checklist or template.
+- Rebuilding searches deserve longer-term practical guidance, not a missed-day
+  reset. Grief, health, finance and legal topics need careful scope and sources.
+
+First batch:
+1. Homepage title and introduction clarify habit tracking and practical
+   Stoicism. Three useful guide links added before the founder note. Domain-first
+   order, actual imagery, founder text and pricing retained.
+2. Busy-men discipline guide: clearer search title, direct opening answer,
+   five-minute preparation, free checklist, current domain links and FAQs.
+   Existing educational content retained except selected overclaims/old labels.
+3. Weekly review guide: direct answer, usable 20-minute checklist, five-minute
+   fallback and optional original 90-minute deep review. Free matching text
+   checklist. Removed stale embedded FAQ markup; template derives current FAQs.
+4. Divorce guide: practical starting routine, founder's supplied experience,
+   weekly rebuilding review and visible questions. Existing URL, phase structure,
+   relevant photo and Fall & Rise app context retained. Dates updated coherently.
+5. Flexible-habits guide drafted outside the published content folder. Publishing
+   product claims remains blocked until the repaired behaviour is released and
+   verified in the customer app. No app release is authorised by this work.
+
+Narration: Listen hidden for the two materially revised blog articles. Updated
+narration scripts prepared; no audio regenerated. Other articles/audio untouched.
+
+Next quantitative step when access works:
+Use Ahrefs country AU plus US/UK separately to expand seeds with matching terms,
+questions, related terms and relevant competitor content gaps. Record country,
+date, estimated volume, difficulty and intent. Do not sum country estimates as
+unique people. Use Search Console's own query/page data to check impressions,
+clicks and overlapping pages. Assign one primary owner per intent cluster and
+refresh useful existing pages before adding new ones. Connect visits to signup,
+first completed habit, paid subscription and retention when event data exists.
+
+AEO: answer clearly, show the actual useful method, cite appropriate primary
+sources, preserve visible text/internal links and keep schema consistent with
+the page. No promise of AI citations, rankings or rich-result display. Google's
+guidance: https://developers.google.com/search/docs/appearance/ai-features
+
+Full candidate registry and source links:
+docs/search/keyword-map-2026-11-05.json
+
+Release checks and actual deployment state are recorded in CURRENT_HANDOVER.

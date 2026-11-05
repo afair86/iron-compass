@@ -146,7 +146,7 @@ export type FaqEntry = {
 /** Extracts FAQ pairs from ## FAQ, ## FAQs, or ## Frequently Asked Questions sections */
 export function extractFaqFromMarkdown(markdown: string): FaqEntry[] {
   const faqMatch = markdown.match(
-    /^## (?:FAQ(?:s)?|Frequently Asked Questions)\s*\n([\s\S]*?)(?=\n## |\n<script|<script|$)/im
+    /(?:^|\n)## (?:FAQ(?:s)?|Frequently Asked Questions)[ \t]*\r?\n([\s\S]*?)(?=\n## |\n<script|<script|$)/i
   );
   if (!faqMatch) return [];
 
@@ -172,7 +172,7 @@ export function extractFaqFromMarkdown(markdown: string): FaqEntry[] {
   }
   if (faqs.length > 0) return faqs;
 
-  const h3Matches = faqSection.matchAll(/^###\s+(.+?\?)\s*\n\n([\s\S]*?)(?=\n###|\n---|\n## |$)/gm);
+  const h3Matches = faqSection.matchAll(/(?:^|\n)###[ \t]+(.+?\?)[ \t]*\r?\n\r?\n([\s\S]*?)(?=\n###|\n---|\n## |$)/g);
   for (const match of h3Matches) {
     const answer = match[2].trim();
     if (answer) faqs.push({ question: match[1].trim(), answer });

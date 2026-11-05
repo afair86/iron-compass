@@ -19,12 +19,12 @@ function imagesInMarkdown(markdown: string): string[] {
 }
 
 const STATIC_PAGE_DATES: Record<string, string> = {
-  "/": "2026-11-04",
+  "/": "2026-11-05",
   "/start": "2026-11-04",
   "/download": "2026-11-04",
   "/pricing": "2026-11-04",
   "/about": "2026-11-04",
-  "/blog": "2026-11-04",
+  "/blog": "2026-11-05",
   "/contact": "2026-11-04",
   "/privacy": "2025-11-01",
   "/terms": "2025-11-01",

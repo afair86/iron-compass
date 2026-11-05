@@ -1,0 +1,1733 @@
+{
+  "date": "2026-11-05",
+  "market": "English-language research; Australia first implementation. No country-specific volume database available in this session.",
+  "method": "19 discovery queries plus prior focused search checks; public site inventory and sampled source. SERP presence confirms an indexed topic/intent, not demand or achievable ranking. No Google Search Console query data accessed.",
+  "metrics": {
+    "provider": "Ahrefs installed during task; research tools not exposed to this chat; native browser access timed out",
+    "monthlySearches": null,
+    "keywordDifficulty": null,
+    "cpc": null
+  },
+  "priorities": "Editorial judgement from product fit, intent and existing assets; not quantitative opportunity scores.",
+  "soroClaims": {
+    "verified": false,
+    "phrases": {
+      "habit tracking app for men": 2400,
+      "discipline app for men": 1300,
+      "stoic daily planner for men": 720,
+      "how to build discipline as a man": 1900
+    },
+    "note": "Email did not disclose geography, source or date range; do not reuse as verified data."
+  },
+  "groups": [
+    {
+      "name": "Product",
+      "target": "/",
+      "priority": "P1",
+      "intent": "Commercial",
+      "keywords": [
+        {
+          "keyword": "habit tracker for men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "habit tracking app for men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "discipline app for men",
+          "exactDiscoveryQuery": true,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "self discipline app",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "daily accountability app",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Stoic habit tracker",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "App and planning",
+      "target": "/download",
+      "priority": "P1",
+      "intent": "Commercial",
+      "keywords": [
+        {
+          "keyword": "Stoic planner app",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Stoic daily planner for men",
+          "exactDiscoveryQuery": true,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "daily routine app for men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "habit tracker and journal app",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "AI accountability app",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "AI coach for men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Plan comparison",
+      "target": "/pricing",
+      "priority": "P2",
+      "intent": "Commercial",
+      "keywords": [
+        {
+          "keyword": "Iron Compass AI pricing",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Iron Compass AI Core vs Elite",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Iron Compass AI subscription",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Iron Compass AI free plan",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "habit tracker with AI coaching",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "AI journal review app",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Discipline",
+      "target": "/blog/quiet-discipline-protocol-busy-men",
+      "priority": "P1",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "how to build self discipline when busy",
+          "exactDiscoveryQuery": true,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to build discipline as a man",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to stay consistent without motivation",
+          "exactDiscoveryQuery": true,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "discipline routine for busy men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to keep promises to yourself",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "daily discipline checklist",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Weekly review",
+      "target": "/blog/disciplined-weekly-reset-for-overloaded-men",
+      "priority": "P1",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "weekly review checklist",
+          "exactDiscoveryQuery": true,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "weekly review template",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "weekly reset routine",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "weekly planning for busy men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to do a weekly review",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Sunday reset checklist",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Flexible habits",
+      "target": "DRAFT: weekly-habit-tracker",
+      "priority": "HOLD",
+      "intent": "Mixed",
+      "keywords": [
+        {
+          "keyword": "weekly habit tracker",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "flexible habit tracker",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "habit tracker for changing schedules",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "track habits three times a week",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "weekly habit goals",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "daily vs weekly habits",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Daily return",
+      "target": "/blog/the-day-after-you-miss",
+      "priority": "P2",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "what to do after missing a habit",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "restart a habit after a break",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to get back on track with habits",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "missed workout routine",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "consistency over perfection habits",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to stop all or nothing habits",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Identity",
+      "target": "/domains/identity",
+      "priority": "P2",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "how to build a personal code",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "personal values exercise",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "personal standards examples",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to live by your values",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "identity and habits",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to become a reliable man",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Health and strength",
+      "target": "/domains/health-strength",
+      "priority": "P2",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "strength training for busy dads",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "training routine for busy men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to fit exercise around family",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "strength training after 40",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "consistent exercise routine",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "balance strength and cardio",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Bonds and fatherhood",
+      "target": "/domains/bonds-connections",
+      "priority": "P2",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "how to be a more present father",
+          "exactDiscoveryQuery": true,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "daily routine for busy dads",
+          "exactDiscoveryQuery": true,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "personal routine for single dads",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to be a reliable partner",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "balance work and fatherhood",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to keep family commitments",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Purpose",
+      "target": "/domains/purpose-direction",
+      "priority": "P2",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "how to find purpose as a man",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "purpose in midlife",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to find direction in life",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "purpose after a career change",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "90 day personal plan",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "turn values into goals",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "target": "/blog/weekly-money-check-20-minutes",
+      "priority": "P2",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "weekly money review checklist",
+          "exactDiscoveryQuery": true,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "weekly money check in",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "weekly budget review",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "household money routine",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to organise bills",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "financial habits for families",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Resilience",
+      "target": "/domains/resilience",
+      "priority": "P2",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "how to stay calm under pressure",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Stoicism under pressure",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "resilience for men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to handle a demanding week",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to make decisions under pressure",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "calm under pressure habits",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Major setbacks",
+      "target": "/domains/fall-rise",
+      "priority": "P1",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "how to rebuild after a major setback",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "rebuilding after business failure",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "starting over after job loss",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Stoicism after failure",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to rebuild trust after failure",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "rebuilding life with integrity",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Divorce",
+      "target": "/articles/rebuilding-after-divorce-for-men",
+      "priority": "P1",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "rebuild life after divorce men routine",
+          "exactDiscoveryQuery": true,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to rebuild your life after divorce as a man",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "starting over after divorce for men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "daily routine after separation",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "fatherhood after divorce",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "rebuilding identity after divorce",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Grief",
+      "target": "/domains/grief-honour",
+      "priority": "P2",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "grief for men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Stoicism and grief",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to honour a loved one",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "daily routine after bereavement",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "support a grieving father",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "remembering a loved one rituals",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Legacy",
+      "target": "/domains/legacy",
+      "priority": "P2",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "how to build a legacy for your children",
+          "exactDiscoveryQuery": true,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "what legacy do I want to leave",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "family values examples",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to pass on family values",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "legacy beyond money",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to be a role model for your children",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Journaling",
+      "target": "/blog/analyzing-habits-stoic-audit",
+      "priority": "P2",
+      "intent": "Mixed",
+      "keywords": [
+        {
+          "keyword": "Stoic journal prompts",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "evening reflection questions",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "morning Stoic journal prompts",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "daily reflection questions for men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to review your behaviour",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "journaling for accountability",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Shift work",
+      "target": "/blog/5am-standard-own-your-morning",
+      "priority": "P2",
+      "intent": "Informational",
+      "keywords": [
+        {
+          "keyword": "morning routine for busy men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "morning routine for dads",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "how to build a routine with shift work",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "routine without waking at 5am",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "evening routine for men",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "daily planning around irregular hours",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    },
+    {
+      "name": "Brand",
+      "target": "/about",
+      "priority": "P2",
+      "intent": "Navigational",
+      "keywords": [
+        {
+          "keyword": "Iron Compass AI",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Iron Compass AI founder",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "what is Iron Compass AI",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Iron Compass AI app",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Iron Compass AI reviews",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        },
+        {
+          "keyword": "Iron Compass AI Australia",
+          "exactDiscoveryQuery": false,
+          "monthlySearches": null,
+          "difficulty": null,
+          "status": "candidate; volume unverified"
+        }
+      ]
+    }
+  ],
+  "queryEvidence": [
+    {
+      "group": "app",
+      "queries": [
+        "habit tracker for men app",
+        "discipline app for men",
+        "stoic daily planner for men"
+      ],
+      "sources": [
+        {
+          "title": "Discipline - Apps on Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.chrissharp.discipline"
+        },
+        {
+          "title": "The Discipline App",
+          "url": "https://thedisciplineapp.com/"
+        },
+        {
+          "title": "Discipline & Habit Tracker for Men | Embrace Masculinity",
+          "url": "https://menembracemasculinity.com/"
+        },
+        {
+          "title": "THRIVE Male Health: Natural Testosterone Habit Tracker",
+          "url": "https://trythrive.app/"
+        },
+        {
+          "title": "12 best habit tracking apps in 2026 | 2sync",
+          "url": "https://2sync.com/blog/best-habit-tracker-apps"
+        },
+        {
+          "title": "Discipline - Level Up Your Dating Game",
+          "url": "https://www.discipline-app.net/"
+        },
+        {
+          "title": "10 Best Habit Tracker Apps for iPhone & Android (2026)",
+          "url": "https://360-reader.com/best-habit-tracker-apps-iphone-android/"
+        },
+        {
+          "title": "Habiter – Habit Tracker for iPhone, iPad, Mac & Apple Watch",
+          "url": "https://gethabiter.app/"
+        },
+        {
+          "title": "Best Discipline Apps 2026: 8 Ranked by Consequence",
+          "url": "https://finestreak.com/blog/best-self-discipline-apps"
+        },
+        {
+          "title": "Best Habit Tracker Apps for Android (2026) | Tenor",
+          "url": "https://www.tenorapp.dev/blog/best-habit-tracker-apps-android-2026/"
+        },
+        {
+          "title": "ZANE · The Habit App For Men Over 35",
+          "url": "https://zane.team/"
+        },
+        {
+          "title": "Daily Stoic Page-A-Day Desk Calendar – Daily Stoic Store",
+          "url": "https://store.dailystoic.com/products/daily-stoic-page-a-day-desk-calendar"
+        },
+        {
+          "title": "DAILY STOIC",
+          "url": "https://dailystoic.com/wp-content/uploads/2019/12/Daily-Stoic-New-You-21-Day-Calendar-PDF.pdf"
+        },
+        {
+          "title": "T",
+          "url": "https://assets-global.website-files.com/63b64a29e5669866d21ba83d/655edf82654af148848bdbb0_Personal%20Daily%20Stoic%20Routine%20Planner.pdf"
+        },
+        {
+          "title": "Streaks Habit Tracker and To Do List App - Apple only",
+          "url": "https://www.blueprintsed.org/get-involved/search-resources-a-opportunities/record/a0M3r00000IjaqyEAB?format=pdf"
+        },
+        {
+          "title": "Built a 365-day stoic discipline journal for men — sharing here since this community is where I started",
+          "url": "https://www.reddit.com/r/Stoic/comments/1ta9mpq/built_a_365day_stoic_discipline_journal_for_men/"
+        },
+        {
+          "title": "Habit tracker apps",
+          "url": "https://www.bathcentreforpainservices.org.uk/wp-content/uploads/2020/09/a-guide-to-Habits-and-Goals-apps-for-your-phone-for-website.pdf"
+        },
+        {
+          "title": "[App] [Promo] I built a all-in-one productivity app called Habit Tracker - To-Do List that is free and completely local + Theme Giveaway",
+          "url": "https://www.reddit.com/r/HowToMen/comments/1x7fg4s/app_promo_i_built_a_allinone_productivity_app/"
+        },
+        {
+          "title": "List of Mobile Android Apps",
+          "url": "https://www.tap.gcd.nm.gov/wp-content/uploads/2021/08/Android-apps.pdf"
+        },
+        {
+          "title": "Habit Tracker",
+          "url": "https://jovianjr.my.id/assets/documents/habit_tracker.pdf"
+        },
+        {
+          "title": "Built a discipline app for Muslim men — honest feedback welcome",
+          "url": "https://www.reddit.com/r/MuslimCorner/comments/1t3s9ch/built_a_discipline_app_for_muslim_men_honest/"
+        },
+        {
+          "title": "This hack helped me be more disciplined",
+          "url": "https://www.reddit.com/r/MenWithDiscipline/comments/1r8wrtx/this_hack_helped_me_be_more_disciplined/"
+        },
+        {
+          "title": "[App] [Promo] Habstick – Minimal Offline Habit Tracker (No Ads, No Account, Widgets, Heatmap)",
+          "url": "https://www.reddit.com/r/HowToMen/comments/1sa7off/app_promo_habstick_minimal_offline_habit_tracker/"
+        },
+        {
+          "title": "I built a discipline app because most blocker apps felt too soft",
+          "url": "https://www.reddit.com/r/SideProject/comments/1um8gxk/i_built_a_discipline_app_because_most_blocker/"
+        },
+        {
+          "title": "Recommend me an app for habit tracking!",
+          "url": "https://www.reddit.com/r/androidapps/comments/1rreif2/recommend_me_an_app_for_habit_tracking/"
+        },
+        {
+          "title": "A new app that helps with discipline",
+          "url": "https://www.reddit.com/r/Discipline/comments/1rywfp8/a_new_app_that_helps_with_discipline/"
+        },
+        {
+          "title": "I'm gonna try all the habit tracking apps and i will give you my favorites",
+          "url": "https://www.reddit.com/r/iosapps/comments/1lsahz3/im_gonna_try_all_the_habit_tracking_apps_and_i/"
+        },
+        {
+          "title": "Discipline building app",
+          "url": "https://www.reddit.com/r/getdisciplined/comments/1sztx8v/discipline_building_app/"
+        },
+        {
+          "title": "Best Habit Tracker Apps: What are your experiences?",
+          "url": "https://www.reddit.com/r/ProductivityApps/comments/1usmqrt/best_habit_tracker_apps_what_are_your_experiences/"
+        },
+        {
+          "title": "We've tested the best workout apps to help you train at home",
+          "url": "https://www.tomsguide.com/best-picks/best-workout-apps"
+        },
+        {
+          "title": "Need Some Help Reaching Your Goals? Try These 5 Habit-Tracking Apps",
+          "url": "https://time.com/5621109/best-habit-tracking-apps/"
+        },
+        {
+          "title": "The app tackling porn addiction",
+          "url": "https://theweek.com/health/the-app-tackling-porn-addiction"
+        },
+        {
+          "title": "These are our 12 favorite fitness, health, and nutrition apps we recommend for crushing your 2026 resolutions",
+          "url": "https://www.androidcentral.com/apps-software/best-health-fitness-diet-apps-for-hitting-your-resolutions-and-getting-healthier"
+        },
+        {
+          "title": "I hit 40 and knew my lifestyle had to change. This app is helping me power up, take more steps, and supercharge my water intake",
+          "url": "https://www.techradar.com/computing/websites-apps/go-club"
+        }
+      ]
+    },
+    {
+      "group": "discipline",
+      "queries": [
+        "how to build self discipline when busy",
+        "how to stay consistent without motivation",
+        "weekly review checklist"
+      ],
+      "sources": [
+        {
+          "title": "Tips to Stay Consistent When Your Motivation is Gone",
+          "url": "https://www.ahealthiermichigan.org/stories/health-and-wellness/tips-to-stay-consistent-when-your-motivation-is-gone"
+        },
+        {
+          "title": "Weekly Review Template: Questions and a 20-Minute Checklist | Plannedo Blog",
+          "url": "https://www.plannedo.com/blog/weekly-review-template/"
+        },
+        {
+          "title": "Harnessing Willpower to Meet Your Goals",
+          "url": "https://www.apa.org/topics/willpower-fact-sheet.pdf"
+        },
+        {
+          "title": "Procrastination and Motivation_2025.pdf",
+          "url": "https://www.unbc.ca/sites/default/files/sections/academic-success-centre/procrastination-and-motivation2025.pdf"
+        },
+        {
+          "title": "How to Stay Consistent Without Motivation (Simple Habit Framework) - Sense Central",
+          "url": "https://sensecentral.com/how-to-stay-consistent-without-motivation-simple-habit-framework/"
+        },
+        {
+          "title": "How to Be Consistent Without Motivation: Keep It in Sight",
+          "url": "https://www.habitbank.pl/blog/how-to-be-consistent-without-motivation"
+        },
+        {
+          "title": "Staying Consistent Without Motivation | Mindway",
+          "url": "https://mindway.app/blog/article/staying-consistent-without-motivation"
+        },
+        {
+          "title": "How to stay consistent when motivation disappears — ATLVL",
+          "url": "https://atlvl.com/blog/how-to-stay-consistent-when-motivation-disappears/"
+        },
+        {
+          "title": "The Weekly Review: How to Rein in The Chaos in Your Life Dan Silvestre",
+          "url": "https://dansilvestre.com/weekly-review/"
+        },
+        {
+          "title": "PDS: How to keep motivation?",
+          "url": "https://internt.slu.se/globalassets/mw/utb/forskarutbildningdocent/checklistor-och-vagledningar/vh-fakulteten/pds---motivation.pdf"
+        },
+        {
+          "title": "How to run a GTD weekly review (11 steps) | Done Bear",
+          "url": "https://donebear.com/guides/how-to-run-a-weekly-review"
+        },
+        {
+          "title": "Weekly Review: A 15-Minute Checklist and Notion Template",
+          "url": "https://planning.mastermodules.com/weekly-review-notion/"
+        },
+        {
+          "title": "How can I stay consistent when motivation fades? | Loop",
+          "url": "https://loop-habits.com/guides/stay-consistent-without-motivation"
+        },
+        {
+          "title": "How to Be Consistent: Fix the System, Not Your Personality | HabitLab",
+          "url": "https://www.habitlab.net/how-to-be-consistent"
+        },
+        {
+          "title": "Weekly Review Template: Guided Questions + Printable",
+          "url": "https://dailyhabitai.com/tools/weekly-review/"
+        },
+        {
+          "title": "GTD Weekly Review®",
+          "url": "https://gettingthingsdone.com/wp-content/uploads/2014/10/Weekly_Review_Checklist.pdf"
+        },
+        {
+          "title": "5TipsStayMotivated-8.5x11_v1",
+          "url": "https://und.edu/academics/services/academic-support/_files/docs/5-tips-to-stay-motivated.pdf"
+        },
+        {
+          "title": "Strategies for Staying Motivated",
+          "url": "https://extension.usu.edu/mentalhealth/articles/strategies-for-staying-motivated.pdf"
+        },
+        {
+          "title": "How to Stay Consistent (Even Without Motivation) - YouTube",
+          "url": "https://www.youtube.com/watch?v=10MW8QbDU8A"
+        },
+        {
+          "title": "Motivation is a Trap | How to Stay Consistent Without Motivation - YouTube",
+          "url": "https://www.youtube.com/watch?v=kA5n39uWACs"
+        },
+        {
+          "title": "How do you stay consistent when you have absolutely zero motivation?",
+          "url": "https://www.reddit.com/r/getdisciplined/comments/1xgk4zj/how_do_you_stay_consistent_when_you_have/"
+        },
+        {
+          "title": "I Trained for a Race for 3 Months, Then I Experienced a Huge Comedown-Here's What Helped Pick Me Up",
+          "url": "https://www.marieclaire.co.uk/health-fitness/fitness/post-race-blues"
+        },
+        {
+          "title": "Already Broken Your New Year's Resolution? A Psychologist On Why It May Actually Be a Good Thing",
+          "url": "https://www.marieclaire.co.uk/life/health-fitness/why-breaking-new-years-resolutions-doesnt-matter"
+        },
+        {
+          "title": "'Motivation thrives when you balance performing well, enjoying what you do and continually learning' - a sports psychologist shares 5 top tips for maintaining your motivation to exercise",
+          "url": "https://www.tomsguide.com/wellness/fitness/motivation-thrives-when-you-balance-performing-well-enjoying-what-you-do-and-continually-learning-a-sports-psychologist-shares-5-top-tips-for-maintaining-your-motivation-to-exercise"
+        },
+        {
+          "title": "Too busy to get fit? Here's how to work exercise into your packed schedule",
+          "url": "https://apnews.com/article/1d3fae20a135c31f8a7979688980536c"
+        }
+      ]
+    },
+    {
+      "group": "rebuild",
+      "queries": [
+        "rebuild life after divorce men routine",
+        "rebuild after business failure stoicism",
+        "how to find purpose after a major life change"
+      ],
+      "sources": [
+        {
+          "title": "Rebuild — 28-Day Program for Men Going Through Separation — BetterDads",
+          "url": "https://betterdads.com/programs/rebuild"
+        },
+        {
+          "title": "10 ways to find purpose in life - Harvard Health",
+          "url": "https://www.health.harvard.edu/mind-and-mood/10-ways-to-find-purpose-in-life"
+        },
+        {
+          "title": "Life After Divorce: How You Can Start Again",
+          "url": "https://health.clevelandclinic.org/life-after-divorce"
+        },
+        {
+          "title": "How to Rebuild Your Life After Divorce as a Man",
+          "url": "https://coldapproach.io/articles/modern-marriage-part-6-how-to-bounce-back-from-divorce"
+        },
+        {
+          "title": "Rebuilding after separation and divorce",
+          "url": "https://www.relationshipswa.org.au/relationshipswa/media/documents/education%20tip%20sheets/education-tip-sheet-rebuilding-after-separation-and-divorce-270121.pdf"
+        },
+        {
+          "title": "How to Find Your Purpose After a Career Change — WalkSelf",
+          "url": "https://walkself.com/blog/purpose-after-career-change"
+        },
+        {
+          "title": "Finding your footing after separation or divorce – Men's Midlife Guide",
+          "url": "https://mensmidlife.org/divorce-recovery-for-men/"
+        },
+        {
+          "title": "Sense of purpose",
+          "url": "https://www.mentalhealth.org.uk/sites/default/files/2022-06/How-to-MH-in-later-life.pdf"
+        },
+        {
+          "title": "How Men Can Find Healing After Divorce | Right as Rain by UW Medicine",
+          "url": "https://rightasrain.uwmedicine.org/life/relationships/divorce-health-effects?page=1"
+        },
+        {
+          "title": "17 Practical Steps Men Take When Preparing for a Life Reset After Divorce",
+          "url": "https://www.themodestman.com/steps-men-life-reset-after-divorce/"
+        },
+        {
+          "title": "How to Rebuild a Social Life After a Breakup or Divorce | Steeev",
+          "url": "https://steeev.com/make-friends-after-divorce/"
+        },
+        {
+          "title": "Brick by brick: Rebuilding the life you want after divorce - Men's Therapy Online",
+          "url": "https://menstherapy.online/blog/rebuilding-after-divorce-guide/"
+        },
+        {
+          "title": "Finding Purpose in Life When You Feel Lost | HELPPS",
+          "url": "https://www.helpps.ca/post/when-life-feels-without-purpose"
+        },
+        {
+          "title": "Men and Divorce: Rebuilding Your Life After a Separation – Larry O'Connor, MFT",
+          "url": "https://larryoconnorlmft.com/men-divorce-rebuilding-life-after-separation/"
+        },
+        {
+          "title": "Page 1 of 5",
+          "url": "https://www.getselfhelp.co.uk/media/kitllj1d/findingmeaning.pdf"
+        },
+        {
+          "title": "Adjusting to Divorce? Rebuild Routines",
+          "url": "https://extension.usu.edu/strongermarriage/blog/Adjusting_to_Divorce_Rebuild_Routines.pdf"
+        },
+        {
+          "title": "rebuilding of life post-divorce—our study adds depth to existing research, emphasizing that personal transformation is an ongoing process, not confined to the legal and procedural aspects of divorce. Unlike other studies, this research places a special focus on the journey of divorced men, a topic often overlooked and underrepresented in Indian literature.",
+          "url": "https://ipc2025.popconf.org/uploads/251144"
+        },
+        {
+          "title": "2021 Mens Divorce Guide-final.indd",
+          "url": "https://cartermorrislaw.com/wp-content/uploads/2023/01/2021-Mens-Divorce-Guide-final-1.pdf"
+        },
+        {
+          "title": "Divorced men of Reddit, how did you rebuild your life after divorce?",
+          "url": "https://www.reddit.com/r/AskMen/comments/1tylfew/divorced_men_of_reddit_how_did_you_rebuild_your/"
+        },
+        {
+          "title": "For men who had to restart from square 1 after divorce, how did you get through it?",
+          "url": "https://www.reddit.com/r/AskMenOver30/comments/1w2gbbb/for_men_who_had_to_restart_from_square_1_after/"
+        },
+        {
+          "title": "Why the search for meaning can cause 'purpose anxiety,' and what to do about it",
+          "url": "https://apnews.com/article/84da5b896fedd7ef5932d63b05a5a7d5"
+        },
+        {
+          "title": "Finding Meaning and Passion in Retirement",
+          "url": "https://www.kiplinger.com/retirement/happy-retirement/finding-meaning-in-retirement-how-to-embrace-a-passion-later-in-life"
+        },
+        {
+          "title": "The Emotional Side of Retiring: Six Steps to Help You Move On",
+          "url": "https://www.kiplinger.com/retirement/happy-retirement/the-emotional-side-of-retiring-steps-to-help-you-move-on"
+        },
+        {
+          "title": "The Clocklike Regularity of Major Life Changes",
+          "url": "https://www.theatlantic.com/family/archive/2020/09/major-life-changes-happen-clocklike-regularity/616243/?utm_source=apple_news"
+        },
+        {
+          "title": "What Is the Good Life?",
+          "url": "https://www.theatlantic.com/podcasts/2026/09/what-is-the-good-life/688591/?utm_source=openai"
+        }
+      ]
+    },
+    {
+      "group": "roles",
+      "queries": [
+        "daily routine for busy dads",
+        "how to be a more present father",
+        "build a personal code of conduct"
+      ],
+      "sources": [
+        {
+          "title": "How to Be More Present as a Father | BRTLS",
+          "url": "https://brtls.store/pages/understand-framework-presence"
+        },
+        {
+          "title": "How to Be a More Present Father – Our Unfinished Story",
+          "url": "https://www.ourunfinishedstory.com/chapter/how-to-be-a-more-present-father"
+        },
+        {
+          "title": "The Importance of Good Fathers",
+          "url": "https://www.ctclearinghouse.org/Customer-Content/www/topics/The_Importance_of_Good_Fathers_factsheet.pdf"
+        },
+        {
+          "title": "Top Tips for Engaged Parenting | Military OneSource",
+          "url": "https://www.militaryonesource.mil/parenting/children-youth-teens/top-tips-for-engaged-parenting/"
+        },
+        {
+          "title": "How Do I Become a More Present Dad When I Am Exhausted?",
+          "url": "https://joshuabrogley.com/blog/how-to-be-a-more-present-dad/"
+        },
+        {
+          "title": "How Busy Dads Can Prioritise Their Own Wellbeing",
+          "url": "https://www.fugenhealth.com.au/how-busy-dads-can-prioritise-their-own-wellbeing/"
+        },
+        {
+          "title": "SESSION 4 | Men’s Health",
+          "url": "https://help.fatherhood.org/hubfs/247DadAM_sample_kit.pdf?hsLang=en"
+        },
+        {
+          "title": "How to Be an Intentional Father in Everyday Family Life",
+          "url": "https://www.greatdad.com/dad/how-to-be-an-intentional-father-in-everyday-family-life"
+        },
+        {
+          "title": "A Simple Weekly Reset for Dads Who Feel Overwhelmed | DadOS",
+          "url": "https://www.thedadosstandard.com/journal/simple-weekly-reset-for-overwhelmed-dads"
+        },
+        {
+          "title": "5 daily habits for dads that actually stick | DADSCAPED",
+          "url": "https://dadscaped.com/guides/daily-habits-for-dads/"
+        },
+        {
+          "title": "The Stay-at-Home Dad's Emotional Blueprint: A Routine That Nurtures You, Not Just the Kids - Vale Rally",
+          "url": "https://www.valerally.com/the-stay-at-home-dads-emotional-blueprint-a-routine-that-nurtures-you-not-just-the-kids/"
+        },
+        {
+          "title": "The Present Father: How to Show Up For Your Kids | RealClearReligion",
+          "url": "https://www.realclearreligion.org/articles/2025/07/17/the_present_father_how_to_show_up_for_your_kids_1123376.html"
+        },
+        {
+          "title": "provide inspiration",
+          "url": "https://www.thutong.doe.gov.za/resourcedownload.aspx?id=38583"
+        },
+        {
+          "title": "Ask an Expert – Ten Tips to Help Dads Be Their Best",
+          "url": "https://extension.usu.edu/news/ask-an-expert-ten-tips-to-help-dads-be-their-best.pdf"
+        },
+        {
+          "title": "A Stay-At-Home Dad Schedule: What Do We Exactly Do All Day?",
+          "url": "https://thelearningdadblog.com/stay-at-home-dad-schedule/"
+        },
+        {
+          "title": "What Being a Present Father Actually Means (Not More Time)",
+          "url": "https://www.thedaddiaries.com/being-present-as-a-parent"
+        },
+        {
+          "title": "How to be More Present as a Father - What Does Being Present Mean? | Dad University - YouTube",
+          "url": "https://www.youtube.com/watch?v=DOsGmsNFPYc"
+        },
+        {
+          "title": "Being a Dad Is About More Than Being Around",
+          "url": "https://www.theatlantic.com/ideas/archive/2025/06/fathers-day-dad/683168/?utm_source=apple_news"
+        },
+        {
+          "title": "How to Get Your Silent Dad to Talk to You",
+          "url": "https://time.com/7292902/how-to-talk-to-your-silent-dad/"
+        },
+        {
+          "title": "What It Means to Be a 'Good' Father in America Has Changed. Here's How",
+          "url": "https://time.com/5312912/history-american-fathers/"
+        },
+        {
+          "title": "The Gene Kelly School of Life",
+          "url": "https://www.theatlantic.com/family/2026/01/gene-kelly-fatherhood-depression-masculinity/685408/?utm_source=apple_news"
+        }
+      ]
+    },
+    {
+      "group": "domains",
+      "queries": [
+        "weekly money review checklist",
+        "how to stay calm under pressure stoicism",
+        "how to honour a loved one after death"
+      ],
+      "sources": [
+        {
+          "title": "Kind Ways to Support Someone Who Is Grieving | Clinical",
+          "url": "https://clinical.nih.gov/bereavement/support"
+        },
+        {
+          "title": "10 Ways to Honor your Loved One » Ohio Victim Witness Association",
+          "url": "https://ovwa.org/10-ways-to-honor-your-loved-one/"
+        },
+        {
+          "title": "Ways to support someone who is grieving - Harvard Health",
+          "url": "https://www.health.harvard.edu/mind-and-mood/ways-to-support-someone-who-is-grieving"
+        },
+        {
+          "title": "Ways to Honor Someone You’ve Lost",
+          "url": "https://mentalhealthfirstaid.org/news/ways-to-honor-someone-youve-lost/"
+        },
+        {
+          "title": "How to Honor Someone Who Has Died - Caring.com",
+          "url": "https://www.caring.com/resources/how-to-honor-someone"
+        },
+        {
+          "title": "Honor your loved one. Find a comforting way to honor the memory of your loved one. Here are some suggestions:",
+          "url": "https://choosecovenant.org/wp-content/uploads/2022/05/Coping-with-Grief-and-Loss-a-Hanbook-for-Survivors.pdf"
+        },
+        {
+          "title": "Understanding Bereavement and Grief after Loss of a Loved One",
+          "url": "https://www.helpguide.org/mental-health/grief/bereavement-grieving-the-death-of-a-loved-one"
+        },
+        {
+          "title": "Positive things you can do to remember a loved one",
+          "url": "https://waipunahospice.org.nz/wp-content/uploads/Waipuna-Hospice-Grief-After-Loss-Support-Guide.pdf"
+        },
+        {
+          "title": "Weekly Cash Review Checklist · Cash Workspace",
+          "url": "https://www.cashworkspace.com/weekly-cash-review-checklist"
+        },
+        {
+          "title": "Dear Family and Friends,",
+          "url": "https://essencehospice.com/wp-content/uploads/2020-Annual-Memorial-Service-Ideas.pdf"
+        },
+        {
+          "title": "10 Things to Check During Your Weekly Money Check-In",
+          "url": "https://moneyonliners.com/weekly-money-check-in/"
+        },
+        {
+          "title": "WEEKLY MONEY ROUTINE ACTION GUIDE",
+          "url": "https://ilenabanks.com/wp-content/uploads/IB-Weekly-Money-Routine-Guide.pdf"
+        },
+        {
+          "title": "Care & Inform",
+          "url": "https://hospicefoundation.ie/wp-content/uploads/2021/02/Support-for-Grieving-in-Exceptional-Times.pdf"
+        },
+        {
+          "title": "The 30-Minute Weekly Money Routine for Business Owners",
+          "url": "https://thebusinessofmoney.com.au/guides/weekly-money-routine/"
+        },
+        {
+          "title": "Weekly Financial Review Checklist — Complete Checklist | Streamline Projects | Streamline Projects",
+          "url": "https://streamlineprojects.com.au/checklists/weekly-operations/weekly-financial-review"
+        },
+        {
+          "title": "W",
+          "url": "https://gbch.cdn.ngo/media/documents/Preparing_for_the_death_of_someone_close_to_you.pdf"
+        },
+        {
+          "title": "The 30-Minute Weekly Money Check | osNOVA",
+          "url": "https://osnovaops.com/learn/guides/small-business-weekly-finance-checklist/"
+        },
+        {
+          "title": "How to Build a Simple Weekly Money Routine – Heaviside-Solutions",
+          "url": "https://digital.heaviside-solutions.com/blogs/guides/how-to-build-a-simple-weekly-money-routine"
+        },
+        {
+          "title": "Stay calm, cool, and organized under pressure | Stoicism - YouTube",
+          "url": "https://www.youtube.com/watch?v=lmVwLlYeZOc"
+        },
+        {
+          "title": "What's in your weekly money review? Trying to keep mine short enough to actually repeat.",
+          "url": "https://www.reddit.com/r/u_finelo_official/comments/1vhzo9g/whats_in_your_weekly_money_review_trying_to_keep/"
+        },
+        {
+          "title": "HOW TO STAY CALM UNDER PRESSURE by applying STOIC WISDOM - YouTube",
+          "url": "https://www.youtube.com/watch?v=N_7GgxWyHYY"
+        },
+        {
+          "title": "Death anniversary",
+          "url": "https://en.wikipedia.org/wiki/Death_anniversary"
+        },
+        {
+          "title": "Bereavement in Judaism",
+          "url": "https://en.wikipedia.org/wiki/Bereavement_in_Judaism"
+        },
+        {
+          "title": "Mourning",
+          "url": "https://en.wikipedia.org/wiki/Mourning"
+        },
+        {
+          "title": "11 Things to Say When Someone Dies Besides 'I'm Sorry'",
+          "url": "https://time.com/7001462/what-to-say-when-someone-dies/"
+        },
+        {
+          "title": "The Seven-Day Financial Reset: A Simple Plan to Get Control of Your Money, From an Expert",
+          "url": "https://www.kiplinger.com/personal-finance/financial-reset-a-simple-plan-to-get-control-of-your-money"
+        },
+        {
+          "title": "How to Connect With Loved Ones After They Die",
+          "url": "https://time.com/6269254/connecting-with-the-dead-excerpt/"
+        },
+        {
+          "title": "Four Ways to Make Grief More Bearable",
+          "url": "https://www.theatlantic.com/ideas/archive/2023/07/grief-bereavement-loss-recovery/674675/?utm_source=apple_news"
+        },
+        {
+          "title": "Why Pre-Planning Your Funeral Is the Ultimate Final Gift to Your Family",
+          "url": "https://www.kiplinger.com/retirement/estate-planning/pre-planning-your-funeral-is-a-gift-to-your-family"
+        }
+      ]
+    },
+    {
+      "group": "more-domains",
+      "queries": [
+        "strength training busy dads over 40 routine",
+        "how to find purpose in life men midlife",
+        "how to build a legacy for your children",
+        "personal values exercise identity men"
+      ],
+      "sources": [
+        {
+          "title": "I'm a personal trainer over 40, and these are the exercises I do to maintain my hip strength and mobility",
+          "url": "https://www.tomsguide.com/wellness/workouts/im-a-personal-trainer-over-40-and-these-are-the-exercises-i-do-to-maintain-my-hip-strength-and-mobility"
+        },
+        {
+          "title": "4-Day Weight Training Program for Men Over 40 – Part 3 - YouTube",
+          "url": "https://www.youtube.com/watch?v=jh4IFtLtyuc"
+        },
+        {
+          "title": "Personal Values Exercise",
+          "url": "https://static1.squarespace.com/static/577e832037c581b3331d047f/t/636aa67bc12dc0198969c4b4/1667933819703/M5L2_Personal_Values_PDF.pdf"
+        },
+        {
+          "title": "The Best Workout Routine for Dads Over 40 | Jon Hodgson",
+          "url": "https://www.jonhodgson.com/best-workout-routine-for-dads-over-40/"
+        },
+        {
+          "title": "The Busy Dad Strength & Muscle-Building Program · Andy Baker",
+          "url": "https://www.andybaker.com/programs/busy-dad-strength/"
+        },
+        {
+          "title": "4 Day Weight Training Program for Men Over 40 - YouTube",
+          "url": "https://www.youtube.com/watch?v=yf-H83krFSE"
+        },
+        {
+          "title": "Purpose & identity – Men's Midlife Guide",
+          "url": "https://mensmidlife.org/purpose/"
+        },
+        {
+          "title": "Personal Values Inventory",
+          "url": "https://www.airman.af.mil/Portals/17/002%20All%20Products/002%20Course%20and%20Lessons/010_ValuesWaypointsSuccess/Personal%20Values%20Inventory.pdf"
+        },
+        {
+          "title": "Strength training over 40: a free beginner plan and spreadsheet",
+          "url": "https://symmetricstrength.com/programs/strength-training-over-40"
+        },
+        {
+          "title": "Strength Training After 40: A 3-Day Plan for Dads",
+          "url": "https://thefulfilledfather.com/articles/strength-training-after-40-dads"
+        },
+        {
+          "title": "The Best Workout Plan for Men Over 40 to Gain Strength",
+          "url": "https://www.menshealth.com/fitness/a71138086/full-body-workout-over-40/"
+        },
+        {
+          "title": "Building Muscle After 40 For Busy Fathers | The Fit Father Project",
+          "url": "https://www.fitfatherproject.com/building-muscle-after-40-workout-routines/"
+        },
+        {
+          "title": "Strength Training Routine for Over 40s",
+          "url": "https://killermuscle.com/strength-training-routine-for-over-40s/"
+        },
+        {
+          "title": "Here’s How to Find Meaning in Your Midlife Crisis",
+          "url": "https://greatergood.berkeley.edu/article/item/heres_how_to_find_meaning_in_your_midlife_crisis"
+        },
+        {
+          "title": "3-Day Full-Body Strength Routine for Busy Professionals Over 40: 30-45-Minute Workouts – Greatfitness.net",
+          "url": "https://greatfitness.net/3-day-full-body-strength-routine-for-busy-professionals-over-40-30-45-minute-workouts/"
+        },
+        {
+          "title": "The 3 Most Effective Workout Routines For Men Over 40",
+          "url": "https://www.fitfatherproject.com/workout-routines-for-men-over-40/"
+        },
+        {
+          "title": "Explore the guides – Men's Midlife Guide",
+          "url": "https://mensmidlife.org/guides/"
+        },
+        {
+          "title": "Exercise: Understanding My Own Values",
+          "url": "https://www.tuc.org.uk/sites/default/files/2020-07/Exercise%20on%20Values.pdf"
+        },
+        {
+          "title": "THE TOOLS YOU NEED TO BUILD",
+          "url": "https://cdn.muscleandstrength.com/sites/default/files/workouts/gainsafter40.pdf"
+        },
+        {
+          "title": "PERSONAL VALUES",
+          "url": "https://files.eric.ed.gov/fulltext/ED427225.pdf"
+        },
+        {
+          "title": "I asked a personal trainer what the over-40s should prioritize-he shared three non-negotiable exercises for strength and mobility",
+          "url": "https://www.fitandwell.com/exercise/strength-workouts/i-asked-a-personal-trainer-what-the-over-40s-should-prioritize-he-shared-these-three-exercises-are-non-negotiable-exercises-for-strength-and-mobility/"
+        },
+        {
+          "title": "\"Most people over 40 say conventional workouts feel too hard, take too long or leave them injured-this routine solves all three problems,\" says an experienced trainer",
+          "url": "https://www.fitandwell.com/exercise/strength-workouts/most-people-over-40-say-conventional-workouts-feel-too-hard-take-too-long-or-leave-them-injured-this-routine-solves-all-three-problems-says-an-experienced-trainer/"
+        },
+        {
+          "title": "I'm a personal trainer over 40 - I used to skip these 3 exercises, but now I do them regularly to stay strong as I age",
+          "url": "https://www.tomsguide.com/wellness/workouts/im-a-personal-trainer-over-40-i-used-to-skip-these-3-exercises-but-now-i-do-them-regularly-to-stay-strong-as-i-age"
+        }
+      ]
+    }
+  ],
+  "excludedTargets": [
+    "therapy/diagnosis/trauma treatment",
+    "dating or manipulation tactics",
+    "testosterone claims",
+    "personal investment/legal advice",
+    "unreleased calendar/email integrations",
+    "App Store availability before approval"
+  ],
+  "importantCaveats": [
+    "These 120 phrases are a bounded working set, not every possible keyword.",
+    "Grouping and target URLs are proposed ownership, not 120 new pages.",
+    "Existing articles may cover several subtopics; audit overlap before creating pages.",
+    "Brand reviews queries must not result in invented testimonials.",
+    "Health/finance/grief content needs appropriate primary sources and scope.",
+    "Shift-work target needs a closer per-article content review; do not claim the app reads shifts.",
+    "Flexible habit product claims remain withheld until repair released.",
+    "Google AEO eligibility requires normal search accessibility; no guaranteed citations or rankings."
+  ]
+}

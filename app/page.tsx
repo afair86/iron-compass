@@ -3,9 +3,9 @@ import { appSoftwareSchema } from "@/lib/appSchema";
 import { buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Iron Compass AI: Habit and Discipline App for Men",
+  title: "Habit Tracker & Discipline App for Men | Iron Compass AI",
   description:
-    "Iron Compass AI is a habit and discipline app for men: a few daily habits, a journal and one next action, across ten life domains. Start free.",
+    "Build a practical Stoic routine with Iron Compass AI: habit tracking, a private journal and clear next actions across ten life domains. Start free on the web.",
   path: "/",
 });
 

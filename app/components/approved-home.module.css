@@ -446,3 +446,10 @@
 @media(max-width:380px) { .domain {grid-template-columns:112px minmax(0,1fr);padding:16px;} .domain figure {width:112px;} }
 
 .heroCopy > p.appLine { max-width: none; color: var(--ic-subtitle, #e7ba72); font-size: 1rem; }
+
+.guideLinks { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; list-style:none; padding:0; margin:32px 0 0; text-align:left; }
+.guideLinks li { border-top:1px solid var(--ic-border, #647080); padding-top:24px; }
+.guideLinks a { display:inline-block; color:var(--ic-accent-blue, #a6c9e5); font-size:1.15rem; font-weight:600; line-height:1.5; text-underline-offset:.25em; }
+.guideLinks a:focus-visible { outline:2px solid var(--ic-text-heading); outline-offset:4px; }
+.guideLinks p { margin:16px 0 0; color:var(--ic-text-main); line-height:1.7; }
+@media(max-width:760px) { .guideLinks { grid-template-columns:minmax(0,1fr); } }

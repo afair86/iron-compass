@@ -53,11 +53,11 @@ export const griefArticles: HubArticle[] = [
   {
     slug: "rebuilding-after-divorce-for-men",
     path: "/articles/rebuilding-after-divorce-for-men",
-    title: "Rebuilding After Divorce: A Man's Guide to Starting Over",
+    title: "How to Rebuild Your Life After Divorce as a Man",
     description:
       "Rebuild after divorce with practical stability, clear standards and integrity. Daily actions, a weekly review and a longer-term direction.",
     datePublished: "2025-11-29",
-    dateModified: "2026-11-04",
+    dateModified: "2026-11-05",
   },
 ];
 
