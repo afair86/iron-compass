@@ -1,5 +1,16 @@
 # CURRENT HANDOVER
 
+## Photo and inline resource corrections — LIVE, 5 November 2026 at 8:17:15 pm Brisbane, Codex
+
+Production https://ironcompassai.com serves dpl_7EGek3iAxR3fmVWc82mmqMCfA5gr / source50563a8725e9aa1ccb6274eecefac0dd58cea253, branch codex/website-search-20261105, checkout website-relaunch-20261104. Staged privately at iron-compass-7dabu3y7w-adams-projects-26d15070.vercel.app with production environment and no domain assignment;14 authenticated route/asset/redirect/source checks passed, then promoted unchanged. Project prj_fOowaY2ZkZPR56F2Pr3ZArjLBnYM/team team_6NQL6p1c5YCkRtcP1T3dERxN verified. Production still reported previous22afd181 immediately before promotion. Rollback dpl_BKb15pn9dcs5BVWMq2MxaZEHjh5w /22afd1818d62d2a3d9c4f52e104216b9dfcaa4e2. Main remains older. CLI source stamp has metadataConflict=false,worktreeDirty=null,exactCommitBuild=false; no reproducibility claim.
+
+Live public checks: exact new source stamp; About/Plans restored photo present; Purpose page no faulty screenshot or reading-time label; both old TXT URLs follow to inline checklist article content with no raw file. Browser desktop1440 About photo loaded/filter none/all three heads visible/no overflow. Browser390 old daily TXT URL redirects to article#daily-discipline-checklist with styled inline prompts/no overflow. Saved proof: project checkpoints/2026-11-05-inline-checklists/live-restored-founder.png. Viewport reset; live About tab retained. Two generated restored exports are owner-approved; originals preserved. No app screenshot pixels edited: inspected existing strategy-scoreboard replaces faulty image on domain/app overview. App shared-meter formatting patch remains queued locally for next release, not applied/deployed. Apple submission and live app/API/database untouched.
+
+14 tests,TypeScript,changed-file lint,final Next build and119-page/117-indexable/117-sitemap search audit pass. No read-time badges/raw TXT links/faulty screenshot references in generated public pages; same canonical URLs and pricing preserved. Six tool exports now save self-contained branded HTML, validated for content and injection escaping and visually inspected with synthetic data. Print CSS checked; system print/PDF dialog not exercised. Edited article narration hidden rather than serving mismatched recordings; audio regeneration remains separately gated. All paid keyword metrics remain unverified as previously recorded.
+
+Next: wait for owner direction; apply/reconcile/test queued Meter patch in the next approved app release. No further website release is pending from this batch.
+
+
 ## Inline resources, timing labels and founder photo — READY TO STAGE, 5 November 2026 at 8:11:58 pm Brisbane, Codex
 
 Owner requested removal of raw TXT resources, reading-time badges and minute-by-minute exercise budgets; flagged1 modules of8 modules in strategy screenshot; approved restored founder preview after noting glare across his face. Work remains on focused website branch codex/website-search-20261105, checkout website-relaunch-20261104, baseline dcce7ac6810ff5e786b8740444bb240127222ce3. Refetched origin and confirmed branch unchanged. Production remains dpl_BKb15pn9dcs5BVWMq2MxaZEHjh5w/source22afd181 until tested promotion. Marketing project/team unchanged. App/API/native/Apple-review hold persists.
