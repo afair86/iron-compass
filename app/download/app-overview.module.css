@@ -4,6 +4,7 @@
   padding: 2.5rem 0 1rem;
 }
 .hero {
+  scroll-margin-top: 120px;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 4rem;
@@ -115,6 +116,7 @@
   gap: 1.5rem;
 }
 .feature {
+  scroll-margin-top: 120px;
   display: flex;
   flex-direction: column;
   background: #333f4b;
