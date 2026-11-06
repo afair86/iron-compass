@@ -1,5 +1,11 @@
 # CURRENT HANDOVER
 
+## Maintenance branch delivery status — LOCAL COMMIT, PUSH BLOCKED, 6 November 2026, 8:13 pm Brisbane, Codex
+
+The verified dependency/report change is local commit c41be3264750dd529d6556a559cdba5f97a418ab on codex/website-next16-security-20261106, checkout website-next-security-20261106. Automatic approval review rejected the attempted remote push because it mutates GitHub and may trigger a Vercel preview; explicit owner approval for that deployment-triggering push was not present. No workaround, retry, remote branch, PR, preview, main merge, deployment or promotion was performed by this task. Consequently this checkpoint is local only and shared GitHub synchronization is blocked. The existing live-site branch and production remain unchanged. The following verified-check checkpoint and full maintenance report remain current. This follow-up changes documentation only; no additional application tests were needed.
+
+Next: obtain owner approval to push this dedicated branch for review, including any automatic non-production preview. Production deployment/promotion remains separately prohibited without explicit approval.
+
 ## Priority 1 Next.js maintenance — VERIFIED, NOT RELEASED, 6 November 2026, 8:09 pm Brisbane, Codex
 
 Checkout website-next-security-20261106; branch codex/website-next16-security-20261106; base cf60def3c3b821bdd644974da82967fea3147044 from the current live-site branch codex/website-search-20261105. Refetched main remains 997685885f3005c0261575134c057d2a13ba02ef and is older than production. Vercel confirms live dpl_7EGek3iAxR3fmVWc82mmqMCfA5gr/source50563a8725e9aa1ccb6274eecefac0dd58cea253; its build logs already report Next.js16.4.5. This maintenance pins next, eslint-config-next and @next/mdx to16.4.5 (npm stable latest), aligning previously older lint/MDX packages. Changed files only package.json, package-lock.json, docs/NEXT16_MAINTENANCE_20261106.md and this handover relative to base. Site code/design/content/SEO/redirect/proxy configuration unchanged. Commit history identifies the final maintenance commit; source reports/tests were run locally before committing. The focused branch is intended for GitHub review against the live-site branch; no main merge or production release is authorized.
