@@ -67,7 +67,7 @@ export default function ApprovedHome() {
         </div>
       </section>
 
-      <HomeAppSection links={{ today: "/app", habits: "/domains", journal: "/pricing", strategy: "/pricing" }} />
+      <HomeAppSection links={{ today: "/download#app-today", habits: "/download#app-habits", journal: "/download#app-journal", strategy: "/download#app-strategy" }} />
 
       <section className={styles.block} id="philosophy">
         <PhotoFrame

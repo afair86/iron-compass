@@ -369,3 +369,4 @@ html body main .ic-pricing-hero__photo { height: auto; aspect-ratio: 1; }
 html body main .ic-pricing-hero__photo > img:first-child { filter: contrast(1.12) saturate(.94) brightness(.99); }
 .ic-family-caption { margin-top: .75rem; font-size: .8rem; line-height: 1.6; color: #b5c2cf; }
 .ic-family-caption a { text-decoration: underline; text-underline-offset: 4px; }
+:root:has(dialog[data-app-preview][open]) { overflow: hidden; }
