@@ -1,5 +1,13 @@
 # CURRENT HANDOVER
 
+## Maintenance branch delivery — PUSHED FOR REVIEW, 6 November 2026, 8:14 pm Brisbane, Codex
+
+Owner explicitly approved pushing the dedicated branch for review, including automatic non-production previews. Pushed39d1d5c5a8e841ed7af7f989caa9cf71db5baded (dependency change c41be3264750dd529d6556a559cdba5f97a418ab) on codex/website-next16-security-20261106. Draft PR https://github.com/afair86/iron-compass/pull/5 targets codex/website-search-20261105 to keep the maintenance diff separate from the existing live-site/main divergence. The prior push blocker below is resolved. This documentation checkpoint accompanies the same approved branch push; commit history identifies its final SHA. Checkout website-next-security-20261106; previous validation remains unchanged and no application files changed after it.
+
+Vercel automatically started non-production preview dpl_6D3Yar8C9cKjz7op3aSNDSHeXUfa/source39d1d5c at iron-compass-cakszy5wa-adams-projects-26d15070.vercel.app; snapshot BUILDING, not yet preview-QA verified. Rechecked live ironcompassai.com: production remains dpl_7EGek3iAxR3fmVWc82mmqMCfA5gr/source50563a8725e9aa1ccb6274eecefac0dd58cea253. No merge, production deployment or promotion occurred. Local build/lint/regression results and the eight unchanged moderate development-only audit findings are documented in NEXT16_MAINTENANCE_20261106.md.
+
+Next: review draft PR5 and check the final branch preview result. Any production release still needs separate explicit owner approval; do not deploy older main over the live site.
+
 ## Maintenance branch delivery status — LOCAL COMMIT, PUSH BLOCKED, 6 November 2026, 8:13 pm Brisbane, Codex
 
 The verified dependency/report change is local commit c41be3264750dd529d6556a559cdba5f97a418ab on codex/website-next16-security-20261106, checkout website-next-security-20261106. Automatic approval review rejected the attempted remote push because it mutates GitHub and may trigger a Vercel preview; explicit owner approval for that deployment-triggering push was not present. No workaround, retry, remote branch, PR, preview, main merge, deployment or promotion was performed by this task. Consequently this checkpoint is local only and shared GitHub synchronization is blocked. The existing live-site branch and production remain unchanged. The following verified-check checkpoint and full maintenance report remain current. This follow-up changes documentation only; no additional application tests were needed.
