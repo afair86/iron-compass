@@ -1,24 +1,48 @@
 # CURRENT HANDOVER
 
-## Isolated maintenance integration - 9 November 2026, Australia/Brisbane
+## Maintenance integration verified - 9 November 2026, Australia/Brisbane
 
-Assistant: ChatGPT using connected GitHub/Vercel tools, not a Work handoff. Owner authorised continued safe non-production implementation and automated verification. Production release, spending and Apple submission changes remain excluded.
+Assistant: ChatGPT through connected GitHub/Vercel tools, without a Work/Codex handoff. The owner authorised safe non-production implementation and automation. Production releases, spending, advertising publication and Apple submission changes remain excluded.
 
-Branch: `integration/website-maintenance-20261109`. The commit containing this checkpoint identifies the exact source; do not embed a self-referential SHA. No local customer checkout was modified. Local test harness: `/mnt/data/iron-compass-verification`; full repository build is delegated to the existing GitHub Actions runner because this session cannot clone the repository over its network.
+Active candidate: [draft PR #8](https://github.com/afair86/iron-compass/pull/8), branch `integration/website-maintenance-20261109`, targeting `codex/website-search-20261105`, NOT the older main branch. Read the current PR head before continuing. This checkpoint changes documentation only; the runtime, dependencies, workflow and tests are those of tested commit `bcf578df8c49b902728bdb07b7689bdb06397a57`. Any later commit needs its own appropriate checks. Do not treat an older green result as proof for unreviewed changes.
 
-Sources combined, with original history retained as commit parents:
-- Optimisation PR #6: `0a89802ba1dba139aabbee09313cb918a802bd65`.
-- Maintenance PR #5: `8bee2f1c69aae58e279f1b25af3f49956a78d86b`; its exact package manifest, lockfile and maintenance report are reused.
-- Initial verification PR #7: `1df8aee6f6a7bc7150c48e550812328a5c235d44`; verification workflow extended rather than duplicated.
+## Verified evidence
 
-Initial verification PR #7 is now independently confirmed successful: GitHub Actions run `42546994752`, job `128934022610`, passed clean install, production dependency audit, source tests, lint and build. This is evidence for that earlier commit, not the new combined candidate.
+The combined candidate passed GitHub Actions [run 42548938564](https://github.com/afair86/iron-compass/actions/runs/42548938564), job `128939957487`, on Node 24.22.2:
+- Locked dependency installation passed; production dependency audit returned zero published vulnerabilities in that run. This is not a complete security assessment.
+- All 21 tests passed: 14 existing tests and seven new harness tests.
+- Lint passed with zero errors and five pre-existing warnings.
+- Next.js 16.4.5 build and TypeScript passed; 129 generated entries.
+- Existing financial-calculation and shift-routine checks passed.
+- Local HTTP/HTML smoke suite passed: seven key pages, 117 sitemap URLs, 26 redirects, 16 static assets, four screenshot dialogs and matching homepage feature links, source identity, missing-page 404 and three synthetic app-proxy routes. Total 174 local requests; no live login, purchase or customer records touched.
+- Local build source matched bcf578df, metadataConflict=false, exactCommitBuild=true.
+- Source continuity run `42548938575` passed independently.
 
-New work: `.github/workflows/website-verification.yml`, `scripts/ci/website-smoke.mjs`, `scripts/ci/website-smoke.test.mjs`, this checkpoint and `docs/WEBSITE_AUTOMATION_20261109.md`. Prior handover content is preserved byte-for-byte in [the archive](archive/CURRENT_HANDOVER_PRE_INTEGRATION_20261109.md). Existing product changes, imagery, content, SEO and pricing are otherwise preserved from PR #6.
+Vercel preview `dpl_9UgY48SfNe1swN3KgXWvEw1Qv7JT` is READY for bcf578df at `https://iron-compass-huruoyxc7-adams-projects-26d15070.vercel.app`. Authenticated HTTP reads confirmed source-version.json and /app/auth return 200. The app entry returned its expected HTML with app asset paths; no account or form was submitted. Hosted source reports the expected commit and no metadata conflict but worktreeDirty=true/exactCommitBuild=false. Do not describe the hosted build as reproducibly clean; that remains a release-traceability limitation. Deployment Protection was not disabled. The authenticated fetch integration used its temporary deployment access mechanism.
 
-The new harness syntax check and seven self-tests pass locally on Node 22.16.0. CI uses Node 24 to match Vercel's configured major version. CI checks the existing repository tests plus the harness tests, lint, production dependencies, build, sitemap/routes/metadata/assets/redirects and synthetic app proxy. No new npm packages or AI API jobs are added. A GitHub check is a verification signal, not an enforced branch-protection or Vercel release gate.
+## Preserved source and scope
 
-Vercel public app upstream variable `deOpOwG5si8NQEfM` was added only for this integration preview branch. Production variables and secrets were not changed. CI always builds and tests with a loopback-only synthetic upstream, and refuses a manifest pointing app rewrites to a live host.
+Original commits remain parents of the candidate:
+- PR #6 optimisation: `0a89802ba1dba139aabbee09313cb918a802bd65`.
+- PR #5 maintenance: `8bee2f1c69aae58e279f1b25af3f49956a78d86b`; exact package manifest, lockfile and maintenance report reused.
+- PR #7 initial verification: `1df8aee6f6a7bc7150c48e550812328a5c235d44`; its earlier gate also passed in run42546994752.
 
-Production alias was verified before implementation at `dpl_7EGek3iAxR3fmVWc82mmqMCfA5gr`, source `50563a8725e9aa1ccb6274eecefac0dd58cea253`. Main remains older; no main ref, live alias, native build, database, live form, purchase, ad or member record changed. Hosted preview and combined CI results are pending verification at this commit.
+Existing imagery, product text, pricing, homepage structure, routes and runtime changes remain those already reviewed in PR #6. The prior full handover is archived byte-for-byte at [docs/archive/CURRENT_HANDOVER_PRE_INTEGRATION_20261109.md](archive/CURRENT_HANDOVER_PRE_INTEGRATION_20261109.md). No existing branch was overwritten or force-pushed, and no customer computer checkout was modified.
 
-Next action: open/read the combined draft PR, inspect its exact-head Actions result and preview, resolve any test failures on this branch, and report the verified candidate. A production release needs explicit approval for the tested candidate; do not merge to main as a shortcut.
+New automation files: `.github/workflows/website-verification.yml`, `scripts/ci/website-smoke.mjs`, `scripts/ci/website-smoke.test.mjs`. See [WEBSITE_AUTOMATION_20261109.md](WEBSITE_AUTOMATION_20261109.md). CI has read-only repository permissions, SHA-pinned actions, a timeout and duplicate-run cancellation. It performs no deployment and uses a loopback-only synthetic app upstream. No npm dependency or AI API job was added. Existing service allowances still apply to builds/tests; no new subscription or credit purchase was made.
+
+Public app URL variable `PRODUCT_APP_UPSTREAM_URL` was added only to this integration preview branch (variable `deOpOwG5si8NQEfM`). Production variables and credentials were not changed.
+
+## Continuing oversight
+
+The existing Founder Brief, Weekly Intelligence and AI Efficiency Audit schedules were retained. Their prompts now reference this PR/source record and require exact-commit test and deployment evidence, direct integrations first, no repeated build for unchanged code, and clear separation of tested/preview/live states. They remain reporting automations, not autonomous release agents. Business metrics or Apple API data must be labelled unavailable when not actually connected.
+
+## Boundaries and remaining work
+
+Production alias was independently checked at `dpl_7EGek3iAxR3fmVWc82mmqMCfA5gr`, source `50563a8725e9aa1ccb6274eecefac0dd58cea253`; do not substitute the current main branch, which is older. No live alias, production environment, app/API/database, Apple build69, ad or payment was changed.
+
+These checks are NOT enforced branch protection or deployment gates. They run on candidate PR updates; they are not default-branch scheduled production monitoring. HTML checks do not replace browser interaction/accessibility or real subscription tests. Existing PR #6 browser evidence predates this combined build. Five lint warnings and the pre-existing audio-review filesystem-tracing warning remain; do not hide them or force unrelated upgrades to obtain a cosmetically clean report.
+
+Read-only app CI review found main's `.github/workflows/ci.yml` permits `--passWithNoTests` for frontend/API. That is a coverage risk, not evidence that tests are missing. Its iOS TestFlight workflow is manual-dispatch only. No app workflow or native build has been changed; identify the authoritative release source and actual executed tests before modifying them.
+
+Next engineering priorities are hosted source-provenance verification and proportionate browser/regression review before a separately approved production release, then evidence-backed app test coverage. Existing analytics plan and first-update backlog remain authoritative starting points; do not rebuild or re-audit completed work. Keep the original PRs for provenance and avoid merging their changes twice.
