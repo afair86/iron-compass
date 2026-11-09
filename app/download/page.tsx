@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PageShell from "../components/PageShell";
 import AppLaunchStatus from "../components/AppLaunchStatus";
+import AppScreenshot from "../components/AppScreenshot";
 import {
   absoluteUrl,
   buildPageMetadata,
@@ -21,6 +22,7 @@ export const metadata = buildPageMetadata({
 
 const features = [
   {
+    id: "app-habits",
     title: "Keep the standard on a difficult day",
     plan: "Free",
     copy: "A habit needs a version you can still carry out when the day changes. Use Light or Full check-ins, then look at what you actually kept.",
@@ -30,6 +32,7 @@ const features = [
     height: 511,
   },
   {
+    id: "app-journal",
     title: "Put the day on record",
     plan: "Journal Free · AI review Core and Elite",
     copy: "Write what happened in your private journal. On paid plans, AI journal reviews connect the entries to your recorded habits so you have something specific to examine.",
@@ -39,6 +42,7 @@ const features = [
     height: 410,
   },
   {
+    id: "app-preparation",
     title: "Give tomorrow a first move",
     plan: "Core",
     copy: "Name the result that matters and the first move behind it. Today's preparation gives the commitments a place on a timeline, before the day fills itself.",
@@ -48,6 +52,7 @@ const features = [
     height: 697,
   },
   {
+    id: "app-strategy",
     title: "Keep the longer aim in view",
     plan: "Elite",
     copy: "Put one measurable aim into a 90-day strategy. Review the pace, the next checkpoint and the record of what you have done.",
@@ -116,7 +121,7 @@ export default function DownloadPage() {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
       />
       <div className={styles.page}>
-        <section className={styles.hero}>
+        <section className={styles.hero} id="app-today">
           <div className={styles.heroCopy}>
             <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
               <Link href="/">Home</Link>
@@ -199,19 +204,20 @@ export default function DownloadPage() {
           </p>
           <div className={styles.featureGrid}>
             {features.map((feature) => (
-              <article key={feature.title} className={styles.feature}>
+              <article key={feature.title} id={feature.id} className={styles.feature}>
                 <div className={styles.featureCopy}>
                   <p className={styles.plan}>{feature.plan}</p>
                   <h3>{feature.title}</h3>
                   <p>{feature.copy}</p>
                 </div>
                 <figure>
-                  <Image
+                  <AppScreenshot
+                    title={feature.title}
+                    plan={feature.plan}
                     src={feature.src}
                     alt={feature.alt}
                     width={feature.width}
                     height={feature.height}
-                    sizes="(min-width: 900px) 320px, 75vw"
                   />
                 </figure>
               </article>

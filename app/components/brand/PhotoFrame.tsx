@@ -29,11 +29,13 @@ export default function PhotoFrame({
       <img
         src={src}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         className={cover ? styles.photoCover : styles.photo}
         style={cover || compact ? { objectPosition: resolvedPosition } : undefined}
       />
       {showMark ? (
-        <img src="/images/brand/compass-mark.png" alt="" className={styles.mark} />
+        <img src="/images/brand/compass-mark.png" alt="" loading="lazy" decoding="async" className={styles.mark} />
       ) : null}
     </figure>
   );

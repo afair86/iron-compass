@@ -1,0 +1,18 @@
+.preview { width: 100%; text-align: center; }
+.open { display: inline-flex; max-width: 100%; flex-direction: column; align-items: center; gap: 12px; border-radius: 10px; }
+.open:focus-visible { outline: 2px solid #a6c9e5; outline-offset: 6px; }
+.hint { font-size: 0.875rem; min-height: 44px; display: flex; align-items: center; }
+.dialog { position: fixed; inset: 0; width: min(960px, calc(100% - 24px)); max-height: calc(100dvh - 24px); margin: auto; padding: 20px; overflow: auto; border: 1px solid #647587; border-radius: 14px; background: #262c34; color: #f0f2f5; }
+.dialog::backdrop { background: rgb(2 12 28 / 85%); }
+.toolbar { display: flex; align-items: start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.toolbar h2 { font-size: 1.1rem; line-height: 1.4; margin: 0 0 8px; }
+.toolbar p { color: #b4becb; font-size: 0.85rem; margin: 0; }
+.toolbar button { flex-shrink: 0; min-height: 44px; padding: 8px 16px; border: 1px solid #a6c9e5; border-radius: 8px; color: #d5dce6; background: transparent; cursor: pointer; }
+.toolbar button:focus-visible { outline: 2px solid #a6c9e5; outline-offset: 3px; }
+.dialog .fullImage { display: block; width: auto; max-width: 100%; height: auto; max-height: none; margin: 0 auto; border-radius: 8px; }
+@media (prefers-reduced-motion: no-preference) {
+  .open { transition: opacity 160ms ease; }
+  .open:hover { opacity: 0.9; }
+  .dialog[open] { animation: screen-preview-in 140ms ease-out; }
+  @keyframes screen-preview-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+}
