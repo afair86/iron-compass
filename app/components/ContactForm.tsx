@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { PublicFormTimeoutError, submitPublicForm, submissionError } from "@/lib/formResponse";
+import FormRecoveryNotice from "./FormRecoveryNotice";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -40,7 +41,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form action="/api/contact" method="post" onSubmit={handleSubmit} aria-busy={loading} className="w-full max-w-xl space-y-3 text-left">
+    <form action="/api/contact" method="post" onSubmit={handleSubmit} aria-busy={loading} aria-describedby={error ? "contact-submission-error" : undefined} className="w-full max-w-xl space-y-3 text-left">
       <noscript><p>This form needs JavaScript. You can also email adam.fairclough86@gmail.com.</p></noscript>
       <label className="block text-sm" htmlFor="contact-name">
         Name
@@ -82,7 +83,7 @@ export default function ContactForm() {
           className="mt-1 w-full rounded-2xl border border-[var(--ic-card-border)] bg-[rgba(7,12,22,0.65)] px-5 py-3 text-base text-[var(--ic-text-heading)]"
         />
       </label>
-      {error ? <p role="alert" className="text-sm text-red-300">{error}</p> : null}
+      {error ? <FormRecoveryNotice id="contact-submission-error" error={error} kind="contact" /> : null}
       <button type="submit" disabled={loading} className="ic-btn-primary text-[0.62rem] disabled:opacity-60">
         {loading ? "Sending…" : "Send message"}
       </button>

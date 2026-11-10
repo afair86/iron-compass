@@ -1,0 +1,19 @@
+# Additive customer-experience execution
+
+11November2026. This website change continues the10Novemberreleased source; it does not restart the completed website work, change pricing, collect analytics or affect app/Apple releases.
+
+The owner’s expanded framework is added in `.cursor/rules/09-continuous-customer-improvement.mdc`. The private local master extension retains46app checks,230website checks, all original fields/evidence/history, nine original IC backlog IDs and46decision/closure rows. Hash/deep-equality validation passes, including negative tests rejecting a deleted check or deleted acceptance criterion. It adds26unique controls, six standards and17review questions per legacy check. This is recovered-source coverage verification, not proof all302checks pass. The unrecovered interview and three unsynced project-source gaps are explicit. Private raw snapshots remain outside this public repository.
+
+Original execution/status authorities remain unchanged. Conditional Green/Amber authority is recorded with all ten release safeguards, while Red, Apple, held credentials, classification submissions and app ownership boundaries remain. The existing Friday09:00Brisbane review was updated additively without dropping prior review/monthly/quarterly requirements or changing its schedule.
+
+## Customer-facing improvement
+
+Contact and optional newsletter errors now retain the server's truthful message and add a next action: review retained values, retry explicitly, or use the existing support route. Error descriptions are associated with each form; signup field IDs remain distinct even if components share a source label. No new outbound request, automatic retry, account action, permission, tracking event or service was added. Successful acknowledgement, input state and the25sbounded request behaviour remain unchanged.
+
+This applies the customer standards through a concrete service-recovery improvement. It adapts [Disney Institute's deliberate service-design principle](https://www.disneyinstitute.com/about/expertise/) without copying visual IP or claiming an endorsement. The existing [Five Keys](https://disneyconnect.com/app/uploads/2024/02/fact_sheet_disneyland_2024_Q1.pdf) inform safety/courtesy/inclusion/presentation/efficiency; actual product acceptance still needs scoped testing.
+
+Risk classification: Green — small, reversible website-only recovery/accessibility refinement, no new commercial promise or sensitive data handling. Rollback: revert the customer-recovery commit or restore the previously verified website deployment; do not roll back the separate app. Production deployment is conditional on all release gates, including final source/CI/browser/monitoring/rollback checks. A passing local build alone is insufficient.
+
+Success criteria: a failed/ambiguous response never creates a success state; fictional values remain available; one failure triggers no automatic retry; help is keyboard-reachable and uses the existing destination; explicit retry can succeed only on actual positive acknowledgement; no mobile overflow; page metadata/redirects/app integration/dependencies remain unchanged. These tests measure recovery behaviour, not satisfaction, retention or conversion uplift. Added recurring service cost:$0; no dependencies added.
+
+Broader customer/commercial scorecards remain unavailable unless supported by actual sourced events/cohorts. Mandatory safety/operational work is excluded from the80%discretionary customer-effort target; no measured80%achievement is asserted without a reliable ledger. Customer feedback and ecosystem ideas need evidence, minimum experiments, success criteria and stop conditions. A self-contained website→app handoff is saved with the private master extension; no automatic receipt is claimed.

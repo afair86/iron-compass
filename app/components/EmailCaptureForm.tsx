@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { PublicFormTimeoutError, submitPublicForm, submissionError } from "@/lib/formResponse";
+import FormRecoveryNotice from "./FormRecoveryNotice";
 
 type EmailCaptureFormProps = {
   source?: string;
@@ -18,6 +19,8 @@ export default function EmailCaptureForm({
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const fieldId = useId();
+  const errorId = `${fieldId}-error`;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -52,14 +55,14 @@ export default function EmailCaptureForm({
   }
 
   return (
-    <form action="/api/subscribe" method="post" onSubmit={handleSubmit} aria-busy={loading} className="w-full space-y-3">
+    <form action="/api/subscribe" method="post" onSubmit={handleSubmit} aria-busy={loading} aria-describedby={error ? errorId : undefined} className="w-full space-y-3">
       <noscript><p>Enable JavaScript to use this signup form. Your email has not been submitted.</p></noscript>
       <div className="flex flex-col sm:flex-row gap-4">
-        <label htmlFor={`email-${source}`} className="sr-only">
+        <label htmlFor={fieldId} className="sr-only">
           Email address
         </label>
         <input
-          id={`email-${source}`}
+          id={fieldId}
           name="email"
           autoComplete="email"
           type="email"
@@ -78,7 +81,7 @@ export default function EmailCaptureForm({
           {loading ? "Submitting…" : buttonLabel}
         </button>
       </div>
-      {error ? <p role="alert" className="text-sm text-red-300 ic-align-center">{error}</p> : null}
+      {error ? <FormRecoveryNotice id={errorId} error={error} kind="signup" /> : null}
     </form>
   );
 }
