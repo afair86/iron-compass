@@ -2,6 +2,8 @@
 
 ## 10 November 2026 — authorised website safety release candidate
 
+Hosted diagnostics now confirm the remaining modification is `vercel.json` formatting only (`semanticMatch:true`, no changed top-level keys). Prebuild restores committed bytes only if parsed JSON is identical; changed routing or unrelated dirty files remain failures, covered by a synthetic Git fixture test. Real env files remain excluded. CLI deployment helper now passes its existing token via environment only, never process arguments. These are website build/release safeguards, with no app/runtime routing change.
+
 The template exception removes the observed `.env.example` deletion, confirmed by the next build's zero ignored files, but source still reports dirty. Do not call that issue resolved. Add build-only Git status/path diagnostics (no file contents or environment values) to identify the remaining source mutation before production promotion.
 
 First clean release commit `1f424a63faeff68e0d2caa410acdf8d69d819e09` passed Linux verification run42740421518 (51tests, audit, lint, build, calculations and198HTTPchecks). Protected preview `dpl_2sYWoJyM2TfJ72wJU9EonCP59tRw` is READY and source matches, but its stamp remains dirty. Build logs identify the one removed tracked file as `.env.example`, excluded by `.vercelignore`. Add an exact exception for that blank, non-secret template while retaining `.env*` exclusion for real configuration; then verify clean source on the rebuilt hosted artifact. The earlier preview is not the release artifact. No public traffic/app/Apple change has occurred.

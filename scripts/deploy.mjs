@@ -95,5 +95,6 @@ delete process.env.VERCEL_OIDC_TOKEN;
 process.env.VERCEL_TOKEN = token;
 
 run("npm", ["run", "build"], "build");
-run("npx", ["vercel", "--prod", "--yes", "--token", token], "deploy");
+// Vercel reads VERCEL_TOKEN from env; never expose it in process arguments.
+run("npx", ["vercel", "--prod", "--yes"], "deploy");
 console.log("\nDeploy complete. Production: https://ironcompassai.com\n");

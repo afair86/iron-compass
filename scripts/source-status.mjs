@@ -4,6 +4,19 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+/** Vercel reformats this tracked file; restore bytes only when parsed config is identical. */
+export function restoreEquivalentHostedConfig(root, env = process.env) {
+  if (env.VERCEL !== '1') return false;
+  try {
+    const committed = execFileSync('git', ['-C', root, 'show', 'HEAD:vercel.json'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    const path = resolve(root, 'vercel.json');
+    const current = readFileSync(path, 'utf8');
+    if (current === committed || JSON.stringify(JSON.parse(current)) !== JSON.stringify(JSON.parse(committed))) return false;
+    writeFileSync(path, committed);
+    return true;
+  } catch { return false; }
+}
+
 export function inspectSource(root, env = process.env) {
   const git = (...args) => {
     try { return execFileSync('git', ['-C', root, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); }
@@ -60,6 +73,9 @@ async function main() {
   const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
   const args = process.argv.slice(2);
   const value = flag => args.includes(flag) ? args[args.indexOf(flag) + 1] : undefined;
+  if (args.includes('--write') && restoreEquivalentHostedConfig(root)) {
+    console.log('Restored committed routing config formatting; parsed configuration unchanged.');
+  }
   const source = inspectSource(root);
   if (args.includes('--check') && (!source.sourceCommit || source.metadataConflict)) {
     throw new Error('Source identity is missing or conflicts with the checkout.');
