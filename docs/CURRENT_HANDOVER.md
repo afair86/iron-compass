@@ -1,5 +1,17 @@
 # CURRENT HANDOVER
 
+## 10 November 2026 — website safety release live (current)
+
+The owner-authorised website-only release is live at https://ironcompassai.com. Production deployment `dpl_8ruQDPfVUea9hY3W22Z1z7PPpSby` serves exact source `04f1d544043277f9b6f0fe9660a402cc3f1b77c1` on `release/website-safety-20261110`, builtAt2026-11-10T02:18:14.715Z, worktreeDirty=false, metadataConflict=false, exactCommitBuild=true. This checkpoint is documentation after release; do not confuse its newer branch head with the live runtime commit. Main was not merged or deployed. Previous preparation notes below are historical.
+
+Exact-commit Linux verification [run42741488147](https://github.com/afair86/iron-compass/actions/runs/42741488147) passes52tests, locked installation, production audit, lint(0errors/5existingwarnings),build/TypeScript, calculations and198HTTPchecks. Protected preview `dpl_DRk5qRmvJa8LRsKUCyxGgB1CuoyL`, staged production and live domain each pass299hosted records:117publicpages,169assets,anonymousapp/assets,reviewnoindex,404and invalid-only form rejections. Public indexable pages do not inherit preview noindex. Browser checks cover dialog/Escape/focusreturn, mobilemenu/pricing,livehomewidth390/nooverflow/no brokenloadedimages, andStartfree→Sign in→home. No real signup/contact/reset/login/purchase/OAuth action.
+
+App separation verified: existing app alias still points to `dpl_C4aT41aYohywsLBMeP11Ut2u2vJk`, matching before release. AppJS/CSSchecksums unchanged, separateAPIhealth200before/after, www308preservespath/query. No app/API/database/auth/billing/native/credential/Apple submission change or key access occurred. Approved website design/prices/imagery and production app destination preserved. Domain-classification request remains unsent.
+
+Website automatic custom-domain assignment is disabled, so future builds require explicit promotion; preview protection is preserved. The public app URL variable is branch-preview-only and matches the existing production destination. Production runtime variables were retained and a production-context artifact was tested before moving traffic. Installation is locked to npmci. Source-provenance repair includes only the blank template and equality-guarded routing formatting correction; real dirty/unknown changes still fail exact-source tests.
+
+Rollback: website `dpl_7EGek3iAxR3fmVWc82mmqMCfA5gr` / reported source50563a8725e9aa1ccb6274eecefac0dd58cea253. No rollback was needed or rehearsed against live visitors. Private account/provider persistence and actual Apple review outcome are not certified here. Next: continue only evidence-backed website maintenance from this release branch; preserve app/Apple holds and manual stage→verify→promote workflow. Detailed local audit/raw evidence remains outside this public release checkout.
+
 ## 10 November 2026 — authorised website safety release candidate
 
 Hosted diagnostics now confirm the remaining modification is `vercel.json` formatting only (`semanticMatch:true`, no changed top-level keys). Prebuild restores committed bytes only if parsed JSON is identical; changed routing or unrelated dirty files remain failures, covered by a synthetic Git fixture test. Real env files remain excluded. CLI deployment helper now passes its existing token via environment only, never process arguments. These are website build/release safeguards, with no app/runtime routing change.
