@@ -1,5 +1,7 @@
 name: Website verification gates
 on:
+  push:
+    branches: [release/website-safety-20261110]
   pull_request:
   workflow_dispatch:
 permissions:

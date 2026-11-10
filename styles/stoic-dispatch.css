@@ -212,7 +212,7 @@
 .ic-listen__error {
   margin: 0.55rem 0 0;
   font-size: 0.82rem;
-  color: var(--ic-ember);
+  color: #fca5a5;
 }
 
 .ic-listen__progress {
@@ -893,7 +893,7 @@
 }
 
 .ic-routine__error {
-  color: var(--ic-ember);
+  color: #fca5a5;
   font-size: 0.9rem;
 }
 
@@ -958,6 +958,11 @@
   }
 
   /* Print checklist mode: only the generated routine (multi-page safe). */
+  body.ic-printing-routine > header,
+  body.ic-printing-routine .ic-board-hero,
+  body.ic-printing-routine .ic-app-value,
+  body.ic-printing-routine .ic-related-reading,
+  body.ic-printing-routine .ic-dispatch-body > p,
   body.ic-printing-routine .ic-dispatch-hero,
   body.ic-printing-routine .ic-dispatch-prose,
   body.ic-printing-routine .ic-routine__header,

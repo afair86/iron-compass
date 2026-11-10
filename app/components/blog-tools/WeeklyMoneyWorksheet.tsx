@@ -5,6 +5,7 @@ import EmailCaptureForm from "@/app/components/EmailCaptureForm";
 import {
   downloadBrandedChecklist,
   formatMoney,
+  isCalculableMoney,
   monthlyToWeekly,
   parseMoney,
   printToolResult,
@@ -85,13 +86,20 @@ export default function WeeklyMoneyWorksheet() {
     return null;
   };
 
+  const amountsError = validateAmounts(income, "income") ||
+    validateAmounts(essentials, "essentials") || validateAmounts(optional, "optional spending");
+  const totalsAreSafe = Object.values(totals).every(isCalculableMoney);
+  const resultReady = ready && !amountsError && totalsAreSafe && Boolean(nextAction.trim());
+
   const build = () => {
-    const msg =
-      validateAmounts(income, "income") ||
-      validateAmounts(essentials, "essentials") ||
-      validateAmounts(optional, "optional spending");
+    const msg = amountsError;
     if (msg) {
       setError(msg);
+      setReady(false);
+      return;
+    }
+    if (!totalsAreSafe) {
+      setError("These totals are too large to calculate reliably. Reduce the amounts and try again.");
       setReady(false);
       return;
     }
@@ -263,7 +271,7 @@ export default function WeeklyMoneyWorksheet() {
         </button>
       </div>
 
-      {ready ? (
+      {resultReady ? (
         <div className="space-y-5" style={{ marginTop: "1.25rem" }}>
           <article className="ic-routine__result" aria-label="Money checklist">
             <p className="ic-print-checklist-label">Iron Compass AI · Weekly money checklist</p>

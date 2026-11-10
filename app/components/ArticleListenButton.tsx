@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
+import { audioPlaybackError } from "@/lib/audioPlayback";
 
 type ArticleListenButtonProps = {
   title: string;
@@ -168,8 +169,9 @@ export default function ArticleListenButton({
       if (!audio) return;
       await audio.play();
       setPlaying(true);
-    } catch {
-      setError("Tap play again — browsers sometimes block the first attempt.");
+    } catch (failure) {
+      const message = audioPlaybackError(failure);
+      if (message) setError(message);
       setPlaying(false);
     } finally {
       setLoading(false);
@@ -266,9 +268,10 @@ export default function ArticleListenButton({
                   step={0.1}
                   value={Math.min(current, duration || 0)}
                   onChange={(e) => onSeek(Number(e.target.value))}
+                  aria-valuetext={`${formatTime(current)} of ${formatTime(duration)}`}
                 />
               </div>
-              {error ? <p className="ic-listen__error">{error}</p> : null}
+              {error ? <p className="ic-listen__error" role="alert">{error}</p> : null}
             </div>
           ) : null}
         </div>
@@ -335,7 +338,7 @@ export default function ArticleListenButton({
         </div>
       </div>
 
-      {error ? <p className="ic-listen__error">{error}</p> : null}
+      {error ? <p className="ic-listen__error" role="alert">{error}</p> : null}
     </>
   );
 
@@ -376,6 +379,7 @@ export default function ArticleListenButton({
             value={Math.min(current, duration || 0)}
             onChange={(e) => onSeek(Number(e.target.value))}
             aria-label="Playback position"
+            aria-valuetext={`${formatTime(current)} of ${formatTime(duration)}`}
           />
         </div>
       ) : null}

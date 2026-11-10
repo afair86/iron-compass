@@ -14,6 +14,7 @@ export default function PromptBuilder() {
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
   const [ready, setReady] = useState(false);
+  const resultReady = ready && Boolean(task.trim() && context.trim() && constraints.trim() && output.trim() && verification.trim());
 
   const prompt = useMemo(() => {
     return [
@@ -146,7 +147,7 @@ export default function PromptBuilder() {
         </button>
       </div>
 
-      {ready ? (
+      {resultReady ? (
         <div className="space-y-5" style={{ marginTop: "1.25rem" }}>
           <article className="ic-routine__result" aria-label="Built prompt">
             <p className="ic-print-checklist-label">Iron Compass AI · Prompt builder (not AI output)</p>

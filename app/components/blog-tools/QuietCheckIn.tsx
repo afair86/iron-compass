@@ -23,6 +23,7 @@ export default function QuietCheckIn() {
   const [reviewDate, setReviewDate] = useState("");
   const [error, setError] = useState("");
   const [ready, setReady] = useState(false);
+  const resultReady = ready && Boolean(value.trim() && situation.trim() && nextAction.trim() && reviewDate.trim());
 
   const toggleRole = (role: string) => {
     setRoles((prev) => (prev.includes(role) ? prev.filter((r) => r !== role) : [...prev, role]));
@@ -200,7 +201,7 @@ export default function QuietCheckIn() {
         </button>
       </div>
 
-      {ready ? (
+      {resultReady ? (
         <div className="space-y-5" style={{ marginTop: "1.25rem" }}>
           <article className="ic-routine__result" aria-label="Quiet check-in summary">
             <p className="ic-print-checklist-label">Iron Compass AI · Quiet check-in (action summary)</p>

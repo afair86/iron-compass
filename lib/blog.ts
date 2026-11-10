@@ -100,6 +100,7 @@ export function getAllPosts(): PostMeta[] {
  * - content: string (MDX content without frontmatter)
  */
 export function tryGetPostBySlug(slug: string): { meta: PostMeta; content: string } | null {
+  if (!isPublicBlogSlug(slug)) return null;
   if (EXCLUDED_SLUGS.has(slug) || REDIRECTED_SLUGS.has(slug)) return null;
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
   if (!fs.existsSync(fullPath)) return null;
@@ -111,6 +112,7 @@ export function tryGetPostBySlug(slug: string): { meta: PostMeta; content: strin
 }
 
 export function getPostBySlug(slug: string): { meta: PostMeta; content: string } {
+  if (!isPublicBlogSlug(slug)) throw new Error('Invalid blog slug.');
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
   if (!fs.existsSync(fullPath)) {
     throw new Error(`Blog post not found: ${slug}`);
@@ -136,6 +138,11 @@ export function getPostBySlug(slug: string): { meta: PostMeta; content: string }
   if (typeof data.imageCredit === "string") meta.imageCredit = data.imageCredit;
   if (typeof data.practicalTool === "string") meta.practicalTool = data.practicalTool;
   return { meta, content };
+}
+
+/** Public article IDs are single lowercase kebab-case names, never filesystem paths. */
+function isPublicBlogSlug(slug: string): boolean {
+  return typeof slug === 'string' && slug.length <= 200 && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug);
 }
 
 export type FaqEntry = {

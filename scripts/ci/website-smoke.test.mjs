@@ -15,6 +15,20 @@ test('Incorrect canonical host or noindex fails', () => {
   assert.throws(() => checkPage(html.replace('https://ironcompassai.com/', 'https://example.com/'), '/'), /canonical host/);
   assert.throws(() => checkPage(html.replace('</head>', '<meta name="robots" content="noindex"></head>'), '/'), /noindex/);
 });
+
+test('Each page must canonicalise to its own path rather than merely the right host', () => {
+  assert.throws(() => checkPage(html, '/pricing'), /canonical path/);
+  const pricing = html.replace('https://ironcompassai.com/', 'https://ironcompassai.com/pricing');
+  assert.doesNotThrow(() => checkPage(pricing, '/pricing'));
+  assert.doesNotThrow(() => checkPage(pricing, '/pricing/?source=fixture'));
+});
+
+test('Root-domain and start destinations cannot silently resolve under /blog',()=>{
+  for(const href of ['domains/purpose','domains/finance-provision','start','start#common-questions']){
+    assert.throws(()=>checkPage(html.replace('</body>',`<a href="${href}">Guide</a></body>`),'/'),/incorrectly relative/);
+  }
+  assert.doesNotThrow(()=>checkPage(html.replace('</body>','<a href="/domains/purpose-direction">Guide</a><a href="/start">Start</a></body>'),'/'));
+});
 test('Malformed structured data fails', () => assert.throws(() => checkPage(html.replace('{"@type":"WebPage"}', '{invalid}'), '/')));
 test('Sitemap returns local paths and rejects external, empty and duplicate entries', () => {
   assert.deepEqual(sitemapPaths('<loc>https://ironcompassai.com/a?x=1&amp;y=2</loc>'), ['/a?x=1&y=2']);

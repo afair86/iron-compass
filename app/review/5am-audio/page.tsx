@@ -13,10 +13,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-function readText(rel: string) {
-  return fs.readFileSync(path.join(process.cwd(), rel), "utf8");
-}
-
 function sampleExists(name: string) {
   return fs.existsSync(path.join(process.cwd(), "public", "audio", "blog", "_samples", name));
 }
@@ -108,9 +104,9 @@ const SCRIPT_SAMPLES = [
 ] as const;
 
 export default function FiveAmAudioReviewPage() {
-  const draftRaw = readText("content/blog/_reviews/5am-standard/01-article-draft.mdx");
+  const draftRaw = fs.readFileSync(path.join(process.cwd(), "content/blog/_reviews/5am-standard/01-article-draft.mdx"), "utf8");
   const { content: draftBody } = matter(draftRaw);
-  const narration = readText("content/blog/_reviews/5am-standard/02-narration-script.md")
+  const narration = fs.readFileSync(path.join(process.cwd(), "content/blog/_reviews/5am-standard/02-narration-script.md"), "utf8")
     .split("\n")
     .filter((line) => !line.startsWith("#"))
     .join("\n")

@@ -25,6 +25,7 @@ export default function InfluenceCheck() {
   const [nextAction, setNextAction] = useState("");
   const [error, setError] = useState("");
   const [ready, setReady] = useState(false);
+  const resultReady = ready && Boolean(request.trim() && pressure.trim() && purposeClear && infoHonest && canQuestion && canRefuse && alignsValues && nextAction.trim());
 
   const build = () => {
     if (!request.trim()) {
@@ -197,7 +198,7 @@ export default function InfluenceCheck() {
         </button>
       </div>
 
-      {ready ? (
+      {resultReady ? (
         <div className="space-y-5" style={{ marginTop: "1.25rem" }}>
           <article className="ic-routine__result" aria-label="Influence Check summary">
             <p className="ic-print-checklist-label">Iron Compass AI · Influence Check (not a diagnosis)</p>

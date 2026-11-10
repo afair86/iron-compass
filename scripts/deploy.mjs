@@ -6,6 +6,8 @@ import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
+import { inspectSource } from "./source-status.mjs";
+import { requireCleanReleaseSource } from "./ci/release-source.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const checkOnly = process.argv.includes("--check");
@@ -37,8 +39,8 @@ function fail(message) {
 }
 
 function run(cmd, args, label) {
-  const safeArgs = args.map((a) =>
-    typeof a === "string" && a.startsWith("vcp_") ? "vcp_***" : a,
+  const safeArgs = args.map((a, index) =>
+    args[index - 1] === "--token" ? "[redacted]" : a,
   );
   console.log(`\n> ${label}: ${cmd} ${safeArgs.join(" ")}\n`);
   const result = spawnSync(cmd, args, {
@@ -49,6 +51,12 @@ function run(cmd, args, label) {
   });
   if (result.error) fail(result.error.message);
   if (result.status !== 0) process.exit(result.status ?? 1);
+}
+
+// Reject dirty/unknown/conflicting release inputs before reading credentials.
+if (!checkOnly) {
+  try { requireCleanReleaseSource(inspectSource(root)); }
+  catch (error) { fail(error.message); }
 }
 
 loadEnvLocal();
@@ -73,7 +81,7 @@ See DEPLOYMENT.md → "Deploy from Cursor (agent)".
 const linked = existsSync(resolve(root, ".vercel", "project.json"));
 if (checkOnly) {
   console.log("Deploy setup OK.");
-  console.log(`  VERCEL_TOKEN: set (${token.slice(0, 6)}…)`);
+  console.log("  VERCEL_TOKEN: set");
   console.log(`  Vercel project link: ${linked ? "yes (.vercel/project.json)" : "missing — run: npx vercel link"}`);
   process.exit(0);
 }

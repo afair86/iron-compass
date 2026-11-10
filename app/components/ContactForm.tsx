@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PublicFormTimeoutError, submitPublicForm, submissionError } from "@/lib/formResponse";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -18,37 +19,35 @@ export default function ContactForm() {
     setError(null);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
-      });
-      const data = (await response.json()) as { error?: string };
+      const response = await submitPublicForm("/api/contact", { name, email, message });
+      const failure = submissionError(response.responseOk, response.body, "Could not confirm that message. Try again shortly.");
 
-      if (!response.ok) {
-        setError(data.error ?? "Could not send that. Try again shortly.");
+      if (failure) {
+        setError(failure);
         return;
       }
 
       setSubmitted(true);
-    } catch {
-      setError("Network error. Check your connection and try again.");
+    } catch (error) {
+      setError(error instanceof PublicFormTimeoutError ? error.message : "Network error. Check your connection and try again.");
     } finally {
       setLoading(false);
     }
   }
 
   if (submitted) {
-    return <p className="text-sm text-[var(--ic-text-heading)]">Message sent. We will reply by email.</p>;
+    return <p role="status" className="text-sm text-[var(--ic-text-heading)]">Message sent. We will reply by email.</p>;
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-xl space-y-3 text-left">
+    <form action="/api/contact" method="post" onSubmit={handleSubmit} aria-busy={loading} className="w-full max-w-xl space-y-3 text-left">
+      <noscript><p>This form needs JavaScript. You can also email adam.fairclough86@gmail.com.</p></noscript>
       <label className="block text-sm" htmlFor="contact-name">
         Name
         <input
           id="contact-name"
           name="name"
+          autoComplete="name"
           required
           value={name}
           onChange={(event) => setName(event.target.value)}
@@ -61,6 +60,7 @@ export default function ContactForm() {
         <input
           id="contact-email"
           name="email"
+          autoComplete="email"
           type="email"
           required
           value={email}
@@ -82,7 +82,7 @@ export default function ContactForm() {
           className="mt-1 w-full rounded-2xl border border-[var(--ic-card-border)] bg-[rgba(7,12,22,0.65)] px-5 py-3 text-base text-[var(--ic-text-heading)]"
         />
       </label>
-      {error ? <p className="text-sm text-red-300">{error}</p> : null}
+      {error ? <p role="alert" className="text-sm text-red-300">{error}</p> : null}
       <button type="submit" disabled={loading} className="ic-btn-primary text-[0.62rem] disabled:opacity-60">
         {loading ? "Sending…" : "Send message"}
       </button>

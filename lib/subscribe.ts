@@ -17,6 +17,18 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+async function sendToProvider(url: string, options: RequestInit): Promise<Response> {
+  const signal = AbortSignal.timeout(8000);
+  try {
+    return await fetch(url, { ...options, signal, redirect: "error" });
+  } catch {
+    throw new SubscribeError(
+      "Could not add you to the list. Try again shortly.",
+      signal.aborted ? 504 : 502,
+    );
+  }
+}
+
 /** Persists a subscribe request via configured provider (webhook or Resend audience). */
 export async function subscribeEmail(email: string, source = "website"): Promise<SubscribeResult> {
   const normalized = email.trim().toLowerCase();
@@ -27,7 +39,7 @@ export async function subscribeEmail(email: string, source = "website"): Promise
 
   const webhookUrl = process.env.SUBSCRIBE_WEBHOOK_URL;
   if (webhookUrl) {
-    const response = await fetch(webhookUrl, {
+    const response = await sendToProvider(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -47,7 +59,7 @@ export async function subscribeEmail(email: string, source = "website"): Promise
   const resendKey = process.env.RESEND_API_KEY;
   const audienceId = process.env.RESEND_AUDIENCE_ID;
   if (resendKey && audienceId) {
-    const response = await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
+    const response = await sendToProvider(`https://api.resend.com/audiences/${audienceId}/contacts`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${resendKey}`,

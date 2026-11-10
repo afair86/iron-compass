@@ -8,7 +8,12 @@ export function parseMoney(raw: string): number | null {
   if (!cleaned) return null;
   if (!/^-?\d+(\.\d{1,2})?$/.test(cleaned)) return null;
   const n = Number(cleaned);
-  return Number.isFinite(n) ? n : null;
+  return isCalculableMoney(n) ? n : null;
+}
+
+/** Keep amounts/totals within JavaScript's safe minor-unit range. */
+export function isCalculableMoney(value: number): boolean {
+  return Number.isFinite(value) && Number.isSafeInteger(Math.round(value * 100));
 }
 
 /** Convert weekly amount to monthly equivalent (52 weeks / 12 months). */

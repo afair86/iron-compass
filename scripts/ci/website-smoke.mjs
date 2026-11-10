@@ -33,6 +33,13 @@ export function checkPage(html, path) {
   const canonical = links.find((link) => link.rel === 'canonical');
   assert(canonical?.href, `${path}: missing canonical`);
   assert.equal(new URL(canonical.href).origin, publicOrigin, `${path}: canonical host changed`);
+  const normalisePath = (value) => new URL(value, publicOrigin).pathname.replace(/\/$/, '') || '/';
+  assert.equal(normalisePath(canonical.href), normalisePath(path), `${path}: canonical path changed`);
+  const publicMarkup=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'');
+  for (const anchor of publicMarkup.matchAll(/<a\b[^>]*>/gi)) {
+    const href=attributes(anchor[0]).href;
+    if (href) assert(!/^(?:domains\/|start(?:[?#]|$))/.test(href), `${path}: site-root link incorrectly relative: ${href}`);
+  }
   for (const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
     if (attributes(script[1]).type === 'application/ld+json') JSON.parse(script[2]);
   }
@@ -48,7 +55,16 @@ export function checkUpstream(manifest) {
 export async function main() {
   const manifest = JSON.parse(await readFile('.next/routes-manifest.json', 'utf8'));
   checkUpstream(manifest);
-  const upstream = createServer((req, res) => {
+  const formCalls=[];
+  const upstream = createServer(async (req, res) => {
+    if(req.method==='POST' && ['/__contact-fixture','/__subscribe-fixture'].includes(req.url)){
+      let body='';for await(const chunk of req)body+=chunk;
+      const payload=JSON.parse(body);formCalls.push({path:req.url,payload});
+      const mode=payload.message || payload.source;
+      if(mode==='fixture-upstream-failure'){res.writeHead(503);res.end();return;}
+      if(mode==='fixture-redirect'){res.writeHead(302,{location:'/__unexpected-target'});res.end();return;}
+      res.writeHead(200,{'content-type':'application/json'});res.end('{"ok":true}');return;
+    }
     res.writeHead(200, { 'content-type': 'application/json' });
     res.end(JSON.stringify({ synthetic: true, path: req.url }));
   });
@@ -70,7 +86,7 @@ export async function main() {
   try {
     server = spawn(process.execPath, ['node_modules/next/dist/bin/next', 'start', '--hostname', '127.0.0.1', '--port', '3100'], {
       stdio: ['ignore', 'pipe', 'pipe'],
-      env: { ...process.env, PRODUCT_APP_UPSTREAM_URL: upstreamOrigin, NEXT_TELEMETRY_DISABLED: '1' },
+      env: { ...process.env, PRODUCT_APP_UPSTREAM_URL: upstreamOrigin, CONTACT_WEBHOOK_URL:`${upstreamOrigin}/__contact-fixture`, SUBSCRIBE_WEBHOOK_URL:`${upstreamOrigin}/__subscribe-fixture`, RESEND_API_KEY:'', RESEND_AUDIENCE_ID:'', NEXT_TELEMETRY_DISABLED: '1' },
     });
     server.on('error', (error) => { startupError = error; });
     server.stdout.on('data', (chunk) => { serverLog = (serverLog + chunk).slice(-12000); });
@@ -89,6 +105,9 @@ export async function main() {
     for (const path of ['/', '/about', '/pricing', '/download', '/domains', '/domains/discipline', '/blog']) {
       const { response, body } = await get(path);
       assert.equal(response.status, 200, `${path}: HTTP ${response.status}`);
+      assert.equal(response.headers.get('x-content-type-options'), 'nosniff', `${path}: MIME protection`);
+      assert.equal(response.headers.get('referrer-policy'), 'strict-origin-when-cross-origin', `${path}: referrer policy`);
+      assert.equal(response.headers.get('x-frame-options'), 'SAMEORIGIN', `${path}: framing protection`);
       checkPage(body, path);
       pages.set(path, body);
     }
@@ -108,7 +127,9 @@ export async function main() {
     const paths = sitemapPaths(sitemap.body);
     for (let i = 0; i < paths.length; i += 4) {
       await Promise.all(paths.slice(i, i + 4).map(async (path) => {
-        assert.equal((await get(path)).response.status, 200, `Sitemap route ${path}`);
+        const { response, body } = await get(path);
+        assert.equal(response.status, 200, `Sitemap route ${path}`);
+        checkPage(body, path);
       }));
     }
     const redirects = (manifest.redirects || []).filter((r) => !r.internal && !r.has?.length && !r.missing?.length && !/[:*()?]/.test(r.source));
@@ -121,14 +142,54 @@ export async function main() {
       const { response, body } = await get(path);
       assert.equal(response.status, 200, `App proxy ${path}`);
       assert.deepEqual(JSON.parse(body), { synthetic: true, path }, `App proxy path/query ${path}`);
+      assert.equal(response.headers.get('x-frame-options'), null, `Website policy must not leak into shared app ${path}`);
+      assert.equal(response.headers.get('referrer-policy'), null, `App policy remains upstream-owned ${path}`);
+      assert.equal(response.headers.get('x-content-type-options'), null, `App MIME policy remains upstream-owned ${path}`);
     }
     assert.equal((await get('/__iron_compass_missing_ci_route__')).response.status, 404, 'Unknown route must remain 404');
+    for (const [payload, expected] of [[null, 400], [{ email: 123 }, 400], [{ email: 'invalid', source: false }, 400], [[], 400], [{ email: 'a'.repeat(5000) }, 413]]) {
+      const response = await fetch(`${origin}/api/subscribe`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload), signal: AbortSignal.timeout(10000) });
+      assert.equal(response.status, expected, 'Malformed synthetic signup must be rejected safely before provider access');
+      assert.equal(response.headers.get('cache-control'), 'no-store', 'Form result must not be stored');
+      assert.equal(typeof (await response.json()).error, 'string');
+      checks++;
+    }
+    const post=async(path,payload,expected,extraHeaders={})=>{
+      const response=await fetch(`${origin}${path}`,{method:'POST',headers:{'content-type':'application/json',...extraHeaders},body:typeof payload==='string'?payload:JSON.stringify(payload),signal:AbortSignal.timeout(10000)});
+      assert.equal(response.status,expected,`${path}: synthetic form status`);
+      assert.equal(response.headers.get('cache-control'),'no-store',`${path}: form result must not be stored`);
+      const body=await response.json();assert.equal(expected===200?body.ok:typeof body.error,expected===200?true:'string');checks++;
+    };
+    const contact={name:'Synthetic Visitor',email:'synthetic@example.invalid',message:'fixture-success'};
+    for(const body of [null,[],{...contact,name:123},{...contact,email:false},{...contact,message:123}])await post('/api/contact',body,400);
+    await post('/api/contact',{...contact,message:'x'.repeat(33000)},413);
+    await post('/api/contact',contact,415,{'content-type':'text/plain'});
+    await post('/api/contact',contact,403,{origin:'https://untrusted.invalid'});
+    await post('/api/subscribe',{email:contact.email},403,{origin:'null'});
+    for(const path of ['/api/contact','/api/subscribe']){
+      const headers={'content-type':'application/x-www-form-urlencoded',accept:'text/html',origin};
+      const native=await fetch(`${origin}${path}`,{method:'POST',headers,body:'email=private-native-fixture%40example.invalid&message=private-native-fixture',signal:AbortSignal.timeout(10000)});
+      assert.equal(native.status,415);assert.match(native.headers.get('content-type'),/text\/html/);assert.equal(native.headers.get('cache-control'),'no-store');
+      const html=await native.text();assert.match(html,/has not been/);assert.match(html,/needs JavaScript/);assert(!html.includes('private-native-fixture'));checks++;
+      const foreign=await fetch(`${origin}${path}`,{method:'POST',headers:{...headers,origin:'https://untrusted.invalid'},body:'email=private-native-fixture%40example.invalid',signal:AbortSignal.timeout(10000)});
+      assert.equal(foreign.status,403);assert.equal(typeof(await foreign.json()).error,'string');checks++;
+    }
+    assert.equal(formCalls.length,0,'Invalid/foreign-origin forms must never contact fixture providers');
+    await post('/api/contact',contact,200,{origin});
+    await post('/api/contact',{...contact,message:'fixture-upstream-failure'},502);
+    await post('/api/contact',{...contact,message:'fixture-redirect'},502);
+    await post('/api/subscribe',{email:contact.email,source:'fixture-success'},200,{origin});
+    await post('/api/subscribe',{email:contact.email,source:'fixture-upstream-failure'},502);
+    await post('/api/subscribe',{email:contact.email,source:'fixture-redirect'},502);
+    assert.equal(formCalls.length,6,'Each valid synthetic submission makes exactly one provider call; no redirected request');
+    assert.equal(formCalls[0].payload.name,contact.name);assert.equal(formCalls[0].payload.message,contact.message);
+    assert.equal(formCalls[3].payload.email,contact.email);
     const version = await get('/source-version.json');
     assert.equal(version.response.status, 200, 'Source artifact');
     const source = JSON.parse(version.body);
     if (process.env.SOURCE_STATUS_COMMIT) assert.equal(source.sourceCommit, process.env.SOURCE_STATUS_COMMIT, 'Built source identity');
     assert.equal(source.metadataConflict, false, 'Conflicting build metadata');
-    console.log(JSON.stringify({ result: 'PASS', pageChecks: pages.size, sitemapUrls: paths.length, redirects: redirects.length, assets: assetPaths.size, localRequests: checks, sourceCommit: source.sourceCommit, exactCommitBuild: source.exactCommitBuild, limits: 'Local HTTP/HTML checks only; no browser interactions, real account, billing, or live backend tests.' }, null, 2));
+    console.log(JSON.stringify({ result: 'PASS', pageChecks: pages.size, sitemapUrls: paths.length, sitemapMetadataChecks: paths.length, redirects: redirects.length, assets: assetPaths.size, localRequests: checks, sourceCommit: source.sourceCommit, exactCommitBuild: source.exactCommitBuild, limits: 'Local HTTP/HTML checks only; no browser interactions, real account, billing, or live backend tests.' }, null, 2));
   } finally {
     if (server?.pid && server.exitCode === null && server.signalCode === null) {
       const stopped = once(server, 'exit');

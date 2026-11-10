@@ -9,6 +9,18 @@ const blogRedirects = Object.entries(BLOG_CANONICAL_REDIRECTS).map(([source, des
 }));
 
 const nextConfig: NextConfig = {
+  // This website is a separate app, even when a checkout sits below another lockfile.
+  turbopack: { root: process.cwd() },
+  outputFileTracingRoot: process.cwd(),
+  // Public-site hardening only. /app and its rewrites remain app-team owned.
+  headers: async () => [{
+    source: "/:path((?!app(?:/|$)).*)",
+    headers: [
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      { key: "X-Frame-Options", value: "SAMEORIGIN" },
+    ],
+  }],
   outputFileTracingExcludes: {
     "*": ["./public/audio/**/*"],
   },

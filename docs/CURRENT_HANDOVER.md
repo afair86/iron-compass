@@ -1,5 +1,15 @@
 # CURRENT HANDOVER
 
+## 10 November 2026 — authorised website safety release candidate
+
+Owner authorises website deployment provided the submitted Apple launch is unaffected. Website-only branch `release/website-safety-20261110` is based on integration commit `6fe119abe3bae7dba3516ed8bda3c0c72fe84123`. The separate app, API, database, authentication, billing, native builds, credentials and Apple submission are outside this release. The prepared domain-classification request remains unsent.
+
+Candidate adds bounded and validated public forms, truthful acknowledgement/error handling, native POST fallback, explicit no-store responses, browser request deadlines, calculator/tool boundaries, article-link corrections, article-name validation, audio failure/accessibility repairs and checklist print selectors. Scoped public security headers exclude `/app`; existing app proxy destination and production settings must remain unchanged. Existing approved website design, pricing, imagery and app screenshots are retained. Website dependency pins/tooling override and explicit framework roots were tested locally.
+
+Local checks before this release:51tests, build/TypeScript, lint with0errors/5existingwarnings,198loopbackHTTPchecks,296isolated-package records, app/provider outage/recovery and browser form/storage fixtures. Detailed raw audit evidence remains local and is not included in this public release checkout. The required diagnostic build-identity helper is included for its test. The existing verification workflow now runs on pushes to this release branch on Linux; it does not deploy or alter shared services.
+
+Current public production at preparation: `dpl_7EGek3iAxR3fmVWc82mmqMCfA5gr`, reporting website source `50563a8725e9aa1ccb6274eecefac0dd58cea253`. Main remains older and must not replace it. Nothing from this candidate is live yet. Next: verify the exact clean commit in Linux CI and a protected hosted preview, stage a production-context build without assigning domains, test public/app-route boundaries, then promote only that tested website artifact. Keep rollback ID and record the actual final deployment/source. Do not claim tests of signed-in sessions, purchases, real provider persistence or Apple review from anonymous/fixture checks.
+
 ## Maintenance integration verified - 9 November 2026, Australia/Brisbane
 
 Assistant: ChatGPT through connected GitHub/Vercel tools, without a Work/Codex handoff. The owner authorised safe non-production implementation and automation. Production releases, spending, advertising publication and Apple submission changes remain excluded.

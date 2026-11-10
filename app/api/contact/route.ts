@@ -1,45 +1,21 @@
 import { NextResponse } from "next/server";
-
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import { readPublicJson, PublicRequestError } from "@/lib/publicRequest";
+import { deliverContactMessage, validateContactBody, MAX_CONTACT_BYTES } from "@/lib/contact";
+import { nativeFormFallback } from "@/lib/nativeFormFallback";
 
 export async function POST(request: Request) {
-  let body: { name?: string; email?: string; message?: string };
   try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ error: "Send a name, email, and message." }, { status: 400 });
+    const message = validateContactBody(await readPublicJson(request, MAX_CONTACT_BYTES));
+    await deliverContactMessage(message);
+    return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
+  } catch (error) {
+    if (error instanceof PublicRequestError) {
+      if (error.status === 415) {
+        const fallback = nativeFormFallback(request, "contact");
+        if (fallback) return fallback;
+      }
+      return NextResponse.json({ error: error.message }, { status: error.status, headers: { "Cache-Control": "no-store" } });
+    }
+    return NextResponse.json({ error: "Could not send that. Try again shortly." }, { status: 500, headers: { "Cache-Control": "no-store" } });
   }
-
-  const name = body.name?.trim() ?? "";
-  const email = body.email?.trim() ?? "";
-  const message = body.message?.trim() ?? "";
-
-  if (!name || !EMAIL_PATTERN.test(email) || message.length < 2) {
-    return NextResponse.json({ error: "Enter your name, a valid email, and a message." }, { status: 400 });
-  }
-
-  const webhookUrl = process.env.CONTACT_WEBHOOK_URL?.trim();
-  if (!webhookUrl) {
-    return NextResponse.json(
-      { error: "The contact form is not receiving messages yet." },
-      { status: 503 },
-    );
-  }
-
-  const response = await fetch(webhookUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name,
-      email,
-      message,
-      sentAt: new Date().toISOString(),
-    }),
-  });
-
-  if (!response.ok) {
-    return NextResponse.json({ error: "Could not send that. Try again shortly." }, { status: 502 });
-  }
-
-  return NextResponse.json({ ok: true });
 }

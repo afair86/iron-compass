@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PublicFormTimeoutError, submitPublicForm, submissionError } from "@/lib/formResponse";
 
 type EmailCaptureFormProps = {
   source?: string;
@@ -26,22 +27,17 @@ export default function EmailCaptureForm({
     setError(null);
 
     try {
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source }),
-      });
+      const response = await submitPublicForm("/api/subscribe", { email, source });
+      const failure = submissionError(response.responseOk, response.body, "Could not confirm that signup. Try again shortly.");
 
-      const data = (await response.json()) as { error?: string };
-
-      if (!response.ok) {
-        setError(data.error ?? "Could not subscribe. Try again shortly.");
+      if (failure) {
+        setError(failure);
         return;
       }
 
       setSubmitted(true);
-    } catch {
-      setError("Network error. Check your connection and try again.");
+    } catch (error) {
+      setError(error instanceof PublicFormTimeoutError ? error.message : "Network error. Check your connection and try again.");
     } finally {
       setLoading(false);
     }
@@ -50,13 +46,14 @@ export default function EmailCaptureForm({
   if (submitted) {
     return (
       <div className="py-4 ic-align-center">
-        <p className="text-green-400 font-semibold tracking-[0.2em] uppercase">{successMessage}</p>
+        <p role="status" className="text-green-400 font-semibold tracking-[0.2em] uppercase">{successMessage}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off" className="w-full space-y-3">
+    <form action="/api/subscribe" method="post" onSubmit={handleSubmit} aria-busy={loading} className="w-full space-y-3">
+      <noscript><p>Enable JavaScript to use this signup form. Your email has not been submitted.</p></noscript>
       <div className="flex flex-col sm:flex-row gap-4">
         <label htmlFor={`email-${source}`} className="sr-only">
           Email address
@@ -64,6 +61,7 @@ export default function EmailCaptureForm({
         <input
           id={`email-${source}`}
           name="email"
+          autoComplete="email"
           type="email"
           required
           value={email}
@@ -80,7 +78,7 @@ export default function EmailCaptureForm({
           {loading ? "Submitting…" : buttonLabel}
         </button>
       </div>
-      {error ? <p className="text-sm text-red-400 ic-align-center">{error}</p> : null}
+      {error ? <p role="alert" className="text-sm text-red-300 ic-align-center">{error}</p> : null}
     </form>
   );
 }

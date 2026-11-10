@@ -13,6 +13,7 @@ export default function CommitmentPlanner() {
   const [ifChanges, setIfChanges] = useState("");
   const [error, setError] = useState("");
   const [ready, setReady] = useState(false);
+  const resultReady = ready && Boolean(promise.trim() && nextAction.trim() && deadline.trim() && ifChanges.trim());
 
   const build = () => {
     if (!promise.trim()) {
@@ -161,7 +162,7 @@ export default function CommitmentPlanner() {
         </button>
       </div>
 
-      {ready ? (
+      {resultReady ? (
         <div className="space-y-5" style={{ marginTop: "1.25rem" }}>
           <article className="ic-routine__result" aria-label="Commitment summary">
             <p className="ic-print-checklist-label">Iron Compass AI · Commitment summary</p>
