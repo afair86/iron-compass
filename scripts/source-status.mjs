@@ -74,6 +74,11 @@ async function main() {
       try {
         const changes = execFileSync('git', ['-C', root, 'status', '--porcelain'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
         console.log(`Hosted source changes (status and paths only): ${JSON.stringify(changes.trim().split(/\r?\n/))}`);
+        if (changes.includes('vercel.json')) {
+          const committed = JSON.parse(execFileSync('git', ['-C', root, 'show', 'HEAD:vercel.json'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }));
+          const working = JSON.parse(readFileSync(resolve(root, 'vercel.json'), 'utf8'));
+          console.log(`Hosted routing config comparison (keys only): ${JSON.stringify({ semanticMatch: JSON.stringify(committed) === JSON.stringify(working), changedKeys: [...new Set([...Object.keys(committed), ...Object.keys(working)])].filter(key => JSON.stringify(committed[key]) !== JSON.stringify(working[key])) })}`);
+        }
       } catch { console.log('Hosted source changes unavailable.'); }
     }
     const target = resolve(root, output);
