@@ -69,6 +69,13 @@ async function main() {
     const surface = value('--surface');
     if (!output || !['website', 'web-app'].includes(surface)) throw new Error('Provide an output path and website/web-app surface.');
     if (!source.sourceCommit || source.metadataConflict) throw new Error('Cannot stamp a build with unknown/conflicting source.');
+    if (process.env.VERCEL === '1' && source.worktreeDirty) {
+      // Build diagnostics contain Git status/path names only, never file contents or env values.
+      try {
+        const changes = execFileSync('git', ['-C', root, 'status', '--porcelain'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+        console.log(`Hosted source changes (status and paths only): ${JSON.stringify(changes.trim().split(/\r?\n/))}`);
+      } catch { console.log('Hosted source changes unavailable.'); }
+    }
     const target = resolve(root, output);
     mkdirSync(dirname(target), { recursive: true });
     // Public artifact contains version identity only: no environment dumps or credentials.
