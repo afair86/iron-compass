@@ -2,6 +2,8 @@
 
 ## 10 November 2026 — authorised website safety release candidate
 
+First clean release commit `1f424a63faeff68e0d2caa410acdf8d69d819e09` passed Linux verification run42740421518 (51tests, audit, lint, build, calculations and198HTTPchecks). Protected preview `dpl_2sYWoJyM2TfJ72wJU9EonCP59tRw` is READY and source matches, but its stamp remains dirty. Build logs identify the one removed tracked file as `.env.example`, excluded by `.vercelignore`. Add an exact exception for that blank, non-secret template while retaining `.env*` exclusion for real configuration; then verify clean source on the rebuilt hosted artifact. The earlier preview is not the release artifact. No public traffic/app/Apple change has occurred.
+
 Owner authorises website deployment provided the submitted Apple launch is unaffected. Website-only branch `release/website-safety-20261110` is based on integration commit `6fe119abe3bae7dba3516ed8bda3c0c72fe84123`. The separate app, API, database, authentication, billing, native builds, credentials and Apple submission are outside this release. The prepared domain-classification request remains unsent.
 
 Candidate adds bounded and validated public forms, truthful acknowledgement/error handling, native POST fallback, explicit no-store responses, browser request deadlines, calculator/tool boundaries, article-link corrections, article-name validation, audio failure/accessibility repairs and checklist print selectors. Scoped public security headers exclude `/app`; existing app proxy destination and production settings must remain unchanged. Existing approved website design, pricing, imagery and app screenshots are retained. Website dependency pins/tooling override and explicit framework roots were tested locally.
