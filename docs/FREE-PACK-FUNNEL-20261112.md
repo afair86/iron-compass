@@ -1,5 +1,7 @@
 # Free pack, starter sequence and conversion experiment
 
+Latest setup checkpoint12November: owner approved normal account pairing. Resend Free and email service now exist; API quotas100/day,3000/month,1000contacts,10000automation runs,3domains. Prepared sending subdomain updates.ironcompassai.com is unverified; four templates are saved as drafts, with required unsubscribe variables and no sends/recipients. Native automation creation is blocked until templates can be safely published. Authoritative DNS is external; exact registrar Synergy Wholesale confirmed, retail DNS account not yet proven. Owner is signing into the likely existing VIPcontrol account; first confirm exact .com domain before adding records. Nothing has been deployed to production or activated for customer sending/analytics. Earlier account-absent context below is historical, not the current state.
+
 Owner scope12November2026: use free complementary guides or develop a free pack to earn voluntary email subscriptions. No new paid standalone product, price or app/billing change. Owner confirmed no sending account or verified domain sender exists. Therefore live sending, real opt-in collection and analytics activation are pending; code and fixtures do not prove a working provider account.
 
 ## What is built
