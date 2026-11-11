@@ -32,7 +32,6 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
-!.env.example
 
 # vercel
 .vercel
@@ -51,3 +50,12 @@ next-env.d.ts
 
 # Generated immutable build identity
 /public/source-version.json
+
+.projects/cache
+.projects/
+.projects/vault
+.projects/state.test.json
+.projects/state.local.test.json
+.env
+.env.*
+!.env.example
