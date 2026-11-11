@@ -4,6 +4,9 @@ export const PRACTICAL_TOOL_IDS = [
   "prompt-builder",
   "quiet-check-in",
   "influence-check",
+  "help-request",
+  "friendship-reconnection",
+  "fatherhood-connection",
 ] as const;
 
 export type PracticalToolId = (typeof PRACTICAL_TOOL_IDS)[number];
