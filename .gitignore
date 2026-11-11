@@ -67,3 +67,4 @@ next-env.d.ts
 .cursor/rules/stripe-projects-cli.mdc
 .cursorignore
 /CLAUDE.md
+.agents/skills/sp-resend--email/
