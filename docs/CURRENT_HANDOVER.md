@@ -1,5 +1,13 @@
 # CURRENT HANDOVER
 
+## 12 November 2026, 07:05 Brisbane — queued checks traced to GitHub Actions outage
+
+Owner requested diagnosis, repair and first-three deployment. Read the linked Iron Compass master operating register (assessment9November, historical source references retained); current runtime evidence and later owner release approval govern this candidate. No Page edits or cross-track changes.
+
+Fresh GitHub API evidence:15queued runs across multiple branches, zero in-progress runs, and zero created jobs for candidate79761f5f0c81e4ef5904f77fde3815d60fedebc1 Website verification43096703146/Source continuity43096703135. Both workflows use GitHub-hosted ubuntu-latest; website concurrency is scoped by head branch and source continuity has no workflow concurrency lock. No blocking repository concurrency conflict found. GitHub officially reports Actions major_outage and critical incident https://www.githubstatus.com/incidents/dvy0t3mvh1lg (declared20:48UTC/06:48Brisbane, still investigating at fresh21:03:55UTC/07:03:55Brisbane). Service incident plus repository-wide pre-job queue is the supported diagnosis; the provider has not supplied a more specific account-level cause or restoration time. Earlier status endpoint had still reported operational before the incident was declared.
+
+No repository edit can repair the provider outage. Runtime/workflow sources, required checks and existing staged artifact remain unchanged; no duplicate retries, runner/security changes, spending or release-gate bypass. Not promoted. Existing local/staged acceptance evidence below remains valid; both required hosted checks remain unpassed. NEXT inspect provider recovery and the existing candidate runs; rerun only if an outage-related failure/cancellation requires it, then promote the tested artifact unchanged after both checks succeed and verify live.
+
 ## 12 November 2026, 06:50 Brisbane — connection articles staged; CI queue holds promotion
 
 Codex. Runtime candidate remains clean pushed 79761f5f0c81e4ef5904f77fde3815d60fedebc1 on codex/blog-connection-release-20261112, draft PR https://github.com/afair86/iron-compass/pull/12. This separate codex/blog-release-handover-20261112 branch records status only, so the queued exact-candidate workflows are not canceled by a documentation push. Checkout C:/Users/adamf/Projects/iron-compass-blog-handover-20261112; runtime checkout C:/Users/adamf/Projects/iron-compass-blog-release-20261112 remains untouched.

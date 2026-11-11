@@ -4,6 +4,8 @@ Start here before changing or reporting on Iron Compass. GitHub holds pushed sou
 
 ## Website release candidate — 12 November 2026
 
+Queue diagnosis at07:05Brisbane: GitHub reports a [major Actions outage](https://www.githubstatus.com/incidents/dvy0t3mvh1lg). Fifteen repository runs are queued with no running jobs; the candidate's two runs have no jobs created. No source/workflow defect or concurrency lock was found that explains both blocked runs. Publication remains held for the existing checks; do not bypass them or change runners/security to work around the incident. See the newest CURRENT_HANDOVER entry.
+
 Connection article candidate79761f5f0c81e4ef5904f77fde3815d60fedebc1 is pushed on codex/blog-connection-release-20261112 in draft PR12 and staged as dpl_7k8QvzzV2uaq8AJbtRZEEn459zxr with production settings and no custom-domain assignment. Local and staged checks pass; exact-candidate GitHub verification/source jobs remain queued, so publication is held. Owner approval is already recorded. Live remains25c68be9ae55855efb755884f249f413490c678f / dpl_HK4q9t8pbSJWYjCx2sGWezp7x833. This separate codex/blog-release-handover-20261112 branch records status without canceling the candidate jobs. See [CURRENT_HANDOVER](docs/CURRENT_HANDOVER.md) for checks, limits and next action. The next three drafts are complete locally in the separate recovery checkout and await review. Do not deploy older main, this status branch or that draft checkout.
 
 ## Historical website update — 4 November 2026
