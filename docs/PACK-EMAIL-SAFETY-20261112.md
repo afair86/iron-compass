@@ -2,6 +2,8 @@
 
 Scope: website-only email confirmation, cancellation, suppression and durable send protection. Production sending and release are held for owner review. The current provider verification status and exact-source results are in CURRENT_HANDOVER; do not infer completion from this implementation description.
 
+Acceptance completed12November: verified sender; five actual owner-inbox emails (confirmation, welcome, day2/day5/day8 accelerated on isolated test data); all five in Gmail Inbox with SPF/DKIM/DMARC PASS; real emailed confirmation/unsubscribe and one-click; repeated requests/confirms/workers without duplicate emails; actual Resend bounce/complaint simulator callbacks persisted suppression. Temporary callback access revoked and test sending/webhook disabled afterwards. This is accelerated preview acceptance, not eight days of wall-clock observation, a multi-provider deliverability guarantee, or approval to activate production. See CURRENT_HANDOVER for exact source and evidence.
+
 ## Implementation
 
 The durable adapter uses Resend for plain-text delivery, an isolated Upstash Redis Free store in Sydney with eviction disabled, and the existing Vercel host's daily job. No app database, account, entitlement, pricing, Next.js dependency or lockfile change. The older external-webhook adapter remains available for compatibility but is not the selected new implementation. The four earlier Resend drafts stay unpublished and no native Resend automation is running; using both paths would risk duplicate delivery.
