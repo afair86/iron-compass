@@ -1,5 +1,13 @@
 # CURRENT HANDOVER
 
+## 12 November 2026 — copy preview verified; proactive access requirement
+
+Copy candidate64213a25770ad303921ae47a3341684128dba89d pushed in draft PR10: https://github.com/afair86/iron-compass/pull/10, based on current PR9 branch rather than older main. Exact-head Website verification43056380392 and Source continuity43056380261 both SUCCESS. Preview dpl_4YhxCoevKkTX6GYD6511Wo5tEu8j READY at https://iron-compass-elvnfiuam-adams-projects-26d15070.vercel.app; authenticated source/page/app checks recorded separately in sibling outputs. Production remains25c68be9ae55855efb755884f249f413490c678f; no copy release/merge performed. Previous local verification below remains unchanged.
+
+Owner requests proactive identification and prevention of access blocks rather than waiting for reports; existing rule09 now carries standing weekly and relevant pre/post-change requirements. Shared private master tracks the actual incident/provider evidence and escalation packet; no employer screenshot/contact details are published here. Confirmed Zscaler unknown-category incident and fresh Trend Micro Untested/Newly Observed Domain gap. Zscaler Site Review requires customer-network access; FortiGuard lookup presents CAPTCHA; Cisco lookup presents security verification. These are unavailable verdicts, not passes. Trend Micro correction comments are prepared, unsent, with contact/verification still required. Prior specific unsent classification decision remains intact. No new paid service, account, employer-policy bypass, security weakening, sensitive submission or blanket future production permission.
+
+Next: follow existing release safeguards for the reviewed wording only after applicable approval; continue the separately tracked provider-review and public technical checks, retaining exact evidence and reporting unresolved account/approval gates. The default programme must look for category/reputation/DNS/TLS/redirect/app/browser failures proactively without reducing other workstreams or claiming every employer permits access.
+
 ## 12 November 2026 — natural copy review; preview preparation
 
 Codex, checkout website-customer-experience-20261111, branch codex/natural-website-copy-20261112 from be934df69f0ed68ae2eb38f3e52db11d3b5f93dd. Live source independently rechecked as25c68be9ae55855efb755884f249f413490c678f; no production change authorised by this copy request. Owner approved replacing the homepage introduction with: “Iron Compass AI helps men bring order to their days and follow through on what matters. Grounded in practical Stoicism, it connects daily discipline, private reflection and clear next actions to the responsibilities you carry.”
