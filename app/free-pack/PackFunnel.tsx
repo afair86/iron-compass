@@ -15,6 +15,7 @@ export default function PackFunnel({ emailEnabled, providerName }: { emailEnable
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "pending" | "accepted">("idle");
   const [error, setError] = useState("");
+  const [alreadyRecorded, setAlreadyRecorded] = useState(false);
   const [measurement, setMeasurement] = useState(false);
   const [variant, setVariant] = useState<PackVariant>("control");
   const [topic, setTopic] = useState<keyof typeof freeRecommendations>("daily");
@@ -73,15 +74,17 @@ export default function PackFunnel({ emailEnabled, providerName }: { emailEnable
     try {
       const result = await submitPublicForm("/api/free-pack", { email, consent, consentVersion: PACK_EMAIL_CONSENT_VERSION, ...(measurement && experimentEnabled ? { variant } : {}) });
       const failure = submissionError(result.responseOk, result.body, "Could not confirm your request. Use the pack below or try again.");
-      if (failure || (result.body as { status?: string })?.status !== "confirmation_pending") { setError(failure || "Could not confirm your request. Use the pack below."); setStatus("idle"); return; }
-      setStatus("accepted"); track("pack_request_accepted");
+      const receipt = (result.body as { status?: string })?.status;
+      if (failure || (receipt !== "confirmation_pending" && receipt !== "already_recorded")) { setError(failure || "Could not confirm your request. Use the pack below."); setStatus("idle"); return; }
+      setAlreadyRecorded(receipt === "already_recorded");
+      setStatus("accepted"); if (receipt === "confirmation_pending") track("pack_request_accepted");
     } catch { setError("Could not confirm your request. Your email is still here. Try again or use the pack below."); setStatus("idle"); }
     finally { submitting.current = false; }
   }
   return <>
     <section className="ic-panel space-y-5" aria-labelledby="pack-email-heading">
       <h2 id="pack-email-heading" className="ic-section-heading">Keep the pack. Put it to work.</h2>
-      {emailEnabled ? status === "accepted" ? <p role="status">Check your inbox for the confirmation email. The three follow-up notes start only after you confirm. You can use the pack below now.</p> : <form onSubmit={requestPack} aria-busy={status === "pending"} aria-describedby={error ? "pack-email-error" : undefined} className="space-y-4">
+      {emailEnabled ? status === "accepted" ? <p role="status">{alreadyRecorded ? "This pack request has already been recorded. Repeating the form does not restart a completed or cancelled sequence. You can use the pack below, or contact us if you need help." : "Check your inbox for the confirmation email. The three follow-up notes start only after you confirm. You can use the pack below now."}</p> : <form onSubmit={requestPack} aria-busy={status === "pending"} aria-describedby={error ? "pack-email-error" : undefined} className="space-y-4">
         <label htmlFor="pack-email">Email address</label>
         <input className="pack-input" id="pack-email" type="email" autoComplete="email" required maxLength={254} value={email} onChange={e => setEmail(e.target.value)} disabled={status === "pending"} />
         <label className="pack-consent"><input type="checkbox" checked={consent} required onChange={e => setConsent(e.target.checked)} disabled={status === "pending"} /><span>{PACK_EMAIL_CONSENT}</span></label>

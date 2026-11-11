@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { acceptPackRequest } from "@/lib/packRequest";
 import { PublicRequestError } from "@/lib/publicRequest";
+export const runtime = "nodejs";
+export const maxDuration = 60;
 
 export async function POST(request: Request) {
   try { return NextResponse.json(await acceptPackRequest(request), { headers: { "Cache-Control": "no-store" } }); }

@@ -1,10 +1,12 @@
 import { createHmac, randomUUID } from "node:crypto";
 import { PublicRequestError, readPublicJson } from "./publicRequest.ts";
 import { FREE_PACK_VERSION, PACK_EMAIL_CONSENT, PACK_EMAIL_CONSENT_VERSION, PACK_EXPERIMENT } from "./freePack.ts";
+import { createPackCampaign, durablePackConfigured } from "./packCampaignService.ts";
 
 export function packDeliveryConfigured(env = process.env) {
   const verified = Date.parse(env.PACK_CAMPAIGN_VERIFIED_AT || "");
-  return env.PACK_CAMPAIGN_ENABLED === "true" && Boolean(env.PACK_CAMPAIGN_WEBHOOK_URL && env.PACK_CAMPAIGN_SIGNING_SECRET && env.PACK_CAMPAIGN_PROVIDER_NAME) && Number.isFinite(verified) && verified <= Date.now();
+  const adapter = env.PACK_CAMPAIGN_ADAPTER === "durable" ? durablePackConfigured(env) : Boolean(env.PACK_CAMPAIGN_WEBHOOK_URL && env.PACK_CAMPAIGN_SIGNING_SECRET && env.PACK_CAMPAIGN_PROVIDER_NAME);
+  return env.PACK_CAMPAIGN_ENABLED === "true" && adapter && Number.isFinite(verified) && verified <= Date.now();
 }
 
 export async function acceptPackRequest(request: Request) {
@@ -16,11 +18,16 @@ export async function acceptPackRequest(request: Request) {
   if (body.consent !== true || body.consentVersion !== PACK_EMAIL_CONSENT_VERSION) throw new PublicRequestError("Choose the email option to request the pack and follow-up notes, or use the pack without email.");
   if (body.variant !== undefined && body.variant !== "control" && body.variant !== "practice") throw new PublicRequestError("Invalid experiment variant.");
   if (!packDeliveryConfigured()) throw new PublicRequestError("Email delivery is not enabled yet. You can use or download the pack without email.", 503);
+  const email = body.email.trim().toLowerCase();
+  if (process.env.PACK_CAMPAIGN_ADAPTER === "durable") {
+    // Vercel supplies the proxy IP; absent deployments share a conservative bucket.
+    const ip = process.env.VERCEL ? request.headers.get("x-vercel-forwarded-for") || "unknown" : "local";
+    return createPackCampaign().enroll(email, typeof body.variant === "string" ? body.variant : "none", ip.slice(0, 100));
+  }
   const url = new URL(process.env.PACK_CAMPAIGN_WEBHOOK_URL!);
   if (url.protocol !== "https:") throw new PublicRequestError("Email delivery is not available. Use the pack without email.", 503);
   const secret = process.env.PACK_CAMPAIGN_SIGNING_SECRET!;
   if (secret.length < 32) throw new PublicRequestError("Email delivery is not available. Use the pack without email.", 503);
-  const email = body.email.trim().toLowerCase();
   // Stable recipient/sequence key: the receiving workflow must durably deduplicate it.
   const idempotencyKey = createHmac("sha256", secret).update(`${FREE_PACK_VERSION}:${email}`).digest("hex");
   const requestId = randomUUID();
