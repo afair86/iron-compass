@@ -1,5 +1,15 @@
 # CURRENT HANDOVER
 
+## 12 November 2026 04:34 AEST — sending-subdomain DNS added; provider verification pending
+
+Codex resumed the owner's completed VIPcontrol sign-in and confirmed exact ironcompassai.com in its authenticated domain inventory/DNS Hosting. This proves VentraIP controls the authoritative zone; the prior candidate-only/account-access blocker is resolved. Checkout website-customer-experience-20261111, branch codex/free-pack-funnel-20261112, starting full HEAD04182006b21c6d4c9887dc31f96287d2c12c7f77; clean fetched branch before documentation update. This checkpoint changes docs/CURRENT_HANDOVER.md and docs/FREE-PACK-FUNNEL-20261112.md only; public website product remains the previously tested preview commit below.
+
+Added exactly four records at previously unused dedicated hosts: TXT resend._domainkey.updates, MX send.updates priority10, TXT send.updates and CNAME rsend.updates, all TTL3600. Values came from the new account's Resend domain response. Browser text-entry timing initially duplicated the SPF/CNAME values; both were corrected, saved and exact values rechecked before the verification request. Existing A/www/API CNAME, nameservers, old Resend DKIM/send MX/SPF, DMARC and verification records preserved. No domain ownership/registrant, DNSSEC, apex mail or website deployment change.
+
+Public resolver checks match all four new exact record values. Existing apex/www/API, old send MX/SPF and DMARC plus new MX priority10 pass14checks across1.1.1.1 and8.8.8.8; website and API health200. Resend verification POST accepted; subsequent GET is pending, so do not mark the sender verified. Local sanitized evidence: sibling outputs/resend-domain-verification-20261112.json and preserved-dns-check-20261112.json. No real recipient, campaign email, event or contact enrollment; four templates remain unpublished and native automation absent. Production website remains the prior25c68be9ae55855efb755884f249f413490c678f release; no production settings changed.
+
+Next: obtain provider verified status, then implement/test the durable confirmation/unsubscribe/enrollment adapter and suppression/abuse limits before publishing templates or enabling the sequence. Real analytics remains inactive and unverified. DNS verification alone does not complete the campaign. No further owner DNS sign-in action is currently needed.
+
 ## 12 November 2026 — Resend Free provisioned; authoritative DNS sign-in pending
 
 Owner confirmed browser approval; CLI init resumed successfully and authenticated the owner-controlled Projects account. Resend Free plan and email service were provisioned through the documented catalog slugs. No paid plan selected. Actual Resend usage API:100emails/day,3000/month,1000contacts,10000automation runs,3domains; all email/run counters zero at inspection. New credential is held only in official CLI-managed ignored local environment/vault, never printed or committed. No existing Apple/key/app credential was accessed and no website production variable changed.
