@@ -1,5 +1,13 @@
 # CURRENT HANDOVER
 
+## 11November2026 — PR9 staging/promotion approved; focus clarification
+
+Owner explicitly approved staging PR9 with production settings and promoting only if all remaining safeguards pass. This resolves the specific approval blocker below; it does not waive testing, exact source, production-context acceptance, monitoring, rollback, app/Apple/key or classification holds. Work remains website-only on codex/website-customer-experience-20261111; production baseline independently rechecked as dpl_8ruQDPfVUea9hY3W22Z1z7PPpSby/source04f1d54 and retained for rollback. No merge to older main is implied.
+
+Owner also clarified customer-service/value focus must expand the whole programme, not shrink other work to20%. Rule09 and the integration note now state that approximately80% is customer-value emphasis across all workstreams, not a budget/hours split; every original technical/AI/security/SEO/performance/commercial/operational check retains its full scope, depth and priority. No requirement is dropped or delayed to satisfy a percentage. Original immutable directive/evidence snapshots remain unchanged. This clarification changes policy documentation only; the tested form-recovery implementation is unchanged.
+
+Next: verify exact-head CI, stage with production settings and no domain assignment, test the staged artifact, promote that same artifact only on pass, then verify live source/journeys/monitoring and record the result.
+
 ## 11November2026 — recovery preview verified; production stage blocked
 
 Product candidatea21b6a63c474dc7d574665c8f6875cbccfbc2fd2 is pushed in draft PR https://github.com/afair86/iron-compass/pull/9. Exact-commit Website verification gates42926336752 and Source continuity42926336814 both SUCCESS. Local55tests/build/TypeScript/lint and synthetic390/768/1440journeys below pass. Protected previewdpl_ZDqT8M5aNBNCPBeqhxEMNMcAg4gf READY at https://iron-compass-auqpu2j4l-adams-projects-26d15070.vercel.app; sourceartifact identifiesa21b6a6, worktreeDirty=false, metadataConflict=false,exactCommitBuild=true. /contact, /blog/first-useful-ai-assistant and /app/auth return200. Existing public app origin added only to this preview branch; no production variable/credential changed.
