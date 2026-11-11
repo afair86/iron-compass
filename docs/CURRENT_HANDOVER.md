@@ -1,5 +1,11 @@
 # CURRENT HANDOVER
 
+## 12 November 2026, 06:30 Brisbane — connection blog release candidate
+
+Codex, C:/Users/adamf/Projects/iron-compass-blog-release-20261112, codex/blog-connection-release-20261112. Parent is verified current live 25c68be9ae55855efb755884f249f413490c678f; source identity is this commit in Git history. Owner approved deploying the first three revised posts and synthetic Download/Print checks. Next three approved topics remain local-only in the separate recovery checkout. No merge to older main; no app/API/native or other agent's draft changes. Scope/checks/classification/rollback in [release evidence](BLOG-CONNECTION-RELEASE-20261112.md). Local 60 tests, changed-file ESLint, build/types and public-page/phone/desktop checks pass; actual HTML download and one-sheet preview checked. Print text-fill fix requires final build verification. Not yet staged or deployed. Rollback dpl_HK4q9t8pbSJWYjCx2sGWezp7x833. Audio off.
+
+Next: push the focused source checkpoint, verify exact-head CI and clean build, stage with production settings without assigning domains, verify then promote that same artifact only on pass. Historical checkpoints below are preserved, not freshly verified.
+
 ## 11November2026 — PR9 staging/promotion approved; focus clarification
 
 Owner explicitly approved staging PR9 with production settings and promoting only if all remaining safeguards pass. This resolves the specific approval blocker below; it does not waive testing, exact source, production-context acceptance, monitoring, rollback, app/Apple/key or classification holds. Work remains website-only on codex/website-customer-experience-20261111; production baseline independently rechecked as dpl_8ruQDPfVUea9hY3W22Z1z7PPpSby/source04f1d54 and retained for rollback. No merge to older main is implied.
