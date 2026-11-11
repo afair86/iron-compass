@@ -30,9 +30,9 @@ const inter = Inter({
 });
 
 // SEO metadata for the site
-const siteTitle = `${SITE_NAME} — Habit and Discipline App for Men`;
+const siteTitle = `${SITE_NAME} — Discipline, Direction and Follow-Through`;
 const siteDescription =
-  "Build daily discipline around the responsibilities you carry. Habits, a journal, practical Stoic guides and AI coaching across ten life domains.";
+  "Bring order to your days and follow through on what matters. Practical Stoic guides, private reflection and planning across ten life domains.";
 
 export const metadata: Metadata = {
   title: siteTitle,

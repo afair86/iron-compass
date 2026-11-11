@@ -63,9 +63,9 @@ export const griefArticles: HubArticle[] = [
 
 export const financialHubLinks: TopicHubLink[] = [
   {
-    title: "Cashflow Command with an AI Copilot",
+    title: "Review your cash flow with AI",
     href: "/blog/cashflow-command-ai-copilot",
-    description: "Weekly AI-assisted cashflow monitoring and runway decisions.",
+    description: "Organise income, bills and reserves, then check the numbers yourself.",
   },
   {
     title: "Financial Resilience Protocol",
@@ -74,7 +74,7 @@ export const financialHubLinks: TopicHubLink[] = [
       "Weekly cash flow clarity, buffer protection, and low-risk decisions.",
   },
   {
-    title: "Fortress Method Financial Confidence",
+    title: "Give your money three clear jobs",
     href: "/blog/fortress-method-financial-confidence",
     description:
       "Survival, stability, and surplus buckets for long-term control.",
@@ -86,22 +86,22 @@ export const financialHubLinks: TopicHubLink[] = [
       "Eight-week sprint to tighten burn, add revenue, and automate basics.",
   },
   {
-    title: "Liquidity Rails: Automate Bills & Buffers",
+    title: "Put bills and cash reserves on a regular schedule",
     href: "/blog/liquidity-rails-automate-bills-buffers",
-    description: "Automate cash routing so buffers refill without willpower.",
+    description: "Set regular transfers for bills and reserves, then review what needs adjusting.",
   },
 ];
 
 export const aiMasteryHubLinks: TopicHubLink[] = [
   {
-    title: "Operator AI Copilot Daily Loop",
+    title: "Use AI for the tasks you repeat",
     href: "/blog/operator-ai-copilot-daily-loop",
-    description: "Map your day, automate grunt work, keep judgment in command.",
+    description: "Choose one repeated task, try an AI workflow and check the result.",
   },
   {
-    title: "AI Mastery Routine for Busy Men",
+    title: "Make AI useful in a busy week",
     href: "/blog/ai-mastery-routine-busy-men",
-    description: "Intent, prompt, review — a human-first routine that sticks.",
+    description: "Set a clear task, give the context and review the answer before using it.",
   },
   {
     title: "Your First Useful AI Assistant",
@@ -110,14 +110,14 @@ export const aiMasteryHubLinks: TopicHubLink[] = [
       "Turn a messy task into a clear plan, then check the work yourself.",
   },
   {
-    title: "Learning Loop for AI Personal Development",
+    title: "Learn a skill with AI and practise it yourself",
     href: "/blog/learning-loop-ai-personal-development",
-    description: "Turn AI output into skill through review, edit, and repeat.",
+    description: "Use explanations and feedback to support practice, then test what you can do.",
   },
   {
     title: "Human-in-the-Loop Automations for Small Teams",
     href: "/blog/human-loop-ai-automations-small-teams",
-    description: "Speed without shipping mistakes — humans on the final step.",
+    description: "Keep a person responsible for reviewing work before it goes out.",
   },
 ];
 

@@ -6,9 +6,9 @@ import { buildPageMetadata } from "@/lib/site";
 import { domainNavLinks } from "@/lib/domains";
 
 export const metadata = buildPageMetadata({
-  title: "Start Iron Compass AI | Discipline, Strength, Leadership for Men",
+  title: "Start with One Responsibility | Iron Compass AI",
   description:
-    "Start with one responsibility. Choose a life domain, set a daily habit and review the week with Iron Compass AI, a discipline app and practical Stoic guides for men.",
+    "Choose the responsibility that needs attention. Find a practical guide, set one clear action and make room for it in your week with Iron Compass AI.",
   path: "/start",
 });
 

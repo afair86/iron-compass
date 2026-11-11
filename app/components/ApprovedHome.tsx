@@ -25,8 +25,9 @@ export default function ApprovedHome() {
         <div className={styles.heroCopy}>
           <h1>Discipline for the life you’re responsible for.</h1>
           <p>
-            Iron Compass AI is a habit tracker and discipline app for men, grounded in practical Stoicism.
-            Keep a few habits, reflect in your private journal and turn your responsibilities into a clear next action.
+            Iron Compass AI helps men bring order to their days and follow through on what matters.
+            Grounded in practical Stoicism, it connects daily discipline, private reflection and clear
+            next actions to the responsibilities you carry.
           </p>
           <div className="ic-cta-pair">
             <a className="ic-btn-primary" href="/app/auth">
