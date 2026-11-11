@@ -24,6 +24,10 @@ const highlights = [
 
 const sections = [
   {
+    "title": "Optional Starter-Pack Emails and Measurement",
+    "body": "The free starter pack can be used without an email address or account. When email delivery is enabled, a separate opt-in requests the pack and three follow-up notes over eight days. We record your email, the exact consent version, the request time and confirmation with the sending service named beside the form. The sequence starts only after email confirmation, ends after the third follow-up and does not automatically enrol you in an ongoing newsletter. Unsubscribing stops remaining notes. Suppression records prevent further unwanted messages. We do not use your journal, worksheet answers or guide preference for these emails. Optional pack-page measurement is separate: when enabled and you allow it, Google Analytics receives a fixed pack-page address, button variant and actions such as downloads or app-link clicks, along with technical connection information processed by Google. No email, worksheet content, guide preference or full query/referrer is included in our measurement events. You can stop measurement on the pack page. The sending service, account retention settings and collection must be reviewed before activation."
+  },
+  {
     "title": "Account and Profile Information",
     "body": "We collect account details such as your email, password hash, subscription status, and the time and version of consent choices. Depending on the setup you complete, you may also provide your name, phone number, roles, schedule, goals, domain ratings, preferences and health information. Your phone number is not included in AI coaching prompts."
   },

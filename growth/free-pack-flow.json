@@ -1,0 +1,22 @@
+{
+  "schema": "iron-compass-campaign-blueprint-v1",
+  "status": "disabled",
+  "providerImportFormat": false,
+  "pack": "follow-through-v1",
+  "entry": "verified_double_opt_in_only",
+  "repeatEnrollment": "never_for_this_pack_version",
+  "sendingTimeZone": "subscriber_choice_or_Australia/Brisbane",
+  "messages": [
+    {"id":"welcome","daysAfterConfirmation":0},
+    {"id":"difficult-day","daysAfterConfirmation":2},
+    {"id":"review","daysAfterConfirmation":5},
+    {"id":"next-step","daysAfterConfirmation":8}
+  ],
+  "beforeEverySend": ["confirmed consent version matches", "not unsubscribed", "not bounced or complained", "message id not previously sent", "sender verified and sending caps available"],
+  "unsubscribe": "immediate suppression of all pending starter-pack messages; no login required; provider-managed persistent suppression",
+  "end": "sequence ends after day8; no automatic ongoing newsletter",
+  "recommendations": "free public guides and existing free app entry only; no new paid product",
+  "tracking": "open/click tracking off; separate consented pack-page measurement only",
+  "storage": "durable provider-owned records; never process memory or ephemeral Vercel filesystem; no shared app database",
+  "activationRequired": ["owner-controlled account", "verified domain and sender identity", "tested double opt-in", "durable consent and idempotency", "suppression test during waiting period", "edge abuse/rate limits", "visible unsubscribe and sender contact", "real inbox delivery test", "approved privacy disclosure", "reviewed quota/cost caps", "explicit release and send activation decision"]
+}

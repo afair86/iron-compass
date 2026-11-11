@@ -20,6 +20,7 @@ const navSections = [
   {
     title: "Practical guides",
     links: [
+      { href: "/free-pack", label: "Free seven-day pack" },
       { href: "/articles", label: "Grief and rebuilding guides" },
       {
         href: "/articles/financial-power",

@@ -19,6 +19,7 @@ function imagesInMarkdown(markdown: string): string[] {
 }
 
 const STATIC_PAGE_DATES: Record<string, string> = {
+  "/free-pack": "2026-11-12",
   "/": "2026-11-05",
   "/start": "2026-11-04",
   "/download": "2026-11-04",
@@ -41,6 +42,7 @@ function lastModifiedForPath(pagePath: string): Date {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
+    { url: absoluteUrl("/free-pack"), lastModified: lastModifiedForPath("/free-pack"), changeFrequency: "monthly", priority: 0.6 },
     {
       url: absoluteUrl("/"),
       lastModified: lastModifiedForPath("/"),
