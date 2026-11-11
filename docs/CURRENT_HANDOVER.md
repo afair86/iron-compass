@@ -1,5 +1,11 @@
 # CURRENT HANDOVER
 
+## 12 November 2026 — final worker follow-up and privacy cleanup check
+
+Exact worker-hardening commitca5a9b20989cfd43887440be7b849d057e16813a passes Website verification43084484737 and Source continuity43084484642. CI logs confirm65standard tests pass/1optional integration skipped,0production vulnerabilities, lint0errors/5unchangedwarnings, build/TypeScript and199HTTPchecks. Previewdpl_C4bVffCPjBiza2e13RcyJAaM79oa READY at https://iron-compass-9q5okcrgw-adams-projects-26d15070.vercel.app/free-pack;16hosted safety checks pass against its exact clean served source. Production source rechecked25c68be9ae55855efb755884f249f413490c678f and APIhealth200. Resend remains pending at19:11UTC11November; actual inbox/provider callback acceptance remains blocked, not passed. No emails sent and no production promotion.
+
+Final privacy review identified that the worker's send-enabled guard also prevented expired-address cleanup while paused. Moved cleanup before that guard and extended the actual-store retention case to verify disabled-delivery cleanup; all delivery guards retained. Actual Redis rerun passes13tests, including paused cleanup, with23simulated acknowledgements and0actual emails. This focused follow-up still needs its exact-commit CI/preview check below before completion. Unsubscribe remains operational independently of sending. Temporary local UI fixture processes were stopped; no preview access protection was removed.
+
 ## 12 November 2026 05:08 AEST — hosted safety acceptance passed; real email still blocked
 
 Product commit0b1766555df4bbe356184c1a128cb23e084210ae passed exact-source Linux Website verification43083113917 and Source continuity43083114018. Previewdpl_Fs31ynTEfewuuMDDAG8Gj6QEBG7G READY at https://iron-compass-akvhepurl-adams-projects-26d15070.vercel.app/free-pack; served source confirms exactCommitBuild=true, worktreeDirty=false, metadataConflict=false. Clean local build/TypeScript and199HTTPchecks pass at that exact source. Latest actual-store run passes13tests with23simulated provider acknowledgements and zero real emails; the synthetic suite exercises real Redis, not a mirrored in-memory implementation.

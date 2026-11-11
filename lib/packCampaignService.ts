@@ -130,11 +130,12 @@ export class PackCampaign {
     }
   }
   async run() {
-    this.enabled();
     const results: Record<string, number> = {};
     await this.store.ready();
     const started = Date.now();
     for (const id of await this.store.expired(this.clock())) await this.store.mutate("forget", id, this.clock());
+    // Pausing delivery must not suspend removal of abandoned addresses.
+    this.enabled();
     for (const id of await this.store.due(this.clock())) {
       if (Date.now() - started > 240000) break;
       const r = await this.store.read(id);

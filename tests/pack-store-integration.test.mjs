@@ -68,7 +68,7 @@ test('real durable-store sequence, concurrency, cancellation, quotas and restart
   const record=await store.read(c.identity(email));assert.equal(record.confirmation,'reserved');assert.equal(record.hold,'confirmation');
   now=start+2*86400000;c=make();const count=mails.length;await assert.rejects(c.enroll(email,'none','synthetic-ip-5'));await c.run();assert.equal(mails.length,count);
  });
- await t.test('unsubscribe after reservation wins before dispatch; an in-flight send cannot queue another note',async()=>{
+ await t.test('unsubscribe after reservation prevents dispatch and leaves withdrawal active',async()=>{
   const email=person('race');await c.enroll(email,'none','synthetic-race');
   const token=link(latest(),'Confirm email');
   const mutate=store.mutate.bind(store);let intercepted=false;
@@ -80,8 +80,9 @@ test('real durable-store sequence, concurrency, cancellation, quotas and restart
   const email=person('late');await c.enroll(email,'none','synthetic-ip-6');await c.confirm(link(latest(),'Confirm email'));
   const count=mails.length;now=start+8*86400000;await c.run();assert.equal(mails.length,count+1);assert.equal(latest().mail.subject,'Keep what worked. Choose what comes next.');
  });
- await t.test('retention removes abandoned encrypted addresses while retaining a no-repeat record',async()=>{
-  const email=person('abandoned');await c.enroll(email,'none','synthetic-ip-7');now=start+31*86400000;await c.run();
+ await t.test('retention still removes abandoned addresses when delivery is disabled, retaining a no-repeat record',async()=>{
+  const email=person('abandoned');await c.enroll(email,'none','synthetic-ip-7');now=start+31*86400000;
+  env.PACK_CAMPAIGN_ENABLED='false';await assert.rejects(c.run(),e=>e.status===503);env.PACK_CAMPAIGN_ENABLED='true';
   const record=await store.read(c.identity(email));assert.equal(record.email,undefined);assert.equal(record.status,'expired');
  });
  await t.test('daily and monthly reservations enforce caps atomically',async()=>{
