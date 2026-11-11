@@ -7,7 +7,7 @@ export class PublicFormTimeoutError extends Error {
 }
 
 /** Bound both response headers and body; an interrupted connection can stall either. */
-export async function submitPublicForm(path: "/api/contact" | "/api/subscribe", body: unknown, timeoutMs = 25000): Promise<{ responseOk: boolean; body: unknown }> {
+export async function submitPublicForm(path: "/api/contact" | "/api/subscribe" | "/api/free-pack", body: unknown, timeoutMs = 25000): Promise<{ responseOk: boolean; body: unknown }> {
   const controller = new AbortController();
   let timer: ReturnType<typeof setTimeout> | undefined;
   const deadline = new Promise<never>((_, reject) => {

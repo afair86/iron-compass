@@ -1,0 +1,10 @@
+.pack-page h3 {font-size:1.1rem;font-weight:700;color:var(--ic-text-heading);line-height:1.4}
+.pack-page p {line-height:1.65}
+.pack-input {display:block;width:100%;padding:.85rem 1rem;border:1px solid var(--ic-card-border,#7d8797);border-radius:12px;background:#101722;color:var(--ic-text-heading,#f5f7fb);font:inherit}
+.pack-input:focus-visible,.pack-consent input:focus-visible {outline:2px solid var(--ic-accent-blue,#00a0ff);outline-offset:3px}
+.pack-consent {display:flex;align-items:flex-start;gap:.8rem;line-height:1.6}
+.pack-consent input {margin-top:.4rem;min-width:20px;min-height:20px;accent-color:var(--ic-cta-red,#ff3434)}
+.pack-prompt {padding:1rem;border-left:3px solid var(--ic-accent-blue,#00a0ff);background:rgba(0,160,255,.05)}
+.pack-page [role=alert] {color:#ffb3b3}
+.pack-page button:disabled {opacity:.6;cursor:wait}
+.pack-page select {max-width:100%}

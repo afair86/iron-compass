@@ -1,4 +1,5 @@
 {
+  "crons": [{ "path": "/api/free-pack/run", "schedule": "0 23 * * *" }],
   "redirects": [
     {
       "source": "/:path*",
