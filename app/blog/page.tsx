@@ -15,17 +15,16 @@ import CategoryBadge from "../components/CategoryBadge";
 import { blogCardLines } from "@/lib/blogCardLines";
 
 const pageTitle =
-  "Iron Compass AI Journal — Discipline, Leadership & Purpose for Men";
+  "Iron Compass AI Journal | Discipline and Responsibility";
 const pageDescription =
-  "Practical guides on discipline, grief, strength, money, leadership, and AI — written for men who want systems that work on a bad day, not motivation loops.";
+  "Practical guides for the responsibilities you carry: work, health, family, money and life after setbacks. Read a guide and choose one action for your week.";
 
 export const metadata = buildPageMetadata({
   title: pageTitle,
   description: pageDescription,
   path: "/blog",
   openGraph: {
-    description:
-      "Actionable articles on discipline, purpose, strength, money, leadership, and AI leverage.",
+    description: pageDescription,
   },
 });
 

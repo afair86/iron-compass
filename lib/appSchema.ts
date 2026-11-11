@@ -10,7 +10,7 @@ export const appSoftwareSchema = {
   url: absoluteUrl("/app"),
   publisher: { "@id": absoluteUrl("/#organization") },
   description:
-    "Daily habits, a journal and practical planning tools for men, organised across ten life domains. AI coaching on Core and Elite.",
+    "A practical discipline and planning app for men, grounded in Stoicism. Daily habits, private reflection and planning across ten life domains, with AI coaching on Core and Elite.",
   offers: [
     { "@type": "Offer", name: "Free", price: "0", priceCurrency: "AUD" },
     { "@type": "Offer", name: "Core monthly", price: "19.99", priceCurrency: "AUD" },

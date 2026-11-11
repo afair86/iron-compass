@@ -1,7 +1,7 @@
 export const launchFaq = [
   {
     question: "What is Iron Compass AI?",
-    answer: "Iron Compass AI is a habit and discipline app for men. It brings daily habits, a private journal, your personal Standard and practical guides together across ten life domains, from health and work to fatherhood, money and legacy.",
+    answer: "Iron Compass AI is a practical system for men who want to live with discipline and carry their responsibilities well. It brings daily habits, a private journal, your personal Standard and planning tools together across ten life domains, from health and work to family, money and legacy.",
   },
   {
     question: "What can I use for free?",

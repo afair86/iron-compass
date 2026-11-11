@@ -103,7 +103,7 @@ const contextCopy = {
   daily: {
     title: "Turn one useful idea into a daily practice",
     description:
-      "Start with a few habits, a private journal and one next action. Add planning tools and AI coaching when your week needs them.",
+      "Choose the responsibility that needs attention. Put it into daily practice, reflect on what happened and add planning tools or AI coaching when your week needs them.",
     label: "Daily practice",
     shot: 0,
     plan: "Free",
