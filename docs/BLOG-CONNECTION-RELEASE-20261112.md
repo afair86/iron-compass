@@ -10,6 +10,8 @@ Before source commit: all 60 existing/new node tests pass; changed TypeScript/TS
 
 Checks after commit/stage/promotion are recorded in CURRENT_HANDOVER. Do not infer live publication or clean exact-build status from local checks.
 
+Final staged checkpoint: exact clean79761f5f0c81e4ef5904f77fde3815d60fedebc1 is READY in dpl_7k8QvzzV2uaq8AJbtRZEEn459zxr with autoAssignCustomDomains=false. Eight relevant pages,25 assets,sitemap,app auth,404,headers and source checks pass. Protected browser: all new3 at1611/390, examples generate, no overflow/broken completed images/console errors. Corrected black print heading verified in a one-sheet native preview. Full local lint passes with five pre-existing warnings; all60tests, calculation scripts, dependency audit and201-request/120-page local smoke pass. GitHub exact-candidate jobs remain queued, so no promotion/live completion is claimed. Details and next action are in CURRENT_HANDOVER.
+
 ## Customer review
 
 1. Need: useful help with asking for support, reconnecting with a friend and adapting fatherhood as children grow.

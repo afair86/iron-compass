@@ -4,7 +4,7 @@ Start here before changing or reporting on Iron Compass. GitHub holds pushed sou
 
 ## Website release candidate — 12 November 2026
 
-Connection article work is on codex/blog-connection-release-20261112, based on verified live 25c68be9ae55855efb755884f249f413490c678f / dpl_HK4q9t8pbSJWYjCx2sGWezp7x833. Owner approved publication of the first three reviewed articles. New source is not yet staged or live. See [CURRENT_HANDOVER](docs/CURRENT_HANDOVER.md) and its release evidence for checks and exact release status. The next three drafts remain in a separate local recovery checkout. Do not deploy older main or that draft checkout.
+Connection article candidate79761f5f0c81e4ef5904f77fde3815d60fedebc1 is pushed on codex/blog-connection-release-20261112 in draft PR12 and staged as dpl_7k8QvzzV2uaq8AJbtRZEEn459zxr with production settings and no custom-domain assignment. Local and staged checks pass; exact-candidate GitHub verification/source jobs remain queued, so publication is held. Owner approval is already recorded. Live remains25c68be9ae55855efb755884f249f413490c678f / dpl_HK4q9t8pbSJWYjCx2sGWezp7x833. This separate codex/blog-release-handover-20261112 branch records status without canceling the candidate jobs. See [CURRENT_HANDOVER](docs/CURRENT_HANDOVER.md) for checks, limits and next action. The next three drafts are complete locally in the separate recovery checkout and await review. Do not deploy older main, this status branch or that draft checkout.
 
 ## Historical website update — 4 November 2026
 
