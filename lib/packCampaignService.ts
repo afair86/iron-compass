@@ -19,6 +19,11 @@ export function durablePackConfigured(env: Env = process.env) {
   } catch { return false; }
 }
 function safeEqual(a: string, b: string) { return a.length === b.length && timingSafeEqual(Buffer.from(a), Buffer.from(b)); }
+export function authorizePackWorker(authorization: string | null, secret: string | undefined) {
+  if (!secret) return false;
+  const actual = Buffer.from(authorization || ""), expected = Buffer.from(`Bearer ${secret}`);
+  return actual.length === expected.length && timingSafeEqual(actual, expected);
+}
 export class PackCampaign {
   secret: string;
   origin: string;

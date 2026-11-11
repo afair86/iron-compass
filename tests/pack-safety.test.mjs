@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {randomBytes,createHmac} from 'node:crypto';
-import {PackCampaign,durablePackConfigured} from '../lib/packCampaignService.ts';
+import {PackCampaign,durablePackConfigured,authorizePackWorker} from '../lib/packCampaignService.ts';
 import {PackStore} from '../lib/packStore.ts';
 import {verifyPackWebhook} from '../lib/packWebhook.ts';
 import {packLinkPage,boundedPackText} from '../lib/packLinkResponse.ts';
@@ -17,6 +17,13 @@ test('purpose-bound signed tokens reject tampering, expiry and wrong action',()=
  assert.throws(()=>c.verify(c.token(id,'confirm',999999),'confirm'));
  assert.equal(c.verify(c.token(id,'unsubscribe',8640000000000000),'unsubscribe'),id);
  assert.equal(c.identity(' FIXTURE@EXAMPLE.INVALID '),id);
+});
+test('worker authorization rejects missing and malformed multibyte credentials without throwing',()=>{
+ assert.equal(authorizePackWorker('Bearer abc','abc'),true);
+ assert.equal(authorizePackWorker('Bearer ébc','abc'),false);
+ assert.equal(authorizePackWorker('Bearer xyz','abc'),false);
+ assert.equal(authorizePackWorker(null,'abc'),false);
+ assert.equal(authorizePackWorker('Bearer ',undefined),false);
 });
 test('recipient encryption authenticates ciphertext and secrets; production fails closed',()=>{
  const c=campaign(),cipher=c.encrypt('fixture@example.invalid');
