@@ -25,6 +25,8 @@ const nextConfig: NextConfig = {
     "*": ["./public/audio/**/*"],
   },
   redirects: async () => [
+    // Preserve the legacy sitemap URL still recorded in Search Console.
+    { source: "/sitemap", destination: "/sitemap.xml", permanent: true },
     { source: "/downloads/daily-discipline-checklist.txt", destination: "/blog/quiet-discipline-protocol-busy-men#daily-discipline-checklist", permanent: true },
     { source: "/downloads/weekly-review-checklist.txt", destination: "/blog/disciplined-weekly-reset-for-overloaded-men#weekly-review-checklist", permanent: true },
     ...DOMAIN_ALIAS_REDIRECTS, ...blogRedirects,
