@@ -13,7 +13,7 @@ export default function ApprovedHome() {
   return (
     <div className={styles.home}>
       <section className={styles.hero} id="home">
-        <Image className={styles.heroPhoto} src="/images/home/horizon-man.png" alt={pagePhotoAlts.homeHero} fill priority sizes="100vw" />
+        <Image className={styles.heroPhoto} src="/images/home/horizon-man.png" alt={pagePhotoAlts.homeHero} fill priority fetchPriority="high" sizes="100vw" />
         <div className={styles.heroInner}>
         <div className={styles.banner}>
           <Image className={styles.bannerMark} src="/iron-compass-logo-icon.png" alt="Iron Compass AI" width={150} height={150} />
@@ -58,7 +58,7 @@ export default function ApprovedHome() {
               className={styles.domain}
               aria-labelledby={`home-domain-${domain.slug}`}
             >
-              <PhotoFrame position="center" className={styles.domainPhoto} src={domainPhotos[domain.slug]} alt={domainPhotoAlts[domain.slug]} showMark={false} />
+              <PhotoFrame position="center" className={styles.domainPhoto} src={domainPhotos[domain.slug]} alt={domainPhotoAlts[domain.slug]} showMark={false} sizes="(max-width: 380px) 112px, (max-width: 899px) 140px, (max-width: 1168px) calc((100vw - 62px) / 2), 553px" />
               <div>
                 <h3 id={`home-domain-${domain.slug}`}>{domain.title}</h3>
                 <p>{domain.desc}</p>
