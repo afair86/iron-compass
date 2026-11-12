@@ -1,5 +1,18 @@
 # Iron Compass — shared source and release status
 
+## 13 November 2026 - focused search-growth follow-up LIVE
+
+Functional production source a66842acd2f486fc0e12ded118218c351e4d2856, deployment dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD; branch fix/search-growth-followup-20261113; PR #15. The exact tested production-settings staging deployment was promoted without rebuilding. Public source-version confirms clean exact source. Later documentation-only commits do not change the live functional source. Automatic custom-domain assignment remains false; do not promote a later build implicitly.
+
+Two existing guides (quarterly-mission-design and quiet-discipline-protocol-busy-men) have focused natural-copy, schedule/capacity and useful-example repairs, matching narration sources and actual revision dates. Listen remains hidden. Blog listing lastmod reflects the actual new listing title. Homepage/design/images, dependencies, redirects, app rewrites, app/native/API/billing and customer email configuration are retained.
+
+Final exact-source Website verification 43286800365 and Source continuity 43286800432 both SUCCESS. Build/TypeScript pass, 70 tests pass/one optional external-store test skipped; lint zero errors/five existing warnings. Local 203 HTTP/121 sitemap/27 redirects pass. Initial local harness failure from missing synthetic upstream was corrected by rebuilding with its required test setting; it was not a live app regression. Protected staging and public production each pass 326 records, all 121 sitemap pages and 197 referenced assets, with app HTML/assets/security-header parity. Desktop/mobile browser checks passed expected headings/canonical, no observed viewport overflow or broken loaded images, scrollable keyboard-focusable table and keyboard link activation to the existing free pack. Temporary scoped preview access was revoked. No new speed, indexing or conversion uplift is claimed.
+
+Separate app deployment remains dpl_C4aT41aYohywsLBMeP11Ut2u2vJk. Existing review/Apple/credential holds remain. No customer messages, customer-state writes, outreach, paid tools or disavow were triggered. Rollback this follow-up to dpl_EXSCFMdot13NPSF65sveLpuo1GKs / cb876f9219d6d0fd22ca92521e8775b02ce774dc, preserving upstream, email stores/secrets/withdrawals and callback identity.
+
+Measurement activation contract is docs/SEARCH-GROWTH-FOLLOWUP-20261113.md: reuse existing consent-controlled pack events; account access/stream setup remains required and tracking stays off. Bing profile/terms approval HAS been received; older pending-consent text below is historical. Current blocker is authenticated dashboard/session access, not permission or a zero-traffic result. Exact Lighthouse contrast node remains unresolved; no global colour change or full accessibility clearance. Private account findings, five-page cohort, earned-link plan and report remain outside public source. Existing Friday 09:00 Brisbane automation updated additively; all prior checks and app safeguards preserved. Prepare named outreach batches and final copy before asking for sending approval.
+
+
 ## 13 November 2026 - focused search-growth follow-up in preparation
 
 Owner authorised executing the next search-review actions and preparing a high-quality backlink acquisition plan. Active checkout website-customer-experience-20261111, branch fix/search-growth-followup-20261113, based on pushed1475578 and live functionalcb876f9219d6d0fd22ca92521e8775b02ce774dc/dpl_EXSCFMdot13NPSF65sveLpuo1GKs. Do not replace the approved homepage, app review or live email funnel. No dependencies or app/API/native/billing changes.
