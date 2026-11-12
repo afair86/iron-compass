@@ -1,5 +1,17 @@
 # CURRENT HANDOVER
 
+## 13 November 2026 - focused search-growth follow-up in preparation
+
+Owner authorised executing the next search-review actions and preparing a high-quality backlink acquisition plan. Active checkout website-customer-experience-20261111, branch fix/search-growth-followup-20261113, based on pushed1475578 and live functionalcb876f9219d6d0fd22ca92521e8775b02ce774dc/dpl_EXSCFMdot13NPSF65sveLpuo1GKs. Do not replace the approved homepage, app review or live email funnel. No dependencies or app/API/native/billing changes.
+
+Prepared focused content repairs in quarterly-mission-design and quiet-discipline-protocol-busy-men, with honest actual revision dates, matching narration sources and Listen still hidden. Quarterly guidance now has a worked capacity example and free one-page prompts, accurate week scheduling, natural copy and realistic dependencies; the daily guide no longer contradicts its adaptive planning instructions. Existing layout/images, tool access, public routes and schema generation retained. docs/SEARCH-GROWTH-FOLLOWUP-20261113.md records the reusable measurement activation contract and content scope. Private five-page cohort and backlink findings stay outside public source.
+
+Local70tests pass/one optional external-store test skipped, lint0errors/5existingwarnings, build/TypeScript and203HTTP/121sitemap/27redirects pass on the prepared tree. Initial smoke invocation correctly failed because that build lacked its synthetic app-upstream setting; rebuilt with the harness-required http://127.0.0.1:4311 setting and passed. Not a live app-routing failure. Exact-source CI, hosted preview and final browser verification are still pending; no production release of these changes yet.
+
+Bing owner profile/terms approval has now been received; the same approval is not pending. Current Microsoft sign-in instead returns to Bing's public landing page, and its listed legacy site-management URL returned401. Property/search/Copilot data remain unavailable. Google Analytics still fails browser DNS resolution, so account-side setup/measurement cannot be certified. Reuse existing PackFunnel opt-in; no new collection or experiment activated. No unauthorised outreach, paid link, mass indexing requests or disavow. Existing specific app/Apple/key/classification holds and the full weekly programme remain.
+
+Next: exact-source CI and protected production-settings preview, verify changed pages/mobile/app parity, then release only if every existing gate passes. Private acquisition plan must distinguish earned links/unique domains from prospects and model the requested150-200monthly target without guaranteeing placements.
+
 ## 13 November 2026 at 4:05 am AEST — search discovery and measured homepage delivery fixes live
 
 Owner explicitly requested a deep SEO/AEO/search/AI visibility review, additive weekly reporting and automatic warranted fixes. Checkout website-customer-experience-20261111, branch fix/search-visibility-20261113, functional source cb876f9219d6d0fd22ca92521e8775b02ce774dc, PR14. Production now dpl_EXSCFMdot13NPSF65sveLpuo1GKs at https://ironcompassai.com, exact clean source confirmed. Later documentation commits do not change this runtime identity. Do not promote older main, old blog-only or earlier pack builds over this release.
