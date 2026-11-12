@@ -20,7 +20,13 @@ Watch the common traps. Too many standards can exceed your actual capacity. A sl
 
 The article includes illustrative clock times for someone with a daytime job and an agreed share of the school run. Treat them as examples. Do not copy a schedule that cuts needed rest or quietly assigns your duties to another person.
 
-If you miss several days, inspect the friction. Was the action too large? Was the opportunity real? Did circumstances change? Shorten the next anchor or arrange a better slot, then record what you actually do.
+Protect the opportunity as a real commitment, while leaving room for urgent work, care and safety needs. If it disappears, choose a smaller honest action or agree another opportunity. Record what is unfinished. A disrupted day does not create extra hours.
+
+If you miss several days, inspect the friction. Was the action too large? Was the opportunity real? Did work, care or illness change your capacity? Shorten the next anchor, arrange a better cue or reduce the commitment, then record what you actually do and who needs an update.
+
+A calendar block is one option. Finishing breakfast or arriving home can also be a useful cue when clock times change. Prepare the action and decide what to do if that opportunity is missed.
+
+If the responsibility needs several weeks, the twelve-week planning guide helps you check the finish, available time and dependencies. The daily commitment should be small enough to serve that longer plan.
 
 Motivation may vary. Preparing the action and choosing the opportunity give you something more concrete to return to. A perfect streak is only one kind of record. Daily actions belong to a daily measure; weekly commitments need their actual weekly target.
 
