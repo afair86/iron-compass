@@ -337,6 +337,7 @@ export function buildDomainMetadata(content: DomainContent): Metadata {
     description: content.seo.description,
     alternates: { canonical },
     openGraph: {
+      type: "website",
       title: content.seo.title,
       description: content.seo.description,
       url: canonical,
