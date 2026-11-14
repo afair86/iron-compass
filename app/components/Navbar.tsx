@@ -42,7 +42,7 @@ export default function Navbar() {
           <span className="ic-logo-lockup">
             <span className="ic-logo-mark" aria-hidden>
               <Image
-                src="/iron-compass-logo-icon.png?v=metallic-20261114"
+                src="/iron-compass-logo-metallic-20261114.png"
                 alt=""
                 width={80}
                 height={80}

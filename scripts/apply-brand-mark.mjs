@@ -73,6 +73,7 @@ const icon256 = await sharp(transparent).resize(256, 256, { fit: "contain" }).pn
 // Website public assets (overwrite)
 const websiteOuts = [
   [path.join(websiteRoot, "public", "iron-compass-logo-icon.png"), icon256],
+  [path.join(websiteRoot, "public", "iron-compass-logo-metallic-20261114.png"), icon256],
   [path.join(websiteRoot, "public", "iron-compass-logo.png"), icon512],
   [path.join(websiteRoot, "app", "icon.png"), icon256],
 ];
