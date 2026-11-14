@@ -1,5 +1,10 @@
 # CURRENT HANDOVER
 
+## 14 November 2026 — brightness release ROLLED BACK at owner request
+
+Owner rejected the brightened appearance. Restored previous production deployment dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD, functional source a66842acd2f486fc0e12ded118218c351e4d2856. Public source-version verified. Actual live Edge at390 and1440px confirms original saturate(0.85), no added copy backing, loaded image and no overflow. /app/auth returns200. No app, email, dependency or configuration edits. Brightness CSS restored from prior source in this branch to prevent accidental reuse. All brightness-release claims below are historical and superseded. Do not repromote dpl_AirUcmcH2co3913qs4RRrpynWzrK. Evidence: sibling outputs/hero-rollback-20261114.json and hero-restored-{width}.png. Next: preserve restored appearance; no further visual changes without owner direction.
+
+
 ## 14 November 2026 — brighter ORIGINAL homepage image LIVE
 
 Owner explicitly approved deployment. Functional source e6e754f1c18255db44c1ce4d2211a827dc5c68fb, deployment dpl_AirUcmcH2co3913qs4RRrpynWzrK, PR16, branch fix/hero-brightness-20261114. Production-settings staging promoted unchanged after gates passed. Public source-version confirms clean exact source. Rollback: dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD / a66842acd2f486fc0e12ded118218c351e4d2856.
