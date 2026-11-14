@@ -5,6 +5,7 @@ export const socialLinks = [
     icon: "facebook",
     href: "https://www.facebook.com/profile.php?id=61585722965386",
   },
+  { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/ironcompassai/" },
   { label: "YouTube", icon: "youtube", href: "https://www.youtube.com/@ironcompassai" },
   { label: "TikTok", icon: "tiktok", href: "https://www.tiktok.com/@ironcompassai" },
   { label: "Pinterest", icon: "pinterest", href: "https://www.pinterest.com/ironcompassai/" },

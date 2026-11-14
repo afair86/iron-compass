@@ -1,5 +1,14 @@
 # CURRENT HANDOVER
 
+## 14 November 2026 — confirmed Instagram added; all six profiles LIVE
+
+Owner confirmed https://www.instagram.com/ironcompassai/. Added one socialLinks entry, automatically updating visible footer/icon and Organization.sameAs. Old faircloughadam URL remains absent. All six owner-supplied profiles now live. Runtime sourcebce73dc78c94ee73a5d0140d9c07a5a665abe79d, deployment dpl_DT1bdNQC8uF4uMKdx9H3ZRjp8tbk, PR19, branch fix/instagram-confirmed-20261114 in website-social-profiles-20261114 checkout. Exact clean production-settings staging promoted unchanged; public source and completed aliases verified. Rollback dpl_J62WCGDYh6sm4AYkUy44rUkUN7Hz/sourcefb8a1f8eaefb92c92d596c02d05443051e6827d3.
+
+CI43571723081 Website verification and43571723189 Source continuity SUCCESS, including tests/lint/build/types/advisory/local route gates. Stage/live browser8page-width checks each cover home/blog320/390/768/1440: six exact links/schema profiles, loaded decorative icons,44px-minimum links, no overflow/page errors, keyboard focus and Instagram link activation against an intercepted exact external destination, app entry opens. Actual external Instagram account not logged into or independently certified; supplied URL authority is owner confirmation. Mobile screenshot inspected. Reused preceding331-record full crawl evidence for unchanged SEO/routing/assets/app configuration; do not claim a new full331crawl for this one-line addition. Scoped ten-minute error/fatal query empty (point-in-time only). Temporary preview access revoked/local secret removed. App/email/hero/branding and tracking unchanged.
+
+Evidence: outputs/instagram-profiles-{stage,live}-browser.json and instagram-section-{stage,live}-{width}.png in sibling workspace outputs. Documentation successor is not a new live build. Next: normal existing search monitoring; Instagram URL question resolved.
+
+
 ## 14 November 2026 — five confirmed social profiles LIVE; Instagram pending
 
 Owner-requested professional footer/social search-data update live at https://ironcompassai.com, functional sourcefb8a1f8eaefb92c92d596c02d05443051e6827d3, deployment dpl_J62WCGDYh6sm4AYkUy44rUkUN7Hz, PR18, branch fix/social-profiles-20261114. Exact tested production-settings artifact promoted unchanged; public exact source verified. Rollback dpl_FaE8ATQF9Tcb5LHkhw58KnViJkxL/source5c719d284d46a8811bd1c141c41ec07c4fb20155. Later documentation commit is not a new runtime release.
@@ -397,6 +406,7 @@ Next engineering priorities are hosted source-provenance verification and propor
 
 ## 14 November 2026 — owner requested brighter, more photorealistic man
 Generated a brighter photographic-style revision from the existing hero, retaining the seated man/lookout composition. Copied the generated asset to public/images/home/horizon-man.png in this isolated branch; source original remains in git and generated original retained. Not deployed. Earlier CSS-only screenshot evidence predates this new asset; responsive crop, image optimisation and text contrast must be rechecked before release.
+
 
 
 
