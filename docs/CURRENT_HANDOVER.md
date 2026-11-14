@@ -1,5 +1,35 @@
 # CURRENT HANDOVER
 
+## 14 November 2026 — clearer original photo v5, PREVIEW ONLY
+
+Owner wants original photo to come through clearly. Removed saturation reduction (filter:none); desktop broad shade transparent across left40%, then72% at52%/76% right. Tightened feathered brand/motto shade to ellipse20%17%, centre30%59%,66/56% opacity, keeping shade closer to lettering and clearing more of man/foreground. No new boxes or layout change; original asset pixels retained. Mobile overlay retained. At1440/390 browser checks preserve exact element geometry, no extra copy backing, no overflow. Sampled ordinary text minimum4.55:1, headings4.58:1. Evidence outputs/hero-clear-v5-{1440,390}.png and hero-contrast.json. Local preview only, not pushed/deployed. Await owner review.
+
+
+## 14 November 2026 — lighter over man v4, PREVIEW ONLY
+
+Owner requested another small shading reduction over man; no boxes/layout changes; review before deployment. Desktop broad overlay now0/12/72/76%, retaining smooth feathered shading around brand/motto55/46% for legibility. Mobile unchanged from v3 to preserve contrast. Original image/filter and layout retained. Desktop/mobile preview geometry/no-overflow/no-copy-box checks pass; sampled ordinary text contrast minimum4.56:1. Desktop motto initially4.46:1, corrected to4.65:1 before presentation. Screenshots outputs/hero-overlay-lighter-v4-{1440,390}.png. Not pushed or deployed. Production remains restored a66842a. Await owner review.
+
+
+## 14 November 2026 — lighter over man v3, PREVIEW ONLY
+
+Latest owner requests further reduction especially over man, readable text, no boxes/layout changes and preview before deploy. Desktop broad overlay6/22/72/76%, with existing feathered brand/motto shade slightly adjusted49/40% to maintain text contrast; mobile25/72%. Original image/filter/layout unchanged. At1440/390px browser preview confirms exact unchanged element geometry, no copy backing, no overflow. Sampled ordinary text contrast minimum4.56:1; headline4.59:1. Initial lighter proposal missed motto threshold and was adjusted before presenting. Evidence outputs/hero-overlay-lighter-v3-{1440,390}.png and hero-contrast.json. No push or deployment. Production remains restored original a66842a. Await owner appearance review.
+
+
+## 14 November 2026 — lighter overlay v2, PREVIEW ONLY
+
+Owner requested a little less shading, readable text, no boxes/layout changes, preview before deploying. Desktop broad overlay reduced to20/36/72/76%; mobile28/72%. Soft feathered desktop radial shading beneath brand/motto retains contrast without panels or hard edges. Original asset/filter/layout retained. At1440/390px exact element geometry unchanged, no copy backing, no overflow. Sampled background contrast for ordinary motto/body/status text minimum4.69:1, headings4.66:1; not a full accessibility audit. Initial flatter desktop overlay failed motto contrast2.81:1 and was corrected with feathered shading. Preview outputs/hero-overlay-lighter-v2-1440.png, hero-overlay-preview-390.png; contrast outputs/hero-contrast.json. No push/deployment. Next: await owner appearance review.
+
+
+## 14 November 2026 — latest preview: reduce shading only
+
+Owner agreed shading is the issue; preview before deployment still required. Removed local brightness(1.12) experiment; original saturate(.85) and image unchanged. Desktop overlay now28/44/76/80% instead of45/60/86/90%; mobile36/76% instead of48/84%, retaining original stops and dark bottom. No text boxes or layout changes. Browser CSS preview at1440/390 confirms identical text/image/link rectangles, no extra copy backing, original filter and no overflow. Screenshots outputs/hero-overlay-preview-{width}.png and checks outputs/hero-overlay-preview-checks.json. Not pushed/deployed; production remains original a66842a. Next: owner reviews appearance before release work.
+
+
+## 14 November 2026 — subtle brightness preview ONLY, awaiting owner review
+
+Latest owner specifically requests original photograph slightly brighter, no text boxes or layout change, and preview before deployment. Local CSS-only change: existing saturate(.85) retained and brightness(1.12) appended to heroPhoto. Original overlay, all layout and original asset unchanged. Live-HTML browser preview at1440/390px confirms exact unchanged text/link/image bounding boxes, unchanged overlay, absent added copy backing and no overflow. Screenshots: sibling outputs/hero-subtle-before-{width}.png and hero-subtle-after-{width}.png; results hero-subtle-preview-checks.json. This is local browser CSS preview only, not deployed/pushed or compiled verification. Current production remains restored a66842a. Next: await owner appearance review; no deployment authorised by this request.
+
+
 ## 14 November 2026 — brightness release ROLLED BACK at owner request
 
 Owner rejected the brightened appearance. Restored previous production deployment dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD, functional source a66842acd2f486fc0e12ded118218c351e4d2856. Public source-version verified. Actual live Edge at390 and1440px confirms original saturate(0.85), no added copy backing, loaded image and no overflow. /app/auth returns200. No app, email, dependency or configuration edits. Brightness CSS restored from prior source in this branch to prevent accidental reuse. All brightness-release claims below are historical and superseded. Do not repromote dpl_AirUcmcH2co3913qs4RRrpynWzrK. Evidence: sibling outputs/hero-rollback-20261114.json and hero-restored-{width}.png. Next: preserve restored appearance; no further visual changes without owner direction.
