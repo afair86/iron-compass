@@ -16,7 +16,7 @@ export default function ApprovedHome() {
         <Image className={styles.heroPhoto} src="/images/home/horizon-man.png" alt={pagePhotoAlts.homeHero} fill priority fetchPriority="high" sizes="100vw" />
         <div className={styles.heroInner}>
         <div className={styles.banner}>
-          <Image className={styles.bannerMark} src="/iron-compass-logo-icon.png" alt="Iron Compass AI" width={150} height={150} />
+          <Image className={styles.bannerMark} src="/iron-compass-logo-icon.png?v=metallic-20261114" alt="Iron Compass AI" width={150} height={150} />
           <p className={styles.bannerWord}>
             Iron Compass <span>AI</span>
           </p>

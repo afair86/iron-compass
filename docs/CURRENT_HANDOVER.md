@@ -1,5 +1,16 @@
 # CURRENT HANDOVER
 
+## 14 November 2026 — warm metallic logo, release preparation
+
+Owner approved the logo testers and requested upload plus a site-wide logo audit. This isolated checkout website-metallic-logo-20261114 / fix/metallic-logo-20261114 starts at dc3781c, documentation successor of independently verified live a22dc9e3aaeed930fb40ecae750d1e836a3e53e5. Scope is recommended charcoal-header option A, shared website marks and favicon. No stone theme or new feature section. Boat hero remains a separate held draft because its lighter desktop text contrast failed; not included here.
+
+Replaced shared header/footer/homepage mark, publisher schema image, legacy public logo and browser icon/favicon with approved warm metallic artwork; restrained warm wordmark retains red AI. Versioned component image query prevents old optimized-image reuse. Preserved existing hero, layout, copy, SEO/routing, app and email. Asset regeneration now preserves existing alpha and writes website assets only, removing implicit sibling-app writes. Source artwork and derived assets kept together. Public icon 98,041 to85,063 bytes; publisher image387,521 to297,426; favicon25,931 to4,656. This is asset-size evidence, not measured page speed.
+
+Audit: Navbar and Footer are shared across website pages; homepage banner also uses shared icon. Organization/publisher schemas in layout, articles and blog use ORGANIZATION_LOGO. Seven legacy blog frontmatter references plus template use public logo but sitePhotos explicitly excludes logo as article photograph. Actual app screenshots, embedded photographic emblems, downloaded worksheet text, external social profiles and separate app/native icons retain their own scope; no image regeneration or app change inferred. Browser favicon and Next icon both updated; no existing Apple-touch/manifest logo route found in this website checkout. Unused Next/Vercel/globe placeholder SVGs are not brand placements and remain untouched.
+
+Local existing suite70passed/1optionalexternal-store skipped; lint0errors/4existingwarnings. Initial lint command was run from workspace rather than checkout and found no lint script; correct checkout passes. Hosted build/CI, mobile/desktop browser verification and production promotion pending. Rollback is current dpl_2UC1UGtLsEc97TAdK1duP2DZGmok. Automatic domain assignment independently verified false. Next: verify exact-source CI and protected stage, then promote only if gates pass. App/API/native/Apple/customer-state restrictions unchanged.
+
+
 ## 14 November 2026 — approved v5 original-photo shading LIVE, NO TEXT BOXES
 
 Owner explicitly approved exact v5 preview with original image/layout and no boxes. Functional source a22dc9e3aaeed930fb40ecae750d1e836a3e53e5, deployment dpl_2UC1UGtLsEc97TAdK1duP2DZGmok, PR16. Production-settings staging promoted unchanged. Public source confirms clean exact commit. Only three runtime CSS declarations changed from restored production: mobile overlay, desktop feathered overlay, filter:none. Original image bytes, DOM/layout, copy, SEO, dependencies, app/API/native/billing/email configuration unchanged. No copy pseudo-element/backing or motto box exists. Prior rejected brightness/panel release remains superseded.
@@ -355,3 +366,4 @@ Next engineering priorities are hosted source-provenance verification and propor
 
 ## 14 November 2026 — owner requested brighter, more photorealistic man
 Generated a brighter photographic-style revision from the existing hero, retaining the seated man/lookout composition. Copied the generated asset to public/images/home/horizon-man.png in this isolated branch; source original remains in git and generated original retained. Not deployed. Earlier CSS-only screenshot evidence predates this new asset; responsive crop, image optimisation and text contrast must be rechecked before release.
+
