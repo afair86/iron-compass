@@ -28,7 +28,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(38, 44, 52, .48), rgba(38, 44, 52, .84) 48%, #262c34 100%);
+  background: linear-gradient(180deg, rgba(38, 44, 52, .25), rgba(38, 44, 52, .72) 48%, #262c34 100%);
   pointer-events: none;
 }
 
@@ -134,7 +134,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 30% center;
-  filter: saturate(.85);
+  filter: none;
 }
 
 .heroCopy {
@@ -390,7 +390,7 @@
   }
 
   .hero::after {
-    background: linear-gradient(90deg, rgba(38, 44, 52, .45) 0%, rgba(38, 44, 52, .60) 38%, rgba(38, 44, 52, .86) 50%, rgba(38, 44, 52, .90) 100%);
+    background: radial-gradient(ellipse 20% 17% at 30% 59%, rgba(38, 44, 52, .66) 0%, rgba(38, 44, 52, .56) 45%, transparent 100%), linear-gradient(90deg, rgba(38, 44, 52, 0) 0%, rgba(38, 44, 52, 0) 40%, rgba(38, 44, 52, .72) 52%, rgba(38, 44, 52, .76) 100%);
   }
 
   .banner {

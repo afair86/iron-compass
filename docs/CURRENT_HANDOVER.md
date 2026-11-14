@@ -1,5 +1,79 @@
 # CURRENT HANDOVER
 
+## 14 November 2026 — approved v5 original-photo shading LIVE, NO TEXT BOXES
+
+Owner explicitly approved exact v5 preview with original image/layout and no boxes. Functional source a22dc9e3aaeed930fb40ecae750d1e836a3e53e5, deployment dpl_2UC1UGtLsEc97TAdK1duP2DZGmok, PR16. Production-settings staging promoted unchanged. Public source confirms clean exact commit. Only three runtime CSS declarations changed from restored production: mobile overlay, desktop feathered overlay, filter:none. Original image bytes, DOM/layout, copy, SEO, dependencies, app/API/native/billing/email configuration unchanged. No copy pseudo-element/backing or motto box exists. Prior rejected brightness/panel release remains superseded.
+
+Exact-source CI43557419819 Website verification and43557420047 Source continuity succeeded: advisory gate, tests, lint, build/TypeScript, calculation and local route checks. Stage326 and public326 verification records passed, including121sitemap pages/197assets and app HTML/assets/security-header parity. Stage/live Edge390 and1440px confirm original image loaded, filter:none, no copy box/background, no overflow, canonical/H1, keyboard Explore link and app-entry navigation, no page errors. Screenshot comparison to owner-approved v5 preview: mean channel difference0.02455 mobile and0.00006 desktop on0–255 scale in live capture, negligible rendering variation. Evidence outputs/hero-v5-{stage,live}-browser.json/screenshots and search-hosted-hero-v5-{stage,live}-results-20261113.json (legacy filename date). Contrast samples previously verified ordinary-text minimum4.55:1; no universal accessibility or commercial uplift claim.
+
+Scoped error/fatal runtime query returned no groups in ten-minute window; point-in-time only. Temporary stage access revoked and local secret removed. Rollback dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD / a66842acd2f486fc0e12ded118218c351e4d2856. No customer submits/sends or app deployment triggered. Later documentation-only commit is not a new production build. Next: preserve this accepted appearance and current source during other workstreams; routine monitoring only.
+
+
+## 14 November 2026 — clearer original photo v5, PREVIEW ONLY
+
+Owner wants original photo to come through clearly. Removed saturation reduction (filter:none); desktop broad shade transparent across left40%, then72% at52%/76% right. Tightened feathered brand/motto shade to ellipse20%17%, centre30%59%,66/56% opacity, keeping shade closer to lettering and clearing more of man/foreground. No new boxes or layout change; original asset pixels retained. Mobile overlay retained. At1440/390 browser checks preserve exact element geometry, no extra copy backing, no overflow. Sampled ordinary text minimum4.55:1, headings4.58:1. Evidence outputs/hero-clear-v5-{1440,390}.png and hero-contrast.json. Local preview only, not pushed/deployed. Await owner review.
+
+
+## 14 November 2026 — lighter over man v4, PREVIEW ONLY
+
+Owner requested another small shading reduction over man; no boxes/layout changes; review before deployment. Desktop broad overlay now0/12/72/76%, retaining smooth feathered shading around brand/motto55/46% for legibility. Mobile unchanged from v3 to preserve contrast. Original image/filter and layout retained. Desktop/mobile preview geometry/no-overflow/no-copy-box checks pass; sampled ordinary text contrast minimum4.56:1. Desktop motto initially4.46:1, corrected to4.65:1 before presentation. Screenshots outputs/hero-overlay-lighter-v4-{1440,390}.png. Not pushed or deployed. Production remains restored a66842a. Await owner review.
+
+
+## 14 November 2026 — lighter over man v3, PREVIEW ONLY
+
+Latest owner requests further reduction especially over man, readable text, no boxes/layout changes and preview before deploy. Desktop broad overlay6/22/72/76%, with existing feathered brand/motto shade slightly adjusted49/40% to maintain text contrast; mobile25/72%. Original image/filter/layout unchanged. At1440/390px browser preview confirms exact unchanged element geometry, no copy backing, no overflow. Sampled ordinary text contrast minimum4.56:1; headline4.59:1. Initial lighter proposal missed motto threshold and was adjusted before presenting. Evidence outputs/hero-overlay-lighter-v3-{1440,390}.png and hero-contrast.json. No push or deployment. Production remains restored original a66842a. Await owner appearance review.
+
+
+## 14 November 2026 — lighter overlay v2, PREVIEW ONLY
+
+Owner requested a little less shading, readable text, no boxes/layout changes, preview before deploying. Desktop broad overlay reduced to20/36/72/76%; mobile28/72%. Soft feathered desktop radial shading beneath brand/motto retains contrast without panels or hard edges. Original asset/filter/layout retained. At1440/390px exact element geometry unchanged, no copy backing, no overflow. Sampled background contrast for ordinary motto/body/status text minimum4.69:1, headings4.66:1; not a full accessibility audit. Initial flatter desktop overlay failed motto contrast2.81:1 and was corrected with feathered shading. Preview outputs/hero-overlay-lighter-v2-1440.png, hero-overlay-preview-390.png; contrast outputs/hero-contrast.json. No push/deployment. Next: await owner appearance review.
+
+
+## 14 November 2026 — latest preview: reduce shading only
+
+Owner agreed shading is the issue; preview before deployment still required. Removed local brightness(1.12) experiment; original saturate(.85) and image unchanged. Desktop overlay now28/44/76/80% instead of45/60/86/90%; mobile36/76% instead of48/84%, retaining original stops and dark bottom. No text boxes or layout changes. Browser CSS preview at1440/390 confirms identical text/image/link rectangles, no extra copy backing, original filter and no overflow. Screenshots outputs/hero-overlay-preview-{width}.png and checks outputs/hero-overlay-preview-checks.json. Not pushed/deployed; production remains original a66842a. Next: owner reviews appearance before release work.
+
+
+## 14 November 2026 — subtle brightness preview ONLY, awaiting owner review
+
+Latest owner specifically requests original photograph slightly brighter, no text boxes or layout change, and preview before deployment. Local CSS-only change: existing saturate(.85) retained and brightness(1.12) appended to heroPhoto. Original overlay, all layout and original asset unchanged. Live-HTML browser preview at1440/390px confirms exact unchanged text/link/image bounding boxes, unchanged overlay, absent added copy backing and no overflow. Screenshots: sibling outputs/hero-subtle-before-{width}.png and hero-subtle-after-{width}.png; results hero-subtle-preview-checks.json. This is local browser CSS preview only, not deployed/pushed or compiled verification. Current production remains restored a66842a. Next: await owner appearance review; no deployment authorised by this request.
+
+
+## 14 November 2026 — brightness release ROLLED BACK at owner request
+
+Owner rejected the brightened appearance. Restored previous production deployment dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD, functional source a66842acd2f486fc0e12ded118218c351e4d2856. Public source-version verified. Actual live Edge at390 and1440px confirms original saturate(0.85), no added copy backing, loaded image and no overflow. /app/auth returns200. No app, email, dependency or configuration edits. Brightness CSS restored from prior source in this branch to prevent accidental reuse. All brightness-release claims below are historical and superseded. Do not repromote dpl_AirUcmcH2co3913qs4RRrpynWzrK. Evidence: sibling outputs/hero-rollback-20261114.json and hero-restored-{width}.png. Next: preserve restored appearance; no further visual changes without owner direction.
+
+
+## 14 November 2026 — brighter ORIGINAL homepage image LIVE
+
+Owner explicitly approved deployment. Functional source e6e754f1c18255db44c1ce4d2211a827dc5c68fb, deployment dpl_AirUcmcH2co3913qs4RRrpynWzrK, PR16, branch fix/hero-brightness-20261114. Production-settings staging promoted unchanged after gates passed. Public source-version confirms clean exact source. Rollback: dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD / a66842acd2f486fc0e12ded118218c351e4d2856.
+
+Only runtime change is homepage CSS: original photograph unchanged, brightness1.55, reduced broad overlay, local charcoal contrast backing behind copy and motto. No generated replacement image published. All text, SEO, routing, app/API/native/billing/email settings and dependencies preserved. Logo-name exception is distinct from ordinary text contrast. Pre-release screenshot background sampling corrected inadequate initial contrast; tested copy/motto minimum6.21:1 and headline7.04:1 across desktop/mobile samples. Not universal accessibility certification.
+
+Exact-source Website verification43541176880 and Source continuity43541176800 both SUCCESS: production advisory gate, tests, lint, build/TypeScript, calculation checks and local HTTP harness. Protected staging326 and public326 checks passed, including121sitemap pages,197referenced assets, metadata, redirect, app HTML/assets/security-header baseline parity and free-pack availability. Actual staged/live Edge at390 and1440px passed image load, brightness style, no overflow, unchanged H1/canonical, keyboard Explore link, app entry navigation and no page errors. No login, purchase or email submissions. Runtime error/fatal group query for this deployment returned no groups in the ten-minute window, a point-in-time observation only. No measured performance or conversion uplift claimed; original asset/dependency payload retained.
+
+Initial browser harness authentication used an inappropriate header for a share link and was corrected to cookie-setting share URL; canonical expectation corrected for the valid trailing slash. Neither was a product defect. Temporary scoped stage access revoked and local secret file removed. Evidence in sibling outputs/hero-stage-browser.json, hero-live-browser.json, search-hosted-hero-stage-results-20261113.json and search-hosted-hero-live-results-20261113.json (legacy verifier filename date). Current source supersedes older branch handovers; app/Apple holds remain. Later handover-only commit is documentation, not a new production build. Next: normal scheduled monitoring; preserve this source when continuing other website work.
+
+
+## 14 November 2026 — owner approved deployment; release verification in progress
+
+Original hero asset retained byte-for-byte. CSS brightness1.55 and lighter overlay approved by owner. Pre-release pixel-background contrast sampling exposed inadequate reading-text contrast in the approved preview; added local charcoal backing behind hero copy and motto, keeping photograph bright elsewhere. Updated desktop/mobile sampled copy contrast minimum6.21:1; headline minimum7.04:1; motto7.49:1. Logo-name is separately exempt and not counted as ordinary text. These are bounded screenshot samples, not a universal accessibility audit. No app/API/email/dependency change. Production staging and CI still pending at this source checkpoint.
+
+
+## 14 November 2026 — latest owner direction: ORIGINAL photograph, modest brightening
+
+Supersedes generated-image candidates below. Restored public/images/home/horizon-man.png byte-for-byte from HEAD; no image asset diff remains. CSS alone restores natural saturation and moderately reduces dark overlays: desktop0–56%, mobile0% upper shade with66% reading floor plus CSS brightness(1.55) on the original image (owner requested a clearly brighter preview). Original man and scene unchanged. Rechecked exact responsive CSS on current live HTML in headless Edge at1440 and390px: image loaded, no horizontal overflow, original H1 and /app/auth + /download destinations retained. Refreshed sibling outputs/hero-after-1440.png and hero-after-390.png; browser CSS preview only, not deployed or build-certified. Next: staging/build/release checks before publishing.
+
+
+## 14 November 2026 — brighter homepage photograph prepared locally
+
+Owner requested substantially brighter main homepage image. Isolated checkout website-hero-brightness-20261114, branch fix/hero-brightness-20261114, based on 706aa8a (documentation successor of live functional a66842acd2f486fc0e12ded118218c351e4d2856). Public source-version independently confirmed a66842a. No other checkout edited.
+
+Only runtime change: app/components/approved-home.module.css. Restore natural saturation; reduce mobile upper overlay from48% to12% and delay darker text floor. Desktop overlay reduced from45–90% to12–68%, retaining strongest shade behind copy. Original asset, crop, dimensions, copy, SEO, app routes, dependencies and email untouched.
+
+Validation: existing live HTML rendered in headless Edge at1440x1000 and390x1000 with exact changed responsive overlay/filter applied locally in browser. Both images loaded; heading and two CTA routes preserved; no horizontal overflow. Desktop/mobile screenshots visually inspected. This is CSS-injected browser evidence, NOT a hosted preview or local compiled-build check; no full contrast certification. First browser attempt lacked bundled Chromium; installed Edge succeeded. Evidence: sibling outputs/hero-before-{width}.png, hero-after-{width}.png, hero-brightness-checks-20261114.json. No production changes or push. Next: build/stage this exact CSS patch and complete release verification before promotion; provide screenshots for appearance review.
+
+
 ## 13 November 2026 - focused search-growth follow-up LIVE
 
 Functional production source a66842acd2f486fc0e12ded118218c351e4d2856, deployment dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD; branch fix/search-growth-followup-20261113; PR #15. The exact tested production-settings staging deployment was promoted without rebuilding. Public source-version confirms clean exact source. Later documentation-only commits do not change the live functional source. Automatic custom-domain assignment remains false; do not promote a later build implicitly.
@@ -278,3 +352,6 @@ These checks are NOT enforced branch protection or deployment gates. They run on
 Read-only app CI review found main's `.github/workflows/ci.yml` permits `--passWithNoTests` for frontend/API. That is a coverage risk, not evidence that tests are missing. Its iOS TestFlight workflow is manual-dispatch only. No app workflow or native build has been changed; identify the authoritative release source and actual executed tests before modifying them.
 
 Next engineering priorities are hosted source-provenance verification and proportionate browser/regression review before a separately approved production release, then evidence-backed app test coverage. Existing analytics plan and first-update backlog remain authoritative starting points; do not rebuild or re-audit completed work. Keep the original PRs for provenance and avoid merging their changes twice.
+
+## 14 November 2026 — owner requested brighter, more photorealistic man
+Generated a brighter photographic-style revision from the existing hero, retaining the seated man/lookout composition. Copied the generated asset to public/images/home/horizon-man.png in this isolated branch; source original remains in git and generated original retained. Not deployed. Earlier CSS-only screenshot evidence predates this new asset; responsive crop, image optimisation and text contrast must be rechecked before release.
