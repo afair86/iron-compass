@@ -121,11 +121,16 @@ export default function Footer() {
 
         <nav className="ic-footer-social" aria-label="Follow Iron Compass AI">
           <p>Follow Iron Compass AI</p>
-          {socialLinks.map((link) => (
-            <a key={link.href} href={link.href} rel="me">
-              {link.label}
-            </a>
-          ))}
+          <ul>
+            {socialLinks.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} rel="me">
+                  <Image src={`/images/social/${link.icon}.svg`} alt="" width={20} height={20} aria-hidden="true" />
+                  <span>{link.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
 
         <div className="ic-footer-legal">
