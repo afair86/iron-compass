@@ -1,5 +1,16 @@
 # CURRENT HANDOVER
 
+## 14 November 2026 — brighter ORIGINAL homepage image LIVE
+
+Owner explicitly approved deployment. Functional source e6e754f1c18255db44c1ce4d2211a827dc5c68fb, deployment dpl_AirUcmcH2co3913qs4RRrpynWzrK, PR16, branch fix/hero-brightness-20261114. Production-settings staging promoted unchanged after gates passed. Public source-version confirms clean exact source. Rollback: dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD / a66842acd2f486fc0e12ded118218c351e4d2856.
+
+Only runtime change is homepage CSS: original photograph unchanged, brightness1.55, reduced broad overlay, local charcoal contrast backing behind copy and motto. No generated replacement image published. All text, SEO, routing, app/API/native/billing/email settings and dependencies preserved. Logo-name exception is distinct from ordinary text contrast. Pre-release screenshot background sampling corrected inadequate initial contrast; tested copy/motto minimum6.21:1 and headline7.04:1 across desktop/mobile samples. Not universal accessibility certification.
+
+Exact-source Website verification43541176880 and Source continuity43541176800 both SUCCESS: production advisory gate, tests, lint, build/TypeScript, calculation checks and local HTTP harness. Protected staging326 and public326 checks passed, including121sitemap pages,197referenced assets, metadata, redirect, app HTML/assets/security-header baseline parity and free-pack availability. Actual staged/live Edge at390 and1440px passed image load, brightness style, no overflow, unchanged H1/canonical, keyboard Explore link, app entry navigation and no page errors. No login, purchase or email submissions. Runtime error/fatal group query for this deployment returned no groups in the ten-minute window, a point-in-time observation only. No measured performance or conversion uplift claimed; original asset/dependency payload retained.
+
+Initial browser harness authentication used an inappropriate header for a share link and was corrected to cookie-setting share URL; canonical expectation corrected for the valid trailing slash. Neither was a product defect. Temporary scoped stage access revoked and local secret file removed. Evidence in sibling outputs/hero-stage-browser.json, hero-live-browser.json, search-hosted-hero-stage-results-20261113.json and search-hosted-hero-live-results-20261113.json (legacy verifier filename date). Current source supersedes older branch handovers; app/Apple holds remain. Later handover-only commit is documentation, not a new production build. Next: normal scheduled monitoring; preserve this source when continuing other website work.
+
+
 ## 14 November 2026 — owner approved deployment; release verification in progress
 
 Original hero asset retained byte-for-byte. CSS brightness1.55 and lighter overlay approved by owner. Pre-release pixel-background contrast sampling exposed inadequate reading-text contrast in the approved preview; added local charcoal backing behind hero copy and motto, keeping photograph bright elsewhere. Updated desktop/mobile sampled copy contrast minimum6.21:1; headline minimum7.04:1; motto7.49:1. Logo-name is separately exempt and not counted as ordinary text. These are bounded screenshot samples, not a universal accessibility audit. No app/API/email/dependency change. Production staging and CI still pending at this source checkpoint.
