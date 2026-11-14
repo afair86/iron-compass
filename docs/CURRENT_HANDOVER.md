@@ -1,5 +1,24 @@
 # CURRENT HANDOVER
 
+## 14 November 2026 — owner approved deployment; release verification in progress
+
+Original hero asset retained byte-for-byte. CSS brightness1.55 and lighter overlay approved by owner. Pre-release pixel-background contrast sampling exposed inadequate reading-text contrast in the approved preview; added local charcoal backing behind hero copy and motto, keeping photograph bright elsewhere. Updated desktop/mobile sampled copy contrast minimum6.21:1; headline minimum7.04:1; motto7.49:1. Logo-name is separately exempt and not counted as ordinary text. These are bounded screenshot samples, not a universal accessibility audit. No app/API/email/dependency change. Production staging and CI still pending at this source checkpoint.
+
+
+## 14 November 2026 — latest owner direction: ORIGINAL photograph, modest brightening
+
+Supersedes generated-image candidates below. Restored public/images/home/horizon-man.png byte-for-byte from HEAD; no image asset diff remains. CSS alone restores natural saturation and moderately reduces dark overlays: desktop0–56%, mobile0% upper shade with66% reading floor plus CSS brightness(1.55) on the original image (owner requested a clearly brighter preview). Original man and scene unchanged. Rechecked exact responsive CSS on current live HTML in headless Edge at1440 and390px: image loaded, no horizontal overflow, original H1 and /app/auth + /download destinations retained. Refreshed sibling outputs/hero-after-1440.png and hero-after-390.png; browser CSS preview only, not deployed or build-certified. Next: staging/build/release checks before publishing.
+
+
+## 14 November 2026 — brighter homepage photograph prepared locally
+
+Owner requested substantially brighter main homepage image. Isolated checkout website-hero-brightness-20261114, branch fix/hero-brightness-20261114, based on 706aa8a (documentation successor of live functional a66842acd2f486fc0e12ded118218c351e4d2856). Public source-version independently confirmed a66842a. No other checkout edited.
+
+Only runtime change: app/components/approved-home.module.css. Restore natural saturation; reduce mobile upper overlay from48% to12% and delay darker text floor. Desktop overlay reduced from45–90% to12–68%, retaining strongest shade behind copy. Original asset, crop, dimensions, copy, SEO, app routes, dependencies and email untouched.
+
+Validation: existing live HTML rendered in headless Edge at1440x1000 and390x1000 with exact changed responsive overlay/filter applied locally in browser. Both images loaded; heading and two CTA routes preserved; no horizontal overflow. Desktop/mobile screenshots visually inspected. This is CSS-injected browser evidence, NOT a hosted preview or local compiled-build check; no full contrast certification. First browser attempt lacked bundled Chromium; installed Edge succeeded. Evidence: sibling outputs/hero-before-{width}.png, hero-after-{width}.png, hero-brightness-checks-20261114.json. No production changes or push. Next: build/stage this exact CSS patch and complete release verification before promotion; provide screenshots for appearance review.
+
+
 ## 13 November 2026 - focused search-growth follow-up LIVE
 
 Functional production source a66842acd2f486fc0e12ded118218c351e4d2856, deployment dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD; branch fix/search-growth-followup-20261113; PR #15. The exact tested production-settings staging deployment was promoted without rebuilding. Public source-version confirms clean exact source. Later documentation-only commits do not change the live functional source. Automatic custom-domain assignment remains false; do not promote a later build implicitly.
@@ -278,3 +297,6 @@ These checks are NOT enforced branch protection or deployment gates. They run on
 Read-only app CI review found main's `.github/workflows/ci.yml` permits `--passWithNoTests` for frontend/API. That is a coverage risk, not evidence that tests are missing. Its iOS TestFlight workflow is manual-dispatch only. No app workflow or native build has been changed; identify the authoritative release source and actual executed tests before modifying them.
 
 Next engineering priorities are hosted source-provenance verification and proportionate browser/regression review before a separately approved production release, then evidence-backed app test coverage. Existing analytics plan and first-update backlog remain authoritative starting points; do not rebuild or re-audit completed work. Keep the original PRs for provenance and avoid merging their changes twice.
+
+## 14 November 2026 — owner requested brighter, more photorealistic man
+Generated a brighter photographic-style revision from the existing hero, retaining the seated man/lookout composition. Copied the generated asset to public/images/home/horizon-man.png in this isolated branch; source original remains in git and generated original retained. Not deployed. Earlier CSS-only screenshot evidence predates this new asset; responsive crop, image optimisation and text contrast must be rechecked before release.

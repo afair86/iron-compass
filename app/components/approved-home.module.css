@@ -22,13 +22,13 @@
   padding: 40px 0 48px;
 }
 
-/* A dark floor keeps text legible even over the brightest part of the photo. */
+/* Reveal the photograph above the copy; retain a dark floor behind reading text. */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(38, 44, 52, .48), rgba(38, 44, 52, .84) 48%, #262c34 100%);
+  background: linear-gradient(180deg, rgba(38, 44, 52, 0), rgba(38, 44, 52, .05) 32%, rgba(38, 44, 52, .66) 58%, #262c34 100%);
   pointer-events: none;
 }
 
@@ -134,7 +134,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 30% center;
-  filter: saturate(.85);
+  filter: brightness(1.55);
 }
 
 .heroCopy {
@@ -390,7 +390,7 @@
   }
 
   .hero::after {
-    background: linear-gradient(90deg, rgba(38, 44, 52, .45) 0%, rgba(38, 44, 52, .60) 38%, rgba(38, 44, 52, .86) 50%, rgba(38, 44, 52, .90) 100%);
+    background: linear-gradient(90deg, rgba(38, 44, 52, 0) 0%, rgba(38, 44, 52, .02) 38%, rgba(38, 44, 52, .54) 54%, rgba(38, 44, 52, .56) 100%);
   }
 
   .banner {
@@ -453,3 +453,19 @@
 .guideLinks a:focus-visible { outline:2px solid var(--ic-text-heading); outline-offset:4px; }
 .guideLinks p { margin:16px 0 0; color:var(--ic-text-main); line-height:1.7; }
 @media(max-width:760px) { .guideLinks { grid-template-columns:minmax(0,1fr); } }
+
+/* Local contrast protection lets the original photograph remain bright. */
+.heroCopy::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  z-index: -1;
+  border-radius: 14px;
+  background: rgba(38, 44, 52, .80);
+  pointer-events: none;
+}
+.bannerMotto {
+  background: rgba(38, 44, 52, .80);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
