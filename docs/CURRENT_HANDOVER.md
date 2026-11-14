@@ -1,5 +1,25 @@
 # CURRENT HANDOVER
 
+## 14 November 2026 — five confirmed social profiles LIVE; Instagram pending
+
+Owner-requested professional footer/social search-data update live at https://ironcompassai.com, functional sourcefb8a1f8eaefb92c92d596c02d05443051e6827d3, deployment dpl_J62WCGDYh6sm4AYkUy44rUkUN7Hz, PR18, branch fix/social-profiles-20261114. Exact tested production-settings artifact promoted unchanged; public exact source verified. Rollback dpl_FaE8ATQF9Tcb5LHkhw58KnViJkxL/source5c719d284d46a8811bd1c141c41ec07c4fb20155. Later documentation commit is not a new runtime release.
+
+Facebook, YouTube, TikTok, Pinterest and LinkedIn display with locally hosted monochrome icons, visible labels, wrapping layout,44px-minimum links and keyboard focus. Same socialLinks source drives Organization.sameAs; matching description added. Instagram faircloughadam was flagged incorrect by owner and NEVER published in links/schema. Correct URL remains requested. Instagram icon file is unused, not a profile assertion. No tracking, SDK, new dependency or account mutation. Existing brand/hero/layout, canonicals/robots/sitemap, app/API/native/email/billing unchanged.
+
+Exact-source CI43571227027 Website verification and43571226985 Source continuity SUCCESS: advisories, tests, lint, build/types, calculation and local page/proxy checks. Stage331 and live331 checks pass (121sitemap pages,202assets plus app HTML/assets/security-header parity). Additional124captured HTML schema records have exactly five sameAs links and no incorrect Instagram. Stage/live browser8page-width checks each cover home/blog at320/390/768/1440: no horizontal overflow/page errors; all five icons decode, labels/targets/44px size/schema match; visible keyboard focus and keyboard link activation tested against locally intercepted external destination, not logged into platform; app entry opens. Mobile/desktop section screenshots inspected. Scoped ten-minute runtime error/fatal query returned no logs (point-in-time only). Temporary preview access revoked and local secret removed.
+
+Evidence: sibling outputs/social-profiles-{stage,live}-browser.json, social-section-{stage,live}-{width}.png, search-hosted-social-profiles-{stage,live}-results-20261113.json (legacy verifier filename date). Exact external account verification unavailable for throttled/restricted platforms; LinkedIn independently links canonical website. Search data is factual readiness, not measured ranking/AI-citation/traffic uplift. Next: add Instagram only after corrected owner URL; retain existing search-monitoring programme without duplicate jobs.
+
+
+## 14 November 2026 — social profile links prepared
+
+Owner supplied six profiles and asked for professional platform-icon links plus related SEO/AEO work, then flagged Instagram as wrong. Instagram is excluded from visible links and schema pending corrected owner URL. Five confirmed owner-supplied routes: existing Facebook profile61585722965386, YouTube/TikTok @ironcompassai, Pinterest ironcompassai and LinkedIn company/ironcompassai. Public LinkedIn page independently names Iron Compass AI and links ironcompassai.com; other platforms throttle/restrict automated lookup, not independently verified or called broken. No account writes or follower claims.
+
+Isolated checkout website-social-profiles-20261114 / fix/social-profiles-20261114 based on571b535, documentation successor of current verified live5c719d284d46a8811bd1c141c41ec07c4fb20155. Shared Footer now renders a wrapping list of labelled platform links with locally served Simple Icons13.21.0 SVGs,44px minimum link height and visible keyboard focus. Single socialLinks source feeds existing Organization.sameAs. Added factual matching Organization.description. No new schema entity/duplicate FAQ, hidden keywords, tracking, embed or JavaScript library. Attribution saved with icons. Website design/hero/metallic logo and app/email retained.
+
+Google primary sources checked: developers.google.com/search/docs/appearance/structured-data/organization (sameAs links support entity disambiguation), developers.google.com/search/docs/appearance/ai-features (existing SEO fundamentals apply; no special AI markup required). No ranking/indexing/AI-citation gain claimed. Existing canonical/robots/sitemap/privacy controls retained. External reciprocal profile links beyond confirmed LinkedIn are not claimed. Lint0errors/4existingwarnings. CI/stage/browser/live checks pending. Rollback current dpl_FaE8ATQF9Tcb5LHkhw58KnViJkxL. Next: confirm any Instagram correction, test exact-source stage, promote only after release gates pass.
+
+
 ## 14 November 2026 16:54 AEST — metallic website logo LIVE
 
 Owner-approved logo update deployed at https://ironcompassai.com. Exact functional source5c719d284d46a8811bd1c141c41ec07c4fb20155, deployment dpl_FaE8ATQF9Tcb5LHkhw58KnViJkxL, branch fix/metallic-logo-20261114, PR17. Protected production-settings staging promoted unchanged. Verified public source and completed apex/www aliases. Rollback dpl_2UC1UGtLsEc97TAdK1duP2DZGmok/sourcea22dc9e3aaeed930fb40ecae750d1e836a3e53e5. Documentation-only successor does not change deployed runtime.
@@ -377,5 +397,7 @@ Next engineering priorities are hosted source-provenance verification and propor
 
 ## 14 November 2026 — owner requested brighter, more photorealistic man
 Generated a brighter photographic-style revision from the existing hero, retaining the seated man/lookout composition. Copied the generated asset to public/images/home/horizon-man.png in this isolated branch; source original remains in git and generated original retained. Not deployed. Earlier CSS-only screenshot evidence predates this new asset; responsive crop, image optimisation and text contrast must be rechecked before release.
+
+
 
 

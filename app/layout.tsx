@@ -81,6 +81,7 @@ export default function RootLayout({
                   "@type": "Organization",
                   "@id": `${SITE_URL}/#organization`,
                   name: SITE_NAME,
+                  description: siteDescription,
                   sameAs: socialLinks.map((link) => link.href),
                   url: SITE_URL,
                   logo: ORGANIZATION_LOGO,
