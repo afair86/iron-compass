@@ -1,5 +1,16 @@
 # CURRENT HANDOVER
 
+## 14 November 2026 16:54 AEST — metallic website logo LIVE
+
+Owner-approved logo update deployed at https://ironcompassai.com. Exact functional source5c719d284d46a8811bd1c141c41ec07c4fb20155, deployment dpl_FaE8ATQF9Tcb5LHkhw58KnViJkxL, branch fix/metallic-logo-20261114, PR17. Protected production-settings staging promoted unchanged. Verified public source and completed apex/www aliases. Rollback dpl_2UC1UGtLsEc97TAdK1duP2DZGmok/sourcea22dc9e3aaeed930fb40ecae750d1e836a3e53e5. Documentation-only successor does not change deployed runtime.
+
+Updated header/footer/homepage mark, legacy and versioned public assets, optional PhotoFrame overlay asset, publisher/schema image and both website browser icons. Warm wordmark with red AI; no pale theme or extra feature band. Actual app screenshots/embedded photographic logos and separate app/native branding deliberately unchanged. Original horizon-man hero and accepted v5 layout/shading remain live; separate boat draft remains held for readability. No production settings, dependency, app/API/native/email/billing/customer-state changes.
+
+Exact-source CI43568055666 Website verification and43568055674 Source continuity SUCCESS: advisory gate, tests, lint, build/TypeScript, calculation scripts and local route checks. Existing suite70passed/1optionalexternal-store skipped; lint0errors/4existingwarnings. Protected stage326 and public326 checks pass (121sitemap pages,197assets, app HTML/assets/header parity). All124 captured website HTML responses contain new shared logo references (includes non-sitemap/review/error pages). Browser16page-width checks per stage/live cover home/about/blog/free-pack at320/390/768/1440, no overflow/page errors, loaded header/footer marks, mobile menu, keyboard Explore and app-entry navigation. Mobile/desktop screenshots inspected. Live favicon byte hash matches source. No performance uplift claimed; main logo assets are smaller. Scoped ten-minute error/fatal query returned no logs, point-in-time only.
+
+Initial version-query build failed existing Next image restrictions; fixed with versioned filename. Initial browser harness waited on offscreen lazy footer image; corrected by scrolling before decode. Immediate post-promotion source probe saw prior source during alias propagation; completed aliases and subsequent full public suite confirm new exact source. Temporary stage share access revoked and local secret deleted. Evidence: sibling outputs/metallic-logo-{stage,live}-browser.json, logo-{stage,live}-{width}.png, search-hosted-metallic-logo-{stage,live}-results-20261113.json (legacy verifier filename date). Next: preserve this live source for future changes; boat-image readability remains a separate decision.
+
+
 ## 14 November 2026 — warm metallic logo, release preparation
 
 Owner approved the logo testers and requested upload plus a site-wide logo audit. This isolated checkout website-metallic-logo-20261114 / fix/metallic-logo-20261114 starts at dc3781c, documentation successor of independently verified live a22dc9e3aaeed930fb40ecae750d1e836a3e53e5. Scope is recommended charcoal-header option A, shared website marks and favicon. No stone theme or new feature section. Boat hero remains a separate held draft because its lighter desktop text contrast failed; not included here.
@@ -366,4 +377,5 @@ Next engineering priorities are hosted source-provenance verification and propor
 
 ## 14 November 2026 — owner requested brighter, more photorealistic man
 Generated a brighter photographic-style revision from the existing hero, retaining the seated man/lookout composition. Copied the generated asset to public/images/home/horizon-man.png in this isolated branch; source original remains in git and generated original retained. Not deployed. Earlier CSS-only screenshot evidence predates this new asset; responsive crop, image optimisation and text contrast must be rechecked before release.
+
 
