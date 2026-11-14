@@ -1,19 +1,21 @@
 # Iron Compass brand mark (approved)
 
-Canonical compass mark for **website** (`iron-compass`) and **product app** (`iron-compass-ai`).
+Approved warm metallic compass for the **website** (`iron-compass`), 14 November 2026. The separately owned product app and native icons are unchanged; do not treat this website release as app-brand approval.
 
 ## Files
 
 | Path | Use |
 |------|-----|
-| `brand/iron-compass-mark-source.png` | Full square source (black field) |
+| `brand/iron-compass-mark-source.png` | Approved warm metallic transparent source |
 | `brand/iron-compass-mark.png` | Transparent mark for reuse |
-| `public/iron-compass-logo-icon.png` | Website header mark |
+| `public/iron-compass-logo-metallic-20261114.png` | Versioned header/footer/homepage mark |
+| `public/iron-compass-logo-icon.png` | Compatible legacy mark URL |
+| `public/images/brand/compass-mark.png` | Existing optional photo-overlay mark |
 | `public/iron-compass-logo.png` | General lockup/mark |
 | `public/iron-compass-logo-og.png` | Open Graph / social |
-| `app/icon.png` | Favicon / app icon |
+| `app/icon.png`, `app/favicon.ico` | Website browser icons |
 
-App UI renders the **full-color** PNG in the header and `CompassMark` (no CSS mask — that strips metal/blue glow).
+Website marks retain the full-colour brushed-metal PNG and edge transparency, without a CSS mask or glow. The generator writes only into this website checkout.
 
 ## Apply / refresh assets
 

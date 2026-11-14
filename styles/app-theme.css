@@ -134,7 +134,7 @@ html:root {
     font-size: 1rem;
     letter-spacing: 0.12em;
     white-space: nowrap;
-    color: var(--ic-text-heading);
+    color: #e9ddcc;
     background: none;
     -webkit-text-fill-color: currentColor;
     text-shadow: none;

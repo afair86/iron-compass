@@ -1,5 +1,5 @@
 /**
- * Process the approved Iron Compass mark into website + app logo assets.
+ * Process the approved transparent Iron Compass mark into website logo assets.
  * Source: brand/iron-compass-mark-source.png (square compass mark)
  *
  * Usage: node scripts/apply-brand-mark.mjs
@@ -11,7 +11,6 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const websiteRoot = path.join(__dirname, "..");
-const appRoot = path.join(websiteRoot, "..", "iron-compass-ai");
 
 const srcArg = process.argv[2];
 const src = srcArg
@@ -27,6 +26,9 @@ fs.mkdirSync(path.join(websiteRoot, "brand"), { recursive: true });
 
 /** Remove near-black background so the mark sits cleanly in the header. */
 async function removeDarkBackground(input) {
+  // Approved transparent artwork already has its own edge alpha. Preserve it.
+  const stats = await sharp(input).stats();
+  if (stats.channels.length === 4 && stats.channels[3].min < 255) return input;
   const { data, info } = await sharp(input).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const { width: w, height: h, channels } = info;
 
@@ -67,13 +69,14 @@ await sharp(transparent).toFile(path.join(websiteRoot, "brand", "iron-compass-ma
 
 const icon512 = await sharp(transparent).resize(512, 512, { fit: "contain" }).png().toBuffer();
 const icon256 = await sharp(transparent).resize(256, 256, { fit: "contain" }).png().toBuffer();
-const icon80 = await sharp(transparent).resize(160, 160, { fit: "contain" }).png().toBuffer();
 
 // Website public assets (overwrite)
 const websiteOuts = [
   [path.join(websiteRoot, "public", "iron-compass-logo-icon.png"), icon256],
+  [path.join(websiteRoot, "public", "iron-compass-logo-metallic-20261114.png"), icon256],
   [path.join(websiteRoot, "public", "iron-compass-logo.png"), icon512],
   [path.join(websiteRoot, "app", "icon.png"), icon256],
+  [path.join(websiteRoot, "public", "images", "brand", "compass-mark.png"), icon256],
 ];
 
 for (const [out, buf] of websiteOuts) {
@@ -100,24 +103,17 @@ await sharp({
   .toFile(path.join(websiteRoot, "public", "iron-compass-logo-og.png"));
 console.log("wrote OG", fs.statSync(path.join(websiteRoot, "public", "iron-compass-logo-og.png")).size);
 
-// Product app (iron-compass-ai)
-if (fs.existsSync(appRoot)) {
-  const appTargets = [
-    path.join(appRoot, "frontend", "src", "assets", "logo.png"),
-    path.join(appRoot, "frontend", "public", "logo.png"),
-  ];
-  const brandDir = path.join(appRoot, "brand");
-  fs.mkdirSync(brandDir, { recursive: true });
-  await sharp(src).png().toFile(path.join(brandDir, "iron-compass-mark-source.png"));
-  await sharp(transparent).toFile(path.join(brandDir, "iron-compass-mark.png"));
-
-  for (const out of appTargets) {
-    fs.mkdirSync(path.dirname(out), { recursive: true });
-    await sharp(icon512).toFile(out);
-    console.log("wrote", out, fs.statSync(out).size);
-  }
-} else {
-  console.warn("App repo not found at", appRoot, "— website assets only.");
-}
+// PNG-backed ICO, supported by modern browsers. Never write into an app checkout.
+const favicon = await sharp(transparent).resize(48, 48).png().toBuffer();
+const ico = Buffer.alloc(22);
+ico.writeUInt16LE(1, 2);
+ico.writeUInt16LE(1, 4);
+ico[6] = 48;
+ico[7] = 48;
+ico.writeUInt16LE(1, 10);
+ico.writeUInt16LE(32, 12);
+ico.writeUInt32LE(favicon.length, 14);
+ico.writeUInt32LE(22, 18);
+fs.writeFileSync(path.join(websiteRoot, "app", "favicon.ico"), Buffer.concat([ico, favicon]));
 
 console.log("Brand mark applied.");

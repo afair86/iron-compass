@@ -68,7 +68,7 @@ export default function Footer() {
               aria-label="Iron Compass AI"
             >
               <Image
-                src="/iron-compass-logo-icon.png"
+                src="/iron-compass-logo-metallic-20261114.png"
                 alt=""
                 width={56}
                 height={56}
