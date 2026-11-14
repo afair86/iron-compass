@@ -76,6 +76,7 @@ const websiteOuts = [
   [path.join(websiteRoot, "public", "iron-compass-logo-metallic-20261114.png"), icon256],
   [path.join(websiteRoot, "public", "iron-compass-logo.png"), icon512],
   [path.join(websiteRoot, "app", "icon.png"), icon256],
+  [path.join(websiteRoot, "public", "images", "brand", "compass-mark.png"), icon256],
 ];
 
 for (const [out, buf] of websiteOuts) {
