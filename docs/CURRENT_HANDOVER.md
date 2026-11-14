@@ -1,5 +1,14 @@
 # CURRENT HANDOVER
 
+## 14 November 2026 — approved v5 original-photo shading LIVE, NO TEXT BOXES
+
+Owner explicitly approved exact v5 preview with original image/layout and no boxes. Functional source a22dc9e3aaeed930fb40ecae750d1e836a3e53e5, deployment dpl_2UC1UGtLsEc97TAdK1duP2DZGmok, PR16. Production-settings staging promoted unchanged. Public source confirms clean exact commit. Only three runtime CSS declarations changed from restored production: mobile overlay, desktop feathered overlay, filter:none. Original image bytes, DOM/layout, copy, SEO, dependencies, app/API/native/billing/email configuration unchanged. No copy pseudo-element/backing or motto box exists. Prior rejected brightness/panel release remains superseded.
+
+Exact-source CI43557419819 Website verification and43557420047 Source continuity succeeded: advisory gate, tests, lint, build/TypeScript, calculation and local route checks. Stage326 and public326 verification records passed, including121sitemap pages/197assets and app HTML/assets/security-header parity. Stage/live Edge390 and1440px confirm original image loaded, filter:none, no copy box/background, no overflow, canonical/H1, keyboard Explore link and app-entry navigation, no page errors. Screenshot comparison to owner-approved v5 preview: mean channel difference0.02455 mobile and0.00006 desktop on0–255 scale in live capture, negligible rendering variation. Evidence outputs/hero-v5-{stage,live}-browser.json/screenshots and search-hosted-hero-v5-{stage,live}-results-20261113.json (legacy filename date). Contrast samples previously verified ordinary-text minimum4.55:1; no universal accessibility or commercial uplift claim.
+
+Scoped error/fatal runtime query returned no groups in ten-minute window; point-in-time only. Temporary stage access revoked and local secret removed. Rollback dpl_5vbUR8MH7Ccb4SEHSMeHPfsLRHCD / a66842acd2f486fc0e12ded118218c351e4d2856. No customer submits/sends or app deployment triggered. Later documentation-only commit is not a new production build. Next: preserve this accepted appearance and current source during other workstreams; routine monitoring only.
+
+
 ## 14 November 2026 — clearer original photo v5, PREVIEW ONLY
 
 Owner wants original photo to come through clearly. Removed saturation reduction (filter:none); desktop broad shade transparent across left40%, then72% at52%/76% right. Tightened feathered brand/motto shade to ellipse20%17%, centre30%59%,66/56% opacity, keeping shade closer to lettering and clearing more of man/foreground. No new boxes or layout change; original asset pixels retained. Mobile overlay retained. At1440/390 browser checks preserve exact element geometry, no extra copy backing, no overflow. Sampled ordinary text minimum4.55:1, headings4.58:1. Evidence outputs/hero-clear-v5-{1440,390}.png and hero-contrast.json. Local preview only, not pushed/deployed. Await owner review.
