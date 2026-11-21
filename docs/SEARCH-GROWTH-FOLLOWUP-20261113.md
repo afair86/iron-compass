@@ -11,6 +11,31 @@ Owner authorised carrying out the search review actions and requested a subseque
 
 ## Measurement activation contract
 
+### 21 November 2026: new GA4 setup proposal, FOR OWNER REVIEW ONLY
+
+Owner requested a new setup prepared for review after the connected Google account returned zero accessible GA4 properties. No Analytics account/property/stream has been created, no terms accepted, no measurement ID set and no tracking activated by this proposal. Search Console is a separate completed connection: the existing owner-authorised domain property now returns data in the existing OpenSEO project.
+
+| Setting | Proposed configuration |
+| --- | --- |
+| Account control | Owner-controlled business Google account, with Adam retaining administration; no agent-owned account or additional access grants. |
+| Property | Iron Compass AI, GA4 Standard; one property can support later approved streams without creating parallel reporting silos. |
+| Initial stream | One website stream for https://ironcompassai.com, named Iron Compass AI website. |
+| Reporting | Australia/Brisbane; AUD. Search Console reports keep their own Pacific date convention when compared. |
+| Cost | GA4 Standard has no subscription fee; proposed new recurring service budget A$0. No Analytics360, paid exports, Ads account, cloud project or new vendor. No purchase authorised or made. |
+| Collection scope | First validate the existing optional free-pack measurement only. Site-wide acquisition events need a separate reviewed consent/privacy and implementation change. |
+| Defaults | Disable enhanced automatic form, search, outbound-link and file-download collection, Google Signals, advertising personalisation and user-provided data; select the minimum offered retention. Inspect actual settings. |
+| Permission | No Google tag or analytics request before explicit optional consent. Stop measurement must stop further events and clear the existing assignment/cookies. Email permission is independent. |
+| Existing integration | Use NEXT_PUBLIC_PACK_GA4_ID on an isolated preview first. Leave NEXT_PUBLIC_PACK_EXPERIMENT_ENABLED off; never put the ID or any credential in this document as if it already exists. |
+| Reporting connection | After the property exists, bind that exact owner-accessible property to this existing OpenSEO project, then verify a real reporting read. Configuration alone is not delivery evidence. |
+
+Preserve the five existing pack events and their meanings in the contract below. A later `app_store_open` event would count a consented website link activation only, never an install. A later `web_app_open` event would count navigation, never registration or onboarding. Do not silently rename or repurpose `pack_app_open`, which currently points to the marketing app overview. Record confirmed email delivery from durable campaign state; verified registration, purchase, renewal, refund and restoration belong to the app/provider workstream and need separate approved instrumentation and consent. Do not send journal text, email, account/member identifiers, signed tokens, worksheet values, full query strings/referrers or guide preference to GA4.
+
+Site-wide collection is not covered by the current pack-page-only privacy wording. Before broadening it, review exact payloads, policy/version, visitor controls and actual app/account boundaries. Native iOS/Firebase SDKs, cross-platform identity stitching, User-ID, advertising IDs and purchase events remain outside this website release and are not activated as a shortcut to a connected funnel.
+
+Acceptance before any activation: inspect owner/account/stream/settings; no tag or Google requests before Allow; exactly one allowlisted event per action after Allow; no collection after Stop or on confirmation/unsubscribe pages; reload does not restore consent; experiment remains off; inspect real request payloads, automatic fields and cookies; verify DebugView/Realtime and a later reporting read using synthetic interactions; preserve web-app asset/header parity and a tested off-switch/rollback. A purchase or sign-in click must never become a paid conversion. Data collection and GA4 terms require the separate applicable owner approval, not this preparation instruction.
+
+Primary references checked 21 November 2026: https://support.google.com/analytics/answer/9304153 (account/property/stream setup), https://developers.google.com/tag-platform/security/guides/consent (basic versus advanced consent behaviour), https://developers.google.com/analytics/devguides/collection/ga4/reference/events (event semantics). This is an implementation proposal, not privacy/legal certification or measured conversion improvement.
+
 Reuse `PackFunnel.tsx` and the existing free GA4 Standard plan. No additional analytics library or parallel platform is justified. Owner approved progressing this setup; account access and actual provider terms remain separate concrete prerequisites. Do not ask again for general permission to investigate or prepare it.
 
 1. Create/select an owner-controlled GA4 Standard account and one public web stream for `https://ironcompassai.com`. Use Australia/Brisbane and AUD. Do not upgrade to 360, activate ads or provision paid exports.
