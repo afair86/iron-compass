@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { attributes, checkPage, checkUpstream, sitemapPaths } from './website-smoke.mjs';
+import { attributes, checkPage, checkUpstream, sitemapPaths, checkLaunchedApp } from './website-smoke.mjs';
 
 const html = '<html><head><title>Iron Compass</title><meta content="Useful guidance" name="description"><link href="https://ironcompassai.com/" rel="canonical"><script type="application/ld+json">{"@type":"WebPage"}</script></head><body><h1>One clear heading</h1></body></html>';
 test('HTML attributes support both quote styles', () => {
@@ -42,4 +42,18 @@ test('App rewrite check accepts both manifest formats and rejects live upstreams
   assert.doesNotThrow(() => checkUpstream({ rewrites: { beforeFiles: [], afterFiles: rules, fallback: [] } }));
   assert.throws(() => checkUpstream({ rewrites: [] }), /two app rewrites/);
   assert.throws(() => checkUpstream({ rewrites: rules.map((rule) => ({ ...rule, destination: 'https://ironcompassai.com/app' })) }), /synthetic/);
+});
+
+test('launch acceptance checks real listing, platform, prices and stale messaging',()=>{
+ const url='https://apps.apple.com/app/iron-compass-ai/id6822813707';
+ const software={'@type':'SoftwareApplication',operatingSystem:['Web','iOS'],downloadUrl:url,offers:[
+  {name:'Free',price:'0',priceCurrency:'AUD'}, {name:'Core monthly',price:'19.99',priceCurrency:'AUD'},
+  {name:'Core yearly',price:'199',priceCurrency:'AUD'}, {name:'Elite monthly',price:'34.99',priceCurrency:'AUD'},
+  {name:'Elite yearly',price:'349',priceCurrency:'AUD'}]};
+ const rendered=`<a href="${url}" aria-label="Download Iron Compass AI on the App Store">Badge</a><script type="application/ld+json">${JSON.stringify({'@graph':[software]})}</script>`;
+ assert.doesNotThrow(()=>checkLaunchedApp(rendered,'/download'));
+ for(const [before,after] of [['id6822813707','id123'],['apps.apple.com','example.com'],['iOS','Android'],['19.99','12'],['34.99','29']])assert.throws(()=>checkLaunchedApp(rendered.replaceAll(before,after),'/download'));
+ assert.throws(()=>checkLaunchedApp(rendered+'<p>Apple review pending</p>','/'));
+ assert.throws(()=>checkLaunchedApp(rendered.replace(/<a.*?<\/a>/,''),'/download'));
+ assert.throws(()=>checkLaunchedApp(rendered.replace(/<script.*?<\/script>/,''),'/download'));
 });

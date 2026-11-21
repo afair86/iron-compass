@@ -13,6 +13,6 @@ export const launchFaq = [
   },
   {
     question: "How do I start using Iron Compass AI?",
-    answer: "Open the web app on your phone or computer and create an account. Choose one responsibility, set a daily habit, and review what held at the end of the week. Use the same account when the iPhone app becomes available.",
+    answer: "Download Iron Compass AI from the App Store for iPhone, or open the web app on your phone or computer. Sign in with the same account on either. Choose one responsibility, set a daily habit, and review what held at the end of the week.",
   },
 ] as const;

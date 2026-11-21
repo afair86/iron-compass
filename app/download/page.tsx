@@ -14,9 +14,9 @@ import { launchFaq } from "@/lib/launchFaq";
 import styles from "./app-overview.module.css";
 
 export const metadata = buildPageMetadata({
-  title: "Iron Compass AI App | Daily Discipline, Habits and AI Coaching",
+  title: "Iron Compass AI for iPhone & Web | Daily Discipline",
   description:
-    "Build discipline around the responsibilities you carry. Explore Iron Compass AI: daily habits, a private journal, planning tools and AI coaching. Start free.",
+    "Get Iron Compass AI on iPhone or the web. Build daily habits, keep a private journal and plan your responsibilities. Start free; paid plans add AI coaching.",
   path: "/download",
 });
 
@@ -252,8 +252,8 @@ export default function DownloadPage() {
         <section className={styles.account}>
           <h2>One account. Your record stays with you.</h2>
           <p>
-            Use the web app on your phone or computer. When the iPhone app is
-            available, sign in with the same account to keep your habits,
+            Download the iPhone app or use the web app on your phone or computer.
+            Sign in with the same account to keep your habits,
             journal and subscription together.
           </p>
           <Link href="/privacy">Read how your information is handled</Link>

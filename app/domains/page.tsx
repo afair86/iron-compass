@@ -12,7 +12,7 @@ import styles from "./domains-page.module.css";
 export const metadata = buildPageMetadata({
   title: "Ten Life Domains | Iron Compass AI",
   description:
-    "The ten life domains are where responsibility lives: Discipline, Identity, Health and Strength, Bonds and Connections, Purpose and Direction, Finance and Provision, Resilience, Fall and Rise, Grief and Honour, and Legacy.",
+    "Explore ten life domains, from health and work to family, money and legacy. Set practical standards with daily actions and a weekly review in Iron Compass AI.",
   path: "/domains",
 });
 

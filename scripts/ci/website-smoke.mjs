@@ -52,6 +52,36 @@ export function checkUpstream(manifest) {
   for (const rule of appRules) assert.equal(new URL(rule.destination).origin, upstreamOrigin, 'Only synthetic local app upstream allowed');
 }
 
+export function checkLaunchedApp(html, pagePath) {
+  assert(!/Apple review pending|when the iPhone app becomes available|When the iPhone app is\s*available/i.test(html), `${pagePath}: stale pre-launch message`);
+  const anchors=[...html.matchAll(/<a\b[^>]*>/gi)].map(m=>attributes(m[0]));
+  const storeLinks=anchors.filter(a=>a['aria-label']==='Download Iron Compass AI on the App Store');
+  assert(storeLinks.length>0, `${pagePath}: missing App Store badge`);
+  for(const link of storeLinks){
+    const url=new URL(link.href.replaceAll('&amp;','&'));
+    assert.equal(url.origin,'https://apps.apple.com',`${pagePath}: incorrect store origin`);
+    assert.match(url.pathname,/\/id6822813707\/?$/,`${pagePath}: incorrect app listing`);
+  }
+  const nodes=[];
+  for(const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
+    if(attributes(script[1]).type!=='application/ld+json')continue;
+    const data=JSON.parse(script[2]);nodes.push(...(data['@graph']??[data]));
+  }
+  const software=nodes.filter(n=>n['@type']==='SoftwareApplication');
+  assert(software.length>0,`${pagePath}: missing software schema`);
+  for(const app of software){
+    assert(app.operatingSystem.includes('iOS')&&app.operatingSystem.includes('Web'),`${pagePath}: platform schema out of date`);
+    assert(storeLinks.some(a=>a.href.replaceAll('&amp;','&')===app.downloadUrl),`${pagePath}: schema download differs from visible badge`);
+    assert.deepEqual(app.offers.map(({name,price,priceCurrency})=>({name,price,priceCurrency})),[
+      {name:'Free',price:'0',priceCurrency:'AUD'},
+      {name:'Core monthly',price:'19.99',priceCurrency:'AUD'},
+      {name:'Core yearly',price:'199',priceCurrency:'AUD'},
+      {name:'Elite monthly',price:'34.99',priceCurrency:'AUD'},
+      {name:'Elite yearly',price:'349',priceCurrency:'AUD'},
+    ],`${pagePath}: website plan offers changed`);
+  }
+}
+
 export async function main() {
   const manifest = JSON.parse(await readFile('.next/routes-manifest.json', 'utf8'));
   checkUpstream(manifest);
@@ -112,6 +142,7 @@ export async function main() {
       pages.set(path, body);
     }
     const download = pages.get('/download');
+    for(const pagePath of ['/', '/download'])checkLaunchedApp(pages.get(pagePath),pagePath);
     assert.equal((download.match(/<dialog\b/gi) || []).length, 4, 'Four screenshot dialogs must remain');
     for (const id of ['app-today', 'app-habits', 'app-journal', 'app-strategy']) {
       assert(download.includes(`id="${id}"`), `Missing app feature anchor ${id}`);

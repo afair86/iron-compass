@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { domainNavLinks } from "@/lib/domains";
-import { productAppHref } from "@/lib/site";
+import { appStoreHref, productAppHref } from "@/lib/site";
 import { socialLinks } from "@/lib/socialLinks";
 
 const navSections = [
@@ -10,6 +10,7 @@ const navSections = [
     links: [
       { href: "/start", label: "Start here" },
       { href: "/app", label: "Open web app" },
+      { href: appStoreHref(), label: "Download for iPhone" },
       { href: "/download", label: "Explore the app" },
       { href: "/about", label: "About Iron Compass AI" },
       { href: "/pricing", label: "Plans and pricing" },
