@@ -1,12 +1,13 @@
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, appStoreHref } from "@/lib/site";
 
-/** Structured data for the app. Prices must match the live plans; iPhone is not listed until it is on the App Store. */
+/** Public app details. Offers describe website plans; Apple displays its own store prices. */
 export const appSoftwareSchema = {
   "@type": "SoftwareApplication",
   "@id": absoluteUrl("/#software"),
   name: "Iron Compass AI",
   applicationCategory: "LifestyleApplication",
-  operatingSystem: "Web",
+  operatingSystem: ["Web", "iOS"],
+  downloadUrl: appStoreHref(),
   url: absoluteUrl("/app"),
   publisher: { "@id": absoluteUrl("/#organization") },
   description:

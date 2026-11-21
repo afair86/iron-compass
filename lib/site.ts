@@ -11,15 +11,19 @@ export function productAppHref(): string {
   return override || PRODUCT_APP_PATH;
 }
 
-/** Enable the official badge only when the public listing is available. */
-export function appStoreHref(): string | null {
+/** Public listing verified in Apple's catalogue on 21 November 2026. */
+export const IOS_APP_STORE_URL = "https://apps.apple.com/app/iron-compass-ai/id6822813707";
+
+export function appStoreHref(): string {
   const value = process.env.NEXT_PUBLIC_IOS_APP_URL?.trim();
-  if (!value) return null;
+  if (!value) return IOS_APP_STORE_URL;
   try {
     const url = new URL(value);
-    return url.protocol === "https:" && url.hostname === "apps.apple.com" ? url.href : null;
+    return url.protocol === "https:" && url.hostname === "apps.apple.com" &&
+      /\/id6822813707\/?$/.test(url.pathname) && !url.username && !url.password
+      ? url.href : IOS_APP_STORE_URL;
   } catch {
-    return null;
+    return IOS_APP_STORE_URL;
   }
 }
 /** The homepage sunset. Used when Iron Compass AI is shared or shown in search. */
