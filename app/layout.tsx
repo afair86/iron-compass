@@ -13,6 +13,7 @@ import { socialLinks } from "@/lib/socialLinks";
 import { Montserrat, Inter } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WebsiteMeasurement from "./components/WebsiteMeasurement";
 import { DEFAULT_OG_IMAGE, ORGANIZATION_LOGO, SITE_NAME, SITE_URL, serializeJsonLd } from "@/lib/site";
 
 // Font setup
@@ -96,6 +97,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <WebsiteMeasurement />
       </body>
     </html>
   );
