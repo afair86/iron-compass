@@ -1,5 +1,14 @@
 # CURRENT HANDOVER
 
+## Shared Codex governance checkpoint — 24 November 2026
+
+- Scope: Proposed repository-wide Codex routing and cross-conversation guardrails in root `AGENTS.md` on branch `docs/codex-shared-routing-20261124`; no product implementation.
+- Source at preparation: `main` `997685885f3005c0261575134c057d2a13ba02ef`. Existing `.cursor/rules/`, `SOURCE_OF_TRUTH.md` and historical handover remain authoritative.
+- Evidence: Reviewed the current GitHub repository instructions and release/source constraints. Documentation review only; no builds, tests, user data changes, manual deployment or production verification were performed.
+- State: Review branch / draft PR; **not merged, not production-approved**. An automatic Git-linked preview, if started by the hosting platform, is not a verified product release.
+- Next action: Founder reviews the proposed rules, then approves any merge separately. Other Codex checkouts must update to a branch containing the rules before they apply.
+
+
 Brisbane date: 29 October 2026. Assistant: ChatGPT/Codex.
 
 ## Authorized combined release — in progress
